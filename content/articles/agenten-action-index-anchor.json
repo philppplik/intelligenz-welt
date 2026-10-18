@@ -1,0 +1,141 @@
+{
+ "slug": "agenten-action-index-anchor",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "Action Index: Web-Agenten lernen Abkürzungen und werden 98-mal billiger",
+ "dek": "Anchor speichert erfolgreiche Browser-Abläufe und spielt sie als Code ab. Ein kleines Modell erreicht damit laut Hersteller die Quote eines Frontier-Modells.",
+ "published": "2026-10-18T20:05:00+02:00",
+ "modified": "2026-10-18T20:05:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "KI-Agenten",
+  "Browser-Automatisierung",
+  "MCP",
+  "Anchor"
+ ],
+ "key_takeaways": [
+  "Anchor hat am 15.10.2026 Action Index vorgestellt: ein geteiltes Gedächtnis für bereits erfolgreich gelöste Web-Workflows.",
+  "Auf Online-Mind2Web erreicht gpt-5.6-luna mit Action Index 93,3 % bei 0,016 $ pro Aufgabe. claude-opus-5 kommt auf 93,0 % bei 1,57 $.",
+  "Ohne Action Index schafft dasselbe kleine Modell nur 62,7 %.",
+  "Offene Modelle profitieren: qwen3.8-27b steigt von 67,7 auf 88,7 %, GLM 5.3 von 58,7 auf 84,7 %.",
+  "Alle Zahlen stammen von Anchor selbst, aus je einem Lauf pro Konfiguration."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein kleiner Roboter folgt einer leuchtenden Spur aus Fußabdrücken durch ein Gewirr aus Browser-Fenstern zu einem goldenen Fenster",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Die Browser-Infrastruktur-Firma Anchor will Web-Agenten nicht klüger, sondern weniger vergesslich machen. Action Index speichert Abläufe, die schon einmal geklappt haben, und führt sie beim nächsten Mal als festen Code aus. Das Modell springt nur ein, wenn sich die Seite geändert hat. Nach Anchors eigener Messung kostet das 98-mal weniger bei gleicher Erfolgsquote wie ein Frontier-Modell."
+  },
+  {
+   "t": "h2",
+   "x": "Das Problem: Agenten lösen dieselbe Aufgabe immer wieder neu"
+  },
+  {
+   "t": "p",
+   "x": "Laut [Anchors Blogpost](https://anchorbrowser.io/blog/action-index) berechnen Web-Agenten denselben Workflow bei jedem Lauf neu. Sie machen einen Screenshot, überlegen, klicken, überlegen wieder und zahlen dafür bei jedem Schritt Inferenzkosten, auch wenn dieselbe Aufgabe auf derselben Seite eine Stunde zuvor gelöst wurde. Typischer Agenten-Verkehr ist laut Anchor selten neu: immer dieselben Portale, Formulare, Suchen und Checkouts."
+  },
+  {
+   "t": "h2",
+   "x": "So funktioniert Action Index"
+  },
+  {
+   "t": "ol",
+   "items": [
+    "Der Agent bekommt eine Aufgabe und fragt den Index nach der Ziel-Domain.",
+    "Gibt es einen passenden, geprüften Ablauf, spielt Anchor ihn als deterministischen Code in einer Browser-Sitzung ab.",
+    "Hat sich die Seite an einem Schritt verändert, übernimmt das Modell nur diesen Schritt, danach läuft der Replay weiter.",
+    "Gibt es keinen Treffer, läuft die normale Agenten-Schleife. Klappt sie, wird der Pfad geprüft und in den Index aufgenommen."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Ein gespeicherter Ablauf ist parametrisiert, nach Domain geordnet und typischerweise 1 bis 15 KB groß. Agenten greifen über MCP-Tools (`search_action_index`, `get_action_index`, `execute_action_index`) oder die REST-API darauf zu. Jede erfolgreiche Ausführung auf einer Seite macht die nächste günstiger."
+  },
+  {
+   "t": "h2",
+   "x": "Die Zahlen (Herstellerangaben)"
+  },
+  {
+   "t": "p",
+   "x": "Anchor testete auf Online-Mind2Web, 300 Aufgaben auf 136 Live-Websites, bewertet mit dem automatischen Richter WebJudge. Jede Konfiguration lief einmal."
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**claude-opus-5:** 93,0 % Erfolg, 1,57 $ pro Aufgabe.",
+    "**gpt-5.6-luna:** 62,7 % Erfolg, 0,028 $ pro Aufgabe.",
+    "**gpt-5.6-luna mit Action Index:** 93,3 % Erfolg, 0,016 $ pro Aufgabe.",
+    "Der komplette 300-Aufgaben-Lauf kostete mit Action Index 4,87 $, ohne 472 $ (mit claude-opus-5)."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Anchor selbst nennt den Abstand von 0,3 Punkten zu claude-opus-5 „Parität statt Sieg“, weil er aus einem einzigen Lauf stammt. Bemerkenswert ist der Kostenunterschied, nicht der Punktvorsprung."
+  },
+  {
+   "t": "h2",
+   "x": "Offene Modelle profitieren am meisten"
+  },
+  {
+   "t": "p",
+   "x": "In einem zweiten Test mit 120 Aufgaben des Skyvern-Sets sanken laut Anchor bei den teuersten 10 Prozent der Läufe (p90) die Tokens um 74 %, die Schritte um 75 % und die Laufzeit um 61 %. Der Median verbesserte sich deutlich bescheidener (Tokens −27 %). Die Ersparnis steckt also vor allem in Läufen, in denen sich Agenten verirren. Offene Modelle legten bei Online-Mind2Web zu: qwen3.8-27b von 67,7 auf 88,7 %, GLM 5.3 von 58,7 auf 84,7 %."
+  },
+  {
+   "t": "h2",
+   "x": "Grenzen, die Anchor selbst nennt"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Der Index hilft nur auf Seiten und Workflows, die schon gelöst wurden. Der erste Lauf auf einer neuen Seite kostet vollen Preis.",
+    "Online-Mind2Web und das Skyvern-Set sind öffentliche Benchmarks, keine Kunden-Workloads.",
+    "Es gibt nur einen Lauf pro Konfiguration; Live-Web-Benchmarks schwanken.",
+    "Seiten ändern sich. Wiederholt fehlschlagende Abläufe müssen neu geprüft oder entfernt werden.",
+    "Die verbleibenden Fehler gehen laut erster Sichtung vor allem auf Proxy-Sperren und CAPTCHAs zurück."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Was das für dich bedeutet"
+  },
+  {
+   "t": "p",
+   "x": "Wer Agenten für wiederkehrende Aufgaben baut, etwa Portal-Abfragen oder Formulare, sollte nicht nur die Erfolgsquote vergleichen, sondern die Kosten pro erledigter Aufgabe. Anchor nennt dafür 1,69 $ (claude-opus-5) gegen 0,017 $ (gpt-5.6-luna mit Action Index). Ob das in deinem Fall gilt, hängt davon ab, wie repetitiv dein Verkehr ist. Die Zahlen sind unabhängig noch nicht nachgeprüft; Anchor kündigt eine offene Evaluation und Wiederholungsläufe an."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was kostet Action Index?",
+   "a": "Laut Anchor ist es ab sofort für alle Anchor-Konten verfügbar, auch im kostenlosen Tarif, als Tools auf dem Anchor-MCP-Server und über die REST-API."
+  },
+  {
+   "q": "Läuft das nur mit Anchors eigenen Agenten?",
+   "a": "Nein. Nach Anchor funktioniert es mit jedem MCP-kompatiblen Agenten, die Abläufe selbst laufen aber in einer Anchor-Browser-Sitzung."
+  },
+  {
+   "q": "Sind die Ergebnisse unabhängig bestätigt?",
+   "a": "Nein. Alle Werte stammen von Anchor selbst aus jeweils einem Lauf. Eine unabhängige Wiederholung haben wir nicht gefunden."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Introducing Action Index: From Inference to Indexing",
+   "publisher": "Anchor Blog, 15.10.2026",
+   "url": "https://anchorbrowser.io/blog/action-index",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Anchor Launches Action Index, Cutting Computer-Use Agent Token Costs by 100x",
+   "publisher": "GlobeNewswire (Pressemitteilung von Anchor), 15.10.2026",
+   "url": "https://www.globenewswire.com/news-release/2026/10/15/3382035/0/en/anchor-launches-action-index-cutting-computer-use-agent-token-costs-by-100x.html",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
