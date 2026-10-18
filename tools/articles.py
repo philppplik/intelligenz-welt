@@ -297,6 +297,24 @@ def main():
     open(os.path.join(out, 'redaktion', 'index.html'), 'w', encoding='utf-8').write(redaktion_page(head, foot))
     n = patch_sitemaps(out, arts, sections, now) if arts else 0
     patch_feed(out, arts); patch_site(out, arts)
+    og_fallback(out)
     print('articles: %d rendered, %d in news-sitemap' % (len(arts), n))
+
+def og_fallback(out):
+    src = os.path.join(ROOT, 'content/images/og-default.jpg')
+    if not os.path.exists(src): return
+    os.makedirs(os.path.join(out, 'assets'), exist_ok=True); shutil.copy(src, os.path.join(out, 'assets', 'og-default.jpg'))
+    img = BASE + '/assets/og-default.jpg'
+    tags = ('<meta property="og:image" content="%s"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'
+            '<meta property="og:image:alt" content="Intelligenz Welt: KI-News, Modell-Radar und Analysen auf Deutsch">'
+            '<meta name="twitter:image" content="%s">' % (img, img))
+    for dp, _, fs in os.walk(out):
+        for f in fs:
+            if not f.endswith('.html'): continue
+            fp = os.path.join(dp, f); t = open(fp, encoding='utf-8').read()
+            if 'property="og:image"' in t or 'noindex' in t or '</head>' not in t: continue
+            if 'name="twitter:card"' not in t: tags_ = '<meta name="twitter:card" content="summary_large_image">' + tags
+            else: tags_ = tags
+            open(fp, 'w', encoding='utf-8').write(t.replace('</head>', tags_ + '</head>', 1))
 
 if __name__ == '__main__': main()
