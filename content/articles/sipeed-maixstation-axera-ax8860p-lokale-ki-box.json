@@ -1,0 +1,120 @@
+{
+ "slug": "sipeed-maixstation-axera-ax8860p-lokale-ki-box",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "MaixStation: Chinesischer Mini-Rechner will DGX Spark für lokale KI unterbieten",
+ "dek": "Sipeeds MaixStation mit Axeras neuem AX8860P-Chip bietet 128 GB Speicher und soll rund 3.999 US-Dollar kosten. Die Leistungsangaben stammen bisher nur vom Hersteller.",
+ "published": "2026-10-18T20:05:00+02:00",
+ "modified": "2026-10-18T20:05:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Lokale KI",
+  "Edge-KI",
+  "Axera",
+  "Sipeed",
+  "DGX Spark"
+ ],
+ "key_takeaways": [
+  "Chip: Axera AX8860P, 6 nm, 16 Arm-Cortex-A55-Kerne, NPU mit 256 TOPS (FP4, ohne Sparsity), vorgestellt am 13. Oktober auf der CIIF in Shanghai.",
+  "Sipeed MaixStation: 128 GB LPDDR5X, 273 GB/s Speicherbandbreite, erwarteter Preis rund 3.999 US-Dollar (DGX Spark 128 GB: 6.950 US-Dollar).",
+  "Hersteller-Messung: etwa 10 Prozent schneller als DGX Spark bei Prefill und Decode mit FP4. Unabhängige Tests gibt es noch nicht.",
+  "Noch nicht erhältlich: Kickstarter Ende 2026, Auslieferung danach; NPU-Toolchain soll Ende Oktober erscheinen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein kompakter Mini-Rechner auf einem Schreibtisch, in dessen Gehäuse leuchtende, durchscheinende Speicherschichten übereinander liegen, von denen blaue Leiterbahnen ausgehen",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Zeigt nicht das reale Gerät.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Der chinesische Hersteller Sipeed hat die MaixStation vorgestellt, einen Mini-Rechner für lokale KI-Modelle auf Basis des neuen Axera-Chips AX8860P. Er hat wie die Nvidia DGX Spark 128 GB Speicher mit 273 GB/s und soll laut Sipeed rund 3.999 US-Dollar kosten, die DGX Spark kostet derzeit 6.950 US-Dollar. Die Leistungsversprechen sind bisher reine Herstellerangaben, ausgeliefert wird frühestens nach einer Kickstarter-Kampagne Ende 2026."
+  },
+  {
+   "t": "h2",
+   "x": "Der Chip: Axera AX8860P"
+  },
+  {
+   "t": "p",
+   "x": "Axera hat die AX8860-Serie am 13. Oktober auf der China International Industry Fair (CIIF) in Shanghai vorgestellt, wie [Let's Data Science](https://letsdatascience.com/news/axera-launches-ax8860-edge-ai-chip-series-6f353432) berichtet. Der Chip ist für lokale Sprach- und multimodale Modelle gedacht, etwa in Industrie, Lagerlogistik und Robotik. Laut [Tom's Hardware](https://www.tomshardware.com/desktops/mini-pcs/sipeed-reveals-chinese-made-dgx-spark-and-ryzen-ai-halo-rival-expected-to-cost-usd3-999-maixstation-pairs-axeras-ax8860p-with-128gb-of-lpddr5x-at-273-gb-s-with-promising-local-ai-performance-claims) hat der AX8860P 16 Arm-Cortex-A55-Kerne und eine eigene NPU mit 256 TOPS bei nativem FP4 ohne Sparsity. Gefertigt wird er laut Axera in 6 nm."
+  },
+  {
+   "t": "p",
+   "x": "Axera nennt außerdem Unterstützung für vLLM, SGLang und PyTorch sowie eine OpenAI-kompatible Schnittstelle zum Bereitstellen von Modellen."
+  },
+  {
+   "t": "h2",
+   "x": "Die MaixStation im Vergleich"
+  },
+  {
+   "t": "p",
+   "x": "Sipeed baut den Chip in die MaixStation ein: 128 GB LPDDR5X an einem 256-Bit-Speicherbus mit 273 GB/s. Das entspricht den Speicherwerten der Nvidia DGX Spark (GB10) und der AMD Ryzen AI Halo mit Max+ PRO 495. Tom's Hardware nennt für die DGX Spark 6.950 US-Dollar (128 GB), für die 64-GB-Variante ab 4.999 US-Dollar über Partner ab dem 23. Oktober, für die Ryzen AI Halo mit 128 GB 3.999,99 US-Dollar."
+  },
+  {
+   "t": "p",
+   "x": "Sipeed gibt die Maße mit etwa 11 × 11 × 3 cm an, die typische Leistungsaufnahme mit rund 40 Watt (laut [Tech ShowUp](https://techshowup.com/News/Article/01a14e5f-b8f2-7843-8463-895d5e1b88b5/sipeed-maixstation-pitches-a-3999-local-ai-box-with-128gb-lp), das sich auf Tom's Hardware und Sipeed beruft). Als Betriebssystem ist Debian 13 vorgesehen. Dazu kommen 10G-SFP+-Netzwerk und eine Direktverbindung zum Koppeln mehrerer Geräte."
+  },
+  {
+   "t": "h2",
+   "x": "Wie schnell ist sie wirklich?"
+  },
+  {
+   "t": "p",
+   "x": "Sipeed behauptet, bei Qwen 27B beim Prefill 25 Prozent und beim Decode 30 Prozent schneller als die DGX Spark zu sein. In einer E-Mail an Tom's Hardware sprach das Unternehmen dagegen von etwa 10 Prozent Vorsprung bei beiden Werten, mit FP4 auf beiden Geräten und ohne spekulatives Decoding. Die größeren Zahlen seien noch nicht offiziell. Let's Data Science betont, dass es sich um Hersteller- oder Partnerangaben handelt und nicht um unabhängig reproduzierte Benchmarks."
+  },
+  {
+   "t": "p",
+   "x": "Wichtig für die Einordnung: Die Rechenleistung ist nur ein Teil. Die DGX Spark bringt Nvidias ausgereifte CUDA-Software mit. Sipeed wirbt zwar mit Unterstützung für vLLM, SGLang, PyTorch, llama.cpp und Ollama, laut Tech ShowUp laufen vLLM und SGLang aber über ein eigenes Backend. Ob gängige Modelle reibungslos laufen, lässt sich erst nach Erscheinen der Toolchain prüfen."
+  },
+  {
+   "t": "h2",
+   "x": "Verfügbarkeit"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Anmeldung auf Sipeeds Produktseite ist offen, die Kickstarter-Kampagne soll Ende 2026 starten.",
+    "Ausgeliefert werden soll innerhalb von drei Monaten nach Ende der Kampagne.",
+    "Die NPU-Toolchain soll bis Ende Oktober erscheinen.",
+    "Der Preis von rund 3.999 US-Dollar ist eine Erwartung, Kickstarter-Rabatte sind möglich."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Kann ich die MaixStation schon kaufen?",
+   "a": "Nein. Laut Tom's Hardware und Tech ShowUp läuft bisher nur die Anmeldung. Verkauf über Kickstarter ist für Ende 2026 geplant, Auslieferung danach."
+  },
+  {
+   "q": "Ist sie wirklich schneller als die DGX Spark?",
+   "a": "Das ist unbelegt. Sipeed nennt zwischen etwa 10 und 30 Prozent Vorsprung bei Qwen 27B, die Zahlen sind unabhängig nicht geprüft und die Firma nennt die höheren Werte selbst nicht offiziell."
+  },
+  {
+   "q": "Wofür ist so ein Gerät gedacht?",
+   "a": "Für lokale Inferenz großer Sprachmodelle ohne Cloud. Es ist kein Rechner für Grafik oder Bildgenerierung, der Fokus liegt auf der NPU."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Sipeed reveals Chinese-made DGX Spark and Ryzen AI Halo rival, expected to cost $3,999",
+   "publisher": "Tom's Hardware, 15.10.2026",
+   "url": "https://www.tomshardware.com/desktops/mini-pcs/sipeed-reveals-chinese-made-dgx-spark-and-ryzen-ai-halo-rival-expected-to-cost-usd3-999-maixstation-pairs-axeras-ax8860p-with-128gb-of-lpddr5x-at-273-gb-s-with-promising-local-ai-performance-claims",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Axera Launches AX8860 Edge AI Chip Series",
+   "publisher": "Let's Data Science, 16.10.2026",
+   "url": "https://letsdatascience.com/news/axera-launches-ax8860-edge-ai-chip-series-6f353432",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Sipeed MaixStation Pitches a $3,999 Local AI Box With 128GB LPDDR5X",
+   "publisher": "Tech ShowUp, 18.10.2026",
+   "url": "https://techshowup.com/News/Article/01a14e5f-b8f2-7843-8463-895d5e1b88b5/sipeed-maixstation-pitches-a-3999-local-ai-box-with-128gb-lp",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
