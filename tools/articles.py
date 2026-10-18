@@ -335,6 +335,11 @@ def main():
     arts = load(now, {r for r in reserved if not os.path.exists(os.path.join(ROOT, 'content/articles', r + '.json'))})
     if errors:
         print('ARTICLES FAILED:'); [print(' -', e) for e in errors]; sys.exit(1)
+    from PIL import Image as _Im
+    for a in arts:
+        base = os.path.join(ROOT, 'content/images/%s' % a['slug'])
+        if os.path.exists(base + '.jpg') and not os.path.exists(base + '-800.jpg'):
+            _Im.open(base + '.jpg').convert('RGB').resize((800, 450), _Im.LANCZOS).save(base + '-800.jpg', quality=82, optimize=True, progressive=True)
     head, foot = template(out)
     ad = os.path.join(out, 'assets', 'editorial'); os.makedirs(ad, exist_ok=True)
     for a in arts:
