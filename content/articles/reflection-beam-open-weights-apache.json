@@ -5,10 +5,15 @@
  "type": "news",
  "title": "Reflection Beam: Neues US-Open-Weight-Modell unter Apache 2.0",
  "dek": "501 Milliarden Parameter, 1 Million Token Kontext, Platz 2 unter den US-Open-Weights bei Artificial Analysis. Stark bei Agenten, schwach im Terminal, mit hoher Halluzinationsrate.",
- "published": "2026-10-18T20:00:00+02:00",
- "modified": "2026-10-18T20:00:00+02:00",
+ "published": "2026-10-18T19:54:00+02:00",
+ "modified": "2026-10-18T19:54:00+02:00",
  "author": "philipp-paulik",
- "tags": ["Reflection", "Open-Weight", "Benchmarks", "Agenten"],
+ "tags": [
+  "Reflection",
+  "Open-Weight",
+  "Benchmarks",
+  "Agenten"
+ ],
  "key_takeaways": [
   "Beam ist das erste Modell des US-Labors Reflection, veröffentlicht am 16. Oktober 2026 mit Gewichten auf Hugging Face unter Apache 2.0.",
   "Sparse Mixture-of-Experts mit 501 Milliarden Parametern, davon 23 Milliarden aktiv, 1 Million Token Kontext, nur Text als Eingabe.",

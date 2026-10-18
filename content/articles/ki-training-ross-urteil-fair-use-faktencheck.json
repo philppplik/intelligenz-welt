@@ -1,138 +1,138 @@
 {
-  "slug": "ki-training-ross-urteil-fair-use-faktencheck",
-  "lang": "de",
-  "section": "analyse",
-  "type": "explainer",
-  "title": "KI-Training und Fair Use: Was das ROSS-Urteil wirklich entscheidet",
-  "dek": "Eine aktuelle Meldung bringt den Streit um Westlaw zurück. Das Urteil stammt vom September und betrifft keine generative KI. Die entscheidenden Grenzen im Faktencheck.",
-  "published": "2026-10-18T20:00:00+02:00",
-  "modified": "2026-10-18T20:00:00+02:00",
-  "author": "philipp-paulik",
-  "tags": [
-    "Urheberrecht",
-    "KI-Training",
-    "Fair Use",
-    "ROSS Intelligence",
-    "Thomson Reuters"
-  ],
-  "key_takeaways": [
-    "Der Third Circuit bestätigte am 29. September 2026 eine Teilentscheidung gegen ROSS. Die heute aufgegriffene Nachricht ist kein neues Wochenend-Urteil.",
-    "Geschützt sind hier redaktionelle Westlaw-Leitsätze, nicht die zugrunde liegenden US-Gerichtsentscheidungen.",
-    "ROSS nutzte die Texte für eine konkurrierende juristische Suchmaschine. Das Gericht verneinte Fair Use für diese konkrete Nutzung.",
-    "Das System war nicht generativ. Eine pauschale Entscheidung über das Training von ChatGPT oder anderen Sprachmodellen ist das nicht."
-  ],
-  "hero": {
-    "alt": "KI-generiertes Symbolbild: Eine transparente leuchtende Netzwerkstruktur und ein Stapel abstrakter Rechtsbücher liegen auf den Schalen einer Waage vor dunkelblauem Hintergrund.",
-    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
-    "ai_generated": true,
-    "credit": "KI-generiert (Intelligenz Welt)"
+ "slug": "ki-training-ross-urteil-fair-use-faktencheck",
+ "lang": "de",
+ "section": "analyse",
+ "type": "explainer",
+ "title": "KI-Training und Fair Use: Was das ROSS-Urteil wirklich entscheidet",
+ "dek": "Eine aktuelle Meldung bringt den Streit um Westlaw zurück. Das Urteil stammt vom September und betrifft keine generative KI. Die entscheidenden Grenzen im Faktencheck.",
+ "published": "2026-10-18T19:52:00+02:00",
+ "modified": "2026-10-18T19:52:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Urheberrecht",
+  "KI-Training",
+  "Fair Use",
+  "ROSS Intelligence",
+  "Thomson Reuters"
+ ],
+ "key_takeaways": [
+  "Der Third Circuit bestätigte am 29. September 2026 eine Teilentscheidung gegen ROSS. Die heute aufgegriffene Nachricht ist kein neues Wochenend-Urteil.",
+  "Geschützt sind hier redaktionelle Westlaw-Leitsätze, nicht die zugrunde liegenden US-Gerichtsentscheidungen.",
+  "ROSS nutzte die Texte für eine konkurrierende juristische Suchmaschine. Das Gericht verneinte Fair Use für diese konkrete Nutzung.",
+  "Das System war nicht generativ. Eine pauschale Entscheidung über das Training von ChatGPT oder anderen Sprachmodellen ist das nicht."
+ ],
+ "hero": {
+  "alt": "KI-generiertes Symbolbild: Eine transparente leuchtende Netzwerkstruktur und ein Stapel abstrakter Rechtsbücher liegen auf den Schalen einer Waage vor dunkelblauem Hintergrund.",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Ein US-Berufungsgericht hat ROSS Intelligence die Fair-Use-Verteidigung für das Training einer juristischen Suchmaschine mit Westlaw-Leitsätzen versagt. Aber: Die Entscheidung wurde bereits am **29. September 2026** eingereicht. Eine Meldung von The Verge vom heutigen 18. Oktober macht sie wieder aktuell. Sie ist weder ein neues Urteil dieses Wochenendes noch ein allgemeines Verbot von KI-Training."
   },
-  "body": [
-    {
-      "t": "p",
-      "x": "**Kurz gesagt:** Ein US-Berufungsgericht hat ROSS Intelligence die Fair-Use-Verteidigung für das Training einer juristischen Suchmaschine mit Westlaw-Leitsätzen versagt. Aber: Die Entscheidung wurde bereits am **29. September 2026** eingereicht. Eine Meldung von The Verge vom heutigen 18. Oktober macht sie wieder aktuell. Sie ist weder ein neues Urteil dieses Wochenendes noch ein allgemeines Verbot von KI-Training."
-    },
-    {
-      "t": "h2",
-      "x": "Erst das Datum prüfen, dann die Schlagzeile"
-    },
-    {
-      "t": "p",
-      "x": "Der [heutige Kurzbericht von The Verge](https://www.theverge.com/ai-artificial-intelligence/1013500/appeals-court-upholds-thomson-reuters-win-in-ai-training-lawsuit) meldet die Bestätigung der Entscheidung und bezeichnet die Begründung als noch versiegelt. Die von uns heute abgerufene [Originalentscheidung des Third Circuit](https://www2.ca3.uscourts.gov/opinarch/252153p.pdf) ist dagegen öffentlich lesbar. Auf ihrer ersten Seite steht das Einreichungsdatum 29. September 2026. Auch Reuters berichtete bereits an diesem Tag über das Ergebnis. Aus dem späteren Meldedatum lässt sich deshalb kein neuer Verfahrensschritt ableiten."
-    },
-    {
-      "t": "h2",
-      "x": "Worum es bei Westlaw und ROSS ging"
-    },
-    {
-      "t": "p",
-      "x": "Westlaw ergänzt Gerichtsentscheidungen um redaktionell verfasste Leitsätze, sogenannte Headnotes. Darin wählen Redakteure wichtige Rechtsaussagen aus und verdichten sie. Das Berufungsgericht sieht darin genügend eigene kreative Entscheidungen für Urheberrechtsschutz. Die Gerichtsentscheidungen selbst bleiben davon getrennt: Thomson Reuters beansprucht nach der Urteilsdarstellung kein Urheberrecht an diesen amtlichen Ausgangstexten."
-    },
-    {
-      "t": "p",
-      "x": "ROSS ließ Trainingsmemos mit juristischen Fragen und passenden Urteilspassagen erstellen. Dafür verwendeten beauftragte Dienstleister Westlaw-Headnotes. Die Memos trainierten ein System, das auf natürlichsprachliche Rechtsfragen relevante Passagen aus vorhandenen Entscheidungen finden sollte. Nach den Feststellungen des Gerichts sollte ROSS unmittelbar mit Westlaw konkurrieren. Die bestätigte Teilentscheidung betrifft 2.243 geschützte Headnotes."
-    },
-    {
-      "t": "h2",
-      "x": "Warum Fair Use hier nicht trägt"
-    },
-    {
-      "t": "p",
-      "x": "Das US-Recht prüft Fair Use nach [17 U.S.C. § 107](https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title17-section107) anhand mehrerer Faktoren. Dazu gehören Zweck und Charakter der Nutzung, Art des Werks, Umfang der Übernahme sowie die Folgen für den Markt. Das ist keine automatische Ausnahme für alles, was technisch als Training bezeichnet wird."
-    },
-    {
-      "t": "ul",
-      "items": [
-        "Zweck: Beide Angebote sollten juristische Recherche erleichtern. Das Training als Zwischenschritt änderte den letztlichen Nutzungszweck nach Ansicht des Gerichts höchstens geringfügig.",
-        "Art der Texte: Ihr überwiegend sachlicher Charakter sprach für ROSS. Das genügte in der Gesamtabwägung aber nicht.",
-        "Umfang: ROSS hätte Trainingsmemos aus den frei zugänglichen Ausgangsentscheidungen erstellen können. Die Übernahme der Headnotes war nach der Begründung nicht nötig.",
-        "Marktwirkung: Das Gericht berücksichtigte sowohl den Wettbewerb mit Westlaw als auch einen möglichen Lizenzmarkt für Headnotes als Trainingsmaterial."
-      ]
-    },
-    {
-      "t": "h2",
-      "x": "Kein pauschales Urteil über ChatGPT"
-    },
-    {
-      "t": "p",
-      "x": "Die wichtigste technische Einschränkung steht ausdrücklich im Urteil: ROSS war **keine generative KI**. Die Suchmaschine erzeugte keine neuen Formulierungen, sondern lieferte bestehende Urteilspassagen. Das Gericht grenzt den Fall auch von Verfahren über Sprachmodelle ab, die eigenständige Antworten erzeugen können. Wer daraus ableitet, dass jedes LLM-Training unzulässig sei, geht über diese Entscheidung hinaus."
-    },
-    {
-      "t": "p",
-      "x": "Ebenso wenig bedeutet die Unterscheidung, dass generative Modelle automatisch Fair Use erfüllen. Die konkrete Verwendung und die Beweislage bleiben entscheidend. Der Fall beantwortet außerdem keine deutschen oder europäischen urheberrechtlichen Fragen. Eine US-Fair-Use-Prüfung ist kein weltweiter Freibrief und kein weltweites Verbot."
-    },
-    {
-      "t": "h2",
-      "x": "Was Entwickler und Rechteinhaber mitnehmen können"
-    },
-    {
-      "t": "p",
-      "x": "Der praktische Punkt ist die Trennung von frei verfügbaren Informationen und geschützten redaktionellen Bearbeitungen. Eine öffentlich lesbare Quelle und eine dafür nutzbare Trainingslizenz sind nicht dasselbe. Für Teams ist es deshalb sinnvoll, Herkunft, Lizenz und vorgesehenen Nutzungszweck von Trainingsmaterial nachvollziehbar zu dokumentieren. Das ist unsere Einordnung des Falls, keine Rechtsberatung und keine Aussage, dass jede Nutzung eine Lizenz braucht."
-    },
-    {
-      "t": "p",
-      "x": "Dieser Beitrag ist mit KI-Unterstützung entstanden. Titelbild KI-generiert. Die Darstellung beruht auf den verlinkten Quellen; es wurden keine eigenen Modelltests durchgeführt. Stand: 18. Oktober 2026."
-    }
-  ],
-  "faq": [
-    {
-      "q": "Ist das ROSS-Urteil neu vom 18. Oktober 2026?",
-      "a": "Nein. Das Originalurteil nennt den 29. September 2026 als Einreichungsdatum. Am 18. Oktober erschien eine weitere Meldung darüber."
-    },
-    {
-      "q": "Hat das Gericht KI-Training generell verboten?",
-      "a": "Nein. Es verneinte Fair Use für die konkrete Verwendung geschützter Westlaw-Headnotes beim Aufbau einer konkurrierenden juristischen Suchmaschine."
-    },
-    {
-      "q": "Gilt die Entscheidung direkt für generative Sprachmodelle?",
-      "a": "Der Fall betrifft ein nicht-generatives Suchsystem. Das Gericht hebt diesen Unterschied ausdrücklich hervor. Daraus folgt weder eine automatische Erlaubnis noch ein allgemeines Verbot für LLM-Training."
-    }
-  ],
-  "sources": [
-    {
-      "title": "Thomson Reuters Enterprise Centre GmbH v. ROSS Intelligence Inc., No. 25-2153, Opinion filed September 29, 2026",
-      "publisher": "U.S. Court of Appeals for the Third Circuit",
-      "url": "https://www2.ca3.uscourts.gov/opinarch/252153p.pdf",
-      "accessed": "2026-10-18"
-    },
-    {
-      "title": "17 USC 107: Limitations on exclusive rights: Fair use",
-      "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
-      "url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title17-section107",
-      "accessed": "2026-10-18"
-    },
-    {
-      "title": "Appeals court upholds Thomson Reuters win in AI training lawsuit.",
-      "publisher": "The Verge, 18.10.2026",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1013500/appeals-court-upholds-thomson-reuters-win-in-ai-training-lawsuit",
-      "accessed": "2026-10-18"
-    },
-    {
-      "title": "US appeals court upholds Thomson Reuters’ landmark win in AI training lawsuit",
-      "publisher": "Reuters, 29.09.2026",
-      "url": "https://www.reuters.com/business/media-telecom/us-appeals-court-upholds-thomson-reuters-landmark-win-ai-training-lawsuit-2026-09-29/",
-      "accessed": "2026-10-18"
-    }
-  ],
-  "related": []
+  {
+   "t": "h2",
+   "x": "Erst das Datum prüfen, dann die Schlagzeile"
+  },
+  {
+   "t": "p",
+   "x": "Der [heutige Kurzbericht von The Verge](https://www.theverge.com/ai-artificial-intelligence/1013500/appeals-court-upholds-thomson-reuters-win-in-ai-training-lawsuit) meldet die Bestätigung der Entscheidung und bezeichnet die Begründung als noch versiegelt. Die von uns heute abgerufene [Originalentscheidung des Third Circuit](https://www2.ca3.uscourts.gov/opinarch/252153p.pdf) ist dagegen öffentlich lesbar. Auf ihrer ersten Seite steht das Einreichungsdatum 29. September 2026. Auch Reuters berichtete bereits an diesem Tag über das Ergebnis. Aus dem späteren Meldedatum lässt sich deshalb kein neuer Verfahrensschritt ableiten."
+  },
+  {
+   "t": "h2",
+   "x": "Worum es bei Westlaw und ROSS ging"
+  },
+  {
+   "t": "p",
+   "x": "Westlaw ergänzt Gerichtsentscheidungen um redaktionell verfasste Leitsätze, sogenannte Headnotes. Darin wählen Redakteure wichtige Rechtsaussagen aus und verdichten sie. Das Berufungsgericht sieht darin genügend eigene kreative Entscheidungen für Urheberrechtsschutz. Die Gerichtsentscheidungen selbst bleiben davon getrennt: Thomson Reuters beansprucht nach der Urteilsdarstellung kein Urheberrecht an diesen amtlichen Ausgangstexten."
+  },
+  {
+   "t": "p",
+   "x": "ROSS ließ Trainingsmemos mit juristischen Fragen und passenden Urteilspassagen erstellen. Dafür verwendeten beauftragte Dienstleister Westlaw-Headnotes. Die Memos trainierten ein System, das auf natürlichsprachliche Rechtsfragen relevante Passagen aus vorhandenen Entscheidungen finden sollte. Nach den Feststellungen des Gerichts sollte ROSS unmittelbar mit Westlaw konkurrieren. Die bestätigte Teilentscheidung betrifft 2.243 geschützte Headnotes."
+  },
+  {
+   "t": "h2",
+   "x": "Warum Fair Use hier nicht trägt"
+  },
+  {
+   "t": "p",
+   "x": "Das US-Recht prüft Fair Use nach [17 U.S.C. § 107](https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title17-section107) anhand mehrerer Faktoren. Dazu gehören Zweck und Charakter der Nutzung, Art des Werks, Umfang der Übernahme sowie die Folgen für den Markt. Das ist keine automatische Ausnahme für alles, was technisch als Training bezeichnet wird."
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Zweck: Beide Angebote sollten juristische Recherche erleichtern. Das Training als Zwischenschritt änderte den letztlichen Nutzungszweck nach Ansicht des Gerichts höchstens geringfügig.",
+    "Art der Texte: Ihr überwiegend sachlicher Charakter sprach für ROSS. Das genügte in der Gesamtabwägung aber nicht.",
+    "Umfang: ROSS hätte Trainingsmemos aus den frei zugänglichen Ausgangsentscheidungen erstellen können. Die Übernahme der Headnotes war nach der Begründung nicht nötig.",
+    "Marktwirkung: Das Gericht berücksichtigte sowohl den Wettbewerb mit Westlaw als auch einen möglichen Lizenzmarkt für Headnotes als Trainingsmaterial."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Kein pauschales Urteil über ChatGPT"
+  },
+  {
+   "t": "p",
+   "x": "Die wichtigste technische Einschränkung steht ausdrücklich im Urteil: ROSS war **keine generative KI**. Die Suchmaschine erzeugte keine neuen Formulierungen, sondern lieferte bestehende Urteilspassagen. Das Gericht grenzt den Fall auch von Verfahren über Sprachmodelle ab, die eigenständige Antworten erzeugen können. Wer daraus ableitet, dass jedes LLM-Training unzulässig sei, geht über diese Entscheidung hinaus."
+  },
+  {
+   "t": "p",
+   "x": "Ebenso wenig bedeutet die Unterscheidung, dass generative Modelle automatisch Fair Use erfüllen. Die konkrete Verwendung und die Beweislage bleiben entscheidend. Der Fall beantwortet außerdem keine deutschen oder europäischen urheberrechtlichen Fragen. Eine US-Fair-Use-Prüfung ist kein weltweiter Freibrief und kein weltweites Verbot."
+  },
+  {
+   "t": "h2",
+   "x": "Was Entwickler und Rechteinhaber mitnehmen können"
+  },
+  {
+   "t": "p",
+   "x": "Der praktische Punkt ist die Trennung von frei verfügbaren Informationen und geschützten redaktionellen Bearbeitungen. Eine öffentlich lesbare Quelle und eine dafür nutzbare Trainingslizenz sind nicht dasselbe. Für Teams ist es deshalb sinnvoll, Herkunft, Lizenz und vorgesehenen Nutzungszweck von Trainingsmaterial nachvollziehbar zu dokumentieren. Das ist unsere Einordnung des Falls, keine Rechtsberatung und keine Aussage, dass jede Nutzung eine Lizenz braucht."
+  },
+  {
+   "t": "p",
+   "x": "Dieser Beitrag ist mit KI-Unterstützung entstanden. Titelbild KI-generiert. Die Darstellung beruht auf den verlinkten Quellen; es wurden keine eigenen Modelltests durchgeführt. Stand: 18. Oktober 2026."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist das ROSS-Urteil neu vom 18. Oktober 2026?",
+   "a": "Nein. Das Originalurteil nennt den 29. September 2026 als Einreichungsdatum. Am 18. Oktober erschien eine weitere Meldung darüber."
+  },
+  {
+   "q": "Hat das Gericht KI-Training generell verboten?",
+   "a": "Nein. Es verneinte Fair Use für die konkrete Verwendung geschützter Westlaw-Headnotes beim Aufbau einer konkurrierenden juristischen Suchmaschine."
+  },
+  {
+   "q": "Gilt die Entscheidung direkt für generative Sprachmodelle?",
+   "a": "Der Fall betrifft ein nicht-generatives Suchsystem. Das Gericht hebt diesen Unterschied ausdrücklich hervor. Daraus folgt weder eine automatische Erlaubnis noch ein allgemeines Verbot für LLM-Training."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Thomson Reuters Enterprise Centre GmbH v. ROSS Intelligence Inc., No. 25-2153, Opinion filed September 29, 2026",
+   "publisher": "U.S. Court of Appeals for the Third Circuit",
+   "url": "https://www2.ca3.uscourts.gov/opinarch/252153p.pdf",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "17 USC 107: Limitations on exclusive rights: Fair use",
+   "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives",
+   "url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title17-section107",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Appeals court upholds Thomson Reuters win in AI training lawsuit.",
+   "publisher": "The Verge, 18.10.2026",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013500/appeals-court-upholds-thomson-reuters-win-in-ai-training-lawsuit",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "US appeals court upholds Thomson Reuters’ landmark win in AI training lawsuit",
+   "publisher": "Reuters, 29.09.2026",
+   "url": "https://www.reuters.com/business/media-telecom/us-appeals-court-upholds-thomson-reuters-landmark-win-ai-training-lawsuit-2026-09-29/",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
 }

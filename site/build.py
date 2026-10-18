@@ -18,28 +18,28 @@ for slug,cat,date in ART:
     arts.append(dict(slug=slug,cat=cat,date=date,title=title,body=body,lead=lead[:200]))
     print(slug,len(body),title[:60])
 CSS='''
-:root{--bg:#fff;--fg:#0f172a;--mut:#64748b;--line:#e2e8f0;--ac:#0d9488;--acd:#0f766e;--soft:#f1f5f9;--dark:#0b1220}
+:root{--bg:#fff;--fg:#0f172a;--mut:#64748b;--line:#e2e8f0;--ac:#1d6bc0;--acd:#093A6A;--soft:#f1f5f9;--dark:#0b1220}
 *{box-sizing:border-box}body{margin:0;font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:var(--bg)}
 a{color:inherit;text-decoration:none}a:hover{color:var(--ac)}
 .w{max-width:1180px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:9}
-.nav{display:flex;align-items:center;gap:28px;height:60px}.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:9px}.logo img{display:block;width:30px;height:30px}.logo b{color:var(--ac)}
+.nav{display:flex;align-items:center;gap:28px;height:60px}.logo{white-space:nowrap;flex:none;font-weight:800;font-size:19px;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:9px}.logo img{display:block;width:30px;height:30px}.logo b{color:var(--ac)}
 .nav a.l{font-size:14px;color:var(--mut);font-weight:500}.nav a.l:hover,.nav a.act{color:var(--fg)}.sp{flex:1}
 .btn{background:var(--fg);color:#fff;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:600}.btn:hover{background:var(--ac);color:#fff}
 .hero{padding:56px 0 32px}.hero h1{font-size:44px;line-height:1.1;letter-spacing:-.03em;margin:0 0 14px;max-width:760px}.hero p{color:var(--mut);font-size:18px;max-width:640px;margin:0}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}.stat{border:1px solid var(--line);border-radius:12px;padding:16px}.stat b{display:block;font-size:26px;letter-spacing:-.02em}.stat span{font-size:13px;color:var(--mut)}
 h2.sec{font-size:22px;letter-spacing:-.02em;margin:40px 0 16px;display:flex;justify-content:space-between;align-items:baseline}h2.sec a{font-size:14px;color:var(--ac);font-weight:600}
 .grid{display:grid;grid-template-columns:2fr 1fr;gap:32px}
-.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;transition:.15s}.card:hover{border-color:var(--ac);box-shadow:0 6px 24px rgba(13,148,136,.1)}
-.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--acd);background:#ccfbf1;padding:2px 8px;border-radius:99px}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;transition:.15s}.card:hover{border-color:var(--ac);box-shadow:0 6px 24px rgba(29,107,192,.12)}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--acd);background:#e3effb;padding:2px 8px;border-radius:99px}
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card h3{margin:10px 0 6px;font-size:18px;line-height:1.3;letter-spacing:-.01em}.card p{margin:0;color:var(--mut);font-size:14px}.meta{font-size:12px;color:var(--mut);margin-top:10px}
 .feed{list-style:none;margin:0;padding:0}.feed li{padding:14px 0;border-bottom:1px solid var(--line)}.feed a{font-weight:600;font-size:15px;line-height:1.4;display:block}.feed .m{font-size:12px;color:var(--mut);margin-top:4px}
 table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding:10px;border-bottom:1px solid var(--line)}td{padding:11px 10px;border-bottom:1px solid var(--line)}tr:hover td{background:var(--soft)}
-.bar{height:6px;border-radius:3px;background:#ccfbf1;min-width:40px}.bar i{display:block;height:100%;background:var(--ac);border-radius:3px}
+.bar{height:6px;border-radius:3px;background:#e3effb;min-width:40px}.bar i{display:block;height:100%;background:var(--ac);border-radius:3px}
 .art{max-width:720px;margin:0 auto;padding:40px 20px}.art h1{font-size:38px;line-height:1.15;letter-spacing:-.03em}.art p{font-size:18px;line-height:1.75}.art h2{margin-top:36px;letter-spacing:-.02em}.art blockquote{border-left:3px solid var(--ac);margin:24px 0;padding:4px 20px;color:var(--mut);font-style:italic}
 footer{background:var(--dark);color:#94a3b8;margin-top:80px;padding:44px 0;font-size:14px}footer a{color:#cbd5e1}footer a:hover{color:#fff}footer .c{display:flex;gap:48px;flex-wrap:wrap}footer h4{color:#fff;margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em}footer a{display:block;margin:6px 0}
 .upd{font-size:13px;color:var(--mut)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:6px}
-@media(max-width:800px){.grid>*,.cards>*{min-width:0}.tw{overflow-x:auto}body{overflow-x:hidden}.grid,.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:32px}.nav{gap:14px;overflow-x:auto}.nav a.l{white-space:nowrap}.art h1{font-size:28px}table{font-size:12px}}
+@media(max-width:800px){.nav{height:auto;flex-wrap:wrap;gap:4px 14px;padding:8px 0;overflow:visible}.logo{flex:none;white-space:nowrap;font-size:18px}.logo img{flex:none;width:28px;height:28px}.sp{flex:1}.btn{padding:6px 12px;font-size:13px}.nav a.l{order:5;font-size:13px;white-space:nowrap}.nav a.btn{order:3}.sp{order:2}.nav::after{content:'';order:4;flex-basis:100%;height:0}.nav{row-gap:0}.grid>*,.cards>*{min-width:0}.tw{overflow-x:auto}body{overflow-x:hidden}.grid,.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:32px}.nav{gap:14px;overflow-x:auto}.nav a.l{white-space:nowrap}.art h1{font-size:28px}table{font-size:12px}}
 '''
 open(OUT+'/style.css','w').write(CSS)
 NAVL=[('/news/','KI-News'),('/modelle/','Modell-Radar'),('/analysen/','Analysen'),('/ueber-uns/','Über uns')]
@@ -52,7 +52,7 @@ def page(path,title,desc,body,ld=None,typ='website',og=None,act=''):
 <title>%s</title><meta name="description" content="%s"><link rel="canonical" href="%s"><meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:title" content="%s"><meta property="og:description" content="%s"><meta property="og:url" content="%s"><meta property="og:type" content="%s"><meta property="og:site_name" content="Intelligenz Welt"><meta property="og:locale" content="de_DE"><meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/rss+xml" title="Intelligenz Welt" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/branding/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="stylesheet" href="/style.css">%s</head><body>
-<header><div class="w nav"><a class="logo" href="/"><img src="/assets/branding/logo.svg" alt="" width="30" height="30">Intelligenz<b>Welt</b></a>%s<span class="sp"></span><a class="btn" href="/feed.xml">RSS</a></div></header>
+<header><div class="w nav"><a class="logo" href="/"><img src="/assets/branding/logo.svg" alt="" width="30" height="30"><span>Intelligenz<b>Welt</b></span></a>%s<span class="sp"></span><a class="btn" href="/feed.xml">RSS</a></div></header>
 %s
 <footer><div class="w c"><div><b style="color:#fff;font-size:17px">Intelligenz Welt</b><p style="max-width:300px">KI-News, Modell-Radar und Analysen auf Deutsch. News werden automatisch aus öffentlichen RSS-Feeds und APIs aggregiert.</p></div><div><h4>Magazin</h4><a href="/news/">KI-News</a><a href="/modelle/">Modell-Radar</a><a href="/analysen/">Analysen</a><a href="/feed.xml">RSS-Feed</a></div><div><h4>Rechtliches</h4><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/kontakt/">Kontakt</a></div></div><div class="w" style="margin-top:24px">© %d Intelligenz Welt</div></footer></body></html>'''%(esc(title),esc(desc),url,esc(title),esc(desc),url,typ,ldj,nav,body,NOW.year)
     p=OUT+path+('index.html' if path.endswith('/') else '')
