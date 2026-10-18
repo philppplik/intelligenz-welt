@@ -5,8 +5,8 @@
  "type": "news",
  "title": "opencode: Ein MCP-Server reichte für Code-Ausführung auf Windows",
  "dek": "Pillar Security beschreibt eine kritische Lücke im Coding-Agenten opencode. Sie ist gepatcht, aber ohne CVE und ohne Sicherheitshinweis. Wer betroffen ist und was jetzt zu tun ist.",
- "published": "2026-10-18T20:00:00+02:00",
- "modified": "2026-10-18T20:00:00+02:00",
+ "published": "2026-10-18T20:29:00+02:00",
+ "modified": "2026-10-18T20:29:00+02:00",
  "author": "philipp-paulik",
  "tags": [
   "opencode",
