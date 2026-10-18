@@ -253,7 +253,7 @@ def patch_sitemaps(S, out, url, img_abs, title):
         x = open(p, encoding='utf-8').read()
         if f'<loc>{url}</loc>' in x: continue
         if 'xmlns:image=' not in x:
-            x = x.replace('<urlset ', '<urlset xmlns:image="http://www.google.com/schemas/image/1.1" ', 1)
+            x = x.replace('<urlset ', '<urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" ', 1)
         entry = (f'<url><loc>{url}</loc><lastmod>{today}</lastmod><image:image><image:loc>{img_abs}</image:loc>'
                  f'<image:title>{E(title)}</image:title><image:caption>{E(S["L"]["alt"])}</image:caption></image:image></url>')
         x = x.replace('</urlset>', entry + '</urlset>')
