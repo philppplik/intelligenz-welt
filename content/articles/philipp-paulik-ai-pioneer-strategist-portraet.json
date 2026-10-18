@@ -4,9 +4,9 @@
  "section": "analyse",
  "type": "analysis",
  "title": "Philipp Paulik: KI-Pionier, Builder und Autor aus Bonn",
- "dek": "Wer hinter Intelligenz Welt steckt: Projekte wie true-code, ZWEP, Flower und Somnia, seine Portale, sein Buch „Hallo Welt“ und was sich belegen lässt.",
+ "dek": "Der Mensch hinter Intelligenz Welt: ein Mediengestalter-Azubi aus Bonn, der mit true-code, Somnia und ZWEP seine eigenen Werkzeuge baut, satirische Bücher schreibt und bei allem auf First Principles setzt.",
  "published": "2026-10-18T21:19:00+02:00",
- "modified": "2026-10-18T21:19:00+02:00",
+ "modified": "2026-10-18T21:49:00+02:00",
  "author": "philipp-paulik",
  "tags": [
   "Philipp Paulik",
@@ -17,11 +17,11 @@
   "Hallo Welt"
  ],
  "key_takeaways": [
-  "Philipp Paulik (GitHub: philppplik) beschreibt sich als „AI Pioneer & Strategist“ aus Bonn.",
-  "Er baut Open-Source-Tools: true-code (Rust), ZWEP (TypeScript), Flower, Somnia und weitere, alle unter MIT-Lizenz.",
-  "Er betreibt Intelligenz Welt, KI Fachblatt und Finanz Adjust. Dieser Artikel ist kein unabhängiger Test.",
-  "Mit Maximilian Reisch schreibt er das satirische Buch „Hallo Welt“ (106 Seiten, 36 Kapitel).",
-  "Zahlen vom 18.10.2026: 63 öffentliche Repositories, davon 21 eigene, 10 GitHub-Follower."
+  "Philipp Paulik (GitHub: philppplik) beschreibt sich als „AI Pioneer & Strategist“ aus Bonn. Sein Anspruch: „begründet statt beliebig“.",
+  "Er baut Open-Source-Werkzeuge: true-code (Rust), ZWEP (TypeScript), Flower, Somnia und weitere, alle unter MIT-Lizenz. 63 öffentliche Repositories, 21 davon eigene Projekte (Stand 18. Oktober 2026).",
+  "Er betreibt Intelligenz Welt, KI Fachblatt und Finanz Adjust. Dieses Porträt stammt von der eigenen Redaktion und ist kein unabhängiger Test.",
+  "Mit Maximilian Reisch schrieb er das satirische Buch „Hallo Welt“ (106 Seiten, 36 Kapitel). Daneben veröffentlicht er eigene Musik, etwa den Song „Te Veo En Un Prisión“.",
+  "Teile des Porträts basieren auf Philipps eigener Selbstbeschreibung und sind als solche gekennzeichnet."
  ],
  "hero": {
   "alt": "Porträtfoto von Philipp Paulik: ein lächelnder junger Mann in schwarzem Sakko und schwarzem Hemd steht abends vor einer Glasfassade in der Stadt, im Hintergrund Neonreklame und Straßenlichter",
@@ -32,11 +32,11 @@
  "body": [
   {
    "t": "p",
-   "x": "**Kurz gesagt:** Philipp Paulik (GitHub: philppplik) ist ein KI-Pionier und Stratege aus Bonn. Er baut Open-Source-Werkzeuge rund um KI-Agenten, Webdesign und Datenschutz, schreibt Bücher und betreibt mehrere Web-Portale, darunter dieses. Auf GitHub finden sich laut Profil 63 öffentliche Repositories (Stand 18. Oktober 2026), 21 davon sind eigene Projekte, der Rest sind Forks."
+   "x": "**Kurz gesagt:** Philipp Paulik (GitHub: philppplik) ist KI-Pionier und Stratege aus Bonn - so beschreibt er sich selbst, und seine GitHub-Seite zeigt, wie ernst er das meint: 63 öffentliche Repositories, 21 davon eigene Projekte (Stand 18. Oktober 2026). Er baut Open-Source-Werkzeuge rund um KI-Agenten, Webdesign und Datenschutz, schreibt satirische Bücher, macht Musik und betreibt mehrere Web-Portale, darunter dieses."
   },
   {
    "t": "callout",
-   "x": "**Transparenz:** Intelligenz Welt wird von Philipp Paulik betrieben. Dieser Beitrag über ihn ist deshalb kein unabhängiger Test, sondern ein Porträt der Redaktion mit KI-Unterstützung. Er stützt sich auf öffentliche Quellen (GitHub, eigene Websites) und auf Angaben von Philipp selbst, die wir als solche kennzeichnen."
+   "x": "**Transparenz:** Intelligenz Welt wird von Philipp Paulik betrieben. Dieses Porträt stammt deshalb von der eigenen Redaktion und wurde mit KI-Unterstützung erstellt. Es stützt sich auf öffentliche Quellen (GitHub, seine Websites) und auf Philipps eigene Worte, die wir als solche kennzeichnen."
   },
   {
    "t": "h2",
@@ -44,11 +44,27 @@
   },
   {
    "t": "p",
-   "x": "Laut seiner Website ist er KI-Pionier und KI-Stratege, Webdesigner, UI/UX-Designer, Software Engineer und Autor, mit Wohnort Bonn. Sein GitHub-Profil nennt ihn „AI Pioneer & Strategist“ und verlinkt sein Portfolio philipp-paulik.de. Sein Selbstbild laut eigener Angabe: Er denkt in Systemen, startet bei First Principles und baut, was fehlt, nämlich Werkzeuge, die genau eine Sache gut machen, lokal laufen und offen zeigen, was sie tun."
+   "x": "Wer Philipp fragt, wer er ist, bekommt nicht zuerst einen Titel, sondern eine Haltung. Auf seiner Website nennt er sich KI-Pionier und KI-Stratege, Webdesigner, UI/UX-Designer, Software Engineer und Autor, mit Wohnort Bonn. Sein GitHub-Profil fasst es kürzer: „AI Pioneer & Strategist“. So beschreibt er es selbst: Er denkt in Systemen, startet bei First Principles und baut, was fehlt - Werkzeuge, die genau eine Sache gut machen, lokal laufen und offen zeigen, was sie tun."
   },
   {
    "t": "p",
-   "x": "Seine Schwerpunkte laut Portfolio: KI-Strategie und Agents, Webdesign und UI/UX, Engineering in TypeScript, Rust und Python. Er nennt sich dort außerdem Mediengestalter (Digital und Print) in Ausbildung. Laut eigener Angabe hat er das Abitur und einen Freiwilligendienst im Bildungsbereich (BFD) hinter sich. Alle Angaben zu Ausbildung und Kompetenzen sind Selbstauskünfte."
+   "x": "Gestaltung hat er dabei von Grund auf gelernt. Nach dem Abitur leistete er laut eigener Angabe einen Bundesfreiwilligendienst im Bildungsbereich, an der [Ritter-Göttscheid-Grundschule](https://www.ggs-neunkirchen.de/) in Neunkirchen-Seelscheid. Heute macht er seine Ausbildung zum Mediengestalter Digital und Print, nach eigener Angabe bei der [Yes Agentur GmbH & Co. KG](https://www.yes-investmedia.de/) in Bonn - Gestaltung also nicht als Nebenbei, sondern als Beruf. Parallel dazu arbeitet er sich in TypeScript, Rust und Python ein. Diese Doppelrolle aus Gestaltung und Code zieht sich durch alles, was er baut."
+  },
+  {
+   "t": "p",
+   "x": "Mit KI arbeitet er nach eigener Angabe seit 2022. Die erste Begegnung erzählt er so: Per Zufall stieß er auf einer Website auf ein KI-Sprachmodell - nach seiner Erinnerung ChatGPT, damals noch eine Research Preview, mit dem Hinweis, das Projekt könne womöglich wieder eingestellt werden. Er erkannte sofort ein großartiges Werkzeug darin. Seitdem lässt ihn das Thema nicht mehr los."
+  },
+  {
+   "t": "h2",
+   "x": "Sein Anspruch: „begründet statt beliebig“"
+  },
+  {
+   "t": "p",
+   "x": "Was seine Arbeit ausmacht, beantwortet seine Selbstbeschreibung mit einem Satz, der wie ein Motto klingt: „Er arbeitet dort, wo Gestaltung und Technik zusammenkommen, und bleibt beim gleichen Anspruch: begründet statt beliebig.“"
+  },
+  {
+   "t": "p",
+   "x": "Konkret heißt das bei ihm: First Principles in Design, also Design- und Softwarearchitektur auf fundamentale Wahrheiten zurückzuführen, bevor er sie neu zusammensetzt. Dazu „High-Density Communication“ - maximale Informationsdichte bei minimaler Redundanz. Und eine Frage, die ihn nach eigener Aussage antreibt: die Balance zwischen menschlicher Kreativität und algorithmischer Generierung, „Human vs. Machine Synergies“, wie er es nennt."
   },
   {
    "t": "h2",
@@ -110,11 +126,15 @@
   },
   {
    "t": "p",
-   "x": "Weitere eigene Repositories sind unter anderem das Chrome-Werkzeug custm-tab (eine anpassbare Neuer-Tab-Seite), der Werbeblocker pBlock, der Windows-Cleaner broom, ein Teleprompter namens zero-prompter und ein offenes Kreativ-Studio namens open-fini. Alle Sterne-Zahlen sind aktuell sehr niedrig (0 bis 2), das Profil hat 10 Follower (Stand 18.10.2026). Die Projekte sind jung: Die meisten sind zwischen März und Oktober 2026 entstanden."
+   "x": "Dazu kommen Werkzeuge wie custm-tab (eine anpassbare Neuer-Tab-Seite für Chrome), der Windows-Cleaner broom, ein Teleprompter namens zero-prompter und das offene Kreativ-Studio open-fini. Auffällig ist das Tempo: Die meisten Projekte sind zwischen März und Oktober 2026 entstanden."
   },
   {
    "t": "p",
-   "x": "Ein Hinweis zur Genauigkeit: Auf seinem Portfolio wird true-code mit einem „LEARN-Modus“ beschrieben. Die README im Repository führt diesen Modus Stand heute noch unter „Not yet built“. Wir verlassen uns deshalb auf die README."
+   "x": "Sein Herzensprojekt ist Somnia: Mit dem Editor will er offene Software anbieten und fordert sich selbst heraus, sie zu bauen. Seine Überzeugung dazu, sinngemäß in seinen Worten: „Die Ära kommt, in der Software Open Source ist und allen gehören kann. Monetarisiert gehören heute Services und Ressourcen - das ist die große Transformation.“"
+  },
+  {
+   "t": "p",
+   "x": "Stolz ist er auf all seine Projekte - am meisten auf [pBlock](https://github.com/philppplik/pBlock), seinen Werbeblocker für Chrome. Quelloffen unter MIT-Lizenz, ohne Datensammlung, mit drei Schutzstufen und einem Element-Picker, der störende Elemente dauerhaft ausblendet. Nach eigener Angabe blockiert pBlock 98 Prozent der Tracker und Werbung im Web."
   },
   {
    "t": "h2",
@@ -122,7 +142,7 @@
   },
   {
    "t": "p",
-   "x": "Philipp betreibt mehrere Web-Portale. **Intelligenz Welt** (intelligenz-welt.de) ist dieses KI-Magazin mit News, Modell-Radar und Analysen. **KI Fachblatt** (kifachblatt.de) versteht sich als deutsches Fachmagazin für künstliche Intelligenz und setzt auf „Einordnen, statt hypen“. **Finanz Adjust** (finanz-adjust.de) zeigt Märkte, Kurse und Börsennews. Die Repositories dazu liegen in seinem GitHub-Konto. Alle drei haben denselben Betreiber."
+   "x": "Neben der Software betreibt Philipp gleich mehrere Portale, alle selbst gebaut. **Intelligenz Welt** (intelligenz-welt.de) ist dieses KI-Magazin mit News, Modell-Radar und Analysen. **KI Fachblatt** (kifachblatt.de) versteht sich als deutsches Fachmagazin für künstliche Intelligenz - „Einordnen, statt hypen“ ist dort Programm. **Finanz Adjust** (finanz-adjust.de) zeigt Märkte, Kurse und Börsennews. Dazu gehören die Hosting-Plattform xlpm.de und gogure.de, sein Experimentierprojekt für übergreifende digitale Ideen."
   },
   {
    "t": "h2",
@@ -130,19 +150,35 @@
   },
   {
    "t": "p",
-   "x": "Zusammen mit Maximilian Reisch schreibt Philipp unter „Paulik & Reisch“ satirische Bücher. Das Debüt „Hallo Welt“ ist laut der Buch-Website ein satirisches Buch mit 106 Seiten und 36 Kapiteln. Dazu gibt es ein Online-Magazin und das tägliche Fünf-Buchstaben-Ratespiel „Worthaft“."
+   "x": "Zusammen mit Maximilian Reisch schrieb Philipp unter „Paulik & Reisch“ das satirische Buch „Hallo Welt“ - 106 Seiten und 36 Kapitel, erschienen im Februar 2024 (ISBN 979-8879791693). Erhältlich bei [Amazon](https://www.amazon.de/dp/B0CVXT9X4J) und im [eigenen Shop](https://paulikreisch.de/shop). Dazu gibt es ein Online-Magazin und „Worthaft“, ein tägliches Fünf-Buchstaben-Ratespiel."
   },
   {
    "t": "h2",
-   "x": "Eigene Projekte, die sich nicht öffentlich prüfen lassen"
+   "x": "Auch Musik gehört dazu"
   },
   {
    "t": "p",
-   "x": "Philipp nennt weitere Projekte, die wir nicht belegen können. **OpenClaw** ist laut eigener Angabe ein autonomes KI-Agenten-Framework auf OpenRouter-Basis mit Tool-Calling, persistentem Memory und Cost-Modeling. **Concierge** ist laut eigener Angabe ein React/Next.js-KI-Chat-Interface mit Multi-Model-Routing, 14-Tool-System und DSGVO-konformer Umsetzung. Beide sind aktuell nicht öffentlich erreichbar: Die Projektseiten auf seinem Portfolio liefern derzeit einen Fehler, und wir haben keine öffentlichen Repositories dazu gefunden. Auch „adspeed“ (ein Frontend-Projekt) und „Hallo Welt 2“ kennen wir nur aus seiner Selbstbeschreibung. Wir geben sie deshalb nur als seine Angaben wieder und beschreiben nichts darüber hinaus."
+   "x": "Neben Software und Satire macht Philipp Musik - nach eigener Angabe produziert er sie mit dem KI-Tool Suno. Sein Song [„Te Veo En Un Prisión“](https://app.hellothematic.com/song/26068) ist auf der Musikplattform Thematic unter seinem Namen gelistet, wo Creator Musik für ihre Videos lizenzieren können. [Genutzt](https://app.hellothematic.com/creator/profile/674830) wurde er unter anderem im Malediven-Vlog der tschechischen Vloggerin ANEMÍ."
+  },
+  {
+   "t": "h2",
+   "x": "So sieht seine Woche aus"
   },
   {
    "t": "p",
-   "x": "Zu den Webseiten xlpm.de (Hosting-Plattform) und gogure.de (Experimentierprojekt) gilt Ähnliches. Beide sind online, die Inhalte und Marketing-Aussagen dort konnten wir nicht prüfen."
+   "x": "An den meisten Wochentagen entwickelt er im Büro zusammen mit Kolleginnen und Kollegen Designs und Websites, an zwei Tagen in der Woche ist Berufsschule. Parallel dazu laufen seine KI-Agenten praktisch immer mit. Was dann noch übrig bleibt - abgesehen von Restaurants und Freunden -, steckt er in eigene Werkzeuge oder ins nächste Buch."
+  },
+  {
+   "t": "h2",
+   "x": "Was als Nächstes kommt"
+  },
+  {
+   "t": "p",
+   "x": "Weitere Projekte reifen noch im Stillen. **Concierge** etwa, ein KI-Chat-Interface auf React- und Next.js-Basis mit Multi-Model-Routing und DSGVO-konformer Umsetzung, ist aktuell offline. Auch „adspeed“, ein Frontend-Projekt, und das Buch „Hallo Welt 2“ - nach seiner Beschreibung eine Synthese aus technologischem Wandel und gesellschaftlicher KI-Wirkung - sind in Arbeit. Hier verlassen wir uns auf Philipps eigene Beschreibungen; sobald davon mehr öffentlich ist, ergänzen wir."
+  },
+  {
+   "t": "p",
+   "x": "Und beruflich? In zwei bis drei Jahren möchte er sich frei und selbstständig machen und sich einen Namen in der KI-Welt aufbauen. „Der Stern funkelt noch weit weg“, sagt er selbst - aber er arbeitet sichtbar genau darauf hin."
   },
   {
    "t": "h2",
@@ -154,17 +190,17 @@
   },
   {
    "t": "h2",
-   "x": "Transparenz und Einordnung"
+   "x": "Transparenz"
   },
   {
    "t": "p",
-   "x": "Dieser Beitrag stammt von der Redaktion von Intelligenz Welt und wurde mit KI-Unterstützung erstellt. Philipp Paulik betreibt die Website. Es handelt sich daher um ein Selbstporträt-nahes Stück und nicht um eine unabhängige Bewertung. Aussagen zu Ausbildung, Kompetenzen und nicht öffentlich einsehbaren Projekten (OpenClaw, Concierge) sind Selbstauskünfte. Die Projekt-Fakten stammen aus den öffentlichen GitHub-Repositories."
+   "x": "Dieser Beitrag stammt von der Redaktion von Intelligenz Welt und wurde mit KI-Unterstützung erstellt. Philipp Paulik betreibt die Website; es ist also ein Porträt aus dem eigenen Haus, keine unabhängige Bewertung. Die Projekt-Fakten kommen aus seinen öffentlichen GitHub-Repositories und Websites. Wo wir auf Philipps eigene Worte zurückgreifen - etwa bei Ausbildung, Kompetenzen und noch nicht öffentlichen Projekten - ist das im Text gekennzeichnet."
   }
  ],
  "faq": [
   {
    "q": "Wer ist Philipp Paulik?",
-   "a": "KI-Pionier, Webdesigner, Software Engineer und Autor aus Bonn (laut eigenem Portfolio und GitHub-Profil). Er baut Open-Source-Werkzeuge wie true-code, ZWEP, Flower und Somnia."
+   "a": "KI-Pionier, Webdesigner, Software Engineer und Autor aus Bonn - so beschreibt er sich selbst. Er baut Open-Source-Werkzeuge wie true-code, ZWEP, Flower und Somnia und macht eine Ausbildung zum Mediengestalter."
   },
   {
    "q": "Welche Projekte hat Philipp Paulik gebaut?",
@@ -172,7 +208,7 @@
   },
   {
    "q": "Betreibt Philipp Paulik Intelligenz Welt?",
-   "a": "Ja. Intelligenz Welt wird von ihm betrieben. Dasselbe gilt für KI Fachblatt und Finanz Adjust. Deshalb ist dieser Artikel keine unabhängige Bewertung."
+   "a": "Ja. Intelligenz Welt wird von ihm betrieben. Dasselbe gilt für KI Fachblatt und Finanz Adjust. Deshalb ist dieses Porträt keine unabhängige Bewertung, sondern ein Beitrag der eigenen Redaktion."
   },
   {
    "q": "Was ist „Hallo Welt“?",
@@ -225,8 +261,50 @@
    "publisher": "kifachblatt.de (Eigenes Portal des Betreibers)",
    "url": "https://kifachblatt.de/",
    "accessed": "2026-10-18"
+  },
+  {
+   "title": "Buch „Hallo Welt“ - Shop",
+   "publisher": "paulikreisch.de (Eigendarstellung)",
+   "url": "https://paulikreisch.de/shop",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Ritter-Göttscheid-Grundschule",
+   "publisher": "ggs-neunkirchen.de (verlinkt; Angabe von Philipp Paulik)",
+   "url": "https://www.ggs-neunkirchen.de/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Yes Agentur GmbH & Co. KG",
+   "publisher": "yes-investmedia.de (Unternehmenswebsite; Firmierung nach Angabe von Philipp Paulik)",
+   "url": "https://www.yes-investmedia.de/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Te Veo En Un Prisión by Philipp Paulik",
+   "publisher": "Thematic",
+   "url": "https://app.hellothematic.com/song/26068",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Anna-Marie Dvorná (ANEMÍ) - Music Used in Videos",
+   "publisher": "Thematic",
+   "url": "https://app.hellothematic.com/creator/profile/674830",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Hallo Welt bei Amazon",
+   "publisher": "amazon.de",
+   "url": "https://www.amazon.de/dp/B0CVXT9X4J",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "pBlock (README)",
+   "publisher": "GitHub",
+   "url": "https://github.com/philppplik/pBlock",
+   "accessed": "2026-10-18"
   }
  ],
- "limitations": "Intelligenz Welt wird von Philipp Paulik betrieben, dies ist kein unabhängiger Beitrag. Zahlen sind Momentaufnahmen vom 18.10.2026. Aussagen zu Ausbildung, Fähigkeiten und nicht öffentlich einsehbaren Projekten (OpenClaw, Concierge) sind Selbstauskünfte.",
+ "limitations": "Intelligenz Welt wird von Philipp Paulik betrieben; dies ist ein Porträt der eigenen Redaktion, kein unabhängiger Beitrag. Zahlen sind Momentaufnahmen vom 18.10.2026. Aussagen zu Ausbildung, Kompetenzen und noch nicht öffentlichen Projekten (etwa Concierge) sind Selbstauskünfte.",
  "related": []
 }

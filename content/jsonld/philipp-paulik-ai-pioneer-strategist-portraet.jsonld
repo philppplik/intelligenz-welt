@@ -5,10 +5,10 @@
    "@type": "ProfilePage",
    "@id": "https://intelligenz-welt.de/artikel/philipp-paulik-ai-pioneer-strategist-portraet#webpage",
    "name": "Philipp Paulik: KI-Pionier, Builder und Autor aus Bonn",
-   "description": "Wer hinter Intelligenz Welt steckt: Projekte wie true-code, ZWEP, Flower und Somnia, seine Portale, sein Buch „Hallo Welt“ und was sich belegen lässt.",
+   "description": "Der Mensch hinter Intelligenz Welt: ein Mediengestalter-Azubi aus Bonn, der mit true-code, Somnia und ZWEP seine eigenen Werkzeuge baut, satirische Bücher schreibt und bei allem auf First Principles setzt.",
    "inLanguage": "de-DE",
    "dateCreated": "2026-10-18T21:30:00+02:00",
-   "dateModified": "2026-10-18T21:30:00+02:00",
+   "dateModified": "2026-10-18T21:57:00+02:00",
    "about": {
     "@id": "https://philipp-paulik.de/#person"
    },
