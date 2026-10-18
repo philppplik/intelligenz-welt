@@ -78,8 +78,8 @@ def load(now, reserved):
         if not re.fullmatch(r'[a-z0-9]+(-[a-z0-9]+)*', s): err(s, 'slug must be lowercase ascii kebab-case')
         if a['section'] not in SECTIONS: err(s, 'section must be one of %s' % ', '.join(SECTIONS))
         if a['type'] not in TYPES: err(s, 'type must be news|analysis|explainer')
-        if len(a['title']) > 70: err(s, 'title longer than 70 chars (%d)' % len(a['title']))
-        if not 100 <= len(a['dek']) <= 160: err(s, 'dek must be 100-160 chars (is %d)' % len(a['dek']))
+        if len(a['title']) > 110: err(s, 'title longer than 110 chars (%d)' % len(a['title']))
+        if not 60 <= len(a['dek']) <= 300: err(s, 'dek must be 60-300 chars (is %d)' % len(a['dek']))
         if len(a['key_takeaways']) < 3: err(s, 'need >=3 key_takeaways')
         if len(a['sources']) < 1: err(s, 'need >=1 source (>=3 preferred)')
         for i, so in enumerate(a['sources']):
@@ -179,7 +179,7 @@ def article_page(a, arts, head, foot):
                  {'@type': 'ListItem', 'position': 3, 'name': a['title'], 'item': url}]}]
     if a.get('faq'):
         graph.append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': q['a']}} for q in a['faq']]})
-    hh = head_for(head, '%s | Intelligenz Welt' % a['title'], a['dek'], url, 'article', img_abs, h['alt'], a['published'], a['modified'], ld_script({'@context': 'https://schema.org', '@graph': graph}) + ''.join('<meta property="article:tag" content="%s">' % E(t) for t in a['tags']))
+    hh = head_for(head, '%s | Intelligenz Welt' % a['title'], meta_trunc(a['dek']), url, 'article', img_abs, h['alt'], a['published'], a['modified'], ld_script({'@context': 'https://schema.org', '@graph': graph}) + ''.join('<meta property="article:tag" content="%s">' % E(t) for t in a['tags']))
     rel = [x for x in arts if x['slug'] in a.get('related', [])] or [x for x in arts if x['slug'] != s][:4]
     faq = ('<h2>Häufige Fragen</h2>' + ''.join('<details><summary>%s</summary><p>%s</p></details>' % (E(q['q']), inline(q['a'])) for q in a['faq'])) if a.get('faq') else ''
     src = ''.join('<li id="q%d"><a href="%s" rel="noopener" target="_blank">%s</a> (%s%s)</li>' % (i + 1, E(x['url']), E(x['title']), E(x['publisher']), (', abgerufen %s' % E(x['accessed'])) if x.get('accessed') else '') for i, x in enumerate(a['sources']))
@@ -202,6 +202,11 @@ def article_page(a, arts, head, foot):
     return hh + body + foot
 
 CSS = CSS.replace('</style>', SHARE_CSS % ('mut', 'soft', 'ac') + '</style>', 1)
+
+def meta_trunc(t, n=157):
+    if len(t) <= n: return t
+    c = t[:n].rsplit(' ', 1)[0].rstrip(' ,;:.')
+    return c + '…'
 
 def card(a):
     return ('<a class="card" href="/artikel/%s/"><span class="tag">%s</span><h3>%s</h3><p>%s</p><div class="meta">%s · Philipp Paulik</div></a>' % (a['slug'], E(SECTIONS[a['section']]), E(a['title']), E(a['dek']), de_date(a['_pub'], False)))
