@@ -18,14 +18,12 @@ SAMEAS = [
     ('LinkedIn', 'https://de.linkedin.com/in/philipp-paulik-7967753aa'),
     ('npm', 'https://www.npmjs.com/~philppplik'),
     ('paulikreisch.de', 'https://paulikreisch.de'),
-    ('Daily Hob', 'https://hob.philipp-paulik.de'),
     ('Wikidata', 'https://www.wikidata.org/wiki/Q137996883'),
 ]
 AUTHOR_PAGES = {
     'iw': ('Intelligenz Welt', 'https://intelligenz-welt.de/redakteur/philipp-paulik/'),
     'kfb': ('KI Fachblatt', 'https://kifachblatt.de/redakteur/philipp-paulik'),
     'fa': ('finanz adjust', 'https://finanz-adjust.de/redakteur/philipp-paulik/'),
-    'hob': ('Daily Hob', 'https://hob.philipp-paulik.de/redakteur/'),
     'somnia': ('Somnia', 'https://somnia.philipp-paulik.de/entwickler/philipp-paulik/'),
 }
 DE = dict(
@@ -43,7 +41,6 @@ DE = dict(
         ('ZWEP', 'https://zwep.philipp-paulik.de/', 'Self-hosted Suchmaschine mit MCP für KI-Agents'),
         ('Flower', 'https://flower.philipp-paulik.de/', 'ASCII Image Studio im Browser'),
         ('Somnia', 'https://somnia.philipp-paulik.de/', 'Open-Source-Webdesign-Studio'),
-        ('Daily Hob', 'https://hob.philipp-paulik.de/', 'tägliches Briefing zu KI, Open Source und Design'),
         ('paulikreisch.de', 'https://paulikreisch.de', 'satirische Bücher'),
     ])
 EN = dict(
@@ -61,7 +58,6 @@ EN = dict(
         ('ZWEP', 'https://zwep.philipp-paulik.de/', 'self-hosted search engine with MCP for AI agents'),
         ('Flower', 'https://flower.philipp-paulik.de/', 'ASCII image studio in the browser'),
         ('Somnia', 'https://somnia.philipp-paulik.de/', 'open-source web design studio'),
-        ('Daily Hob', 'https://hob.philipp-paulik.de/', 'daily briefing on AI, open source and design (German)'),
         ('paulikreisch.de', 'https://paulikreisch.de', 'satirical books (German)'),
     ])
 SITES = {
