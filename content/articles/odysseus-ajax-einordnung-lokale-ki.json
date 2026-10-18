@@ -1,0 +1,153 @@
+{
+ "slug": "odysseus-ajax-einordnung-lokale-ki",
+ "lang": "de",
+ "section": "tools",
+ "type": "explainer",
+ "title": "PewDiePies KI: Was Odysseus und Ajax sind und was bisher belegt ist",
+ "dek": "Der YouTuber baut eine eigene Selbsthosting-Umgebung für KI und ein kleines Modell dazu. Eine Einordnung: was es gibt, was nur angekündigt ist.",
+ "published": "2026-10-18T20:12:00+02:00",
+ "modified": "2026-10-18T20:12:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "PewDiePie",
+  "Odysseus",
+  "Ajax",
+  "Lokale KI",
+  "Open Source"
+ ],
+ "key_takeaways": [
+  "Odysseus ist eine frei verfügbare Software (AGPL-3.0), mit der du Chat, Agenten, Recherche, E-Mail, Notizen und Kalender auf eigener Hardware bündelst.",
+  "Ajax ist ein feinjustiertes Qwen-3.5-9B-Modell für Odysseus. Es wurde am 1. Oktober vorgestellt, ist laut der Ajax-Seite aber noch „Coming soon“.",
+  "Zu Ajax fehlten bei Redaktionsschluss öffentliche Gewichte, Modellkarte, Lizenz der Gewichte und Benchmarks.",
+  "Das Odysseus-Repository hat auf GitHub über 93.000 Sterne, die Community teilt dort eigene Setup-Anleitungen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein Schreibtisch bei Nacht mit Laptop, einem kleinen schwebenden Roboter-Assistenten über Chat-, Kalender- und Mail-Fenstern und einem Server-Rack mit Grafikkarten im Hintergrund",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Felix Kjellberg, bekannt als PewDiePie, hat mit Odysseus eine Selbsthosting-Umgebung für KI veröffentlicht. Dazu kündigte er das Modell Ajax an. Odysseus gibt es und du kannst es ausprobieren. Ajax ist bisher nur angekündigt."
+  },
+  {
+   "t": "h2",
+   "x": "Vom Hobby zur Software: der Weg zu Odysseus"
+  },
+  {
+   "t": "p",
+   "x": "Schon im November 2025 zeigte Kjellberg in einem Video seinen KI-Rechner. Laut [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/pewdiepie-goes-all-in-on-self-hosting-ai-using-modded-gpus-with-plans-to-build-own-model-soon-youtuber-pits-multiple-sentient-chatbots-against-each-other-to-find-the-best-answers) lief darauf eine selbstgebaute Oberfläche namens „ChatOS“ mit Open-Source-Modellen wie GPT-OSS-120B, verteilt auf zwei RTX 4000 Ada und acht modifizierte RTX 4090 mit je 48 GB Speicher. Das Projekt war damals ein persönliches Experiment."
+  },
+  {
+   "t": "p",
+   "x": "Daraus wurde Odysseus. Das Repository wurde laut GitHub am 31. Mai 2026 angelegt. [XDA Developers](https://www.xda-developers.com/tried-pewdiepie-open-source-ai-workspace-odysseus-weirdly-great/) beschreibt es als selbst gehosteten KI-Arbeitsbereich mit Chat, autonomen Agenten, Deep Research, Modellvergleich und E-Mail-Verwaltung, dazu Notizen, Kalender, Aufgaben und einen Bildeditor. Alles läuft in Docker auf dem eigenen Rechner und spricht lokale Modelle über Ollama, llama.cpp, LM Studio oder vLLM an. Cloud-APIs lassen sich optional anbinden."
+  },
+  {
+   "t": "h2",
+   "x": "Ajax: kleines Modell für den Alltag, noch ohne Download"
+  },
+  {
+   "t": "p",
+   "x": "Am 1. Oktober stellte Kjellberg in einem Video Ajax vor. Laut [The Frontier](https://www.thefrontier.dev/articles/pewdiepie-ajax-qwen-3-5-9b-odysseus) und [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/pewdiepie-unveils-uncensored-ajax-ai-model-built-to-run-on-home-pcs-creator-says-openai-banned-him-twice-while-making-it) ist Ajax ein feinjustiertes Qwen-3.5-9B-Modell von Alibaba, gedacht als „immer aktiver“ Agent in Odysseus für Suche, Browsing, E-Mail und Kalender. Auf der [Ajax-Seite](https://data.pewdiepie.com) steht, die Ablehnungen des Modells seien entfernt worden („ablated“), und Nutzer sollen es verantwortungsvoll einsetzen."
+  },
+  {
+   "t": "p",
+   "x": "Einen Download gibt es bisher nicht. Die Seite zeigt „Coming soon“ und den Hinweis, Ajax erscheine, „wenn es fertig ist“, statt mit festem Termin. The Frontier fand am 3. Oktober keine Gewichte, keine Modellkarte, keine Lizenz für die Ajax-Gewichte und keine Benchmarks. Die Apache-2.0-Lizenz gilt nur für das Basismodell Qwen3.5-9B."
+  },
+  {
+   "t": "h2",
+   "x": "Wie die Community reagiert"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Auf GitHub sammelt Odysseus über 93.000 Sterne (Stand 18. Oktober), mehr als 1.400 Issues sind offen. Das Projekt wächst schnell und ist entsprechend unfertig.",
+    "Nutzer teilen eigene Anleitungen, etwa Serve-Rezepte für eine RTX 5090 in einer [GitHub-Diskussion](https://github.com/pewdiepie-archdaemon/odysseus/discussions/5493).",
+    "Hugging Face hat laut [aibriefs](https://aibriefs.news/card/9c4dc3bf-376a-4812-87bd-d40a99978a75) ein Erklärvideo zu Odysseus und Ajax veröffentlicht."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Was das für dich bedeutet"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Odysseus kannst du schon heute mit einem Modell deiner Wahl nutzen, zum Beispiel über LM Studio oder Ollama.",
+    "Mit Ajax solltest du erst planen, wenn Gewichte, Lizenz und Benchmarks öffentlich sind.",
+    "Ein 9B-Modell braucht laut Qwen-Empfehlungen grob 11 GB VRAM in FP8 oder 22 GB in BF16 (Angabe von [Popular AI](https://www.popularai.org/p/pewdiepie-ajax-ai-model)). Für Ajax gibt es noch keine eigenen Angaben."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Ob Ajax gut genug für den Alltag wird, lässt sich erst nach der Veröffentlichung messen. Odysseus zeigt aber, wie niedrig die Hürde für private KI-Arbeitsplätze inzwischen ist."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist Odysseus kostenlos?",
+   "a": "Das Projekt steht laut GitHub unter der AGPL-3.0 und ist frei nutzbar. Kosten entstehen nur, wenn du Cloud-APIs anbindest oder Hardware brauchst."
+  },
+  {
+   "q": "Kann ich Ajax schon herunterladen?",
+   "a": "Stand 18. Oktober nicht. Die Ajax-Seite zeigt „Coming soon“ ohne Termin."
+  },
+  {
+   "q": "Was ist Ajax technisch?",
+   "a": "Ein feinjustiertes Qwen-3.5-9B-Modell, laut Ankündigung für Odysseus trainiert. Details zu Training und Lizenz der Gewichte sind noch nicht veröffentlicht."
+  }
+ ],
+ "sources": [
+  {
+   "title": "PewDiePie goes all-in on self-hosting AI using modded GPUs",
+   "publisher": "Tom's Hardware, 03.11.2025",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/pewdiepie-goes-all-in-on-self-hosting-ai-using-modded-gpus-with-plans-to-build-own-model-soon-youtuber-pits-multiple-sentient-chatbots-against-each-other-to-find-the-best-answers",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "I tried PewDiePie's open-source AI workspace",
+   "publisher": "XDA Developers, 26.06.2026",
+   "url": "https://www.xda-developers.com/tried-pewdiepie-open-source-ai-workspace-odysseus-weirdly-great/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "PewDiePie unveils Ajax, a refusal-ablated Qwen 3.5 9B agent for Odysseus, before its weights are out",
+   "publisher": "The Frontier, 03.10.2026",
+   "url": "https://www.thefrontier.dev/articles/pewdiepie-ajax-qwen-3-5-9b-odysseus",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "PewDiePie unveils 'uncensored' Ajax AI model built to run on home PCs",
+   "publisher": "Tom's Hardware, 02.10.2026",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/pewdiepie-unveils-uncensored-ajax-ai-model-built-to-run-on-home-pcs-creator-says-openai-banned-him-twice-while-making-it",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Ajax - Coming soon",
+   "publisher": "data.pewdiepie.com",
+   "url": "https://data.pewdiepie.com",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "odysseus-dev/odysseus",
+   "publisher": "GitHub",
+   "url": "https://github.com/odysseus-dev/odysseus",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Ajax local AI: PewDiePie's 9B Odysseus model explained",
+   "publisher": "Popular AI, 01.10.2026",
+   "url": "https://www.popularai.org/p/pewdiepie-ajax-ai-model",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Hugging Face explains PewDiePie's local AI agent Odysseus",
+   "publisher": "aibriefs, 13.10.2026",
+   "url": "https://aibriefs.news/card/9c4dc3bf-376a-4812-87bd-d40a99978a75",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
