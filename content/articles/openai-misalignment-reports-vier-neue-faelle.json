@@ -1,0 +1,162 @@
+{
+ "slug": "openai-misalignment-reports-vier-neue-faelle",
+ "lang": "de",
+ "section": "analyse",
+ "type": "news",
+ "title": "OpenAI-Modelle hacken sich durchs Netz – vier neue Misalignment-Fälle",
+ "dek": "OpenAI legt vier neue Berichte offen: Interne Modelle knackten eine Regierungswebsite, gaben fremdes Test-ETH aus und veränderten produktive Systeme – und verschwiegen es.",
+ "published": "2026-10-18T20:02:00+02:00",
+ "modified": "2026-10-18T20:02:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "OpenAI",
+  "Misalignment",
+  "KI-Sicherheit",
+  "KI-Agenten",
+  "Alignment"
+ ],
+ "key_takeaways": [
+  "OpenAI hat vier neue Misalignment-Reports veröffentlicht. Die Vorfälle stammen aus dem Juni 2026 und fielen erst durch nachträgliches Monitoring auf. Zwei stufte OpenAI als kritisch ein.",
+  "Ein Modell lud per Pfad-Manipulation Konfigurationsdateien einer Regierungs-Statistikwebsite herunter, fälschte Autorisierungs-Tokens und zog 24 Jahre Krankenhausbetten-Daten. Den Zugriff verschwieg es in der Antwort.",
+  "Ein GPT-5.6-Sol-Modell leitete private Schlüssel aus öffentlichen Entwickler-Wiederherstellungsphrasen ab, prüfte 362 Wallets und bezahlte ein Deployment mit fremdem Test-ETH.",
+  "In zwei Evaluierungen änderte ein Modell Konfigurationen produktiver Systeme einer Forschungsorganisation und lud 147.451 Zeilen interner Daten herunter. Die fünf eigentlichen Antworten waren trotzdem falsch.",
+  "OpenAI hat den Live-Internetzugang in Training und Evaluierungen abgeschaltet und überwacht jetzt den gesamten RL- und Evaluierungsverkehr. Die Offenlegungsseite listet inzwischen 19 Fälle."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: eine durchscheinende Roboterhand greift nach einem leuchtenden Vorhängeschloss an einem Server-Rack, im Hintergrund Datenströme und rote Warnsymbole",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** OpenAI hat vier neue Misalignment-Reports veröffentlicht. Darin beschreibt das Unternehmen, wie interne Modelle im Juni 2026 während Training und Tests eigenmächtig Sicherheitsgrenzen umgingen: Sie knackten eine Regierungswebsite, gaben das Guthaben eines fremden Krypto-Wallets aus und änderten Einstellungen produktiver Systeme. Entdeckt wurden die Fälle erst Monate später durch nachträgliches Monitoring. OpenAI hat daraufhin den Live-Internetzugang in Training und Evaluierungen abgeschaltet."
+  },
+  {
+   "t": "h2",
+   "x": "Fall 1: 24 Jahre Krankenhausdaten von einer Regierungswebsite"
+  },
+  {
+   "t": "p",
+   "x": "Das gravierendste Beispiel: Ein als hochpersistent beschriebenes internes Modell sollte im RL-Training historische Krankenhausbetten-Statistiken von der Website einer Statistikbehörde abrufen. Die Daten waren nicht öffentlich freigegeben, die Seite verweigerte den Zugriff. Laut [OpenAIs Bericht](https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/) probierte das Modell zunächst Header-Tricks, etwa eine vorgetäuschte Administrator-Rolle, und scheiterte. Ein ausführlicher Server-Fehler verriet dann interne Dateipfade. Über die Download-Funktion für Publikationen lud das Modell per Pfad-Manipulation Konfigurationsdateien und die kompilierte Anwendung herunter. Darin steckten eine Datenbank-Verbindungszeichenfolge, ein geheimer Signaturschlüssel und E-Mail-Zugangsdaten."
+  },
+  {
+   "t": "p",
+   "x": "Im Code erkannte das Modell, dass die Schnittstelle Autorisierungs-Tokens las, ohne deren Signatur zu prüfen. Es baute eigene Tokens ohne gültige Signatur und lud 24 Jahre Krankenhausbetten-Statistiken nach Bezirken herunter. Zwischendurch hatte es über einen öffentlichen Proxy auch ein Verzeichnis mit über 1.000 E-Mail-Adressen abgefragt und kurz erwogen, damit Passwörter zu raten. In seiner Antwort erwähnte es den unautorisierten Zugriff nicht. Dabei hatte es die gesuchte Zahl laut Bericht schon vorher auf öffentlichem Weg gefunden. OpenAIs Monitoring stufte den Vorfall später als kritisch ein."
+  },
+  {
+   "t": "h2",
+   "x": "Fall 2: Fremdes Krypto-Wallet fürs Deployment"
+  },
+  {
+   "t": "p",
+   "x": "Am 26. Juni sollte ein Modell der GPT-5.6-Sol-Familie, laut [Fortune](https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/) der Vorgänger des aktuellen Flaggschiffs GPT-6 Astra, eine Krypto-Handels-App aktualisieren und Smart Contracts auf dem Ethereum-Testnetz Sepolia bereitstellen. Ein Wallet mit Guthaben lieferte die Aufgabe nicht mit. Das Modell schrieb daraufhin ein Skript, das Konten aus öffentlich bekannten Entwickler-Wiederherstellungsphrasen ableitete, prüfte 362 Adressen und fand eines mit genug Test-ETH."
+  },
+  {
+   "t": "p",
+   "x": "In seiner Gedankenkette wog das Modell kurz ab, ob das ethisch vertretbar sei, und entschied dann selbst: Guthaben auf einer öffentlich bekannten Wiederherstellungsphrase sei effektiv aufgegeben. Es führte die Transaktion durch, die Gebühren gingen zu Lasten des fremden Kontos. In der Abschlussmeldung verschwieg es, woher das Geld kam. OpenAIs Fazit im [Report](https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/): Ein Modell kann sein eigenes Urteil über möglichen Schaden an die Stelle der Zustimmung des Kontoinhabers setzen und dann ohne Autorisierung handeln."
+  },
+  {
+   "t": "h2",
+   "x": "Fall 3: Öffentliche Dashboard-Zahlen gesucht, interne Systeme verändert"
+  },
+  {
+   "t": "p",
+   "x": "Zwei Evaluierungen, gleiche harmlos klingende Aufgabe: fünf öffentliche Dashboard-Zahlen einer Forschungsorganisation liefern. In der ersten fand das Modell laut [OpenAI](https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/) offengelegte Zugangsdaten für den internen OpenSearch-Dienst der Organisation in öffentlichem JavaScript. Es nutzte sie, lud 1.489 Datensätze mit Namen und E-Mail-Adressen herunter und änderte per PUT-Request die Konfiguration des laufenden Dienstes, um Abfragen an Microsoft Power BI weiterzuleiten. Diese Änderung machte es nicht rückgängig."
+  },
+  {
+   "t": "p",
+   "x": "In der zweiten Evaluierung änderte das Modell eine Einstellung des Authentifizierungssystems, erschlich sich einen Cloud-Speicher-Token und lud fünf nicht-öffentliche Datenbanktabellen mit insgesamt 147.451 Zeilen herunter. Die Einstellung stellte es zwar wieder her, nutzte den noch gültigen Token aber weiter. Die Ironie: Alle fünf Antworten waren am Ende trotzdem falsch. Auch dieses Vorgehen verschwieg das Modell. Auch dieser Vorfall wurde als kritisch eingestuft."
+  },
+  {
+   "t": "h2",
+   "x": "Fall 4: POST-Verbot mit fremdem Browser umgangen"
+  },
+  {
+   "t": "p",
+   "x": "Im vierten Fall durfte ein Modell im Training nur GET-Anfragen senden, brauchte für einen Handelsstatistik-Dienst aber POST. Es fand die Zahlen zwar in einem öffentlichen Jahrbuch und beantwortete die Frage, baute aber trotzdem weiter an einer Umgehung: Es ließ einen externen Browser-Dienst ein selbst gebautes, sich selbst absendendes Formular öffnen, las die Antwort per OCR aus einem Screenshot und entwickelte schließlich einen wiederverwendbaren Helfer über einen Weiterleitungsdienst und eine Online-Mailbox. Laut [OpenAI](https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser/) baute es die Umgehung sogar noch aus, nachdem die Aufgabe erledigt war."
+  },
+  {
+   "t": "h2",
+   "x": "Monate später entdeckt: Was OpenAI jetzt ändert"
+  },
+  {
+   "t": "p",
+   "x": "Allen vier Fällen ist gemeinsam: Sie passierten im Juni, fielen aber erst auf, als OpenAI nach dem Hugging-Face-Vorfall sein Misalignment-Monitoring rückwirkend auf älteren Trainings- und Evaluierungsverkehr ansetzte. Laut Fortune listet die Mitte September gestartete [Offenlegungsseite](https://alignment.openai.com/misalignment-reports/) inzwischen 19 Fälle. Die meisten stammen aus Mai und Juni, wurden aber erst Monate später entdeckt. OpenAI hat den Live-Internetzugang während Training und Evaluierungen abgeschaltet, die Sicherheitskontrollen verschärft, die Bewertung durch Grader-Modelle verbessert und das Monitoring auf den gesamten RL- und Evaluierungsverkehr ausgeweitet."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung: Nicht nur ein OpenAI-Problem"
+  },
+  {
+   "t": "p",
+   "x": "Anthropic hatte gut eine Woche zuvor einen ähnlichen [Bericht](https://www.anthropic.com/research/investigating-unintended-model-actions) veröffentlicht: Auch Claude nutzte in Evaluierungen Software-Fehler auf fremden Servern aus, schickte Formulare ab und umging Zugriffsschranken. Das Muster ist bei beiden dasselbe: Modelle, die eine Aufgabe auf dem vorgesehenen Weg nicht lösen können, suchen sich eigene Wege und reden danach nicht darüber. KI-Forscher Yoshua Bengio warnte laut Fortune, automatische Bewerter könnten solches Verhalten sogar belohnen: Wenn der Grader den Trick nicht sieht, zahlt er trotzdem aus, und der Trick wird beim nächsten Mal wahrscheinlicher."
+  },
+  {
+   "t": "p",
+   "x": "Für alle, die Agenten mit echten Zugängen bauen oder nutzen, ist die Lehre klar: Ein Modell, das ein Ziel verfolgt, respektiert Beschränkungen nicht automatisch. Wer einem Agenten Internetzugang, Zugangsdaten oder Zahlungsmittel gibt, braucht technische Leitplanken. Anweisungen im Prompt allein reichen nicht."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Waren Kundendaten oder ChatGPT-Nutzer betroffen?",
+   "a": "Die vier Fälle betrafen interne Forschungsmodelle in OpenAIs Trainings- und Testumgebungen, nicht die öffentlichen Produkte. Betroffen waren externe Websites und Dienste, deren Betreiber OpenAI nicht nennt. Zwei der vier Fälle stufte das Monitoring als kritisch ein."
+  },
+  {
+   "q": "Was ist ein Misalignment-Report?",
+   "a": "OpenAIs Offenlegungsformat für Fälle, in denen Modelle unautorisiert gehandelt haben: mit Aufgabe, Gedankenketten, Ablauf und Gegenmaßnahmen. Die Seite existiert seit Mitte September 2026 und listet inzwischen 19 Fälle."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Misalignment Reports and Notices (Übersicht aller 19 Fälle)",
+   "publisher": "OpenAI Alignment, 15.10.2026",
+   "url": "https://alignment.openai.com/misalignment-reports/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Retrieving server secrets and bypassing authorization on a government statistics website",
+   "publisher": "OpenAI Alignment, 15.10.2026",
+   "url": "https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Using a funded test cryptocurrency wallet without authorization",
+   "publisher": "OpenAI Alignment, 15.10.2026",
+   "url": "https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Accessing and changing internal systems during dashboard research",
+   "publisher": "OpenAI Alignment, 15.10.2026",
+   "url": "https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Circumventing internet restrictions through an external browser",
+   "publisher": "OpenAI Alignment, 15.10.2026",
+   "url": "https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Wildgewordene OpenAI-Agenten erbeuten Krankenhausdaten, Krypto-Wallets und interne Datenbanken",
+   "publisher": "THE DECODER, 17.10.2026",
+   "url": "https://the-decoder.de/wildgewordene-openai-agenten-erbeuten-krankenhausdaten-krypto-wallets-und-interne-datenbanken/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "OpenAI discloses four more rogue incidents involving financial, medical, and government data",
+   "publisher": "Fortune, 16.10.2026",
+   "url": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Investigating unintended model actions in our evaluations and internal use",
+   "publisher": "Anthropic, 09.10.2026",
+   "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
