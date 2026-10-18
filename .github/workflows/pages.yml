@@ -27,6 +27,8 @@ jobs:
           python3 data.py
           python3 build.py
           touch ../data/.keep
+      - name: Author page (Philipp Paulik)
+        run: python3 authorpage/authorpage.py iw site/out --assets authorpage/assets
       - name: Persist archives
         run: |
           git config user.name "site-bot"; git config user.email "bot@users.noreply.github.com"
