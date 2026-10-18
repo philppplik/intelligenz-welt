@@ -1,0 +1,154 @@
+{
+ "slug": "google-harness2-open-source-agenten",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "Google macht sein Agenten-Gerüst Open Source: Was Harness² kann",
+ "dek": "Google Cloud AI Research hat Harness² unter Apache-2.0-Lizenz veröffentlicht. Das Framework lässt KI-Agenten ihre eigene Arbeitsumgebung automatisch verbessern, ohne die Modellgewichte anzufassen.",
+ "published": "2026-10-18T19:56:00+02:00",
+ "modified": "2026-10-18T19:56:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Google",
+  "Open Source",
+  "KI-Agenten",
+  "Harness²",
+  "GitHub"
+ ],
+ "key_takeaways": [
+  "Harness² steht unter der Apache-2.0-Lizenz auf GitHub (google-research/harness2), das dazugehörige Paper seit dem 9. Oktober auf arXiv. Das Repo hat bereits über 4.400 Stars.",
+  "Ein Harness ist alles rund um das Modell: System-Prompt, Guardrails, Gedächtnis, Tool-Anleitungen, Sub-Agenten, Skills, Skripte und Plugins. Genau diese acht Komponenten optimiert Harness² automatisch.",
+  "Der Mechanismus heißt Propose-Probe-Compose: Änderungen werden vorgeschlagen, unter gleichen Bedingungen getestet und nur übernommen, wenn sie einen messbaren Verhaltensunterschied zeigen. Ein Lösungsschlüssel ist nicht nötig.",
+  "Laut Paper verbessert ein einziger Durchlauf GLM-5 und Gemini 3.5 Flash um bis zu 11,5 Punkte auf WorkBuddy-Bench, 4,5 Punkte auf JobBench und 11,8 Prozentpunkte bei LAB. Die Werte stammen von Google selbst, unabhängige Tests fehlen.",
+  "Pikantes Detail: Als Editor-Modell, das die Harness-Änderungen schreibt, setzte Google laut Startup Fortune Anthropics Claude Opus 4.8 ein."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein kleiner Roboter justiert ein leuchtendes modulares Gerüst aus Kacheln, das einen hellen Kern umschließt, daneben schweben Werkzeug-Bausteine wie Zahnrad, Schild und Steckverbindungen",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Google Cloud AI Research hat Harness² als Open Source veröffentlicht. Das Framework verbessert die Arbeitsumgebung eines KI-Agenten automatisch, also Prompts, Werkzeuge, Gedächtnis und Routinen, während die Modellgewichte eingefroren bleiben. Code und Paper sind frei verfügbar, die Lizenz ist Apache 2.0."
+  },
+  {
+   "t": "h2",
+   "x": "Was ist überhaupt ein Harness?"
+  },
+  {
+   "t": "p",
+   "x": "Damit ein Sprachmodell als Agent handeln kann, braucht es ein Gerüst drumherum. Das Paper zu [Harness²](https://arxiv.org/abs/2610.14224) nennt dieses Gerüst Harness: Prompts, Werkzeuge, Gedächtnis, Fähigkeiten und die Orchestrierung, die entscheidet, was der Agent als Nächstes tut. Die Qualität dieses Gerüsts entscheidet oft genauso stark über die Leistung wie das Modell selbst. Bisher wird so ein Harness meist von Hand gepflegt, Prompt für Prompt, Woche für Woche."
+  },
+  {
+   "t": "p",
+   "x": "Harness² macht daraus einen automatischen Prozess. Im [GitHub-Repository](https://github.com/google-research/harness2) listet das Team acht bearbeitbare Komponenten: System-Prompt, Guardrails, Gedächtnis, Tool-Anleitungen, Sub-Agenten, Skills, Skripte und Plugins. Sie steuern den Kontextaufbau, die Werkzeug-Schnittstelle und das Verhalten in der Tool-Schleife."
+  },
+  {
+   "t": "h2",
+   "x": "So funktioniert Propose-Probe-Compose"
+  },
+  {
+   "t": "p",
+   "x": "Das Kernstück ist ein dreistufiger Mechanismus, der ohne Lösungsschlüssel auskommt. Genau das war bisher das Problem: Bei offenen Aufgaben gibt es keine richtige Antwort, an der man eine Verbesserung messen könnte. Stattdessen arbeitet Harness² mit Kontrasten:"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Propose:** Zwei Änderungsvorschläge für das Harness werden erstellt, einer gegen eine allgemeine Schwäche, einer speziell für die aktuelle Aufgabe.",
+    "**Probe:** Beide Varianten laufen unter gleichen Bedingungen und werden mit einem Referenzlauf verglichen.",
+    "**Compose:** Übernommen wird nur, was einen beobachtbaren Verhaltensunterschied zeigt. Der Rest fliegt raus."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Dazu kommt eine zweite Ebene: Die Harnessing-Level-Rekursion sammelt die übernommenen Änderungen und die Belege dafür in einem dauerhaften Verbesserungs-Harness. Der Agent lernt also über Aufgaben hinweg dazu, statt bei jeder neuen Aufgabe von vorn anzufangen. Laut README unterstützt das Release parallele und sequentielle Rekursion sowie die Executoren OpenCode und Codex."
+  },
+  {
+   "t": "h2",
+   "x": "Die Zahlen aus dem Paper"
+  },
+  {
+   "t": "p",
+   "x": "Getestet wurde auf drei Benchmarks mit vier Modell-Harness-Konfigurationen. Ein einziger Harness²-Durchlauf brachte laut Paper bis zu 11,5 Punkte auf WorkBuddy-Bench (Büro-, Web- und Coding-Aufgaben), 4,5 Punkte auf JobBench (Wissensarbeit) und 11,8 Prozentpunkte bei der Teilbestehensrate von LAB, einem Benchmark für juristische Agenten. Mit fünf parallelen Rekursionszweigen kamen auf WorkBuddy-Bench weitere 3,9 Punkte dazu, auf JobBench 4,2 und bei LAB 6,7."
+  },
+  {
+   "t": "p",
+   "x": "Zwei Einschränkungen gehören dazu: Alle Werte stammen von Google selbst, unabhängige Messungen gibt es noch nicht. Und die Zugewinne durch Rekursion werden mit jedem Schritt kleiner, sie summieren sich also, statt sich aufzutürmen."
+  },
+  {
+   "t": "h2",
+   "x": "Das Detail, über das die Szene spricht"
+  },
+  {
+   "t": "p",
+   "x": "Die Executor-Agenten liefen bei den Experimenten auf Gemini 3.5 Flash und GLM-5. Als Editor-Modell, das die Harness-Änderungen vorschlägt und zusammensetzt, nutzte Google laut [Startup Fortune](https://startupfortune.com/google-open-sources-harness2-letting-ai-agents-rewrite-their-own-playbook/) allerdings Anthropics Claude Opus 4.8. Ein Google-Paper, das ein Anthropic-Modell für die eigentliche Optimierung wählt, ist in dieser Offenheit ungewöhnlich."
+  },
+  {
+   "t": "p",
+   "x": "Der Release trifft außerdem eine laufende Debatte: Wie der Bericht einordnet, gilt Harness-Engineering seit einem viel gelesenen Essay von Lilian Weng, früher bei OpenAI und heute Mitgründerin von Thinking Machines Lab, als plausibelster kurzfristiger Weg zu Agenten, die ihr eigenes Design verbessern. Harness² ist die erste Veröffentlichung eines großen Labors, die diese Idee als lauffähigen Code liefert."
+  },
+  {
+   "t": "h2",
+   "x": "Warum die Open-Source-Entscheidung zählt"
+  },
+  {
+   "t": "p",
+   "x": "Anthropic und OpenAI behandeln ihre Agenten-Gerüste als Wettbewerbsvorteil und entwickeln sie hinter verschlossenen Türen weiter. Google geht den umgekehrten Weg und gibt eine funktionierende Methode frei, mit der jede Person mit GitHub-Konto dieselbe Art von Iteration auf dem eigenen Stack laufen lassen kann. Damit verschiebt sich, wer bei Agenten-Qualität mitspielen kann: nicht mehr nur Labore mit großen Trainingsbudgets."
+  },
+  {
+   "t": "p",
+   "x": "Ganz ohne Risiko ist das nicht. Forschung zu selbstverbessernden Agenten zeigt, dass Systeme mit vagen Zielkriterien zum Reward Hacking neigen, also ihr Verhalten auf die Metrik statt auf die Aufgabe optimieren. Der Probe-Schritt von Harness² ist die direkte Antwort darauf: Ohne gemessenen Verhaltenskontrast wird nichts übernommen. Auffällig ist laut Startup Fortune ein anderes Detail: Auf der Autorenliste des Papers steht kein Safety-Team."
+  },
+  {
+   "t": "h2",
+   "x": "Selbst ausprobieren"
+  },
+  {
+   "t": "p",
+   "x": "Wer Harness² testen will, braucht laut README Linux, Python 3.12 und den Paketmanager uv. Nach dem Klonen genügen drei Befehle: virtuelle Umgebung anlegen, das Paket mit Render-Extra installieren und die Demo mit harness2-demo starten. Die lokale Demo läuft mit deterministischen Editoren und echten Läufen durch beide Rekursionsmodi. Die Benchmarks JobBench, LAB und WorkBuddy-Bench sind im Release enthalten."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist Harness² wirklich Open Source?",
+   "a": "Ja. Das Repository [google-research/harness2](https://github.com/google-research/harness2) steht unter der Apache-2.0-Lizenz. Code, Demo und Benchmarks sind frei nutzbar."
+  },
+  {
+   "q": "Verändert Harness² die KI-Modelle selbst?",
+   "a": "Nein. Die Modellgewichte bleiben ausdrücklich eingefroren. Optimiert wird nur die Schicht um das Modell: Prompts, Werkzeuge, Gedächtnis und Abläufe."
+  },
+  {
+   "q": "Brauche ich Testantworten, um meinen Agenten zu verbessern?",
+   "a": "Nein, genau das ist der Punkt von Propose-Probe-Compose. Statt eine richtige Antwort zu prüfen, vergleicht das System das Verhalten vor und nach einer Änderung und übernimmt nur, was einen messbaren Unterschied macht."
+  }
+ ],
+ "sources": [
+  {
+   "title": "google-research/harness2 (Repository)",
+   "publisher": "GitHub / Google Research",
+   "url": "https://github.com/google-research/harness2",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Harness²: Recursive Agent Harnessing for an Open World",
+   "publisher": "arXiv, eingereicht 9.10.2026",
+   "url": "https://arxiv.org/abs/2610.14224",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Google open sources Harness2, letting AI agents rewrite their own playbook",
+   "publisher": "Startup Fortune, 18.10.2026",
+   "url": "https://startupfortune.com/google-open-sources-harness2-letting-ai-agents-rewrite-their-own-playbook/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Google öffnet den Quellcode von Harness² für KI-Agenten",
+   "publisher": "gotburnout.io, 18.10.2026",
+   "url": "https://gotburnout.io/de/news/google-oeffnet-den-quellcode-von-harness-fuer-ki-agenten-4128",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
