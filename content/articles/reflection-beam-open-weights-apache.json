@@ -1,0 +1,124 @@
+{
+ "slug": "reflection-beam-open-weights-apache",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Reflection Beam: Neues US-Open-Weight-Modell unter Apache 2.0",
+ "dek": "501 Milliarden Parameter, 1 Million Token Kontext, Platz 2 unter den US-Open-Weights bei Artificial Analysis. Stark bei Agenten, schwach im Terminal, mit hoher Halluzinationsrate.",
+ "published": "2026-10-18T20:00:00+02:00",
+ "modified": "2026-10-18T20:00:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Reflection", "Open-Weight", "Benchmarks", "Agenten"],
+ "key_takeaways": [
+  "Beam ist das erste Modell des US-Labors Reflection, veröffentlicht am 16. Oktober 2026 mit Gewichten auf Hugging Face unter Apache 2.0.",
+  "Sparse Mixture-of-Experts mit 501 Milliarden Parametern, davon 23 Milliarden aktiv, 1 Million Token Kontext, nur Text als Eingabe.",
+  "Artificial Analysis Intelligence Index: 30 Punkte, Platz 2 unter den US-Open-Weights hinter Metas Muse Spark Open (39). Proprietär führt GPT-6 Astra (max) mit 53.",
+  "Stark bei AutomationBench-AA (48,5 Prozent), schwach bei Terminal-Bench 4.0 (3,0 Prozent).",
+  "Beam beantwortet 33 Prozent der AA-Omniscience-Fragen richtig, halluziniert aber in 47 Prozent der Fälle."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein leuchtender Lichtstrahl läuft durch ein riesiges kristallines Netz aus verbundenen Knoten, nur wenige Knoten leuchten hell",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles Reflection-Material.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Das US-Labor Reflection hat am 16. Oktober 2026 sein erstes Modell veröffentlicht: Beam, offen unter Apache 2.0. Der unabhängige Benchmark-Anbieter Artificial Analysis sieht es als zweitbestes US-Open-Weight-Modell, aber weit hinter proprietären Spitzenmodellen. Auffällig sind die hohe Token-Effizienz und eine hohe Halluzinationsrate."
+  },
+  {
+   "t": "h2",
+   "x": "Was ist Beam?"
+  },
+  {
+   "t": "p",
+   "x": "Laut [Reflection](https://reflection.ai/blog/beam-is-available) ist Beam ein Sparse-Mixture-of-Experts-Modell mit 501 Milliarden Parametern, von denen 23 Milliarden pro Token aktiv sind. Es ist für Coding, Reasoning und lang laufende Agenten-Aufgaben gedacht. Die [Hugging-Face-Ankündigung](https://huggingface.co/blog/reflection-beam) nennt ein Kontextfenster von 1 Million Token, Text als Eingabe und die Apache-2.0-Lizenz. Dazu gibt es eine eigene Rust-basierte Open-Source-Umgebung für Agenten."
+  },
+  {
+   "t": "p",
+   "x": "Die Gewichte gibt es in den Formaten BF16, FP8 und NVFP4, außerdem ein Drafter-Modell für spekulatives Dekodieren. Laut Reflection unterstützen unter anderem Transformers, vLLM, SGLang und Unsloth das Modell von Tag eins an. Zum Start nennt Reflection mehr als 40 Partner, darunter AWS, Google Cloud, Microsoft Foundry, OpenRouter, Ollama und LM Studio."
+  },
+  {
+   "t": "h2",
+   "x": "Was sagt die unabhängige Messung?"
+  },
+  {
+   "t": "p",
+   "x": "[Artificial Analysis](https://artificialanalysis.ai/articles/reflection-beam) gibt Beam 30 Punkte im Intelligence Index. Das ist Platz 2 unter den US-Open-Weights, hinter Metas Muse Spark Open (39) und vor NVIDIAs Nemotron 3.5 Super VL (26). Unter allen Open-Weight-Modellen liegt Beam auf Rang zehn, einen Punkt hinter K2 Horizon aus den Vereinigten Arabischen Emiraten (31). Zum Vergleich: GPT-6 Astra (max) kommt auf 53."
+  },
+  {
+   "t": "h2",
+   "x": "Stärken und Schwächen"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Agenten-Workflows:** 48,5 Prozent bei AutomationBench-AA, 11 Prozentpunkte vor K2 Horizon (37,2) und gleichauf mit Qwen3.8 27B (48,2).",
+    "**Terminal:** Nur 3,0 Prozent bei Terminal-Bench 4.0, hinter Qwen3.8 27B (5,6) und Muse Spark Open (8,1).",
+    "**Effizienz:** Rund 26.000 Ausgabe-Token pro Aufgabe, etwa halb so viel wie K2 Horizon (rund 52.000).",
+    "**Wissen und Halluzinationen:** 33 Prozent richtige Antworten bei AA-Omniscience, aber 47 Prozent Halluzinationsrate (K2 Horizon: 26, Qwen3.8 27B: 30). Der Netto-Wert liegt mit 1,5 trotzdem vor beiden.",
+    "**Coding-Agent:** 28 Punkte im Coding Agent Index, mit Reflections Harness Mirror. Das Spitzenfeld liegt bei 68."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Der Cyber Index von Artificial Analysis zeigt 34 Prozent gelöste Aufgaben. Laut der Quelle ist Beam damit das beste getestete US-Open-Weight-Modell in diesem Bereich."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Beam ist kein neuer Spitzenreiter, aber ein relevanter Baustein: ein offenes, kommerziell nutzbares Modell aus den USA, das auf eigener Infrastruktur laufen kann und wenig Token verbraucht. Reflection nennt als Zielgruppe ausdrücklich Teams, die Modelle selbst hosten oder in abgeschotteten Umgebungen betreiben wollen. Wer Beam einsetzt, sollte die hohe Halluzinationsrate und die schwache Terminal-Leistung einplanen."
+  },
+  {
+   "t": "h2",
+   "x": "Was du jetzt tun kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Beam über einen der Partner oder lokal mit vLLM, SGLang oder Ollama auf eigenen Aufgaben testen.",
+    "Bei Wissensfragen Quellen oder Retrieval ergänzen, wegen der 47 Prozent Halluzinationsrate.",
+    "Für Terminal-lastige Coding-Agenten vorher gegen Alternativen vergleichen."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist Beam wirklich Open Source?",
+   "a": "Die Gewichte stehen unter Apache 2.0 auf Hugging Face. Ob auch Trainingsdaten offen sind, geht aus den geprüften Quellen nicht hervor."
+  },
+  {
+   "q": "Kann Beam Bilder verarbeiten?",
+   "a": "Nein, laut Artificial Analysis und Hugging Face unterstützt Beam Text als Eingabe."
+  },
+  {
+   "q": "Ist Beam besser als GPT-6 Astra?",
+   "a": "Nein. Im Intelligence Index von Artificial Analysis erreicht Beam 30 Punkte, GPT-6 Astra (max) 53."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Beam is now available",
+   "publisher": "Reflection, 16.10.2026",
+   "url": "https://reflection.ai/blog/beam-is-available",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Reflection's first model, Beam, scores 30 on the Artificial Analysis Intelligence Index",
+   "publisher": "Artificial Analysis, 16.10.2026",
+   "url": "https://artificialanalysis.ai/articles/reflection-beam",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+   "publisher": "Hugging Face, 16.10.2026",
+   "url": "https://huggingface.co/blog/reflection-beam",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
