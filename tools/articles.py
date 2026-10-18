@@ -21,9 +21,10 @@ MONTHS = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August'
 DISCLOSURE = ('Transparenzhinweis: Dieser Artikel ist ein redaktioneller Beitrag von Philipp Paulik und entstand mit KI-Unterstützung '
               '(Recherche und Textentwurf). Alle Quellen sind unten verlinkt; Zahlen und Aussagen stammen aus diesen Quellen. '
               'Das Titelbild ist KI-generiert und im Bild entsprechend gekennzeichnet. Die News-Übersicht auf dieser Seite wird dagegen automatisch aus öffentlichen Feeds aggregiert. '
-              '<a href="/redaktion/">So arbeiten wir</a>.')
+              '<a href="/transparenz/">So arbeiten wir</a>.')
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from share import share_block, SHARE_CSS
+import mdpages
 CSS = ('<style>.ed .crumbs{font-size:14px;color:var(--mut);margin:0 0 14px}.ed .crumbs a,.ed .byline a,.ed .src a,.ed .more a,.ed .body a,.ed .note a{text-decoration:underline;text-underline-offset:3px}'
        '.ed .byline{color:var(--mut);font-size:14px;margin:6px 0 18px}.ed .byline a{color:var(--fg)}'
        '.ed figure{margin:0 0 22px}.ed figure img{width:100%;height:auto;border-radius:14px;display:block}.ed figcaption{font-size:13px;color:var(--mut);margin-top:8px}'
@@ -130,7 +131,7 @@ def body_html(a):
         elif t == 'code': out.append('<pre><code>%s</code></pre>' % E(b['x']))
         elif t == 'figure':
             w, h = jpeg_size(os.path.join(ROOT, 'content/images', b['file']))
-            cap = E(b['caption']) + (' (KI-generiert)' if b.get('ai_generated') and 'KI' not in b['caption'] else '')
+            cap = E(b['caption']) + (' · Illustration: KI-generiert' if b.get('ai_generated') and 'KI' not in b['caption'] else '')
             out.append('<figure class="fig"><img src="/assets/editorial/%s" alt="%s" width="%d" height="%d" loading="lazy" decoding="async"><figcaption>%s</figcaption></figure>' % (E(b['file']), E(b['alt']), w, h, cap))
     return '\n'.join(out)
 
@@ -194,11 +195,11 @@ def article_page(a, arts, head, foot):
     if isinstance(lim, str): lim = [x for x in lim.split('\n') if x.strip()]
     if lim: method += '<h3>Grenzen</h3>' + (('<p>%s</p>' % inline(lim[0])) if isinstance(a.get('limitations'), str) and len(lim) == 1 else '<ul>%s</ul>' % ''.join('<li>%s</li>' % inline(l) for l in lim))
     body = ('<article class="art ed"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Intelligenz Welt</a> / <a href="/thema/%s/">%s</a></nav>'
-            '<span class="tag">%s</span><h1>%s</h1><p class="byline">Von <a rel="author" href="%s">Philipp Paulik</a> · <time datetime="%s">%s</time>%s · %d Min. Lesezeit</p>'
+            '<span class="tag">%s</span><h1>%s</h1><p class="byline">Von <a rel="author" href="%s">Philipp Paulik</a>, Redaktion Intelligenz Welt · mit KI-Unterstützung erstellt, redaktionell verantwortet (<a href="/transparenz/">so arbeiten wir</a>) · <time datetime="%s">%s</time>%s · %d Min. Lesezeit</p>'
             '<figure><img src="%s"%s width="1600" height="900" alt="%s" fetchpriority="high" decoding="async"><figcaption>%s</figcaption></figure>'
             '<div class="facts"><h2>Die wichtigsten Fakten</h2><ul>%s</ul></div><div class="body">%s%s</div>%s<h2>Quellen</h2><ol class="src">%s</ol>%s%s<p class="note">%s</p></article>') % (
         a['section'], SECTIONS[a['section']], E(SECTIONS[a['section']]), E(a['title']), AUTHOR_URL, a['published'], de_date(a['_pub']), modtxt, mins,
-        img_rel, srcset, E(h['alt']), E(h['caption']), facts, body_html(a), method, faq, src, more, share_block(url, a['title'], 'iw'), DISCLOSURE)
+        img_rel, srcset, E(h['alt']), E(h['caption']) + (' · Illustration: KI-generiert' if h.get('ai_generated') and 'KI-generiert' not in h['caption'] else ''), facts, body_html(a), method, faq, src, more, share_block(url, a['title'], 'iw'), DISCLOSURE)
     body = body.replace('</p><figure>', '</p>' + share_block(url, a['title'], 'iw', True) + '<figure>', 1)
     return hh + body + foot
 
@@ -230,11 +231,27 @@ def redaktion_page(head, foot):
          '<h2>Werbung und Unabhängigkeit</h2><p>Intelligenz Welt verkauft derzeit keine Anzeigen und nimmt keine bezahlten Beiträge an. Sollte sich das ändern, wird bezahlter Inhalt klar gekennzeichnet. Wir nehmen keine Stellung zu parteipolitischen Themen.</p></article>')
     return hh + b + foot
 
+def legal_pages(out, head, foot):
+    pages = mdpages.load(os.path.join(ROOT, 'content/pages'))
+    for k, pg in pages.items():
+        url = '%s/%s/' % (BASE, k)
+        hh = head_for(head, pg['title'] + ' | Intelligenz Welt', pg['desc'] or pg['title'], url, 'website')
+        b = '<article class="art ed"><h1>%s</h1>%s</article>' % (E(pg['title']), pg['html'])
+        os.makedirs(os.path.join(out, k), exist_ok=True)
+        open(os.path.join(out, k, 'index.html'), 'w', encoding='utf-8').write(hh + b + foot)
+    return list(pages)
+
+LEGAL = []
+LEGAL_FOOT_OLD = '<a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a>'
+LEGAL_FOOT_NEW = '<a href="/transparenz/">KI-Transparenz</a><a href="/redaktion/">Redaktion</a><a href="/korrekturen/">Korrekturen</a><a href="/quellen/">Quellen</a>' + LEGAL_FOOT_OLD
+IMPRESSUM_ADD = ('<h2>KI-unterstützte Inhalte</h2><p>Redaktionelle Beiträge dieser Website werden mit Unterstützung von KI-Systemen erstellt und vor Veröffentlichung redaktionell geprüft (siehe <a href="/transparenz/">KI-Transparenz</a>).</p>'
+                 '<h2>Streitbeilegung</h2><p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>')
+
 def patch_sitemaps(out, arts, sections, now):
     p = os.path.join(out, 'sitemap.xml'); x = open(p, encoding='utf-8').read()
     x = x.replace('http://www.google.com/schemas/image/1.1', 'http://www.google.com/schemas/sitemap-image/1.1')
     if 'xmlns:image=' not in x: x = x.replace('<urlset ', '<urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" ', 1)
-    entries = [(BASE + '/artikel/', now.strftime('%Y-%m-%d'), ''), (BASE + '/redaktion/', now.strftime('%Y-%m-%d'), '')]
+    entries = [(BASE + '/artikel/', now.strftime('%Y-%m-%d'), ''), ] + [('%s/%s/' % (BASE, k), now.strftime('%Y-%m-%d'), '') for k in LEGAL]
     for k in sections: entries.append(('%s/thema/%s/' % (BASE, k), max(a['modified'] for a in arts if a['section'] == k)[:10], ''))
     for a in arts:
         im = '<image:image><image:loc>%s/assets/editorial/%s.jpg</image:loc><image:title>%s</image:title><image:caption>%s</image:caption></image:image>' % (BASE, a['slug'], E(a['title']), E(a['hero']['alt']))
@@ -307,6 +324,8 @@ def patch_site(out, arts):
         if False:
             sec = '<h2 class="sec" id="neueste-artikel">Neueste Artikel <a href="/artikel/">Alle →</a></h2><div class="cards">' + ''.join(card(a) for a in arts[:6]) + '</div>'
             t = t.replace('<h2 class="sec">Analysen &amp; Briefings', sec + '<h2 class="sec">Analysen &amp; Briefings', 1)
+        if LEGAL_FOOT_OLD in t and '/transparenz/">KI-Transparenz' not in t: t = t.replace(LEGAL_FOOT_OLD, LEGAL_FOOT_NEW, 1)
+        if f.endswith(os.path.join('impressum', 'index.html')) and 'Streitbeilegung' not in t: t = t.replace('</article>', IMPRESSUM_ADD + '</article>', 1)
         if t != o: open(f, 'w', encoding='utf-8').write(t)
 
 def main():
@@ -332,8 +351,7 @@ def main():
         for k in sections:
             d = os.path.join(out, 'thema', k); os.makedirs(d, exist_ok=True)
             open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(list_page('%s | Intelligenz Welt' % SECTIONS[k], 'KI-Artikel zum Thema %s auf Intelligenz Welt.' % SECTIONS[k], '%s/thema/%s/' % (BASE, k), SECTIONS[k], 'Artikel zum Thema %s.' % SECTIONS[k], [a for a in arts if a['section'] == k], head, foot))
-    os.makedirs(os.path.join(out, 'redaktion'), exist_ok=True)
-    open(os.path.join(out, 'redaktion', 'index.html'), 'w', encoding='utf-8').write(redaktion_page(head, foot))
+    LEGAL[:] = legal_pages(out, head, foot)
     n = patch_sitemaps(out, arts, sections, now) if arts else 0
     patch_feed(out, arts); patch_site(out, arts)
     branding(out); patch_home(out, arts); og_fallback(out)
