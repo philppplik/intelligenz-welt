@@ -1,0 +1,142 @@
+{
+ "slug": "opencode-mcp-oauth-windows-sicherheitsluecke",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "opencode: Ein MCP-Server reichte für Code-Ausführung auf Windows",
+ "dek": "Pillar Security beschreibt eine kritische Lücke im Coding-Agenten opencode. Sie ist gepatcht, aber ohne CVE und ohne Sicherheitshinweis. Wer betroffen ist und was jetzt zu tun ist.",
+ "published": "2026-10-18T20:00:00+02:00",
+ "modified": "2026-10-18T20:00:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "opencode",
+  "MCP",
+  "Coding-Agenten",
+  "Sicherheit"
+ ],
+ "key_takeaways": [
+  "Betroffen: opencode 1.0.137 bis 1.18.32, nur unter Windows und WSL.",
+  "Ein entfernter MCP-Server konnte beim OAuth-Login Code auf dem Rechner ausführen, ohne weitere Zustimmung.",
+  "Behoben in Version 1.18.33 (28. September 2026). Es gibt keine CVE und keinen Sicherheitshinweis.",
+  "Die Ursache liegt im npm-Paket open: Unter Windows wurde die Ziel-URL nicht maskiert, bis zu Version 11.",
+  "Ein reiner Schema-Check (nur http/https erlauben) hätte den Angriff nicht gestoppt."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein freundlicher Roboter am Laptop öffnet ein leuchtendes Login-Fenster in einer Kette aus Links, aus dem ein dunkler Code-Strang in Richtung eines Terminal-Fensters mit grünem Schutzschild und Vorhängeschloss greift",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein Material von opencode oder Pillar Security.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Der Coding-Agent opencode hatte unter Windows eine kritische Sicherheitslücke. Laut dem Sicherheitsunternehmen Pillar Security genügte es, den Agenten mit einem manipulierten entfernten MCP-Server zu verbinden, damit beim OAuth-Login beliebiger Code auf dem Entwicklerrechner lief. Der Fehler ist seit opencode 1.18.33 behoben. Weil es keine CVE gibt, schlagen Schwachstellen-Scanner nicht an."
+  },
+  {
+   "t": "h2",
+   "x": "Was ist passiert?"
+  },
+  {
+   "t": "p",
+   "x": "MCP (Model Context Protocol) verbindet KI-Agenten mit externen Werkzeugen und Diensten. Verlangt ein entfernter MCP-Server eine Anmeldung, startet der Client einen OAuth-Ablauf und öffnet im Browser die Login-Seite. Die Adresse dafür, das Feld `authorization_endpoint`, liefert der Server selbst."
+  },
+  {
+   "t": "p",
+   "x": "Pillar Security beschreibt, dass opencode diese Adresse ohne Prüfung an die Funktion `open()` weiterreichte. Unter Windows startet das npm-Paket `open` dafür PowerShell. In den von opencode verwendeten Versionen (10.1.2) wurde die Adresse dabei nicht maskiert. PowerShell wertet in doppelten Anführungszeichen Ausdrücke der Form `$(...)` aus, und so lief der Code des Angreifers, noch bevor der Browser überhaupt startete."
+  },
+  {
+   "t": "p",
+   "x": "Wichtig: Laut Pillar braucht der Angriff keine Prompt-Injection und keine installierte Schadsoftware. Der Server muss bei der Einrichtung nicht einmal bösartig gewesen sein. Auch ein später übernommener Server, eine gekaperte Registry-Adresse oder eine abgelaufene Domain könnten den Angriff auslösen."
+  },
+  {
+   "t": "h2",
+   "x": "Wer ist betroffen?"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "opencode (npm-Paket `opencode-ai`) in den Versionen ab 1.0.137 bis einschließlich 1.18.32.",
+    "Nur Windows und WSL. Unter macOS und Linux wird laut Pillar ohne Shell gestartet, dort greift der Weg nicht.",
+    "Gepatcht in 1.18.33, veröffentlicht am 28. September 2026."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Das Besondere: Kein CVE, kein Hinweis"
+  },
+  {
+   "t": "p",
+   "x": "Der Entwickler Anomaly hat die Lücke laut Pillar im Rahmen einer Code-Bereinigung geschlossen. Weder Pull Request noch Release Notes nennen Sicherheit. In den [Release Notes von 1.18.33](https://github.com/anomalyco/opencode/releases/tag/v1.18.33) steht tatsächlich nur ein Eintrag, dass Fehler beim Start des Browsers für MCP nun gemeldet werden. Eine CVE wurde nicht beantragt, weil Anomaly bösartige MCP-Server laut Pillar außerhalb seines Bedrohungsmodells sieht. Die Folge: Dependabot und ähnliche Werkzeuge warnen nicht. Betroffene Installationen findet nur, wer opencode gezielt inventarisiert."
+  },
+  {
+   "t": "p",
+   "x": "Das ist Pillars Darstellung. Eine Stellungnahme von Anomaly haben wir nicht gefunden."
+  },
+  {
+   "t": "h2",
+   "x": "Alte Bekannte: dieselbe Fehlerklasse seit 2025"
+  },
+  {
+   "t": "p",
+   "x": "Neu ist die Lücke in opencode, nicht das Muster. Dieselbe Art von Fehler wurde 2025 als [CVE-2025-6514](https://nvd.nist.gov/vuln/detail/CVE-2025-6514) im Werkzeug mcp-remote bekannt: Befehlsinjektion über die `authorization_endpoint`-Adresse eines nicht vertrauenswürdigen MCP-Servers. Pillar nennt zwei weitere CVEs im selben Sommer."
+  },
+  {
+   "t": "p",
+   "x": "Pillar warnt außerdem vor einer trügerischen Sicherheit: Die gängige Gegenmaßnahme, nur die Schemata http und https zuzulassen, hilft nicht. Die Angriffsadresse ist eine ganz normale https-Adresse. Tatsächlich geschlossen hat die Lücke bei opencode laut Pillar vor allem das Update auf `open` 11.0.4, das die Adresse in einfache Anführungszeichen setzt. In den [Releases des open-Pakets](https://github.com/sindresorhus/open/releases) ist 11.0.4 als aktuelle Version gelistet; die Maskierung selbst kam laut Pillar mit Version 11.0.0."
+  },
+  {
+   "t": "h2",
+   "x": "Was du jetzt tun kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "opencode auf Windows oder WSL auf Version 1.18.33 oder neuer aktualisieren.",
+    "Wer nicht updaten kann: unbekannte entfernte MCP-Server aus der Konfiguration nehmen.",
+    "Eigene Tools prüfen: Keine Adressen von außen an `open` oder Shell-Befehle durchreichen, auch nicht nach einem Schema-Check.",
+    "Im Team inventarisieren, wo opencode läuft. Scanner zeigen es nicht an."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Bin ich betroffen, wenn ich opencode auf dem Mac oder unter Linux nutze?",
+   "a": "Nach Pillars Analyse betrifft die Lücke nur Windows und WSL. Auf macOS und Linux wird der Browser ohne Shell gestartet. Aktuell bleiben solltest du trotzdem."
+  },
+  {
+   "q": "Muss ich den MCP-Server selbst manipuliert haben?",
+   "a": "Nein. Es genügt ein entfernter MCP-Server, der in seiner Antwort eine präparierte Login-Adresse liefert. Das kann auch ein zunächst harmloser Server sein, der später kompromittiert wird."
+  },
+  {
+   "q": "Warum gibt es keine CVE?",
+   "a": "Laut Pillar hat der Hersteller Anomaly keine beantragt, weil er bösartige MCP-Server als außerhalb seines Bedrohungsmodells ansieht. Pillar veröffentlichte den Bericht deshalb ohne CVE."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Open and Shut: Remote Code Execution in opencode via MCP OAuth",
+   "publisher": "Pillar Security",
+   "url": "https://www.pillar.security/blog/open-and-shut-remote-code-execution-in-opencode-via-mcp-oauth",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "opencode v1.18.33 (Release Notes)",
+   "publisher": "GitHub / anomalyco",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.33",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Releases · sindresorhus/open",
+   "publisher": "GitHub",
+   "url": "https://github.com/sindresorhus/open/releases",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "CVE-2025-6514 Detail",
+   "publisher": "NIST National Vulnerability Database",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6514",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
