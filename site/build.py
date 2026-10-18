@@ -23,7 +23,7 @@ CSS='''
 a{color:inherit;text-decoration:none}a:hover{color:var(--ac)}
 .w{max-width:1180px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:9}
-.nav{display:flex;align-items:center;gap:28px;height:60px}.logo{font-weight:800;font-size:19px;letter-spacing:-.02em}.logo b{color:var(--ac)}
+.nav{display:flex;align-items:center;gap:28px;height:60px}.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:9px}.logo img{display:block;width:30px;height:30px}.logo b{color:var(--ac)}
 .nav a.l{font-size:14px;color:var(--mut);font-weight:500}.nav a.l:hover,.nav a.act{color:var(--fg)}.sp{flex:1}
 .btn{background:var(--fg);color:#fff;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:600}.btn:hover{background:var(--ac);color:#fff}
 .hero{padding:56px 0 32px}.hero h1{font-size:44px;line-height:1.1;letter-spacing:-.03em;margin:0 0 14px;max-width:760px}.hero p{color:var(--mut);font-size:18px;max-width:640px;margin:0}
@@ -51,8 +51,8 @@ def page(path,title,desc,body,ld=None,typ='website',og=None,act=''):
     h='''<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s</title><meta name="description" content="%s"><link rel="canonical" href="%s"><meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:title" content="%s"><meta property="og:description" content="%s"><meta property="og:url" content="%s"><meta property="og:type" content="%s"><meta property="og:site_name" content="Intelligenz Welt"><meta property="og:locale" content="de_DE"><meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" type="application/rss+xml" title="Intelligenz Welt" href="/feed.xml"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/style.css">%s</head><body>
-<header><div class="w nav"><a class="logo" href="/">Intelligenz<b>Welt</b></a>%s<span class="sp"></span><a class="btn" href="/feed.xml">RSS</a></div></header>
+<link rel="alternate" type="application/rss+xml" title="Intelligenz Welt" href="/feed.xml"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/branding/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="stylesheet" href="/style.css">%s</head><body>
+<header><div class="w nav"><a class="logo" href="/"><img src="/assets/branding/logo-192.png" alt="" width="30" height="30">Intelligenz<b>Welt</b></a>%s<span class="sp"></span><a class="btn" href="/feed.xml">RSS</a></div></header>
 %s
 <footer><div class="w c"><div><b style="color:#fff;font-size:17px">Intelligenz Welt</b><p style="max-width:300px">KI-News, Modell-Radar und Analysen auf Deutsch. News werden automatisch aus öffentlichen RSS-Feeds und APIs aggregiert.</p></div><div><h4>Magazin</h4><a href="/news/">KI-News</a><a href="/modelle/">Modell-Radar</a><a href="/analysen/">Analysen</a><a href="/feed.xml">RSS-Feed</a></div><div><h4>Rechtliches</h4><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/kontakt/">Kontakt</a></div></div><div class="w" style="margin-top:24px">© %d Intelligenz Welt</div></footer></body></html>'''%(esc(title),esc(desc),url,esc(title),esc(desc),url,typ,ldj,nav,body,NOW.year)
     p=OUT+path+('index.html' if path.endswith('/') else '')
@@ -71,7 +71,7 @@ home='''<div class="w"><div class="hero"><h1>Was in der KI-Welt gerade wirklich 
 <div class="stats"><div class="stat"><b>%d</b><span>News im Archiv</span></div><div class="stat"><b>%d</b><span>Quellen live</span></div><div class="stat"><b>%d</b><span>Trendende Modelle</span></div><div class="stat"><b>%d</b><span>Analysen</span></div></div>
 <div class="grid"><div><h2 class="sec">Analysen &amp; Briefings <a href="/analysen/">Alle →</a></h2>%s<h2 class="sec">Modell-Radar: Trending auf Hugging Face <a href="/modelle/">Mehr →</a></h2>%s</div>
 <aside><h2 class="sec" style="margin-top:0">KI-Pulse <a href="/news/">Archiv →</a></h2>%s</aside></div></div>'''%(upd,len(ai),len({i['src'] for i in ai}),len(models),len(arts),artcards(arts[:4]),mtable(8),newsli(ai,14))
-orgld={'@context':'https://schema.org','@type':'NewsMediaOrganization','name':'Intelligenz Welt','url':BASE,'logo':BASE+'/favicon.svg','email':'philipp.l.paulik@gmail.com'}
+orgld={'@context':'https://schema.org','@type':'NewsMediaOrganization','name':'Intelligenz Welt','url':BASE,'logo':{'@type':'ImageObject','url':BASE+'/assets/branding/logo-512.png','width':512,'height':512},'email':'philipp.l.paulik@gmail.com'}
 siteld={'@context':'https://schema.org','@type':'WebSite','name':'Intelligenz Welt','url':BASE,'inLanguage':'de-DE','publisher':{'@type':'Organization','name':'Intelligenz Welt'}}
 urls.append(page('/','Intelligenz Welt: KI-News, Modell-Radar und Analysen','Aktuelle KI- und LLM-News auf Deutsch, Live-Radar der trendenden Open-Source-Modelle und Analysen zu Agenten, Modellen und Strategie.',home,[orgld,siteld]))
 urls.append(page('/news/','KI-News: Das Archiv | Intelligenz Welt','Aktuelle Nachrichten zu KI, LLMs und Agenten aus The Decoder, The Verge, TechCrunch, Hugging Face, Hacker News und heise. Automatisch aktualisiert.','<div class="w"><div class="hero"><h1>KI-News</h1><p>%s</p></div>%s</div>'%(upd,newsli(ai,300)),act='/news/'))

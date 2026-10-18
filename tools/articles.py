@@ -139,7 +139,7 @@ def words(a):
     return len(re.sub(r'<[^>]+>|[*\[\]()]', ' ', txt).split())
 
 def ld_script(obj): return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace('</', '<\\/') + '</script>'
-ORG = {'@type': 'NewsMediaOrganization', '@id': BASE + '/#org', 'name': 'Intelligenz Welt', 'url': BASE + '/', 'logo': {'@type': 'ImageObject', 'url': BASE + '/favicon.svg'}, 'founder': {'@id': PID}}
+ORG = {'@type': 'NewsMediaOrganization', '@id': BASE + '/#org', 'name': 'Intelligenz Welt', 'url': BASE + '/', 'logo': {'@type': 'ImageObject', 'url': BASE + '/assets/branding/logo-512.png', 'width': 512, 'height': 512}, 'founder': {'@id': PID}}
 
 def template(out):
     t = open(os.path.join(out, 'impressum', 'index.html'), encoding='utf-8').read()
@@ -297,8 +297,16 @@ def main():
     open(os.path.join(out, 'redaktion', 'index.html'), 'w', encoding='utf-8').write(redaktion_page(head, foot))
     n = patch_sitemaps(out, arts, sections, now) if arts else 0
     patch_feed(out, arts); patch_site(out, arts)
-    og_fallback(out)
+    branding(out); og_fallback(out)
     print('articles: %d rendered, %d in news-sitemap' % (len(arts), n))
+
+def branding(out):
+    bd = os.path.join(ROOT, 'content/branding')
+    if not os.path.isdir(bd): return
+    dst = os.path.join(out, 'assets', 'branding'); os.makedirs(dst, exist_ok=True)
+    for f in os.listdir(bd):
+        shutil.copy(os.path.join(bd, f), dst)
+        if f in ('favicon.ico', 'apple-touch-icon.png'): shutil.copy(os.path.join(bd, f), os.path.join(out, f))
 
 def og_fallback(out):
     src = os.path.join(ROOT, 'content/images/og-default.jpg')
