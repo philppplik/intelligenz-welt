@@ -189,8 +189,10 @@ def article_page(a, arts, head, foot):
     srcset = ' srcset="/assets/editorial/%s-800.jpg 800w, %s 1600w" sizes="(max-width:800px) 100vw, 760px"' % (s, img_rel) if has800 else ''
     facts = ''.join('<li>%s</li>' % inline(k) for k in a['key_takeaways'])
     method = ''
-    if a.get('method'): method += '<h2>Methode</h2><p>%s</p>' % inline(a['method'])
-    if a.get('limitations'): method += '<h3>Grenzen</h3><ul>%s</ul>' % ''.join('<li>%s</li>' % inline(l) for l in a['limitations'])
+    if a.get('method'): method += '<h2>Methode</h2>' + ''.join('<p>%s</p>' % inline(x) for x in ([a['method']] if isinstance(a['method'], str) else a['method']))
+    lim = a.get('limitations')
+    if isinstance(lim, str): lim = [x for x in lim.split('\n') if x.strip()]
+    if lim: method += '<h3>Grenzen</h3>' + (('<p>%s</p>' % inline(lim[0])) if isinstance(a.get('limitations'), str) and len(lim) == 1 else '<ul>%s</ul>' % ''.join('<li>%s</li>' % inline(l) for l in lim))
     body = ('<article class="art ed"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Intelligenz Welt</a> / <a href="/thema/%s/">%s</a></nav>'
             '<span class="tag">%s</span><h1>%s</h1><p class="byline">Von <a rel="author" href="%s">Philipp Paulik</a> · <time datetime="%s">%s</time>%s · %d Min. Lesezeit</p>'
             '<figure><img src="%s"%s width="1600" height="900" alt="%s" fetchpriority="high" decoding="async"><figcaption>%s</figcaption></figure>'
