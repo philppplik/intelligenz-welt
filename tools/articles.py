@@ -145,6 +145,7 @@ ORG = {'@type': 'NewsMediaOrganization', '@id': BASE + '/#org', 'name': 'Intelli
 def template(out):
     t = open(os.path.join(out, 'impressum', 'index.html'), encoding='utf-8').read()
     i = t.find('</header>') + len('</header>'); j = t.find('<footer', i)
+    if t.startswith('<script>', i) and t.find('</script>', i) < j: i = t.find('</script>', i) + len('</script>')
     return t[:i], t[j:]
 
 def head_for(head, title, desc, url, og_type, img=None, alt='', pub=None, mod=None, extra=''):
