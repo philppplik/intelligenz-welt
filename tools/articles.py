@@ -22,6 +22,8 @@ DISCLOSURE = ('Transparenzhinweis: Dieser Artikel ist ein redaktioneller Beitrag
               '(Recherche und Textentwurf). Alle Quellen sind unten verlinkt; Zahlen und Aussagen stammen aus diesen Quellen. '
               'Das Titelbild ist KI-generiert und im Bild entsprechend gekennzeichnet. Die News-Übersicht auf dieser Seite wird dagegen automatisch aus öffentlichen Feeds aggregiert. '
               '<a href="/redaktion/">So arbeiten wir</a>.')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from share import share_block, SHARE_CSS
 CSS = ('<style>.ed .crumbs{font-size:14px;color:var(--mut);margin:0 0 14px}.ed .crumbs a,.ed .byline a,.ed .src a,.ed .more a,.ed .body a,.ed .note a{text-decoration:underline;text-underline-offset:3px}'
        '.ed .byline{color:var(--mut);font-size:14px;margin:6px 0 18px}.ed .byline a{color:var(--fg)}'
        '.ed figure{margin:0 0 22px}.ed figure img{width:100%;height:auto;border-radius:14px;display:block}.ed figcaption{font-size:13px;color:var(--mut);margin-top:8px}'
@@ -192,10 +194,12 @@ def article_page(a, arts, head, foot):
     body = ('<article class="art ed"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Intelligenz Welt</a> / <a href="/thema/%s/">%s</a></nav>'
             '<span class="tag">%s</span><h1>%s</h1><p class="byline">Von <a rel="author" href="%s">Philipp Paulik</a> · <time datetime="%s">%s</time>%s · %d Min. Lesezeit</p>'
             '<figure><img src="%s"%s width="1600" height="900" alt="%s" fetchpriority="high" decoding="async"><figcaption>%s</figcaption></figure>'
-            '<div class="facts"><h2>Die wichtigsten Fakten</h2><ul>%s</ul></div><div class="body">%s%s</div>%s<h2>Quellen</h2><ol class="src">%s</ol>%s<p class="note">%s</p></article>') % (
+            '<div class="facts"><h2>Die wichtigsten Fakten</h2><ul>%s</ul></div><div class="body">%s%s</div>%s<h2>Quellen</h2><ol class="src">%s</ol>%s%s<p class="note">%s</p></article>') % (
         a['section'], SECTIONS[a['section']], E(SECTIONS[a['section']]), E(a['title']), AUTHOR_URL, a['published'], de_date(a['_pub']), modtxt, mins,
-        img_rel, srcset, E(h['alt']), E(h['caption']), facts, body_html(a), method, faq, src, more, DISCLOSURE)
+        img_rel, srcset, E(h['alt']), E(h['caption']), facts, body_html(a), method, faq, src, more, share_block(url, a['title'], 'iw'), DISCLOSURE)
     return hh + body + foot
+
+CSS = CSS.replace('</style>', SHARE_CSS % ('mut', 'soft', 'ac') + '</style>', 1)
 
 def card(a):
     return ('<a class="card" href="/artikel/%s/"><span class="tag">%s</span><h3>%s</h3><p>%s</p><div class="meta">%s · Philipp Paulik</div></a>' % (a['slug'], E(SECTIONS[a['section']]), E(a['title']), E(a['dek']), de_date(a['_pub'], False)))
