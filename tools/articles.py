@@ -262,6 +262,39 @@ def patch_feed(out, arts):
     x = x.replace('</description><language>de</language>', '</description><language>de</language>' + items, 1)
     open(p, 'w', encoding='utf-8').write(x)
 
+def thumb(a): return '/assets/editorial/%s-800.jpg' % a['slug'] if os.path.exists(os.path.join(ROOT, 'content/images/%s-800.jpg' % a['slug'])) else '/assets/editorial/%s.jpg' % a['slug']
+def fmt_t(a): return '<time datetime="%s">%s</time>' % (a['published'], de_date(a['_pub']))
+def home_news(arts):
+    arts = sorted(arts, key=lambda a: a['_pub'], reverse=True)
+    lead, side, rest = arts[0], arts[1:4], arts[4:16]
+    def tag(a): return '<span class="tag">%s</span>' % E(SECTIONS[a['section']])
+    h = ('<h1 class="sr">Intelligenz Welt: KI-News, Modell-Radar und Analysen</h1>'
+         '<section class="lead" aria-label="Top-Story"><a class="lead-main" href="/artikel/%s/"><img src="%s" width="800" height="450" alt="%s" fetchpriority="high" decoding="async">%s<h2>%s</h2><p>%s</p><div class="meta">Von Philipp Paulik · %s</div></a>'
+         '<div class="lead-side">') % (lead['slug'], thumb(lead), E(lead['hero']['alt']), tag(lead), E(lead['title']), E(lead['dek']), fmt_t(lead))
+    for a in side:
+        h += '<a href="/artikel/%s/"><img src="%s" width="104" height="70" alt="" loading="lazy" decoding="async"><div>%s<h3>%s</h3><div class="meta">%s</div></div></a>' % (a['slug'], thumb(a), tag(a), E(a['title']), fmt_t(a))
+    h += '</div></section>'
+    if rest:
+        h += '<h2 class="sec" id="neueste-artikel">Weitere Artikel <a href="/artikel/">Alle →</a></h2><div class="tgrid">'
+        for a in rest:
+            h += '<a class="th" href="/artikel/%s/"><img src="%s" width="800" height="450" alt="" loading="lazy" decoding="async">%s<h3>%s</h3><div class="meta">%s</div></a>' % (a['slug'], thumb(a), tag(a), E(a['title']), fmt_t(a))
+        h += '</div>'
+    items = [{'@type': 'ListItem', 'position': i + 1, 'url': '%s/artikel/%s/' % (BASE, a['slug']), 'name': a['title']} for i, a in enumerate(arts[:10])]
+    h += '<script type="application/ld+json">%s</script>' % json.dumps({'@context': 'https://schema.org', '@type': 'ItemList', 'itemListElement': items}, ensure_ascii=False)
+    return h
+
+def patch_home(out, arts):
+    f = os.path.join(out, 'index.html')
+    if not arts or not os.path.exists(f): return
+    t = open(f, encoding='utf-8').read()
+    m = re.search(r'<div class="hero">.*?</div>\s*(<div class="stats">.*?</div></div>)\s*(?=<div class="grid">)', t, re.S)
+    if not m: return
+    stats = m.group(1)
+    t = t[:m.start()] + home_news(arts) + t[m.end():]
+    t = re.sub(r'<h2 class="sec" id="neueste-artikel">Neueste Artikel.*?</div></div>(?=\s*<h2 class="sec">Analysen)', '', t, count=1, flags=re.S)
+    t = t.replace('<h2 class="sec">Analysen &amp; Briefings', stats + '<h2 class="sec">Analysen &amp; Briefings', 1)
+    open(f, 'w', encoding='utf-8').write(t)
+
 def patch_site(out, arts):
     link = '<a class="l" href="/artikel/">Artikel</a>'
     for f in glob.glob(os.path.join(out, '**', '*.html'), recursive=True):
@@ -270,7 +303,7 @@ def patch_site(out, arts):
             t = re.sub(r'(<a class="l[^"]*" href="/analysen/">Analysen</a>)', link + r'\1', t, count=1)
         if 'href="/redaktion/"' not in t and '<a href="/kontakt/">Kontakt</a>' in t:
             t = t.replace('<a href="/kontakt/">Kontakt</a>', '<a href="/kontakt/">Kontakt</a><a href="/redaktion/">Redaktion</a>', 1)
-        if f == os.path.join(out, 'index.html') and 'id="neueste-artikel"' not in t and arts:
+        if False:
             sec = '<h2 class="sec" id="neueste-artikel">Neueste Artikel <a href="/artikel/">Alle →</a></h2><div class="cards">' + ''.join(card(a) for a in arts[:6]) + '</div>'
             t = t.replace('<h2 class="sec">Analysen &amp; Briefings', sec + '<h2 class="sec">Analysen &amp; Briefings', 1)
         if t != o: open(f, 'w', encoding='utf-8').write(t)
@@ -302,7 +335,7 @@ def main():
     open(os.path.join(out, 'redaktion', 'index.html'), 'w', encoding='utf-8').write(redaktion_page(head, foot))
     n = patch_sitemaps(out, arts, sections, now) if arts else 0
     patch_feed(out, arts); patch_site(out, arts)
-    branding(out); og_fallback(out)
+    branding(out); patch_home(out, arts); og_fallback(out)
     print('articles: %d rendered, %d in news-sitemap' % (len(arts), n))
 
 def branding(out):
