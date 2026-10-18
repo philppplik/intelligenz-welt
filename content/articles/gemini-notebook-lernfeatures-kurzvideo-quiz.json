@@ -1,0 +1,127 @@
+{
+ "slug": "gemini-notebook-lernfeatures-kurzvideo-quiz",
+ "lang": "de",
+ "section": "praxis",
+ "type": "explainer",
+ "title": "Gemini Notebook: 60-Sekunden-Videos und neue Quiz-Formate zum Ausprobieren",
+ "dek": "Google hat drei Lernfunktionen ergänzt: Short Video Overviews, Interactive Learning Overviews und mehr Quiz-Typen. So testest du sie mit deinen eigenen Unterlagen.",
+ "published": "2026-10-18T20:05:00+02:00",
+ "modified": "2026-10-18T20:05:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Gemini Notebook",
+  "NotebookLM",
+  "Google",
+  "Lernen",
+  "Workflow"
+ ],
+ "key_takeaways": [
+  "Short Video Overviews erzeugen ein 60-Sekunden-Video, das ein schwieriges Konzept erklärt.",
+  "Interactive Learning Overviews (unter Reports) führen Schritt für Schritt durch Notizen, Vorlesungen und Texte und bündeln Zusammenfassungen, Folien, Quizze und Karteikarten.",
+  "Neue Quiz-Formate: Kurzantwort, Mehrfachauswahl und Lückentext; nach einem Test oder Karteikarten-Durchgang gibt das Notebook Feedback.",
+  "Laut Google sind die Overviews strikt auf deine eigenen Kursunterlagen gestützt.",
+  "Ausprobieren: notebook.google mit eigenem Material."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein leuchtender Laptop auf einem Schreibtisch, aus dessen Bildschirm ein Videofenster, ein Kartenstapel und eine Quiz-Checkliste aufsteigen",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Google hat Gemini Notebook, das Tool, das viele noch als NotebookLM kennen, um drei Lernfunktionen erweitert: 60-Sekunden-Videos, einen geführten Durchlauf durch dein Material und mehr Quiz-Formate. Du kannst sie sofort mit eigenen Unterlagen testen."
+  },
+  {
+   "t": "h2",
+   "x": "Was neu ist"
+  },
+  {
+   "t": "p",
+   "x": "Google beschreibt die Funktionen in einem [Blogbeitrag vom 16. Oktober 2026](https://blog.google/innovation-and-ai/products/gemini-notebook/three-tips-study-gemini-notebook/). Sie sind laut Google kürzlich gestartet. Der Beitrag richtet sich an Lernende, die Ideen passen aber genauso zu Weiterbildung und Arbeitsmaterial."
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Short Video Overviews:** ein 60-Sekunden-Video, das ein kniffliges Konzept aufschlüsselt. Laut Google lässt es sich unterwegs ansehen oder mit Kommilitonen teilen.",
+    "**Interactive Learning Overviews:** Du findest sie unter Reports. Sie führen Schritt für Schritt durch Notizen, Vorlesungen und Lesestoff und verbinden Zusammenfassungen mit Folien, Quizzen und Karteikarten. Laut Google ist alles strikt auf deine Kursunterlagen gestützt.",
+    "**Mehr Quiz-Formate:** Kurzantwort, Mehrfachauswahl und Lückentext. Nach einem Test oder dem Durchgehen der Karteikarten kannst du das Notebook um Feedback bitten, um zu sehen, wo du als Nächstes ansetzen solltest."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "So probierst du es aus: ein Workflow in vier Schritten"
+  },
+  {
+   "t": "p",
+   "x": "Die folgenden Schritte sind unser Vorschlag, wie du die Funktionen kombinieren kannst. Die Bedienung im Detail kann je nach Konto und Sprache abweichen."
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Lege ein Notebook an und lade nur Material hoch, das du wirklich lernen willst: Skripte, Notizen, Artikel.",
+    "Starte mit dem Interactive Learning Overview unter Reports, um einen Überblick über den Stoff zu bekommen.",
+    "Hol dir für den härtesten Begriff ein Short Video Overview und schau es dir zwischendurch an.",
+    "Teste dich mit Lückentext und Kurzantwort und bitte danach um Feedback. Wiederhole die Themen, die das Feedback nennt."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Laut [Technobezz](https://www.technobezz.com/news/google-gemini-notebook-videos-new-quizzes) folgen die Neuerungen auf die Ausweitung der Study-Notebooks in Gemini auf Schul- und Arbeitskonten im September. Dort muss ein Administrator sowohl Gemini Notebook als auch die Gemini-App aktivieren. Ob und wann die neuen Funktionen für dein Konto verfügbar sind, haben wir nicht geprüft."
+  },
+  {
+   "t": "p",
+   "x": "Wichtig zur Qualität: Auch wenn die Ausgaben auf deinen Unterlagen beruhen, können Zusammenfassungen und Videos Fehler enthalten. Gleiche Quizfragen und Videoinhalte bei Prüfungsthemen mit dem Original ab."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist Gemini Notebook dasselbe wie NotebookLM?",
+   "a": "Sie meinen dasselbe Produkt, soweit wir das sehen: Der Drittanbieter-Guide notebooklm.link schreibt, das Tool sei im Juli 2026 umbenannt worden und werde weiterhin oft als NotebookLM gesucht. Google selbst nennt es in seinem Beitrag Gemini Notebook."
+  },
+  {
+   "q": "Wo finde ich die Funktionen?",
+   "a": "Google verweist auf notebook.google. Der Interactive Learning Overview liegt laut Blogbeitrag unter Reports."
+  },
+  {
+   "q": "Woher stammen die Inhalte der Overviews?",
+   "a": "Laut Google ausschließlich aus deinen eigenen Kursunterlagen."
+  },
+  {
+   "q": "Was kostet das?",
+   "a": "Dazu nennen die geprüften Quellen keine Angaben. Schau in deinem Konto nach."
+  }
+ ],
+ "sources": [
+  {
+   "title": "3 new study features in Gemini Notebook",
+   "publisher": "Google (blog.google), 16.10.2026",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/three-tips-study-gemini-notebook/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Google Adds 60-Second Videos and Quiz Formats to Gemini Notebook",
+   "publisher": "Technobezz, 16.10.2026",
+   "url": "https://www.technobezz.com/news/google-gemini-notebook-videos-new-quizzes",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Google launches three new Gemini Notebook features",
+   "publisher": "AIBeat, 17.10.2026",
+   "url": "https://www.aibeat.dev/news/google-launches-three-new-gemini-notebook-features",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Notebooks in AI Mode: Search vs Gemini Notebook",
+   "publisher": "notebooklm.link, 15.10.2026 (Drittanbieter)",
+   "url": "https://notebooklm.link/en/blog/gemini-notebook-ai-mode-search-2026/",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
