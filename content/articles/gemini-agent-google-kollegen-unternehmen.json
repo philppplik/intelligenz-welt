@@ -1,0 +1,146 @@
+{
+ "slug": "gemini-agent-google-kollegen-unternehmen",
+ "lang": "de",
+ "section": "trends",
+ "type": "news",
+ "title": "Google Gemini agent: Der KI-Kollege mit eigener E-Mail-Adresse",
+ "dek": "Google Cloud stellt den Gemini agent vor: ein Agent für Wissensarbeit, Daten und Code, der in der Cloud weiterarbeitet und eigene Workspace-Konten bekommt. Noch läuft er nur in einer geschlossenen Vorschau.",
+ "published": "2026-10-18T20:05:00+02:00",
+ "modified": "2026-10-18T20:05:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Google",
+  "Gemini",
+  "KI-Agenten",
+  "Unternehmens-KI"
+ ],
+ "key_takeaways": [
+  "Der Gemini agent ist laut Google Cloud ein universeller Agent für Wissensarbeit, Datenanalyse, Content und Code, ansprechbar über eine einzige Eingabe.",
+  "Er läuft in der Cloud und arbeitet auch weiter, wenn der Laptop zu ist. Es gibt vier Gedächtnisarten: Session, semantisch, prozedural und episodisch.",
+  "Coworker-Agenten bekommen laut Google ein eigenes Workspace-Konto mit E-Mail-Adresse, Drive-Speicher und Verzeichniseintrag.",
+  "Modellwahl: Gemini-Modelle und Claude von Anthropic zum Start, weitere offene und geschlossene Modelle sollen folgen.",
+  "Ausgabenlimits in der Cloud-Billing-Konsole pausieren den Agenten automatisch. Verfügbarkeit: geschlossene Vorschau, Preise und Termin für alle sind offen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: In einem Großraumbüro am Abend sitzen leuchtende, durchscheinende Figuren neben Menschen an Laptops, verbunden über Datenfäden mit einer Wolke an der Decke",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Google Cloud hat auf der Konferenz Gemini at Work 2026 den „Gemini agent“ vorgestellt. Er soll Aufgaben von der Recherche über Datenanalyse bis zum Code aus einer einzigen Eingabe erledigen, in der Cloud weiterlaufen und als persistenter „Coworker“ ein eigenes Workspace-Konto bekommen. Verfügbar ist er laut Medienberichten bisher nur in einer geschlossenen Vorschau für ausgewählte Großkunden."
+  },
+  {
+   "t": "h2",
+   "x": "Was der Gemini agent sein soll"
+  },
+  {
+   "t": "p",
+   "x": "Laut der [Google-Cloud-Mitteilung](https://www.googlecloudpresscorner.com/gemini-at-work-2026) ist der Gemini agent „your new single, universal agent for work“. Er kenne den Geschäftskontext und decke Wissensarbeit, Fragen, Content-Erstellung und Coding ab. In der von [Al Bawaba](https://www.albawaba.com/business/pr/welcome-gemini-work-2026-introducing-1638785) veröffentlichten Pressemitteilung sagt Google-Cloud-Chef Thomas Kurian, der Agent plane die Arbeit, nutze Skills und Tools, verbinde sich mit den Systemen des Unternehmens und liefere fertige Ergebnisse. Man gebe ihm Ziele, nicht Anweisungen."
+  },
+  {
+   "t": "p",
+   "x": "Für große Aufgaben erzeugt er nach Googles Darstellung temporäre Sub-Agenten mit eigener Identität, die parallel oder nacheinander arbeiten, teils über Stunden oder Tage."
+  },
+  {
+   "t": "h2",
+   "x": "Eigene E-Mail-Adresse für den Agenten"
+  },
+  {
+   "t": "p",
+   "x": "Der auffälligste Punkt sind die Coworker-Agenten. Laut [Google Cloud Blog](https://cloud.google.com/blog/topics/startups/what-the-gemini-agent-means-for-startups) hat jeder ein eigenes Workspace-Konto mit E-Mail-Adresse, Drive-Speicher und Eintrag im Verzeichnis. Teams definieren eine Rolle, etwa Launch-Koordinator, QA-Triager oder Finanzanalyst, und können den Agenten in einem Chat-Space oder per @Erwähnung in einem Google-Doc-Kommentar beauftragen. Die Pressemitteilung nennt Adressen im Format @agents.company.com. Ein Coworker sieht nur den Kontext, den Team oder Nutzer ihm geben."
+  },
+  {
+   "t": "h2",
+   "x": "Gedächtnis, Skills und Anbindungen"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Gedächtnis:** Session, semantisch, prozedural und episodisch. Der Agent soll sich wie ein neuer Mitarbeiter selbst einarbeiten.",
+    "**Skills:** wiederverwendbare Abläufe, die Teams in einer gemeinsamen Registry veröffentlichen. Der Agent kann laut Google auch selbst Skills schreiben. Vorgefertigte Spezialisierungen gibt es zunächst für Recht und Finanzdienstleistungen.",
+    "**Tools:** Anbindung u. a. an Git, Jira, Slack, Confluence, Salesforce, ServiceNow, BigQuery, Snowflake, Databricks, Postgres und beliebige MCP-Server.",
+    "**Zugang:** Web, iOS, Android, Windows, Mac, Kommandozeile sowie Google Workspace, Microsoft 365 und Slack."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Modellwahl, Governance, Kosten"
+  },
+  {
+   "t": "p",
+   "x": "Der Agent wählt das Modell pro Aufgabe. Zum Start stehen Gemini-Modelle und Claude von Anthropic bereit, weitere private und offene Modelle sollen folgen. Als Sicherheitsbausteine nennt Google eine kryptografische Agent Identity für Audit-Trails, eine isolierte Sandbox, Abwehr gegen Prompt Injection und einen Agent Gateway für externen Datenverkehr."
+  },
+  {
+   "t": "p",
+   "x": "Gegen Kostenschocks gibt es laut Google Cloud Blog harte Ausgabenlimits in der Cloud-Billing-Konsole. Ist das Limit erreicht, pausiert der Agent des Projekts. Einmal gebaute Berichte laufen danach ohne zusätzliche Token-Kosten erneut. Nach Angaben von [ad-hoc-news](https://www.ad-hoc-news.de/wissenschaft/gemini-agent-google-startet-mit-geschlossener-vorschau-fuer-grosskunden/70351964) verzichtet Google auf ein zusätzliches Lizenzmodell pro Arbeitsplatz für den Agenten; stattdessen soll nutzungsabhängige Abrechnung mit bestehenden Abos kombiniert werden. Das ist eine Sekundärquelle, die sich auf Unternehmensangaben beruft."
+  },
+  {
+   "t": "h2",
+   "x": "Was noch offen ist"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Der Google Cloud Blog schreibt, die neuen Fähigkeiten seien noch nicht öffentlich verfügbar. Startups sollen den Vertrieb kontaktieren.",
+    "Laut ad-hoc-news gibt es noch keinen Termin für die allgemeine Verfügbarkeit in Workspace-Tarifen und keine Endpreise.",
+    "Erfahrungswerte aus dem Alltag fehlen. Alle Leistungsversprechen stammen bisher von Google selbst."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Was das für dich bedeutet"
+  },
+  {
+   "t": "p",
+   "x": "Wenn Agenten eigene Konten bekommen, werden Rechte, Protokolle und Budgets zur Pflichtaufgabe der IT. Wer Agenten im Team einsetzt, sollte klären, auf welche Daten ein Agent zugreifen darf, wer seine Ergebnisse freigibt und wie Ausgaben begrenzt werden. Für Firmen in der EU kommen Transparenz- und Dokumentationspflichten dazu, die je nach Einsatz gelten können."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Kann ich den Gemini agent schon nutzen?",
+   "a": "Laut ad-hoc-news läuft er in einer geschlossenen Vorschau für ausgewählte Großkunden. Der Google Cloud Blog nennt die Funktionen noch nicht öffentlich verfügbar."
+  },
+  {
+   "q": "Was ist ein Coworker-Agent?",
+   "a": "Ein persistenter Agent mit definierter Rolle und eigenem Workspace-Konto samt E-Mail-Adresse und Speicher, den Teams wie ein Teammitglied ansprechen können."
+  },
+  {
+   "q": "Welche Modelle laufen darunter?",
+   "a": "Zum Start Gemini-Modelle und Claude von Anthropic. Weitere private und offene Modelle sollen laut Google später folgen."
+  },
+  {
+   "q": "Was kostet der Gemini agent?",
+   "a": "Endpreise sind laut ad-hoc-news noch nicht bekannt. Google nennt Ausgabenlimits in der Billing-Konsole, aber keinen Preis."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Gemini at Work '26: Introducing the Gemini agent",
+   "publisher": "Google Cloud Press Corner",
+   "url": "https://www.googlecloudpresscorner.com/gemini-at-work-2026",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "What the Gemini agent means for startups",
+   "publisher": "Google Cloud Blog, 15.10.2026",
+   "url": "https://cloud.google.com/blog/topics/startups/what-the-gemini-agent-means-for-startups",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Welcome to Gemini at Work 2026: Introducing the Gemini agent",
+   "publisher": "Al Bawaba (Google-Cloud-Pressemitteilung), 18.10.2026",
+   "url": "https://www.albawaba.com/business/pr/welcome-gemini-work-2026-introducing-1638785",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Gemini agent: Google startet mit geschlossener Vorschau für Großkunden",
+   "publisher": "ad-hoc-news.de, 18.10.2026",
+   "url": "https://www.ad-hoc-news.de/wissenschaft/gemini-agent-google-startet-mit-geschlossener-vorschau-fuer-grosskunden/70351964",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
