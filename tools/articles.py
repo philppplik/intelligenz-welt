@@ -306,7 +306,7 @@ def branding(out):
     dst = os.path.join(out, 'assets', 'branding'); os.makedirs(dst, exist_ok=True)
     for f in os.listdir(bd):
         shutil.copy(os.path.join(bd, f), dst)
-        if f in ('favicon.ico', 'apple-touch-icon.png'): shutil.copy(os.path.join(bd, f), os.path.join(out, f))
+        if f in ('favicon.ico', 'favicon.svg', 'apple-touch-icon.png'): shutil.copy(os.path.join(bd, f), os.path.join(out, f))
 
 def og_fallback(out):
     src = os.path.join(ROOT, 'content/images/og-default.jpg')
