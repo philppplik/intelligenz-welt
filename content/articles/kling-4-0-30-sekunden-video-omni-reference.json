@@ -1,0 +1,122 @@
+{
+ "slug": "kling-4-0-30-sekunden-video-omni-reference",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "Kling 4.0: 30 Sekunden Video am Stück und 15 Referenzen",
+ "dek": "Kuaishou bringt sein neues Video-Modell weltweit an den Start. Es soll bei schnellen Bewegungen und Kamerafahrten stabiler sein und lässt sich mit bis zu 15 Referenzen und 10 Keyframes steuern.",
+ "published": "2026-10-18T20:05:00+02:00",
+ "modified": "2026-10-18T20:05:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Kling",
+  "Video-KI",
+  "Kuaishou",
+  "Omni Reference"
+ ],
+ "key_takeaways": [
+  "Kling 4.0 ist laut Kuaishou am 15. Oktober 2026 gestartet und auf der Kling-Website voll verfügbar.",
+  "Neu: bis zu 30 Sekunden in einem Durchgang, Prompts bis 8.000 Token, stabilere schnelle Bewegung und Kamerafahrten.",
+  "Omni Reference kombiniert bis zu 15 Referenzen (Bilder, Videos, Subjekte, Stimmen) und bis zu 10 Keyframes.",
+  "10-Bit-HDR in 4K und 1080p sowie das Format 21:9 sollen „bald“ folgen, ebenso API-Zugang für Unternehmen und Entwickler.",
+  "Adobe kündigt Kling 4.0 und Kling 4.0 Flash für Firefly als „coming soon“ an."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein leerer Regiestuhl vor einer Skyline bei Nacht, darüber kreist ein leuchtender Filmstreifen mit Kameras und schwebenden Bildkarten",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Kling AI hat mit Kling 4.0 sein neues Video-Modell veröffentlicht. Es erzeugt laut Hersteller bis zu 30 Sekunden Video in einem Durchgang, hält schnelle Action und komplexe Kamerafahrten stabiler und nimmt bis zu 15 Referenzen sowie 10 Keyframes entgegen. Alle Angaben stammen aus den Pressemitteilungen von Kuaishou und Kling AI, unabhängige Tests lagen uns nicht vor."
+  },
+  {
+   "t": "h2",
+   "x": "Was Kling 4.0 neu macht"
+  },
+  {
+   "t": "p",
+   "x": "Laut [Kuaishou](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-officially-launches-next-generation-kling-40-raising/) ist Kling 4.0 am 15. Oktober gestartet. Die Schwerpunkte sind Realismus, Kontrolle und professionelle Qualität. Das Modell soll vor allem bei intensiver Bewegung und aufwendigen Kamerabewegungen besser werden, einer typischen Schwäche von KI-Video."
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**30 Sekunden am Stück:** Lange Einstellungen entstehen nativ in einem Durchgang. Bestehende Videos lassen sich laut Kling AI auf bis zu zwei Minuten verlängern.",
+    "**Kamera:** Push-ins, Pull-outs, Schwenks, Fahrten, Tracking- und Orbit-Shots sollen natürlicher und stabiler laufen.",
+    "**Längere Prompts:** Die Eingabe reicht jetzt bis 8.000 Token.",
+    "**Sprachen:** Mehr Sprachen, Akzente und Dialekte, darunter Deutsch, Englisch, Japanisch, Spanisch und Französisch."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Omni Reference: bis zu 15 Referenzen, 10 Keyframes"
+  },
+  {
+   "t": "p",
+   "x": "Bei Omni Reference lassen sich Bilder, Videos, Subjekte und Stimmen in einer Aufgabe mischen, insgesamt bis zu 15 Referenzen. Das sollen Figuren, Bewegungen, Kameraführung und Ton näher an der Vorstellung der Kreativen halten. Als Referenz gehen laut Kuaishou auch Charakterblätter, Storyboards, Wireframes sowie Weißmodell- und Tiefenkarten-Videos. Dazu kommen bis zu 10 Keyframes, mit denen man Schlüsselmomente und Szenenwechsel festlegt."
+  },
+  {
+   "t": "p",
+   "x": "Außerdem kann man den Erzählrhythmus, die Bildkomposition und den Stil eines Referenzvideos übernehmen und Produkte, Figuren oder Elemente darin austauschen. Als Einsatzfelder nennt Kuaishou Produktwerbung, Social-Media-Clips, Mode, Beauty und Consumer-Elektronik."
+  },
+  {
+   "t": "h2",
+   "x": "Was noch nicht da ist"
+  },
+  {
+   "t": "p",
+   "x": "Nicht alles gibt es sofort. Laut [Kling AI](https://www.globenewswire.com/news-release/2026/10/16/3382484/0/en/kling-ai-launches-kling-4-0-globally-with-professional-grade-output-stable-motion-and-multimodal-control.html) soll Kling 4.0 „bald“ 10-Bit-HDR in 4K und 1080p sowie das Ultrabreit-Format 21:9 unterstützen. Das Modell ist auf der Kling-Website voll verfügbar. API-Zugang für Unternehmen und Entwickler kommt „bald“. Adobe kündigt Kling 4.0 und Kling 4.0 Flash, eine schnellere Variante für Alltagsmaterial, als „coming soon“ in Firefly an. Preise nennen die Mitteilungen nicht."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Die Branche konkurriert laut Kuaishou nicht mehr darüber, ob KI Video erzeugen kann, sondern wie verlässlich und kontrollierbar. Genau dort setzt Kling 4.0 an. Ob die Stabilität bei schneller Action wirklich besser ist, sagen erst unabhängige Vergleiche. Die Zitate von Filmemachern in der Mitteilung sind Herstellermaterial. Auch die Zahl von über 100 Millionen Nutzern und 50.000 Unternehmenskunden ist eine Angabe von Kling AI."
+  },
+  {
+   "t": "h2",
+   "x": "Was das für dich bedeutet"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Teste lange Einstellungen und Kamerafahrten mit einem kurzen Prompt, bevor du viele Referenzen mischst.",
+    "Prüfe bei Referenzmaterial die Rechte: Gesichter, Stimmen und fremde Videos gehören nicht automatisch dir.",
+    "Plane für Kundenprojekte nicht mit HDR, 4K oder API, solange sie nur als „bald“ angekündigt sind."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Wie lang können Kling-4.0-Videos sein?",
+   "a": "Nativ bis zu 30 Sekunden in einem Durchgang. Vorhandene Videos lassen sich laut Kling AI auf bis zu zwei Minuten verlängern."
+  },
+  {
+   "q": "Ist Kling 4.0 schon nutzbar?",
+   "a": "Laut Kling AI ist das Modell auf der Kling-Website voll verfügbar. HDR, 21:9 und API-Zugang sind als „bald“ angekündigt."
+  },
+  {
+   "q": "Was kostet Kling 4.0?",
+   "a": "Die Pressemitteilungen nennen keine Preise. Aktuelle Tarife stehen auf der Kling-Website."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Kling AI Officially Launches Next-Generation Kling 4.0, Raising the Bar for Professional-Grade Video Models",
+   "publisher": "Kuaishou Technology (Pressemitteilung), 16.10.2026",
+   "url": "https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-officially-launches-next-generation-kling-40-raising/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Kling AI Launches Kling 4.0 Globally with Professional-Grade Output, Stable Motion and Multimodal Control",
+   "publisher": "Kling AI via GlobeNewswire, 16.10.2026",
+   "url": "https://www.globenewswire.com/news-release/2026/10/16/3382484/0/en/kling-ai-launches-kling-4-0-globally-with-professional-grade-output-stable-motion-and-multimodal-control.html",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
