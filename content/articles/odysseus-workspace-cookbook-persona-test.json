@@ -1,0 +1,136 @@
+{
+ "slug": "odysseus-workspace-cookbook-persona-test",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "PewDiePies Odysseus im Check: Das kann die selbst gehostete KI-Zentrale",
+ "dek": "Ein Cookbook für lokale Modelle, Personas im Gruppenchat, Memory mit Löschfunktion: Was Odysseus vier Monate nach dem Start zeigt, und wie du es startest.",
+ "published": "2026-10-18T20:15:00+02:00",
+ "modified": "2026-10-18T20:15:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "PewDiePie",
+  "Odysseus",
+  "Self-Hosting",
+  "Open Source",
+  "Lokale KI"
+ ],
+ "key_takeaways": [
+  "Odysseus ist laut GitHub-Seite eine selbst gehostete KI-Arbeitsumgebung unter AGPL-3.0; das Repository entstand am 31. Mai 2026.",
+  "Das Cookbook empfiehlt Modelle passend zur eigenen Hardware; alternativ lassen sich Cloud-Modelle per API-Schlüssel einbinden, etwa über OpenRouter.",
+  "Android Authority lobt Personas, einsehbare Memory-Einträge und lernende Skills mit Confidence-Score. Kritik: wenig Office-Formate, Kalender-Anbindung ausbaufähig.",
+  "Start per Docker Compose, Oberfläche danach unter localhost:7011. Für Netzwerkzugriff gilt: Authentifizierung eingeschaltet lassen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein Laptop mit abstrakter KI-Oberfläche neben einem kleinen Heimserver und einer Pinguin-Figur auf einem Schreibtisch im blauen Abendlicht",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Odysseus, das Open-Source-Projekt von YouTuber Felix Kjellberg alias PewDiePie, ist mehr als ein Chatfenster für lokale Modelle. Ein Hands-on von Android Authority und das GitHub-Repository zeigen, welche Funktionen dahinterstecken. Wir haben beides gelesen, selbst haben wir Odysseus nicht getestet."
+  },
+  {
+   "t": "h2",
+   "x": "Was Odysseus ist"
+  },
+  {
+   "t": "p",
+   "x": "Kjellberg hat Odysseus am 1. Juni 2026 vorgestellt. Laut [it-daily](https://www.it-daily.net/shortnews/youtuber-pewdiepie-ki-plattform) ist es eine kostenlose, quelloffene und selbst gehostete Oberfläche, die per Docker läuft und mit lokalen Engines wie Ollama, llama.cpp oder vLLM spricht. Optional lassen sich auch Cloud-APIs anbinden. Die [GitHub-Seite](https://github.com/pewdiepie-archdaemon/odysseus) nennt die Lizenz AGPL-3.0 und listet als Funktionen unter anderem Chat und Agenten, Deep Research, E-Mail per IMAP/SMTP, Notizen, Aufgaben und CalDAV-Kalender."
+  },
+  {
+   "t": "h2",
+   "x": "Die Funktionen, die auffallen"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Cookbook:** Laut Android Authority zeigt es Modelle und ihre quantisierten Varianten von Hugging Face und sortiert sie nach Passung zur eigenen GPU. Wer wenig Hardware hat, kann Modelle per API-Schlüssel nutzen, etwa über OpenRouter. Die Daten bleiben dann lokal, der Anbieter sieht aber die Anfragen.",
+    "**Personas:** Gespeicherte System-Prompts, etwa als Lektor für Rechtschreibung und Passiv. Mehrere Personas können im selben Gruppenchat aufeinander antworten.",
+    "**Memory und Skills:** Agenten legen Notizen über Nutzer und Arbeit an, die du ansehen, ändern und löschen kannst. Selbst entwickelte Skills tragen einen Confidence-Score.",
+    "**Deep Research:** Mehrstufige Websuche mit Quellenlektüre und fertigem Bericht, ausgegeben als formatierte Webseite."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Stärken und Schwächen laut Praxistest"
+  },
+  {
+   "t": "p",
+   "x": "Der Autor von Android Authority, Robert Triggs, nutzt Odysseus nach eigener Aussage seit mehreren Wochen und will es als Haupt-Arbeitsumgebung behalten. Er sieht aber Lücken: breitere Unterstützung für Office-Dokumente, einfachere Cloud-Kalender-Anbindung und Dateiverwaltung im Workspace. Das ist ein Einzelurteil eines Testers, kein Benchmark."
+  },
+  {
+   "t": "p",
+   "x": "it-daily wies zum Start außerdem darauf hin, dass sich das Projekt in einer frühen Phase befand und Fachleute Code-Audits für Docker-Umgebung und Ausführungspfade forderten. Die GitHub-Seite empfiehlt heute für Netzwerkzugriff ausdrücklich, die Authentifizierung eingeschaltet zu lassen und keine rohen Modell-Ports öffentlich freizugeben."
+  },
+  {
+   "t": "h2",
+   "x": "So startest du es"
+  },
+  {
+   "t": "p",
+   "x": "Laut Quick Start auf GitHub reicht ein Docker-Setup. Das Passwort des ersten Admins steht anschließend in den Container-Logs."
+  },
+  {
+   "t": "ol",
+   "items": [
+    "Repository klonen: git clone https://github.com/odysseus-dev/odysseus.git",
+    "In den Ordner wechseln und die Konfiguration kopieren: cd odysseus, dann cp .env.example .env",
+    "Starten: docker compose up -d --build"
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Danach öffnest du http://localhost:7011 im Browser. Native Installation, GPU-Hinweise und HTTPS stehen im Setup-Guide des Projekts."
+  },
+  {
+   "t": "h2",
+   "x": "Was das für dich bedeutet"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Du willst KI ohne Abo und mit Daten auf eigener Hardware? Odysseus ist ein Einstieg, der ohne eigenes Zusammenbauen mehrerer Tools auskommt.",
+    "Ohne starke GPU kannst du mit API-Schlüsseln starten, solltest aber wissen, dass dann der API-Anbieter deine Anfragen sieht.",
+    "Betreibst du es im Netzwerk, gelten die Sicherheitshinweise des Projekts: Auth an, keine offenen Modell-Ports."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Der Zuspruch ist groß: Die GitHub-Seite zeigte beim Abruf am 18. Oktober 2026 rund 93.800 Sterne. Ob Odysseus aus dem Hype eine dauerhafte Alternative zu ChatGPT und Claude wird, entscheidet sich an Pflege, Sicherheit und den genannten Lücken."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was kostet Odysseus?",
+   "a": "Laut it-daily ist die Software kostenlos und quelloffen (AGPL-3.0 laut GitHub). Kosten entstehen nur für Hardware oder für Cloud-Modelle, falls du per API welche einbindest."
+  },
+  {
+   "q": "Brauche ich eine eigene GPU?",
+   "a": "Nicht zwingend. Laut Android Authority lassen sich auch Cloud-Modelle per API-Schlüssel einbinden, etwa über OpenRouter. Dann verlassen deine Anfragen aber den eigenen Rechner."
+  }
+ ],
+ "sources": [
+  {
+   "title": "YouTuber PewDiePie veröffentlicht lokale KI-Plattform Odysseus",
+   "publisher": "it-daily.net, 01.06.2026",
+   "url": "https://www.it-daily.net/shortnews/youtuber-pewdiepie-ki-plattform",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "I self-hosted PewDiePie's Odysseus AI workspace, and it's surprisingly brilliant",
+   "publisher": "Android Authority, 04.07.2026",
+   "url": "https://www.androidauthority.com/pewdiepie-odysseus-ai-hands-on-3682909/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Odysseus: Self-hosted AI workspace (README, Quick Start, Sicherheit)",
+   "publisher": "GitHub",
+   "url": "https://github.com/pewdiepie-archdaemon/odysseus",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
