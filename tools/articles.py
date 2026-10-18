@@ -25,6 +25,7 @@ DISCLOSURE = ('Transparenzhinweis: Dieser Artikel ist ein redaktioneller Beitrag
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from share import share_block, SHARE_CSS
 import mdpages
+import report as ireport
 CSS = ('<style>.ed .crumbs{font-size:14px;color:var(--mut);margin:0 0 14px}.ed .crumbs a,.ed .byline a,.ed .src a,.ed .more a,.ed .body a,.ed .note a{text-decoration:underline;text-underline-offset:3px}'
        '.ed .byline{color:var(--mut);font-size:14px;margin:6px 0 18px}.ed .byline a{color:var(--fg)}'
        '.ed figure{margin:0 0 22px}.ed figure img{width:100%;height:auto;border-radius:14px;display:block}.ed figcaption{font-size:13px;color:var(--mut);margin-top:8px}'
@@ -325,6 +326,7 @@ def patch_site(out, arts):
         if False:
             sec = '<h2 class="sec" id="neueste-artikel">Neueste Artikel <a href="/artikel/">Alle →</a></h2><div class="cards">' + ''.join(card(a) for a in arts[:6]) + '</div>'
             t = t.replace('<h2 class="sec">Analysen &amp; Briefings', sec + '<h2 class="sec">Analysen &amp; Briefings', 1)
+        if '<a href="/feed.xml">RSS-Feed</a>' in t and '/berichte/">Tagesausgabe' not in t: t = t.replace('<a href="/feed.xml">RSS-Feed</a>', '<a href="/feed.xml">RSS-Feed</a><a href="/berichte/">Tagesausgabe (PDF)</a>', 1)
         if LEGAL_FOOT_OLD in t and '/transparenz/">KI-Transparenz' not in t: t = t.replace(LEGAL_FOOT_OLD, LEGAL_FOOT_NEW, 1)
         if f.endswith(os.path.join('impressum', 'index.html')) and 'Streitbeilegung' not in t: t = t.replace('</article>', IMPRESSUM_ADD + '</article>', 1)
         if t != o: open(f, 'w', encoding='utf-8').write(t)
@@ -364,6 +366,15 @@ def main():
     n = patch_sitemaps(out, arts, sections, now) if arts else 0
     patch_feed(out, arts); patch_site(out, arts)
     branding(out); patch_home(out, arts); og_fallback(out)
+    ok = ireport.build(arts, now, out, ROOT, BASE)
+    stamp = now.strftime('%d.%m.%Y, %H:%M') + ' Uhr'
+    hh = head_for(head, 'Tagesausgabe als PDF | Intelligenz Welt', 'Tägliche Ausgabe als PDF: Meldung des Tages, neueste Artikel, KI-Pulse und Impressum. Kostenlos, druckfreundlich.', BASE + '/berichte/', 'website')
+    b = ('<article class="art ed"><h1>Tagesausgabe als PDF</h1><p>Die Tagesausgabe fasst die Meldung des Tages, die neuesten Artikel, aktuelle Schlagzeilen (KI-Pulse) und das Impressum mit Redaktionsschluss zusammen. Hell, druckfreundlich, ohne Tracking.</p>'
+         '<p><a href="/berichte/intelligenz-welt-tagesausgabe.pdf" download style="display:inline-block;background:var(--ac);color:#fff;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600">PDF herunterladen</a> &nbsp; <a href="/berichte/tagesausgabe.html">Druckansicht im Browser</a></p>'
+         '<p>Stand der aktuellen Ausgabe: %s. Die Ausgabe wird automatisch erstellt; Beiträge entstehen mit KI-Unterstützung und werden redaktionell geprüft (<a href="/transparenz/">so arbeiten wir</a>). Schlagzeilen stammen aus öffentlichen Feeds, es werden nur Überschriften mit Quelle gezeigt.</p></article>') % stamp
+    open(os.path.join(out, 'berichte', 'index.html'), 'w', encoding='utf-8').write(hh + b + foot)
+    if 'berichte' not in LEGAL:
+        LEGAL.append('berichte'); patch_sitemaps(out, arts, sections, now)
     print('articles: %d rendered, %d in news-sitemap' % (len(arts), n))
 
 def branding(out):
