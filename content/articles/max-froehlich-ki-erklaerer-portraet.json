@@ -1,0 +1,203 @@
+{
+ "slug": "max-froehlich-ki-erklaerer-portraet",
+ "lang": "de",
+ "section": "analyse",
+ "type": "analysis",
+ "title": "Max Fröhlich: Der Mathematiker, der KI in einer Minute erklärt",
+ "dek": "Porträt: Wer hinter „AI einfach erklärt“ steckt, warum seine Kurzvideos Hunderttausende erreichen und was ihn von anderen KI-Erklärern unterscheidet.",
+ "published": "2026-10-18T20:57:00+02:00",
+ "modified": "2026-10-18T20:57:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Max Fröhlich",
+  "AI einfach erklärt",
+  "YouTube",
+  "KI lernen",
+  "Mathematik"
+ ],
+ "key_takeaways": [
+  "Max Fröhlich ist Mathematik-Doktorand in Berlin und erklärt KI in Kurzvideos (laut eigener Angabe).",
+  "Auf YouTube folgen ihm rund 28.100 Abonnenten (Stand 18.10.2026), sein meistgesehener Short hat rund 472.000 Aufrufe.",
+  "Sein Hintergrund: Wirtschaftsmathematik, KI und Quantencomputing, Mitautor einer Nature-Communications-Veröffentlichung.",
+  "Sein Leitsatz: KI so viel nutzen wie möglich, aber selbst weiterdenken."
+ ],
+ "hero": {
+  "alt": "KI-generierte Grafik: dunkle, gesichtslose Silhouette einer Person vor einer leuchtenden Tafel mit Formeln und neuronalen Netzen",
+  "caption": "Symbolgrafik, KI-generiert (Intelligenz Welt). Zeigt keine reale Person.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Max Fröhlich ist Mathematiker, Doktorand in Berlin und erklärt unter „AI einfach erklärt“ in kurzen Videos, was hinter dem KI-Hype steckt. Auf YouTube folgen ihm laut Kanalseite rund 28.100 Abonnenten (Stand 18. Oktober 2026, von YouTube gerundet). Wer KI verstehen will, ohne Mathe zu studieren, findet bei ihm schnelle, unterhaltsame Einordnungen."
+  },
+  {
+   "t": "h2",
+   "x": "Wer ist Max Fröhlich?"
+  },
+  {
+   "t": "p",
+   "x": "Laut einem Interview der Reihe „Tell your story“ von Lexware (29.9.2026) ist Max Fröhlich 29 Jahre alt und lebt in Berlin. Er schreibt seit Sommer 2023 am Weierstraß-Institut (WIAS) seine Doktorarbeit in Mathematik, mit Schwerpunkt KI und Quantencomputing. Zuvor hat er an der TU Berlin Wirtschaftsmathematik studiert. Das sind seine eigenen Angaben im Interview. Dazu passt: Das Weierstraß-Institut führt auf seiner Mitarbeiterseite einen Maximilian Fröhlich, und ein gleichnamiger Autor taucht in einer Fachveröffentlichung auf (siehe unten)."
+  },
+  {
+   "t": "p",
+   "x": "Bevor er KI erklärte, war er Artist und Comedian. Laut Interview trat er unter anderem im Duo „Benno&Max“ auf, steht teils noch auf der Bühne und produziert außerdem Varieté- und Dinnershows. Auf seiner YouTube-Kanalseite steht: „Neues Video jeden Dienstag + Freitag“, dazu „Berlin“ und „Math PhD“."
+  },
+  {
+   "t": "h2",
+   "x": "Sein Stil: kurz, lustig, sauber"
+  },
+  {
+   "t": "p",
+   "x": "Auf seiner Website beschreibt er sein Angebot als „AI-News, Gerüchte & Erklärungen – lustig, verständlich, wissenschaftlich sauber“. Sein Anspruch: „Als Mathematiker liebe ich die Präzision. Als Mensch liebe ich es, Dinge verständlich zu machen.“ Im Interview nennt er als Ziel, die Kluft zwischen Wissenschaft und „Otto Normalverbraucher“ beim Thema KI ein Stück zu schließen. Sein Schlusssatz dort: „Benutzt KI so viel ihr könnt, aber hört nicht auf, selbst zu denken.“"
+  },
+  {
+   "t": "p",
+   "x": "Seine Videos laufen auf YouTube, Instagram und TikTok. Laut Interview folgen ihm auf Instagram rund 68.000 Menschen (Eigenangabe, Stand September 2026). Der Durchbruch kam demnach mit einem Video darüber, warum KI früher keine Uhrzeiten auf Bildern darstellen konnte. Es hatte über 100.000 Aufrufe. Er sagt selbst dazu, das stimme inzwischen nicht mehr."
+  },
+  {
+   "t": "h2",
+   "x": "Zahlen: Kanal und Videos (Stand 18.10.2026)"
+  },
+  {
+   "t": "table",
+   "caption": "Ausgewählte Kurzvideos von Max Fröhlich (Aufrufe laut YouTube, Stand 18. Oktober 2026, teils gerundet)",
+   "head": [
+    "Video",
+    "Datum",
+    "Länge",
+    "Aufrufe",
+    "Worum es geht"
+   ],
+   "rows": [
+    [
+     "[Die neue Gen AI ist einfach Crazy](https://www.youtube.com/watch?v=fNK5H-4ev7A)",
+     "28.11.2025",
+     "1:01",
+     "ca. 472.000",
+     "Kurz-Erklärung zu neuer generativer KI"
+    ],
+    [
+     "[Ist ChatGPT wirklich schlau?](https://www.youtube.com/watch?v=-h5-rpeXX_0)",
+     "13.3.2026",
+     "0:59",
+     "ca. 181.000",
+     "Top-Mathematiker testen KI mit unveröffentlichten Forschungsproblemen (laut Videobeschreibung)"
+    ],
+    [
+     "[87 Jahre altes Mathe Problem gelöst](https://www.youtube.com/watch?v=5lGxx30mMAs)",
+     "20.7.2026",
+     "1:16",
+     "ca. 144.000",
+     "Ein altes Mathe-Problem und die Rolle von KI"
+    ]
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Zur Einordnung: Die Kanalseite weist rund 28.100 Abonnenten und etwa 181 Kurzvideos aus. Die meistgesehenen Shorts liegen laut YouTube im Bereich von mehreren hunderttausend Aufrufen. Kurzvideo-Aufrufe sind aber nicht direkt mit Abonnentenzahlen vergleichbar, sie sind vor allem ein Zeichen für Reichweite im Algorithmus."
+  },
+  {
+   "t": "h2",
+   "x": "Wissenschaft hinter dem Erklärer"
+  },
+  {
+   "t": "p",
+   "x": "Auf seiner Website verlinkt er Fachpublikationen. Eine davon ist in Nature Communications erschienen (10. Dezember 2025): „Large-scale stochastic simulation of open quantum systems“. Maximilian Fröhlich ist dort einer von mehreren Autoren, die „Tensor Jump Method“ genannte Methode soll große offene Quantensysteme simulieren, im Paper bis zu tausend Spins auf einer normalen Consumer-CPU. Weitere verlinkte Arbeiten sind zwei arXiv-Preprints (2508.10096 und 2601.15442), die wir nicht inhaltlich geprüft haben. Das ist ein ungewöhnlicher Hintergrund für jemanden, der KI für ein breites Publikum erklärt."
+  },
+  {
+   "t": "h2",
+   "x": "Auftritte und Angebote"
+  },
+  {
+   "t": "p",
+   "x": "Er hält laut seiner Website Keynotes und Workshops, gebucht wird über die Agentur kulturkraemer. In einer Podcast-Folge des BB RADIO Mitternachtstalks (Folge 492, 14.8.2026, 1 Std. 14 Min.) sprach er über die Frage „Wie viel Mathematik steckt in KI?“. Im Interview nennt er außerdem seine erste größere Keynote auf dem Fake News Festival in Frankfurt (Oder) als schönen Moment."
+  },
+  {
+   "t": "h2",
+   "x": "Warum er sehenswert ist"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Mathe statt Mystik:** Er erklärt KI als Mathematik, nicht als Magie.",
+    "**Kurz und konkret:** Die meisten Videos dauern etwa eine Minute und lassen sich nebenbei schauen.",
+    "**Mit Haltung:** Sein Rat lautet, KI viel zu nutzen, aber selbst zu denken.",
+    "**Mit Fachhintergrund:** Er forscht selbst an KI und Quantencomputing, laut verlinkter Veröffentlichung."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Transparenz und Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Dieser Artikel ist redaktionell und nicht von Max Fröhlich beauftragt oder geprüft. Es gab kein Gespräch mit ihm. Angaben zu seinem Werdegang stammen aus seinem eigenen Interview, seiner Website und seinem Kanal. Alle Zahlen sind Momentaufnahmen vom 18. Oktober 2026. Die Videoauswahl ist eine redaktionelle Entscheidung, keine Rangliste."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Wer ist Max Fröhlich?",
+   "a": "Ein Berliner Mathematiker und KI-Erklärer. Laut eigenem Interview promoviert er am Weierstraß-Institut und erklärt KI auf YouTube, Instagram und TikTok unter „AI einfach erklärt“."
+  },
+  {
+   "q": "Wie viele Abonnenten hat sein YouTube-Kanal?",
+   "a": "Laut YouTube-Kanalseite rund 28.100 (Stand 18. Oktober 2026, gerundet)."
+  },
+  {
+   "q": "Wo kann man ihn buchen?",
+   "a": "Laut seiner Website für Keynotes und Workshops über die Agentur kulturkraemer in Köln."
+  },
+  {
+   "q": "Ist Max Fröhlich an der Forschung beteiligt?",
+   "a": "Er ist einer der Autoren der Nature-Communications-Veröffentlichung „Large-scale stochastic simulation of open quantum systems“ (10.12.2025)."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Max Fröhlich – AI einfach erklärt (Website)",
+   "publisher": "maxfroehlich.com (Eigendarstellung)",
+   "url": "http://maxfroehlich.com/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Tell your story: Max Fröhlich (Interview)",
+   "publisher": "Lexware, 29.9.2026",
+   "url": "https://tellyourstory.lexware.de/story/max-froehlich",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Max Fröhlich (YouTube-Kanal)",
+   "publisher": "YouTube",
+   "url": "https://www.youtube.com/@MaximilianFrohlich-ai",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Ist ChatGPT wirklich schlau? (Video)",
+   "publisher": "YouTube",
+   "url": "https://www.youtube.com/watch?v=-h5-rpeXX_0",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Large-scale stochastic simulation of open quantum systems",
+   "publisher": "Nature Communications, 10.12.2025",
+   "url": "https://www.nature.com/articles/s41467-025-66846-x",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Maximilian Fröhlich (Mitarbeiterseite)",
+   "publisher": "Weierstraß-Institut Berlin",
+   "url": "https://wias-berlin.de/~froehlich/?lang=1",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Folge 492: Max Fröhlich – Wie viel Mathematik steckt in KI?",
+   "publisher": "BB RADIO Mitternachtstalk, RTL+, 14.8.2026",
+   "url": "https://plus.rtl.de/der-bb-radio-mitternachtstalk-podcast-p_20033/audio/max-frohlich-wie-viel-mathematik-steckt-in-ki-c_2087294",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "limitations": "Abonnenten- und Aufrufzahlen sind Momentaufnahmen vom 18.10.2026. Werdegang-Angaben stammen aus seinem Interview, seiner Website und seinem Kanal. Es gab kein Gespräch mit ihm.",
+ "related": []
+}
