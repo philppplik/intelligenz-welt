@@ -1,0 +1,111 @@
+{
+ "slug": "disney-character-ai-team-insolvenz",
+ "lang": "de",
+ "section": "analyse",
+ "type": "news",
+ "title": "Disney holt das Character.AI-Team: mindestens 60 Jobs",
+ "dek": "Nach der Insolvenz will Disney laut Gerichtsdokument die Mehrheit der Belegschaft einstellen. Was der Deal über das Geschäft mit KI-Chatbots zeigt.",
+ "published": "2026-10-18T19:24:00+02:00",
+ "modified": "2026-10-18T19:24:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Character.AI",
+  "Disney",
+  "Insolvenz",
+  "Acqui-Hire"
+ ],
+ "key_takeaways": [
+  "Character.AI hat Anfang der Woche Insolvenz angemeldet (TechCrunch, 18. Oktober 2026).",
+  "Disney will mindestens 60 Beschäftigte einstellen, geschätzte Jahresvergütung: 60 Millionen US-Dollar.",
+  "Disney hatte zuvor zugesagt, einzelne Assets für 20 Millionen US-Dollar zu übernehmen.",
+  "Der frühere Character.AI-CEO Karandeep Anand ist Disneys erster CTO.",
+  "Als Gründe für die Lage nennt das Dokument hohe Kosten sowie mögliche Haftungs- und Regulierungsrisiken."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein Märchenschloss im Abendlicht, dessen Silhouette in Reihen leuchtender Serverschränke übergeht, eine Gruppe Silhouetten geht auf das Tor zu",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles Disney- oder Character.AI-Material.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Nach der Insolvenz von Character.AI will Disney laut einem Gerichtsdokument mindestens 60 Beschäftigte einstellen, die Mehrheit der Belegschaft, bei geschätzt 60 Millionen US-Dollar Jahresgehalt. Dazu kommt ein Kauf von Assets für 20 Millionen US-Dollar. Der Deal ist aber ein „Stalking-Horse-Gebot“, andere Bieter können mehr bieten."
+  },
+  {
+   "t": "h2",
+   "x": "Was passiert ist"
+  },
+  {
+   "t": "p",
+   "x": "Der Chatbot-Anbieter Character.AI hat Insolvenz angemeldet. Nun kommt ein Detail aus einem Gerichtsdokument ans Licht, das [TechCrunch](https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/) unter Verweis auf Bloomberg wiedergibt: Disney will mindestens 60 Character.AI-Beschäftigte einstellen. Das ist die Mehrheit der Belegschaft. Die geschätzte jährliche Vergütung liegt bei 60 Millionen US-Dollar. Laut Dokument haben die „vast majority“ der Angestellten, denen Disney ein Angebot gemacht hat, bereits zugesagt."
+  },
+  {
+   "t": "h2",
+   "x": "Acqui-Hire: ein Begriff, den du kennen solltest"
+  },
+  {
+   "t": "p",
+   "x": "Ein Acqui-Hire (aus „acquire“ und „hire“) bedeutet: Ein Unternehmen kauft nicht in erster Linie Produkt oder Kunden, sondern die Leute. Bei Character.AI kommt ein zweiter Baustein dazu. Das Startup hatte laut TechCrunch zuvor gesagt, Disney habe zugesagt, einige Assets für 20 Millionen US-Dollar zu erwerben. Der frühere Character.AI-CEO Karandeep Anand ist inzwischen Disneys erster Chief Technology Officer."
+  },
+  {
+   "t": "h2",
+   "x": "Warum das nicht ganz entschieden ist"
+  },
+  {
+   "t": "p",
+   "x": "Das Gebot ist ein „Stalking Horse“. Im Insolvenzrecht der USA ist das ein Erstgebot, das den Preis nach unten absichert. Danach können andere Interessenten höher bieten. Laut TechCrunch kann also noch ein anderes Unternehmen auftauchen. Bis dahin ist der Deal eine Absicht, kein Abschluss."
+  },
+  {
+   "t": "h2",
+   "x": "Was das Dokument über das Geschäft sagt"
+  },
+  {
+   "t": "p",
+   "x": "Trotz einer „großen und engagierten Nutzerbasis“ sei Character.AI durch hohe Kosten und mögliche Haftungs- und Regulierungsrisiken ausgebremst worden. TechCrunch erinnert in diesem Zusammenhang an eine Klage der Mutter eines 14-jährigen Jungen, der nach Angaben der Mutter von einem Chatbot der Firma besessen war, bevor er sich das Leben nahm. Außerdem gebe es Untersuchungen von Behörden zum Kinderschutz. Das sind Vorwürfe und laufende Verfahren, keine Urteile."
+  },
+  {
+   "t": "p",
+   "x": "Für die Branche ist das aufschlussreich: Eine große Nutzerzahl allein trägt kein Geschäft. Companion- und Rollenspiel-Chatbots verursachen hohe Rechenkosten, und bei jungen Nutzern sind die Haftungsfragen besonders heikel."
+  },
+  {
+   "t": "h2",
+   "x": "Warum Disney das interessant findet (und was wir nicht wissen)"
+  },
+  {
+   "t": "p",
+   "x": "Disney besitzt Figuren, Geschichten und ein Millionenpublikum. Ein Team, das gelernt hat, Figuren-Chatbots in großem Maßstab zu betreiben, passt auf den ersten Blick dazu. Was Disney konkret damit vorhat, nennt die Quelle nicht. Alles Weitere wäre Spekulation, und die lassen wir weg."
+  },
+  {
+   "t": "h2",
+   "x": "Take-aways"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Talent ist in der KI-Branche oft wertvoller als das Produkt, auch bei einer Insolvenz.",
+    "Ein Stalking-Horse-Gebot ist kein fester Abschluss: Beobachte, ob ein höheres Gebot kommt.",
+    "Haftung und Kinderschutz sind für Chatbot-Geschäftsmodelle ein echter Kostenfaktor."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist ein Stalking-Horse-Gebot?",
+   "a": "Ein Erstgebot in einem Insolvenzverfahren, das als Untergrenze dient. Andere Bieter können es überbieten."
+  },
+  {
+   "q": "Hat Disney Character.AI gekauft?",
+   "a": "Nein, nicht vollständig. Laut TechCrunch will Disney einzelne Assets für 20 Millionen US-Dollar übernehmen und mindestens 60 Beschäftigte einstellen. Das Gebot ist noch überbietbar."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Disney agrees to hire the majority of Character.AI’s workforce",
+   "publisher": "TechCrunch, 18.10.2026",
+   "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}

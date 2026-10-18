@@ -1,0 +1,103 @@
+{
+ "slug": "grueffelo-kokosnuss-neinhorn-ki-urheberrecht",
+ "lang": "de",
+ "section": "trends",
+ "type": "news",
+ "title": "Grüffelo, Kokosnuss, NEINhorn: KI-Streit ums Urheberrecht",
+ "dek": "Axel Scheffler erwägt eine Klage, zwei Verlage klagen schon gegen OpenAI. Warum Kinderbuch-Figuren zum Testfall für KI-Bilder werden.",
+ "published": "2026-10-18T19:25:00+02:00",
+ "modified": "2026-10-18T19:25:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Urheberrecht",
+  "Generative KI",
+  "OpenAI",
+  "Kreative KI"
+ ],
+ "key_takeaways": [
+  "Scheffler hat laut Bericht KI-Bilder gesehen, die eindeutig seine Figuren zeigen sollen; nur die Hintergründe wichen ab.",
+  "Penguin Random House klagt mit Ingo Siegner wegen des „kleinen Drachen Kokosnuss“ gegen OpenAI, als erster Buchverlag in Europa.",
+  "Carlsen klagt mit Marc-Uwe Kling und Astrid Henn wegen des „NEINhorns“.",
+  "OpenAIs Klageerwiderung: Ein Modell speichere keine Daten wie eine Datenbank, es lerne Muster.",
+  "Es gibt bisher kein Urteil, alle Aussagen sind Vorwürfe und Rechtspositionen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein Zeichentisch in einem ruhigen Atelier, handgezeichnete Waldwesen auf Papier lösen sich in leuchtende Pixel auf und steigen zu einem Bildschirm, im Hintergrund eine Waage der Justitia",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Zeigt keine geschützte Figur.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Der Grüffelo-Illustrator Axel Scheffler erwägt laut „Zeit“ und heise online eine Klage gegen KI-Anbieter. Zwei Verlage, Penguin Random House und Carlsen, klagen bereits gegen OpenAI. OpenAI argumentiert, ein Modell speichere keine Daten wie eine Datenbank. Entschieden ist nichts."
+  },
+  {
+   "t": "h2",
+   "x": "Scheffler überlegt, vor Gericht zu gehen"
+  },
+  {
+   "t": "p",
+   "x": "Wer ChatGPT um ein Bild des Grüffelo bittet, bekommt laut [heise online](https://www.heise.de/news/KI-Kopien-des-Grueffelo-Illustrator-Axel-Scheffler-will-gegen-Betreiber-klagen-11491779.html) binnen einer Minute Ergebnisse mit unverkennbaren Ähnlichkeiten zum Original. Axel Scheffler, der Illustrator der Figur, zeigte sich gegenüber der „Zeit“ bestürzt: Es seien eindeutig seine Figuren, nur die Hintergründe wichen ab. Deshalb erwäge er ernsthaft eine Klage. Am liebsten würde er sich mit anderen Kunstschaffenden zusammentun. Gespräche über institutionelle Unterstützung führe er mit seinen Verlagen, juristische Beratung suche er noch."
+  },
+  {
+   "t": "h2",
+   "x": "Zwei Verfahren laufen schon"
+  },
+  {
+   "t": "p",
+   "x": "Den Anfang machte laut heise Penguin Random House Deutschland: Als erster Buchverlag in Europa ging der Verlag juristisch gegen OpenAI vor, gemeinsam mit dem Autor und Zeichner Ingo Siegner. Es geht um die ungenehmigte Erzeugung von Bildern des „kleinen Drachen Kokosnuss“. Kurz darauf zog der Carlsen Verlag mit Marc-Uwe Kling und der Illustratorin Astrid Henn wegen des „NEINhorns“ nach. Einer der Vorwürfe: ChatGPT liefere sogar „ganze Druckvorlagen für illustrierte Geschichten, samt Umschlaggestaltung, Impressum, einer gefakten ISBN und Verlagslogo“."
+  },
+  {
+   "t": "h2",
+   "x": "OpenAIs Argument"
+  },
+  {
+   "t": "p",
+   "x": "Inzwischen liegt die Klageerwiderung von OpenAI vor, so heise unter Berufung auf die „Zeit“. Im Kern argumentiert das Unternehmen: Eine KI speichere keine Daten wie eine klassische Datenbank. Sprachmodelle gäben Inhalte bewusst nicht eins zu eins wieder, sie seien darauf trainiert, Muster und Zusammenhänge zu erkennen und daraus Neues zu erzeugen. Ob Gerichte das für Figuren und Illustrationen genauso sehen, ist offen. Ein Urteil gibt es bisher nicht."
+  },
+  {
+   "t": "h2",
+   "x": "Warum gerade Kinderbücher?"
+  },
+  {
+   "t": "p",
+   "x": "Heise nennt einen plausiblen Grund: In der Kinder- und Jugendliteratur transportieren Text und Bild gemeinsam die Geschichte. Eine Figur wie der Grüffelo ist untrennbar an ein bestimmtes Aussehen gebunden. Wenn eine KI diese Figur nachbaut, fällt die Ähnlichkeit sofort auf. Die Branche fordere seit Langem mehr Rechtsklarheit und wirksamen Schutz vor ungefragter Verwertung in Trainingsdaten."
+  },
+  {
+   "t": "h2",
+   "x": "Was das für Kreative und Nutzer bedeutet"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Für Kreative:** Wer einen eigenen, wiedererkennbaren Stil oder eigene Figuren hat, sollte Rechte, Belege und Veröffentlichungsdaten sauber dokumentieren. Das erleichtert jede spätere rechtliche Prüfung.",
+    "**Für Nutzer von Bild-KI:** Bilder, die bekannte Figuren nachbilden, sind rechtlich riskant, auch wenn der Hintergrund anders ist. Das gilt besonders für den kommerziellen Einsatz.",
+    "**Für die Branche:** Der Druck steigt, Trainingsdaten und Ausgaben transparenter zu machen. Sollte Scheffler tatsächlich klagen, würde das laut heise den Druck auf die Tech-Konzerne weiter erhöhen."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Hinweis: Das ist eine journalistische Einordnung, keine Rechtsberatung. Alle genannten Punkte sind Vorwürfe oder Positionen der Beteiligten, bis Gerichte entschieden haben."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Hat Axel Scheffler schon geklagt?",
+   "a": "Nein. Laut heise und „Zeit“ erwägt er eine Klage, sucht noch juristische Beratung und möchte sich mit anderen Kreativen zusammenschließen."
+  },
+  {
+   "q": "Wer klagt bereits gegen OpenAI?",
+   "a": "Laut heise Penguin Random House Deutschland mit Ingo Siegner (Kokosnuss) und der Carlsen Verlag mit Marc-Uwe Kling und Astrid Henn (NEINhorn)."
+  }
+ ],
+ "sources": [
+  {
+   "title": "KI-Kopien des Grüffelo: Illustrator Axel Scheffler will gegen Betreiber klagen",
+   "publisher": "heise online, 18.10.2026",
+   "url": "https://www.heise.de/news/KI-Kopien-des-Grueffelo-Illustrator-Axel-Scheffler-will-gegen-Betreiber-klagen-11491779.html",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}

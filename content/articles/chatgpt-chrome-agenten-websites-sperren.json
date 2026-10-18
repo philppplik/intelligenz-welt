@@ -1,0 +1,126 @@
+{
+ "slug": "chatgpt-chrome-agenten-websites-sperren",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "ChatGPT steuert deine Chrome-Tabs, Websites sperren Agenten aus",
+ "dek": "OpenAIs Chrome-Erweiterung klickt, füllt Formulare aus und lädt Dateien herunter. Gleichzeitig blocken Delta, Yelp und Banken KI-Agenten.",
+ "published": "2026-10-18T19:23:00+02:00",
+ "modified": "2026-10-18T19:23:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "ChatGPT",
+  "Chrome",
+  "KI-Agenten",
+  "Computer Use"
+ ],
+ "key_takeaways": [
+  "Die aktualisierte ChatGPT-Chrome-Erweiterung steht laut The Decoder allen ChatGPT-Tarifen offen.",
+  "Chat-Modus: Informationen aus mehreren Tabs sammeln. Work-Modus: Tabs steuern, Formulare ausfüllen, Dateien herunterladen, Tabs gruppieren.",
+  "Mit @chrome sprichst du gezielt offene Tabs an; die Chat-Historie liegt in der Seitenleiste.",
+  "Laut The Verge sperren oder beschränken u. a. Delta, Yelp, JPMorgan Chase und Charles Schwab KI-Agenten.",
+  "Amazon streitet mit Perplexity vor Gericht; ein Berufungsgericht hob im August eine Verfügung gegen Perplexity auf."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: eine freundliche Roboterhand schwebt über einer Reihe gläserner Browser-Fenster, einige davon sind durch leuchtende Türen mit Vorhängeschlössern versperrt",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** ChatGPT kann seit dieser Woche im Chrome-Browser offene Tabs lesen und im Work-Modus per Computer Use steuern. Gleichzeitig melden Nutzer, dass Dienste wie Delta, Yelp, Chase, Schwab und Amazon KI-Agenten blockieren. Der Browser-Agent ist also mächtiger, aber nicht überall willkommen."
+  },
+  {
+   "t": "h2",
+   "x": "ChatGPT im Browser: Was die Erweiterung kann"
+  },
+  {
+   "t": "p",
+   "x": "Die Chrome-Erweiterung von OpenAI wurde aufgewertet. Laut [The Decoder](https://the-decoder.de/openais-chrome-erweiterung-laesst-chatgpt-tabs-steuern-formulare-ausfuellen-und-dateien-herunterladen/) hat ChatGPT jetzt direkten Zugriff auf offene Tabs. Es gibt zwei Modi: Im Chat-Modus sammelt ChatGPT Informationen aus mehreren Tabs. Im Work-Modus steuert es die Tabs per Computer Use. Das heißt: Nachrichten senden, Formulare ausfüllen, Dateien herunterladen oder Tabs gruppieren."
+  },
+  {
+   "t": "p",
+   "x": "Mit dem Befehl @chrome sprichst du gezielt offene Tabs an. Die komplette Chat-Historie ist in der Seitenleiste neben der besuchten Seite verfügbar. Als Beispiele nennt OpenAI den Vergleich von Produkten über mehrere Tabs hinweg, etwa nach Abmessungen, Material, Lieferzeit und Rückgaberichtlinien, außerdem Zusammenfassungen in einfacher Sprache und Preisvergleiche. Die Erweiterung steht allen ChatGPT-Tarifen offen."
+  },
+  {
+   "t": "p",
+   "x": "The Decoder bezeichnet GPT-6 Astra als derzeit „mit Abstand“ bestes Computer-Use-Modell am Markt. Das ist die Einschätzung der Redaktion, keine unabhängige Messung, die wir hier nachprüfen können."
+  },
+  {
+   "t": "h2",
+   "x": "Das Problem: Das Web spielt nicht überall mit"
+  },
+  {
+   "t": "p",
+   "x": "Ein Browser-Agent ist nur so nützlich wie die Seiten, die er bedienen darf. [The Verge](https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web) berichtet, dass Nutzer von KI-Agenten verschiedener Anbieter in den letzten Wochen Sperren auf großen Websites gemeldet haben. Konkret:"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "**Yelp** erlaubt nach eigener Aussage gegenüber TechCrunch nur Agenten, die am Datenlizenzprogramm teilnehmen und dafür zahlen.",
+    "**Delta Air Lines** verhindert, dass Agenten im Auftrag von Kunden Tickets buchen.",
+    "**JPMorgan Chase** und **Charles Schwab** haben bestätigt, Agenten aus Sicherheitsgründen den Kontozugriff zu verwehren.",
+    "Nutzer berichten außerdem von Problemen bei **Cars.com** und **Amtrak**. Ob dort bewusst blockiert wird, ist laut Quelle unklar."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Amazon gegen Perplexity: der Präzedenzfall"
+  },
+  {
+   "t": "p",
+   "x": "Schon im letzten Jahr ging Amazon gegen den Shopping-Agenten von Perplexity vor und klagte. Laut The Verge ordnete ein Richter zunächst an, dass Perplexity seine Agenten nicht mehr bei Amazon einkaufen lässt; ein Berufungsgericht hob das im August auf. Amazon hat inzwischen eine geänderte Klage eingereicht. Das Verfahren ist also offen."
+  },
+  {
+   "t": "h2",
+   "x": "Zwei Strategien: Kooperation statt Konfrontation"
+  },
+  {
+   "t": "p",
+   "x": "Meta wählt laut The Verge den Partnerweg: Der Agent Muse darf bei Händlern wie Walmart, Gap, Sephora und Best Buy einkaufen. Shopify hat sein Netzwerk an Storefronts für KI-Agenten geöffnet. Dazu kommt ein technisches Problem: Viele Anti-Bot-Systeme blockieren Agenten, ohne dass die Seite das gezielt will. Sie sind gegen Betrug und Skripte gebaut und erkennen auch Agenten als verdächtig."
+  },
+  {
+   "t": "h2",
+   "x": "Was das für dich bedeutet"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Teste den Work-Modus zuerst an harmlosen Aufgaben wie Preisvergleichen und Recherche über mehrere Tabs.",
+    "Gib einem Agenten keine Aufgaben mit Geld oder Konten, ohne jeden Schritt zu prüfen.",
+    "Rechne damit, dass Banken, Airlines und Marktplätze Agenten blocken. Dann hilft nur der manuelle Weg oder ein offizieller Partner-Zugang."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Die Grundfrage bleibt offen: Wer darf im Namen des Nutzers handeln, und wer entscheidet das, der Nutzer oder die Website? Die nächsten Wochen und das Verfahren Amazon gegen Perplexity werden zeigen, in welche Richtung das Web kippt."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was kostet die ChatGPT-Chrome-Erweiterung?",
+   "a": "Laut The Decoder steht die aktualisierte Erweiterung allen ChatGPT-Tarifen offen. Was dein Tarif kostet, steht bei OpenAI."
+  },
+  {
+   "q": "Warum blockieren Websites KI-Agenten?",
+   "a": "Genannt werden Sicherheitsgründe (Banken), Lizenzgeschäfte (Yelp), Buchungshoheit (Delta) und Werbeeinnahmen (Amazons Argument laut The Verge nach Darstellung von Perplexity). Zusätzlich blocken Anti-Bot-Systeme Agenten teils unbeabsichtigt."
+  }
+ ],
+ "sources": [
+  {
+   "title": "OpenAIs Chrome-Erweiterung lässt ChatGPT Tabs steuern, Formulare ausfüllen und Dateien herunterladen",
+   "publisher": "THE DECODER, 16.10.2026",
+   "url": "https://the-decoder.de/openais-chrome-erweiterung-laesst-chatgpt-tabs-steuern-formulare-ausfuellen-und-dateien-herunterladen/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Websites are closing their doors to AI agents",
+   "publisher": "The Verge, 17.10.2026",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}

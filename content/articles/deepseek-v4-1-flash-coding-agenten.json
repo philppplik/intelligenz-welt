@@ -1,0 +1,129 @@
+{
+ "slug": "deepseek-v4-1-flash-coding-agenten",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "DeepSeek V4.1-Flash-1017: Kleines Modell, starke Coding-Agenten",
+ "dek": "Open-Weight-Update mit 77,0 Prozent bei DeepSWE und unter 0,20 Dollar pro Aufgabe. Was die Eigenmessungen belegen und was noch offen ist.",
+ "published": "2026-10-18T19:22:00+02:00",
+ "modified": "2026-10-18T19:22:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "DeepSeek",
+  "Open-Weight",
+  "Coding-Agenten",
+  "Benchmarks"
+ ],
+ "key_takeaways": [
+  "Veröffentlicht am 17. Oktober 2026 als Gewichte auf Hugging Face und ModelScope, dazu Web, App und API.",
+  "DeepSWE v1.1: 77,0 Prozent (Vorgänger 74,2; Opus 5: 74,0; GPT-5.6 Sol: 73,0), laut DeepSeek.",
+  "Kosten im DeepSWE-Diagramm: knapp unter 0,20 US-Dollar pro Aufgabe, der Vorgänger lag bei rund 0,50.",
+  "Opus 5 führt unter anderem bei HLE (56,3 gegen 42,6), Terminal-Bench 4.0 und ProgramBench.",
+  "Neu: Such- und Fetch-API für 0,75 US-Dollar pro 1.000 Aufrufe, in einigen Werkzeugen bis 31. Oktober gratis."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein schlanker Roboter-Wal aus leuchtenden Schaltkreislinien gleitet schnell durch einen dunklen Ozean aus Datenströmen, Preisschilder fallen wie Blätter herab",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles DeepSeek-Material.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** DeepSeek hat am 17. Oktober 2026 die Open-Weight-Version V4.1-Flash-1017 veröffentlicht. Laut den eigenen Benchmarks schlägt sie bei Coding- und Agenten-Aufgaben mehrere größere Modelle, bei vielen anderen Tests liegt Claude Opus 5 weiter vorn. Unabhängige Messungen fehlen noch."
+  },
+  {
+   "t": "h2",
+   "x": "Was ist neu?"
+  },
+  {
+   "t": "p",
+   "x": "V4.1-Flash-1017 ist ein Update des Flash-Modells von DeepSeek. Die Modellkarte auf Hugging Face spricht von einem „minor update“, das trotzdem Reasoning, Coding, Agenten-Aufgaben und Bildverständnis verbessern soll. Gleichzeitig soll das Modell Aufgaben schneller abschließen und kürzere Antworten liefern. DeepSeek nennt das eine Verschiebung der Pareto-Front zwischen Leistung und Kosten."
+  },
+  {
+   "t": "p",
+   "x": "Das Training setzt laut [The Decoder](https://the-decoder.de/deepseek-veroeffentlicht-v4-1-flash-schneller-besser-und-guenstiger-als-der-vorgaenger/) auf Reinforcement Learning mit Selbst-Feedback (RLSF). Dabei dient die eigene Konfidenz des Modells oder eine selbst erzeugte Kritik als Belohnungssignal, statt menschlicher Bewerter oder eines externen Belohnungsmodells."
+  },
+  {
+   "t": "h2",
+   "x": "Die Zahlen: stark, aber selbst gemessen"
+  },
+  {
+   "t": "p",
+   "x": "Die Tabelle auf der [Modellkarte](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017) zeigt ein gemischtes Bild. Bei DeepSWE v1.1 kommt das Modell auf 77,0 Prozent und liegt damit vor Claude Opus 5 (74,0) und GPT-5.6 Sol (73,0). Bei der Automation-Bench sind es 60,5 gegen 50,3 für Opus 5, bei „Agents’ Last Exam“ 35,4 gegen 28,6, bei der Apex Bench 72,1 gegen 65,8."
+  },
+  {
+   "t": "p",
+   "x": "Opus 5 liegt dagegen bei anderen Tests klar vorn: HLE ohne Werkzeuge 56,3 gegen 42,6, Terminal-Bench 4.0 51,8 gegen 42,3, ProgramBench 37,0 gegen 29,1 und NL2Repo-Bench 75,3 gegen 68,2. Die Schlagzeile „schlägt die Großen“ stimmt also nur für einen Teil der Disziplinen, nämlich die agentischen und Coding-nahen."
+  },
+  {
+   "t": "p",
+   "x": "Wichtig: Alle Werte stammen von DeepSeek selbst. The Decoder schreibt ausdrücklich, dass unabhängige Benchmarks noch ausstehen. Wer das Modell produktiv einsetzen will, sollte es an eigenen Aufgaben testen."
+  },
+  {
+   "t": "h2",
+   "x": "Der eigentliche Hebel: Preis pro Aufgabe"
+  },
+  {
+   "t": "p",
+   "x": "Spannend ist weniger die Prozentzahl als das Kostendiagramm. Laut DeepSeek erreicht V4.1-Flash-1017 den DeepSWE-Spitzenwert von 77,0 Prozent bei durchschnittlich knapp unter 0,20 US-Dollar pro Aufgabe. In der niedrigen Einstellung sind es über 72 Prozent für gut 0,10 US-Dollar. Der Vorgänger kostete bei 74,2 Prozent noch rund 0,50 US-Dollar. Konkurrenzmodelle liegen in derselben Grafik zwischen 2 und über 10 US-Dollar pro Aufgabe."
+  },
+  {
+   "t": "p",
+   "x": "Der Grund sind kürzere Ausgaben: Weniger Tokens heißen weniger Kosten und weniger Wartezeit. Für Agenten, die hunderte Schritte abarbeiten, summiert sich das."
+  },
+  {
+   "t": "h2",
+   "x": "Bonus: DeepSeek öffnet seine Suche"
+  },
+  {
+   "t": "p",
+   "x": "Neben dem Modell macht DeepSeek erstmals die Such- und Fetch-Schnittstellen seiner eigenen Suchmaschine für alle Entwickler zugänglich. Regulär kostet jeder Endpunkt 0,75 US-Dollar pro 1.000 Aufrufe. Wer die DeepSeek-API nutzt, bekommt die Funktionen als serverseitige Werkzeuge in DeepSeek Harness, Claude Code und Codex noch bis zum 31. Oktober 2026, 16 Uhr UTC, kostenlos."
+  },
+  {
+   "t": "h2",
+   "x": "Der Haken: Regulierung in China"
+  },
+  {
+   "t": "p",
+   "x": "The Decoder weist auf einen Dämpfer hin: Die chinesische Regierung hat offenbar Pläne, die Veröffentlichung von Open-Weight-Modellen stärker zu regulieren oder zu unterbinden. Ein Kriterium soll sein, ob ein System zu den zehn leistungsfähigsten Modellen gehört. Wie es weitergeht, ist laut der Quelle nicht abschließend bekannt."
+  },
+  {
+   "t": "h2",
+   "x": "Was du jetzt tun kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Gewichte von Hugging Face laden und auf eigenen Coding-Aufgaben gegen dein aktuelles Modell testen, nicht nur auf Leaderboards.",
+    "Auf unabhängige Messungen warten, bevor du ein Modell fest einplanst.",
+    "Die Kosten pro gelöster Aufgabe vergleichen, nicht den Preis pro Million Tokens."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist V4.1-Flash-1017 Open Source?",
+   "a": "Die Modellgewichte sind auf Hugging Face und ModelScope veröffentlicht (Open Weight). Welche Lizenz gilt, steht auf der [Modellkarte](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017)."
+  },
+  {
+   "q": "Ist das Modell besser als Claude Opus 5?",
+   "a": "Nur in einem Teil der von DeepSeek veröffentlichten Tests, vor allem bei DeepSWE und Automation-Bench. Bei HLE, Terminal-Bench 4.0 und ProgramBench liegt Opus 5 vorn. Unabhängige Messungen fehlen noch."
+  }
+ ],
+ "sources": [
+  {
+   "title": "DeepSeek-V4.1-Flash-1017 (Modellkarte)",
+   "publisher": "Hugging Face / DeepSeek",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Deepseek veröffentlicht V4.1-Flash: Schneller, besser und günstiger als der Vorgänger",
+   "publisher": "THE DECODER, 17.10.2026",
+   "url": "https://the-decoder.de/deepseek-veroeffentlicht-v4-1-flash-schneller-besser-und-guenstiger-als-der-vorgaenger/",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}

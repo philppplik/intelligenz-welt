@@ -1,0 +1,111 @@
+{
+ "slug": "rtx-spark-notebook-lokale-ki-test",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "RTX-Spark-Notebook im Test: lokale KI mit Lärm und Preis",
+ "dek": "c’t 3003 testet das erste RTX-Spark-Notebook: 14,5 Token pro Sekunde mit einem 27B-Modell, rund 61 mit MoE, 19 Stunden Akku, 3.300 Euro.",
+ "published": "2026-10-18T19:27:00+02:00",
+ "modified": "2026-10-18T19:27:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "RTX Spark",
+  "Lokale KI",
+  "Nvidia",
+  "Open Source"
+ ],
+ "key_takeaways": [
+  "Chip: Nvidia N1X, Markenname RTX Spark, bis zu 128 GB gemeinsamer Speicher (Unified Memory).",
+  "Preise Asus ProArt P14: 3.300 Euro (32 GB), 4.300 Euro (64 GB), 6.700 Euro (128 GB).",
+  "Qwen 3.8-27B (dicht): 14,5 Token/s; Qwen 3.6-35B-A3B (MoE): knapp 61 Token/s; llama-bench ohne Zusatztricks.",
+  "Leistungsaufnahme rund 40 Watt, kurzzeitig 60 Watt; Akku über 19 Stunden Video bei 200 Nits.",
+  "Lüfter: bis zu 2,7 Sone bei Volllast, springt laut Test auch ohne Last an."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein dünnes Notebook auf einem Schreibtisch, über der Tastatur schweben leuchtende, durchscheinende Speicherschichten wie gestapelte Kacheln, daneben eine Schreibtischlampe",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Zeigt kein reales Gerät.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Das erste RTX-Spark-Notebook, das Asus ProArt P14 mit Nvidias N1X-Chip, kann laut c’t 3003 lokale Sprachmodelle gut ausführen: rund 14,5 Token pro Sekunde mit Qwen 3.8-27B und fast 61 mit einem MoE-Modell. Der Preis (ab 3.300 Euro) und der teils laute Lüfter dämpfen die Begeisterung. Für ernsthafte lokale KI empfiehlt der Tester mehr als 32 GB."
+  },
+  {
+   "t": "h2",
+   "x": "Was ist RTX Spark?"
+  },
+  {
+   "t": "p",
+   "x": "Nvidia hat auf der Computex im Juni die RTX-Spark-Notebooks angekündigt. Sie nutzen einen kombinierten CPU-GPU-Chip (intern N1X) mit schnellem gemeinsamem Speicher von bis zu 128 GB. Das ist für lokale KI der entscheidende Punkt. Wie [heise online](https://www.heise.de/news/RTX-Spark-im-Test-Nvidias-erster-Notebook-Chip-fuer-lokale-KI-11490664.html) im c’t-3003-Test erklärt, haben normale Notebooks entweder langsamen Arbeitsspeicher oder eine Grafikkarte mit oft nur 8 GB eigenem Speicher. Ein brauchbares Modell wie Qwen 3.8-27B braucht selbst stark komprimiert (IQ4_XS) 14 GB, dazu kommen für den Kontext schnell 18 GB oder mehr."
+  },
+  {
+   "t": "p",
+   "x": "Das Prinzip „Unified Memory“ ist nicht neu: Apple macht es seit 2020, AMD nennt es Ryzen AI Max (Strix Halo). Mit den NPUs der Copilot+-PCs hat das nichts zu tun, laut Test laufen die Modelle auf den GPU-Kernen."
+  },
+  {
+   "t": "h2",
+   "x": "Der Testkandidat: Asus ProArt P14"
+  },
+  {
+   "t": "p",
+   "x": "Getestet wurde die Variante mit 32 GB und 1 TB SSD für 3.300 Euro. Mit 64 GB werden 4.300 Euro fällig, mit 128 GB 6.700 Euro. Es läuft Windows 11 für Arm, obwohl der Chip mit der DGX Spark verwandt ist, die unter Linux läuft. Das OLED-Display hat 2880 × 1800 Pixel und erreichte gemessene 599 Nits. Der Akku hielt bei 200 Nits im Videobetrieb über 19 Stunden."
+  },
+  {
+   "t": "p",
+   "x": "Weniger schön: Der Lüfter springt laut Test auch bei leichter Nutzung an. Bis zu 2,7 Sone wurden bei Volllast gemessen. Ein MacBook Pro mit M5 Pro wird bei Volllast mit 4,8 Sone lauter, aber eben nur dann."
+  },
+  {
+   "t": "h2",
+   "x": "Die KI-Zahlen"
+  },
+  {
+   "t": "p",
+   "x": "Gemessen wurde mit llama-bench ohne Zusatztricks. Das dichte Modell Qwen 3.8-27B läuft mit 14,5 Token pro Sekunde, etwas schneller als der getestete Strix-Halo-Rechner und etwas langsamer als der M5 Pro. Deutlich schneller sind laut Test eine Intel Arc Pro B70, eine RTX 4090 und ein Mac Studio mit M5 Ultra. Mit dem Mixture-of-Experts-Modell Qwen 3.6-35B-A3B, bei dem nur Teile des Modells gleichzeitig aktiv sind, sind es fast 61 Token pro Sekunde. Der Tester schätzt, dass Multi-Token-Prediction mindestens 25 Prozent zusätzlich bringen kann. Das ist seine Einschätzung, keine Messung auf dem Gerät."
+  },
+  {
+   "t": "p",
+   "x": "Beim Verarbeiten langer Prompts, wichtig für Coding-Agenten, die schnell 50.000 Token Kontext füllen, schneidet das Notebook laut Test deutlich besser ab als Strix Halo und Apple M5 Pro. Bei der Effizienz liegt der Nvidia-Chip mit rund 40 Watt (kurz 60 Watt) vorn: Der verglichene Strix-Halo-Framework-Desktop darf 120 Watt verbrauchen. Die größere DGX Spark schafft laut Test oft das Doppelte, darf dafür aber bis zu 216 Watt ziehen."
+  },
+  {
+   "t": "h2",
+   "x": "Praxis und Grenzen"
+  },
+  {
+   "t": "p",
+   "x": "Mit 32 GB war Schluss, sobald nebenbei Browser oder Photoshop liefen: Die Q4_K_M-Variante des Modells brachte das System in die Knie. Mit der kleineren IQ4_XS-Variante lief sogar Photoshop parallel, gesteuert über einen Agenten und eine MCP-Schnittstelle. Der Tester hätte „mindestens 48 GB“ gewünscht. Außerdem gilt: Bei reinem LLM-Betrieb mit llama.cpp, Ollama oder LM Studio ist die Hardware inzwischen fast austauschbar. Bei Bild- und Videogenerierung etwa mit ComfyUI bleibt Nvidia dank CUDA im Vorteil."
+  },
+  {
+   "t": "h2",
+   "x": "Fazit"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Wer lokale Agenten ernsthaft nutzen will, sollte mindestens 48 bis 64 GB einplanen.",
+    "Das MoE-Modell ist schneller, das dichte Modell laut Test klüger.",
+    "Lautstärke und Preis sind die größten Minuspunkte, Effizienz und Akku die größten Pluspunkte."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Wie viel Speicher brauche ich für lokale KI?",
+   "a": "Laut c’t 3003 reichen 32 GB für ein 27B-Modell, aber nur mit Einschränkungen, wenn parallel andere Programme laufen. Der Tester hätte mindestens 48 GB gewünscht."
+  },
+  {
+   "q": "Läuft RTX Spark mit Linux?",
+   "a": "Die getesteten RTX-Spark-Notebooks laufen standardmäßig unter Windows 11 für Arm. Die verwandte DGX Spark läuft unter Linux. Ob und wie gut Linux auf den Notebooks läuft, klärt das c’t-3003-Video selbst."
+  }
+ ],
+ "sources": [
+  {
+   "title": "RTX Spark im Test: Nvidias erster Notebook-Chip für lokale KI (c’t 3003)",
+   "publisher": "heise online, 16.10.2026",
+   "url": "https://www.heise.de/news/RTX-Spark-im-Test-Nvidias-erster-Notebook-Chip-fuer-lokale-KI-11490664.html",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "related": []
+}
