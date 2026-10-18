@@ -199,6 +199,7 @@ def article_page(a, arts, head, foot):
             '<div class="facts"><h2>Die wichtigsten Fakten</h2><ul>%s</ul></div><div class="body">%s%s</div>%s<h2>Quellen</h2><ol class="src">%s</ol>%s%s<p class="note">%s</p></article>') % (
         a['section'], SECTIONS[a['section']], E(SECTIONS[a['section']]), E(a['title']), AUTHOR_URL, a['published'], de_date(a['_pub']), modtxt, mins,
         img_rel, srcset, E(h['alt']), E(h['caption']), facts, body_html(a), method, faq, src, more, share_block(url, a['title'], 'iw'), DISCLOSURE)
+    body = body.replace('</p><figure>', '</p>' + share_block(url, a['title'], 'iw', True) + '<figure>', 1)
     return hh + body + foot
 
 CSS = CSS.replace('</style>', SHARE_CSS % ('mut', 'soft', 'ac') + '</style>', 1)
