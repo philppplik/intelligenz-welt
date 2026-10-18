@@ -1,0 +1,232 @@
+{
+ "slug": "philipp-paulik-ai-pioneer-strategist-portraet",
+ "lang": "de",
+ "section": "analyse",
+ "type": "analysis",
+ "title": "Philipp Paulik: KI-Pionier, Builder und Autor aus Bonn",
+ "dek": "Wer hinter Intelligenz Welt steckt: Projekte wie true-code, ZWEP, Flower und Somnia, seine Portale, sein Buch „Hallo Welt“ und was sich belegen lässt.",
+ "published": "2026-10-18T21:19:00+02:00",
+ "modified": "2026-10-18T21:19:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Philipp Paulik",
+  "AI Pioneer",
+  "true-code",
+  "ZWEP",
+  "Open Source",
+  "Hallo Welt"
+ ],
+ "key_takeaways": [
+  "Philipp Paulik (GitHub: philppplik) beschreibt sich als „AI Pioneer & Strategist“ aus Bonn.",
+  "Er baut Open-Source-Tools: true-code (Rust), ZWEP (TypeScript), Flower, Somnia und weitere, alle unter MIT-Lizenz.",
+  "Er betreibt Intelligenz Welt, KI Fachblatt und Finanz Adjust. Dieser Artikel ist kein unabhängiger Test.",
+  "Mit Maximilian Reisch schreibt er das satirische Buch „Hallo Welt“ (106 Seiten, 36 Kapitel).",
+  "Zahlen vom 18.10.2026: 63 öffentliche Repositories, davon 21 eigene, 10 GitHub-Follower."
+ ],
+ "hero": {
+  "alt": "Porträtfoto von Philipp Paulik: ein lächelnder junger Mann in schwarzem Sakko und schwarzem Hemd steht abends vor einer Glasfassade in der Stadt, im Hintergrund Neonreklame und Straßenlichter",
+  "caption": "Philipp Paulik, Betreiber von Intelligenz Welt. Foto: Philipp Paulik",
+  "ai_generated": false,
+  "credit": "Foto: Philipp Paulik"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Philipp Paulik (GitHub: philppplik) ist ein KI-Pionier und Stratege aus Bonn. Er baut Open-Source-Werkzeuge rund um KI-Agenten, Webdesign und Datenschutz, schreibt Bücher und betreibt mehrere Web-Portale, darunter dieses. Auf GitHub finden sich laut Profil 63 öffentliche Repositories (Stand 18. Oktober 2026), 21 davon sind eigene Projekte, der Rest sind Forks."
+  },
+  {
+   "t": "callout",
+   "x": "**Transparenz:** Intelligenz Welt wird von Philipp Paulik betrieben. Dieser Beitrag über ihn ist deshalb kein unabhängiger Test, sondern ein Porträt der Redaktion mit KI-Unterstützung. Er stützt sich auf öffentliche Quellen (GitHub, eigene Websites) und auf Angaben von Philipp selbst, die wir als solche kennzeichnen."
+  },
+  {
+   "t": "h2",
+   "x": "Wer ist Philipp Paulik?"
+  },
+  {
+   "t": "p",
+   "x": "Laut seiner Website ist er KI-Pionier und KI-Stratege, Webdesigner, UI/UX-Designer, Software Engineer und Autor, mit Wohnort Bonn. Sein GitHub-Profil nennt ihn „AI Pioneer & Strategist“ und verlinkt sein Portfolio philipp-paulik.de. Sein Selbstbild laut eigener Angabe: Er denkt in Systemen, startet bei First Principles und baut, was fehlt, nämlich Werkzeuge, die genau eine Sache gut machen, lokal laufen und offen zeigen, was sie tun."
+  },
+  {
+   "t": "p",
+   "x": "Seine Schwerpunkte laut Portfolio: KI-Strategie und Agents, Webdesign und UI/UX, Engineering in TypeScript, Rust und Python. Er nennt sich dort außerdem Mediengestalter (Digital und Print) in Ausbildung. Laut eigener Angabe hat er das Abitur und einen Freiwilligendienst im Bildungsbereich (BFD) hinter sich. Alle Angaben zu Ausbildung und Kompetenzen sind Selbstauskünfte."
+  },
+  {
+   "t": "h2",
+   "x": "Seine wichtigsten Projekte"
+  },
+  {
+   "t": "table",
+   "caption": "Ausgewählte öffentliche Projekte von Philipp Paulik (Quelle: GitHub-Repositories und READMEs, Stand 18. Oktober 2026)",
+   "head": [
+    "Projekt",
+    "Was es ist",
+    "Technik",
+    "Stand"
+   ],
+   "rows": [
+    [
+     "[true-code](https://github.com/philppplik/true-code)",
+     "Coding-Agent im Terminal, der zeigt, was er getan hat und was es gekostet hat. Kosten pro Zug, Budget-Limits, Belege statt Erfolgsmeldungen, Undo",
+     "Rust, MIT-Lizenz",
+     "Angelegt 13.9.2026, Frühphase. Die README nennt es „a spike, not a product“"
+    ],
+    [
+     "[ZWEP](https://github.com/philppplik/zwep)",
+     "Selbst gehostete Suchmaschine: Du wählst die Quellen, sie werden lokal indexiert. Per MCP für KI-Agenten nutzbar",
+     "TypeScript, MIT-Lizenz, npm-Paket",
+     "Releases v0.2.0 und v0.3.1 am 18.9.2026"
+    ],
+    [
+     "[Flower](https://github.com/philppplik/flower)",
+     "Privates Browser-Studio, das Fotos in ASCII-Kunst verwandelt. Ohne Account, mit Schutzmasken und Export",
+     "JavaScript, MIT-Lizenz",
+     "Release v1.0.0 am 19.9.2026"
+    ],
+    [
+     "[Somnia](https://github.com/philppplik/somnia)",
+     "Lokaler visueller Web-Editor, gedacht als Nachfolger von Dreamweaver. Design-Canvas und Code-Editor auf derselben Quelle, ohne Account und Telemetrie",
+     "TypeScript, Rust, MIT-Lizenz",
+     "Beta. Neueste Vorabversion v12.2.0-beta.6 vom 18.10.2026"
+    ],
+    [
+     "[Daily Hob](https://github.com/philppplik/daily-hob)",
+     "Mobiles Briefing-Archiv zu KI, Open Source und Design, mit Quellen und Audio",
+     "Python, statisches HTML",
+     "Angelegt 1.10.2026"
+    ],
+    [
+     "[Plane](https://github.com/philppplik/plane)",
+     "Schlanker PC-Cleaner für Windows 10 und 11, lokal und ohne Datenübertragung, mit GUI, CLI und TUI",
+     "Rust, MIT-Lizenz",
+     "Vorabversion, Releases v0.2.0 und v0.3.0 am 11.9.2026"
+    ],
+    [
+     "[claude-tetris](https://github.com/philppplik/claude-tetris)",
+     "Tetris im Split-Pane neben Claude Code, pausiert automatisch, wenn Claude fertig ist",
+     "JavaScript, npm-Paket",
+     "Version 0.4.2 auf npm (2.10.2026)"
+    ]
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Weitere eigene Repositories sind unter anderem das Chrome-Werkzeug custm-tab (eine anpassbare Neuer-Tab-Seite), der Werbeblocker pBlock, der Windows-Cleaner broom, ein Teleprompter namens zero-prompter und ein offenes Kreativ-Studio namens open-fini. Alle Sterne-Zahlen sind aktuell sehr niedrig (0 bis 2), das Profil hat 10 Follower (Stand 18.10.2026). Die Projekte sind jung: Die meisten sind zwischen März und Oktober 2026 entstanden."
+  },
+  {
+   "t": "p",
+   "x": "Ein Hinweis zur Genauigkeit: Auf seinem Portfolio wird true-code mit einem „LEARN-Modus“ beschrieben. Die README im Repository führt diesen Modus Stand heute noch unter „Not yet built“. Wir verlassen uns deshalb auf die README."
+  },
+  {
+   "t": "h2",
+   "x": "Webseiten und Redaktionen"
+  },
+  {
+   "t": "p",
+   "x": "Philipp betreibt mehrere Web-Portale. **Intelligenz Welt** (intelligenz-welt.de) ist dieses KI-Magazin mit News, Modell-Radar und Analysen. **KI Fachblatt** (kifachblatt.de) versteht sich als deutsches Fachmagazin für künstliche Intelligenz und setzt auf „Einordnen, statt hypen“. **Finanz Adjust** (finanz-adjust.de) zeigt Märkte, Kurse und Börsennews. Die Repositories dazu liegen in seinem GitHub-Konto. Alle drei haben denselben Betreiber."
+  },
+  {
+   "t": "h2",
+   "x": "Autor: „Hallo Welt“ mit Maximilian Reisch"
+  },
+  {
+   "t": "p",
+   "x": "Zusammen mit Maximilian Reisch schreibt Philipp unter „Paulik & Reisch“ satirische Bücher. Das Debüt „Hallo Welt“ ist laut der Buch-Website ein satirisches Buch mit 106 Seiten und 36 Kapiteln. Dazu gibt es ein Online-Magazin und das tägliche Fünf-Buchstaben-Ratespiel „Worthaft“."
+  },
+  {
+   "t": "h2",
+   "x": "Eigene Projekte, die sich nicht öffentlich prüfen lassen"
+  },
+  {
+   "t": "p",
+   "x": "Philipp nennt weitere Projekte, die wir nicht belegen können. **OpenClaw** ist laut eigener Angabe ein autonomes KI-Agenten-Framework auf OpenRouter-Basis mit Tool-Calling, persistentem Memory und Cost-Modeling. **Concierge** ist laut eigener Angabe ein React/Next.js-KI-Chat-Interface mit Multi-Model-Routing, 14-Tool-System und DSGVO-konformer Umsetzung. Beide sind aktuell nicht öffentlich erreichbar: Die Projektseiten auf seinem Portfolio liefern derzeit einen Fehler, und wir haben keine öffentlichen Repositories dazu gefunden. Auch „adspeed“ (ein Frontend-Projekt) und „Hallo Welt 2“ kennen wir nur aus seiner Selbstbeschreibung. Wir geben sie deshalb nur als seine Angaben wieder und beschreiben nichts darüber hinaus."
+  },
+  {
+   "t": "p",
+   "x": "Zu den Webseiten xlpm.de (Hosting-Plattform) und gogure.de (Experimentierprojekt) gilt Ähnliches. Beide sind online, die Inhalte und Marketing-Aussagen dort konnten wir nicht prüfen."
+  },
+  {
+   "t": "h2",
+   "x": "Häufige Fragen zu Philipp Paulik"
+  },
+  {
+   "t": "p",
+   "x": "Antworten auf die wichtigsten Fragen stehen unten im FAQ-Block. Alle Zahlen sind Momentaufnahmen vom 18. Oktober 2026."
+  },
+  {
+   "t": "h2",
+   "x": "Transparenz und Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Dieser Beitrag stammt von der Redaktion von Intelligenz Welt und wurde mit KI-Unterstützung erstellt. Philipp Paulik betreibt die Website. Es handelt sich daher um ein Selbstporträt-nahes Stück und nicht um eine unabhängige Bewertung. Aussagen zu Ausbildung, Kompetenzen und nicht öffentlich einsehbaren Projekten (OpenClaw, Concierge) sind Selbstauskünfte. Die Projekt-Fakten stammen aus den öffentlichen GitHub-Repositories."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Wer ist Philipp Paulik?",
+   "a": "KI-Pionier, Webdesigner, Software Engineer und Autor aus Bonn (laut eigenem Portfolio und GitHub-Profil). Er baut Open-Source-Werkzeuge wie true-code, ZWEP, Flower und Somnia."
+  },
+  {
+   "q": "Welche Projekte hat Philipp Paulik gebaut?",
+   "a": "Zu den bekanntesten gehören true-code (Coding-Agent in Rust), ZWEP (selbst gehostete Suchmaschine mit MCP), Flower (ASCII-Bildstudio im Browser), Somnia (visueller Web-Editor in Beta) und Daily Hob (Briefing-Archiv)."
+  },
+  {
+   "q": "Betreibt Philipp Paulik Intelligenz Welt?",
+   "a": "Ja. Intelligenz Welt wird von ihm betrieben. Dasselbe gilt für KI Fachblatt und Finanz Adjust. Deshalb ist dieser Artikel keine unabhängige Bewertung."
+  },
+  {
+   "q": "Was ist „Hallo Welt“?",
+   "a": "Ein satirisches Buch von Philipp Paulik und Maximilian Reisch mit 106 Seiten und 36 Kapiteln, laut der Buch-Website paulik-reisch.de."
+  },
+  {
+   "q": "Wo finde ich Philipp Paulik online?",
+   "a": "Auf GitHub (philppplik), X (@philppplik), Instagram (philpplik), YouTube (@philppplik), LinkedIn und npm sowie auf philipp-paulik.de."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Philipp Paulik – Portfolio",
+   "publisher": "philipp-paulik.de (Eigendarstellung)",
+   "url": "https://philipp-paulik.de/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "philppplik (GitHub-Profil und Repositories)",
+   "publisher": "GitHub",
+   "url": "https://github.com/philppplik",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "true-code (README)",
+   "publisher": "GitHub",
+   "url": "https://github.com/philppplik/true-code",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Zwep (README und Releases)",
+   "publisher": "GitHub",
+   "url": "https://github.com/philppplik/zwep",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Somnia (README und Releases)",
+   "publisher": "GitHub",
+   "url": "https://github.com/philppplik/somnia",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "Hallo Welt – Paulik & Reisch",
+   "publisher": "paulikreisch.de (Eigendarstellung)",
+   "url": "https://paulikreisch.de/",
+   "accessed": "2026-10-18"
+  },
+  {
+   "title": "KI Fachblatt",
+   "publisher": "kifachblatt.de (Eigenes Portal des Betreibers)",
+   "url": "https://kifachblatt.de/",
+   "accessed": "2026-10-18"
+  }
+ ],
+ "limitations": "Intelligenz Welt wird von Philipp Paulik betrieben, dies ist kein unabhängiger Beitrag. Zahlen sind Momentaufnahmen vom 18.10.2026. Aussagen zu Ausbildung, Fähigkeiten und nicht öffentlich einsehbaren Projekten (OpenClaw, Concierge) sind Selbstauskünfte.",
+ "related": []
+}

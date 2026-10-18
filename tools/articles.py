@@ -170,6 +170,7 @@ def article_page(a, arts, head, foot):
     credit = h.get('credit') or ('KI-generiert (Intelligenz Welt)' if h.get('ai_generated') else '')
     image_ld = {'@type': 'ImageObject', '@id': url + '#image', 'url': img_abs, 'contentUrl': img_abs, 'width': 1600, 'height': 900, 'caption': h['caption'], 'description': h['alt'],
                 'creditText': credit, 'creator': {'@type': 'Organization', 'name': 'Intelligenz Welt'}, 'license': BASE + '/redaktion/#bildrechte', 'acquireLicensePage': BASE + '/kontakt/'}
+    if not h.get('ai_generated') and credit.startswith('Foto: '): image_ld['creator'] = {'@type': 'Person', 'name': credit[6:]}
     if h.get('ai_generated'): image_ld['digitalSourceType'] = 'http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia'
     author = {'@type': 'Person', '@id': PID, 'name': 'Philipp Paulik', 'url': AUTHOR_URL, 'sameAs': ['https://philipp-paulik.de/']}
     graph = [{'@type': TYPES[a['type']], '@id': url + '#article', 'headline': a['title'], 'description': a['dek'], 'image': [image_ld], 'datePublished': a['published'], 'dateModified': a['modified'],
@@ -180,6 +181,11 @@ def article_page(a, arts, head, foot):
                  {'@type': 'ListItem', 'position': 1, 'name': 'Intelligenz Welt', 'item': BASE + '/'},
                  {'@type': 'ListItem', 'position': 2, 'name': SECTIONS[a['section']], 'item': '%s/thema/%s/' % (BASE, a['section'])},
                  {'@type': 'ListItem', 'position': 3, 'name': a['title'], 'item': url}]}]
+    xf = os.path.join(ROOT, 'content/jsonld', s + '.jsonld')
+    if os.path.exists(xf):
+        for n in json.load(open(xf, encoding='utf-8')).get('@graph', []):
+            if n.get('@type') == 'ProfilePage': n['dateCreated'], n['dateModified'] = a['published'], a['modified']
+            graph.append(n)
     if a.get('faq'):
         graph.append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': q['a']}} for q in a['faq']]})
     hh = head_for(head, '%s | Intelligenz Welt' % a['title'], meta_trunc(a['dek']), url, 'article', img_abs, h['alt'], a['published'], a['modified'], ld_script({'@context': 'https://schema.org', '@graph': graph}) + ''.join('<meta property="article:tag" content="%s">' % E(t) for t in a['tags']))

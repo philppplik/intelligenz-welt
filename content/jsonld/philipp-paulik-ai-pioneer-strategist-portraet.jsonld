@@ -1,0 +1,46 @@
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "ProfilePage",
+   "@id": "https://intelligenz-welt.de/artikel/philipp-paulik-ai-pioneer-strategist-portraet#webpage",
+   "name": "Philipp Paulik: KI-Pionier, Builder und Autor aus Bonn",
+   "description": "Wer hinter Intelligenz Welt steckt: Projekte wie true-code, ZWEP, Flower und Somnia, seine Portale, sein Buch „Hallo Welt“ und was sich belegen lässt.",
+   "inLanguage": "de-DE",
+   "dateCreated": "2026-10-18T21:30:00+02:00",
+   "dateModified": "2026-10-18T21:30:00+02:00",
+   "about": {
+    "@id": "https://philipp-paulik.de/#person"
+   },
+   "mainEntity": {
+    "@id": "https://philipp-paulik.de/#person"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://philipp-paulik.de/#person",
+   "name": "Philipp Paulik",
+   "alternateName": "philppplik",
+   "jobTitle": "AI Pioneer & Strategist",
+   "description": "KI-Pionier und Stratege, Webdesigner, Software Engineer und Autor aus Bonn.",
+   "url": "https://philipp-paulik.de/",
+   "knowsAbout": [
+    "Künstliche Intelligenz",
+    "KI-Agenten",
+    "Webdesign",
+    "UI/UX",
+    "Rust",
+    "TypeScript",
+    "Python"
+   ],
+   "sameAs": [
+    "https://github.com/philppplik",
+    "https://x.com/philppplik",
+    "https://instagram.com/philpplik",
+    "https://www.youtube.com/@philppplik",
+    "https://de.linkedin.com/in/philipp-paulik-7967753aa",
+    "https://www.npmjs.com/~philppplik"
+   ]
+  }
+ ]
+}
