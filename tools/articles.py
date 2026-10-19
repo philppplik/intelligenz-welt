@@ -169,8 +169,8 @@ def article_page(a, arts, head, foot):
     has800 = os.path.exists(os.path.join(ROOT, 'content/images/%s-800.jpg' % s))
     credit = h.get('credit') or ('KI-generiert (Intelligenz Welt)' if h.get('ai_generated') else '')
     image_ld = {'@type': 'ImageObject', '@id': url + '#image', 'url': img_abs, 'contentUrl': img_abs, 'width': 1600, 'height': 900, 'caption': h['caption'], 'description': h['alt'],
-                'creditText': credit, 'creator': {'@type': 'Organization', 'name': 'Intelligenz Welt'}, 'license': BASE + '/redaktion/#bildrechte', 'acquireLicensePage': BASE + '/kontakt/'}
-    if not h.get('ai_generated') and credit.startswith('Foto: '): image_ld['creator'] = {'@type': 'Person', 'name': credit[6:]}
+                'creditText': credit, 'creator': {'@type': 'Organization', 'name': 'Intelligenz Welt'}, 'copyrightNotice': '© %s Intelligenz Welt' % a['published'][:4], 'license': BASE + '/redaktion/#bilder', 'acquireLicensePage': BASE + '/kontakt/'}
+    if not h.get('ai_generated') and credit.startswith('Foto: '): image_ld['creator'] = {'@type': 'Person', 'name': credit[6:]}; image_ld['copyrightNotice'] = '© %s %s' % (a['published'][:4], credit[6:])
     if h.get('ai_generated'): image_ld['digitalSourceType'] = 'http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia'
     author = {'@type': 'Person', '@id': PID, 'name': 'Philipp Paulik', 'url': AUTHOR_URL, 'sameAs': ['https://philipp-paulik.de/']}
     graph = [{'@type': TYPES[a['type']], '@id': url + '#article', 'headline': a['title'], 'description': a['dek'], 'image': [image_ld], 'datePublished': a['published'], 'dateModified': a['modified'],
