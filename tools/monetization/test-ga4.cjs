@@ -1,0 +1,16 @@
+/* Activated local fixture only. Never sends traffic to a real Google property. */
+const {chromium}=require('playwright'),http=require('http'),fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'../../site/out'),shots=process.env.SCREENSHOT_DIR||'/tmp/iw-ga4-screenshots';fs.mkdirSync(shots,{recursive:true});
+const server=http.createServer((req,res)=>{let f=path.join(root,req.url.split('?')[0]);if(f.endsWith('/'))f+='index.html';try{res.setHeader('Content-Type',f.endsWith('.js')?'text/javascript':f.endsWith('.css')?'text/css':f.endsWith('.svg')?'image/svg+xml':'text/html');res.end(fs.readFileSync(f));}catch(e){res.statusCode=404;res.end('missing')}});
+(async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));let base='http://127.0.0.1:'+server.address().port;let browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox']});let assertions=0;function ok(t){assert(t);assertions++}
+try{for(const width of [1440,390]){let ctx=await browser.newContext({viewport:{width,height:900}}),p=await ctx.newPage(),remote=[];
+await ctx.route('https://**/*',r=>{remote.push(r.request().url());return r.fulfill({contentType:'application/javascript',body:'/* mock: no actual Google script */'});});
+await p.goto(base+'/cookies/?q=private-email@example.test');ok(remote.length===0);ok(!(await p.locator('#iw-statistics').isDisabled()));ok(await p.locator('#iw-advertising').isDisabled());
+await p.screenshot({path:path.join(shots,'iw-ga4-fixture-'+width+'.png')});
+await p.locator('[data-consent="reject"]').click();await p.reload();ok(remote.length===0);
+await p.locator('[data-iw-consent-open]').click();await p.locator('#iw-statistics').check();await p.locator('[data-consent="save"]').click();await p.waitForFunction(()=>document.querySelector('script[src*="googletagmanager"]'));
+ok(remote.length===1&&remote[0].includes('G-LOCALFIXTURE'));
+let queue=await p.evaluate(()=>dataLayer.map(x=>Array.from(x)));let conf=queue.find(x=>x[0]==='config')[2],view=queue.find(x=>x[0]==='event'&&x[1]==='page_view')[2];ok(conf.cookie_expires===15552000&&conf.cookie_update===false);ok(conf.allow_google_signals===false&&conf.allow_ad_personalization_signals===false);ok(!view.page_location.includes('?')&&view.page_referrer==='');ok(queue[0][0]==='consent'&&queue[0][2].analytics_storage==='denied');ok(queue[1][2].analytics_storage==='granted');
+await p.evaluate(()=>document.cookie='_ga=localtest;path=/');await p.locator('[data-iw-consent-open]').click();await p.locator('[data-consent="reject"]').click();await p.waitForFunction(()=>!window.dataLayer);ok(remote.length===1);ok(!(await ctx.cookies()).some(x=>x.name==='_ga'));ok((await p.evaluate(()=>JSON.parse(localStorage.getItem('iw-consent-v1')))).statistics===false);
+await p.goto(base+'/datenschutz/');ok((await p.locator('#iw-ga4-heading').textContent()).includes('Statistik mit Einwilligung'));ok(!(await p.locator('article').textContent()).includes('Statistikdienste sind derzeit ausgeschaltet'));
+await ctx.close();}console.log(assertions+' GA4 fixture assertions passed; Google requests intercepted, never sent.');}finally{await browser.close();server.close()}})().catch(e=>{console.error(e);server.close();process.exitCode=1});

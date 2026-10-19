@@ -11,6 +11,10 @@ def validate(cfg):
     if cfg['analytics']['enabled']:
         if cfg['analytics']['provider'] != 'ga4' or not re.fullmatch(r'G-[A-Z0-9]+', cfg['analytics']['measurementId']):
             raise ValueError('An approved GA4 property ID is required')
+        if not cfg['analytics'].get('activationApproved'):
+            raise ValueError('Owner activation approval required')
+        if cfg['analytics'].get('eventRetentionMonths') != 2 or cfg['analytics'].get('cookieLifetimeDays') != 180 or cfg['analytics'].get('resetRetentionOnActivity') is not False:
+            raise ValueError('Reviewed minimal profile: 2-month event retention, 180-day fixed cookies, no activity reset')
         if not cfg['analytics'].get('privacyReviewed'):
             raise ValueError('Update privacy/cookies, processor agreement, retention and settings before activation')
     if cfg['metrics']['enabled'] and not cfg['analytics']['enabled']:
@@ -58,6 +62,20 @@ def advertiser_page():
 <h2>Reichweite &amp; Messung</h2><p>Wir versprechen keine erfundenen Reichweiten, Klickzahlen oder CPMs. Eine spätere Auswertung kann nur tatsächlich gemessene, freigegebene Daten abdecken. AdSense-Abrechnung und unsere eigenen Kampagnen sind getrennte Auswertungen.</p>
 <p>Aktuell sind keine Werbe- oder Statistikdienste aktiviert. <a href="/werbung/">Wie wir Werbung kennzeichnen</a> · <a href="/cookies/">Datenschutzeinstellungen</a></p><p>E-Mail: <a href="mailto:philipp.l.paulik@gmail.com">philipp.l.paulik@gmail.com</a></p></main>''' % (E(mailto('Kooperation')),cards)
 
+
+def ga4_disclosure(active):
+    status = 'Google Analytics 4: Statistik mit Einwilligung' if active else 'Google Analytics 4: vorbereitet, noch nicht aktiv'
+    intro = 'Die folgende Konfiguration wird nur nach Ihrer Statistik-Einwilligung eingesetzt.' if active else 'Google Analytics 4 ist ausgewählt, aber noch nicht aktiviert. Die folgenden Angaben beschreiben die vorbereitete Konfiguration, nicht eine bereits laufende Verarbeitung. Vor Aktivierung werden die tatsächlichen Kontoeinstellungen und Vertragsgrundlagen geprüft.'
+    return '<section aria-labelledby="iw-ga4-heading"><h2 id="iw-ga4-heading">'+status+'</h2><p>'+intro+'</p>'+GA4_DETAILS+'</section>'
+
+GA4_DETAILS = '''<h3>Anbieter und Zweck</h3><p>Google Analytics 4 ist ein Dienst von Google. Für den EWR ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland, der benannte Google-Ansprechpartner; Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, und weitere Auftragsverarbeiter können an der Verarbeitung beteiligt sein. Zweck ist die statistische Auswertung von Seitenaufrufen, Nutzung und gekennzeichneten Werbeplatzierungen. Werbung, Google Signals, User-ID, personalisierte Anzeigen und Verknüpfungen mit Google Ads sind nicht Teil dieser Konfiguration.</p>
+<h3>Einwilligung und Daten</h3><p>Rechtsgrundlagen sind Ihre freiwillige Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und für das Speichern beziehungsweise Auslesen auf Ihrem Gerät § 25 Abs. 1 TDDDG. Ohne Statistik-Einwilligung laden wir den Google-Tag nicht und senden auch keine cookielosen Ablehnungs-Pings (Basic Consent Mode). Lesen und Suche bleiben möglich. Bei Einwilligung können Seitenpfad, Seitentitel, Zeitpunkte, technische Browser-/Geräteinformationen, grobe Standortinformationen und eine pseudonyme Cookie-Kennung verarbeitet werden. Beim Verbindungsaufbau wird Ihre IP-Adresse an Google übermittelt; Google beschreibt für GA4, dass einzelne IP-Adressen nicht protokolliert oder gespeichert werden. Das ist keine Zusage vollständiger Anonymität.</p>
+<p>Die ausdrücklich gesendeten Seitenereignisse enthalten keine URL-Suchparameter oder Referrer. Es werden keine Namen oder E-Mail-Adressen als Ereignisparameter gesendet. Enhanced Measurement wird vor Aktivierung ausgeschaltet, damit keine zusätzlichen Formular-, Such- oder Outbound-Link-Daten automatisch erfasst werden. Platzierungsereignisse enthalten nur Ereignisart, Spot-ID und Seitenpfad; keine vollständige Ziel-URL.</p>
+<h3>Cookies und Speicherdauer</h3><p>GA4 kann die First-Party-Cookies _ga und _ga_&lt;Kennung&gt; verwenden. Wir begrenzen ihre Laufzeit auf 180 Tage und verlängern sie nicht mit jedem Besuch; Browser können sie früher löschen. Die geplante Property-Aufbewahrung für nutzer- und ereignisbezogene Daten beträgt zwei Monate, ohne Zurücksetzen bei neuer Aktivität. Diese Einstellung betrifft nicht automatisch alle bereits aggregierten Standardberichte. Die tatsächlichen Property-Einstellungen werden vor der Aktivierung überprüft.</p>
+<h3>Drittlandübermittlung und Auftragsverarbeitung</h3><p>Eine Verarbeitung in den USA und anderen Ländern außerhalb des EWR ist möglich. Vor der Aktivierung werden die anwendbaren Google Ads Data Processing Terms als Vereinbarung zur Auftragsverarbeitung nach Art. 28 DSGVO sowie die gültigen Übermittlungsgrundlagen geprüft. Googles Bedingungen sehen geeignete Übermittlungsmechanismen einschließlich Standardvertragsklauseln vor, soweit erforderlich. Google nennt außerdem das EU-US Data Privacy Framework für entsprechend zertifizierte US-Unternehmen. Dessen Anwendbarkeit und die konkrete Vertragspartei müssen anhand des tatsächlichen Kontos bestätigt werden; Einwilligung in Statistik ersetzt diese Prüfung nicht.</p>
+<h3>Widerruf</h3><p>Öffnen Sie jederzeit „Datenschutzeinstellungen“ im Footer und wählen Sie „Alle ablehnen“ oder deaktivieren Sie Statistik. Der Widerruf gilt für die Zukunft. Weitere Statistik-Ereignisse werden gestoppt, bekannte GA-Cookies auf dieser Domain soweit technisch zugänglich entfernt und die Seite ohne Tag neu geladen. Bereits rechtmäßig verarbeitete Daten werden dadurch nicht automatisch rückwirkend gelöscht. Für Auskunft oder Löschung kontaktieren Sie philipp.l.paulik@gmail.com.</p>
+<p>Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" rel="noopener">Google-Datenschutzerklärung</a>, <a href="https://support.google.com/analytics/answer/11397207" rel="noopener">GA4-Cookies</a>, <a href="https://support.google.com/analytics/answer/7667196" rel="noopener">Datenaufbewahrung</a>, <a href="https://business.safety.google/adsprocessorterms/" rel="noopener">Google-Datenverarbeitungsbedingungen</a>.</p>'''
+
 def main(out):
     out = pathlib.Path(out); cfg = validate(json.loads((ROOT/'content/monetization.json').read_text()))
     asset = out/'assets/monetization'; asset.mkdir(parents=True,exist_ok=True)
@@ -75,8 +93,10 @@ def main(out):
     (out/'werben').mkdir(exist_ok=True); (out/'werben/index.html').write_text(h+advertiser_page()+foot)
     # Dynamic provider wording must be reviewed with the actual provider; preparation stays literal/off.
     panel = PANEL
-    if cfg['analytics']['enabled'] or cfg['metrics']['enabled']:
-        raise ValueError('Activation is a separate reviewed release: replace off-state privacy text and banner provider disclosure first')
+    active = cfg['analytics']['enabled']
+    if active:
+        panel = panel.replace('Statistik und Werbung sind noch nicht aktiviert.', 'Google Analytics 4 ist für freiwillige Statistik verfügbar. Werbung bleibt aus.').replace('Seitenaufrufe und Interaktionen. Derzeit aus.', 'Google Analytics 4 (Google Ireland / Google LLC): Seitenaufrufe und Interaktionen, Cookies bis 180 Tage; Datenübermittlung in die USA möglich. Nur nach Zustimmung.')
+
     config = '<script type="application/json" id="iw-monetization-config">'+json.dumps(cfg,ensure_ascii=True).replace('<','\\u003c')+'</script>'
     extra = panel+config+'<script src="/assets/monetization/consent.js" defer></script>'
     spot = ''
@@ -95,6 +115,20 @@ def main(out):
         if spot and (f==out/'index.html' or f.parent.parent.name=='artikel'):
             at = t.find('<footer')
             t = t[:at]+'<div class="w">'+spot+'</div>'+t[at:]
+        if f.parent.name in ('datenschutz','cookies') and f.name=='index.html':
+            t = t.replace('</article>', ga4_disclosure(active)+'</article>',1)
+        if active:
+            t = t.replace('Derzeit ist keiner dieser Dienste aktiviert.', 'Google Analytics 4 ist nur mit Statistik-Einwilligung verfügbar; externe Werbedienste bleiben aus.')
+            t = t.replace('Eine spätere Auswertung kann nur tatsächlich gemessene, freigegebene Daten abdecken.', 'Die Statistik erfasst nur tatsächlich gemessene Daten nach Einwilligung und ist keine vollständige Reichweitenmessung.')
+            t = t.replace('Aktuell sind keine Werbe- oder Statistikdienste aktiviert.', 'Google Analytics 4 wird nur nach Statistik-Einwilligung geladen. Externe Werbung bleibt aus.')
+            t = t.replace('Aktuell sind Google AdSense, Affiliate-Netzwerke und Statistikdienste nicht aktiviert.', 'Google AdSense und Affiliate-Netzwerke sind nicht aktiviert. Google Analytics 4 wird nur mit Statistik-Einwilligung eingesetzt.')
+            t = t.replace('Statistik- und Werbedienste sind derzeit ausgeschaltet.', 'Externe Werbedienste bleiben ausgeschaltet. Google Analytics 4 ist ausschließlich mit Statistik-Einwilligung verfügbar.')
+            t = t.replace('Es ist noch kein Statistikdienst aktiviert. Es werden keine Analytics-Cookies und keine Analytics-Anfragen gesendet. Die vorbereitete Statistikoption ist deshalb nicht auswählbar. Vor einer Aktivierung werden Anbieter, Datenarten, Zwecke, Speicherdauer und mögliche Übermittlungen hier und in der Datenschutzerklärung konkret benannt. Optionale Statistik erfordert eine eigene freiwillige Einwilligung.', 'Google Analytics 4 wird nur nach Ihrer freiwilligen Statistik-Einwilligung geladen. Bei Ablehnung werden keine Google-Tags geladen und keine Statistik-Anfragen gesendet. Die Details stehen im Abschnitt Google Analytics 4 auf dieser Seite.')
+            t = t.replace('Diese Website nutzt derzeit keine Analyse- oder Werbedienste', 'Diese Website nutzt Google Analytics 4 nur nach Ihrer Statistik-Einwilligung, aber keine externen Werbedienste')
+            t = t.replace('Alle optionalen Dienste sind ausgeschaltet.', 'Ohne Einwilligung bleibt Statistik ausgeschaltet. Externe Werbung bleibt unabhängig davon aus.')
+            t = t.replace('Derzeit sind Google Analytics, Google AdSense und Affiliate-Netzwerke nicht eingebunden. Es werden weder Google-Tags noch ein Tag Manager vorgeladen.', 'Google Analytics 4 wird nur nach Statistik-Einwilligung geladen. Google AdSense und Affiliate-Netzwerke sind nicht eingebunden. Vor der Einwilligung werden keine Google-Tags vorgeladen; ein Tag Manager wird nicht verwendet.')
+            t = t.replace('## Statistik: derzeit aus', '## Statistik mit Einwilligung').replace('<h2 id="statistik-derzeit-aus">Statistik: derzeit aus</h2>', '<h2 id="statistik-mit-einwilligung">Statistik mit Einwilligung</h2>')
+            t = t.replace('Stand: 19. Oktober 2026, Vorbereitung ohne aktive Statistik- oder Werbedienste.', 'Stand: 19. Oktober 2026. Statistik nur mit Einwilligung; Werbedienste aus.')
         t = t.replace('</body>',extra+'</body>',1); f.write_text(t)
     p = out/'sitemap.xml'; xml=p.read_text()
     if 'https://intelligenz-welt.de/werben/' not in xml: p.write_text(xml.replace('</urlset>','<url><loc>https://intelligenz-welt.de/werben/</loc></url></urlset>'))

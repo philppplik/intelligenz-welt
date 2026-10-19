@@ -14,7 +14,7 @@
     state = JSON.parse(localStorage.getItem(key));
     if (!state || state.revision !== cfg.consentRevision || typeof state.at !== 'number' || Date.now() - state.at > age || state.at > Date.now()) state = null;
   } catch (_) { state = null; }
-  function permitted() { return !!(state && state.statistics === true); }
+  function permitted() { return !!(state && state.statistics === true && Date.now() - state.at <= age && state.revision === cfg.consentRevision); }
   function gtag() { window.dataLayer.push(arguments); }
   function loadAnalytics() {
     if (!permitted() || !analyticsReady || loaded) return;
@@ -22,7 +22,7 @@
     gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
     gtag('consent','update',{analytics_storage:'granted'});
     gtag('js',new Date());
-    gtag('config',cfg.analytics.measurementId,{send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false});
+    gtag('config',cfg.analytics.measurementId,{send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false,cookie_expires:180*86400,cookie_update:false,page_location:location.origin+location.pathname,page_referrer:''});
     gtag('event','page_view',{page_location:location.origin + location.pathname,page_referrer:'',page_title:document.title});
     var script = document.createElement('script'); script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(cfg.analytics.measurementId);
@@ -50,7 +50,7 @@
     catch (_) { document.getElementById('iw-consent-status').textContent='Auswahl gilt nur für diese Seite, da der Browser sie nicht speichern konnte.'; }
     close();
     if (hadStats && !state.statistics) {
-      if (loaded) { window['ga-disable-' + cfg.analytics.measurementId] = true; gtag('consent','update',{analytics_storage:'denied'}); }
+      if (loaded) { window['ga-disable-' + cfg.analytics.measurementId] = true; }
       eraseAnalyticsCookies();
       /* Full reload removes every previously loaded provider and pending handler. */
       location.reload(); return;
@@ -70,6 +70,7 @@
     window.dispatchEvent(new CustomEvent('iw:metric',{detail:data}));
     if (analyticsReady && loaded) gtag('event',name,{spot_id:id,page_path:location.pathname});
   }
+  document.addEventListener('visibilitychange',function(){if(!document.hidden && state && !permitted() && loaded){window['ga-disable-'+cfg.analytics.measurementId]=true;location.reload();}});
   document.querySelectorAll('[data-iw-spot]').forEach(function (spot) {
     var id = spot.getAttribute('data-iw-spot'), sent=false, timer=null;
     spot.querySelectorAll('a[data-iw-promotion]').forEach(function (link) { link.addEventListener('click',function () { metric('promotion_click',id); }); });
@@ -82,8 +83,10 @@
         },1000);
       });
     },{threshold:[0,0.5]});
+    document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(timer);});
     observer.observe(spot);
   });
+  window.addEventListener('storage',function(e){if(e.key===key){if(loaded)window['ga-disable-'+cfg.analytics.measurementId]=true;location.reload();}});
   loadAnalytics();
   if (!state) open();
 }());

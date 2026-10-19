@@ -61,3 +61,42 @@ Optional developer-only UI test: install Playwright outside the production tree,
 - Accessible guide PDF (commercial posts: Werbung/Anzeige at start; affiliate disclosure beside link): https://www.die-medienanstalten.de/fileadmin/user_upload/die_medienanstalten/Service/Merkblaetter_Leitfaeden/Leitfaden_Werbekennzeichnung_Onlinemedien_ua.pdf
 
 The owner reviews legal/business matters. These pages document the actual inactive implementation, not a declaration of legal compliance or a promise of AdSense approval.
+
+## GA4 follow-up (2026-10-19)
+
+Owner selected GA4, not self-hosting. Integration now has a reviewed-profile gate rather than an unconditional provider lock: `enabled`, a genuine `G-...` measurement ID, `activationApproved`, and `privacyReviewed` must all be set only in a separately approved activation. Short profile: 2-month event/user retention, retention reset on activity OFF in GA4 admin; browser cookie lifetime fixed at 180 days (`cookie_expires=15552000`, `cookie_update=false`). Ads remain hard-locked. No actual property/stream has been created by this patch.
+
+GA4 disclosure is generated on both privacy/cookies pages, explicitly PREPARATION while off and actual-use wording only after the activation gate. It describes provider, data, purpose, voluntary consent, IP transmission vs storage distinction, cookies, retention (aggregate report caveat), transfers, Art.28 DPA review and revocation. No claim that a DPA has already been accepted or a particular transfer mechanism verified. Activation MUST verify actual contract entity, current DPF coverage/other transfer basis and account terms, disable Google Signals/user-provided data, enhanced measurement, Google Ads links and advertising features in the actual property. No replay, form text or search terms. Consent revision changed so no old off-state choice authorizes the new service.
+
+Withdrawal disables GA immediately without emitting a denied ping, deletes accessible known GA cookies and reloads. Cross-tab consent changes reload existing tags; expiry is checked per event and on foreground return. Genuine account settings and end-to-end behavior still require checking before activation.
+
+Additional sources read:
+- https://support.google.com/analytics/answer/7667196 (2/14-month settings; aggregate-report exception)
+- https://support.google.com/analytics/answer/11397207 (cookie defaults vs custom configuration)
+- https://support.google.com/analytics/answer/3379636?hl=en (DPA contractual status differs by account/region, not universally a fresh click)
+- https://support.google.com/analytics/answer/6004245?hl=en (GA as processor, data safeguards)
+- https://business.safety.google/adsprocessorterms/
+- https://policies.google.com/privacy?gl=IE&hl=en
+- https://policies.google.com/privacy/frameworks?hl=de
+
+GA4 QA fixture: `test-ga4.cjs` uses `G-LOCALFIXTURE` only in temporary generated output and intercepts ALL HTTPS requests. It is not a property and must never be copied to production config. 30 additional browser assertions verify no requests before consent/rejection; one intercepted tag after consent; denied-then-granted ordering, fixed cookies, flags, query stripping, revocation/reload/cookie deletion, active disclosure, in mobile and desktop. Tests reset committed config to OFF afterwards. Live end-to-end GA ingestion is deliberately NOT tested before approval.
+
+### Actual property created, tag still OFF
+
+User approval: WhatsApp 2026-10-19 14:15:23, "darfste", direct reply to the specific free new-property question, no new terms and tag stays off. Verified original channel record.
+
+- Signed-in Google identity: philipp.l.paulik@gmail.com (account menu checked).
+- Existing GA account: Default Account for Firebase, 363019915. Existing Chrome Web Store account does not permit new properties; reused the user's existing editable web-project account, no new account.
+- New property: Intelligenz Welt - intelligenz-welt.de, 559488833.
+- Webstream: Intelligenz Welt Web, https://intelligenz-welt.de, 16158398372.
+- Genuine measurement ID: G-E1XCJME97G. Non-secret public measurement identifier; present in OFF config only.
+- Actual opened property home: https://analytics.google.com/analytics/web/#/a363019915p559488833/reports/intelligenthome
+- Actual opened stream: https://analytics.google.com/analytics/web/?hl=en#/a363019915p559488833/admin/streams/table/16158398372
+- Germany reporting timezone, EUR. Industry News; smallest size bucket (1-10), web traffic objective.
+- Retention saved and read back: event data 2 months, user data 2 months; activity reset OFF. UI warns changes take effect after 24 hours. Screenshot inspected.
+- Google Signals and user-provided data both OFF (UI offers Turn on, not clicked).
+- Advertising personalization changed from default 307/307 allowed to 0/307; saved and read back. Granular device/location collection also disabled.
+- Enhanced Measurement creation toggle did not persist as expected. Detected on post-creation verification and switched OFF again in actual stream; read back aria-checked=false and pixels inspected. Do not assume creation defaults.
+- No new terms, DPA acknowledgment, paid feature or tag installation accepted. No Measurement Protocol secret generated.
+
+Still required before activation: actual contract/DPA/entity/transfer basis review in this existing account, explicit activation approval, refresh consent revision as needed, deploy and test real browser traffic including reject/accept/withdraw, verify GA ingestion. No claim of accepted DPA or live metrics. The property currently reports no website data, as expected.
