@@ -64,7 +64,7 @@ SITES = {
  'iw': dict(L=DE, name='Intelligenz Welt', base='https://intelligenz-welt.de', page='redakteur/philipp-paulik/', layout='dir', template='impressum/index.html',
     open='<article class="art ap">', close='</article>', slash=True,
     desc='Philipp Paulik, Betreiber und Redakteur von Intelligenz Welt: KI-Pionier, Webdesigner, UI/UX-Designer, Software Engineer und Autor. Biografie, Projekte und Profile.',
-    p2='Er betreibt Intelligenz Welt (siehe Impressum) und ist für die Inhalte verantwortlich. KI-News, Modell-Radar und Analysen erscheinen hier auf Deutsch; die News werden automatisch aus öffentlichen RSS-Feeds und APIs aggregiert.',
+    p2='Er betreibt Intelligenz Welt (siehe Impressum) und ist für die Inhalte verantwortlich. KI-News, Modell-Radar und Artikel erscheinen hier auf Deutsch; die News werden automatisch aus öffentlichen RSS-Feeds und APIs aggregiert.',
     articles=['artikel/*/index.html'], sitemaps=['sitemap.xml'], crumb_root='Intelligenz Welt'),
  'fa': dict(L=DE, name='finanz adjust', base='https://finanz-adjust.de', page='redakteur/philipp-paulik/', layout='dir', template='impressum/index.html',
     open='<div class="pg ap">', close='</div>', slash=True, start=r'<div class="pg">',

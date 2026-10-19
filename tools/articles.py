@@ -318,7 +318,7 @@ def home_news(arts):
     arts = sorted(arts, key=lambda a: a['_pub'], reverse=True)
     lead, side, rest = arts[0], arts[1:4], arts[4:16]
     def tag(a): return '<span class="tag">%s</span>' % E(SECTIONS[a['section']])
-    h = ('<h1 class="sr">Intelligenz Welt: KI-News, Modell-Radar und Analysen</h1>'
+    h = ('<h1 class="sr">Intelligenz Welt: KI-News, Modell-Radar und Artikel</h1>'
          '<section class="lead" aria-label="Top-Story"><a class="lead-main" href="/artikel/%s/"><img src="%s" width="800" height="450" alt="%s" fetchpriority="high" decoding="async">%s<h2>%s</h2><p>%s</p><div class="meta">Von Philipp Paulik · %s</div></a>'
          '<div class="lead-side">') % (lead['slug'], thumb(lead), E(lead['hero']['alt']), tag(lead), E(lead['title']), E(lead['dek']), fmt_t(lead))
     for a in side:
@@ -341,21 +341,20 @@ def patch_home(out, arts):
     if not m: return
     stats = m.group(1)
     t = t[:m.start()] + home_news(arts) + t[m.end():]
-    t = re.sub(r'<h2 class="sec" id="neueste-artikel">Neueste Artikel.*?</div></div>(?=\s*<h2 class="sec">Analysen)', '', t, count=1, flags=re.S)
-    t = t.replace('<h2 class="sec">Analysen &amp; Briefings', stats + '<h2 class="sec">Analysen &amp; Briefings', 1)
+    t = t.replace('<h2 class="sec">Modell-Radar', stats + '<h2 class="sec">Modell-Radar', 1)
     open(f, 'w', encoding='utf-8').write(t)
 
 def patch_site(out, arts):
     link = '<a class="l" href="/artikel/">Artikel</a>'
     for f in glob.glob(os.path.join(out, '**', '*.html'), recursive=True):
         t = open(f, encoding='utf-8').read(); o = t
-        if 'href="/artikel/">Artikel</a>' not in t and '<a class="l" href="/analysen/">' in t:
-            t = re.sub(r'(<a class="l[^"]*" href="/analysen/">Analysen</a>)', link + r'\1', t, count=1)
+        if 'href="/artikel/">Artikel</a>' not in t and '<a class="l" href="/suche/">' in t:
+            t = re.sub(r'(<a class="l[^"]*" href="/suche/">)', link + r'\1', t, count=1)
         if 'href="/redaktion/"' not in t and '<a href="/kontakt/">Kontakt</a>' in t:
             t = t.replace('<a href="/kontakt/">Kontakt</a>', '<a href="/kontakt/">Kontakt</a><a href="/redaktion/">Redaktion</a>', 1)
         if False:
             sec = '<h2 class="sec" id="neueste-artikel">Neueste Artikel <a href="/artikel/">Alle →</a></h2><div class="cards">' + ''.join(card(a) for a in arts[:6]) + '</div>'
-            t = t.replace('<h2 class="sec">Analysen &amp; Briefings', sec + '<h2 class="sec">Analysen &amp; Briefings', 1)
+            pass
         if '<a href="/feed.xml">RSS-Feed</a>' in t and '/berichte/">Tagesausgabe' not in t: t = t.replace('<a href="/feed.xml">RSS-Feed</a>', '<a href="/feed.xml">RSS-Feed</a><a href="/berichte/">Tagesausgabe (PDF)</a>', 1)
         if LEGAL_FOOT_OLD in t and '/transparenz/">KI-Transparenz' not in t: t = t.replace(LEGAL_FOOT_OLD, LEGAL_FOOT_NEW, 1)
         if f.endswith(os.path.join('impressum', 'index.html')) and 'Streitbeilegung' not in t: t = t.replace('</article>', IMPRESSUM_ADD + '</article>', 1)
@@ -421,7 +420,7 @@ def og_fallback(out):
     os.makedirs(os.path.join(out, 'assets'), exist_ok=True); shutil.copy(src, os.path.join(out, 'assets', 'og-default.jpg'))
     img = BASE + '/assets/og-default.jpg'
     tags = ('<meta property="og:image" content="%s"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'
-            '<meta property="og:image:alt" content="Intelligenz Welt: KI-News, Modell-Radar und Analysen auf Deutsch">'
+            '<meta property="og:image:alt" content="Intelligenz Welt: KI-News, Modell-Radar und Artikel auf Deutsch">'
             '<meta name="twitter:image" content="%s">' % (img, img))
     for dp, _, fs in os.walk(out):
         for f in fs:

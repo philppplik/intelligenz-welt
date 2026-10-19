@@ -5,7 +5,7 @@ Intelligenz Welt nutzt KI-Werkzeuge bei der Erstellung seiner Inhalte. Diese Sei
 ## Zwei Arten von Inhalten
 
 - **KI-News und Modell-Radar:** Diese Übersichten werden automatisch aus öffentlichen RSS-Feeds und APIs aggregiert und verlinken unverändert auf die Originalquellen. Es entstehen dabei keine KI-verfassten Artikeltexte.
-- **Analysen und Artikel:** Diese redaktionellen Beiträge entstehen mit KI-Unterstützung (Recherche und Textentwurf).
+- **Artikel:** Diese redaktionellen Beiträge entstehen mit KI-Unterstützung (Recherche und Textentwurf).
 
 ## Wo der Mensch entscheidet
 

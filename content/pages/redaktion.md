@@ -8,7 +8,7 @@ Intelligenz Welt ordnet die Entwicklung rund um künstliche Intelligenz ein: Mod
 
 ## Zwei Bereiche
 
-Die [KI-News](/news/) und das Modell-Radar werden automatisch aus öffentlichen Feeds und APIs aggregiert und führen zu den Originalquellen. Die Artikel und Analysen sind eigene redaktionelle Beiträge.
+Die [KI-News](/news/) und das Modell-Radar werden automatisch aus öffentlichen Feeds und APIs aggregiert und führen zu den Originalquellen. Die Artikel sind eigene redaktionelle Beiträge.
 
 ## Unabhängigkeit und Werbung
 
@@ -28,4 +28,4 @@ Fehler werden im Artikel korrigiert. Bei inhaltlichen Änderungen setzen wir das
 
 ## Fiktive Inhalte
 
-Analysen und Essays enthalten keine erfundenen Fakten. Fiktive Elemente (etwa ein beispielhaftes Zitat) sind ausdrücklich als fiktiv gekennzeichnet und nennen keine realen Personen oder Organisationen als Urheber.
+Artikel und Essays enthalten keine erfundenen Fakten. Fiktive Elemente (etwa ein beispielhaftes Zitat) sind ausdrücklich als fiktiv gekennzeichnet und nennen keine realen Personen oder Organisationen als Urheber.

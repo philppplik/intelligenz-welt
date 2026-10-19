@@ -95,7 +95,6 @@ def news_docs():
 PAGES = [
     ('KI-News: Das Archiv', '/news/', 'Seite', 'Aktuelle Nachrichten zu KI, LLMs und Agenten, automatisch aus öffentlichen Feeds aggregiert.'),
     ('Modell-Radar', '/modelle/', 'Seite', 'Die trendendsten Modelle auf Hugging Face: Likes, Downloads, Aufgabenbereich.'),
-    ('Analysen & Briefings', '/analysen/', 'Seite', 'Essays und Briefings zu Claude, Kimi, Seedance, OpenClaw und der Zukunft der KI.'),
     ('Artikel', '/artikel/', 'Seite', 'Alle redaktionellen Artikel von Philipp Paulik mit Quellen und Einordnung.'),
     ('Tagesausgabe als PDF', '/berichte/', 'Seite', 'Die tägliche Ausgabe als PDF: Meldung des Tages, neueste Artikel, KI-Pulse und Impressum.'),
     ('Über uns', '/ueber-uns/', 'Seite', 'Intelligenz Welt ist ein unabhängiges deutschsprachiges KI-Magazin von Philipp Paulik.'),
@@ -104,7 +103,7 @@ PAGES = [
 def main():
     out = sys.argv[1]
     now = int(datetime.datetime.now().timestamp())
-    docs = editorial_docs(now) + legacy_docs() + news_docs()
+    docs = editorial_docs(now) + news_docs()
     docs += [{'t': t, 'u': u, 'k': k, 'd': d, 'g': '', 'x': '', 'ts': 0, 'dt': ''} for t, u, k, d in PAGES]
     payload = {'generated': datetime.datetime.now().astimezone().isoformat(timespec='seconds'), 'docs': docs}
     with open(os.path.join(out, 'search-index.json'), 'w', encoding='utf-8') as f:
