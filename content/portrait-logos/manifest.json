@@ -83,5 +83,14 @@
     "risk": "Unverändertes Inline-SVG der offiziellen Brand-Seite; Weißraum, keine Umfärbung oder Rahmen. Markenrechte beachten.",
     "checked": "2026-10-19",
     "sha256": "4af90f5941c959b554b4f3eb82c5633044ad06fdf2d8daa837eea0357fbd7e22"
+  },
+  "openai-blossom": {
+    "file": "openai-blossom.svg",
+    "source": "https://openai.com/brand/",
+    "artifact_source": "https://raw.githubusercontent.com/simple-icons/simple-icons/15.16.0/icons/openai.svg",
+    "license": "Simple Icons CC0; OpenAI Brand-Guidelines und Markenrechte gelten unabhängig davon",
+    "risk": "Keine freie Markenlizenz; Originalfarbe schwarz, Abstand bewahren, keine Partnerschaft",
+    "checked": "2026-10-19",
+    "sha256": "2b4a04ddc2395b20d168694d3850ce2050a702c4a0cdeb4d8b31b9a970481a8c"
   }
 }

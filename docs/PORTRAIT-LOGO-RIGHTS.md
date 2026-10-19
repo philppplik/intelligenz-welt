@@ -25,3 +25,10 @@ Stand: 19.10.2026. Keine Rechtsberatung oder abschließende Freigabe. Lokal geho
 Wikimedia PD-Einstufungen ersetzen keine Prüfung der Schutzschwelle im deutschen Recht und keine Markenprüfung. OpenAI-/Mistral-Guidelines sind keine freie CC-Lizenz. Keine pauschale Aussage "rechtssicher".
 
 Dateiherkunft, Abrufdatum und SHA256 stehen in content/portrait-logos/manifest.json. NVIDIA Apache-2.0 Lizenztext liegt bei; daraus wird keine Markenlizenz abgeleitet.
+
+## Erweiterung Modellverzeichnis, 19.10.2026
+
+- GPT-6 Astra (gemeint mit „6 astra“), GPT-6.1 Sol und GPT-6 Luna nutzen das schwarze OpenAI-Blossom-Anbietericon, ausdrücklich kein erfundenes modellspezifisches GPT-Logo. Lokal bezogen aus Simple Icons 15.16.0, `icons/openai.svg` (CC0 für den Icon-Code). OpenAI-Markenrechte und die Bedingungen unter https://openai.com/brand/ bleiben unabhängig davon bestehen; keine pauschale freie Markenlizenz. Freiraum, Originalfarbe und keine Partnerschaft beachten. Abruf und SHA-256 im Manifest.
+- Nemotron nutzt das bereits geprüfte NVIDIA-Anbieterlogo; Muse Spark das bereits geprüfte Meta-Anbieterlogo, jeweils ausdrücklich kein eigenes Modelllogo.
+- Neue Claude- und Gemini-Modelle nutzen die bestehenden Familienlogos. Neue Mistral-Modelle nutzen das bestehende unveränderte Mistral-Anbieterlogo, keine fremden Modellmotive. Mistral ist nur über Brand-Guidelines dokumentiert, nicht als frei lizenziert behauptet.
+- Alle 28 Modellporträts besitzen nun ein lokal gehostetes zugeordnetes Familien-, Anbieter- oder Modelllogo. Der Monogramm-Fallback bleibt für künftige unbekannte Assets bestehen. Rechtliche Beurteilung der Markennutzung bleibt beim Herausgeber.

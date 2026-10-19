@@ -91,6 +91,56 @@
       "title": "Mistral: Models Overview",
       "url": "https://docs.mistral.ai/models",
       "accessed": "2026-10-19"
+    },
+    "openai-current": {
+      "title": "OpenAI: aktuelle Modelle",
+      "url": "https://developers.openai.com/api/docs/models",
+      "accessed": "2026-10-19"
+    },
+    "sol": {
+      "title": "OpenAI: GPT-6.1 Sol",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "accessed": "2026-10-19"
+    },
+    "claude-current": {
+      "title": "Anthropic: aktuelle Modelle",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "accessed": "2026-10-19"
+    },
+    "gemini-current": {
+      "title": "Google: Gemini-API-Modellkatalog",
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "accessed": "2026-10-19"
+    },
+    "mistral-large-4": {
+      "title": "Mistral: Mistral Large 4",
+      "url": "https://docs.mistral.ai/models/mistral-large-4",
+      "accessed": "2026-10-19"
+    },
+    "mistral-medium-3-5": {
+      "title": "Mistral: Mistral Medium 3.5",
+      "url": "https://docs.mistral.ai/models/mistral-medium-3-5-26-04",
+      "accessed": "2026-10-19"
+    },
+    "ministral-3-14b": {
+      "title": "Mistral: Ministral 3 14B",
+      "url": "https://docs.mistral.ai/models/ministral-3-14b-25-12",
+      "accessed": "2026-10-19"
+    },
+    "ministral-3-8b": {
+      "title": "Mistral: Ministral 3 8B",
+      "url": "https://docs.mistral.ai/models/ministral-3-8b-25-12",
+      "accessed": "2026-10-19"
+    },
+    "ministral-3-3b": {
+      "title": "Mistral: Ministral 3 3B",
+      "url": "https://docs.mistral.ai/models/ministral-3-3b-25-12",
+      "accessed": "2026-10-19"
+    },
+    "mistral-ocr-4-1": {
+      "title": "Mistral: Mistral OCR 4.1",
+      "url": "https://docs.mistral.ai/models/ocr-4-1",
+      "accessed": "2026-10-19"
     }
   },
   "companies": [
@@ -267,7 +317,11 @@
           "value": "128.000 Token",
           "source": "astra"
         }
-      ]
+      ],
+      "logo": {
+        "asset": "openai-blossom",
+        "label": "OpenAI/GPT-Anbietericon, kein eigenes Modelllogo"
+      }
     },
     {
       "slug": "claude-opus-5",
@@ -529,7 +583,11 @@
           "value": "NVFP4, gemischte Präzision",
           "source": "nemotron"
         }
-      ]
+      ],
+      "logo": {
+        "asset": "nvidia",
+        "label": "NVIDIA-Anbieterlogo, kein eigenes Nemotron-Logo"
+      }
     },
     {
       "slug": "muse-spark",
@@ -560,7 +618,781 @@
           "value": "Nativ multimodales Reasoning-Modell",
           "source": "meta"
         }
-      ]
+      ],
+      "logo": {
+        "asset": "meta",
+        "label": "Meta-Anbieterlogo, kein eigenes Muse-Spark-Logo"
+      }
+    },
+    {
+      "slug": "gpt-6-1-sol",
+      "name": "GPT-6.1 Sol",
+      "company": "openai",
+      "initials": "GS",
+      "summary": "Reasoning-Modell für komplexe Programmier-, Computer- und Wissensaufgaben.",
+      "detail": "OpenAI positioniert Sol unterhalb von Astra. Das ist eine Anbieterpositionierung, kein unabhängiger Leistungsvergleich. Tool-Aufrufe werden über die Responses API unterstützt.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "sol"
+      ],
+      "facts": [
+        {
+          "label": "API-ID",
+          "value": "gpt-6.1-sol",
+          "source": "sol"
+        },
+        {
+          "label": "Eingabe → Ausgabe",
+          "value": "Text, Bild → Text",
+          "source": "sol"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "1.050.000 Token",
+          "source": "sol"
+        },
+        {
+          "label": "Maximale Eingabe",
+          "value": "922.000 Token",
+          "source": "sol"
+        },
+        {
+          "label": "Maximale Ausgabe",
+          "value": "128.000 Token",
+          "source": "sol"
+        },
+        {
+          "label": "Reasoning-Aufwand",
+          "value": "low, medium, high, xhigh, max",
+          "source": "sol"
+        }
+      ],
+      "logo": {
+        "asset": "openai-blossom",
+        "label": "OpenAI/GPT-Anbietericon, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "company": "openai",
+      "initials": "GL",
+      "summary": "Modell für häufige, kostensensitive Aufgaben mit hohem Volumen.",
+      "detail": "Luna wird im aktuellen OpenAI-Katalog als effiziente Alternative innerhalb der GPT-6-Auswahl geführt. Das Portrait übernimmt keine universelle Geschwindigkeits- oder Qualitätsrangfolge.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "openai-current"
+      ],
+      "facts": [
+        {
+          "label": "Eingabe → Ausgabe",
+          "value": "Text, Bild → Text",
+          "source": "openai-current"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "1,05 Mio. Token",
+          "source": "openai-current"
+        },
+        {
+          "label": "Maximale Ausgabe",
+          "value": "128.000 Token",
+          "source": "openai-current"
+        },
+        {
+          "label": "Reasoning-Aufwand",
+          "value": "none, low, medium, high, xhigh, max",
+          "source": "openai-current"
+        }
+      ],
+      "logo": {
+        "asset": "openai-blossom",
+        "label": "OpenAI/GPT-Anbietericon, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "company": "anthropic",
+      "initials": "CF",
+      "summary": "Für anspruchsvolles Reasoning und länger laufende Agentenaufgaben.",
+      "detail": "Der aktuelle Anthropic-Katalog nennt Text- und Bildeingaben, Textausgabe sowie Werkzeugnutzung. Die Aufgabenbeschreibung ist Herstellerpositionierung; tatsächliche Latenz hängt unter anderem von Promptlänge und Thinking-Aufwand ab.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "claude-current"
+      ],
+      "facts": [
+        {
+          "label": "Claude-API-ID",
+          "value": "claude-fable-5-1",
+          "source": "claude-current"
+        },
+        {
+          "label": "Eingabe → Ausgabe",
+          "value": "Text, Bild → Text",
+          "source": "claude-current"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "1 Mio. Token",
+          "source": "claude-current"
+        },
+        {
+          "label": "Maximale Ausgabe",
+          "value": "128.000 Token (synchron)",
+          "source": "claude-current"
+        },
+        {
+          "label": "Thinking",
+          "value": "Adaptiv, immer aktiv",
+          "source": "claude-current"
+        }
+      ],
+      "logo": {
+        "asset": "claude",
+        "label": "Claude-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "company": "anthropic",
+      "initials": "CO",
+      "summary": "Für länger laufende Programmier- und Wissensarbeit mit Agenten.",
+      "detail": "Der aktuelle Anthropic-Katalog nennt Text- und Bildeingaben, Textausgabe sowie Werkzeugnutzung. Die Aufgabenbeschreibung ist Herstellerpositionierung; tatsächliche Latenz hängt unter anderem von Promptlänge und Thinking-Aufwand ab.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "claude-current"
+      ],
+      "facts": [
+        {
+          "label": "Claude-API-ID",
+          "value": "claude-opus-5-5",
+          "source": "claude-current"
+        },
+        {
+          "label": "Eingabe → Ausgabe",
+          "value": "Text, Bild → Text",
+          "source": "claude-current"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "1 Mio. Token",
+          "source": "claude-current"
+        },
+        {
+          "label": "Maximale Ausgabe",
+          "value": "128.000 Token (synchron)",
+          "source": "claude-current"
+        },
+        {
+          "label": "Thinking",
+          "value": "Adaptiv, immer aktiv",
+          "source": "claude-current"
+        }
+      ],
+      "logo": {
+        "asset": "claude",
+        "label": "Claude-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "company": "anthropic",
+      "initials": "CS",
+      "summary": "Claude-Variante mit Schwerpunkt auf dem Verhältnis von Tempo und Leistung.",
+      "detail": "Der aktuelle Anthropic-Katalog nennt Text- und Bildeingaben, Textausgabe sowie Werkzeugnutzung. Die Aufgabenbeschreibung ist Herstellerpositionierung; tatsächliche Latenz hängt unter anderem von Promptlänge und Thinking-Aufwand ab.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "claude-current"
+      ],
+      "facts": [
+        {
+          "label": "Claude-API-ID",
+          "value": "claude-sonnet-5-5",
+          "source": "claude-current"
+        },
+        {
+          "label": "Eingabe → Ausgabe",
+          "value": "Text, Bild → Text",
+          "source": "claude-current"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "1 Mio. Token",
+          "source": "claude-current"
+        },
+        {
+          "label": "Maximale Ausgabe",
+          "value": "128.000 Token (synchron)",
+          "source": "claude-current"
+        },
+        {
+          "label": "Thinking",
+          "value": "Adaptiv",
+          "source": "claude-current"
+        }
+      ],
+      "logo": {
+        "asset": "claude",
+        "label": "Claude-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "company": "anthropic",
+      "initials": "CH",
+      "summary": "Für hohes Volumen und latenzempfindliche Klassifikation, Extraktion und Routing.",
+      "detail": "Der aktuelle Anthropic-Katalog nennt Text- und Bildeingaben, Textausgabe sowie Werkzeugnutzung. Die Aufgabenbeschreibung ist Herstellerpositionierung; tatsächliche Latenz hängt unter anderem von Promptlänge und Thinking-Aufwand ab.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "claude-current"
+      ],
+      "facts": [
+        {
+          "label": "Claude-API-ID",
+          "value": "claude-haiku-5-5",
+          "source": "claude-current"
+        },
+        {
+          "label": "Eingabe → Ausgabe",
+          "value": "Text, Bild → Text",
+          "source": "claude-current"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "1 Mio. Token",
+          "source": "claude-current"
+        },
+        {
+          "label": "Maximale Ausgabe",
+          "value": "128.000 Token (synchron)",
+          "source": "claude-current"
+        },
+        {
+          "label": "Thinking",
+          "value": "Adaptiv",
+          "source": "claude-current"
+        }
+      ],
+      "logo": {
+        "asset": "claude",
+        "label": "Claude-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-8-flash",
+      "name": "Gemini 3.8 Flash",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Für länger laufende Softwareentwicklung, Agenten und Unternehmensabläufe.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.8-flash",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-8-live",
+      "name": "Gemini 3.8 Live",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Für latenzarme Live-Sprachdialoge ohne zusätzliche Reasoning-Verzögerung.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.8-live",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-8-live-extended-thinking",
+      "name": "Gemini 3.8 Live Extended Thinking",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Live-Audiomodell für Dialoge mit zusätzlichem Hintergrund-Reasoning.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.8-live-extended-thinking",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-8-flash-tts",
+      "name": "Gemini 3.8 Flash TTS",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Sprachsynthese für ausdrucksstarke Stimmen und unterschiedliche Sprechstile.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.8-flash-tts",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-8-flash-lite-tts",
+      "name": "Gemini 3.8 Flash-Lite TTS",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Sprachsynthese mit Schwerpunkt auf hohem Produktionsvolumen.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.8-flash-lite-tts",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-6-flash",
+      "name": "Gemini 3.6 Flash",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Flash-Modell der vorherigen Generation für allgemeine Agenten- und Alltagsaufgaben.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.6-flash",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-5-flash-lite",
+      "name": "Gemini 3.5 Flash-Lite",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Modell für hohen Durchsatz innerhalb der Gemini-3.5-Familie.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.5-flash-lite",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "gemini-3-5-transcribe",
+      "name": "Gemini 3.5 Transcribe",
+      "company": "google-deepmind",
+      "initials": "G3",
+      "summary": "Spracherkennung mit Sprechertrennung und Zeitstempeln auf Wortebene.",
+      "detail": "Der offizielle Gemini-Katalog führt diese konkrete Variante und den unten genannten Endpunkt. Aufgabenbeschreibung laut Google; nicht mit anderen Flash-, Live- oder TTS-Varianten gleichzusetzen.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter API-Zugang; keine offene Gewichtslizenz aus dieser Quelle abgeleitet.",
+      "limits": "Kein eigener Modelltest. Der Katalog reicht nicht für eine Zusage zu Kontozugang, Limits oder konkreten Audioformaten. API-Dokumentation und Projektfreischaltung vor dem Einsatz prüfen.",
+      "sources": [
+        "gemini-current"
+      ],
+      "facts": [
+        {
+          "label": "API-Endpunkt",
+          "value": "gemini-3.5-transcribe / gemini-3.5-transcribe-live",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Katalogstand",
+          "value": "13. Oktober 2026",
+          "source": "gemini-current"
+        },
+        {
+          "label": "Angebot",
+          "value": "Gemini API",
+          "source": "gemini-current"
+        }
+      ],
+      "logo": {
+        "asset": "gemini",
+        "label": "Gemini-Familienlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "mistral-large-4",
+      "name": "Mistral Large 4",
+      "company": "mistral-ai",
+      "initials": "ML",
+      "summary": "Multimodales Open-Weight-Modell mit Mixture-of-Experts-Architektur.",
+      "detail": "Public Preview laut offizieller Modellseite. Gesamt- und aktive Parameter sind verschiedene Größen und keine Qualitätswertung.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Open Weight; konkrete Lizenz der heruntergeladenen Gewichte prüfen.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "mistral-large-4"
+      ],
+      "facts": [
+        {
+          "label": "API-ID",
+          "value": "mistral-large-4+1",
+          "source": "mistral-large-4"
+        },
+        {
+          "label": "Veröffentlicht",
+          "value": "6. Oktober 2026",
+          "source": "mistral-large-4"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "1 Mio. Token",
+          "source": "mistral-large-4"
+        },
+        {
+          "label": "Parameter gesamt / aktiv",
+          "value": "1,05 Billionen / 52 Mrd.",
+          "source": "mistral-large-4"
+        },
+        {
+          "label": "Vision-Encoder",
+          "value": "1,6 Mrd. Parameter",
+          "source": "mistral-large-4"
+        }
+      ],
+      "logo": {
+        "asset": "mistral-ai",
+        "label": "Mistral-Anbieterlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "mistral-medium-3-5",
+      "name": "Mistral Medium 3.5",
+      "company": "mistral-ai",
+      "initials": "MM",
+      "summary": "Multimodales Modell für Agenten- und Programmieraufgaben.",
+      "detail": "Die offizielle Modellseite nennt offene Gewichte unter einer Modified-MIT-Lizenz und einen Kontext von 256k Token.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Modified MIT laut Modellseite; konkrete Lizenzbedingungen prüfen.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "mistral-medium-3-5"
+      ],
+      "facts": [
+        {
+          "label": "API-ID",
+          "value": "mistral-medium-3-5+2",
+          "source": "mistral-medium-3-5"
+        },
+        {
+          "label": "Veröffentlicht",
+          "value": "28. April 2026",
+          "source": "mistral-medium-3-5"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "256.000 Token",
+          "source": "mistral-medium-3-5"
+        }
+      ],
+      "logo": {
+        "asset": "mistral-ai",
+        "label": "Mistral-Anbieterlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "ministral-3-14b",
+      "name": "Ministral 3 14B",
+      "company": "mistral-ai",
+      "initials": "M3",
+      "summary": "Kompaktes Text-und-Vision-Modell für lokale und Edge-Anwendungen.",
+      "detail": "Die Modellseite positioniert diese Variante für lokale Hardware. Das bedeutet keine Zusage zu Speicherbedarf oder Geschwindigkeit auf einem bestimmten Gerät.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Apache 2.0 laut offiziellem Modellkatalog; konkrete Gewichtsdatei prüfen.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "ministral-3-14b"
+      ],
+      "facts": [
+        {
+          "label": "API-ID",
+          "value": "ministral-14b-2512+1",
+          "source": "ministral-3-14b"
+        },
+        {
+          "label": "Veröffentlicht",
+          "value": "2. Dezember 2025",
+          "source": "ministral-3-14b"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "256.000 Token",
+          "source": "ministral-3-14b"
+        }
+      ],
+      "logo": {
+        "asset": "mistral-ai",
+        "label": "Mistral-Anbieterlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "ministral-3-8b",
+      "name": "Ministral 3 8B",
+      "company": "mistral-ai",
+      "initials": "M3",
+      "summary": "Kompaktes Text-und-Vision-Modell für lokale und Edge-Anwendungen.",
+      "detail": "Die Modellseite positioniert diese Variante für lokale Hardware. Das bedeutet keine Zusage zu Speicherbedarf oder Geschwindigkeit auf einem bestimmten Gerät.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Apache 2.0 laut offiziellem Modellkatalog; konkrete Gewichtsdatei prüfen.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "ministral-3-8b"
+      ],
+      "facts": [
+        {
+          "label": "API-ID",
+          "value": "ministral-8b-2512+1",
+          "source": "ministral-3-8b"
+        },
+        {
+          "label": "Veröffentlicht",
+          "value": "2. Dezember 2025",
+          "source": "ministral-3-8b"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "256.000 Token",
+          "source": "ministral-3-8b"
+        }
+      ],
+      "logo": {
+        "asset": "mistral-ai",
+        "label": "Mistral-Anbieterlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "ministral-3-3b",
+      "name": "Ministral 3 3B",
+      "company": "mistral-ai",
+      "initials": "M3",
+      "summary": "Kompaktes Text-und-Vision-Modell für lokale und Edge-Anwendungen.",
+      "detail": "Die Modellseite positioniert diese Variante für lokale Hardware. Das bedeutet keine Zusage zu Speicherbedarf oder Geschwindigkeit auf einem bestimmten Gerät.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Apache 2.0 laut offiziellem Modellkatalog; konkrete Gewichtsdatei prüfen.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "ministral-3-3b"
+      ],
+      "facts": [
+        {
+          "label": "API-ID",
+          "value": "ministral-3b-2512+1",
+          "source": "ministral-3-3b"
+        },
+        {
+          "label": "Veröffentlicht",
+          "value": "2. Dezember 2025",
+          "source": "ministral-3-3b"
+        },
+        {
+          "label": "Kontextfenster",
+          "value": "256.000 Token",
+          "source": "ministral-3-3b"
+        }
+      ],
+      "logo": {
+        "asset": "mistral-ai",
+        "label": "Mistral-Anbieterlogo, kein eigenes Modelllogo"
+      }
+    },
+    {
+      "slug": "mistral-ocr-4-1",
+      "name": "Mistral OCR 4.1",
+      "company": "mistral-ai",
+      "initials": "MO",
+      "summary": "Dokumenterkennung mit Strukturinformationen und Konfidenzwerten.",
+      "detail": "Die Modellseite nennt Absatz-Bounding-Boxes, Strukturblock-Labels und Konfidenzwerte je Block. OCR ist Dokumentextraktion, keine allgemeine Gesprächsvariante.",
+      "access": "Im offiziellen API-Katalog geführt. Konkrete Freischaltung und regionale Verfügbarkeit im eigenen Anbieterkonto prüfen.",
+      "license": "Gehosteter OCR-Dienst; keine offene Gewichtslizenz aus der Modellseite abgeleitet.",
+      "limits": "Herstellerbeschreibung, kein eigener Leistungstest. Eignung mit eigenen Aufgaben prüfen; Modellname und Version beim Einsatz festhalten.",
+      "sources": [
+        "mistral-ocr-4-1"
+      ],
+      "facts": [
+        {
+          "label": "API-ID",
+          "value": "mistral-ocr-4-1+2",
+          "source": "mistral-ocr-4-1"
+        },
+        {
+          "label": "Veröffentlicht",
+          "value": "16. Juli 2026",
+          "source": "mistral-ocr-4-1"
+        },
+        {
+          "label": "API-Route",
+          "value": "/v1/ocr",
+          "source": "mistral-ocr-4-1"
+        }
+      ],
+      "logo": {
+        "asset": "mistral-ai",
+        "label": "Mistral-Anbieterlogo, kein eigenes Modelllogo"
+      }
     }
   ],
   "benchmarks": [
