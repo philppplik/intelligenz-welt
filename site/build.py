@@ -156,3 +156,6 @@ for _p in ['/analysen/']+['/artikel/%s/'%x for x in ('kimi-k25-agentic-swarm-rev
 subprocess.check_call([sys.executable,'../tools/about.py',OUT])
 
 subprocess.check_call([sys.executable,'../tools/share_iconify.py',OUT])
+
+# Static in-article daily-report CTA, after all article renderers and consent passes.
+subprocess.check_call([sys.executable,'../tools/report_breaker.py',OUT])
