@@ -32,7 +32,6 @@ def validate(cfg):
     return cfg
 
 PANEL = '''<section id="iw-consent" class="iw-consent" role="region" aria-labelledby="iw-consent-title" hidden>
-<button type="button" class="iw-consent-close" data-consent="close" aria-label="Einstellungen schließen, ohne Auswahl zu ändern">Schließen</button>
 <h2 id="iw-consent-title">Deine Privatsphäre.</h2>
 <p>Du entscheidest über Statistik und Werbung. Ohne Zustimmung bleibt beides aus.</p>
 <p><strong>Aktueller Stand:</strong> Statistik und Werbung sind noch nicht aktiviert.</p>
@@ -40,8 +39,8 @@ PANEL = '''<section id="iw-consent" class="iw-consent" role="region" aria-labell
 <label><input type="checkbox" checked disabled><span><strong>Notwendig</strong><small>Seite und Datenschutzauswahl. Kein Tracking.</small></span></label>
 <label><input type="checkbox" id="iw-statistics"><span><strong>Statistik</strong><small>Seitenaufrufe und Interaktionen. Derzeit aus.</small></span></label>
 <label><input type="checkbox" id="iw-advertising"><span><strong>Werbung</strong><small>AdSense und Werbedienste. Derzeit aus.</small></span></label>
-</fieldset><div class="iw-consent-actions"><button type="button" data-consent="reject">Alle ablehnen</button><button type="button" data-consent="all">Alle verfügbaren erlauben</button><button type="button" data-consent="save">Auswahl speichern</button></div>
-<p><a href="/datenschutz/">Datenschutz</a> · <a href="/cookies/">Cookies &amp; Einstellungen</a> · <a href="/impressum/">Impressum</a></p><p class="iw-muted">Jederzeit im Footer ändern. Schließen erteilt keine Einwilligung.</p></section>'''
+</fieldset><div class="iw-consent-actions"><button type="button" data-consent="reject">Alle ablehnen</button><button type="button" data-consent="all">Alle verfügbaren akzeptieren</button><button type="button" data-consent="save">Auswahl speichern</button></div>
+<p><a href="/datenschutz/">Datenschutz</a> · <a href="/cookies/">Cookies &amp; Einstellungen</a> · <a href="/impressum/">Impressum</a></p><p class="iw-muted">Ohne Auswahl bleiben Statistik und Werbung aus. Jederzeit im Footer änderbar.</p></section>'''
 
 def mailto(kind):
     body = 'Hallo Philipp,\n\nich interessiere mich für: '+kind+'\n\nUnternehmen / Website:\nBeworbener Artikel oder Ziel-URL:\nThema und Zielgruppe:\nGewünschter Zeitraum:\nOptionaler Budgetrahmen:\nHinweise / Kontakt:\n\nMir ist klar: Die Anfrage ist keine Buchung.\n'

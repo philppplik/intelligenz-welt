@@ -5,7 +5,7 @@ Statistik- und Werbedienste sind derzeit ausgeschaltet. Ohne Einwilligung werden
 
 ## Notwendige Auswahl speichern
 
-Wir speichern Ihre Datenschutzauswahl im lokalen Speicher Ihres Browsers unter **iw-consent-v1**. Der Eintrag enthält die gewählten Kategorien, die Version des Hinweises und den Zeitpunkt der Auswahl. Er wird nicht an einen Statistik- oder Werbedienst übertragen. Nach spätestens 180 Tagen oder bei einer neuen Version fragen wir erneut. Ist der lokale Speicher gesperrt, gilt Ihre Auswahl nur für den aktuellen Seitenaufruf.
+Wir speichern Ihre Datenschutzauswahl im lokalen Speicher Ihres Browsers (Eintrag **iw-consent-v1**) und zusätzlich in einem technisch notwendigen First-Party-Cookie **iw_consent_v1** (Pfad /, 180 Tage, SameSite=Lax, erst nach Ihrem Klick gesetzt). Der Eintrag enthält die gewählten Kategorien, die Version des Hinweises und den Zeitpunkt der Auswahl. Er wird nicht an einen Statistik- oder Werbedienst übertragen. Nach spätestens 180 Tagen oder bei einer neuen Version fragen wir erneut. Sind lokaler Speicher und Cookies gesperrt, gilt Ihre Auswahl nur für den aktuellen Seitenaufruf.
 
 Diese Speicherung dient ausschließlich dazu, Ihre ausdrücklich gewählte Datenschutzeinstellung zu beachten. Rechtsgrundlagen: § 25 Abs. 2 Nr. 2 TDDDG und Art. 6 Abs. 1 lit. f DSGVO. Keine nutzerübergreifende Kennung und kein Tracking-Profil. Sie können den Eintrag jederzeit in den Website-Daten Ihres Browsers löschen.
 

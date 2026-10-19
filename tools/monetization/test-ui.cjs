@@ -10,9 +10,9 @@ const context=await browser.newContext({viewport:{width,height}}),page=await con
 await page.goto(base+'/werben/');await page.waitForSelector('#iw-consent:not([hidden])');
 ok(await page.locator('#iw-statistics').isDisabled());ok(await page.locator('#iw-advertising').isDisabled());ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
 if(name!=='narrow')await page.screenshot({path:path.join(screenshotDir,'iw-consent-'+name+'.png'),fullPage:false});
-await page.locator('[data-consent="reject"]').click();ok(await page.locator('#iw-consent').isHidden());
+ok(await page.locator('#iw-consent [data-consent="close"]').count()===0);await page.keyboard.press('Escape');ok(await page.locator('#iw-consent').isVisible());ok(await page.evaluate(()=>localStorage.getItem('iw-consent-v1')===null));await page.locator('[data-consent="reject"]').click();ok(await page.locator('#iw-consent').isHidden());
 let saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('iw-consent-v1')));ok(saved.statistics===false&&saved.advertising===false);
-await page.reload();ok(await page.locator('#iw-consent').isHidden());
+await page.reload();ok(await page.locator('#iw-consent').isHidden());ok(await page.evaluate(()=>document.cookie.includes('iw_consent_v1=')));await page.evaluate(()=>localStorage.clear());await page.reload();ok(await page.locator('#iw-consent').isHidden());await page.goto(base+'/');ok(await page.locator('#iw-consent').isHidden());await page.goto(base+'/werben/');
 if(name!=='narrow')await page.screenshot({path:path.join(screenshotDir,'iw-werben-'+name+'.png'),fullPage:true});
 await page.locator('[data-iw-consent-open]').click();ok(await page.locator('#iw-consent').isVisible());await page.locator('[data-consent="all"]').click();saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('iw-consent-v1')));ok(saved.statistics===false&&saved.advertising===false);
 ok(!requests.some(u=>!u.startsWith(base)));ok((await page.locator('a[href^="mailto:"]').count())>=4);
