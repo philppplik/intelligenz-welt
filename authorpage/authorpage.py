@@ -267,6 +267,9 @@ def main():
         x = open(lt, encoding='utf-8').read()
         if url not in x:
             open(lt, 'a', encoding='utf-8').write(f'\n- Autor / author: Philipp Paulik, {url}\n')
+    if key in ('fa','iw'):
+        from rich import main as rich_main
+        rich_main(key,out)
     print('author page:', os.path.join(out, target_rel), '| articles linked:', n)
 
 if __name__ == '__main__': main()
