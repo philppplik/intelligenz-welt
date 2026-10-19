@@ -127,3 +127,6 @@ subprocess.check_call([sys.executable,'../tools/monetization.py',OUT])
 for _p in ['/analysen/']+['/artikel/%s/'%x for x in ('kimi-k25-agentic-swarm-revolution','seedance-2-ki-video-revolution','openclaw-chaos-sicherheit-ki','claude-4-6-opus-analyse')]:
     os.makedirs(OUT+_p,exist_ok=True)
     open(OUT+_p+'index.html','w',encoding='utf-8').write('<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Seite verschoben | Intelligenz Welt</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="%s/artikel/"><meta http-equiv="refresh" content="0; url=/artikel/"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><p>Diese Seite gibt es nicht mehr. Weiter zu den <a href="/artikel/">Artikeln</a>.</p></body></html>'%BASE)
+
+# Expanded About page (replaces the short /ueber-uns/ body); keep after monetization so the final shell is reused.
+subprocess.check_call([sys.executable,'../tools/about.py',OUT])
