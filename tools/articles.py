@@ -404,7 +404,8 @@ def main():
     b = ('<article class="art ed"><h1>Tagesausgabe als PDF</h1><p>Die Tagesausgabe fasst die Meldung des Tages, die neuesten Artikel, aktuelle Schlagzeilen (KI-Pulse) und das Impressum mit Redaktionsschluss zusammen. Hell, druckfreundlich, ohne Tracking.</p>'
          '<p><a href="/berichte/intelligenz-welt-tagesausgabe.pdf" download style="display:inline-block;background:var(--ac);color:#fff;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600">PDF herunterladen</a> &nbsp; <a href="/berichte/tagesausgabe.html">Druckansicht im Browser</a></p>'
          '<p>Stand der aktuellen Ausgabe: %s. Die Ausgabe wird automatisch erstellt; Beiträge entstehen mit KI-Unterstützung und werden redaktionell geprüft (<a href="/transparenz/">so arbeiten wir</a>). Schlagzeilen stammen aus öffentlichen Feeds, es werden nur Überschriften mit Quelle gezeigt.</p></article>') % stamp
-    b = b.replace('</article>', archive_html(archive_dates,'intelligenz-welt-tagesausgabe-')+'</article>')
+    from report_landing import build as report_landing
+    b = report_landing(ROOT,out,'iw',archive_dates,'intelligenz-welt-tagesausgabe.pdf','intelligenz-welt-tagesausgabe-')
     open(os.path.join(out, 'berichte', 'index.html'), 'w', encoding='utf-8').write(hh + b + foot)
     if 'berichte' not in LEGAL:
         LEGAL.append('berichte'); patch_sitemaps(out, arts, sections, now)
