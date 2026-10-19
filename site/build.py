@@ -1,4 +1,4 @@
-import json,os,re,shutil
+import json,os,re,shutil,sys
 from common import *
 SRC_ICON_DIR='source-icons'
 OUT='out'; shutil.rmtree(OUT,ignore_errors=True); os.makedirs(OUT+'/artikel'); os.makedirs(OUT+'/news')
@@ -54,6 +54,10 @@ CSS+='.feed .m{display:flex;align-items:center;gap:8px}.si{flex:none;width:20px;
 os.makedirs(OUT+'/assets/source-icons',exist_ok=True)
 for f in os.listdir(SRC_ICON_DIR):
     if f.endswith('.png'): shutil.copy(os.path.join(SRC_ICON_DIR,f),OUT+'/assets/source-icons/'+f)
+sys.path.insert(0,os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','tools'))
+import report_visuals as RV
+RV.load_logos(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
+CSS+=RV.CSS_COMMON+RV.CSS_WEB
 open(OUT+'/style.css','w').write(CSS)
 NAVL=[('/news/','KI-News'),('/modelle/','Modell-Radar'),('/suche/','Suche'),('/ueber-uns/','Über uns')]
 def page(path,title,desc,body,ld=None,typ='website',og=None,act=''):
@@ -99,8 +103,8 @@ home='''<div class="w"><div class="hero"><h1>Was in der KI-Welt gerade wirklich 
 orgld={'@context':'https://schema.org','@type':'NewsMediaOrganization','name':'Intelligenz Welt','url':BASE,'logo':{'@type':'ImageObject','url':BASE+'/assets/branding/logo-512.png','width':512,'height':512},'email':'philipp.l.paulik@gmail.com'}
 siteld={'@context':'https://schema.org','@type':'WebSite','name':'Intelligenz Welt','url':BASE,'inLanguage':'de-DE','publisher':{'@type':'Organization','name':'Intelligenz Welt'}}
 urls.append(page('/','Intelligenz Welt: KI-News, Modell-Radar und Artikel','Aktuelle KI- und LLM-News auf Deutsch, Live-Radar der trendenden Open-Source-Modelle und Artikel zu Agenten, Modellen und Strategie.',home,[orgld,siteld]))
-urls.append(page('/news/','KI-News: Das Archiv | Intelligenz Welt','Aktuelle Nachrichten zu KI, LLMs und Agenten aus The Decoder, The Verge, TechCrunch, Hugging Face, Hacker News und heise. Automatisch aktualisiert.','<div class="w"><div class="hero"><h1>KI-News</h1><p>%s</p></div>%s</div>'%(upd,newsli(ai,300)),act='/news/'))
-urls.append(page('/modelle/','Modell-Radar: Trending LLMs | Intelligenz Welt','Die aktuell meistbeachteten Modelle auf Hugging Face, täglich aktualisiert: Likes, Downloads und Aufgabenbereich.','<div class="w"><div class="hero"><h1>Modell-Radar</h1><p>Die 20 am stärksten trendenden Modelle auf Hugging Face. Daten live aus der öffentlichen Hugging-Face-API, täglich neu gebaut.</p></div>%s</div>'%mtable(20),act='/modelle/'))
+urls.append(page('/news/','KI-News: Das Archiv | Intelligenz Welt','Aktuelle Nachrichten zu KI, LLMs und Agenten aus The Decoder, The Verge, TechCrunch, Hugging Face, Hacker News und heise. Automatisch aktualisiert.','<div class="w"><div class="hero"><h1>KI-News</h1><p>%s</p></div>%s%s</div>'%(upd,RV.web_news(ai,models,NOW),newsli(ai,300)),act='/news/'))
+urls.append(page('/modelle/','Modell-Radar: Trending LLMs | Intelligenz Welt','Die aktuell meistbeachteten Modelle auf Hugging Face, täglich aktualisiert: Likes, Downloads und Aufgabenbereich.','<div class="w"><div class="hero"><h1>Modell-Radar</h1><p>Die 20 am stärksten trendenden Modelle auf Hugging Face. Daten live aus der öffentlichen Hugging-Face-API, täglich neu gebaut.</p></div>%s%s</div>'%(RV.web_models(ai,models,NOW),mtable(20)),act='/modelle/'))
 SUCHE_BODY = '''<div class="w"><div class="hero"><h1>Suche</h1><p>Eigene Artikel durchsuchen, dazu die Schlagzeilen des KI-Pulse. Die Suche l\u00e4uft lokal in deinem Browser, ohne Tracking.</p></div>
 <form class="sform" role="search" action="/suche/" method="get"><label class="sr" for="sq">Suchbegriff</label><input id="sq" name="q" type="search" placeholder="z. B. Claude, Agenten, Open Source \u2026" autocomplete="off"><button class="btn" type="submit">Suchen</button></form>
 <p id="sstatus" class="sstatus" role="status"></p><ul id="sresults" class="sresults"></ul>

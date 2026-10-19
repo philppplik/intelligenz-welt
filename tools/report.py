@@ -2,6 +2,7 @@
 import json, os, re, sys, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from report_core import esc, DAYS, render, to_pdf, logo_inline, lnk, dom, srclist
+import report_visuals as V
 
 def domain(u):
     m = re.match(r'https?://(?:www\.)?([^/]+)', u or ''); return m.group(1) if m else ''
@@ -26,6 +27,13 @@ def build(arts, now, out, root, base):
     except Exception: news = []
     nl = ''.join('<li style="padding:4px 0;border-bottom:1px solid #eceef4;break-inside:avoid">%s<br><span class="mut" style="font-size:8pt">%s · %s</span></li>' % (lnk(n['url'], n['title']) if n.get('url') else esc(n['title']), esc(n.get('src', '')), lnk(n['url'], dom(n['url'])) if n.get('url') else '') for n in news)
     p3 = '<h2>KI-Pulse <small>aktuelle Schlagzeilen aus öffentlichen Feeds · nur Überschriften, Rechte bei den Quellen</small></h2><ul style="list-style:none;margin:0;padding:0">%s</ul>' % (nl or '<li class="mut">Aktuell keine Schlagzeilen.</li>')
+    def _load(rel):
+        try: return json.load(open(os.path.join(root, 'data', rel), encoding='utf-8'))
+        except (OSError, ValueError): return []
+    ai = _load('ai_archive.json'); models = [m for m in _load('models.json') if not re.search('uncensored|nsfw|abliterat', m['id'], re.I)]
+    V.load_logos(root)
+    pv = '<style>%s.h3{font-size:9.5pt;margin:3mm 0 1.5mm;color:#093A6A}</style>' % V.CSS
+    pv += (V.pdf_overview(ai, models, now) if ai else '') + V.pdf_radar(models)
     last = '''<h2>Impressum &amp; Redaktionsschluss</h2>
 <div class="imp"><div><h3>Anbieter nach § 5 DDG</h3><p>Philipp Paulik<br>Mozartstraße 1<br>53819 Neunkirchen-Seelscheid<br>Nordrhein-Westfalen</p><h3>Kontakt</h3><p>E-Mail: philipp.l.paulik@gmail.com<br>Web: intelligenz-welt.de</p></div>
 <div><h3>Verantwortlich nach § 18 Abs. 2 MStV</h3><p>Philipp Paulik, Anschrift wie links</p><h3>Redaktion</h3><p>Intelligenz Welt, Redaktion Philipp Paulik</p></div></div>
@@ -35,7 +43,7 @@ def build(arts, now, out, root, base):
 <p class="foot">© %d Intelligenz Welt · Philipp Paulik · Stand %s</p>''' % (esc(stamp), now.year, esc(stamp))
     logo = logo_inline(os.path.join(root, 'content', 'branding', 'logo.svg'), '0 0 637 641')
     htm = render('Intelligenz Welt', 'Tagesausgabe', now.strftime('%d.%m.%Y'), '#1d6bc0', '#093A6A', '#eef5fc', '#cfe0f3', logo,
-                 'Tagesausgabe', day + ' · Meldung des Tages, neueste Artikel und KI-Pulse', [p1 + p2, p3], last)
+                 'Tagesausgabe', day + ' · Meldung des Tages, neueste Artikel und KI-Pulse', ([p1 + p2, pv, p3] if (ai or models) else [p1 + p2, p3]), last.replace('<h3>Datenquellen</h3>', V.logo_credits() + '<h3>Datenquellen</h3>', 1))
     d = os.path.join(out, 'berichte'); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, 'tagesausgabe.html'), 'w', encoding='utf-8').write(htm)
     dated = os.path.join(d, 'intelligenz-welt-tagesausgabe-%s.pdf' % now.strftime('%Y-%m-%d'))
