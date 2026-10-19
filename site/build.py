@@ -46,9 +46,10 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;colo
 footer{background:var(--dark);color:#94a3b8;margin-top:80px;padding:44px 0;font-size:14px}footer a{color:#cbd5e1}footer a:hover{color:#fff}footer .c{display:flex;gap:48px;flex-wrap:wrap}footer h4{color:#fff;margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em}footer a{display:block;margin:6px 0}
 .upd{font-size:13px;color:var(--mut)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:6px}
 @media(max-width:800px){.grid>*,.cards>*{min-width:0}.tw{overflow-x:auto}body{overflow-x:hidden}.grid,.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:32px}.nav{gap:14px;overflow-x:auto}.nav a.l{white-space:nowrap}.art h1{font-size:28px}table{font-size:12px}}
+.sform{display:flex;gap:10px;margin:4px 0 6px}.sform input{flex:1;min-width:0;font:16px Inter,system-ui,sans-serif;color:var(--fg);padding:12px 16px;border:1px solid var(--line);border-radius:10px;min-height:48px;background:#fff}.sform input:focus{outline:2px solid var(--ac);outline-offset:1px;border-color:var(--ac)}.sstatus{font-size:14px;color:var(--mut);margin:12px 0 0;min-height:22px}.sresults{list-style:none;margin:14px 0 0;padding:0}.sresults li{padding:16px 0;border-bottom:1px solid var(--line)}.sresults a.rt{font-weight:700;font-size:18px;line-height:1.35;letter-spacing:-.01em}.sresults a.rt:hover{color:var(--ac)}.sresults p{margin:6px 0 0;color:var(--mut);font-size:14px}.sresults .sm{font-size:12px;color:var(--mut);margin-top:6px}@media(max-width:800px){.sform{flex-direction:column}.sform .btn{align-self:flex-start}}
 '''
 open(OUT+'/style.css','w').write(CSS)
-NAVL=[('/news/','KI-News'),('/modelle/','Modell-Radar'),('/analysen/','Analysen'),('/ueber-uns/','Über uns')]
+NAVL=[('/news/','KI-News'),('/modelle/','Modell-Radar'),('/analysen/','Analysen'),('/suche/','Suche'),('/ueber-uns/','Über uns')]
 def page(path,title,desc,body,ld=None,typ='website',og=None,act=''):
     url=BASE+path
     nav=''.join('<a class="l%s" href="%s">%s</a>'%(' act' if act==h else '',h,t) for h,t in NAVL)
@@ -83,6 +84,12 @@ urls.append(page('/','Intelligenz Welt: KI-News, Modell-Radar und Analysen','Akt
 urls.append(page('/news/','KI-News: Das Archiv | Intelligenz Welt','Aktuelle Nachrichten zu KI, LLMs und Agenten aus The Decoder, The Verge, TechCrunch, Hugging Face, Hacker News und heise. Automatisch aktualisiert.','<div class="w"><div class="hero"><h1>KI-News</h1><p>%s</p></div>%s</div>'%(upd,newsli(ai,300)),act='/news/'))
 urls.append(page('/modelle/','Modell-Radar: Trending LLMs | Intelligenz Welt','Die aktuell meistbeachteten Modelle auf Hugging Face, täglich aktualisiert: Likes, Downloads und Aufgabenbereich.','<div class="w"><div class="hero"><h1>Modell-Radar</h1><p>Die 20 am stärksten trendenden Modelle auf Hugging Face. Daten live aus der öffentlichen Hugging-Face-API, täglich neu gebaut.</p></div>%s</div>'%mtable(20),act='/modelle/'))
 urls.append(page('/analysen/','Analysen &amp; Briefings | Intelligenz Welt','Essays und Briefings zu Claude, Kimi, Seedance, OpenClaw und der Zukunft der KI.','<div class="w"><div class="hero"><h1>Analysen &amp; Briefings</h1></div>%s</div>'%artcards(arts),act='/analysen/'))
+SUCHE_BODY = '''<div class="w"><div class="hero"><h1>Suche</h1><p>Eigene Artikel und Analysen durchsuchen, dazu die Schlagzeilen des KI-Pulse. Die Suche l\u00e4uft lokal in deinem Browser, ohne Tracking.</p></div>
+<form class="sform" role="search" action="/suche/" method="get"><label class="sr" for="sq">Suchbegriff</label><input id="sq" name="q" type="search" placeholder="z. B. Claude, Agenten, Open Source \u2026" autocomplete="off"><button class="btn" type="submit">Suchen</button></form>
+<p id="sstatus" class="sstatus" role="status"></p><ul id="sresults" class="sresults"></ul>
+<noscript><p>F\u00fcr die Suche wird JavaScript ben\u00f6tigt. Alle Artikel findest du auch in der <a href="/artikel/" style="text-decoration:underline">Artikel\u00fcbersicht</a>.</p></noscript></div>
+<script>''' + open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','tools','search.js'),encoding='utf-8').read() + '''</script>'''
+urls.append(page('/suche/','Suche | Intelligenz Welt','Artikel, Analysen und News auf Intelligenz Welt durchsuchen: eigene Beitr\u00e4ge und die Schlagzeilen des KI-Pulse.',SUCHE_BODY,act='/suche/'))
 for a in arts:
     b=''.join('<%s>%s</%s>'%({'h3':'h2'}.get(t,t),esc(x),{'h3':'h2'}.get(t,t)) for t,x in a['body'])
     ld={'@context':'https://schema.org','@type':'Article' if a['cat']=='Analyse' else 'NewsArticle','headline':a['title'][:110],'datePublished':a['date']+'T09:00:00+01:00','dateModified':a['date']+'T09:00:00+01:00','author':{'@type':'Person','name':'Philipp Paulik','url':BASE+'/ueber-uns/'},'publisher':orgld,'mainEntityOfPage':BASE+'/artikel/%s/'%a['slug'],'inLanguage':'de-DE','description':a['lead']}
@@ -107,3 +114,4 @@ print('IW pages',len(urls))
 # editorial articles (content/articles/*.json): rendered by tools/articles.py, see docs/EDITORIAL.md
 import subprocess,sys
 subprocess.check_call([sys.executable,'../tools/articles.py',OUT])
+subprocess.check_call([sys.executable,'../tools/search.py',OUT])

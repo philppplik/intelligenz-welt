@@ -6,11 +6,12 @@ Own articles live next to the auto-aggregated news. They are plain files; CI ren
 - `content/articles/<slug>.json` - one article (format below)
 - `content/images/<slug>.jpg` - hero image, 1600x900 JPEG, max 350 KB, with the visible label "KI-generiert" burned into the pixels when AI-made. Optional `<slug>-800.jpg` (800x450) enables `srcset`.
 - `tools/articles.py` - renderer, called at the end of `site/build.py`. Stdlib only. Fails the build with a clear message on invalid input.
+- `tools/search.py` + `tools/search.js` - site search on `/suche/`: the build writes `search-index.json` (articles, legacy analyses, latest 300 KI-Pulse headlines, main pages); the page searches it locally in the browser (umlaut- and typo-tolerant, no external service).
 - `site/` - site generator (`build.py`, `data.py`, `common.py`, `src/`). It used to live only inside `payload-*.b64`; the unpack step in `.github/workflows/pages.yml` uses `--skip-old-files`, so the committed files win. The payload files are now obsolete and can be removed together with that step.
 - `authorpage/` - author page generator (post-build step in `pages.yml`).
 
 ## Output
-`/artikel/<slug>/` (article), `/artikel/` (list), `/thema/<section>/` (section pages), `/redaktion/` (editorial policy), `news-sitemap.xml` (own news/analysis from the last 48 hours), `sitemap.xml` with image entries (`http://www.google.com/schemas/sitemap-image/1.1`), `feed.xml` items, home page block "Neueste Artikel", nav link.
+`/artikel/<slug>/` (article), `/artikel/` (list), `/thema/<section>/` (section pages), `/redaktion/` (editorial policy), `/suche/` (client-side full-text search), `news-sitemap.xml` (own news/analysis from the last 48 hours), `sitemap.xml` with image entries (`http://www.google.com/schemas/sitemap-image/1.1`), `feed.xml` items, home page block "Neueste Artikel", nav link.
 URLs are extensionless with a trailing slash; canonical, sitemap and internal links use the same form.
 
 ## Article JSON (v1)
