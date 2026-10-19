@@ -1,0 +1,56 @@
+{
+ "slug": "google-ki-modus-lg-aachen-haftung",
+ "lang": "de",
+ "section": "news",
+ "type": "news",
+ "title": "Google haftet für KI-Halluzinationen: Aachen zieht nach",
+ "dek": "Googles KI-Modus machte einen Arzt zum Sexualstraftäter, und Google weigerte sich zu löschen. Das LG Aachen untersagt die Falschaussagen und bestätigt damit die Münchner Haftungslinie.",
+ "published": "2026-10-19T08:50:00+02:00",
+ "modified": "2026-10-19T08:50:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Google", "KI-Modus", "Haftung", "LG Aachen", "Halluzinationen"],
+ "key_takeaways": [
+  "Das LG Aachen hat Google per einstweiliger Verfügung untersagt, falsche Behauptungen über einen Arzt im KI-Modus zu verbreiten (Az. 8 O 268/26).",
+  "Die KI hatte dem Mediziner erfundene Vorwürfe und ein Strafverfahren zugeordnet, die einen anderen Mann betrafen.",
+  "Google lehnte eine Löschung ab, auch nach anwaltlicher Aufforderung. Drohendes Ordnungsgeld: bis zu 250.000 Euro pro Verstoß.",
+  "Das Gericht stützt sich auf das LG München I: KI-Antworten sind eigene Aussagen von Google, keine bloßen Suchverweise.",
+  "Die Entscheidung ist noch nicht rechtskräftig; Google kann Widerspruch einlegen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein leuchtender Suchbalken, dessen Antwortblasen in Warnschilder kippen, auf dem Bildschirm spiegeln sich Richterhammer und Waage",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Zum zweiten Mal stellt ein deutsches Gericht klar: Für die Texte seines KI-Modus ist Google selbst verantwortlich. Das Landgericht Aachen hat dem Konzern im Eilverfahren untersagt, erfundene Straftat-Vorwürfe über einen Arzt weiter zu verbreiten. Google war vorher über die Verwechslung informiert worden und hatte sich geweigert zu handeln."},
+  {"t": "h2", "x": "Was passiert ist"},
+  {"t": "p", "x": "Ein Mediziner aus dem Rheinland arbeitete bis Ende Juni 2026 als Chefarzt und Professor für Neuroradiologie. Am 28. August machte ihn ein Kollege darauf aufmerksam, was Googles „KI-Modus“ zu seinem Namen ausspuckt: eine zusammenhängende, in Abschnitte gegliederte Geschichte über sexuelle Nötigung einer Sekretärin, Freistellung, Kündigung, ein Gerichtsverfahren mit Bewährungsstrafe und eine sechsstellige Abfindung. Nichts davon stimmte. Wie [beck-aktuell](https://www.beck-aktuell.de/heute-im-recht/rechtsprechung/lg-aachen-8o26826-haftung-falsche-ki-aussage-google-stoererin-chefarzt-sexualstraftaeter-2026-10-08) berichtet, hatte die KI Vorgänge um einen anderen früheren leitenden Mitarbeiter derselben Klinik mit seinem Namen verknüpft. Die verlinkten Zeitungsartikel nannten den beschuldigten Arzt gar nicht."},
+  {"t": "h2", "x": "Google wollte nicht löschen"},
+  {"t": "p", "x": "Der Arzt schilderte die Verwechslung noch Ende August per E-Mail und forderte die Löschung. Mitte September teilte Google mit, keine Maßnahmen einzuleiten. Auch eine anwaltliche Abmahnung der Kölner Kanzlei Höcker vom selben Tag blieb erfolglos; die Texte waren laut Gericht weiter abrufbar. Das Landgericht Aachen untersagte daraufhin mit Beschluss vom 24. September 2026 (Az. 8 O 268/26) die Verbreitung der drei beanstandeten Textvarianten. Weil die Falschbehauptungen das berufliche Ansehen erheblich schädigen können, entschied die Kammer ohne vorherige Anhörung Googles. Für jeden Verstoß droht ein Ordnungsgeld von bis zu 250.000 Euro."},
+  {"t": "h2", "x": "Die Begründung: eigene Aussagen, keine Verweise"},
+  {"t": "p", "x": "Der Kern des Beschlusses: „Die Antragsgegnerin stellt die KI-generierte Suche bereit und ist damit auch für die insoweit generierten Antworten verantwortlich.“ Die Aachener Richter stützen sich ausdrücklich auf das LG München I, das Ende Mai 2026 entschieden hatte, KI-Suchübersichten seien keine bloßen Verweise auf fremde Webseiten, sondern „eigenständige, neue und inhaltliche Äußerungen“, die auf der Verknüpfung fremder Inhalte beruhen. Eine Überprüfung sei Google möglich, etwa durch Abgleich mit den verwendeten Quellen. Fast ironisch fügt die Kammer hinzu: Hätte Google die eigene KI mit den Einwänden des Arztes konfrontiert, wäre sie selbst zu dem Ergebnis gekommen, dass die Aussagen falsch sind."},
+  {"t": "h2", "x": "Der stille Vergleich in München"},
+  {"t": "p", "x": "Das Münchner Grundsatzverfahren hätte eigentlich in die Berufung gehen sollen. Nach Recherchen von [THE DECODER](https://the-decoder.de/weiteres-deutsches-gericht-macht-google-fuer-falsche-ki-antworten-verantwortlich/) endete es stattdessen mit einem Vergleich, über dessen Inhalt beide Seiten schweigen. Damit bleibt die Haftungsfrage höchstrichterlich offen, und zugleich steht die Münchner Begründung weiter im Raum: Aachen hat sie jetzt übernommen, und [Mueller.legal](https://mueller.legal/de/aktuelles/google-ki-modus-falsche-vorwuerfe-lg-aachen) verweist zudem auf eine weitere Entscheidung des LG Hamburg, bei der eine konkrete Beanstandung entscheidend war. The Decoder warnt außerdem vor einem möglichen Missbrauchs-Anreiz: Kanzleien könnten die KI-Suche gezielt so lange löchern, bis sie Rufschädigendes erzeugt, und dann auf Unterlassung klagen. Das ist bisher eine Einschätzung, kein belegter Trend."},
+  {"t": "h2", "x": "Warum das über Einzelfälle hinausgeht"},
+  {"t": "p", "x": "Setzt sich die Linie durch, trägt Google das redaktionelle Risiko für eine Funktion, die laufend neue Antworten erzeugt. Und es steckt eine zweite Frage darin: Wenn KI-Antworten eigene Inhalte sind, die aus fremden Texten gebaut werden, könnten auch die Urheber dieser Ausgangstexte Ansprüche geltend machen. Entschieden ist daran nichts, aber genau deshalb dürfte Google Vergleiche weiterhin Grundsatzurteilen vorziehen."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Betroffene sollten Falschaussagen konkret und nachweisbar beanstanden. Genau diese Beanstandung war im Aachener Fall ausschlaggebend.",
+   "Der Beschluss ist eine einstweilige Verfügung, noch kein rechtskräftiges Urteil. Google kann Widerspruch einlegen.",
+   "Wer KI-Antworten in eigene Produkte einbaut, sollte Beschwerde- und Prüfwege einplanen, bevor ein Gericht sie einfordert."
+  ]}
+ ],
+ "faq": [
+  {"q": "Was hat das LG Aachen genau entschieden?", "a": "Per einstweiliger Verfügung vom 24. September 2026 (Az. 8 O 268/26) untersagte das Gericht Google Ireland Limited die weitere Verbreitung dreier falscher KI-Texte über einen Arzt. Bei Verstößen droht ein Ordnungsgeld von bis zu 250.000 Euro. Die Entscheidung ist noch nicht rechtskräftig."},
+  {"q": "Warum haftet Google und nicht die KI oder die Quellen?", "a": "Nach Auffassung der Gerichte erzeugt Google mit dem KI-Modus eigene, neue Aussagen, statt nur fremde Inhalte auffindbar zu machen. Wer die Aussagen bereitstellt, ist für sie verantwortlich, so wie ein Verlag für seine Texte."},
+  {"q": "Gilt das auch für KI-Übersichten bei normalen Suchanfragen?", "a": "Das Münchner Ausgangsverfahren betraf KI-generierte Suchübersichten, der Aachener Fall den KI-Modus. Die Gerichte begründen beide gleich; ob das auf alle KI-Suchfunktionen übertragbar ist, ist höchstrichterlich noch nicht geklärt."},
+  {"q": "Was kann ich tun, wenn eine KI Falsches über mich behauptet?", "a": "Die Aussage dokumentieren, die Verwechslung oder den Fehler konkret benennen und die Löschung schriftlich beim Anbieter beanstanden. Der Aachener Fall zeigt: Eine präzise, frühe Beanstandung ist der Hebel, auf den Gerichte später abstellen."}
+ ],
+ "sources": [
+  {"title": "Weiteres deutsches Gericht macht Google für falsche KI-Antworten verantwortlich", "publisher": "THE DECODER", "url": "https://the-decoder.de/weiteres-deutsches-gericht-macht-google-fuer-falsche-ki-antworten-verantwortlich/", "accessed": "2026-10-19"},
+  {"title": "Chefarzt zum Sexualstraftäter erklärt: Google muss KI-Halluzination löschen", "publisher": "beck-aktuell", "url": "https://www.beck-aktuell.de/heute-im-recht/rechtsprechung/lg-aachen-8o26826-haftung-falsche-ki-aussage-google-stoererin-chefarzt-sexualstraftaeter-2026-10-08", "accessed": "2026-10-19"},
+  {"title": "Google-KI: LG Aachen stoppt Falschvorwürfe", "publisher": "Mueller.legal Rechtsanwälte", "url": "https://mueller.legal/de/aktuelles/google-ki-modus-falsche-vorwuerfe-lg-aachen", "accessed": "2026-10-19"}
+ ],
+ "related": ["ki-training-ross-urteil-fair-use-faktencheck", "grueffelo-kokosnuss-neinhorn-ki-urheberrecht"]
+}

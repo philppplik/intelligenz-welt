@@ -1,0 +1,67 @@
+{
+ "slug": "muse-spark-open-meta-816b-open-weights",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Muse Spark Open: Meta öffnet sein stärkstes Modell (816B)",
+ "dek": "816 Milliarden Parameter, 42 Milliarden aktiv, eine Million Token Kontext: Muse Spark Open ist laut Meta das stärkste US-Open-Weight-Modell bisher und läuft notfalls auf zwei Mac Studios.",
+ "published": "2026-10-19T08:56:00+02:00",
+ "modified": "2026-10-19T08:56:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Meta", "Muse Spark Open", "Open Weights", "MoE", "Coding"],
+ "key_takeaways": [
+  "Meta hat die Gewichte von Muse Spark Open veröffentlicht: rund 816 Milliarden Parameter, davon etwa 42 Milliarden pro Token aktiv.",
+  "Das MoE-Modell verarbeitet Text, Bilder, Audio und Video und hat ein Kontextfenster von bis zu einer Million Token.",
+  "Fokus ist agentisches Coding: Codebasen lesen, über viele Schritte planen, Werkzeuge aufrufen, Fehler selbst korrigieren.",
+  "Die Gewichte laufen laut Meta auf zwei Apple Mac Studios mit M5 Ultra, oder auf einem einzigen NVIDIA-B200-Knoten in der NVFP4-Version.",
+  "Lizenz: Muse Model License, frei nutzbar inklusive kommerzieller Nutzung, aber mit Namensnennung und einer Umsatzklausel für Modell-Anbieter ab 20 Millionen US-Dollar."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein helles Funken-Kernstück, umgeben von einem Sternbild vieler kleiner Experten-Knoten, von denen acht gleichzeitig aufleuchten, dazwischen Wellen aus Bild, Ton und Video",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles Meta-Material.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Meta hat mit Muse Spark Open sein bisher größtes Open-Weight-Modell veröffentlicht: eine Mixture-of-Experts mit rund 816 Milliarden Parametern, von denen pro Token nur etwa 42 Milliarden rechnen. Es ist für agentisches Coding gebaut, versteht Text, Bilder, Audio und Video, und soll als erstes Modell dieser Klasse auf einem Desktop laufen. Alle Benchmark-Werte stammen von Meta selbst, unabhängige Messungen stehen noch aus."},
+  {"t": "h2", "x": "Die Architektur im Überblick"},
+  {"t": "table", "caption": "Muse Spark Open: die wichtigsten Eckdaten (Quelle: Meta / Hugging Face)", "head": ["Merkmal", "Wert"], "rows": [
+   ["Parameter gesamt", "ca. 816 Milliarden"],
+   ["Aktiv pro Token", "ca. 42 Milliarden"],
+   ["Experten", "256 pro MoE-Schicht, 8 aktiv pro Token"],
+   ["Schichten", "62, Hidden Size 8192"],
+   ["Eingaben", "Text, Bilder, Audio, Video"],
+   ["Ausgabe", "Text"],
+   ["Kontextfenster", "bis zu 1 Million Token"],
+   ["Checkpoints", "BF16 (ca. 1,5 TB) und NVFP4"]
+  ]},
+  {"t": "p", "x": "Das Prinzip Mixture of Experts: Pro Token wählt ein Router 8 von 256 Experten, deshalb kostet die Berechnung nur so viel wie ein 42-Milliarden-Modell. Alle Experten müssen aber im Speicher liegen, die Anforderungen bleiben die eines Riesenmodells. Muse Spark Open ist das große Geschwister von Muse Glimmer, einem kleinen dichten Modell, das Meta im August veröffentlicht hat. Beide teilen Tokenizer und Vokabular."},
+  {"t": "h2", "x": "Multimodal rein, Text raus"},
+  {"t": "p", "x": "Ein Perception Encoder mit 1,8 Milliarden Parametern wandelt Bilder und Videoframes in Tokens um, ein eigener Audio-Encoder erzeugt 12,5 Tokens pro Sekunde Ton. Das Modell kann also einen Screenshot lesen, eine Sprachnotiz hören oder eine Bildschirmaufnahme ansehen, während es am Code arbeitet. Ausgegeben wird Text. Das Kontextfenster von einer Million Token umfasst alle Modalitäten gemeinsam; ein voller Kontext belegt laut [Hugging Face](https://huggingface.co/blog/meta-muse-spark-open) allein etwa 266 Gigabyte KV-Cache."},
+  {"t": "h2", "x": "Benchmarks: stark, aber nicht überall vorn"},
+  {"t": "p", "x": "In Metas eigener Tabelle führt Muse Spark Open bei JobBench mit 61,8 Punkten vor GLM 5.3 (61,4) und Kimi K3 (54,3). Bei Terminal-Bench 2.1 liegt es mit 76,4 hinter Kimi K3 (85,0) und Beam (80,1), bei DeepSWE 1.1 mit 60 Punkten hinter Kimi K3 (68) und GLM 5.3 (67). Bei ZeroBench mit Werkzeugen führt es mit 50 vor Kimi K3 (41). Gemessen wurde mit der höchsten Reasoning-Stufe. Wichtig: Alle Zahlen sind Eigenmessungen von Meta. Wer das Modell einplanen will, sollte auf unabhängige Tests warten oder es an eigenen Aufgaben prüfen. Auffällig: Bei den Sicherheitstests verweigerte das Modell laut Meta 99,2 Prozent der Jailbreaks im internen Benchmark und zeigte 0 Prozent Fehlverhalten im Agentic-Misalignment-Test."},
+  {"t": "h2", "x": "Läuft das zu Hause?"},
+  {"t": "p", "x": "Meta bewirbt Muse Spark Open als erstes Modell dieser Klasse für den Desktop: Zwei Mac Studios mit M5 Ultra und zusammen einem Terabyte Unified Memory sollen die BF16-Gewichte mit dem MLX-Framework tragen, die Speicherbandbreite von 1,2 Terabyte pro Sekunde reicht laut Meta für flüssige Token-Ausgabe. Wer GPUs hat: Die NVFP4-Version läuft auf einem einzigen B200-Knoten, BF16 braucht in Transformers 32 H200-GPUs. Rezepte gibt es für llama.cpp, vLLM, SGLang und Unsloth. Ohne eigene Hardware läuft das Modell über APIs von Baseten, Fireworks AI, Groq, Modal, Nebius, OpenRouter und Together AI; die Gewichte liegen auf [Hugging Face](https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B), in Amazon SageMaker, Google Cloud Model Garden und Microsoft Foundry."},
+  {"t": "h2", "x": "Die Lizenz: frei, mit zwei Haken"},
+  {"t": "p", "x": "Die Muse Model License erlaubt Nutzung, Veränderung, Fine-Tuning, Distillation und Verkauf. Zwei Bedingungen sind wichtig: Wer Produkte damit baut, muss „Built with Muse Spark Open“ sichtbar ausweisen. Und wer das Modell als Dienst anbietet und mit seinem Unternehmen mehr als 20 Millionen US-Dollar Jahresumsatz macht, muss Meta informieren und eine gesonderte Vereinbarung schließen. Interne Nutzung und eigene Produkte sind davon ausgenommen. Eine OSI-anerkannte Open-Source-Lizenz ist das nicht, der korrekte Begriff bleibt Open Weights. Eine Usage Policy verbietet unter anderem den Einsatz für unlizenzierte Berufsausübung in Medizin, Recht oder Finanzen."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Open-Weight-Modelle auf Frontier-Niveau gibt es jetzt auch aus den USA, mit Multimodalität und 1M-Kontext.",
+   "Für Agenten-Coding lohnt ein eigener Praxistest, Metas Benchmarks sind Eigenmessungen und gemischt.",
+   "Kleine Teams können sofort über API-Anbieter starten; wer Gewichte selbst hostet, braucht mindestens NVFP4-Hardware oder zwei Mac Studios."
+  ]}
+ ],
+ "faq": [
+  {"q": "Ist Muse Spark Open Open Source?", "a": "Im engeren Sinne nein. Die Gewichte sind frei verfügbar (Open Weights) unter der Muse Model License, die Nutzung, Fine-Tuning und Verkauf erlaubt, aber Namensnennung und eine Umsatzklausel für große Modell-Anbieter enthält. Eine OSI-anerkannte Lizenz ist sie nicht."},
+  {"q": "Kann ich Muse Spark Open lokal laufen lassen?", "a": "Laut Meta ja, aber die Hürde ist hoch: zwei Mac Studios mit M5 Ultra (zusammen 1 TB Unified Memory) für BF16 oder ein NVIDIA-B200-Knoten für die NVFP4-Version. Für die meisten ist der Weg über API-Anbieter wie OpenRouter, Groq oder Together AI realistischer."},
+  {"q": "Wie gut ist das Modell im Vergleich?", "a": "Nach Metas eigenen Messungen führt es bei JobBench und ZeroBench (mit Werkzeugen), liegt aber bei Terminal-Bench 2.1 und DeepSWE hinter Kimi K3 und teils GLM 5.3. Unabhängige Benchmarks stehen noch aus."},
+  {"q": "Was kann das Modell außer Text?", "a": "Es verarbeitet Bilder, Audio und Video als Eingabe, etwa Screenshots, Sprachnotizen oder Bildschirmaufnahmen, und antwortet mit Text. Gebaut ist es für agentisches Coding mit Planung, Werkzeugaufrufen und Selbstkorrektur über lange Aufgaben."},
+  {"q": "Woher bekomme ich die Gewichte?", "a": "Auf Hugging Face (meta-models/Muse-Spark-Open-816B-A42B und die NVFP4-Variante), in Amazon SageMaker AI, Google Cloud Model Garden und Microsoft Foundry Models."}
+ ],
+ "sources": [
+  {"title": "Introducing Muse Spark Open, The Most Capable US Open-Weight Model to Date", "publisher": "Meta AI Research", "url": "https://research.meta.ai/blog/muse-spark-open", "accessed": "2026-10-19"},
+  {"title": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta", "publisher": "Hugging Face Blog", "url": "https://huggingface.co/blog/meta-muse-spark-open", "accessed": "2026-10-19"},
+  {"title": "Muse-Spark-Open-816B-A42B (Modellkarte inkl. Lizenz und Benchmarks)", "publisher": "Hugging Face (meta-models)", "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B", "accessed": "2026-10-19"}
+ ],
+ "related": ["deepseek-v4-1-flash-coding-agenten", "reflection-beam-open-weights-apache"]
+}

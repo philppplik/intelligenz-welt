@@ -1,0 +1,62 @@
+{
+ "slug": "gemini-4-argon-agenten-minecraft-durchgespielt",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Vier Gemini-4-Agenten spielen Minecraft komplett allein durch",
+ "dek": "Ohne Rollen, ohne Spiel-Tricks, ohne menschliche Hilfe: Vier Gemini-4-Argon-Agenten besiegen den Enderdrachen. 27 Stunden, 2.783 selbst geschriebene Programme, 605 Tode.",
+ "published": "2026-10-19T08:46:00+02:00",
+ "modified": "2026-10-19T08:46:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Google DeepMind", "Gemini 4 Argon", "Minecraft", "Agenten", "Multi-Agent"],
+ "key_takeaways": [
+  "Vier Gemini-4-Argon-Agenten haben Minecraft erstmals komplett autonom durchgespielt und den Enderdrachen besiegt, laut DeepMind-Paper.",
+  "Der Lauf dauerte 27 Stunden und 14 Minuten: 2.783 selbst geschriebene JavaScript-Programme, 229 Chat-Nachrichten, 605 Tode.",
+  "Niemand vergab Rollen oder schrieb Spiellogik. Die Agenten teilten Aufgaben selbst auf und retteten die Items toter Mitspieler.",
+  "Wichtige Einschränkungen: Easy-Schwierigkeit, perfekte Umgebungsdaten statt Bilderkennung und viel Minecraft-Wissen aus dem Training.",
+  "Kosten der Session: rund 1.620 US-Dollar zum regulären Preis von Gemini 4 Argon, der ab 2027 gilt."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: vier blockige Roboter aus leuchtenden Schaltkreislinien graben in einer voxelartigen Höhle bei Nacht, über ihnen kreist die Silhouette eines Drachen",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles Material von Google oder Mojang.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Ein Team von Google DeepMind hat vier Gemini-4-Argon-Agenten in eine zufällig erzeugte Minecraft-Welt gesetzt und ihnen ein einziges Ziel gegeben: Besiegt den Enderdrachen. Nach 27 Stunden und 14 Minuten war es geschafft. Laut den Autoren ist das der erste komplett autonome Durchlauf von Minecraft durch KI-Agenten, ohne von Menschen geschriebene Spielwerkzeuge."},
+  {"t": "h2", "x": "Der Run in Zahlen"},
+  {"t": "p", "x": "Die vier Agenten schrieben und starteten während der Session 2.783 JavaScript-Programme, tauschten 229 Chat-Nachrichten aus und starben 605 Mal. In Spielzeit entspricht das etwa 81 Tagen. Sechs Server-Neustarts unterbrachen die Welt für insgesamt rund 20 Minuten. Jedes Programm lief im Median nur 33,5 Sekunden: Der typische Arbeitsrhythmus war also Programm schreiben, laufen lassen, Ergebnis lesen, nächstes Programm. Rund 40 Prozent der Zeit lief bei jedem Spieler gerade ein Programm, der Rest ging fürs Lesen, Planen und Schreiben drauf."},
+  {"t": "p", "x": "Gesteuert wurde jeder Spieler über [Mineflayer](https://github.com/PrismarineJS/mineflayer), eine Open-Source-Bibliothek für Minecraft-Bots. Statt auf den Bildschirm zu schauen, bekamen die Agenten Text zurück: Position, Leben, Inventar, Fundstücke oder Fehlermeldungen. Ein fünfter Agent, der Observer, überwachte den Lauf, und die Forschenden konnten über ein Live-Dashboard jederzeit pausieren. Es gab laut Paper keinen Grund einzugreifen."},
+  {"t": "h2", "x": "Wie vier Agenten zum Team wurden"},
+  {"t": "p", "x": "Niemand sagte den Agenten, wer bauen, wer farmen und wer kämpfen soll. Sie teilten die Arbeit selbst auf, warnten sich gegenseitig vor Gefahren, dokumentierten Fehler in einem gemeinsamen Gedächtnis und bargen die Ausrüstung gestorbener Mitspieler. Jeder Agent hatte neben dem Spielzugriff dieselben Werkzeuge wie bei normaler Software-Arbeit: Code-Workspace mit Versionskontrolle, Shell, Dateizugriff und ein persistentes Gedächtnis mit privatem und geteiltem Bereich. Wurde der Kontext zu lang, komprimierte der Agent ihn wie bei Coding-Aufgaben."},
+  {"t": "h2", "x": "Der Durchbruch nach 21 Stunden"},
+  {"t": "p", "x": "Der Knackpunkt kam nach etwa 21 Stunden: Ein Agent namens auratian erkannte, dass die zehn Kristalle auf den Obsidian-Säulen den Drachen immer wieder voll heilten, und fand heraus, dass man dafür keine Spitzhacke braucht. Erde hochstapeln, Kristall per Hand schlagen, wieder runtergraben. In den nächsten vier Stunden und vierzig Minuten zerstörte das Team alle zehn Kristalle. 39 Minuten nach dem letzten fiel der Drache. Der Agent bulicame überlebte den Endkampf mit 2,5 von 20 Lebenspunkten."},
+  {"t": "h2", "x": "Warum das mehr ist als ein Spiel"},
+  {"t": "p", "x": "Minecraft-Durchläufe waren bisher Domäne speziell trainierter Spiel-KI. Hier hat kein Modell Minecraft gelernt, sondern ein allgemeiner Coding-Agent hat sich das Spiel über eine Bot-Bibliothek erschlossen. Die eigentliche Leistung: einen Plan über tausende voneinander abhängige Schritte und mehr als einen Tag hinweg zusammenzuhalten, in einem Team. Genau das, was agentische KI auch bei echter Software- und Büroarbeit können muss. Zum Vergleich: Menschen brauchen im Schnitt 45 Stunden für die Hauptstory, laut HowLongToBeat. Die Agenten waren mit 27 Stunden als Vierer-Team auf leichter Stufe schneller."},
+  {"t": "h2", "x": "Was der Run nicht beweist"},
+  {"t": "ul", "items": [
+   "**Perfekte Sicht statt Pixeln:** Mineflayer liefert exakte Daten zu Blöcken und Kreaturen, auch hinter Felsen, plus fertige Wegfindung. Vom Bildschirm lesen, wie Menschen oder Googles SIMA 2, ist deutlich schwerer.",
+   "**Easy-Modus:** Monster richten weniger Schaden an, und Hunger kann nicht töten.",
+   "**Vorwissen:** Gemini 4 Argon kennt Minecraft und Mineflayer aus seinen Trainingsdaten. Getestet wurde nicht, ob das Modell ein unbekanntes Spiel lernen kann.",
+   "**Kosten:** Die Session lag laut The Decoder bei rund 1.620 US-Dollar zum regulären Preis von Gemini 4 Argon, der ab 2027 gilt."
+  ]},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Multi-Agent-Systeme sind kein Demo-Spielzeug mehr: Arbeitsteilung, geteiltes Gedächtnis und gegenseitige Rettung funktionieren über einen kompletten Tag.",
+   "Lange Aufgaben scheitern selten an einzelnen Schritten, sondern am Planzusammenhalt. Genau daran lohnt es sich, eigene Agenten-Setups zu messen.",
+   "Benchmark-Headlines immer mit den Limitations lesen: Easy-Modus und perfekte Sensordaten sind ein anderes Spiel als die echte Welt."
+  ]}
+ ],
+ "faq": [
+  {"q": "Haben die Agenten Minecraft wirklich ganz allein gespielt?", "a": "Sie haben jedes Programm selbst geplant, geschrieben und debuggt, ohne dass Menschen Rollen, Strategien oder Spiellogik vorgaben. Sie nutzten aber die von Menschen gebaute Bibliothek Mineflayer, die perfekte Umgebungsdaten und Wegfindung liefert, und spielten auf Easy-Schwierigkeit."},
+  {"q": "Was hat der Minecraft-Lauf gekostet?", "a": "Laut The Decoder lag die Session bei rund 1.620 US-Dollar, zum regulären Preis von Gemini 4 Argon, der ab 2027 gilt."},
+  {"q": "Warum ist das ein wichtiger Test für KI-Agenten?", "a": "Weil der Sieg einen Plan über tausende abhängige Schritte und mehr als 27 Stunden verlangt, inklusive Teamarbeit und Fehlerkorrektur. Dieselben Fähigkeiten brauchen Agenten für lange Software- und Wissensarbeits-Aufgaben."},
+  {"q": "Wer steht hinter dem Experiment?", "a": "Das Paper stammt von Maxence Faldor, Satinder Singh und Roberta Raileanu; laut The Decoder handelt es sich um ein Team von Google DeepMind. Veröffentlicht ist es als Preprint auf arXiv."}
+ ],
+ "sources": [
+  {"title": "A team of Gemini 4 Argon agents beats Minecraft (Preprint, Faldor, Singh, Raileanu)", "publisher": "arXiv", "url": "https://arxiv.org/abs/2610.22319", "accessed": "2026-10-19"},
+  {"title": "Vier Gemini-4-Argon-Agenten spielen Minecraft ohne menschliche Hilfe durch", "publisher": "THE DECODER", "url": "https://the-decoder.de/vier-gemini-4-argon-agenten-spielen-minecraft-ohne-menschliche-hilfe-durch/", "accessed": "2026-10-19"},
+  {"title": "Mineflayer: Create Minecraft bots with a powerful, stable, and high level JavaScript API", "publisher": "GitHub (PrismarineJS)", "url": "https://github.com/PrismarineJS/mineflayer", "accessed": "2026-10-19"}
+ ],
+ "related": ["google-harness2-open-source-agenten", "agenten-action-index-anchor"]
+}

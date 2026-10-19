@@ -1,0 +1,63 @@
+{
+ "slug": "eigener-llm-proxy-kontrolle-kosten-logs",
+ "lang": "de",
+ "section": "praxis",
+ "type": "explainer",
+ "title": "Eigener LLM-Proxy: Wer seine KI-Nutzung nicht misst, rätselt nur",
+ "dek": "Token-Verbrauch, Kosten, Fehler: Ohne eigenes Gateway zwischen deinen Werkzeugen und den Modell-Anbietern siehst du kaum, was wirklich passiert. Ein Plädoyer für den selbst betriebenen LLM-Proxy.",
+ "published": "2026-10-19T08:52:00+02:00",
+ "modified": "2026-10-19T08:52:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["LLM-Proxy", "LiteLLM", "Kostenkontrolle", "Self-Hosting", "Werkzeuge"],
+ "key_takeaways": [
+  "Ein eigener LLM-Proxy bündelt alle Modell-Aufrufe an einem Endpunkt, den du kontrollierst, und protokolliert jeden Request.",
+  "Die Dashboards der Anbieter zeigen oft kaum entscheidungsreife Daten zu Verbrauch, Kosten und Fehlern.",
+  "Virtuelle API-Schlüssel verhindern, dass dein Haupt-Key in allen Agenten und Skripten verstreut wird.",
+  "Mit echten Zeitreihen findest du Probleme wie Cache-Misses in Sekunden statt Stunden.",
+  "Open-Source-Gateways wie LiteLLM verbinden über 100 Modell-APIs mit Kosten-Tracking und sind ein möglicher Einstieg."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein gläserner Gateway-Würfel auf einem Schreibtisch, durch den viele farbige Datenströme aus unterschiedlichen Richtungen gebündelt fließen, daneben ein kleines Dashboard mit Kurven",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Wer mit mehreren KI-Modellen, Agenten und Coding-Tools arbeitet, sollte den Verkehr durch einen eigenen LLM-Proxy schicken: ein Gateway in der eigenen Infrastruktur, das jede Anfrage protokolliert, Kosten zuordnet und Anbieterwechsel zur Kleinigkeit macht. Diese These vertritt Entwickler Jared Siegel in einem vielbeachteten Beitrag, und sie trifft einen echten Blindfleck vieler Setups."},
+  {"t": "h2", "x": "Das Problem: Maskottchen statt Metriken"},
+  {"t": "p", "x": "Siegel legt in seinem [Blogbeitrag](https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/) den Finger in die Wunde: Die Verbrauchsanzeigen der großen Anbieter seien für Ingenieure kaum brauchbar. Statt Zeitreihen zu Token-Verbrauch und Kosten gebe es niedliche Maskottchen. Aus solchen Anzeigen lasse sich keine Entscheidung ableiten. Sein Fazit im Titel: Wenn du keinen eigenen LLM-Proxy betreibst, woher willst du wissen, was überhaupt passiert?"},
+  {"t": "h2", "x": "Sechs Gründe für das eigene Gateway"},
+  {"t": "ul", "items": [
+   "**Ein Endpunkt für alles:** Mehrere Anbieter und Modelle laufen über eine einzige Adresse, die du kontrollierst.",
+   "**Vollständige Logs:** Welcher Schlüssel hat wann welches Modell mit welchem Client aufgerufen, und was kam zurück? Der Proxy weiß es.",
+   "**Virtuelle API-Keys:** Statt deinen einen Haupt-Schlüssel in allen Agenten, Skripten und Harnesses zu verteilen, vergibst du eigene Unter-Schlüssel und kannst sie einzeln sperren.",
+   "**Eigene Infrastruktur:** Die Daten liegen bei dir, nicht in einem weiteren Dashboard-Dienst.",
+   "**Schneller Wechsel:** Modell oder Anbieter tauschen, ohne alles neu aufzusetzen, zum dritten Mal.",
+   "**Anpassbar:** Eigene Gateways lassen sich erweitern, etwa um eigene MCP-Endpunkte oder zusätzliche Auswertungen."
+  ]},
+  {"t": "h2", "x": "Praxis: Cache-Miss in 20 Sekunden gefunden"},
+  {"t": "p", "x": "Siegel beschreibt, wie er bei einer Coding-Session einen Cache-Miss sieht und per Hand in etwa 20 Sekunden die Ursache findet, weil sein Proxy den kompletten Verlauf zeigt. Automatisiert hat er das noch nicht, aber das Gateway hat eine API, also wäre es möglich. Sein Grundsatz: Own your infrastructure, your application visibility, data pathing, and storage. Privat mache er das aus Spaß und zum Lernen, beruflich, weil er sonst seinen Job nicht richtig mache."},
+  {"t": "h2", "x": "Womit anfangen?"},
+  {"t": "p", "x": "Siegel empfiehlt bewusst keinen bestimmten Anbieter, nur: betreibe es selbst, irgendwo unter deiner Kontrolle, und passe es an deine Bedürfnisse an. Ein verbreitetes Open-Source-Beispiel ist [LiteLLM](https://github.com/BerriAI/litellm): ein AI-Gateway mit Rust-Kern und Python-SDK, das nach Projektangaben über 100 LLM-APIs im OpenAI-Format anspricht, Kosten trackt und virtuelle Schlüssel verwaltet. Auf GitHub steht das Projekt bei über 61.000 Sternen; der Einstieg ist in der [Dokumentation](https://docs.litellm.ai/docs/simple_proxy) beschrieben. Alternativen mit ähnlicher Idee existieren ebenfalls, entscheidend ist das Muster, nicht das Produkt."},
+  {"t": "h2", "x": "Die ehrliche Kehrseite"},
+  {"t": "p", "x": "Ein eigener Proxy ist selbst zu betreibende Infrastruktur: Updates, Absicherung und ein neuer Punkt, an dem alle Schlüssel zusammenlaufen. Wer ihn öffentlich erreichbar macht, muss ihn härten. Und wer gelegentlich im Browser mit einem Modell chattet, braucht kein Gateway. Sobald aber Agenten, Coding-Tools oder mehrere Modelle im Spiel sind, dreht sich die Rechnung: Dann ist fehlende Sichtbarkeit der teurere Weg."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Miss zuerst, optimiere dann: Ohne Logs über Requests, Tokens und Kosten ist jede Modell- oder Prompt-Entscheidung geraten.",
+   "Verteile nie deinen Haupt-API-Key an Agenten und Skripte. Virtuelle Schlüssel mit Budget sind Pflicht.",
+   "Wer den Verkehr durch einen eigenen Endpunkt schickt, kann Anbieter in Minuten statt Tagen wechseln."
+  ]}
+ ],
+ "faq": [
+  {"q": "Was ist ein LLM-Proxy?", "a": "Ein Gateway zwischen deinen Werkzeugen und den Modell-Anbietern. Alle Anfragen laufen über diesen einen Endpunkt, der sie an OpenAI, Anthropic, Google oder lokale Modelle weiterreicht und dabei protokolliert, kostenseitig zuordnet und Zugriffe über eigene Schlüssel steuert."},
+  {"q": "Reichen die Dashboards der Anbieter nicht?", "a": "Für gelegentliche Nutzung oft ja. Wer aber mehrere Modelle, Agenten oder Teams betreut, bekommt dort selten entscheidungsreife Zeitreihen zu Verbrauch, Kosten und Fehlern pro Schlüssel oder Anwendung. Genau diese Lücke beschreibt Jared Siegel in seinem Beitrag."},
+  {"q": "Ist LiteLLM die einzige Option?", "a": "Nein. LiteLLM ist ein verbreitetes Open-Source-Beispiel mit über 100 angebundenen APIs, aber es gibt weitere Gateways derselben Kategorie. Wichtiger als das Produkt ist das Prinzip: eigener Endpunkt, vollständige Logs, virtuelle Schlüssel."},
+  {"q": "Lohnt sich das auch für Privatleute?", "a": "Wenn du nur im Browser chattest: nein. Wenn du zu Hause Agenten, Coding-Assistenten oder mehrere Modelle parallel laufen lässt, liefert ein Proxy genau die Übersicht, die dir sonst fehlt, und kostet vor allem etwas Einrichtungszeit."}
+ ],
+ "sources": [
+  {"title": "If you don't run your own LLM proxy, how the fuck do you even know whats going on?", "publisher": "Jared Siegel (jrdsgl.com)", "url": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/", "accessed": "2026-10-19"},
+  {"title": "LiteLLM: AI Gateway mit Rust-Kern und Python-SDK (Repository)", "publisher": "GitHub (BerriAI)", "url": "https://github.com/BerriAI/litellm", "accessed": "2026-10-19"},
+  {"title": "LiteLLM Proxy: Dokumentation", "publisher": "LiteLLM Docs", "url": "https://docs.litellm.ai/docs/simple_proxy", "accessed": "2026-10-19"}
+ ],
+ "related": ["rtx-spark-notebook-lokale-ki-test", "odysseus-workspace-cookbook-persona-test"]
+}

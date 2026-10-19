@@ -1,0 +1,56 @@
+{
+ "slug": "anthropic-ki-agenten-verhandeln-kanzleien",
+ "lang": "de",
+ "section": "trends",
+ "type": "news",
+ "title": "Anthropic lässt KI-Agenten das Verhandeln lernen, mit Anwälten",
+ "dek": "Laut Financial Times berät sich Anthropic mit Kanzleien über faire Verhandlungsnormen für KI-Agenten. Parallel sucht das Unternehmen Juristen als Fellows, für bis zu 167.000 Dollar in vier Monaten.",
+ "published": "2026-10-19T08:48:00+02:00",
+ "modified": "2026-10-19T08:48:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Anthropic", "Claude", "Agenten", "Verhandlungen", "Recht"],
+ "key_takeaways": [
+  "Anthropic berät sich laut Financial Times mit Anwaltskanzleien, um Verhandlungsnormen für KI-Agenten zu entwickeln.",
+  "Geplant sind Agenten, die für Nutzer Preise aushandeln, Beschwerden klären oder Vertragsangebote verbessern.",
+  "Eigene Experimente zeigen laut Bericht: Stärkere Modelle verhandeln besser, was Ungleichheit verschärfen könnte.",
+  "Anthropic sucht Conceptual Reasoning Fellows, ausdrücklich auch Anwältinnen und Anwälte, für 100.000 bis 167.000 Dollar in vier Monaten.",
+  "Anthropic wollte sich auf Anfrage nicht äußern."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: zwei elegante Roboterhände schütteln sich über einem Glastisch mit einem leuchtenden Vertragsdokument und Preisschildern, im Hintergrund eine stilisierte Waage",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles Anthropic-Material.",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Anthropic arbeitet daran, dass KI-Agenten künftig im Auftrag von Menschen verhandeln. Laut einem Bericht der Financial Times holt sich das Unternehmen dafür Rat bei Anwaltskanzleien. Parallel sucht Anthropic Juristen für ein Fellows-Programm. Beides zusammen zeigt: Die nächste Agenten-Welle soll nicht nur bestellen und buchen, sondern handeln, diskutieren und Verträge verbessern."},
+  {"t": "h2", "x": "Was die Financial Times berichtet"},
+  {"t": "p", "x": "Die Financial Times beruft sich auf zwei Personen, die mit den Plänen vertraut sind. Demnach sucht Anthropic den Rat von Kanzleien, um zu verstehen, wie Anwälte in Verhandlungen agieren: ihre Mandanten vertreten und trotzdem faire Ergebnisse anstreben. Ziel seien „negotiation norms“, also Regeln für den Fall, dass Agenten im Auftrag von Nutzern mit anderen Agenten verhandeln, deren Ziele im Konflikt stehen. Dabei gehe es etwa darum, wie viel menschliches Feedback ein Agent während einer Verhandlung einholen soll und wie misstrauisch er dem Gegenüber begegnen darf, ohne „paranoid“ oder „verschwörerisch“ zu werden. Anthropic lehnte eine Stellungnahme ab, berichtet [PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-turns-to-lawyers-to-teach-ai-agents-to-negotiate/)."},
+  {"t": "p", "x": "Konkret sollen solche Agenten laut [The Decoder](https://the-decoder.de/anthropic-beraet-sich-mit-kanzleien-damit-ki-agenten-kuenftig-preise-und-vertraege-aushandeln/) Preise aushandeln, Beschwerden lösen oder Vertragsangebote für ihre Nutzer verbessern. Also genau die ungeliebten Telefonate und Mails, die viele gern abgeben würden."},
+  {"t": "h2", "x": "Das Ungleichgewicht-Problem"},
+  {"t": "p", "x": "Pikant ist ein Detail aus eigenen Experimenten: Anthropic hat dem Bericht zufolge gezeigt, dass stärkere Modelle besser verhandeln. Wer sich das teurere Modell leistet, bekommt im Zweifel den besseren Deal. Verhandelnde Agenten könnten also ein neues Gefälle aufmachen, zwischen Nutzern starker und schwacher Modelle, und zwischen Menschen, die verhandeln lassen, und solchen, die es selbst tun."},
+  {"t": "h2", "x": "Juristen gesucht, gut bezahlt"},
+  {"t": "p", "x": "Der Bericht passt zu einer offenen Stelle: Anthropic sucht [Conceptual Reasoning Fellows](https://job-boards.greenhouse.io/anthropic/jobs/5447080008) und nennt dort ausdrücklich Anwältinnen und Anwälte. Vier Monate lang sollen die Fellows Claude bei Urteilsfragen in Recht, Philosophie, Kognitionswissenschaft, Wirtschaft und Politik testen. Die Vergütung liegt laut The Decoder bei 100.000 bis 167.000 US-Dollar allein für diesen Zeitraum. Anthropic-Forscher Justin Curl wirbt öffentlich um Juristen: Recht sei ein Feld, in dem Qualität besonders schwer zu definieren sei."},
+  {"t": "p", "x": "Dahinter steht ein Datenproblem. In Mathematik und Programmierung lassen sich Modelle leicht verbessern, weil Antworten überprüfbar sind. In den Geisteswissenschaften fehlen solche Prüfdaten, richtig und falsch sind oft nicht eindeutig. Für Verhandlungen, Verträge und Rechtsfragen braucht Anthropic deshalb Menschen, die Testfälle bauen und Antworten bewerten."},
+  {"t": "h2", "x": "Einordnung: Der Agent als Anwalt des Alltags"},
+  {"t": "p", "x": "Dass Agenten miteinander reden werden, ist keine Anthropic-Eigenheit. Google, OpenAI und andere bauen ebenfalls an Agenten, die im Web für Nutzer handeln. Der neue Punkt hier ist der Ton: Statt nur Aufgaben auszuführen, sollen Agenten Interessen vertreten. Wer zuerst saubere Normen dafür setzt, prägt wahrscheinlich auch die Erwartungen von Kunden, Partnern und Aufsichtsbehörden. Dass ein KI-Unternehmen dafür ausgerechnet Anwaltskanzleien anzapft, ist bemerkenswert ehrlich: Verhandeln ist Handwerk, kein Benchmark."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Rechne mittelfristig damit, dass Kunden, Bewerber oder Dienstleister mit einem Agenten statt einem Menschen bei dir anrufen oder schreiben.",
+   "Wenn du selbst Agenten einsetzt: Lege vorher fest, was sie aushandeln dürfen und ab wann sie dich fragen müssen.",
+   "Starke Modelle verhandeln besser. Bei sensiblen Verhandlungen lohnt der Blick darauf, welches Modell hinter einem Agenten steckt."
+  ]}
+ ],
+ "faq": [
+  {"q": "Kann ein KI-Agent schon heute Verträge für mich aushandeln?", "a": "Nein. Anthropic prüft laut Bericht erst die Normen dafür und entwickelt entsprechende Agenten. Marktreife Produkte, die rechtlich verbindlich für Nutzer verhandeln, gibt es bislang nicht."},
+  {"q": "Woher stammt die Information?", "a": "Aus einem Bericht der Financial Times, die sich auf zwei mit den Plänen vertraute Personen beruft. Anthropic wollte den Bericht weder gegenüber der FT noch gegenüber PYMNTS kommentieren."},
+  {"q": "Was sind Conceptual Reasoning Fellows?", "a": "Ein Fellows-Programm von Anthropic: Fachleute, darunter ausdrücklich Juristinnen und Juristen, testen vier Monate lang Claude bei Urteilsfragen in Recht, Philosophie, Kognitionswissenschaft, Wirtschaft und Politik. Die Vergütung liegt laut The Decoder bei 100.000 bis 167.000 US-Dollar für den Zeitraum."},
+  {"q": "Warum ist besseres Verhandeln durch stärkere Modelle ein Problem?", "a": "Weil Verhandlungsstärke dann vom Modell abhängt, das man sich leistet. Nutzer teurer Modelle könnten systematisch bessere Preise und Verträge bekommen als andere."}
+ ],
+ "sources": [
+  {"title": "Anthropic berät sich mit Kanzleien, damit KI-Agenten künftig Preise und Verträge aushandeln", "publisher": "THE DECODER", "url": "https://the-decoder.de/anthropic-beraet-sich-mit-kanzleien-damit-ki-agenten-kuenftig-preise-und-vertraege-aushandeln/", "accessed": "2026-10-19"},
+  {"title": "Anthropic Turns to Lawyers to Teach AI Agents to Negotiate", "publisher": "PYMNTS", "url": "https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-turns-to-lawyers-to-teach-ai-agents-to-negotiate/", "accessed": "2026-10-19"},
+  {"title": "Conceptual Reasoning Fellow (Stellenausschreibung)", "publisher": "Anthropic (Greenhouse)", "url": "https://job-boards.greenhouse.io/anthropic/jobs/5447080008", "accessed": "2026-10-19"}
+ ],
+ "related": ["gemini-agent-google-kollegen-unternehmen", "chatgpt-chrome-agenten-websites-sperren"]
+}

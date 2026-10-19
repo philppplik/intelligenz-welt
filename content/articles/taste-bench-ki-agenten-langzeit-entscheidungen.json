@@ -1,0 +1,60 @@
+{
+ "slug": "taste-bench-ki-agenten-langzeit-entscheidungen",
+ "lang": "de",
+ "section": "analyse",
+ "type": "analysis",
+ "title": "Taste-Bench: KI-Agenten treffen schlechte Langzeit-Entscheidungen",
+ "dek": "Ein neuer Benchmark von Microsoft und der City University of Hong Kong misst den „Geschmack“ von KI-Agenten an echten Entscheidungsgabeln. Bestwert: 59,7 Prozent, bei nur zwei Optionen.",
+ "published": "2026-10-19T08:54:00+02:00",
+ "modified": "2026-10-19T08:54:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Taste-Bench", "Benchmark", "Agenten", "Microsoft", "SWE-bench"],
+ "key_takeaways": [
+  "Taste-Bench misst, wie gut KI-Agenten an echten Verzweigungspunkten langfristig richtige Entscheidungen treffen.",
+  "Das beste von 14 getesteten Modellen, GPT-5.6 Sol, liegt bei 59,7 Prozent. Zufall wäre 25 Prozent.",
+  "Je später sich herausstellt, welche Richtung besser war, desto schlechter liegen alle Modelle, bis fast auf Zufallsniveau.",
+  "Mehr Reasoning-Budget verbessert die Trefferquote nicht.",
+  "„Geschmack“ lässt sich trainieren: Ein destilliertes Modell steigerte die Erfolgsrate eines Agenten bei SWE-bench Pro von 14,6 auf 33,7 Prozent."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein leuchtender Pfad aus Code-Zeilen gabelt sich in einer dunklen Landschaft, ein kleiner Roboter steht grübelnd an der Weggabelung, ein Weg blüht auf, der andere verblasst",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** KI-Agenten arbeiten inzwischen tagelang autonom an Aufgaben. Doch wie gut sind die Entscheidungen unterwegs? Der neue Benchmark Taste-Bench von Microsoft und der City University of Hong Kong misst genau das und das Ergebnis ist ernüchternd: Selbst Spitzenmodelle wählen an echten Entscheidungsgabeln kaum besser als bei einem Münzwurf mit zwei Optionen."},
+  {"t": "h2", "x": "Was ist „Taste“?"},
+  {"t": "p", "x": "Die Autoren nennen die Fähigkeit, langfristig gute Entscheidungen zu treffen, den „taste“, den Geschmack eines Agenten. Gemeint sind Momente, in denen ein Agent wählt, welche Hypothese er testet oder auf welcher Implementierung er aufbaut. Solche Entscheidungen wirken im Moment meist vernünftig, ihre Kosten zeigen sich erst viel später, oft erst, wenn das Budget schon fast aufgebraucht ist. Klassische Benchmarks wie SWE-bench messen nur, ob am Ende eine Aufgabe gelöst wurde, nicht die Qualität des Weges dorthin."},
+  {"t": "h2", "x": "So ist der Benchmark gebaut"},
+  {"t": "p", "x": "Taste-Bench besteht aus 502 Fragen. Jede zeigt eine „decision fork“: den Punkt in einem aufgezeichneten Agentenlauf, an dem zwei Richtungen möglich waren und der spätere Verlauf verriet, welche besser war. Das Modell sieht nur die Aufgabe und die Historie bis zur Gabel und muss wählen. Die Gabeln stammen aus zwei Quellen: aus parallelen Versuchen an derselben Aufgabe, die auseinanderliefen, und aus Umwegen innerhalb eines Laufs, bei denen sich der Agent selbst korrigierte. Als Rohmaterial dienten Tausende bewerteter Agenten-Durchläufe, unter anderem aus SWE-bench Pro und METRs öffentlichem Transkript-Release MALT. Ein Generator-Modell filterte triviale und unentscheidbare Fälle heraus, eine menschliche Prüfung bestätigte fast alle automatischen Labels. Benchmark und Code sind [öffentlich](https://github.com/wbopan/tastebench)."},
+  {"t": "h2", "x": "Die Ergebnisse: kaum besser als raten"},
+  {"t": "p", "x": "Getestet wurden 14 Modelle aus den Familien Claude, GPT, Grok, DeepSeek, GLM, MiniMax und Mistral. Jede Frage wurde zweimal gestellt, einmal in normaler und einmal in umgekehrter Reihenfolge, und zählte nur bei zwei richtigen Antworten. Reines Raten läge bei 25 Prozent. Das beste Modell, GPT-5.6 Sol, erreichte im Schnitt 59,7 Prozent, dicht gefolgt von GPT-5.5 mit 59,5 Prozent. Alle übrigen lagen deutlich darunter. Die Umweg-Gabeln, bei denen der Fehler früh erkannt werden muss, waren durchweg schwerer als parallele Versuche."},
+  {"t": "p", "x": "Am aufschlussreichsten ist der Zeithorizont: Wenn die entscheidende Information schon im bisherigen Verlauf sichtbar ist, liegt die Trefferquote im Modellschnitt bei 62,3 Prozent. Zeigt sie sich erst in umfangreicher späterer Arbeit, fällt sie auf 21 Prozent, praktisch Zufall. Um solche Fragen zu beantworten, müsste ein Modell die Zukunft der Aufgabe vorhersagen. Genau das können aktuelle Modelle nicht."},
+  {"t": "p", "x": "Auch mehr Nachdenken half nicht: Drei Reasoning-Stufen brachten kaum unterschiedliche Ergebnisse. Auffällig ist, dass die Modelle die meisten Reasoning-Token ausgerechnet in der höchsten Stufe verbrauchten, also dort am längsten dachten, wo sie am häufigsten falsch lagen. Die Forscher deuten das als Zeichen, dass die entscheidende Information an diesen Punkten schlicht noch nicht existiert."},
+  {"t": "h2", "x": "Die gute Nachricht: Geschmack ist trainierbar"},
+  {"t": "p", "x": "Das Team destillierte das Urteil eines Lehrer-Modells, das den Ausgang kennt, in ein Schüler-Modell auf Basis von Qwen3.6-27B. Auf unbekannten Aufgaben stieg dessen Genauigkeit von 30 auf 47,9 Prozent. Praktisch zahlte sich das aus: Schrieb das Urteil des Schülers an jeder Gabel einen Ratschlag in den Kontext, löste ein separater Agent 33,7 statt 14,6 Prozent der zurückgehaltenen SWE-bench-Pro-Aufgaben. Mit perfekter Beratung wären 39 Prozent drin gewesen. Der trainierte Schüler erschloss also den Großteil des Potenzials."},
+  {"t": "h2", "x": "Einordnung"},
+  {"t": "p", "x": "Die Studie trifft einen Nerv. Beim Benchmark MirrorCode lief ein Modell bereits 19 Tage ohne menschlichen Eingriff an einer einzigen Aufgabe. Gleichzeitig zeigte METR, dass SWE-bench Verified die Leistung von Coding-Agenten deutlich überschätzt, weil Profis viele als „gelöst“ gewertete Lösungen ablehnten. Taste-Bench ergänzt das Bild um den Blick auf den Weg statt nur das Ziel. Für alle, die Agenten produktiv einsetzen, heißt das: Die Schwachstelle ist selten der einzelne Schritt, sondern die Richtungswahl bei ungewisser Zukunft. Zwischenchecks und klare Abbruchkriterien bleiben vorerst Aufgabe des Menschen."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Traue End-to-End-Benchmarks nicht allein: Sie sagen nichts darüber, wie viele schlechte Entscheidungen ein Agent unterwegs getroffen hat.",
+   "Je länger ein Agent autonom läuft, desto wichtiger sind Review-Punkte an Weggabelungen, nicht nur am Ende.",
+   "Mehr Reasoning-Budget löst schlechte Langzeit-Entscheidungen nicht. Besser: Kontrollpunkte und, wo möglich, trainierte Berater-Modelle."
+  ]}
+ ],
+ "faq": [
+  {"q": "Was misst Taste-Bench genau?", "a": "Die Qualität von Entscheidungen an realen Verzweigungspunkten aus aufgezeichneten Agentenläufen. Das Modell sieht den Verlauf bis zur Gabel und muss ohne Blick in die Zukunft die bessere von zwei Richtungen wählen."},
+  {"q": "Wie gut sind die besten Modelle?", "a": "GPT-5.6 Sol liegt bei 59,7 Prozent korrekten Entscheidungen, GPT-5.5 bei 59,5 Prozent. Zufallsniveau wäre 25 Prozent, perfekt wäre 100. Kein Modell kommt der Lösung des Benchmarks auch nur nahe."},
+  {"q": "Warum hilft mehr Nachdenken nicht?", "a": "Weil die entscheidende Information an schweren Gabeln erst aus späterer Arbeit entsteht und zum Entscheidungszeitpunkt nicht existiert. Mehr Reasoning-Tokens können fehlende Zukunftsinformation nicht ersetzen."},
+  {"q": "Kann man Agenten besseren Geschmack beibringen?", "a": "Ja, zumindest teilweise. Ein per Destillation trainiertes Qwen3.6-27B stieg von 30 auf 47,9 Prozent, und seine Ratschläge an Entscheidungspunkten verdoppelten die Erfolgsquote eines Agenten bei SWE-bench Pro von 14,6 auf 33,7 Prozent."},
+  {"q": "Wo finde ich Benchmark und Daten?", "a": "Der Benchmark, der Code und das Dataset sind öffentlich: auf arXiv (2609.25804), auf GitHub unter wbopan/tastebench und als Dataset auf Hugging Face unter wenbopan/taste-bench."}
+ ],
+ "sources": [
+  {"title": "The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks (Preprint, Pan et al.)", "publisher": "arXiv", "url": "https://arxiv.org/abs/2609.25804", "accessed": "2026-10-19"},
+  {"title": "Fehlender „Geschmack“: KI-Agenten scheitern noch an langfristigen Entscheidungen", "publisher": "THE DECODER", "url": "https://the-decoder.de/fehlender-geschmack-ki-agenten-scheitern-noch-an-langfristigen-entscheidungen/", "accessed": "2026-10-19"},
+  {"title": "Taste-Bench: Code und Evaluation Harness", "publisher": "GitHub (wbopan)", "url": "https://github.com/wbopan/tastebench", "accessed": "2026-10-19"},
+  {"title": "Taste-Bench Dataset", "publisher": "Hugging Face (wenbopan)", "url": "https://huggingface.co/datasets/wenbopan/taste-bench", "accessed": "2026-10-19"}
+ ],
+ "related": ["ehrlichkeit-prompt-ki-berichte-studie", "openai-misalignment-reports-vier-neue-faelle"]
+}
