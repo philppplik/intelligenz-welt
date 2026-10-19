@@ -5,6 +5,12 @@ OUT='out'; shutil.rmtree(OUT,ignore_errors=True); os.makedirs(OUT+'/artikel'); o
 BASE='https://intelligenz-welt.de'
 NOW=datetime.datetime.now().astimezone()
 ai=json.load(open('../data/ai_archive.json')); models=[m for m in json.load(open('../data/models.json')) if not re.search('uncensored|nsfw|abliterat',m['id'],re.I)]
+import sys
+sys.path.insert(0,str(__import__('pathlib').Path(__file__).resolve().parent.parent/'tools'))
+from licensed_news import archive_body as licensed_archive_body, collect, merge_current, valid as licensed_valid, detail_path as licensed_path, body as licensed_body, noindex as licensed_noindex, write_css
+licensed=collect('..','iw')
+ai=merge_current(ai,licensed)
+
 ART=[]  # legacy Briefing/Analyse essays removed; their URLs are redirect stubs (see end of file)
 arts=[]
 for slug,cat,date in ART:
@@ -89,7 +95,7 @@ def src_mark(name):
     hue=int(hashlib.sha256(slug.encode()).hexdigest()[:4],16)%360
     return '<span class="si mono" style="--h:%d" aria-hidden="true">%s</span>'%(hue,esc(mono))
 def newsli(items,n):
-    return '<ul class="feed">'+''.join('<li><a href="%s" rel="noopener nofollow" target="_blank">%s</a><div class="m">%s<span>%s \u00b7 %s</span></div></li>'%(esc(i['url']),esc(i['title']),src_mark(i['src']),esc(i['src']),fmtd(i['ts'])) for i in items[:n])+'</ul>'
+    return '<ul class="feed">'+''.join('<li><a href="%s" rel="noopener nofollow" target="_blank">%s</a><div class="m">%s<span>%s \u00b7 %s</span></div></li>'%(esc(licensed_path(i) if licensed_valid(i,'iw') else i['url']),esc(i['title']),src_mark(i['src']),esc(i['src']),fmtd(i['ts'])) for i in items[:n])+'</ul>'
 def artcards(l):
     return '<div class="cards">'+''.join('<a class="card" href="/artikel/%s/"><span class="tag">%s</span><h3>%s</h3><p>%s…</p><div class="meta">%s · %d Min. Lesezeit</div></a>'%(a['slug'],a['cat'],esc(a['title']),esc(a['lead'][:150]),datetime.datetime.fromisoformat(a['date']).strftime('%d.%m.%Y'),max(3,sum(len(x) for _,x in a['body'])//900)) for a in l)+'</div>'
 mx=max([m['likes'] for m in models] or [1])
@@ -131,6 +137,16 @@ open(OUT+'/news-sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?><
 rss=''.join('<item><title>%s</title><link>%s</link><guid>%s</guid><description>%s</description><pubDate>%s</pubDate><source url="%s">%s</source></item>'%(esc(i['title']),esc(i['url']),esc(i['url']),esc(i['sum']),email.utils.format_datetime(datetime.datetime.fromtimestamp(i['ts']).astimezone()),esc(i['url']),esc(i['src'])) for i in ai[:60] if i['ts'])
 open(OUT+'/feed.xml','w').write('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Intelligenz Welt</title><link>%s</link><description>KI- und LLM-News</description><language>de</language>%s</channel></rss>'%(BASE,rss))
 json.dump(ai[:300],open(OUT+'/news.json','w'),ensure_ascii=False)
+# Stable, noindex source-info pages, deliberately not appended to urls/sitemaps/RSS.
+write_css(OUT)
+page('/news/quellenarchiv/','Gesicherte KI-Meldungen | Intelligenz Welt','Dauerhaft gespeicherte Quelleninfos aus erlaubten RSS-Feeds.',licensed_archive_body(licensed,'Intelligenz Welt'),act='/news/')
+licensed_noindex(OUT+'/news/quellenarchiv/index.html')
+_p=__import__('pathlib').Path(OUT+'/news/index.html')
+_p.write_text(_p.read_text().replace('<h1>KI-News</h1>','<h1>KI-News</h1><p><a href="/news/quellenarchiv/">Alle gesicherten heise-Quelleninfos →</a></p>',1))
+for item in licensed:
+    path=licensed_path(item)
+    page(path,item['title']+' | Quelleninfo | Intelligenz Welt','Externe KI-Meldung mit RSS-Anrisstext und Original-Link.',licensed_body(item,'Intelligenz Welt','/news/quellenarchiv/'),act='/news/')
+    licensed_noindex(OUT+path+'index.html')
 print('IW pages',len(urls))
 # editorial articles (content/articles/*.json): rendered by tools/articles.py, see docs/EDITORIAL.md
 import subprocess,sys
