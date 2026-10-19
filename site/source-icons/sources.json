@@ -1,0 +1,12 @@
+{
+ "checked": "2026-10-19",
+ "note": "Source identification only; local copies, no hotlinks.",
+ "icons": {
+  "techcrunch-ai": "https://techcrunch.com/wp-content/uploads/2015/02/cropped-cropped-favicon-gradient.png?w=192 (declared in page <link rel=icon>; /favicon.ico is blank)",
+  "the-decoder": "https://the-decoder.de/favicon.ico",
+  "the-verge-ai": "https://www.theverge.com/favicon.ico",
+  "heise-online": "https://www.heise.de/favicon.ico",
+  "hugging-face-blog": "https://huggingface.co/favicon.ico",
+  "hacker-news": "https://news.ycombinator.com/favicon.ico"
+ }
+}

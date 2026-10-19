@@ -35,3 +35,7 @@ Eligibility needs no application; follow the content policies. Required: clear d
 
 ## Secrets
 The push token (fine-grained PAT, contents write on this repo and kifachblatt only) expires 2026-11-17. Renew around 2026-11-14.
+
+## KI-Pulse source icons
+
+Each headline in the KI-Pulse (home sidebar and /news/) shows a 20px source icon. Icons are local 64px PNG copies in site/source-icons/<slug>.png (slug = source name lowercased, non-alphanumerics to "-"), copied to /assets/source-icons/ by build.py. No hotlinks, no third-party favicon service. Exact origin URLs: site/source-icons/sources.json. They only identify the source; no endorsement is claimed. A source without icon gets a colored monogram. Test: tests/test_source_icons.py.

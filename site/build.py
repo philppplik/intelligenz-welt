@@ -1,5 +1,6 @@
 import json,os,re,shutil
 from common import *
+SRC_ICON_DIR='source-icons'
 OUT='out'; shutil.rmtree(OUT,ignore_errors=True); os.makedirs(OUT+'/artikel'); os.makedirs(OUT+'/news')
 BASE='https://intelligenz-welt.de'
 NOW=datetime.datetime.now().astimezone()
@@ -49,6 +50,10 @@ footer{background:var(--dark);color:#94a3b8;margin-top:80px;padding:44px 0;font-
 .sform{display:flex;gap:10px;margin:4px 0 6px}.sform input{flex:1;min-width:0;font:16px Inter,system-ui,sans-serif;color:var(--fg);padding:12px 16px;border:1px solid var(--line);border-radius:10px;min-height:48px;background:#fff}.sform input:focus{outline:2px solid var(--ac);outline-offset:1px;border-color:var(--ac)}.sstatus{font-size:14px;color:var(--mut);margin:12px 0 0;min-height:22px}.sresults{list-style:none;margin:14px 0 0;padding:0}.sresults li{padding:16px 0;border-bottom:1px solid var(--line)}.sresults a.rt{font-weight:700;font-size:18px;line-height:1.35;letter-spacing:-.01em}.sresults a.rt:hover{color:var(--ac)}.sresults p{margin:6px 0 0;color:var(--mut);font-size:14px}.sresults .sm{font-size:12px;color:var(--mut);margin-top:6px}@media(max-width:800px){.sform{flex-direction:column}.sform .btn{align-self:flex-start}}
 '''
 CSS += '@media(max-width:800px){.nav{gap:8px;overflow:visible}.nav>.btn{display:none}.nav>.sic{width:40px;height:40px}.nav>.sp{min-width:0}.menu{order:5}}'
+CSS+='.feed .m{display:flex;align-items:center;gap:8px}.si{flex:none;width:20px;height:20px;border-radius:5px;display:block;background:#fff;object-fit:contain}.si.mono{display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;letter-spacing:.02em;color:hsl(var(--h) 55% 28%);background:hsl(var(--h) 70% 92%)}'
+os.makedirs(OUT+'/assets/source-icons',exist_ok=True)
+for f in os.listdir(SRC_ICON_DIR):
+    if f.endswith('.png'): shutil.copy(os.path.join(SRC_ICON_DIR,f),OUT+'/assets/source-icons/'+f)
 open(OUT+'/style.css','w').write(CSS)
 NAVL=[('/news/','KI-News'),('/modelle/','Modell-Radar'),('/suche/','Suche'),('/ueber-uns/','Über uns')]
 def page(path,title,desc,body,ld=None,typ='website',og=None,act=''):
@@ -67,8 +72,20 @@ def page(path,title,desc,body,ld=None,typ='website',og=None,act=''):
     os.makedirs(os.path.dirname(p),exist_ok=True); open(p,'w').write(h)
     return url
 urls=[]
+
+def src_slug(name):
+    return re.sub(r'[^a-z0-9]+','-',(name or '').lower()).strip('-')
+def src_mark(name):
+    """Local source icon (no hotlinks) or a monogram fallback."""
+    slug=src_slug(name)
+    if slug and os.path.isfile(os.path.join(SRC_ICON_DIR,slug+'.png')):
+        return '<img class="si" src="/assets/source-icons/%s.png" width="20" height="20" alt="" loading="lazy" decoding="async">'%slug
+    words=[w for w in re.split(r'\s+',(name or '').strip()) if w]
+    mono=(''.join(w[0] for w in words[:2]) or '?').upper()
+    hue=int(hashlib.sha256(slug.encode()).hexdigest()[:4],16)%360
+    return '<span class="si mono" style="--h:%d" aria-hidden="true">%s</span>'%(hue,esc(mono))
 def newsli(items,n):
-    return '<ul class="feed">'+''.join('<li><a href="%s" rel="noopener nofollow" target="_blank">%s</a><div class="m">%s · %s</div></li>'%(esc(i['url']),esc(i['title']),esc(i['src']),fmtd(i['ts'])) for i in items[:n])+'</ul>'
+    return '<ul class="feed">'+''.join('<li><a href="%s" rel="noopener nofollow" target="_blank">%s</a><div class="m">%s<span>%s \u00b7 %s</span></div></li>'%(esc(i['url']),esc(i['title']),src_mark(i['src']),esc(i['src']),fmtd(i['ts'])) for i in items[:n])+'</ul>'
 def artcards(l):
     return '<div class="cards">'+''.join('<a class="card" href="/artikel/%s/"><span class="tag">%s</span><h3>%s</h3><p>%s…</p><div class="meta">%s · %d Min. Lesezeit</div></a>'%(a['slug'],a['cat'],esc(a['title']),esc(a['lead'][:150]),datetime.datetime.fromisoformat(a['date']).strftime('%d.%m.%Y'),max(3,sum(len(x) for _,x in a['body'])//900)) for a in l)+'</div>'
 mx=max([m['likes'] for m in models] or [1])
