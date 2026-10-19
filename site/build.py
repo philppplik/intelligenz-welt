@@ -122,6 +122,9 @@ subprocess.check_call([sys.executable,'../tools/portraits.py','iw',OUT])
 # Final isolated pass: advertising, consent and activation gates (no third-party code by default).
 subprocess.check_call([sys.executable,'../tools/monetization.py',OUT])
 
+# Footer redesign: brand block + link columns (after monetization, which injects the consent button).
+subprocess.check_call([sys.executable,'../tools/footer.py',OUT])
+
 # Removed Analysen area: GitHub Pages has no server redirects or 410, so each old URL is a small
 # meta-refresh stub (canonical + noindex) pointing at the article overview. Not in sitemap/search/nav.
 for _p in ['/analysen/']+['/artikel/%s/'%x for x in ('kimi-k25-agentic-swarm-revolution','seedance-2-ki-video-revolution','openclaw-chaos-sicherheit-ki','claude-4-6-opus-analyse')]:
