@@ -34,7 +34,6 @@ def validate(cfg):
 PANEL = '''<section id="iw-consent" class="iw-consent" role="region" aria-labelledby="iw-consent-title" hidden>
 <h2 id="iw-consent-title">Deine Privatsphäre.</h2>
 <p>Du entscheidest über Statistik und Werbung. Ohne Zustimmung bleibt beides aus.</p>
-<p><strong>Aktueller Stand:</strong> Statistik und Werbung sind noch nicht aktiviert.</p>
 <fieldset><legend>Wofür dürfen Daten genutzt werden?</legend>
 <label><input type="checkbox" checked disabled><span><strong>Notwendig</strong><small>Seite und Datenschutzauswahl. Kein Tracking.</small></span></label>
 <label><input type="checkbox" id="iw-statistics"><span><strong>Statistik</strong><small>Seitenaufrufe und Interaktionen. Derzeit aus.</small></span></label>
