@@ -55,9 +55,30 @@ def de_date(dt, time=True):
     s = '%d. %s %d' % (dt.day, MONTHS[dt.month - 1], dt.year)
     return s + (', %02d:%02d Uhr' % (dt.hour, dt.minute) if time else '')
 
+NSRC = [0]
+
+def _cite(m):
+    nums = [int(x) for x in re.findall(r'\d+', m.group(0))]
+    if not NSRC[0] or any(n < 1 or n > NSRC[0] for n in nums): return m.group(0)
+    link = lambda n: '<a id="@@c%d@@" href="#q%d" aria-label="Quelle %d im Quellenverzeichnis">%d</a>' % (n, n, n, n)
+    sep = '\u2013' if (len(nums) == 2 and re.search(r'[\u2013-]', m.group(0))) else ', '
+    return '<sup class="cr">[' + sep.join(link(n) for n in nums) + ']</sup>'
+
+def finalize_cites(h):
+    """Assign citation ids in document order and add back-links to the source list."""
+    ids = {}
+    def sub(m):
+        n = int(m.group(1)); k = len(ids.setdefault(n, [])) + 1; cid = 'cr%d-%d' % (n, k); ids[n].append(cid); return cid
+    h = re.sub(r'@@c(\d+)@@', sub, h)
+    def bk(m):
+        n = int(m.group(1)); l = ids.get(n, [])
+        return ''.join(' <a class="bk" href="#%s" aria-label="Zurück zur Textstelle %d von Quelle %d">\u21a9%s</a>' % (c, k + 1, n, str(k + 1) if len(l) > 1 else '') for k, c in enumerate(l[:6]))
+    return re.sub(r'@@BK(\d+)@@', bk, h)
+
 def inline(t):
     t = E(t)
-    t = re.sub(r'\[\^(\d+)\]', r'<sup><a href="#q\1" aria-label="Quelle \1">[\1]</a></sup>', t)
+    t = re.sub(r'\[\^(\d+)\]', _cite, t)
+    t = re.sub(r'\[(\d+)(?:\s*(?:,|\u2013|-)\s*\d+)*\]', _cite, t)
     t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
     t = re.sub(r'(?<!\*)\*([^*]+?)\*(?!\*)', r'<em>\1</em>', t)
     t = re.sub(r'\[([^\]]+)\]\((https?://[^)\s]+|/[^)\s]*)\)', lambda m: '<a href="%s"%s>%s</a>' % (m.group(2), '' if m.group(2).startswith('/') else ' rel="noopener"', m.group(1)), t)
@@ -163,6 +184,7 @@ def head_for(head, title, desc, url, og_type, img=None, alt='', pub=None, mod=No
     return h.replace('</head>', new + extra + CSS + '</head>', 1)
 
 def article_page(a, arts, head, foot):
+    NSRC[0] = len(a['sources'])
     s, h = a['slug'], a['hero']
     url = '%s/artikel/%s/' % (BASE, s)
     img_abs = '%s/assets/editorial/%s.jpg' % (BASE, s); img_rel = '/assets/editorial/%s.jpg' % s
@@ -191,7 +213,7 @@ def article_page(a, arts, head, foot):
     hh = head_for(head, '%s | Intelligenz Welt' % a['title'], meta_trunc(a['dek']), url, 'article', img_abs, h['alt'], a['published'], a['modified'], ld_script({'@context': 'https://schema.org', '@graph': graph}) + ''.join('<meta property="article:tag" content="%s">' % E(t) for t in a['tags']))
     rel = [x for x in arts if x['slug'] in a.get('related', [])] or [x for x in arts if x['slug'] != s][:4]
     faq = ('<h2>Häufige Fragen</h2>' + ''.join('<details><summary>%s</summary><p>%s</p></details>' % (E(q['q']), inline(q['a'])) for q in a['faq'])) if a.get('faq') else ''
-    src = ''.join('<li id="q%d"><a href="%s" rel="noopener" target="_blank">%s</a> (%s%s)</li>' % (i + 1, E(x['url']), E(x['title']), E(x['publisher']), (', abgerufen %s' % E(x['accessed'])) if x.get('accessed') else '') for i, x in enumerate(a['sources']))
+    src = ''.join('<li id="q%d"><a href="%s" rel="noopener" target="_blank">%s</a> (%s%s)@@BK%d@@</li>' % (i + 1, E(x['url']), E(x['title']), E(x['publisher']), (', abgerufen %s' % E(x['accessed'])) if x.get('accessed') else '', i + 1) for i, x in enumerate(a['sources']))
     more = ('<h2>Weitere Artikel</h2><ul class="more">' + ''.join('<li><a href="/artikel/%s/">%s</a></li>' % (x['slug'], E(x['title'])) for x in rel) + '</ul>') if rel else ''
     mins = max(2, round(words(a) / 200))
     modtxt = (' · aktualisiert <time datetime="%s">%s</time>' % (a['modified'], de_date(a['_mod']))) if a['_mod'] != a['_pub'] else ''
@@ -209,8 +231,10 @@ def article_page(a, arts, head, foot):
         a['section'], SECTIONS[a['section']], E(SECTIONS[a['section']]), E(a['title']), AUTHOR_URL, a['published'], de_date(a['_pub']), modtxt, mins,
         img_rel, srcset, E(h['alt']), E(h['caption']) + (' · Illustration: KI-generiert' if h.get('ai_generated') and 'KI-generiert' not in h['caption'] else ''), facts, body_html(a), method, faq, src, more, share_block(url, a['title'], 'iw'), DISCLOSURE)
     body = body.replace('</p><figure>', '</p>' + share_block(url, a['title'], 'iw', True) + '<figure>', 1)
-    return hh + body + foot
+    return finalize_cites(hh + body + foot)
 
+CRCSS = 'sup.cr{font-size:.72em;line-height:0;white-space:nowrap}sup.cr a{text-decoration:none;padding:0 .12em;border-radius:3px}sup.cr a:hover,sup.cr a:focus-visible{background:#dbeafe;text-decoration:underline}.ed .src li{scroll-margin-top:90px;padding:2px 6px;margin-left:-6px;border-radius:5px}.ed .src li:target{background:#dbeafe;box-shadow:0 0 0 2px #7fb0ea;animation:qflash 2.2s ease-out}sup.cr a:target{background:#dbeafe;box-shadow:0 0 0 2px #7fb0ea}sup.cr a[id]{scroll-margin-top:120px}.ed .src .bk{margin-left:.5em;font-size:.9em;text-decoration:none;white-space:nowrap}.ed .src .bk:hover,.ed .src .bk:focus-visible{text-decoration:underline}@keyframes qflash{0%{background:#9cc4f2}100%{background:#dbeafe}}@media(prefers-reduced-motion:reduce){.ed .src li:target{animation:none}}'
+CSS = CSS.replace('</style>', CRCSS + '</style>', 1)
 CSS = CSS.replace('</style>', SHARE_CSS % ('mut', 'soft', 'ac') + '</style>', 1)
 
 def meta_trunc(t, n=157):
