@@ -116,3 +116,6 @@ print('IW pages',len(urls))
 import subprocess,sys
 subprocess.check_call([sys.executable,'../tools/articles.py',OUT])
 subprocess.check_call([sys.executable,'../tools/search.py',OUT])
+
+# Curated versioned portraits, after editorial pages and the local search index.
+subprocess.check_call([sys.executable,'../tools/portraits.py','iw',OUT])
