@@ -9,6 +9,8 @@ Wir speichern Ihre Datenschutzauswahl im lokalen Speicher Ihres Browsers (Eintra
 
 Diese Speicherung dient ausschließlich dazu, Ihre ausdrücklich gewählte Datenschutzeinstellung zu beachten. Rechtsgrundlagen: § 25 Abs. 2 Nr. 2 TDDDG und Art. 6 Abs. 1 lit. f DSGVO. Keine nutzerübergreifende Kennung und kein Tracking-Profil. Sie können den Eintrag jederzeit in den Website-Daten Ihres Browsers löschen.
 
+Sitzungsmarke für den Hinweisdialog: Damit der Hinweis auf die kostenlose Tagesausgabe (PDF) höchstens einmal pro Browsersitzung erscheint, legt die Seite eine Marke im Sitzungsspeicher ab (Eintrag **iw-exit-report**, kein Cookie). Sie wird nicht übertragen und beim Schließen des Tabs automatisch gelöscht. Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG.
+
 ## Statistik: derzeit aus
 
 Es ist noch kein Statistikdienst aktiviert. Es werden keine Analytics-Cookies und keine Analytics-Anfragen gesendet. Die vorbereitete Statistikoption ist deshalb nicht auswählbar. Vor einer Aktivierung werden Anbieter, Datenarten, Zwecke, Speicherdauer und mögliche Übermittlungen hier und in der Datenschutzerklärung konkret benannt. Optionale Statistik erfordert eine eigene freiwillige Einwilligung.

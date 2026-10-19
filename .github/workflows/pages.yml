@@ -29,6 +29,8 @@ jobs:
           touch ../data/.keep
       - name: Author page (Philipp Paulik)
         run: python3 authorpage/authorpage.py iw site/out --assets authorpage/assets
+      - name: Exit hint (Tagesausgabe)
+        run: python3 tools/exit_intent.py site/out
       - name: Persist archives
         run: |
           git config user.name "site-bot"; git config user.email "bot@users.noreply.github.com"
