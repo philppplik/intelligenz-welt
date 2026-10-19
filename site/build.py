@@ -150,3 +150,5 @@ for _p in ['/analysen/']+['/artikel/%s/'%x for x in ('kimi-k25-agentic-swarm-rev
 
 # Expanded About page (replaces the short /ueber-uns/ body); keep after monetization so the final shell is reused.
 subprocess.check_call([sys.executable,'../tools/about.py',OUT])
+
+subprocess.check_call([sys.executable,'../tools/share_iconify.py',OUT])
