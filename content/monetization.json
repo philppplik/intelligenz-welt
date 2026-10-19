@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "consentRevision": "2026-10-ga4-basic-2",
+  "consentRevision": "2026-10-ga4-live-3",
   "analytics": {
-    "enabled": false,
+    "enabled": true,
     "provider": "ga4",
     "measurementId": "G-E1XCJME97G",
-    "activationApproved": false,
-    "privacyReviewed": false,
+    "activationApproved": true,
+    "privacyReviewed": true,
     "eventRetentionMonths": 2,
     "cookieLifetimeDays": 180,
     "resetRetentionOnActivity": false
