@@ -159,3 +159,6 @@ subprocess.check_call([sys.executable,'../tools/share_iconify.py',OUT])
 
 # Static in-article daily-report CTA, after all article renderers and consent passes.
 subprocess.check_call([sys.executable,'../tools/report_breaker.py',OUT])
+
+# KI-Pulse ticker under the header (build-time data, local icons, no runtime requests).
+subprocess.check_call([sys.executable,'../tools/ticker.py',OUT])
