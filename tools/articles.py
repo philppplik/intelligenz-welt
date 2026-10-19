@@ -362,7 +362,8 @@ def patch_site(out, arts):
 
 def main():
     out = sys.argv[1]
-    now = datetime.datetime.now().astimezone()
+    from zoneinfo import ZoneInfo
+    now = datetime.datetime.now(ZoneInfo('Europe/Berlin'))
     reserved = set(os.listdir(os.path.join(out, 'artikel'))) if os.path.isdir(os.path.join(out, 'artikel')) else set()
     arts = load(now, {r for r in reserved if not os.path.exists(os.path.join(ROOT, 'content/articles', r + '.json'))})
     if errors:
@@ -396,11 +397,14 @@ def main():
     patch_feed(out, arts); patch_site(out, arts)
     branding(out); patch_home(out, arts); og_fallback(out)
     ok = ireport.build(arts, now, out, ROOT, BASE)
+    from daily_archive import sync, archive_html
+    archive_dates = sync(ROOT, os.path.join(out,'berichte'), 'intelligenz-welt-tagesausgabe.pdf', 'intelligenz-welt-tagesausgabe-', now, archive_today=ok)
     stamp = now.strftime('%d.%m.%Y, %H:%M') + ' Uhr'
     hh = head_for(head, 'Tagesausgabe als PDF | Intelligenz Welt', 'Tägliche Ausgabe als PDF: Meldung des Tages, neueste Artikel, KI-Pulse und Impressum. Kostenlos, druckfreundlich.', BASE + '/berichte/', 'website')
     b = ('<article class="art ed"><h1>Tagesausgabe als PDF</h1><p>Die Tagesausgabe fasst die Meldung des Tages, die neuesten Artikel, aktuelle Schlagzeilen (KI-Pulse) und das Impressum mit Redaktionsschluss zusammen. Hell, druckfreundlich, ohne Tracking.</p>'
          '<p><a href="/berichte/intelligenz-welt-tagesausgabe.pdf" download style="display:inline-block;background:var(--ac);color:#fff;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600">PDF herunterladen</a> &nbsp; <a href="/berichte/tagesausgabe.html">Druckansicht im Browser</a></p>'
          '<p>Stand der aktuellen Ausgabe: %s. Die Ausgabe wird automatisch erstellt; Beiträge entstehen mit KI-Unterstützung und werden redaktionell geprüft (<a href="/transparenz/">so arbeiten wir</a>). Schlagzeilen stammen aus öffentlichen Feeds, es werden nur Überschriften mit Quelle gezeigt.</p></article>') % stamp
+    b = b.replace('</article>', archive_html(archive_dates,'intelligenz-welt-tagesausgabe-')+'</article>')
     open(os.path.join(out, 'berichte', 'index.html'), 'w', encoding='utf-8').write(hh + b + foot)
     if 'berichte' not in LEGAL:
         LEGAL.append('berichte'); patch_sitemaps(out, arts, sections, now)
