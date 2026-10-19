@@ -6,7 +6,13 @@ Philipp Paulik, Mozartstraße 1, 53819 Neunkirchen-Seelscheid, E-Mail: philipp.l
 
 ## Kurzfassung
 
-Diese Website setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und bindet keine externen Schriftarten oder Social-Media-Plugins ein. Die Teilen-Schaltflächen in den Artikeln sind reine Links und übertragen keine Daten an die genannten Dienste, solange Sie sie nicht anklicken. Es gibt kein Kontaktformular und keine Registrierung.
+Diese Website nutzt derzeit keine Analyse- oder Werbedienste und bindet keine externen Schriftarten oder Social-Media-Plugins ein. Ihre Datenschutzauswahl wird ausschließlich im lokalen Speicher Ihres Browsers gespeichert, nicht als Tracking-Cookie. Alle optionalen Dienste sind ausgeschaltet. Die Teilen-Schaltflächen in den Artikeln sind reine Links und übertragen keine Daten an die genannten Dienste, solange Sie sie nicht anklicken. Es gibt kein Kontaktformular und keine Registrierung.
+
+## Datenschutzauswahl und optionale Dienste
+
+Die Datenschutzeinstellungen im Footer lassen sich jederzeit öffnen. Ihre Auswahl wird unter **iw-consent-v1** mit Kategorien, Zeitpunkt und Hinweisversion bis zu 180 Tage lokal im Browser gespeichert. Zweck ist ausschließlich die Beachtung Ihrer Auswahl, nicht die Reichweitenmessung. Rechtsgrundlagen sind § 25 Abs. 2 Nr. 2 TDDDG und Art. 6 Abs. 1 lit. f DSGVO. Bei gesperrtem Speicher gilt die Auswahl nur für den aktuellen Seitenaufruf. Details: [Cookies & Einstellungen](/cookies/).
+
+Statistik und externe Werbung werden erst nach gesonderter Einrichtung, ergänzten Datenschutzhinweisen und Ihrer freiwilligen Einwilligung aktiviert (Art. 6 Abs. 1 lit. a DSGVO; soweit erforderlich § 25 Abs. 1 TDDDG). Ein Widerruf ist jederzeit in den Datenschutzeinstellungen möglich und wirkt für die Zukunft. Derzeit sind Google Analytics, Google AdSense und Affiliate-Netzwerke nicht eingebunden. Es werden weder Google-Tags noch ein Tag Manager vorgeladen.
 
 ## Hosting über GitHub Pages
 

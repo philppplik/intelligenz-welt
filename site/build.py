@@ -119,3 +119,6 @@ subprocess.check_call([sys.executable,'../tools/search.py',OUT])
 
 # Curated versioned portraits, after editorial pages and the local search index.
 subprocess.check_call([sys.executable,'../tools/portraits.py','iw',OUT])
+
+# Final isolated pass: advertising, consent and activation gates (no third-party code by default).
+subprocess.check_call([sys.executable,'../tools/monetization.py',OUT])
