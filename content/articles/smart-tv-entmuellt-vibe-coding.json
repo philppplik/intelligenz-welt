@@ -1,0 +1,131 @@
+{
+  "slug": "smart-tv-entmuellt-vibe-coding",
+  "lang": "de",
+  "section": "trends",
+  "type": "news",
+  "title": "Vibe-Coding im Wohnzimmer: Smart TVs werden wieder dumm",
+  "dek": "Werbung weg, Tracking aus, Launcher neu: Mit KI-Agenten entmüllen gerade Tausende ihre Fernseher. Zwei GitHub-Projekte machen den „Dumb TV“ zum Wochenendprojekt.",
+  "published": "2026-10-20T08:49:00+02:00",
+  "modified": "2026-10-20T08:49:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Smart TV",
+    "Vibe Coding",
+    "Claude Code",
+    "Privatsphäre",
+    "GitHub"
+  ],
+  "key_takeaways": [
+    "Entwickler teilen KI-gestützte Anleitungen, um Smart TVs von Werbung, Tracking und Bloatware zu befreien.",
+    "Das Projekt cleanyourtv kam innerhalb von zwei Tagen auf Tausende Nachmacher und steht bei über 7.000 GitHub-Sternen.",
+    "dumbtv verspricht: deine Apps, deine HDMI-Eingänge, sonst nichts, getestet auf Geräten von Sony, TCL, Philips, Hisense, Xiaomi und Shield.",
+    "Hintergrund ist der Frust über Werbung und ACR-Tracking, das per Bildschirm- und Audio-Fingerprinting mitschaut, was läuft.",
+    "Die Eingriffe brauchen laut den Projekten kein Root und lassen sich rückgängig machen, bleiben aber Bastellösungen in Arbeit."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein Wohnzimmer-Fernseher, von dem sich Aufkleber-artige Werbe-Icons wie Herbstblätter lösen und abfallen, darunter erscheint eine aufgeräumte, minimale Startseite",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Der neueste Vibe-Coding-Trend spielt im Wohnzimmer: Menschen lassen KI-Agenten ihre Smart TVs „dumm“ machen. Raus mit Werbung, Tracking und aufgeblähten Oberflächen, rein mit einem schlichten Startbildschirm, der nur die eigenen Apps zeigt. Zwei GitHub-Projekte treffen damit offenbar einen Nerv."
+    },
+    {
+      "t": "h2",
+      "x": "Wie es anfing"
+    },
+    {
+      "t": "p",
+      "x": "Los ging es mit einem Nachmittag bei den Eltern: Der Entwickler Gathin T. hatte genug von der gesponserten Werbung, die auf deren Fernseher noch vor Netflix erschien. Er gab Claude Code die Modellnummer, der Agent fand das Gerät im WLAN, entfernte 25 Xiaomi-Pakete und schrieb einen neuen Launcher, der aussieht wie Apple TV. Aus dem Nachmittag wurde das Projekt [cleanyourtv](https://github.com/Gathin23/cleanyourtv). Innerhalb von zwei Tagen hätten Tausende dasselbe mit ihren Geräten gemacht, schreibt er: Xiaomi, TCL, Sony, Fire TV, LG, sogar Beamer. Das Repository steht inzwischen bei über 7.000 GitHub-Sternen."
+    },
+    {
+      "t": "h2",
+      "x": "dumbtv: Bezahlt ist bezahlt"
+    },
+    {
+      "t": "p",
+      "x": "Das zweite Projekt, [dumbtv](https://github.com/humblemuzzu/dumbtv) von Muzzammil Yasin Sabuwala, formuliert die Mission so: Dein Fernseher soll das tun, wofür du bezahlt hast, deine Apps, deine HDMI-Eingänge, und sonst nichts. Keine Werbung vom Gerät selbst, kein Mitschauen, kein unbestelltes Update. Getestet wurde die Lösung nach Angaben des Autors komplett auf einem Fire-TV-Edition-Gerät sowie auf Android- und Google-TV-Geräten von Sony, TCL, Philips, Hisense, Xiaomi und Shield. Gebaut hat er sie selbst mit KI: einer Mischung aus DeepSeek V4.1 Flash, Claude Opus 5.5 und Claude Sonnet 5.5. Der empfohlene Weg: Zeig deinem bevorzugten Agenten einfach das Repository."
+    },
+    {
+      "t": "h2",
+      "x": "Warum gerade jetzt"
+    },
+    {
+      "t": "p",
+      "x": "Das Hacken von Unterhaltungselektronik ist nicht neu. Neu ist, dass KI-Agenten die Einstiegshürde fast auf null senken: Kein ADB-Handbuch, keine Paketlisten, ein Prompt genügt. Gleichzeitig ist der Frust groß. Moderne Smart TVs kommen mit Automatic Content Recognition, kurz ACR: Die Technik identifiziert per Screenshots, Audioclips oder anderen Fingerabdrücken, was auf dem Schirm läuft, und speist die Daten in Werbesysteme. Die TV-Hersteller finanzieren so einen Teil ihrer Geräte quer, und genau dagegen richtet sich der Unmut."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Industrie daran fürchtet"
+    },
+    {
+      "t": "p",
+      "x": "Werbenetzwerke und Hersteller leben von diesen Daten: Sehgewohnheiten werden an Advertiser verkauft oder für personalisierte Werbung auf der eigenen Oberfläche genutzt. Würden die Dumb-TV-Hacks vom Bastler-Thema zum Massenphänomen, griffen sie direkt in dieses Geschäftsmodell ein, wie [TechCrunch](https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/) einordnet. So weit ist es noch nicht, aber die Geschwindigkeit, mit der cleanyourtv Tausende Nachmacher fand, zeigt das Potenzial."
+    },
+    {
+      "t": "h2",
+      "x": "Die ehrliche Kehrseite"
+    },
+    {
+      "t": "p",
+      "x": "Beide Projekte sind Work in Progress; Nutzer testen gerade auf verschiedenen Plattformen und liefern Fixes nach. Positiv: Die Eingriffe brauchen den Angaben zufolge keinen Root-Zugriff und lassen sich rückgängig machen. Trotzdem gilt: Wer Systempakete von einem Fernseher entfernt, handelt auf eigene Gefahr, Garantiefragen und künftige Updates sind nicht absehbar. Und wer es komplett selbst will, braucht keines der Repos: Der eigene Agent, die Modellnummer des TVs und etwas Geduld reichen im Prinzip aus."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Vibe-Coding verlässt den Bildschirm: Agenten werden zum Werkzeug für die Geräte drumherum, von der Konsole bis zum Fernseher.",
+        "Weniger radikal geht es auch: ACR lässt sich bei vielen TVs in den Einstellungen deaktivieren, ganz ohne Bastelei.",
+        "Wer ein Repo probiert: vorher prüfen, ob das eigene Modell als getestet gilt, und die Anleitung komplett lesen, nicht nur den Prompt."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was bedeutet „Smart TV dumm machen“?",
+      "a": "Werbeeinblendungen, Tracking-Funktionen und vorinstallierte Bloatware werden entfernt und die Oberfläche durch einen schlichten Launcher ersetzt, der nur die eigenen Apps und Eingänge zeigt. Der Fernseher bleibt nutzbar wie gewohnt, nur ohne die Zusätze des Herstellers."
+    },
+    {
+      "q": "Brauche ich dafür Programmierkenntnisse?",
+      "a": "Das ist der Punkt des Trends: Nein. Ein KI-Agent wie Claude Code bekommt die Modellnummer des Fernsehers und führt die Schritte im WLAN selbst aus. Die Projekte cleanyourtv und dumbtv liefern dafür fertige Anleitungen und Repositories."
+    },
+    {
+      "q": "Ist das legal und sicher?",
+      "a": "Die Projekte kommen ohne Root-Zugriff aus und lassen sich nach Angaben der Autoren rückgängig machen. Trotzdem sind es Bastellösungen in Arbeit: Wer Systempakete entfernt, tut das auf eigene Gefahr, etwa mit Blick auf Garantie und künftige Updates. Die mildere Alternative: ACR in den TV-Einstellungen abschalten."
+    },
+    {
+      "q": "Was ist ACR?",
+      "a": "Automatic Content Recognition: Moderne Smart TVs erkennen per Screenshots, Audioclips oder anderen digitalen Fingerabdrücken, was gerade läuft. Die Daten fließen in Werbesysteme und Statistiken der Hersteller und Werbenetzwerke."
+    }
+  ],
+  "sources": [
+    {
+      "title": "People are using AI to make their smart TVs dumb again",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "cleanyourtv: Debloat any Android or Google TV over Wi-Fi (Repository)",
+      "publisher": "GitHub (Gathin23)",
+      "url": "https://github.com/Gathin23/cleanyourtv",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "dumbtv (Repository)",
+      "publisher": "GitHub (humblemuzzu)",
+      "url": "https://github.com/humblemuzzu/dumbtv",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "related": [
+    "odysseus-workspace-cookbook-persona-test",
+    "pewdiepie-lokale-ki-kein-zehn-gpu-pflichtprogramm"
+  ]
+}

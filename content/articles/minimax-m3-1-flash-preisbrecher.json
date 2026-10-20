@@ -1,0 +1,132 @@
+{
+  "slug": "minimax-m3-1-flash-preisbrecher",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "MiniMax M3.1 Flash: Chinas nächster Preisbrecher",
+  "dek": "Platz 4 von 173 im Intelligence Index von Artificial Analysis für 0,22 Dollar pro Aufgabe: MiniMax M3.1 Flash drückt die KI-Preise weiter Richtung Keller. Die Gewichte kommen am 23. Oktober.",
+  "published": "2026-10-20T08:47:00+02:00",
+  "modified": "2026-10-20T08:47:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "MiniMax",
+    "M3.1 Flash",
+    "Open Weights",
+    "Preise",
+    "Reasoning"
+  ],
+  "key_takeaways": [
+    "MiniMax M3.1 Flash erreicht 43 Punkte im Artificial Analysis Intelligence Index, Platz 4 von 173 Modellen, bei 0,22 Dollar Kosten pro Aufgabe.",
+    "Die API kostet 0,15 Dollar pro Million Input- und 0,60 Dollar pro Million Output-Tokens, gecachte Eingaben 0,015 Dollar.",
+    "Das anonym getestete Modell „Space Bunny“ war eine frühe Version von M3.1 Flash und verarbeitete über 200 Billionen Tokens.",
+    "Schwachpunkt: eine Halluzinationsrate von 93 Prozent, weil das Modell fast jede Frage beantwortet statt Unsicherheit zuzugeben.",
+    "Die Modellgewichte sollen am 23. Oktober als Open Weights erscheinen."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein kleiner, flinker Roboter-Hase aus leuchtenden Linien rast einen abwärts zeigenden Preisgraphen entlang, Preisschilder purzeln hinter ihm her",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles MiniMax-Material.",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** MiniMax hat M3.1 Flash veröffentlicht, ein Reasoning-Modell, das bei Artificial Analysis auf Platz 4 von 173 Modellen landet und dabei weniger kostet als fast alles auf diesem Niveau. Gleichzeitig löste MiniMax ein kleines Rätsel auf: Das anonym angetretene Modell „Space Bunny“, das über 200 Billionen Tokens verarbeitete, war eine frühe Version von M3.1 Flash."
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen im Überblick"
+    },
+    {
+      "t": "p",
+      "x": "Auf der [Modellseite von Artificial Analysis](https://artificialanalysis.ai/models/minimax-m3-1-flash) steht M3.1 Flash bei 43 Punkten im Intelligence Index, Platz 4 von 173, und bei 0,22 Dollar Kosten pro Aufgabe im Index. Die API-Preise liegen bei 0,15 Dollar pro Million Input- und 0,60 Dollar pro Million Output-Tokens, gecachte Eingaben kosten 0,015 Dollar. Das Kontextfenster fasst eine Million Tokens, Eingaben sind Text und Bild, ausgegeben wird Text. Ein Schwächepunkt direkt aus der Messung: Mit 116 Tokens pro Sekunde ist das Modell langsamer als der Durchschnitt, und es produziert ungewöhnlich viele Output-Tokens."
+    },
+    {
+      "t": "p",
+      "x": "In Einzeldisziplinen zeigt das Modell laut [The Decoder](https://the-decoder.de/minimax-m3-1-flash-ist-chinas-neuestes-modell-das-ki-preise-richtung-keller-drueckt/) Stärken beim komplexen Reasoning: In Humanity's Last Exam kommt es auf 48 Prozent, vor DeepSeek V4.1 Flash (43) und GLM-5.3-Flash. Bei der Faktentreue im AA-Omniscience-Test beantwortet es 56 Prozent der Fragen korrekt, deutlich vor GLM-5.3-Flash (28) und DeepSeek (43). Im Physik-Benchmark CritPt liegt es mit 22 Prozent knapp hinter DeepSeek (24). MiniMax selbst nennt im [Ankündigungs-Blog](https://www.minimax.io/blog/minimax-m31f) weitere Werte: 73,7 Prozent auf DeepSWE v1.1, 76,2 auf BankerToolBench, 61,7 Punkte auf OSWorld V2 und 82 Prozent auf CyberGym. Das sind Eigenmessungen des Anbieters."
+    },
+    {
+      "t": "h2",
+      "x": "Der Preisdruck aus China"
+    },
+    {
+      "t": "p",
+      "x": "Der direkte Vergleich mit dem erst Tage alten DeepSeek V4.1 Flash 1017 zeigt, wohin die Reise geht: DeepSeek liegt im Intelligence Index knapp vorn (45 gegen 43), doch pro Aufgabe ist MiniMax mit 0,22 gegen 0,26 Dollar etwas günstiger, weil es laut The Decoder weniger Output-Tokens braucht. MiniMax gibt zudem an, M3.1 Flash sei fast dreimal so schnell wie der Vorgänger M3 bei rund 70 Prozent niedrigeren Nutzungskosten. Nach dem Preis-Leistungs-Sprung von DeepSeek ist das der zweite Doppelschlag aus China binnen weniger Wochen: Die Kosten pro gelöster Aufgabe fallen weiter, während die Spitzenwerte steigen."
+    },
+    {
+      "t": "h2",
+      "x": "Der Haken: 93 Prozent Halluzination"
+    },
+    {
+      "t": "p",
+      "x": "Die Kehrseite der Antwortfreude: Die Halluzinationsrate liegt laut The Decoder bei 93 Prozent, weil M3.1 Flash versucht, nahezu jede Testfrage zu beantworten, statt bei Unsicherheit zu verweigern. Für Agenten-Workflows, in denen eine falsche, aber selbstbewusste Antwort teuer werden kann, ist das ein echtes Risiko. Wer das Modell einsetzt, sollte Antworten prüfbar machen, etwa durch Quellenangaben oder Gegenproben mit einem zweiten Modell."
+    },
+    {
+      "t": "h2",
+      "x": "Open Weights am 23. Oktober"
+    },
+    {
+      "t": "p",
+      "x": "MiniMax hat angekündigt, die Gewichte von M3.1 Flash am 23. Oktober als Open Weights zu veröffentlichen. Bis dahin läuft das Modell über die API auf platform.minimax.io und in der Desktop-App MiniMax Code. Mit den Gewichten dürfte M3.1 Flash auch für lokale und selbst gehostete Agenten-Setups interessant werden, genau das Feld, in dem DeepSeek gerade stark ist."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Preis pro gelöster Aufgabe vergleichen, nicht Preis pro Token: M3.1 Flash liegt bei 0,22 Dollar pro Index-Aufgabe.",
+        "Für Fakten-kritische Arbeit die hohe Halluzinationsrate ernst nehmen und Prüfschritte einbauen.",
+        "Wer Open-Weight-Agenten baut: Den 23. Oktober vormerken, dann kommen die Gewichte.",
+        "Eigenmessungen von MiniMax (DeepSWE, CyberGym) anders gewichten als die unabhängigen Artificial-Analysis-Werte."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie gut ist MiniMax M3.1 Flash wirklich?",
+      "a": "Bei Artificial Analysis steht das Modell bei 43 Punkten im Intelligence Index, Platz 4 von 173, bei Kosten von 0,22 Dollar pro Aufgabe. In Humanity's Last Exam liegt es laut The Decoder vor DeepSeek V4.1 Flash und GLM-5.3-Flash, in anderen Disziplinen knapp dahinter."
+    },
+    {
+      "q": "Was kostet die Nutzung?",
+      "a": "Die API kostet 0,15 Dollar pro Million Input- und 0,60 Dollar pro Million Output-Tokens, gecachte Eingaben 0,015 Dollar pro Million. Umgerechnet sind das laut Artificial Analysis rund 0,22 Dollar pro Aufgabe im Intelligence Index."
+    },
+    {
+      "q": "Was hat es mit „Space Bunny“ auf sich?",
+      "a": "Space Bunny war ein anonym getestetes Modell, das mehr als 200 Billionen Tokens verarbeitete. MiniMax hat jetzt bestätigt, dass es sich um eine frühe Version von M3.1 Flash handelte."
+    },
+    {
+      "q": "Wann kommt M3.1 Flash als Open Weights?",
+      "a": "MiniMax hat die Veröffentlichung der Gewichte für den 23. Oktober 2026 angekündigt. Bis dahin ist das Modell über die API und die Desktop-App MiniMax Code nutzbar."
+    },
+    {
+      "q": "Was ist der größte Schwachpunkt?",
+      "a": "Die Halluzinationsrate von 93 Prozent: Das Modell beantwortet fast alles, auch wenn es unsicher ist. Für produktive Agenten heißt das: Antworten müssen prüfbar sein, bevor sie weiterverwendet werden."
+    }
+  ],
+  "sources": [
+    {
+      "title": "MiniMax M3.1 Flash: Redefining Agent Performance and Cost",
+      "publisher": "MiniMax Research",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "MiniMax-M3.1-Flash: Intelligence, Performance & Price Analysis",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "MiniMax M3.1 Flash ist Chinas neuestes Modell, das KI-Preise Richtung Keller drückt",
+      "publisher": "THE DECODER",
+      "url": "https://the-decoder.de/minimax-m3-1-flash-ist-chinas-neuestes-modell-das-ki-preise-richtung-keller-drueckt/",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "related": [
+    "deepseek-v4-1-flash-coding-agenten",
+    "muse-spark-open-meta-816b-open-weights"
+  ]
+}

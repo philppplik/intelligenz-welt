@@ -1,0 +1,123 @@
+{
+  "slug": "amazon-torchneuron-trainium-pytorch",
+  "lang": "de",
+  "section": "tools",
+  "type": "news",
+  "title": "TorchNeuron: Amazon sägt an Nvidias Burggraben",
+  "dek": "Mit TorchNeuron laufen PyTorch-Apps nach Amazon-Angaben per Ein-Zeilen-Änderung auf den Trainium-Chips. Gleichzeitig will AWS PyTorch selbst hardware-offener machen und den CUDA-Lock-in knacken.",
+  "published": "2026-10-20T08:48:00+02:00",
+  "modified": "2026-10-20T08:48:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "AWS",
+    "Trainium",
+    "TorchNeuron",
+    "PyTorch",
+    "Nvidia"
+  ],
+  "key_takeaways": [
+    "AWS hat TorchNeuron veröffentlicht: ein Open-Source-Backend (Apache 2.0), das PyTorch-Code nativ auf Amazons Trainium-Chips bringt.",
+    "Der Umstieg soll per .to('neuron') gelingen, ohne Rewrite; unterstützt werden Trainium2 und Trainium3, eager, torch.compile und eigene Kernel.",
+    "Amazon will Änderungen direkt in PyTorch einbringen, um das Framework von chip-spezifischem Code zu lösen.",
+    "Laut Amazon sind etwa 85 Prozent aller KI-Anwendungen in PyTorch geschrieben; Nvidias CUDA ist darin tief verwurzelt.",
+    "Beispiel Deepgram: 70 Prozent mehr Audio pro Dollar nach dem Wechsel auf Trainium, laut AWS."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine Brücke aus leuchtendem Code verbindet zwei Inseln, links eine grüne GPU-Festung, rechts ein orange glühender Chip-Berg, eine einzelne Codezeile spannt sich wie ein Seil dazwischen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles Material von Amazon oder Nvidia.",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Amazon Web Services hat TorchNeuron veröffentlicht, ein natives PyTorch-Backend für die eigenen Trainium-Chips. PyTorch-Anwendungen sollen mit einer einzigen Konfigurationszeile auf Trainium laufen. Der eigentliche Angriff gilt aber Nvidias Software-Vorteil: Amazon will PyTorch selbst von chip-spezifischem Code befreien."
+    },
+    {
+      "t": "h2",
+      "x": "Eine Zeile statt Rewrite"
+    },
+    {
+      "t": "p",
+      "x": "Laut dem [PyTorch-Blog](https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/) genügt ein .to('neuron'), um eine Trainings-Schleife auf Trainium zu starten. Code, der gegen die geräteunabhängige torch.accelerator-API geschrieben ist, läuft unverändert; für kompilierte Modelle wird einmal torch.compiler.set_default_backend(\"neuron\") gesetzt. TorchNeuron unterstützt eager execution inklusive eines adaptiven Eager-Modus, torch.compile, die Neuron Kernel Interface für eigene Kernel und den Profiler Neuron Explorer auf Trainium2 und Trainium3. Der Code erscheint als Open Source unter Apache 2.0 auf github.com/aws-neuron/torch-neuronx, die öffentliche Beta startete passend zur PyTorch Conference am 20. Oktober."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das Nvidia trifft"
+    },
+    {
+      "t": "p",
+      "x": "Amazon nennt eine Zahl, die den Hebel erklärt: Etwa 85 Prozent aller KI-Anwendungen seien in PyTorch geschrieben. Nvidia hat über Jahre dafür gesorgt, dass CUDA dieses Ökosystem nahtlos bedient, und sitzt damit faktisch als Standard-Hardware im Framework. Genau da setzt Amazon an: Das Unternehmen kündigt an, Änderungen direkt in PyTorch einzubringen, um Code zu entfernen, der das Framework an bestimmte Chips bindet, mit dem Ziel, PyTorch für die ganze Entwickler-Community hardware-unabhängiger zu machen, nicht nur für Trainium-Nutzer. „The real story is removing the lock-in that kept developers from having a real choice at all“, sagte Colin Brace, VP of Technology Software bei AWS Annapurna Labs, gegenüber [TechCrunch](https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/)."
+    },
+    {
+      "t": "h2",
+      "x": "Der Cloud-Hebel dahinter"
+    },
+    {
+      "t": "p",
+      "x": "Natürlich ist das nicht reine Charity. Wer per Ein-Zeiler auf Trainium wechselt, landet mitten in Amazons Cloud. AWS argumentiert mit dem Gesamtpaket: Derselbe Chip-Typ übernimmt Training und Inference, und die übrige Infrastruktur vom Prototyp bis zur Produktion sei schon da, ein Seitenhieb auf Neoclouds wie CoreWeave, Nebius und Firmus, die eng an Nvidia hängen. Der Preis pro Token sei nicht immer der günstigste, sagt Brace, aber die Kosten pro Workload stimmten. Als Beleg nennt AWS den Sprach-KI-Anbieter Deepgram: Der verarbeite seit dem Wechsel auf Trainium 70 Prozent mehr Audio pro Dollar bei Produktionsqualität. Auch [Hugging Face](https://huggingface.co/blog/hf-torchneuron) hat an der Integration mitgearbeitet und beschreibt in einem eigenen Beitrag, wie HF-Modelle damit auf Trainium laufen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung: Nicht der erste Angriff, aber der gezielteste"
+    },
+    {
+      "t": "p",
+      "x": "PyTorch-Apps lassen sich schon länger mit kleinen Änderungen auf AMD-GPUs oder Apple-Chips portieren. Neu ist die Kombination: ein nativer Backend-Weg, ein eigener Chip mit Trainings- und Inference-Ambition, eine fertige Cloud drumherum und der Plan, PyTorch selbst strukturell von Nvidia zu lösen. Ob daraus echte Wahlfreiheit wird oder nur mehr Konfigurationsarbeit, ist offen, wie TechCrunch treffend anmerkt: Der Sinn von PyTorch ist es, genau solche Hardware-Details zu verstecken. Die Antwort entscheidet sich daran, wie viele der angekündigten Upstream-Änderungen das PyTorch-Projekt tatsächlich annimmt."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Neuen PyTorch-Code gegen torch.accelerator schreiben, dann bleibt der Chip-Wechsel eine Konfigurationsfrage.",
+        "Wer größere Trainings- oder Inference-Workloads auf AWS fährt: Die TorchNeuron-Beta ist seit dem 20. Oktober öffentlich und einen Test wert.",
+        "Lock-in-Kosten nicht erst bei der Rechnung prüfen, sondern schon beim Framework: Wie viele Zeilen trennen dich vom nächsten Anbieter?"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist TorchNeuron?",
+      "a": "Ein Open-Source-Backend (Apache 2.0) von AWS, das PyTorch-Code nativ auf Amazons Trainium-Chips ausführt, inklusive eager execution, torch.compile, eigenen Kerneln und Profiling. Es unterstützt Trainium2 und Trainium3."
+    },
+    {
+      "q": "Muss ich meinen PyTorch-Code umschreiben?",
+      "a": "Nach Amazon-Angaben nicht: Mit .to('neuron') beziehungsweise einem einmalig gesetzten Neuron-Backend für torch.compile sollen vorhandene Modelle laufen. Code gegen die torch.accelerator-API läuft unverändert."
+    },
+    {
+      "q": "Warum ist das eine Attacke auf Nvidia?",
+      "a": "Weil Nvidias Vorteil weniger der Chip als die Software ist: CUDA ist tief in PyTorch verwurzelt, in dem laut Amazon etwa 85 Prozent der KI-Anwendungen geschrieben sind. Amazon will PyTorch per Upstream-Beiträgen hardware-offener machen."
+    },
+    {
+      "q": "Woher kommt der Code?",
+      "a": "TorchNeuron wird als Open Source unter Apache 2.0 auf GitHub unter aws-neuron/torch-neuronx veröffentlicht, die öffentliche Beta startete am 20. Oktober 2026 zur PyTorch Conference North America."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing TorchNeuron: Native PyTorch backend for AWS Trainium",
+      "publisher": "PyTorch Blog",
+      "url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "Amazon is taking its biggest shot at Nvidia yet with new TorchNeuron dev tool",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
+      "publisher": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/hf-torchneuron",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "related": [
+    "rtx-spark-notebook-lokale-ki-test",
+    "sipeed-maixstation-axera-ax8860p-lokale-ki-box"
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "slug": "microsoft-guardian-agents-insider-risk",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Microsoft erklärt KI-Agenten zu Insider-Bedrohungen",
+  "dek": "„Frontier-Modelle kann man nicht trauen“: Mit Guardian Agents baut Microsoft eine Aufsicht über die eigenen KI-Agenten, unabhängig vom Modell-Anbieter. Dahinter steckt ein Prinzipwechsel.",
+  "published": "2026-10-20T08:46:00+02:00",
+  "modified": "2026-10-20T08:46:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Microsoft",
+    "Guardian Agents",
+    "Sicherheit",
+    "Agenten",
+    "Enterprise"
+  ],
+  "key_takeaways": [
+    "Microsoft hat Guardian Agents vorgestellt, eine Aufsichts-Schicht für KI-Agenten im Unternehmen, als Teil von Project Perception.",
+    "Die Kernforderung von Satya Nadella: Die Kontrolle über KI-Agenten darf nicht beim Modell-Anbieter liegen, „supply of intelligence“ und „authority over it“ gehören getrennt.",
+    "Microsofts Sicherheitschefin Hayete Gallot sagt wörtlich, Frontier-Modellen sei nicht zu trauen, weil sie unberechenbar sind, nicht weil sie böswillig wären.",
+    "Defender erkennt jetzt 60 lokale Agenten-Typen, darunter Claude Code, OpenAI Codex und GitHub Copilot; Zugriffe werden dynamisch begrenzt, riskante Schritte brauchen menschliche Freigabe.",
+    "Der Ansatz liegt im Branchentrend: Über 100 Unternehmen haben sich Nvidias Open Agent Safety Platform angeschlossen."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine Büroetage von oben, freundliche Roboter-Mitarbeiter gehen durch Gänge, jeder wird von einer durchsichtigen Wächter-Drohne mit Scheinwerfer begleitet",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Kein offizielles Microsoft-Material.",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Microsoft hat am Montag neue Sicherheitsfunktionen für Unternehmen vorgestellt, die KI-Agenten überwachen wie risikobehaftete Mitarbeiter. Die Botschaft dahinter ist bemerkenswert: Vertraue keinem Modell, egal von wem es stammt, und lagere die Kontrolle über deine Agenten niemals an den Modell-Anbieter aus."
+    },
+    {
+      "t": "h2",
+      "x": "Was Microsoft gebaut hat"
+    },
+    {
+      "t": "p",
+      "x": "Zentrum der Ankündigung sind die Guardian Agents, eine Erweiterung von Project Perception. Das im Juni gestartete Projekt war ursprünglich gegen Angreifer von außen gedacht: Ein „red team“ von Agenten attackierte, ein „blue team“ entdeckte und bewertete, ein „green team“ reparierte. Jetzt dreht Microsoft den Fokus nach innen, auf Agenten, die das Unternehmen selbst einsetzt und bezahlt. Laut [Microsofts Security Blog](https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/) erkennt Defender inzwischen 60 Typen lokaler Agenten, darunter Claude Code, OpenAI Codex und GitHub Copilot. Jeder Agent bekommt eine eigene Identität über Entra Agent ID, Zugriffe werden auf die Aufgabe zugeschnitten und laufend angepasst, bei riskanten Schritten kann das System eine menschliche Freigabe erzwingen oder den Agenten isolieren."
+    },
+    {
+      "t": "h2",
+      "x": "Nadellas Prinzip: Angebot und Hoheit trennen"
+    },
+    {
+      "t": "p",
+      "x": "Satya Nadella hatte die Richtung Anfang des Monats in seinem Blog vorgegeben: „We are deploying these complex agentic systems and models, with access to our most sensitive data and giving them the ability to take mission-critical actions on our behalf!“ Sein Fazit: „We need to separate the supply of intelligence from the authority over it.“ Im Security-Blog-Gespräch spitzt er es weiter zu: „The most trustworthy agentic system will not be the one with the model we trust most. It will be the one designed that enables us to trust the model least.“"
+    },
+    {
+      "t": "h2",
+      "x": "Unberechenbar, nicht böswillig"
+    },
+    {
+      "t": "p",
+      "x": "Noch deutlicher wurde Microsofts Sicherheitschefin Hayete Gallot, zitiert von [TechCrunch](https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/): „Unfortunately, frontier models, regardless of their origin, cannot be trusted.“ Nicht, weil die Modelle bösartig oder leicht hackbar seien, sondern weil sie unberechenbar sind. Sie wurden darauf trainiert, Aufgaben zu erledigen, nicht, organisatorische Normen und Urteilsvermögen zu befolgen. Gleichzeitig bekommen sie oft weitreichenden Zugriff auf Daten und Werkzeuge, mit denen sie ernsthaften Schaden anrichten können. Microsoft nennt das Insider-Risiko: Ein Agent kann Fehler machen, manipuliert oder kompromittiert werden, und sein Verhalten kann sich ändern, während er arbeitet."
+    },
+    {
+      "t": "h2",
+      "x": "Die Doppelrolle"
+    },
+    {
+      "t": "p",
+      "x": "Die Ankündigung hat zwei Seiten. Die überraschende: Microsoft ist eng mit OpenAI und Anthropic verbunden, in beide investiert, OpenAI ist einer der größten Cloud-Kunden, und Microsoft baut selbst Modelle. Wer pauschal Misstrauen gegen Frontier-Modelle predigt, sägt also auch am eigenen Geschäft. Die eigennützige: Microsoft will die Aufsichts-Schicht verkaufen, nicht die Modell-Anbieter. Das Argument dahinter ist trotzdem stichhaltig, wie TechCrunch anmerkt: Die Software, die Agenten überwacht, sollte von ihren Lieferanten unabhängig sein, so wie Wirtschaftsprüfer unabhängig von den geprüften Unternehmen sind."
+    },
+    {
+      "t": "h2",
+      "x": "Branchentrend: Der Agenten-Aufsichtsmarkt"
+    },
+    {
+      "t": "p",
+      "x": "Microsoft ist mit der Idee nicht allein. Das Unternehmen gehört zu den Gründungsmitgliedern von [Nvidias Open Agent Safety Platform](https://nvidianews.nvidia.com/news/open-agent-safety-platform), der sich nach Unternehmensangaben über 100 Firmen und Organisationen angeschlossen haben. Die Plattform kombiniert die Open-Source-Laufzeit OpenShell mit dem Sentry-Referenzdesign: ein Hardware-Wachhund auf BlueField-4-DPUs, der Agenten beobachtet und im Ernstfall in Millisekunden unter Quarantäne stellen kann, eine Art Notausschalter auf Chip-Ebene. Die Richtung ist klar: Agenten-Sicherheit wird ein eigener Markt, und alle großen Plattformen wollen ihn besetzen."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Behandle Agenten im Unternehmen wie neue Mitarbeiter mit weiten Berechtigungen: eigene Identität, minimale Rechte, dokumentierte Aufgabe.",
+        "Die Aufsicht über einen Agenten gehört nicht zum selben Anbieter, der das Modell liefert. Das gilt auch für kleine Setups.",
+        "Riskante Aktionen (Löschen, Zahlen, Senden) brauchen eine menschliche Freigabe-Stufe, unabhängig davon, wie vertrauenswürdig das Modell wirkt.",
+        "Behalte den Agenten-Zoo im Blick: Mitarbeiter bringen längst eigene Coding- und Büro-Agenten mit, wie früher private Apps."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was sind Guardian Agents?",
+      "a": "Eine neue Überwachungsfunktion in Microsofts Project Perception: Agenten, die andere KI-Agenten im Unternehmen beobachten, deren Rechte laufend anpassen und bei riskanten Aktionen menschliche Freigabe einfordern oder eingreifen."
+    },
+    {
+      "q": "Warum sagt Microsoft, Frontier-Modellen sei nicht zu trauen?",
+      "a": "Laut Sicherheitschefin Hayete Gallot nicht aus Bosheit oder weil sie leicht zu hacken wären, sondern weil sie unberechenbar sind: Sie wurden auf Aufgabenerfüllung trainiert, nicht auf organisatorische Normen, und bekommen oft Zugriff auf sehr sensible Systeme."
+    },
+    {
+      "q": "Was heißt „supply of intelligence“ von „authority over it“ trennen?",
+      "a": "Nadellas Kernforderung: Das Unternehmen, das die KI liefert, soll nicht zugleich bestimmen, was diese KI im eigenen Haus darf. Kontrolle, Protokollierung und Abschaltung müssen außerhalb des Modells liegen, wo das Modell sie nicht umgehen kann."
+    },
+    {
+      "q": "Gilt das nur für Konzerne?",
+      "a": "Die Produkte richten sich an Unternehmen, aber das Prinzip überträgt sich: Auch Freelancer und kleine Teams sollten Agenten nur die nötigsten Rechte geben, ihre Aktionen protokollieren und kritische Schritte freigeben lassen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Agents are your newest insiders. Security must move at their speed.",
+      "publisher": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "Microsoft says AI agents are like insider threats as 'frontier models can't be trusted'",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment",
+      "publisher": "NVIDIA Newsroom",
+      "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "related": [
+    "openai-misalignment-reports-vier-neue-faelle",
+    "taste-bench-ki-agenten-langzeit-entscheidungen"
+  ]
+}

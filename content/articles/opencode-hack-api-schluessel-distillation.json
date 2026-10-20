@@ -1,0 +1,124 @@
+{
+  "slug": "opencode-hack-api-schluessel-distillation",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "OpenCode-Hack: Gestohlene API-Keys, fremde Rechnungen",
+  "dek": "Angreifer haben API-Schlüssel von 1,4 Prozent der OpenCode-Console-Nutzer erbeutet und auf fremde Kosten Modelle abgefragt. Der Fall zeigt ein wachsendes Sicherheitsproblem der KI-Branche.",
+  "published": "2026-10-20T08:45:00+02:00",
+  "modified": "2026-10-20T08:45:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenCode",
+    "Sicherheit",
+    "API-Keys",
+    "Distillation",
+    "Coding-Tools"
+  ],
+  "key_takeaways": [
+    "OpenCode hat einen Einbruch in ein älteres System bestätigt: Betroffen sind 1,4 Prozent der Console-Nutzer, deren hinterlegte API-Schlüssel offenlagen.",
+    "Nutzer berichten von unautorisierten Abbuchungen im dreistelligen Bereich, einzelne von über 1.700 Dollar. Erstattungen laufen.",
+    "OpenCode spricht von einem Distillation-Angriff; Skeptiker halten diese Einordnung für unbewiesen.",
+    "Bei der Abwehr verweigerten Sicherheitsfilter der KI-Modelle zeitweise die Analyse des Schadcodes, erst OpenAIs Daybreak-Programm half weiter.",
+    "Nur die OpenCode Console war betroffen, nicht die Open-Source-App oder das CLI. Betroffene sollen ihre Schlüssel bei allen Anbietern ersetzen."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein dunkler Schreibtisch mit einem Terminal-Fenster, aus dem leuchtende Schlüssel-Token wie Funken abgezogen werden, Schattenfiguren im Hintergrund",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Das Open-Source-Coding-Tool OpenCode ist Opfer eines Angriffs geworden. Über ein älteres System erbeuteten Angreifer API-Schlüssel, die Nutzer in der OpenCode Console hinterlegt hatten, und fragten damit auf fremde Rechnung Modelle bei OpenAI, Anthropic und Google ab. OpenCode spricht von einem groß angelegten Distillation-Angriff."
+    },
+    {
+      "t": "h2",
+      "x": "Was passiert ist"
+    },
+    {
+      "t": "p",
+      "x": "OpenCode informierte am Samstag betroffene Nutzer per E-Mail: 1,4 Prozent der Console-Nutzer sind betroffen, konkret diejenigen, die externe Anbieter verknüpft hatten. Wer keine Mail bekam, ist laut dem Projekt nicht betroffen. Der frühestmögliche Zeitpunkt des Zugriffs war demnach der 17. Oktober 2026, 00:30 Uhr UTC. Weitere Daten seien nach jetzigem Stand nicht abgeflossen, heißt es in der Mail, aus der [BleepingComputer](https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/) zitiert. Wichtig: Nur die Console, also die Online-Plattform, war betroffen. Die Open-Source-App und das Kommandozeilen-Werkzeug nicht, denn dort liegen die Schlüssel laut Mitgründer Dax Raad gar nicht beim Projekt."
+    },
+    {
+      "t": "h2",
+      "x": "Rechnungen über Nacht"
+    },
+    {
+      "t": "p",
+      "x": "Noch in der Nacht meldeten Entwickler auf Reddit und X ausgelöste Ausgaben-Alarme bei OpenAI, Anthropic und Google. Mehrere Nutzer berichten von unautorisierten Abbuchungen im dreistelligen Bereich, einzelne von mehr als 1.000, in einem Fall über 1.700 Dollar. Anthropic und Google sperrten die mutmaßlich offengelegten Schlüssel. OpenAI stellte nach eigenen Angaben den Zugang wieder her und erstattet die durch den Angriff verbrauchten Credits, auch OpenCode hat Erstattungen angekündigt. Betroffene sollen ihre Schlüssel bei jedem Anbieter widerrufen und neu erzeugen."
+    },
+    {
+      "t": "h2",
+      "x": "Was ist ein Distillation-Angriff?"
+    },
+    {
+      "t": "p",
+      "x": "Distillation ist eigentlich eine legitime Technik: Ein kleines Modell lernt aus den Antworten eines stärkeren Modells und wird so günstiger und schneller. Zum Angriff wird das, wenn jemand massenhaft unautorisierte Anfragen dafür nutzt, etwa über erbeutete Schlüssel. OpenCode hat nicht erklärt, wie die Angreifer in das ältere System kamen und wie die Schlüssel gespeichert waren. Einige Beobachter halten die Distillation-Deutung für unbewiesen und sprechen schlicht von einem Einbruch, berichtet [TechCrunch](https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/). Auffällig ist der Zeitpunkt: In derselben Nacht machte OpenCode das Modell GLM-5.3-Flash für Nutzer kostenlos."
+    },
+    {
+      "t": "h2",
+      "x": "Die Abwehr-Falle: Wenn die KI nicht helfen darf"
+    },
+    {
+      "t": "p",
+      "x": "Pikant ist die Verteidigungsgeschichte. Laut Raad versuchten die Angreifer mindestens 48 Stunden lang ununterbrochen, in die Systeme zu kommen. Bei der Analyse des Schadcodes stieg die KI-Unterstützung zeitweise aus: Die Modelle verweigerten die Arbeit, weil die zu untersuchenden Exploits ihre Sicherheitsfilter auslösten. Besserung brachte der Zugang zu OpenAIs Daybreak-Programm, das geprüften Nutzern Modelle für defensive Sicherheitsarbeit mit weniger Blockaden gibt. OpenCode ist mit diesem Problem nicht allein: Hugging Face beschrieb im Juli nach einem eigenen Vorfall ein „asymmetry problem“: Die Schutzmechanismen könnten einen Incident-Responder nicht von einem Angreifer unterscheiden."
+    },
+    {
+      "t": "h2",
+      "x": "Was du jetzt tun solltest"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "OpenCode-Console-Nutzer: Mail prüfen und alle hinterlegten API-Schlüssel bei OpenAI, Anthropic und Google widerrufen und neu erzeugen, auch vorsorglich.",
+        "Ausgaben-Alarmschwellen bei jedem Anbieter setzen. Sie waren es, die viele Betroffene überhaupt erst geweckt haben.",
+        "Grundsätzlich: Keine Haupt-Schlüssel in Online-Arbeitsumgebungen hinterlegen, sondern begrenzte, einzeln sperrbare Unterschlüssel mit Budget.",
+        "Nutzungs-Dashboards der Konten auf ungewöhnliche Peaks seit dem 17. Oktober prüfen."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bin ich betroffen?",
+      "a": "Nur wenn du die OpenCode Console mit verknüpften externen Anbietern nutzt und eine Benachrichtigungs-Mail von OpenCode bekommen hast. Nach Angaben des Projekts sind 1,4 Prozent der Console-Nutzer betroffen; App und Kommandozeile nicht."
+    },
+    {
+      "q": "Was soll ich als Erstes tun?",
+      "a": "Alle API-Schlüssel, die du in der Console hinterlegt hattest, direkt bei OpenAI, Anthropic und Google widerrufen und neue erzeugen. Danach die Abrechnungen seit dem 17. Oktober prüfen."
+    },
+    {
+      "q": "Bekommen Nutzer ihr Geld zurück?",
+      "a": "OpenAI hat nach eigenen Angaben die durch den Angriff verbrauchten Credits erstattet, und OpenCode hat Erstattungen für unautorisierte Abbuchungen angekündigt. Anthropic und Google sperrten die betroffenen Schlüssel."
+    },
+    {
+      "q": "Was ist an diesem Angriff neu?",
+      "a": "Zwei Dinge: Er zielte offenbar auf Distillation ab, also das massenhafte Absaugen von Modellantworten zum Training eines Nachbautrugs. Und bei der Abwehr blockierten Sicherheitsfilter der KI-Modelle die Analyse des Schadcodes, ein Problem, das zuvor schon Hugging Face beschrieben hatte."
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenCode hack exposes API keys amid AI distillation attacks",
+      "publisher": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "Hackers hit AI coding tool OpenCode, running up charges on users' AI accounts",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+      "accessed": "2026-10-20"
+    },
+    {
+      "title": "OpenCode: A powerful AI coding agent (Repository)",
+      "publisher": "GitHub (opencode-ai)",
+      "url": "https://github.com/opencode-ai/opencode",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "related": [
+    "opencode-mcp-oauth-windows-sicherheitsluecke",
+    "eigener-llm-proxy-kontrolle-kosten-logs"
+  ]
+}
