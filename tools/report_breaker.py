@@ -9,7 +9,7 @@ import sys
 PDF = '/berichte/intelligenz-welt-tagesausgabe.pdf'
 BRAND = 'iw'
 CSS = """<style id="report-breaker-style">
-.report-breaker{box-sizing:border-box;clear:both;display:block;margin:32px 0;padding:24px;border:1px solid var(--line);border-left:4px solid #1d6bc0;border-radius:12px;background:var(--soft);color:var(--fg);max-width:100%;overflow-wrap:anywhere}
+.report-breaker{box-sizing:border-box;clear:both;display:block;margin:32px 0;padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--fg);max-width:100%;overflow-wrap:anywhere}
 .report-breaker .rb-label{display:block;color:#1d6bc0;font:700 11px/1.4 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;margin:0 0 10px}
 .report-breaker .rb-title{display:block;font:700 23px/1.25 system-ui,sans-serif;letter-spacing:-.02em;color:var(--fg);margin:0 0 10px}
 .report-breaker p.rb-copy{font:400 15px/1.6 system-ui,sans-serif;margin:0 0 18px;color:var(--mut)}

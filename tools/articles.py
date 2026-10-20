@@ -29,7 +29,7 @@ import report as ireport
 CSS = ('<style>.ed .crumbs{font-size:14px;color:var(--mut);margin:0 0 14px}.ed .crumbs a,.ed .byline a,.ed .src a,.ed .more a,.ed .body a,.ed .note a{text-decoration:underline;text-underline-offset:3px}'
        '.ed .byline{color:var(--mut);font-size:14px;margin:6px 0 18px}.ed .byline a{color:var(--fg)}'
        '.ed figure{margin:0 0 22px}.ed figure img{width:100%;height:auto;border-radius:14px;display:block}.ed figcaption{font-size:13px;color:var(--mut);margin-top:8px}'
-       '.ed .answer{background:var(--soft);border-left:4px solid var(--ac);border-radius:10px;padding:16px 18px;margin:0 0 20px}.ed .answer p{margin:0}'
+       '.ed .answer{background:var(--soft);border:1px solid rgba(127,127,127,.28);border-radius:10px;padding:16px 18px;margin:0 0 20px}.ed .answer p{margin:0}'
        '.ed .facts{border:1px solid var(--line);border-radius:12px;padding:14px 18px 6px;margin:0 0 24px}.ed .facts h2{font-size:15px;margin:0 0 8px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}.ed .facts li{margin:6px 0}'
        '.ed .src li,.ed .more li,.ed .body li{margin:6px 0}.ed .note{font-size:13px;color:var(--mut);border-top:1px solid var(--line);margin-top:28px;padding-top:14px}'
        '.ed details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}.ed summary{cursor:pointer;font-weight:600}'
