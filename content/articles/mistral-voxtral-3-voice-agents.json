@@ -1,0 +1,161 @@
+{
+ "slug": "mistral-voxtral-3-voice-agents",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Voxtral 3: Mistrals Sprach-Agenten hören, denken und antworten in Echtzeit",
+ "dek": "Mit Voxtral 3 bündelt Mistral Transkription, Sprachsynthese und ein Voice-Agent-SDK in einer Streaming-Pipeline. Transkription in über 50 Sprachen, Stimmen mit Emotion, EU-Hosting inklusive.",
+ "published": "2026-10-21T10:02:00+02:00",
+ "modified": "2026-10-21T10:02:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Mistral",
+  "Voxtral 3",
+  "Voice Agents",
+  "Speech-to-Text",
+  "Text-to-Speech"
+ ],
+ "key_takeaways": [
+  "Voxtral 3 kombiniert Speech-to-Text, Text-to-Speech und ein Voice-Agent-SDK in einer einzigen Echtzeit-Streaming-Pipeline.",
+  "Die Transkription unterstützt über 50 Sprachen, die Sprachsynthese über 35 Sprachen und 50 Dialekte mit emotionaler Anpassung.",
+  "Das Echtzeit-Transkriptionsmodell arbeitet mit unter 500 Millisekunden Latenz.",
+  "Die Preise starten bei 0,0035 Dollar pro Minute für Transkription; TTS kostet 13 Dollar pro Million Zeichen.",
+  "Betrieb über Mistrals EU-gehostete API oder im eigenen Rechenzentrum, Audio kann vollständig im eigenen System bleiben."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: Schallwellen, die in einen Trichter laufen und auf der anderen Seite als Sprechblasen und Zahnräder herauskommen",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Mistral hat Voxtral 3 veröffentlicht, einen kompletten Baukasten für Sprach-Agenten: ein Modell, das zuhört, eines, das spricht, und ein SDK, das dazwischen denkt und Werkzeuge bedient. Alles in Echtzeit, alles in einer Pipeline, auf Wunsch komplett auf eigener Infrastruktur."
+  },
+  {
+   "t": "h2",
+   "x": "Was in Voxtral 3 steckt"
+  },
+  {
+   "t": "p",
+   "x": "Ein zuverlässiger Sprach-Agent muss vier Dinge gleichzeitig können: zuhören, verstehen, natürlich antworten und über verbundene Systeme handeln, [schreibt Mistral](https://mistral.ai/news/voxtral-3/). Genau dafür ist Voxtral 3 gebaut. Das Transkriptionsmodell Voxtral Small Transcribe 3 deckt über 50 Sprachen ab, darunter alle 24 offiziellen EU-Sprachen, erkennt Sprecherwechsel (Diarisierung) und merkt, wann jemand fertig gesprochen hat. Laut Mistral übertrifft es Whisper, Scribe v2 und Gemini 3.5 Transcribe in mehrsprachiger Transkription und Diarisierung. Das Echtzeit-Modell Voxtral Realtime Transcribe 3 bleibt in über 35 Sprachen unter 500 Millisekunden Latenz."
+  },
+  {
+   "t": "table",
+   "caption": "Die Voxtral-3-Familie im Überblick. Quelle: Mistral, Stand 20.10.2026",
+   "head": [
+    "Komponente",
+    "Was sie kann",
+    "Preis"
+   ],
+   "rows": [
+    [
+     "Voxtral Small Transcribe 3",
+     "Transkription in 50+ Sprachen, Diarisierung, Kontext-Bias für Fachbegriffe",
+     "ab 0,0035 USD/Minute (Mini-Variante, 4 Mrd. Parameter)"
+    ],
+    [
+     "Voxtral Realtime Transcribe 3",
+     "Echtzeit-Transkription unter 500 ms Latenz, 35+ Sprachen",
+     "über Mistral API"
+    ],
+    [
+     "Voxtral Mini TTS 3",
+     "Sprachsynthese in 35+ Sprachen und 50+ Dialekten, passt Emotion, Tempo und Betonung an",
+     "13 USD pro 1 Mio. Zeichen"
+    ],
+    [
+     "Pro Voice",
+     "Stimmadaption mit Charakter und Stil aus nur 30 Minuten Audiomaterial",
+     "Enterprise"
+    ],
+    [
+     "Voice Agent SDK",
+     "Streaming-Pipeline aus Hören, Denken, Tool-Aufrufen und Sprechen, auf Basis von LiveKit",
+     "Open, EU-API oder Self-Hosting"
+    ]
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Die Stimme passt sich dem Gespräch an"
+  },
+  {
+   "t": "p",
+   "x": "Auf der Ausgabeseite setzt Voxtral Mini TTS 3 auf Kontext: Die Stimme verändert Emotion, Tempo und Betonung je nachdem, was im Gespräch passiert, ohne dass man Stilanweisungen mitschicken muss. Wer eine Markenstimme braucht, kann mit Pro Voice aus rund 30 Minuten Audiomaterial eine Adaption erstellen, die Charakter und Sprechstil sprachübergreifend trifft. Mistral positioniert den TTS-Preis von 13 Dollar pro Million Zeichen unter vergleichbaren Angeboten von OpenAI TTS-1, Deepgram, ElevenLabs Flash und Gemini Flash. Die Benchmarks dazu stammen vom Anbieter selbst; unabhängige Messungen stehen noch aus."
+  },
+  {
+   "t": "p",
+   "x": "Alle vier Modelle, drei Transkriptions- und ein TTS-Modell, laufen laut [MarkTechPost](https://www.marktechpost.com/2026/10/20/mistral-voxtral-3-speech-models-voice-agent-sdk/) bereits in Public Preview über die Mistral API. Zielanwendungen nennt Mistral gleich mehrere: Contact Center, Service-Desks, virtuelle Assistenten und freihändige Copilots, etwa für unterwegs oder am Arbeitsplatz."
+  },
+  {
+   "t": "h2",
+   "x": "Warum das SDK der eigentliche Clou ist"
+  },
+  {
+   "t": "p",
+   "x": "Einzelne gute Sprachmodelle gab es schon; schwierig war immer das Zusammenspiel. Das Voice-Agent-SDK, nach [The Decoder](https://the-decoder.com/mistral-ai-launches-voxtral-3-a-full-voice-agent-stack-that-listens-thinks-and-talks-in-real-time/) auf Basis von LiveKit gebaut, verbindet Hören, Reasoning, Tool-Calls und Sprechen in einer Echtzeit-Pipeline. Agenten können so während eines laufenden Telefonats Termine buchen, Rechnungen prüfen oder in Firmensystemen nachsehen. Mistral zeigt als Beispiel eine Anruferin, die auf Französisch einen Arzttermin vereinbaren lässt."
+  },
+  {
+   "t": "callout",
+   "title": "Datenhaltung",
+   "x": "Voxtral 3 läuft über Mistrals EU-gehostete API oder komplett auf eigener Infrastruktur. Wer selbst hostet, kontrolliert, ob und wo Audio gespeichert wird, ein gewichtiges Argument für Contact Center und regulierte Branchen. Quelle: Mistral, Stand 20.10.2026."
+  },
+  {
+   "t": "h2",
+   "x": "Was du mitnehmen kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Voxtral 3 ist kein einzelnes Modell, sondern der ganze Stack: Transkription, TTS und Agent-Logik aus einem Guss.",
+    "Mit 50+ Sprachen und EU-Hosting zielt Mistral klar auf europäische Unternehmenskunden.",
+    "Preise: Transkription ab 0,0035 USD/Minute, TTS 13 USD pro Million Zeichen.",
+    "Die gezeigten Benchmarks sind Anbieter-Angaben; unabhängige Tests stehen noch aus."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist Voxtral 3?",
+   "a": "Mistrals neue Familie aus Sprachmodellen plus Voice-Agent-SDK: Voxtral Small Transcribe 3 transkribiert in über 50 Sprachen, Voxtral Mini TTS 3 spricht in über 35 Sprachen mit emotionaler Anpassung, und das SDK verbindet beides zu Agenten, die in Echtzeit telefonieren und Werkzeuge bedienen können."
+  },
+  {
+   "q": "Was kostet Voxtral 3?",
+   "a": "Die Transkription startet bei 0,0035 Dollar pro Minute (Mini-Variante), die Sprachsynthese kostet 13 Dollar pro Million Zeichen. Das SDK ist über Mistrals EU-gehostete API nutzbar oder kann auf eigener Infrastruktur betrieben werden."
+  },
+  {
+   "q": "Kann ich Voxtral 3 datenschutzkonform betreiben?",
+   "a": "Ja, laut Mistral gibt es zwei Wege: die EU-gehostete API oder Self-Hosting auf eigener Infrastruktur. Beim Self-Hosting bleibt das Audio vollständig im eigenen System, und man kontrolliert, ob Gespräche überhaupt gespeichert werden."
+  },
+  {
+   "q": "Wie gut ist Voxtral 3 im Vergleich?",
+   "a": "Mistral sagt, das Transkriptionsmodell übertreffe Whisper, Scribe v2 und Gemini 3.5 Transcribe, und das TTS sei günstiger als OpenAI TTS-1, Deepgram, ElevenLabs Flash und Gemini Flash. Das sind Anbieter-Angaben; unabhängige Vergleiche gibt es noch nicht."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Voxtral 3: Voice Agent SDK & Speech Models in 50+ Languages",
+   "publisher": "Mistral AI",
+   "url": "https://mistral.ai/news/voxtral-3/",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "Mistral AI launches Voxtral 3, a full voice agent stack that listens, thinks, and talks in real time",
+   "publisher": "The Decoder",
+   "url": "https://the-decoder.com/mistral-ai-launches-voxtral-3-a-full-voice-agent-stack-that-listens-thinks-and-talks-in-real-time/",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "Mistral AI Releases Voxtral 3: Speech-to-Text, TTS and a Voice Agent SDK",
+   "publisher": "MarkTechPost",
+   "url": "https://www.marktechpost.com/2026/10/20/mistral-voxtral-3-speech-models-voice-agent-sdk/",
+   "accessed": "2026-10-21"
+  }
+ ],
+ "related": [
+  "yelp-check-for-me-ki-telefoniert-restaurant",
+  "minimax-m3-1-flash-preisbrecher"
+ ]
+}

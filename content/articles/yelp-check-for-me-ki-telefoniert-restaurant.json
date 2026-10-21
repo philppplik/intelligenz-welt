@@ -1,0 +1,171 @@
+{
+ "slug": "yelp-check-for-me-ki-telefoniert-restaurant",
+ "lang": "de",
+ "section": "trends",
+ "type": "news",
+ "title": "Yelp ruft jetzt für dich im Restaurant an",
+ "dek": "Mit Check for Me übernimmt ein KI-Agent das lästige Anrufen: Er fragt die Wartezeit im Restaurant ab und schickt dir das Ergebnis per SMS. Dazu kommen OpenTable-Buchungen und ein Gedächtnis für deine Vorlieben.",
+ "published": "2026-10-21T10:06:00+02:00",
+ "modified": "2026-10-21T10:06:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Yelp",
+  "Voice AI",
+  "Check for Me",
+  "Restaurants",
+  "KI-Agenten"
+ ],
+ "key_takeaways": [
+  "Mit Check for Me ruft ein KI-Agent im Restaurant an, fragt die Wartezeit ab und schickt das Ergebnis per SMS.",
+  "Yelp Host, die Gegenseite für Restaurants, hat seit Start im Oktober 2025 über 1 Million Anrufe angenommen, mit 38 Prozent Wachstum pro Monat.",
+  "Neu sind außerdem eine OpenTable-Integration, ein Gedächtnis für Vorlieben und 30 Tage Chatverlauf im Yelp-Assistenten.",
+  "Für Restaurants startet Yelp Host bei 249 Dollar im Monat; das neue Smart Lead Reply kostet 30 Dollar monatlich.",
+  "Es kann künftig passieren, dass dein Agent mit dem Agenten des Restaurants spricht, Maschine zu Maschine."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein Smartphone auf einem Cafétisch, aus dem eine Sprechblase Richtung eines gemütlichen Restaurants mit Wartebereich schwebt",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Niemand ruft gern im Restaurant an, um die Wartezeit zu erfragen. Yelp baut dafür jetzt einen KI-Agenten ein, der genau das übernimmt: Check for Me fragt für dich an und schickt dir das Ergebnis per SMS."
+  },
+  {
+   "t": "h2",
+   "x": "So funktioniert Check for Me"
+  },
+  {
+   "t": "p",
+   "x": "Auf Restaurant-Seiten in der Yelp-App erscheint die neue Funktion Check for Me: Du gibst deine Gruppengröße und Telefonnummer ein, und ein Sprach-Agent ruft im Restaurant an, um die aktuelle Wartezeit zu erfragen, berichtet [TechCrunch](https://techcrunch.com/2026/10/20/yelp-can-now-call-on-your-behalf-to-check-wait-times-at-a-restaurant/). Das Ergebnis kommt per SMS zurück, danach entscheidest du, ob es sich lohnt. Die Funktion reiht sich in einen größeren Trend ein: Persönliche Assistenten wie Instinct, Fo und Muse haben in den vergangenen Wochen ähnliche Anruf-Funktionen für Support-Hotlines und Terminbuchungen eingeführt."
+  },
+  {
+   "t": "h2",
+   "x": "Auf der anderen Seite nimmt ein Agent ab"
+  },
+  {
+   "t": "p",
+   "x": "Die Pointe: Immer öfter wird am anderen Ende ebenfalls eine KI rangehen. Yelps Restaurant-Produkt Yelp Host hat seit seinem Start im Oktober 2025 nach Unternehmensangaben bereits über 1 Million Anrufe entgegengenommen, das Volumen wuchs bis Juni 2026 im Schnitt um 38 Prozent pro Monat, heißt es in der [offiziellen Pressemitteilung](https://www.yelp-press.com/press-releases/press-release-details/2026/Yelp-Host-Surpasses-1-Million-Calls-Expands-Into-Food-Ordering-and-Adds-OpenTable/default.aspx). Yelp selbst weist darauf hin, dass Agent-zu-Agent-Gespräche schiefgehen können. Die Zukunft des Restaurantbesuchs könnte also so aussehen: Dein Agent fragt, ihr Agent antwortet, und du bekommst nur noch das Ergebnis."
+  },
+  {
+   "t": "callout",
+   "title": "Die Zahlen",
+   "x": "Über 1 Mio. Anrufe hat Yelp Host seit Oktober 2025 angenommen, mit durchschnittlich 38% Wachstum pro Monat. Yelp Host kostet ab 249 USD/Monat (199 USD für Guest-Manager-Kunden), Smart Lead Reply 30 USD/Monat. Quelle: Yelp, Stand Juli/Oktober 2026."
+  },
+  {
+   "t": "h2",
+   "x": "Was sonst noch neu ist"
+  },
+  {
+   "t": "table",
+   "caption": "Die wichtigsten Neuerungen in der Yelp-App. Quelle: TechCrunch, Stand 20.10.2026",
+   "head": [
+    "Funktion",
+    "Was sie macht"
+   ],
+   "rows": [
+    [
+     "Check for Me",
+     "KI-Agent ruft im Restaurant an und schickt die Wartezeit per SMS"
+    ],
+    [
+     "OpenTable-Integration",
+     "Tische direkt im Yelp-Assistenten buchen, ohne die App zu wechseln"
+    ],
+    [
+     "Gedächtnis",
+     "Der Assistent merkt sich Vorlieben aus früheren Chats"
+    ],
+    [
+     "Chatverlauf",
+     "30 Tage Verlauf in der App, kompletter Verlauf soll folgen"
+    ],
+    [
+     "Erinnerungen",
+     "Eigene Reminder, etwa jeden Freitag Wochenendvorschläge"
+    ],
+    [
+     "Eigene Listen",
+     "Start mit Been Here und Want to Go, filter- und teilbar"
+    ],
+    [
+     "Smart Lead Reply",
+     "Beantwortet und qualifiziert Kundenanfragen für 30 USD/Monat"
+    ]
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Für Restaurants wird das Angebot damit immer vollständiger: Yelp Host beantwortet Anrufe rund um die Uhr, nimmt inzwischen auch Abholbestellungen entgegen, spricht 16 weitere Sprachen und kostet ab 249 Dollar im Monat, ohne Provision auf Bestellungen. Über die Integrationsplattform Stream hängt das System an Kassensystemen wie Toast, Square und Clover."
+  },
+  {
+   "t": "p",
+   "x": "Weitere Neuerungen sind bereits angekündigt: Ab nächstem Monat gibt es wöchentliche personalisierte Empfehlungen auf Basis deiner gespeicherten Orte und Bewertungen, später im Jahr folgen eine Kartenansicht und die Umwandlung von Sammlungen in Listen. Yelp baut den Assistenten damit schrittweise vom Antwortbot zum persönlichen Concierge aus."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Der Schritt zeigt, wo Verbraucher-KI gerade ankommt: nicht mehr beim Chatten, sondern beim Erledigen. Telefonieren ist dabei die Brücke in die analoge Welt, solange Restaurants noch nicht per API erreichbar sind. Dass ausgerechnet die Telefon-KI jetzt auf beiden Seiten der Leitung steht, ist ein echter Wendepunkt, und ein möglicher Reibungspunkt, wenn zwei Agenten aneinander vorbeireden."
+  },
+  {
+   "t": "h2",
+   "x": "Was du mitnehmen kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Check for Me spart den Anruf: Gruppengröße eingeben, SMS mit der Wartezeit bekommen.",
+    "Yelp Host hat schon über 1 Million Anrufe angenommen, Agenten auf beiden Seiten werden Normalität.",
+    "Der Yelp-Assistent bekommt Gedächtnis, OpenTable-Buchungen und eigene Listen.",
+    "Für Restaurants lohnt ein Blick auf die Kosten: 249 USD/Monat für den Telefon-Agenten, 30 USD für Smart Lead Reply."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist Check for Me?",
+   "a": "Eine neue Funktion in der Yelp-App: Du gibst Gruppengröße und Telefonnummer ein, ein KI-Agent ruft im Restaurant an, erfragt die Wartezeit und schickt dir das Ergebnis per SMS. Du musst selbst nicht mehr telefonieren."
+  },
+  {
+   "q": "Ist Check for Me schon verfügbar?",
+   "a": "Die Funktion wird auf Restaurant-Seiten in der Yelp-App ausgerollt. Zunächst geht es um Wartezeiten; die OpenTable-Integration für direkte Buchungen im Assistenten kommt parallel."
+  },
+  {
+   "q": "Was kostet das für Restaurants?",
+   "a": "Yelp Host, der Anruf-Agent für Restaurants, startet bei 249 Dollar im Monat (199 Dollar für Guest-Manager-Kunden). Das neue Smart Lead Reply für Kundenanfragen kostet 30 Dollar monatlich. Provisionen auf Bestellungen erhebt Yelp nicht."
+  },
+  {
+   "q": "Was passiert, wenn zwei KI-Agenten miteinander telefonieren?",
+   "a": "Genau das wird zunehmend passieren: Dein Agent ruft an, der Agent des Restaurants nimmt ab. Yelp weist selbst darauf hin, dass solche Agent-zu-Agent-Gespräche scheitern können. Wie gut das in der Praxis klappt, wird sich erst zeigen."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yelp can now call on your behalf to check wait times at a restaurant",
+   "publisher": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/20/yelp-can-now-call-on-your-behalf-to-check-wait-times-at-a-restaurant/",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "Yelp Host Surpasses 1 Million Calls, Expands Into Food Ordering and Adds OpenTable",
+   "publisher": "Yelp (Pressemitteilung)",
+   "url": "https://www.yelp-press.com/press-releases/press-release-details/2026/Yelp-Host-Surpasses-1-Million-Calls-Expands-Into-Food-Ordering-and-Adds-OpenTable/default.aspx",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "Yelp Host voice AI adds OpenTable reservations and takeout ordering for restaurants",
+   "publisher": "Yelp Blog",
+   "url": "https://blog.yelp.com/news/yelp-host-voice-ai-adds-opentable-reservations-and-takeout-ordering-for-restaurants/",
+   "accessed": "2026-10-21"
+  }
+ ],
+ "related": [
+  "mistral-voxtral-3-voice-agents",
+  "smart-tv-entmuellt-vibe-coding"
+ ]
+}

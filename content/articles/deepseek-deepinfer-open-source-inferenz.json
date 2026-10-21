@@ -1,0 +1,167 @@
+{
+ "slug": "deepseek-deepinfer-open-source-inferenz",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "DeepInfer: DeepSeek legt seine Inferenz-Engine offen",
+ "dek": "DeepSeek hat sein internes Inferenz-Framework DeepInfer unter Apache 2.0 veröffentlicht. Es beschleunigt DeepSeek-Modelle auf NVIDIA- und Huawei-Chips und soll die Token-Kosten im Unternehmenseinsatz drücken.",
+ "published": "2026-10-21T10:10:00+02:00",
+ "modified": "2026-10-21T10:10:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "DeepSeek",
+  "DeepInfer",
+  "Inferenz",
+  "Open Source",
+  "vLLM"
+ ],
+ "key_takeaways": [
+  "DeepSeek hat sein produktives Inferenz-Framework DeepInfer unter der Apache-2.0-Lizenz auf GitHub veröffentlicht.",
+  "DeepInfer läuft auf NVIDIA-SM100-GPUs und Huawei-Ascend-950-NPUs und ist auf DeepSeek-V4.1-Flash optimiert.",
+  "Das Repo wurde am 16. Oktober angelegt und hat bereits über 15.000 Sterne.",
+  "Mit an Bord: asynchrones Scheduling, batch-invariante Inferenz, deterministisches Sampling und strukturierte Outputs.",
+  "Hintergrund sind die steigenden Token-Kosten von KI-Agenten in Unternehmen; DeepInfer reduziert die nötige GPU-Zahl pro Workload."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein geöffneter, glühender Getriebekasten, aus dem ein schneller Strom leuchtender Token fließt, Werkzeuge liegen daneben",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** DeepSeek hat die Engine veröffentlicht, mit der es seine eigenen Modelle in Produktion betreibt. DeepInfer steht ab sofort unter Apache 2.0 auf GitHub und verspricht schnellere, günstigere Inferenz für DeepSeek-V4.1-Flash, auf NVIDIA- wie auf Huawei-Hardware."
+  },
+  {
+   "t": "h2",
+   "x": "Was DeepInfer ist"
+  },
+  {
+   "t": "p",
+   "x": "DeepInfer ist laut [GitHub-Repo](https://github.com/deepseek-ai/DeepInfer) das Hochleistungs-Inferenz-Framework hinter DeepSeeks eigenen Produktivdiensten, jetzt als Open-Source-Release für Offline-Inferenz. Die Engine basierte ursprünglich größtenteils auf vLLM, mit Anleihen bei SGLang und TensorRT-LLM, und bringt optimierte Kernel (FlashMLA, DeepGEMM, DeepEP, TileKernels), MoE-Parallelismus und einen Zero-Overhead-Batch-Scheduler mit. Das Repo wurde am 16. Oktober angelegt und hat bereits über 15.000 Sterne (Stand 21.10.)."
+  },
+  {
+   "t": "table",
+   "caption": "DeepInfer im Überblick. Quelle: GitHub (deepseek-ai/DeepInfer), Stand 21.10.2026",
+   "head": [
+    "Aspekt",
+    "Details"
+   ],
+   "rows": [
+    [
+     "Lizenz",
+     "Apache 2.0"
+    ],
+    [
+     "Unterstützte Modelle",
+     "DeepSeek-V4.1-Flash"
+    ],
+    [
+     "Hardware",
+     "NVIDIA SM100 GPUs, Huawei Ascend 950 NPUs"
+    ],
+    [
+     "Besondere Features",
+     "DSpark-Dekodierung, SWA Bounded Replay, asynchrones Scheduling, batch-invariante Inferenz, deterministisches Sampling, strukturierte Outputs (Regex/JSON Schema/EBNF)"
+    ],
+    [
+     "Nicht enthalten",
+     "KV-Cache-System, Prefill/Decode-Trennung, Lastverteilung über Repliken"
+    ],
+    [
+     "Voraussetzungen",
+     "Linux, GCC 13+, Python 3.12, CUDA 13 (NVIDIA) oder CANN 9.2 (Ascend)"
+    ]
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Warum DeepSeek das jetzt öffnet"
+  },
+  {
+   "t": "p",
+   "x": "Der ökonomische Hintergrund ist der eigentliche Treiber: KI-Agenten verbrauchen riesige Token-Mengen, und die Inferenzkosten werden für Unternehmen zum Problem, schreibt [TechTarget](https://www.techtarget.com/ai/news/366652363/DeepSeek-makes-DeepInfer-open-source-to-cut-AI-costs). DeepInfer beschleunigt die Inferenz von DeepSeek-Modellen und reduziert damit die Zahl der GPUs pro Workload. Der Analyst Lian Jye Su von Omdia wird dort mit den Worten zitiert, der Token-Verbrauch gehe durch die Decke, und wer Aufgaben schnell und günstig abarbeite, optimiere seine KI-Infrastruktur-Investition. Gleichzeitig positioniert sich DeepSeek damit als Open-Source-Anbieter der Wahl für kostenbewusste Unternehmen, die Modelle auf eigener Infrastruktur betreiben wollen."
+  },
+  {
+   "t": "callout",
+   "title": "Für wen lohnt sich das?",
+   "x": "DeepInfer zahlt sich vor allem aus, wenn du DeepSeek-V4.1-Flash on-premises oder in der eigenen Cloud betreibst. Wer andere Modelle nutzt, bleibt bei etablierten Engines wie vLLM oder TensorRT-LLM. Quelle: TechTarget, GitHub, Stand 21.10.2026."
+  },
+  {
+   "t": "h2",
+   "x": "So startest du"
+  },
+  {
+   "t": "p",
+   "x": "Die Hürden sind überschaubar: Linux, GCC ab Version 13, Python 3.12 und CUDA 13 beziehungsweise CANN 9.2 auf Ascend. Nach dem Build genügt ein Beispielskript, das Standard-Checkpoint DeepSeek-V4.1-Flash-1017 wird beim ersten Lauf automatisch aus dem Hugging-Face-Cache geladen. Im Repo liegen reproduzierbare Benchmark-Skripte bei, gemessen auf 4 SM100-GPUs für Prefill und 64 für Decode."
+  },
+  {
+   "t": "p",
+   "x": "Zwei Features hebt das Repo besonders hervor: batch-invariante Inferenz hält Ergebnisse über verschiedene Batch-Zusammensetzungen hinweg identisch, und deterministisches Sampling liefert bei gleichen Eingaben exakt dieselben Ausgaben. Für Unternehmen, die Modellverhalten auditieren oder Tests reproduzieren müssen, sind das starke Argumente. Strukturierte Outputs lassen sich über Regex, JSON Schema oder EBNF-Grammatik erzwingen, direkt über die Sampling-Parameter."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Der Release ist bemerkenswert transparent: DeepSeek legt die Engine offen, mit der es selbst Geld verdient, inklusive Tricks wie DSpark-Dekodierung mit Confidence-Scheduling und batch-invarianter Inferenz für reproduzierbare Ergebnisse. Dass beide Hardware-Welten unterstützt werden, NVIDIA SM100 und Huawei Ascend 950, macht das Framework für chinesische wie westliche Kunden gleichermaßen nutzbar. Zu beachten: Benchmarks im Repo sind Anbieter-Messungen auf eigener Hardware, und DeepInfer ist kein kompletter Serving-Stack, KV-Cache und Lastverteilung muss man selbst ergänzen."
+  },
+  {
+   "t": "h2",
+   "x": "Was du mitnehmen kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "DeepInfer ist DeepSeeks Produktions-Engine, jetzt Apache 2.0 auf GitHub, über 15.000 Sterne in fünf Tagen.",
+    "Läuft auf NVIDIA SM100 und Huawei Ascend 950, optimiert für DeepSeek-V4.1-Flash.",
+    "Der Kostendruck durch token-hungrige Agenten ist der Grund für den Open-Source-Schritt.",
+    "Kein Komplett-Stack: KV-Cache und Prefill/Decode-Lastverteilung musst du selbst bauen."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist DeepInfer?",
+   "a": "DeepSeeks hauseigenes Inferenz-Framework, mit dem das Unternehmen seine Modelle in Produktion betreibt. Seit dem 20. Oktober ist es unter Apache 2.0 auf GitHub verfügbar und beschleunigt die Offline-Inferenz von DeepSeek-V4.1-Flash auf NVIDIA- und Huawei-Chips."
+  },
+  {
+   "q": "Was kostet DeepInfer?",
+   "a": "Nichts, das Framework steht unter der Apache-2.0-Lizenz. Die eigentlichen Kosten stecken in der Hardware: DeepInfer soll die Zahl der GPUs reduzieren, die für einen Inferenz-Workload nötig sind."
+  },
+  {
+   "q": "Kann ich DeepInfer mit anderen Modellen nutzen?",
+   "a": "Aktuell wird nur DeepSeek-V4.1-Flash unterstützt. Wer andere Modelle betreibt, ist mit Engines wie vLLM oder NVIDIA TensorRT-LLM besser bedient, auf denen DeepInfer ohnehin teilweise aufbaut."
+  },
+  {
+   "q": "Ist DeepInfer produktionsreif?",
+   "a": "Die Engine steckt in DeepSeeks eigenen Produktivdiensten, der Open-Source-Release ist aber kein kompletter Serving-Stack: KV-Cache-System, Prefill/Decode-Trennung und Lastverteilung über Repliken sind nicht enthalten und müssen selbst ergänzt werden."
+  }
+ ],
+ "sources": [
+  {
+   "title": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
+   "publisher": "GitHub (deepseek-ai)",
+   "url": "https://github.com/deepseek-ai/DeepInfer",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "DeepSeek makes DeepInfer open source to cut AI costs",
+   "publisher": "TechTarget",
+   "url": "https://www.techtarget.com/ai/news/366652363/DeepSeek-makes-DeepInfer-open-source-to-cut-AI-costs",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "DeepInfer: Deepseek gibt die Betriebssoftware hinter seinem schnellen KI-Modell frei",
+   "publisher": "The Decoder",
+   "url": "https://the-decoder.de/deepinfer-deepseek-gibt-die-betriebssoftware-hinter-seinem-schnellen-ki-modell-frei/",
+   "accessed": "2026-10-21"
+  }
+ ],
+ "related": [
+  "eigener-llm-proxy-kontrolle-kosten-logs",
+  "deepseek-v4-1-flash-coding-agenten"
+ ]
+}

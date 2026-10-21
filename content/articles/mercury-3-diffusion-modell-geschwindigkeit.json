@@ -1,0 +1,165 @@
+{
+ "slug": "mercury-3-diffusion-modell-geschwindigkeit",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Mercury 3: Diffusion-Modell knackt 1.000 Token pro Sekunde",
+ "dek": "Inception Labs hat Mercury 3 vorgestellt: ein Diffusion-Sprachmodell mit 1.068 Token pro Sekunde, 1 Million Token Kontext und Launch-Rabatt. Die Benchmarks stammen bisher vom Anbieter selbst.",
+ "published": "2026-10-21T10:04:00+02:00",
+ "modified": "2026-10-21T10:04:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Mercury 3",
+  "Inception Labs",
+  "Diffusion LLM",
+  "Geschwindigkeit",
+  "Sprachmodelle"
+ ],
+ "key_takeaways": [
+  "Mercury 3 generiert laut Inception Labs 1.068 Token pro Sekunde, etwa 4 bis 8 Mal schneller als GPT-6 Luna und Claude Haiku 5.5.",
+  "Das Diffusion-Modell entwirft die gesamte Antwort auf einmal und verfeinert sie parallel, statt Token für Token zu schreiben.",
+  "Der Kontext wächst auf 1 Million Token; der Listenpreis liegt bei 0,20/0,70 Dollar pro Million Input-/Output-Token, zum Launch mit 50 Prozent Rabatt.",
+  "In acht von zwölf Anbieter-Benchmarks liegt Mercury 3 vorne, unabhängige Messungen gibt es noch nicht; Nutzer berichten in der Praxis von 300 bis 400 Token pro Sekunde.",
+  "Verfügbar über Inception, OpenRouter, Baseten und Vercel, kompatibel zur OpenAI-API."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein Gepard aus Licht, der über eine sich parallel materialisierende Textseite sprintet, Bewegungsunschärfe",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Inception Labs hat Mercury 3 veröffentlicht, das bislang leistungsstärkste Diffusion-Sprachmodell. Es soll GPT-6 Luna und Claude Haiku 5.5 in den meisten Benchmarks schlagen und dabei vier- bis achtmal schneller sein. Der Haken: Alle Zahlen stammen bisher vom Anbieter."
+  },
+  {
+   "t": "h2",
+   "x": "Was Mercury 3 kann"
+  },
+  {
+   "t": "p",
+   "x": "Die Kernzahlen laut [Inception Labs](https://www.inceptionlabs.ai/blog/introducing-mercury-3): 1.068 Token pro Sekunde auf NVIDIA-GPUs, 1 Million Token Kontext (bisher 260.000 bei Mercury 2.5), Listenpreis 0,20 Dollar pro Million Input- und 0,70 Dollar pro Million Output-Token, zum Launch halbiert auf 0,10 und 0,35 Dollar, gecachte Input-Token 90 Prozent günstiger. Das Modell ist über 40 Mal größer als Mercury 1; eine genaue Parameterzahl nennt Inception nicht."
+  },
+  {
+   "t": "figure",
+   "file": "mercury-3-diffusion-modell-geschwindigkeit-chart1.jpg",
+   "alt": "Balkendiagramm: Generierungsgeschwindigkeit in Token pro Sekunde. Mercury 3 erreicht 1.068, Claude Haiku 5.5 etwa 240 und GPT-6 Luna etwa 130 Token pro Sekunde.",
+   "caption": "Generierungsgeschwindigkeit im Anbieter-Vergleich, Angaben von Inception Labs. Quelle: SiliconANGLE, Stand 20.10.2026."
+  },
+  {
+   "t": "h2",
+   "x": "Warum Diffusion anders arbeitet"
+  },
+  {
+   "t": "p",
+   "x": "Klassische Sprachmodelle schreiben Token für Token, eines nach dem anderen. Ein Diffusion-Modell wie Mercury entwirft dagegen die komplette Antwort auf einmal und verfeinert dann alle Positionen parallel über wenige Durchgänge, wie [SiliconANGLE](https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/) erklärt. Inception-Chef Stefano Ermon sagt, die häufigste Frage seit Mercury 1 sei gewesen, ob Diffusion skaliert; seine Antwort: Die Grenzen lägen in Compute und Daten, nicht im Algorithmus. Mit Mercury 3 sehen die Skalierungsgesetze der etablierten Modelle auch für Diffusion bestätigt aus."
+  },
+  {
+   "t": "table",
+   "caption": "Anbieter-Benchmarks: Mercury 3 gegen die schnellen Frontier-Modelle. Quelle: SiliconANGLE, Stand 20.10.2026",
+   "head": [
+    "Benchmark",
+    "Mercury 3",
+    "GPT-6 Luna",
+    "Claude Haiku 5.5"
+   ],
+   "rows": [
+    [
+     "SWE-Bench Atlas (Coding)",
+     "51,1",
+     "33,3",
+     "32,3"
+    ],
+    [
+     "DeepSWE (Coding)",
+     "46,3",
+     "-",
+     "51,6"
+    ],
+    [
+     "Gewonnene Tests (von 12)",
+     "8",
+     "2",
+     "2"
+    ]
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Der größte Vorsprung liegt ausgerechnet im Coding: Auf SWE-Bench Atlas erreicht Mercury 3 51,1 Punkte gegen 33,3 und 32,3. Auf DeepSWE liegt Haiku 5.5 mit 51,6 zu 46,3 vorn, zwei weitere Tests gewann GPT-6 Luna knapp. Wichtig: Bisher hat keine unabhängige Stelle eigene Ergebnisse veröffentlicht. Nutzer auf Hacker News berichten von eindrucksvoller, aber niedrigerer Praxis-Geschwindigkeit um die 300 bis 400 Token pro Sekunde, berichtet [ai0.news](https://ai0.news/posts/2026-10-20-daily-digest/)."
+  },
+  {
+   "t": "h2",
+   "x": "Wofür sich das lohnt"
+  },
+  {
+   "t": "p",
+   "x": "Inception zielt auf Anwendungen, in denen jede Verzögerung auffällt: Browser-Agenten, Echtzeit-Nachhilfe, Suche auf Smart Glasses, Kundensupport. Bei Octen AI lag die mediane Generierungszeit in Tests bei 0,9 Sekunden, bei RevisionDojo kommen Hinweise in etwa einer Sekunde zurück, zitiert der Anbieter seine Early-Access-Partner. Dazu kommen Mercury Voice für minimale Zeit bis zum ersten Token und Mercury Decide für Massen-Klassifizierung. Wer testen will: Das Modell läuft über Inception, OpenRouter, Baseten und Vercel, ist OpenAI-API-kompatibel, und es gibt 100 Millionen Gratis-Token zum Start."
+  },
+  {
+   "t": "p",
+   "x": "Zum Hintergrund: Inception wurde 2024 von den Informatik-Professoren Stefano Ermon, Aditya Grover und Volodymyr Kuleshov gegründet und hat im vergangenen November eine 50-Millionen-Dollar-Runde unter Führung von Menlo Ventures mit Beteiligung von Microsofts M12 abgeschlossen, berichtet SiliconANGLE. Der Nachfolger von Mercury 3 befindet sich laut Ermon bereits im Training."
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "Die Geschwindigkeits- und Benchmark-Zahlen stammen ausschließlich von Inception Labs. Dass Praxis-Tests eher 300-400 Token/Sekunde zeigen, ist normal bei Anbieter-Messungen, trotzdem wäre das selbst dann ein mehrfacher Vorsprung. Quelle: Inception Labs, ai0.news, Stand 20.10.2026."
+  },
+  {
+   "t": "h2",
+   "x": "Was du mitnehmen kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Diffusion-Modelle sind jetzt konkurrenzfähig: Mercury 3 skaliert wie klassische Modelle, nur deutlich schneller.",
+    "1.068 Token/Sekunde sind Anbieter-Angabe; rechne in der Praxis eher mit 300-400, immer noch sehr schnell.",
+    "Zum Launch kostet das Modell 0,10/0,35 Dollar pro Million Token, OpenAI-kompatibel, ohne Umbau testbar.",
+    "Für latenzkritische Agenten (Browser, Voice, Suche) ist Mercury 3 der interessanteste neue Kandidat."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist ein Diffusion-Sprachmodell?",
+   "a": "Klassische Sprachmodelle erzeugen Text Token für Token nacheinander. Ein Diffusion-Modell entwirft stattdessen die gesamte Antwort auf einmal und verfeinert alle Positionen parallel über wenige Durchgänge. Das macht es deutlich schneller, weil die Arbeit parallel statt seriell abläuft."
+  },
+  {
+   "q": "Ist Mercury 3 wirklich 8 Mal schneller?",
+   "a": "Das sagt der Anbieter: 1.068 Token pro Sekunde gegenüber etwa 240 bei Claude Haiku 5.5 und etwa 130 bei GPT-6 Luna. Unabhängige Messungen gibt es noch nicht; Nutzer berichten in der Praxis von 300 bis 400 Token pro Sekunde, was immer noch ein deutlicher Vorsprung wäre."
+  },
+  {
+   "q": "Was kostet Mercury 3?",
+   "a": "Listenpreis sind 0,20 Dollar pro Million Input- und 0,70 Dollar pro Million Output-Token. Zum Launch gibt es 50 Prozent Rabatt (0,10/0,35 Dollar), gecachte Input-Token sind 90 Prozent günstiger. Über die Anbieter-Plattform gibt es 100 Millionen Gratis-Token zum Testen."
+  },
+  {
+   "q": "Wo kann ich Mercury 3 nutzen?",
+   "a": "Über die Inception API Platform sowie über OpenRouter, Baseten und Vercel. Das Modell ist kompatibel zur OpenAI-API, bestehende Anwendungen müssen dafür kaum angepasst werden."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Diffusion at Scale: Introducing Mercury 3",
+   "publisher": "Inception Labs",
+   "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "Inception says Mercury 3 beats GPT-6 Luna and Claude Haiku 5.5 at up to 8x the speed",
+   "publisher": "SiliconANGLE",
+   "url": "https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/",
+   "accessed": "2026-10-21"
+  },
+  {
+   "title": "AI News - October 20, 2026: Mistral Launches 209M-Param Timestral, Mercury 3 Hits 1K Tokens per Second",
+   "publisher": "ai0.news",
+   "url": "https://ai0.news/posts/2026-10-20-daily-digest/",
+   "accessed": "2026-10-21"
+  }
+ ],
+ "related": [
+  "minimax-m3-1-flash-preisbrecher",
+  "mistral-voxtral-3-voice-agents"
+ ]
+}
