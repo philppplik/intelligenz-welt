@@ -3,9 +3,9 @@ Seiten: /tagesbericht-anmelden/, /tagesbericht-bestaetigt/, /abmelden/ (alle noi
 JS: out/assets/leadwall.js (Formular-POST ans dhn-Backend, Token nur nach aktivem Klick im localStorage).
 Aufruf aus build.py: from leadwall import build_leadwall; build_leadwall(page, OUT, BASE)"""
 
-CONSENT = ('Ja, ich melde mich zum kostenlosen täglichen Tagesbericht von Intelligenz Welt als PDF an. '
+CONSENT = ('Ja, ich melde mich für den kostenlosen PDF-Zugang zur täglichen Tagesausgabe von Intelligenz Welt an. '
  'Nach der Bestätigung meiner E-Mail-Adresse (Double-Opt-In) kann ich die aktuelle Ausgabe als PDF laden. '
- 'Ein Newsletter-Abonnement ist damit nicht verbunden. Ich kann meine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, '
+ 'Ein Newsletter-Abonnement oder regelmäßiger E-Mail-Versand ist damit nicht verbunden; die Anmeldung dient dem Zugang zum PDF. Ich kann meine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, '
  'z. B. per E-Mail an <a href="mailto:philipp.l.paulik@gmail.com">philipp.l.paulik@gmail.com</a>. '
  'Der Versand der E-Mails erfolgt über den Dienstleister Resend (PLUS FIVE FIVE, Inc., USA) als Auftragsverarbeiter; '
  'Details in der <a href="/datenschutz/#tagesbericht-anmeldung">Datenschutzerklärung</a>.')
@@ -42,7 +42,7 @@ PAGES = {
   '<div class="lw" id="lw-bad" hidden><p>Der Bestätigungslink ist abgelaufen oder ungültig. <a href="/tagesbericht-anmelden/">Bitte melde dich erneut an.</a></p></div></article></div>'),
  'abmelden': ('Abgemeldet', 'Abmeldung von der Intelligenz-Welt-Tagesausgabe.',
   '<div class="w"><article class="art"><h1>Abmeldung</h1><div class="lw">'
-  '<p id="lw-u">Du bist abgemeldet. Die Adresse wird nach 30 Tagen gelöscht, der Einwilligungsnachweis bleibt getrennt gespeichert.</p></div></article></div>')}
+  '<p id="lw-u">Du bist abgemeldet. Deine Anmeldung ist deaktiviert und der PDF-Zugang gesperrt. Auf Wunsch löschen wir deine gespeicherten Daten (E-Mail an <a href="mailto:philipp.l.paulik@gmail.com">philipp.l.paulik@gmail.com</a>); der Einwilligungsnachweis bleibt getrennt gespeichert.</p></div></article></div>')}
 
 JS = r'''(function(){
   // Backend-Basis optional per <meta name="iw-lw-api" content="https://..."> oder window.IW_LW_API ueberschreiben.
