@@ -7,7 +7,7 @@ CONSENT = ('Ja, ich melde mich für den kostenlosen PDF-Zugang zur täglichen Ta
  'Nach der Bestätigung meiner E-Mail-Adresse (Double-Opt-In) kann ich die aktuelle Ausgabe als PDF laden. '
  'Ein Newsletter-Abonnement oder regelmäßiger E-Mail-Versand ist damit nicht verbunden; die Anmeldung dient dem Zugang zum PDF. Ich kann meine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, '
  'z. B. per E-Mail an <a href="mailto:philipp.l.paulik@gmail.com">philipp.l.paulik@gmail.com</a>. '
- 'Der Versand der E-Mails erfolgt über den Dienstleister Resend (PLUS FIVE FIVE, Inc., USA) als Auftragsverarbeiter; '
+ 'Der Versand der E-Mails erfolgt über den Dienstleister Resend (PLUS FIVE FIVE, Inc., USA); eine Übermittlung in die USA kann dabei stattfinden; '
  'Details in der <a href="/datenschutz/#tagesbericht-anmeldung">Datenschutzerklärung</a>.')
 
 CSS = ('<style>.lw{max-width:560px}.lw label{display:block;font-weight:600;margin:18px 0 6px}.lw input[type=email]{box-sizing:border-box;width:100%;min-height:46px;'
