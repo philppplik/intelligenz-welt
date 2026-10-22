@@ -1,0 +1,140 @@
+{
+  "slug": "anthropic-s1-leak-einblick-zahlen",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Anthropic S-1 geleakt: 16,3 Mrd. Umsatz, 80,7 Mrd. Verlust",
+  "dek": "Ein geleakter IPO-Entwurf zeigt Anthropics Halbjahreszahlen: rasantes Wachstum, 9 Mrd. Compute-Ausgaben und ein Buchverlust von 80,7 Mrd. Dollar, der größtenteils nicht zahlungswirksam ist.",
+  "published": "2026-10-22T10:10:00+02:00",
+  "modified": "2026-10-22T10:10:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Anthropic",
+    "IPO",
+    "S-1",
+    "Leck",
+    "Compute-Kosten"
+  ],
+  "key_takeaways": [
+    "Ein geleakter S-1-Entwurf zeigt: Anthropic machte im ersten Halbjahr 2026 16,3 Mrd. USD Umsatz, im Vorjahreszeitraum waren es 1,1 Mrd.",
+    "Der ausgewiesene Nettoverlust von 80,7 Mrd. USD ist ein Buchverlust: Rund 72 Mrd. davon sind laut WSJ-Durchsicht nicht zahlungswirksame Neubewertungen von Finanzinstrumenten, kein operativer Cash-Verlust.",
+    "Tatsächlich geflossen sind im Halbjahr knapp 9 Mrd. USD für Compute und Infrastruktur; die 450 Mrd. USD an unterschriebenen Cloud-Verträgen sind Zusagen über Jahre, keine getätigten Ausgaben.",
+    "Etwa ein Fünftel des Umsatzes kommt von nur zwei Kunden; AWS, Google und Microsoft sehen Anthropic zunehmend als Rivalen.",
+    "Der Börsengang wird laut Bericht frühestens für November anvisiert, ein bestätigter Termin existiert nicht."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein aufgeschlagenes Aktenheft mit leuchtenden Finanzkurven, aus dem Zahlen wie Papierflieger in Richtung Börse aufsteigen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Dem Wall Street Journal ist ein Entwurf von Anthropics Börsenprospekt zugespielt worden. Die Zahlen zeigen ein Unternehmen, das schneller wächst als fast jedes andere in der Tech-Geschichte, und dabei Geld in einer Dimension verbrennt, die selbst erfahrene Investoren aufschrecken lässt."
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen im Detail"
+    },
+    {
+      "t": "p",
+      "x": "Laut [Fortune](https://fortune.com/2026/10/21/anthropic-s-1-leak-income-statement-ipo/) zeigt der Entwurf für das erste Halbjahr 2026: 16,3 Milliarden Dollar Umsatz nach 1,1 Milliarden im Vorjahreszeitraum, das gesamte Jahr 2025 kam auf 4,6 Milliarden. Die Ausgaben für Rechenkapazität und Infrastruktur stiegen von 2,3 auf knapp 9 Milliarden Dollar. Der ausgewiesene Nettoverlust von 80,7 Milliarden Dollar braucht Einordnung: Nach Durchsicht des Entwurfs durch das Wall Street Journal entfallen rund 72 Milliarden davon auf nicht zahlungswirksame bilanzielle Neubewertungen von Finanzinstrumenten, mit denen Anthropic Geld aufgenommen hat, wie [Dealroom](https://dealroom.co/news/164610-anthropics-draft-s-1-reveals-16-3b-revenue-80-7b-loss-and-up-to-750b-com/) zusammenfasst. Steigt die Bewertung des Unternehmens, steigt buchhalterisch der Wert dieser Instrumente, und diese Erhöhung muss als Verlust verbucht werden, ohne dass Geld abfließt. Für die kommenden Jahre könnte Anthropic bis zu 750 Milliarden Dollar für Compute zusagen, inklusive noch verhandelter Deals; unterschrieben sind bislang 450 Milliarden in größtenteils unkündbaren Verträgen mit Cloud-Anbietern. Das sind Zahlungsverpflichtungen über viele Jahre, keine bereits getätigten Ausgaben. Im dritten Quartal soll der Umsatz allein 16,8 Milliarden erreicht haben, 45 Prozent mehr als im Vorquartal, wie [TechCrunch](https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/) aus demselben Leak berichtet. Der Börsengang wird dem Bericht zufolge frühestens für November anvisiert, bei einer angestrebten Bewertung von zwei Billionen Dollar; ein bestätigter Termin steht nicht fest."
+    },
+    {
+      "t": "figure",
+      "file": "anthropic-s1-leak-einblick-zahlen-chart1.jpg",
+      "alt": "Balkendiagramm: Anthropics erstes Halbjahr 2026 mit 16,3 Milliarden Dollar Umsatz, 9 Milliarden Ausgaben fuer Rechenkapazitaet und Infrastruktur und 80,7 Milliarden buchhalterischem Nettoverlust, davon rund 72 Milliarden nicht zahlungswirksam, gegenueber den Vorjahres-Halbjahreswerten 1,1, 2,3 und 13 Milliarden, alle Angaben aus dem geleakten S-1-Entwurf.",
+      "caption": "Anthropics erstes Halbjahr 2026 im Vergleich zum Vorjahres-Halbjahr, beide Zeitraeume laut Fortune aus dem geleakten S-1-Entwurf; Kategorie: Rechenkapazitaet und Infrastruktur. Der Nettoverlust ist ein Buchverlust: Rund 72 Mrd. USD davon sind laut WSJ-Durchsicht nicht zahlungswirksame Neubewertungen. Quellen: Fortune, TechCrunch, Dealroom (via WSJ), Stand 21.10.2026."
+    },
+    {
+      "t": "h2",
+      "x": "Die riskante Abhängigkeit"
+    },
+    {
+      "t": "p",
+      "x": "Der brisanteste Teil des Entwurfs ist nicht die Verlusthöhe, sondern die Versorgungslage: AWS, Google und Microsoft gewähren Anthropic nicht genug Kapazität, weil sie das Unternehmen zunehmend als Konkurrenten statt als Kunden sehen. Anthropic least deshalb eigene Rechenzentren und arbeitet mit Drittbetreibern, denen es im Entwurf eine begrenzte Betriebshistorie attestiert. Hinzu kommt die Konzentration: Zwei Kunden stehen für etwa ein Fünftel des Umsatzes. Und in den Risikofaktoren warnt das Unternehmen, dass Haftungsansprüche für schädliches KI-Verhalten die verfügbare Versicherungsdeckung übersteigen könnten."
+    },
+    {
+      "t": "callout",
+      "title": "Wichtig beim Lesen",
+      "x": "Alle Zahlen stammen aus einem nicht-finalen Entwurf, der dem WSJ zugespielt wurde, Anthropic hat sie nicht bestätigt. Der Nettoverlust von 80,7 Mrd. USD ist überwiegend kein Geldabfluss: Rund 72 Mrd. sind bilanzielle Neubewertungseffekte. Operativ angefallen sind im Halbjahr knapp 9 Mrd. USD Compute-Kosten. Die 450 bis 750 Mrd. USD sind Vertragszusagen über Jahre, keine Ausgaben. Der November-IPO ist ein berichtetes Ziel, kein bestätigter Termin. Quellen: Fortune, TechCrunch, Dealroom, PitchBook/Morningstar, Stand 21.10.2026."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung: Das Geschäftsmodell unter Strom"
+    },
+    {
+      "t": "p",
+      "x": "Das Muster ist bemerkenswert: Der Umsatz verfünfzehnfacht sich im Jahresvergleich, und selbst der operative Teil des Verlusts wächst, weil jeder neue Kunde neues Compute braucht, und Compute heißt heute: Verträge mit genau den Unternehmen, die selbst Modelle verkaufen. Wie groß der Bilanzierungseffekt werden kann, zeigt ein Vergleichswert aus der PitchBook-Analyse bei [Morningstar](https://www.morningstar.com/stocks/anthropics-leaked-financials-reflect-fast-growth-not-2-trillion-valuation): Amazon bewertete seine Anthropic-Instrumente allein im zweiten Quartal 2026 um 55,7 Milliarden Dollar höher. Der Effekt läuft also in beide Richtungen und sagt wenig über die operative Entwicklung, entscheidend sind die knapp 9 Milliarden Compute-Ausgaben im Halbjahr gegenüber 16,3 Milliarden Umsatz. Der gestern bekannt gewordene Einstieg von OpenAI in den Google Cloud Model Garden passt ins Bild, die Grenzen zwischen Partner und Rivale verschwinden überall gleichzeitig. Für IPO-Investoren wird die zentrale Frage sein, ob Anthropics Wachstum die zugesagten Verpflichtungen von 450 bis 750 Milliarden Dollar je einspielt. Nebenbei: Bloomberg berichtet, dass Eric Schmidt seit der Series A 2021 etwa halb so viele Anteile hält wie Dario Amodei, bei einer Zwei-Billionen-Bewertung wären das rund 20 Milliarden Dollar."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Anthropic wächst historisch schnell: 16,3 Mrd. USD Halbjahresumsatz nach 1,1 Mrd. im Vorjahr.",
+        "Die 80,7 Mrd. Verlust sind ein Buchverlust: Rund 72 Mrd. davon sind nicht zahlungswirksam, operativ fielen knapp 9 Mrd. Compute-Kosten an.",
+        "450 Mrd. USD an Cloud-Verträgen sind unterschrieben, größtenteils unkündbar; die Zahlungen fallen über Jahre an, sind also keine getätigten Ausgaben.",
+        "Die Cloud-Anbieter sind gleichzeitig Lieferanten und Konkurrenten, das ist das strukturelle Risiko.",
+        "IPO laut Bericht frühestens November, angestrebte Bewertung zwei Billionen USD; zwei Kunden machen ein Fünftel des Umsatzes."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind die Zahlen offiziell?",
+      "a": "Nein. Sie stammen aus einem Entwurf des Börsenprospekts (S-1), der dem Wall Street Journal zugespielt und von Fortune und TechCrunch weiterverbreitet wurde. Anthropic hat den Entwurf nicht bestätigt; finale Zahlen können abweichen."
+    },
+    {
+      "q": "Wie kann ein Unternehmen 80 Mrd. Dollar Verlust ausweisen?",
+      "a": "Der größte Teil ist nicht zahlungswirksam: Rund 72 der 80,7 Mrd. USD entfallen laut WSJ-Durchsicht des Entwurfs auf bilanzielle Neubewertungen von Finanzinstrumenten, mit denen Anthropic Kapital aufgenommen hat. Weil die Unternehmensbewertung stark gestiegen ist, müssen diese Instrumente höher bewertet werden, die Differenz wird als Verlust verbucht, ohne dass Geld abfließt. Operativ angefallen sind im Halbjahr knapp 9 Mrd. USD für Compute und Infrastruktur. Zur Vergleichbarkeit: Auch die Vorjahreswerte enthalten solche Effekte, fürs Gesamtjahr 2025 weist der Entwurf laut PitchBook-Analyse rund 42 Mrd. Verlust aus, davon rund 34 Mrd. nicht zahlungswirksam."
+    },
+    {
+      "q": "Warum ist die Kundenkonzentration ein Problem?",
+      "a": "Zwei Kunden stehen für etwa ein Fünftel des Umsatzes. Springt einer ab, fehlt sofort ein zweistelliger Milliardenbetrag, während die Compute-Verpflichtungen unkündbar weiterlaufen. Genau solche Konstellationen bewerten IPO-Investoren besonders hart."
+    },
+    {
+      "q": "Wann ist der Börsengang?",
+      "a": "Anthropic strebt den IPO laut WSJ-Bericht frühestens für November an, bei einer angestrebten Bewertung von zwei Billionen Dollar. Ein bestätigter Termin existiert nicht, und die Zahlen stammen aus einem Entwurf, den das Unternehmen nicht bestätigt hat. Der dritte Quartalsumsatz von 16,8 Mrd. USD wurde bereits an potenzielle Investoren kommuniziert."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Anthropic's S-1 leaks (again) - here's a look at the income statement",
+      "publisher": "Fortune",
+      "url": "https://fortune.com/2026/10/21/anthropic-s-1-leak-income-statement-ipo/",
+      "accessed": "2026-10-22"
+    },
+    {
+      "title": "Anthropic's cloud partnerships are getting messy",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/",
+      "accessed": "2026-10-22"
+    },
+    {
+      "title": "Anthropic's draft S-1 reveals $16.3B revenue, $80.7B loss and up to $750B compute bill",
+      "publisher": "Dealroom",
+      "url": "https://dealroom.co/news/164610-anthropics-draft-s-1-reveals-16-3b-revenue-80-7b-loss-and-up-to-750b-com/",
+      "accessed": "2026-10-22"
+    },
+    {
+      "title": "PitchBook: Anthropic's Leaked Financials Reflect Fast Growth, but Not a $2 Trillion Valuation",
+      "publisher": "Morningstar",
+      "url": "https://www.morningstar.com/stocks/anthropics-leaked-financials-reflect-fast-growth-not-2-trillion-valuation",
+      "accessed": "2026-10-22"
+    },
+    {
+      "title": "AI News Oct 21, 2026: Google open-sources TorchTPU",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-21/",
+      "accessed": "2026-10-22"
+    }
+  ],
+  "related": [
+    "coreweave-ki-schulden-anleihen-stress",
+    "openai-modelle-google-cloud"
+  ]
+}
