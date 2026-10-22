@@ -44,6 +44,16 @@ def sync(root, output, current, prefix, now=None, seed_only=False, archive_today
         except ValueError:continue
         if valid_pdf(p):
             dates.append(p.stem);atomic_copy(p,output/(prefix+p.name))
+    # The gate uploads the PDFs to private storage and deletes the public copies; the
+    # manifest it leaves behind keeps the full archive history visible on the landing page.
+    manifest=store/'dates.txt'
+    if manifest.is_file():
+        for line in manifest.read_text(encoding='utf-8').splitlines():
+            d=line.strip()
+            try:datetime.date.fromisoformat(d)
+            except ValueError:continue
+            if d not in dates:dates.append(d)
+        dates.sort(reverse=True)
     if not seed_only and not valid_pdf(latest) and dates:
         atomic_copy(store/(dates[0]+'.pdf'),latest)
         print('::warning::PDF generation failed or unavailable; keeping last valid archived report from '+dates[0])

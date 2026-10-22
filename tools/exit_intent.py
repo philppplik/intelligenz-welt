@@ -17,7 +17,7 @@ import pathlib, sys
 
 ARM_MS = 8000
 STORAGE_KEY = "iw-exit-report"
-REPORT_PDF = "/berichte/intelligenz-welt-tagesausgabe.pdf"
+REPORT_PDF = "/tagesbericht-anmelden/"
 REPORT_PAGE = "/berichte/"
 # Lead-Wall pages: the dialog would advertise the report on its own signup flow.
 NO_DIALOG = ("/tagesbericht-anmelden/", "/tagesbericht-bestaetigt/", "/abmelden/")
@@ -47,10 +47,10 @@ SNIPPET = '''<style>
 <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="iw-exit-t">
 <button type="button" class="x" data-x aria-label="Hinweis schlie&szlig;en">&times;</button>
 <h2 id="iw-exit-t">Geh noch nicht!</h2>
-<p class="txt">Sichere dir noch schnell gratis die Tagesausgabe: die wichtigsten KI-News, Artikel und das Modell-Radar des Tages kompakt als PDF &ndash; kostenlos, ohne Anmeldung, ohne E-Mail.</p>
+<p class="txt">Sichere dir noch schnell gratis die Tagesausgabe: die wichtigsten KI-News, Artikel und das Modell-Radar des Tages kompakt als PDF &ndash; kostenlos mit kurzer E-Mail-Anmeldung (Double-Opt-In), ohne Newsletter.</p>
 <div class="row"><a class="go" href="__PDF__">Gratis-Tagesausgabe sichern (PDF)</a><a class="arc" href="__PAGE__">Alle Ausgaben ansehen</a></div>
 <button type="button" class="no" data-x>Nein, danke</button>
-<p class="fine">Kein Newsletter, keine Datenabfrage &ndash; nur der PDF-Download. Dieser Hinweis erscheint h&ouml;chstens einmal pro Browsersitzung.</p>
+<p class="fine">Kein Newsletter &ndash; nur eine Best&auml;tigungsmail. Dieser Hinweis erscheint h&ouml;chstens einmal pro Browsersitzung.</p>
 </div>
 </div>
 <script>(function(){

@@ -31,6 +31,10 @@ jobs:
         run: python3 authorpage/authorpage.py iw site/out --assets authorpage/assets
       - name: Exit hint (Tagesausgabe)
         run: python3 tools/exit_intent.py site/out
+      - name: Gate PDFs (upload to private Blob, remove from public site)
+        env:
+          IW_UPLOAD_SECRET: ${{ secrets.IW_UPLOAD_SECRET }}
+        run: python3 tools/gate_reports.py site/out .
       - name: Persist archives
         run: |
           git config user.name "site-bot"; git config user.email "bot@users.noreply.github.com"
