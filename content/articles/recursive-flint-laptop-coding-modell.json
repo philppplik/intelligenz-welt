@@ -45,7 +45,7 @@
    "t": "figure",
    "file": "recursive-flint-laptop-coding-modell-chart1.jpg",
    "alt": "Balkendiagramm der Generierungsgeschwindigkeit: Flint auf einem M4 Pro MacBook Pro erreicht etwa 131 Token pro Sekunde, auf einem 64-GB-RTX-Spark über 150, vergleichbare Modelle auf demselben Laptop nur 58 bis 69.",
-   "caption": "Generierungsgeschwindigkeit lokaler Coding-Modelle, Anbieter-Angaben von Recursive: auf der RTX Spark nennt Recursive über 150 Token/s (im Chart als gerundeter Wert 150 dargestellt = Untergrenze), auf dem M4 Pro 131 Token/s; beste Vergleichsmodelle auf demselben Laptop 58-69. Keine unabhängige Messung."
+   "caption": "Generierungsgeschwindigkeit lokaler Coding-Modelle, Anbieter-Angaben von Recursive. \">150\" ist die von Recursive genannte gerundete Untergrenze auf der RTX Spark. Quelle: TechCrunch, Stand 21.10.2026. Keine unabhängige Messung."
   },
   {
    "t": "h2",
