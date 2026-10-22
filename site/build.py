@@ -181,3 +181,7 @@ subprocess.check_call([sys.executable,'../tools/report_breaker.py',OUT])
 
 # KI-Pulse ticker under the header (build-time data, local icons, no runtime requests).
 subprocess.check_call([sys.executable,'../tools/ticker.py',OUT])
+
+# Lead-Wall-Seiten (Tagesausgabe DOI -> PDF-Gate): Anmelden/Bestaetigt/Abmelden + assets/leadwall.js
+from leadwall import build_leadwall
+build_leadwall(page, OUT, BASE)

@@ -19,6 +19,8 @@ ARM_MS = 8000
 STORAGE_KEY = "iw-exit-report"
 REPORT_PDF = "/berichte/intelligenz-welt-tagesausgabe.pdf"
 REPORT_PAGE = "/berichte/"
+# Lead-Wall pages: the dialog would advertise the report on its own signup flow.
+NO_DIALOG = ("/tagesbericht-anmelden/", "/tagesbericht-bestaetigt/", "/abmelden/")
 
 SNIPPET = '''<style>
 .iw-exit{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:rgba(15,23,42,.45)}
@@ -84,7 +86,7 @@ MARKER = 'id="iw-exit"'
 
 def attach(html, path):
     """Inject the dialog before </body> on every page except the reports page itself."""
-    if path == REPORT_PAGE or MARKER in html or '</body>' not in html:
+    if path == REPORT_PAGE or path in NO_DIALOG or MARKER in html or '</body>' not in html:
         return html
     return html.replace('</body>', SNIPPET + '</body>', 1)
 
