@@ -1,0 +1,60 @@
+{
+ "slug": "cloudflare-clairic-extraktionsmodell",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Clairic: Cloudflares Modell, das nicht plaudert, sondern liefert",
+ "dek": "Cloudflares neues Extraktionsmodell Clairic antwortet nicht mit Text, sondern mit typisierten Werten samt Konfidenz. Es soll Rechnungssummen, Termine und Prognosen schneller und günstiger ziehen als jeder LLM.",
+ "published": "2026-10-22T10:06:00+02:00",
+ "modified": "2026-10-22T10:06:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Cloudflare", "Clairic", "Extraktion", "Workers AI", "System One"],
+ "key_takeaways": [
+  "Clairic ist Cloudflares erstes Extraktionsmodell: Es gibt typisierte Werte mit Konfidenz zurück statt generiertem Text.",
+  "Es extrahiert Textstellen mit Zeichen-Offsets, berechnet Werte, schätzt Verteilungen und prognostiziert bis zu 64 Schritte.",
+  "Antwortzeiten liegen typischerweise unter einer Sekunde; abgerechnet wird nur der Input (0,10 USD pro Million Token).",
+  "Open Weights sind angekündigt; das Modell läuft als Preview auf Workers AI.",
+  "Cloudflare selbst warnt: Lange Rechenketten sind unzuverlässig, dafür soll Code rechnen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein Trichter, in den oben unstrukturierte Dokumente fallen und unten geordnete, beschriftete Werte-Kärtchen herauskommen",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Cloudflare hat Clairic angekündigt, ein Modell, das keine Sätze schreibt, sondern Fragen wie „Wie hoch ist die Rechnungssumme?“ direkt mit einem typisierten Wert beantwortet, inklusive Konfidenz. Es ist schneller, günstiger und genauer als ein LLM bei genau dieser einen Aufgabe."},
+  {"t": "h2", "x": "Was ein Extraktionsmodell ist"},
+  {"t": "p", "x": "Viele produktive LLM-Aufrufe sind in Wahrheit keine Gespräche: Was ist der Gesamtbetrag, wann wurde geliefert, wie viele Tage überfällig, was kostet die Reparatur? Solche Fragen haben Antworten, die man nicht vorab aufzählen kann, wofür Entscheidungsmodelle wie Jev oder Cloudflares Clef gebaut sind. Clairic schließt diese Lücke als erstes Modell einer neuen Klasse, die Cloudflare [System-One-Extraktionsmodelle](https://blog.cloudflare.com/clairic-extraction-model/) nennt: Es liest den Input in einem einzigen Durchlauf, ohne Reasoning, ohne Token-Generierung, und antwortet typischerweise in unter einer Sekunde."},
+  {"t": "table", "caption": "Die vier Antworttypen von Clairic. Quelle: Cloudflare Blog, Stand 19.10.2026", "head": ["Antworttyp", "Was Clairic zurückgibt"], "rows": [
+   ["Extrahierte Werte", "Textstellen aus dem Input, exakt kopiert, mit Zeichen-Offsets und Konfidenz, keine Tippfehler möglich"],
+   ["Berechnete Werte", "Zahlen, Daten, Zeiten, Dauern und Listen, gelesen oder aus dem Input abgeleitet, typ-korrekt (z.B. zwei Nachkommastellen bei Cent)"],
+   ["Geschätzte Werte", "Werte, die nicht im Text stehen, aber belegt sind: als Verteilung mit Median und 80-Prozent-Intervall"],
+   ["Prognosen", "Zukünftige Werte einer Reihe, bis zu 64 Schritte, jeder mit eigenem 80-Prozent-Intervall"]
+  ]},
+  {"t": "h2", "x": "So arbeitet man damit"},
+  {"t": "p", "x": "Man schickt einen Zustand (Text plus bis zu vier Bilder) und ein Schema typisierter Felder an @cf/cloudflare/clairic. Jedes Feld kommt als valider Wert seines Typs zurück oder als null samt p_null und Konfidenz. Felder, die nicht in einen Durchlauf passen, werden automatisch auf parallele Läufe verteilt, es gibt also praktisch kein Feld-Limit. Der Kontext umfasst 65.536 Token, abgerechnet werden nur Input-Token zu 0,10 Dollar pro Million. Cloudflare hat zudem [angekündigt](https://developers.cloudflare.com/changelog/post/2026-10-19-clairic-workers-ai/), die Gewichte offenzulegen."},
+  {"t": "callout", "title": "Die ehrlichen Grenzen", "x": "Cloudflare warnt selbst: Ein- und zweistufige Rechnungen sind zuverlässig, lange Rechenketten nicht, dafür soll man Werte extrahieren und in Code rechnen. Prognosen flachen nach einigen Schritten Richtung Durchschnitt ab. Quelle: Cloudflare Blog, Stand 19.10.2026."},
+  {"t": "h2", "x": "Einordnung"},
+  {"t": "p", "x": "Clairic ist das zweite System-One-Modell dieser Woche: Der Begriff geht auf TypeSafe zurück, das vor einem Monat mit Jev den Gegenentwurf zum Reasoning-LLM populär machte, schnell, typisiert, günstig. Der Gedanke dahinter ist für den Produktivbetrieb wichtig: Ein Modell, das sein Format nicht halluzinieren kann und sagt, wann es unsicher ist, passt besser in Automatisierungs-Logik als ein Chatmodell mit JSON-Modus. Die Leistungsangaben stammen von Cloudflare selbst; unabhängige Tests stehen noch aus, aber die Preview auf Workers AI macht das Ausprobieren günstig."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Clairic beantwortet Extraktionsfragen mit typisierten Werten und Konfidenz statt mit Prosa.",
+   "Kosten: 0,10 USD pro Million Input-Token, keine Output-Kosten, Antwort in unter einer Sekunde.",
+   "Ideal für Routing: hohe Konfidenz automatisieren, niedrige Konfidenz an Menschen eskalieren.",
+   "Open Weights sind angekündigt; die Preview läuft jetzt auf Cloudflare Workers AI."
+  ]}
+ ],
+ "faq": [
+  {"q": "Was unterscheidet Clairic von einem normalen LLM?", "a": "Clairic generiert keinen Text, sondern gibt typisierte Werte zurück: extrahierte Textstellen mit Zeichen-Offsets, berechnete Zahlen, Schätzungen mit Verteilung oder Prognosen mit Unsicherheitsintervall. Es arbeitet in einem einzigen Durchlauf ohne Reasoning und antwortet typischerweise in unter einer Sekunde."},
+  {"q": "Was kostet Clairic?", "a": "Abgerechnet wird nur der Input: 0,10 Dollar pro Million Token bei 65.536 Token Kontext. Da keine Output-Token generiert werden, entfallen die üblichen Output-Kosten von LLMs komplett."},
+  {"q": "Wofür sollte ich Clairic nicht nutzen?", "a": "Cloudflare selbst nennt zwei Grenzen: lange Rechenketten sind unzuverlässig (lieber Werte extrahieren und in Code rechnen), und Prognosen flachen nach einigen Schritten Richtung Durchschnitt ab. Für offene Textantworten ist es ohnehin nicht gedacht, dafür bleibt es beim LLM."},
+  {"q": "Ist Clairic Open Source?", "a": "Die Gewichte sollen nach Cloudflares Ankündigung als Open Weights veröffentlicht werden; ein Datum steht noch aus. Aktuell läuft das Modell als Preview auf Workers AI unter @cf/cloudflare/clairic."}
+ ],
+ "sources": [
+  {"title": "Introducing Clairic, a new System One class of extraction models", "publisher": "Cloudflare Blog", "url": "https://blog.cloudflare.com/clairic-extraction-model/", "accessed": "2026-10-22"},
+  {"title": "Introducing Clairic: an extraction model for typed values, now on Workers AI", "publisher": "Cloudflare Changelog", "url": "https://developers.cloudflare.com/changelog/post/2026-10-19-clairic-workers-ai/", "accessed": "2026-10-22"},
+  {"title": "AI News Oct 21, 2026: Google open-sources TorchTPU", "publisher": "Morning Tokens", "url": "https://morningtokens.com/issues/2026-10-21/", "accessed": "2026-10-22"}
+ ],
+ "related": ["mercury-3-diffusion-modell-geschwindigkeit", "minimax-m3-1-flash-preisbrecher"]
+}

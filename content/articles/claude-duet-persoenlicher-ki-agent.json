@@ -1,0 +1,64 @@
+{
+ "slug": "claude-duet-persoenlicher-ki-agent",
+ "lang": "de",
+ "section": "trends",
+ "type": "news",
+ "title": "Claude Duet: Anthropics Agent, der von sich aus anpackt",
+ "dek": "Mit Claude Duet stellt Anthropic einen persönlichen KI-Agenten vor, der morgens briefed, tagsüber die verbundenen Apps im Blick behält und vor jeder größeren Aktion fragt. Konkurrenz für Meta Muse und OpenAI Dots.",
+ "published": "2026-10-22T10:08:00+02:00",
+ "modified": "2026-10-22T10:08:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["Claude Duet", "Anthropic", "KI-Agent", "Proaktiv", "Produktivität"],
+ "key_takeaways": [
+  "Claude Duet ist Anthropics neuer persönlicher Agent, als Research Preview per Warteliste für US-Pro- und Max-Abonnenten.",
+  "Der Agent schickt morgens ein Briefing, überwacht verbundene Apps und meldet sich nur, wenn etwas Aufmerksamkeit braucht.",
+  "Er arbeitet in einer eigenen virtuellen Maschine mit Browser weiter, auch wenn das eigene Gerät aus ist.",
+  "Vor sensiblen Schritten wie Zahlungen oder Löschungen holt Duet immer eine Freigabe ein; Passwörter sieht er nie direkt.",
+  "Konkurrenz: Meta Muse und OpenAI Dots zielen auf dieselbe Kategorie des proaktiven Begleiters."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein kleiner leuchtender Begleiter-Roboter, der einer Berufsperson auf dem Weg zur Arbeit eine Morgenzeitung aus Licht reicht, Stadt im Hintergrund",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Anthropic steigt in das Rennen um den persönlichen KI-Agenten ein: Claude Duet soll nicht warten, bis man fragt, sondern von sich aus das Wichtige bringen und erledigen, gebaut für Berufstätige und kleine Unternehmen."},
+  {"t": "h2", "x": "Was Claude Duet macht"},
+  {"t": "p", "x": "Claude Duet läuft als eigene App auf iOS und Android sowie über claude.ai und basiert auf Claude Opus 5.5, [schreibt Anthropic](https://claude.com/resources/articles/claude-duet). Jeden Morgen schickt der Agent ein kurzes Briefing mit den wichtigsten Punkten aus den verbundenen Apps; tagsüber behält er sie im Auge und meldet sich nur, wenn etwas Aufmerksamkeit braucht. Aufgaben reichen von Terminplanung bis zu Dashboards mit Dutzenden Werkzeugen, Finanz- oder Umsatzprognosen und Web-App-Prototypen. Gedächtnis, Skills und verbundene Apps übernimmt Duet aus dem bestehenden Claude-Konto. Weil der Agent auf einer eigenen virtuellen Maschine mit eigenem Browser arbeitet, läuft er weiter, während das eigene Gerät aus ist."},
+  {"t": "h2", "x": "Die Sicherheitsarchitektur"},
+  {"t": "p", "x": "Anthropic betont die Leitplanken: Zugangsdaten sieht Duet nie direkt, die Verwaltung folgt dem Design der Claude Managed Agents. Vor jedem größeren Schritt, etwa einer Zahlung oder einem Löschvorgang, fragt der Agent nach. Ein neuer eigener Klassifikator und System-Prompt sollen verhindern, dass die strengste Informationsstufe wie Kreditkartennummern oder Ausweisdaten weitergegeben wird; Gesundheits- oder Finanzdaten gehen nur nach ausdrücklicher Anweisung. Red Teams und eine externe Firma haben das System laut Anthropic penetration-getestet, zusätzlich läuft es im öffentlichen Bug-Bounty-Programm."},
+  {"t": "table", "caption": "Claude Duet im Überblick. Quelle: Anthropic, Stand 21.10.2026", "head": ["Aspekt", "Details"], "rows": [
+   ["Verfügbarkeit", "Research Preview per Warteliste, zunächst US-Pro- und Max-Abonnenten"],
+   ["Plattformen", "Eigene App (iOS, Android) und claude.ai"],
+   ["Modell", "Claude Opus 5.5"],
+   ["Arbeitsweise", "Eigenes VM mit Browser, arbeitet auch bei ausgeschaltetem Gerät weiter"],
+   ["Kontrolle", "Freigabe vor sensiblen Aktionen, keine direkte Sicht auf Passwörter"],
+   ["Kosten", "In Pro- und Max-Plänen enthalten, gleiche Nutzungslimits wie Claude"]
+  ]},
+  {"t": "h2", "x": "Die ehrlichen Schwächen"},
+  {"t": "p", "x": "Anthropic selbst bremst die Erwartungen: Duet ist eine frühe Version, kann Threads falsch lesen oder falsch einschätzen, was dringend ist, und ist bei persönlichen Erledigungen wie Ticketbuchungen noch nicht so stark, zitiert [The Verge](https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent) aus der Ankündigung. Damit das Dauerfeuer an Benachrichtigungen ausbleibt, prüft der Agent verbundene Konten nur alle paar Stunden, Dauerprüfung würde auch die Plan-Limits schneller aufbrauchen."},
+  {"t": "callout", "title": "Der Markt", "x": "Mit Claude Duet sind jetzt drei große Labore in derselben Kategorie aktiv: Meta Muse, OpenAI Dots und Anthropic Duet. Alle drei versprechen proaktive Agenten für den Alltag, alle drei sind in frühen Stufen. Quelle: The Verge, Stand 21.10.2026."},
+  {"t": "h2", "x": "Einordnung"},
+  {"t": "p", "x": "Interessant ist die Ausrichtung: Statt der breiten Konsumentenfront zielt Duet auf Berufstätige und Kleinunternehmer, die täglich viele kleine Entscheidungen jonglieren. Die Beispiele aus Anthropics eigenem Testkreis passen dazu: eine Maklerin, der Duet einen falsch terminierten Besichtigungstermin meldet, ein Restaurantbesitzer mit 110 Angestellten, der Buchhaltung und Marketing damit bündelt. Der proaktive Agent wird damit zum nächsten direkten Vergleichsfeld der Labore, und die Messlatte heißt Urteilsvermögen, nicht Benchmark-Punkte."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Claude Duet ist Anthropics proaktiver Agent: morgendliches Briefing, Überwachung, eigenständige Erledigung.",
+   "Start als Research Preview in den USA für Pro- und Max-Kunden, Warteliste offen.",
+   "Sicherheitsmodell: Freigabe vor Aktionen, kein Passwort-Zugriff, eigener Klassifikator für sensible Daten.",
+   "Mit Muse, Dots und Duet wird 2026 das Jahr des proaktiven Agenten-Vergleichs."
+  ]}
+ ],
+ "faq": [
+  {"q": "Was ist Claude Duet?", "a": "Anthropics neuer persönlicher KI-Agent: Er verschickt morgens ein Briefing über die verbundenen Apps, behält sie tagsüber im Blick und erledigt Aufgaben eigenständig auf einer eigenen virtuellen Maschine. Vor sensiblen Aktionen wie Zahlungen fragt er immer nach."},
+  {"q": "Wie bekomme ich Zugang?", "a": "Über eine Warteliste. Die Research Preview startet zunächst für Pro- und Max-Abonnenten in den USA. Duet ist dann als eigene App auf iOS und Android sowie über claude.ai nutzbar und im Plan enthalten."},
+  {"q": "Sieht Claude Duet meine Passwörter?", "a": "Nein. Die Verwaltung von Zugangsdaten folgt dem Design der Claude Managed Agents, bei dem der Agent Passwörter und Anmelde-Tokens nie direkt sieht. Ein neuer Klassifikator soll zusätzlich verhindern, dass Kreditkartennummern oder Ausweisdaten weitergegeben werden."},
+  {"q": "Wie unterscheidet sich Duet von Meta Muse und OpenAI Dots?", "a": "Alle drei sind proaktive persönliche Agenten in frühen Testphasen. Duet zielt explizit auf Berufstätige und Kleinunternehmer, setzt auf Claude Opus 5.5 und betont Sicherheitsfreigaben. Muse und Dots positionieren sich breiter für den Alltag."}
+ ],
+ "sources": [
+  {"title": "Introducing Claude Duet", "publisher": "Anthropic", "url": "https://claude.com/resources/articles/claude-duet", "accessed": "2026-10-22"},
+  {"title": "Anthropic takes on Muse with Claude Duet, its new AI agent", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent", "accessed": "2026-10-22"},
+  {"title": "Anthropic preview of Claude Duet, personal AI agent take on Muse Dots", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/10/21/anthropic-preview-of-claude-duet-personal-ai-agent-take-on-muse-dots.html", "accessed": "2026-10-22"}
+ ],
+ "related": ["yelp-check-for-me-ki-telefoniert-restaurant", "microsoft-guardian-agents-insider-risk"]
+}

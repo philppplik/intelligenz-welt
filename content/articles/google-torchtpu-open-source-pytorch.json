@@ -1,0 +1,64 @@
+{
+ "slug": "google-torchtpu-open-source-pytorch",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "TorchTPU: Google macht TPUs zum nativen PyTorch-Gerät",
+ "dek": "Einen Tag nach Amazons TorchNeuron legt Google nach: TorchTPU bringt PyTorch nativ auf Cloud TPUs, mit vLLM, SGLang und Hugging-Face-Support ab dem ersten Tag. Eine Zeile Code genügt.",
+ "published": "2026-10-22T10:04:00+02:00",
+ "modified": "2026-10-22T10:04:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["TorchTPU", "Google", "TPU", "PyTorch", "Open Source"],
+ "key_takeaways": [
+  "TorchTPU ist ein offenes PyTorch-Backend für Google TPUs, gemeinsam mit Metas PyTorch-Team entwickelt.",
+  "Ein Wechsel von .to(\"cuda\") auf .to(\"tpu\") genügt, um bestehende Workloads laufen zu lassen.",
+  "Rund 450 ATen-Ops werden unterstützt; die 5.000 meistgeladenen Hugging-Face-Modelle laufen out-of-the-box.",
+  "vLLM, SGLang, TorchTitan, Ray und Hugging Face Transformers v5 sind von Tag eins an integriert.",
+  "Nach AWS TorchNeuron macht damit auch der zweite Hyperscaler seinen KI-Chip zum Ein-Zeilen-Wechsel."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: eine PyTorch-Flamme, die auf eine glänzende TPU-Platine überspringt und ein Muster aus aktivierten Schaltkreisen entzündet",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Auf der PyTorch Conference hat Google TorchTPU als Open Source veröffentlicht: PyTorch-Code läuft damit nativ auf Cloud TPUs, ohne JAX, ohne Umbau. Ein Tag nach Amazons TorchNeuron für Trainium macht damit auch der zweite Cloud-Riese seinen KI-Chip per Ein-Zeilen-Wechsel nutzbar."},
+  {"t": "h2", "x": "Was TorchTPU ändert"},
+  {"t": "p", "x": "TPUs galten bisher als JAX- und TensorFlow-Territorium; der alte PyTorch-Weg über PyTorch/XLA erforderte Eingriffe in den Code, litt unter langen Kompilierzeiten und konnte keinen nativen Eager-Modus. TorchTPU ist dagegen als echtes PyTorch-Backend gebaut, [schreibt das PyTorch-Team](https://pytorch.org/blog/introducing-torchtpu/): Eager-Execution hat oberste Priorität, bestehende Workloads laufen out of the box, der Wechsel ist im Kern .to(\"cuda\") gegen .to(\"tpu\") tauschen. Entwickelt wurde das Projekt seit Mitte 2025 gemeinsam mit Metas PyTorch-Team, und es ersetzt die alte torch_xla-Route."},
+  {"t": "table", "caption": "TorchTPU im Überblick. Quellen: PyTorch Blog, Google Cloud Blog, Stand 20./21.10.2026", "head": ["Aspekt", "Details"], "rows": [
+   ["Lizenz", "Open Source (GitHub), Kollaboration Google + Meta"],
+   ["Umstieg", "model.to(\"cuda\") wird model.to(\"tpu\")"],
+   ["Abdeckung", "Rund 450 ATen-Ops, inkl. Forward und Backward der Kernarchitekturen"],
+   ["Modell-Kompatibilität", "5.000 meistgeladene Hugging-Face-Modelle validiert (Qwen, DeepSeek, Gemma, Llama, Mistral, Whisper, CLIP, BERT u.v.m.)"],
+   ["Engines", "vllm-torchtpu (mit Inferact), sglang-torchtpu (mit RadixArk), TorchTitan-Fork fürs Training"],
+   ["Ecosystem", "HF Transformers v5, Diffusers, Kernels, Ray, TorchRec, llm-d, VeRL, LiteRT"],
+   ["Eigene Kernel", "JAX/Pallas oder Helion DSL"],
+   ["Status", "In Produktion bei einigen der größten Google-Cloud-Kunden"]
+  ]},
+  {"t": "h2", "x": "Mehr komplett als die Konkurrenz"},
+  {"t": "p", "x": "Google betont den Abstand zum Vortag: Anders als AWS TorchNeuron kommt TorchTPU von Tag eins an mit den beiden wichtigsten Serving-Engines vLLM und SGLang, einem Training-Stack über TorchTitan und nativer Hugging-Face-Unterstützung in Transformers v5, die am selben Tag ausgeliefert wurde, [schreibt der Google Cloud Blog](https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus). Hinzu kommt eine TPU-Agent-Suite in Preview: Coding-Agent-Plug-ins, die Onboarding, Diagnose und Inferenz-Tuning automatisieren. Meta-Ingenieursdirektorin Jana van Greunen nennt TorchTPU einen großen Schritt für Hardware-Vielfalt bei LLM-, Ads- und Empfehlungs-Workloads."},
+  {"t": "callout", "title": "Der größere Kontext", "x": "Innerhalb von 24 Stunden haben AWS (TorchNeuron für Trainium) und Google (TorchTPU) ihre KI-Chips zu nativen PyTorch-Geräten gemacht. Für Teams wird Preis pro Token auf TPU oder Trainium gegenüber GPU damit erstmals eine echte Beschaffungsfrage, ohne JAX lernen zu müssen. Quelle: Morning Tokens, PyTorch Blog, Stand 21.10.2026."},
+  {"t": "h2", "x": "Einordnung"},
+  {"t": "p", "x": "Der CUDA-Graben war nie nur Hardware, sondern Software-Bequemlichkeit: PyTorch auf NVIDIA läuft einfach. Genau diese Bequemlichkeit bauen die Hyperscaler jetzt für ihre eigenen Chips nach, ausgerechnet mit Metas Hilfe, das selbst massiv GPUs kauft. Zu beachten: Peak-Performance braucht weiter Tuning, Google selbst sagt, dass Shapes und Sharding GPU-optimierter Modelle angepasst werden müssen. Aber die Eintrittshürde ist mit diesem Release dramatisch gesunken."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "TorchTPU ist Open Source: PyTorch-Workloads laufen per .to(\"tpu\") auf Cloud TPUs.",
+   "vLLM, SGLang, TorchTitan und Hugging Face sind von Tag eins dabei, inklusive 5.000 validierter Modelle.",
+   "Nach AWS TorchNeuron ist das der zweite Angriff auf den CUDA-Vorteil innerhalb von 24 Stunden.",
+   "Für den Einstieg genügt pip install torch_tpu und torch.device(\"tpu\"); Peak-Leistung braucht weiter Tuning."
+  ]}
+ ],
+ "faq": [
+  {"q": "Was ist TorchTPU?", "a": "Ein Open-Source-Backend, das PyTorch nativ auf Google TPUs bringt. Es wurde von Google gemeinsam mit Metas PyTorch-Team entwickelt und ersetzt die alte PyTorch/XLA-Route. Bestehender Code läuft mit minimalen Änderungen."},
+  {"q": "Wie schwer ist der Umstieg von GPU auf TPU?", "a": "Der Basisfall ist eine Zeile: model.to(\"cuda\") wird zu model.to(\"tpu\"). Damit läuft ein Workload, für maximale Leistung müssen aber Shapes, Sharding und Ops angepasst werden, weil viele Modelle auf GPU-Architekturen optimiert sind."},
+  {"q": "Welche Modelle laufen auf TorchTPU?", "a": "Google und das PyTorch-Team haben die 5.000 meistgeladenen Hugging-Face-Modelle validiert, darunter Qwen, DeepSeek, Gemma, Llama, Mistral, Whisper, CLIP und BERT. Hugging Face Transformers v5 unterstützt TPUs nativ per device_map=\"tpu\"."},
+  {"q": "Was ist der Unterschied zu AWS TorchNeuron?", "a": "Beide machen den eigenen KI-Chip (Google TPU beziehungsweise AWS Trainium) zum nativen PyTorch-Gerät. TorchTPU kam einen Tag nach TorchNeuron, gilt aber als zum Start vollständiger: vLLM, SGLang, TorchTitan-Training und Hugging-Face-Support waren sofort dabei."}
+ ],
+ "sources": [
+  {"title": "Introducing TorchTPU", "publisher": "PyTorch Blog", "url": "https://pytorch.org/blog/introducing-torchtpu/", "accessed": "2026-10-22"},
+  {"title": "TorchTPU is now open source: Run native PyTorch on TPUs", "publisher": "Google Cloud Blog", "url": "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus", "accessed": "2026-10-22"},
+  {"title": "AI News Oct 21, 2026: Google open-sources TorchTPU", "publisher": "Morning Tokens", "url": "https://morningtokens.com/issues/2026-10-21/", "accessed": "2026-10-22"}
+ ],
+ "related": ["amazon-torchneuron-trainium-pytorch", "deepseek-deepinfer-open-source-inferenz"]
+}

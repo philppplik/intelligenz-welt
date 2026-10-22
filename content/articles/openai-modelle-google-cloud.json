@@ -1,0 +1,60 @@
+{
+ "slug": "openai-modelle-google-cloud",
+ "lang": "de",
+ "section": "news",
+ "type": "news",
+ "title": "OpenAI-Modelle kommen zu Google Cloud",
+ "dek": "GPT und Codex landen im Model Garden von Google Cloud, abrechenbar über den Marketplace und bald auch im Coding-Tool Antigravity. Damit sind OpenAI-Modelle auf allen drei großen US-Clouds verfügbar.",
+ "published": "2026-10-22T10:00:00+02:00",
+ "modified": "2026-10-22T10:00:00+02:00",
+ "author": "philipp-paulik",
+ "tags": ["OpenAI", "Google Cloud", "Codex", "Model Garden", "Enterprise"],
+ "key_takeaways": [
+  "OpenAIs Frontier-Modelle und Codex-Workflows kommen in den Model Garden von Google Cloud.",
+  "Kunden kaufen die Modelle über den Google Cloud Marketplace und können bestehende GCP-Guthaben nutzen.",
+  "Bald verfügbar auch in Google Antigravity und im Gemini Agent; allgemeine Verfügbarkeit in den kommenden Wochen.",
+  "Google Cloud ist damit laut eigener Angabe der einzige Hyperscaler mit allen drei führenden Closed-Source-Modellen.",
+  "Microsoft bleibt OpenAIs primärer Cloud-Partner; Amazon hostet OpenAI-Modelle seit April."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: zwei leuchtende Wolken-Türme, zwischen denen eine Brücke aus Datenströmen gespannt ist, Pakete wandern hinüber",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** OpenAI und Google Cloud werden Partner: Die Frontier-Modelle von OpenAI und die Codex-Agenten-Workflows kommen in Googles Model Garden. Für Unternehmen heißt das: GPT dort nutzen, wo die eigenen Daten und Workflows schon liegen."},
+  {"t": "h2", "x": "Was genau kommt"},
+  {"t": "p", "x": "Die Integration bringt OpenAIs Frontier-Modelle samt Codex nativ in den Model Garden von Google Cloud, [kündigte OpenAI an](https://openai.com/index/openai-models-google-cloud). Abgerechnet wird über den Google Cloud Marketplace, und Unternehmen mit bestehenden Google-Cloud-Ausgabeverpflichtungen können diese für die Käufe einsetzen. Bald sollen die OpenAI-Modelle zusätzlich im Coding-Tool Google Antigravity und im Gemini Agent verfügbar sein; die allgemeine Verfügbarkeit ist für die kommenden Wochen geplant. Google betont die Enterprise-Seite: Zugriffskontrollen, zentrale Daten-Governance und Infrastruktur für regulierte Branchen."},
+  {"t": "p", "x": "Für Google Cloud ist der Deal ein Coup: Die Plattform bietet nach [eigener Angabe](https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers) als einziger Hyperscaler alle drei führenden Closed-Source-Modelle an, neben über 200 First-Party-, Third-Party- und offenen Modellen. „Google Cloud is a leading platform for developers and businesses building AI agents“, wird OpenAI-Präsident Greg Brockman zitiert; Google-Cloud-Chef Thomas Kurian verspricht Kunden die freie Modellwahl für jede Aufgabe."},
+  {"t": "table", "caption": "OpenAI-Modelle in den großen Clouds. Quellen: OpenAI, CNBC, Stand 21./22.10.2026", "head": ["Cloud", "Status", "Details"], "rows": [
+   ["Microsoft Azure", "Primärer Cloud-Partner", "Langjährige Partnerschaft, bleibt laut OpenAI die Hauptplattform"],
+   ["Amazon AWS", "Seit April 2026", "Einstieg am Tag nach dem Ende der Microsoft-Exklusivität"],
+   ["Google Cloud", "Angekündigt, GA in Kürze", "Model Garden, Marketplace-Abrechnung, bald Antigravity und Gemini Agent"]
+  ]},
+  {"t": "h2", "x": "Warum OpenAI das tut"},
+  {"t": "p", "x": "Der Schritt ist Teil von OpenAIs Enterprise-Offensive: Nach dem Ende der Microsoft-Exklusivität vor knapp sechs Monaten ging es zuerst zu Amazon, jetzt zu Google, berichtet [CNBC](https://www.cnbc.com/2026/10/21/openai-bring-its-ai-models-to-googles-cloud-expands-beyond-microsoft.html). Damit sind die Modelle auf allen drei großen US-Clouds verfügbar, genau dort, wo Unternehmensbudgets ohnehin gebunden sind. OpenAI umwirbt dabei Investoren bei einer Bewertung von 1,4 Billionen Dollar und peilt laut CNBC einen Börsengang an."},
+  {"t": "callout", "title": "Der Konkurrenz-Kontext", "x": "Google Cloud wächst rasant: Das annualisierte Wachstum beschleunigte sich im zweiten Quartal auf etwa 82 Prozent (Q1: 63 Prozent), auch dank eigener KI-Chips und Modelle. Ausgerechnet Konkurrent OpenAI wird nun zum Umsatztreiber im eigenen Model Garden. Quelle: CNBC, Stand 21.10.2026."},
+  {"t": "h2", "x": "Einordnung"},
+  {"t": "p", "x": "Dass OpenAI und Google kooperieren, obwohl Gemini 4 Argon direkt mit GPT konkurriert, zeigt die neue Pragmatik der Branche: Modelle werden zu Handelsware, Clouds zu Regalen. Für Kunden ist das gut, denn Modellwahl ohne Plattformwechsel senkt die Hürde für echte Mehrmodell-Strategien. Spannend bleibt, wie Googles eigene Agenten-Tools mit Codex im selben Angebot koexistieren."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "OpenAI-Modelle und Codex kommen in den Google Cloud Model Garden, GA in den kommenden Wochen.",
+   "Abrechnung läuft über den Marketplace, GCP-Verpflichtungen können genutzt werden.",
+   "OpenAI ist damit auf allen drei großen US-Clouds verfügbar; Microsoft bleibt Primärpartner.",
+   "Für Teams: Modellvergleiche werden einfacher, weil GPT und Gemini im selben Garten stehen."
+  ]}
+ ],
+ "faq": [
+  {"q": "Welche OpenAI-Modelle kommen zu Google Cloud?", "a": "Laut Ankündigung die Frontier-Modelle von OpenAI samt Codex-Agenten-Workflows, eingebunden in den Model Garden. Zusätzlich sollen sie bald in Google Antigravity und im Gemini Agent nutzbar sein."},
+  {"q": "Wann kann ich sie nutzen?", "a": "Die allgemeine Verfügbarkeit ist für die kommenden Wochen angekündigt. Über Google Cloud kann bereits jetzt Zugang angefragt werden."},
+  {"q": "Was bedeutet das für die Microsoft-Partnerschaft?", "a": "Microsoft bleibt laut OpenAI der primäre Cloud-Partner. Seit dem Ende der Exklusivität vor knapp sechs Monaten expandiert OpenAI aber auf alle großen Clouds: zuerst Amazon im April, jetzt Google."},
+  {"q": "Warum öffnet Google seine Plattform für den Konkurrenten?", "a": "Google Cloud verkauft Modellwahl als Strategie: über 200 Modelle im Garden, jetzt als einziger Hyperscaler mit allen drei führenden Closed-Source-Modellen. Jeder OpenAI-Workload auf Google Cloud ist Umsatz für Google."}
+ ],
+ "sources": [
+  {"title": "OpenAI models are coming to Google Cloud", "publisher": "OpenAI", "url": "https://openai.com/index/openai-models-google-cloud", "accessed": "2026-10-22"},
+  {"title": "Google Cloud brings OpenAI models to customers", "publisher": "Google Cloud Blog", "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers", "accessed": "2026-10-22"},
+  {"title": "OpenAI to bring AI models to Google's cloud, in further expansion beyond Microsoft", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/10/21/openai-bring-its-ai-models-to-googles-cloud-expands-beyond-microsoft.html", "accessed": "2026-10-22"}
+ ],
+ "related": ["gemini-4-argon-agenten-minecraft-durchgespielt", "anthropic-s1-leak-einblick-zahlen"]
+}

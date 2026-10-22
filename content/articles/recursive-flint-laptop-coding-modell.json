@@ -1,0 +1,131 @@
+{
+ "slug": "recursive-flint-laptop-coding-modell",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Flint: Das Coding-Modell fürs Laptop, gebaut von KI",
+ "dek": "Recursive hat Flint veröffentlicht: ein kostenloses Coding-Modell mit 40 Milliarden Parametern, das auf dem Laptop läuft. Entwickelt wurde es größtenteils von einer KI, der Eureka Machine des Startups.",
+ "published": "2026-10-22T10:02:00+02:00",
+ "modified": "2026-10-22T10:02:00+02:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Flint",
+  "Recursive",
+  "Lokale KI",
+  "Coding",
+  "Richard Socher"
+ ],
+ "key_takeaways": [
+  "Flint ist ein kostenloses, offenes Coding-Modell (Apache 2.0) mit 40 Mrd. Parametern, von denen nur 2,5 Mrd. pro Token aktiv sind.",
+  "Es läuft auf einem normalen Laptop mit über 125 Token pro Sekunde (M4 Pro) und über 150 auf einem 64-GB-RTX-Spark.",
+  "Auf den Coding-Benchmarks SWE-Bench Pro v2, Terminal-Bench 2.1 und SWE-Bench Verified führt es alle MoE-Modelle unter 50 Mrd. Parametern an.",
+  "Die Eureka Machine, Recursives System für automatisierte Forschung, hat fast jeden Schritt der Entwicklung mitgebaut, in unter vier Monaten.",
+  "Recursive wird mit 4,65 Mrd. Dollar bewertet; Geldgeber sind unter anderem GV, NVIDIA und AMD Ventures."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein aufgeklapptes Laptop auf einem Schreibtisch, aus dessen Bildschirm ein kleiner funkelnder Feuerstein-Funke Code-Zeilen entzündet",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Das Startup Recursive hat sein erstes Modell vorgestellt: Flint, ein kostenloses Coding-Modell, das komplett auf dem eigenen Laptop läuft. Das Besondere: Gebaut wurde es größtenteils von einer KI, die KI-Forschung automatisiert."
+  },
+  {
+   "t": "h2",
+   "x": "Was Flint kann"
+  },
+  {
+   "t": "p",
+   "x": "Flint ist ein Mixture-of-Experts-Modell mit 40 Milliarden Parametern, von denen pro Token nur 2,5 Milliarden aktiv sind, leicht genug für ein normales Laptop, [schreibt Recursive](https://recursive.com/updates/introducing-recursive-flint). Laut [TechCrunch](https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/) erreicht es auf einem MacBook Pro mit M4 Pro etwa 131 Token pro Sekunde, rund doppelt so viel wie vergleichbare Modelle wie Googles Gemma 4 oder NVIDIAs Nemotron 3.5 Lightning auf derselben Maschine (58 bis 69). Auf einem RTX Spark mit 64 GB sind es über 150. Der Kontext reicht bis 512.000 Token, empfohlen werden 256.000. Auf SWE-Bench Verified schlägt Flint laut Recursive alle anderen Modelle unter 50 Milliarden Parametern; im eigenen Sechs-Benchmark-Schnitt liegt nur Alibabas Qwen3.8 27B noch vorn."
+  },
+  {
+   "t": "figure",
+   "file": "recursive-flint-laptop-coding-modell-chart1.jpg",
+   "alt": "Balkendiagramm der Generierungsgeschwindigkeit: Flint auf einem M4 Pro MacBook Pro erreicht etwa 131 Token pro Sekunde, auf einem 64-GB-RTX-Spark über 150, vergleichbare Modelle auf demselben Laptop nur 58 bis 69.",
+   "caption": "Generierungsgeschwindigkeit lokaler Coding-Modelle, Anbieter-Angaben von Recursive: auf der RTX Spark nennt Recursive über 150 Token/s (im Chart als gerundeter Wert 150 dargestellt = Untergrenze), auf dem M4 Pro 131 Token/s; beste Vergleichsmodelle auf demselben Laptop 58-69. Keine unabhängige Messung."
+  },
+  {
+   "t": "h2",
+   "x": "Die KI, die das Modell gebaut hat"
+  },
+  {
+   "t": "p",
+   "x": "Der eigentliche Clou ist der Bauprozess: Recursives Eureka Machine, ein System für automatisierte KI-Forschung, soll an fast jedem Schritt beteiligt gewesen sein, von Pretraining über Post-Training bis zur Inferenz. Zu ihren Beiträgen zählen eine sparsamere Modellform, Low-Bit-Training, das Flint um 71 Prozent schrumpfte, fast ohne Qualitätsverlust, und eigene Kernel. Ein kleines Team hat das Modell so in unter vier Monaten von Grund auf gebaut. Recursive nennt das einen ersten öffentlichen Test rekursiver Selbstverbesserung: KI baut bessere KI, die wiederum bessere KI baut, aktuell noch unter menschlicher Aufsicht."
+  },
+  {
+   "t": "p",
+   "x": "Wie gut das Ergebnis ist, hat Will Knight von [Wired](https://www.wired.com/story/recursive-self-improvement-flint-latest-model-scary-good/) ausprobiert: Auf einem Mac mit 48 GB baute er mit Flint mehrere kleine Programme, darunter eine To-do-App und ein Recherche-Tool. Während kleinere Coding-Modelle bei ihm oft Fehler produzierten, traf Flint seine Anfragen jedes Mal. Recursive selbst räumt ein, dass Flint mehr Anleitung braucht als die großen kostenpflichtigen Coding-Assistenten, und empfiehlt, große Aufgaben in kleine Schritte zu zerlegen."
+  },
+  {
+   "t": "callout",
+   "title": "Wer steckt dahinter?",
+   "x": "Recursive wurde von Richard Socher gegründet, früher Chief Scientist bei Salesforce, und kam im Mai mit 650 Mio. USD Funding bei einer Bewertung von 4,65 Mrd. USD aus dem Stealth-Modus (Investoren: GV, NVIDIA, AMD Ventures u.a.). Im Juni folgte ein 410-Mio.-USD-Compute-Deal mit AWS. Quelle: TechCrunch, Stand 21.10.2026."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Flint trifft zwei Trends gleichzeitig: lokale KI, die ohne Cloud, ohne API-Gebühren und ohne Datenabfluss auskommt, und automatisierte Forschung, bei der Modelle einen wachsenden Teil ihrer eigenen Entwicklung übernehmen. OpenAI hatte zuletzt berichtet, dass seine Agenten Mitte August bereits 3,1 Arbeitstage pro menschlichem Forschungstag leisteten. Ob die Eureka Machine bei künftigen Modellen längere Strecken allein schafft, wird die spannende Frage. Die Benchmarks hier sind Anbieter-Angaben, aber der Wired-Praxistest und die Apache-2.0-Veröffentlichung machen Flint leicht selbst prüfbar."
+  },
+  {
+   "t": "h2",
+   "x": "Was du mitnehmen kannst"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Flint ist kostenlos auf Hugging Face (Apache 2.0) und läuft offline auf dem eigenen Rechner.",
+    "40 Mrd. Parameter, nur 2,5 Mrd. aktiv: schnell genug fürs Laptop, stärker als alles unter 50 Mrd. auf SWE-Bench Verified.",
+    "Größtenteils von der Eureka Machine gebaut: ein früher Praxistest für KI, die KI entwickelt.",
+    "Faustregel von Recursive selbst: große Aufgaben in kleine Schritte zerlegen, dann liefert Flint."
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist Flint?",
+   "a": "Ein kostenloses, offenes Coding-Modell des Startups Recursive: 40 Mrd. Parameter (2,5 Mrd. aktiv pro Token), Apache-2.0-Lizenz, läuft lokal auf einem Laptop. Es führt die Coding-Benchmarks unter den MoE-Modellen mit weniger als 50 Mrd. Parametern an."
+  },
+  {
+   "q": "Auf welcher Hardware läuft Flint?",
+   "a": "Auf einem MacBook Pro mit M4 Pro erreicht es laut TechCrunch etwa 131 Token pro Sekunde, auf einem 64-GB-RTX-Spark über 150. Recursive empfiehlt Kontextfenster bis 256.000 Token für beste Ergebnisse, maximal sind 512.000 möglich."
+  },
+  {
+   "q": "Was ist die Eureka Machine?",
+   "a": "Recursives System für automatisierte KI-Forschung: Es schlägt Ideen vor, implementiert und testet sie und entscheidet anhand der Ergebnisse über die nächsten Schritte. Bei Flint war es an fast allen Entwicklungsschritten beteiligt, von der Modellform über das Low-Bit-Training bis zu eigenen Kernels."
+  },
+  {
+   "q": "Ist Flint so gut wie Claude oder Codex?",
+   "a": "Nein, das räumt Recursive selbst ein: Flint braucht mehr Anleitung als die großen kostenpflichtigen Assistenten. Im Wired-Praxistest traf es kleine Coding-Aufgaben aber zuverlässig, und es ist kostenlos, offline und privat."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Recursive launches Flint, a laptop coding model it says was largely built by AI",
+   "publisher": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
+   "accessed": "2026-10-22"
+  },
+  {
+   "title": "Introducing Flint",
+   "publisher": "Recursive",
+   "url": "https://recursive.com/updates/introducing-recursive-flint",
+   "accessed": "2026-10-22"
+  },
+  {
+   "title": "This Startup Is All In on Recursive Self-Improvement. Its Latest Model Is Scary Good",
+   "publisher": "Wired",
+   "url": "https://www.wired.com/story/recursive-self-improvement-flint-latest-model-scary-good/",
+   "accessed": "2026-10-22"
+  }
+ ],
+ "related": [
+  "rtx-spark-notebook-lokale-ki-test",
+  "mercury-3-diffusion-modell-geschwindigkeit"
+ ]
+}
