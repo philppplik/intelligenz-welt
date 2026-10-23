@@ -147,6 +147,11 @@ for item in licensed:
     path=licensed_path(item)
     page(path,item['title']+' | Quelleninfo | Intelligenz Welt','Externe KI-Meldung mit RSS-Anrisstext und Original-Link.',licensed_body(item,'Intelligenz Welt','/news/quellenarchiv/'),act='/news/')
     licensed_noindex(OUT+path+'index.html')
+# Stable, noindex draft preview (digital guides, nothing purchasable) - not in sitemap/RSS.
+_g=os.path.join('src','guides.html')
+if os.path.isfile(_g):
+    os.makedirs(OUT+'/guides',exist_ok=True)
+    shutil.copy(_g,OUT+'/guides/index.html')
 print('IW pages',len(urls))
 # editorial articles (content/articles/*.json): rendered by tools/articles.py, see docs/EDITORIAL.md
 import subprocess,sys
