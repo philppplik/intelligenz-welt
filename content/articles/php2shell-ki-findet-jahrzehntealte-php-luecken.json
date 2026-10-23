@@ -1,0 +1,140 @@
+{
+  "slug": "php2shell-ki-findet-jahrzehntealte-php-luecken",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "PHP2Shell: KI findet jahrzehntealte Lücken in 70 Prozent des Webs",
+  "dek": "Zwei kritische Lücken im PHP-Kern erlauben Code-Ausführung aus dem Netz, betroffen ist fast jede PHP-Version seit einem Jahrzehnt. Gefunden hat sie kein Mensch, sondern Frontier-Modelle. Patches sind da, und die ersten Angriffe laufen bereits.",
+  "published": "2026-10-23T10:00:00+02:00",
+  "modified": "2026-10-23T10:00:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "PHP2Shell",
+    "Sicherheit",
+    "PHP",
+    "Wiz",
+    "Gemini"
+  ],
+  "key_takeaways": [
+    "Zwei kritische Lücken im PHP-Kern (CVE-2026-109618 und CVE-2026-109619, jeweils CVSS 9.2) erlauben unauthentifizierte Code-Ausführung und das Auslesen von Prozess-Speicher mit Passwörtern und API-Keys.",
+    "Betroffen ist praktisch jede PHP-Version seit 5.4; PHP treibt laut Wiz rund 70 Prozent aller Websites an, darunter WordPress, Drupal, Joomla und MediaWiki.",
+    "Wiz Research fand die Lücken mit den Frontier-Modellen Gemini 4 Argon und GPT-5.6 Sol; ein zweiter Fund kam von Calif aus OpenAIs Programm Patch the Planet.",
+    "Patches gibt es seit dem 21. Oktober für PHP 8.5.12, 8.4.27, 8.3.36 und 8.2.35; Amazon beobachtete erste Ausnutzungsversuche schon am 17. Oktober, CISA fordert: patchen oder Systeme abschalten."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein Lichtstrahl aus einer Linse legt einen leuchtenden Riss in einer Mauer aus Code-Ziegeln frei",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Sicherheitsforscher haben mit Hilfe von KI-Modellen zwei kritische Schwachstellen im Kern von PHP entdeckt, die dort seit über einem Jahrzehnt schlummerten. Ein einziges Exploit-Skript namens php2shell übernimmt ungepatchte Server aus dem Netz, ganz ohne Login. PHP hat gepatcht, die US-Behörde CISA warnt eindringlich, und erste Angriffe wurden schon vor der Veröffentlichung gesichtet."
+    },
+    {
+      "t": "h2",
+      "x": "Was steckt dahinter?"
+    },
+    {
+      "t": "p",
+      "x": "Die Schwachstellen sitzen nicht in WordPress, Drupal oder einer anderen Anwendung, sondern in PHP selbst. Laut [Wiz Research](https://www.wiz.io/blog/php2shell-php-rce) reicht deshalb eine einfache „Hello World“-App auf einer betroffenen Version, um angreifbar zu sein. Die Fehler entstehen, wenn PHP schwere Fehler wie Speicherengpässe verarbeitet: Dabei bleibt korrumpierter interner Zustand zurück, den eine spätere Anfrage desselben Workers wiederverwendet. Das Ergebnis: Angreifer können aus der Ferne Code ausführen oder den Arbeitsspeicher des PHP-Prozesses auslesen, inklusive Passwörter, Tokens und API-Keys anderer Anfragen. Demonstriert wurde die unauthentifizierte Code-Ausführung auf den jeweils aktuellen Container-Images von WordPress, Drupal und Joomla."
+    },
+    {
+      "t": "table",
+      "head": [
+        "CVE",
+        "Kernfehler",
+        "Demonstriert"
+      ],
+      "rows": [
+        [
+          "CVE-2026-109618",
+          "Use-after-free beim Upload-Fortschritt; Auslesen des Prozess-Speichers",
+          "Pre-Auth-RCE auf WordPress, Drupal, Joomla; anwendungsunabhängiges Speicher-Auslesen"
+        ],
+        [
+          "CVE-2026-109619",
+          "Use-after-free im Fehler-Backtrace; Typ-Verwechslung im OPcache",
+          "Pre-Auth-RCE auf Drupal und WordPress"
+        ]
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Der KI-Wendepunkt"
+    },
+    {
+      "t": "p",
+      "x": "Der verwundbare Code lag mehr als zehn Jahre im offenen PHP-Quelltext. Was sich geändert hat, ist die Exploit-Ökonomie: Eine funktionierende Angriffskette erforderte das Verketten mehrerer Fehler und das Anpassen an jede PHP-Version und Speicheranordnung. Wiz beschreibt das als am Rand des für menschliche Forscher praktisch Machbaren. Mit Wiz Atlas, Gemini 4 Argon und GPT-5.6 Sol dauerte es von der Entdeckung am 19. August bis zur bestätigten Code-Ausführung auf Drupal und WordPress nur Tage; Wiz spricht davon, dass ein einzelner Forscher mit den Modellen in einer Woche schaffte, wofür früher ein Weltklasse-Team Monate gebraucht hätte. Unabhängig davon fand das Unternehmen Calif eine der Lücken mit GPT-5.6 Sol im Rahmen von OpenAIs Programm [Patch the Planet](https://morningtokens.com/issues/2026-10-22/)."
+    },
+    {
+      "t": "h2",
+      "x": "Patch da, Angriffe auch"
+    },
+    {
+      "t": "p",
+      "x": "PHP hat am 21. Oktober die gefixten Versionen 8.5.12, 8.4.27, 8.3.36 und 8.2.35 veröffentlicht; der Patch beseitigt das Fehlermuster an der Wurzel. Für die nicht mehr unterstützten Zweige 7.4 bis 8.1 gibt es lediglich minimale Quell-Backports, wie [Tenable](https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote) zusammenfasst. Brisant: Amazon Threat Intelligence beobachtete Ausnutzungsversuche bereits am 17. Oktober, vier Tage vor der Veröffentlichung, und spricht inzwischen von breiter Ausnutzung. Die US-Behörde CISA hat am selben Tag eine eigene Warnung veröffentlicht und rät: sofort patchen oder PHP-Systeme bis dahin vom Netz nehmen. Vor der Veröffentlichung hatten Automattic, Akamai, AWS, Cloudflare, Fastly, Google, Imperva, Microsoft und Vercel WAF-Regeln und Abhilfen vorbereitet."
+    },
+    {
+      "t": "callout",
+      "title": "Was du jetzt tun solltest",
+      "x": "Finde heraus, welche Server, Container und Shared-Hosting-Umgebungen bei dir PHP laufen lassen. Update auf 8.5.12, 8.4.27, 8.3.36 oder 8.2.35. Achte bis dahin auf ungewöhnliche Multipart-Requests gefolgt von Speicher-Fehlern, wiederholte HTTP-500-Antworten und auffällig große PHPSESSID-Cookies. Alles unter 8.2 bekommt keinen offiziellen Fix."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Zwei PHP-Core-Lücken (CVSS 9.2) betreffen fast jede Version seit PHP 5.4 und damit den Großteil des Webs.",
+        "Frontier-Modelle machten die jahrzehntealten Fehler erst praktisch ausnutzbar, dieselbe Fähigkeit hilft jetzt auch den Verteidigern.",
+        "Gepatchte Versionen: 8.5.12, 8.4.27, 8.3.36, 8.2.35. Ausnutzungsversuche laufen seit dem 17. Oktober.",
+        "Wiz vergleicht die Tragweite mit Heartbleed und Log4Shell: alte Bugs werden durch KI plötzlich angreifbar."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bin ich betroffen, wenn ich nur WordPress nutze?",
+      "a": "Sehr wahrscheinlich ja, solange die PHP-Version nicht gepatcht ist. Die Lücken stecken in PHP selbst, nicht in WordPress. Hoster wie Automattic hatten vor Veröffentlichung Schutzregeln vorbereitet, ersetzt wird das Patchen dadurch aber nicht."
+    },
+    {
+      "q": "Wurden die Lücken schon ausgenutzt?",
+      "a": "Ja. Amazon Threat Intelligence meldet Ausnutzungsversuche seit dem 17. Oktober 2026, vier Tage vor der öffentlichen Veröffentlichung, und inzwischen breite Ausnutzung. Die US-Behörde CISA hat am 21. Oktober eine eigene Warnung zu beiden CVEs veröffentlicht und fordert zum sofortigen Patchen auf; Systeme, die sich nicht aktualisieren lassen, sollen vom Netz."
+    },
+    {
+      "q": "Mein PHP ist älter als 8.2. Was nun?",
+      "a": "Versionen bis 8.1 sind End-of-Life und bekommen keine offiziellen Releases mehr. Das PHP-Sicherheitsteam hat minimale Quell-Backports für 7.4 bis 8.1 veröffentlicht. CISA rät, unpatchbare PHP-Systeme abzuschalten. Realistisch: auf einen unterstützten Zweig aktualisieren."
+    },
+    {
+      "q": "Hat die KI das Web unsicherer gemacht?",
+      "a": "Beides. Dieselben Modelle, die alte Fehler ausnutzbar machen, haben diese Lücken auch gefunden und beim Patch geholfen. Wiz nennt es einen Wendepunkt: Komplexität schützt Software nicht mehr vor Angriffen, sie schützt nur noch, bis ein Modell sie durchdringt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet",
+      "publisher": "Wiz Blog",
+      "url": "https://www.wiz.io/blog/php2shell-php-rce",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "php2shell (CVE-2026-109618, CVE-2026-109619): Frequently asked questions",
+      "publisher": "Tenable",
+      "url": "https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "AI News Oct 22, 2026: PHP2Shell, Railway breach, Claude Duet",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-22/",
+      "accessed": "2026-10-23"
+    }
+  ],
+  "related": [
+    "google-torchtpu-open-source-pytorch",
+    "claude-duet-persoenlicher-ki-agent"
+  ]
+}

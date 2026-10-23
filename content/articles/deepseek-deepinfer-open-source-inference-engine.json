@@ -1,0 +1,111 @@
+{
+  "slug": "deepseek-deepinfer-open-source-inference-engine",
+  "lang": "de",
+  "section": "tools",
+  "type": "news",
+  "title": "DeepSeek legt seine Produktions-Engine DeepInfer offen",
+  "dek": "DeepSeek veröffentlicht unter Apache 2.0 die Inference-Engine, mit der es seine eigenen Dienste betreibt: spekulative Decodierung, batch-invariante Ausgaben und ein Scheduler, der 155 Billionen Token am Tag verkraftet. Zwei Bausteine bleiben intern.",
+  "published": "2026-10-23T10:06:00+02:00",
+  "modified": "2026-10-23T10:06:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "DeepSeek",
+    "DeepInfer",
+    "Open Source",
+    "Inference",
+    "Apache 2.0"
+  ],
+  "key_takeaways": [
+    "DeepInfer ist die Produktions-Engine hinter DeepSeeks Diensten und steht jetzt unter Apache 2.0 auf GitHub, unterstützt wird vorerst nur DeepSeek-V4.1-Flash.",
+    "Läuft auf NVIDIAs Blackwell-Chips (SM100) und Huaweis Ascend 950, ältere NVIDIA-Generationen sind nicht dabei; Determinismus-Features funktionieren nur auf NVIDIA.",
+    "Kernstücke: DSpark spekulative Decodierung mit Konfidenz-Prüfung, asynchroner Batch-Scheduler, batch-invariante Inferenz für reproduzierbare Ergebnisse und strukturierte Outputs per Regex oder JSON-Schema.",
+    "KV-Cache-Management und Lastverteilung über Replikate bleiben vorerst intern; das kleinste als effizient beschriebene Setup nutzt 64 GPUs fürs Prefill und 64 fürs Decode."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine geöffnete Maschinenhaube gibt den Blick auf leuchtende Turbinen und Schaltkreise frei, daneben schwebt ein geöffnetes Geschenkpaket",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Labore öffnen selten das Herzstück ihres Betriebs. DeepSeek tut genau das und legt mit DeepInfer die Inference-Engine offen, mit der es seine eigenen groß angelegten Dienste betreibt. Das [GitHub-Repository](https://github.com/deepseek-ai/DeepInfer) stand nach wenigen Tagen bei über 20.000 Sternen."
+    },
+    {
+      "t": "h2",
+      "x": "Was drinsteckt"
+    },
+    {
+      "t": "p",
+      "x": "DeepInfer liefert Offline-Inferenz für DeepSeek-V4.1-Flash und baut auf den bereits offenen Kernel-Bibliotheken FlashMLA, DeepGEMM und DeepEP auf; ursprünglich entstand die Engine laut README als Fork von vLLM. Die Feature-Liste liest sich wie ein Lehrbuch moderner Inferenz: Attention-Datenparallelität und balancierte Kontext-Parallelität, MoE-Expert-Parallelität mit Lastausgleich (EPLB) und ein asynchroner Batch-Scheduler ohne Overhead. Dazu kommt DSpark, eine spekulative Decodierung, bei der ein Entwurfsmodell fünf Token vorschlägt und ein Konfidenz-Kopf entscheidet, welche davon das Hauptmodell prüfen muss. Das spart laut DeepSeek rund 30 Prozent Verifikations-Rechenarbeit und brachte unter Produktionslast vier bis sieben Prozent mehr Durchsatz, wie [SiliconANGLE](https://siliconangle.com/2026/10/20/deepseek-open-sources-deepinfer-the-inference-framework-behind-its-production-services/) berichtet. Eine zweite Technik namens Bounded Replay halbiert nahezu die Prefill-Rechnung, indem nur ein begrenztes Suffix des Prompts erneut durch die Decoder-Schichten läuft."
+    },
+    {
+      "t": "h2",
+      "x": "Der Determinismus-Trumpf"
+    },
+    {
+      "t": "p",
+      "x": "Zwei Features dürften besonders Forschende interessieren: Batch-invariante Inferenz liefert identische Ergebnisse, egal wie sich die Anfragen im Batch zusammensetzen, und deterministisches Sampling macht Ausgaben bei gleichen Eingaben exakt reproduzierbar. Für Evaluierungen und verstärkendes Lernen ist das Gold wert, beide Funktionen laufen allerdings nur auf NVIDIA-Hardware. Hardware insgesamt: unterstützt werden NVIDIAs SM100-Generation (Blackwell) und Huaweis Ascend 950, Hopper und ältere NVIDIA-Architekturen fehlen. Strukturierte Outputs per Regex, JSON-Schema oder EBNF-Grammatik sind ebenfalls an Bord."
+    },
+    {
+      "t": "h2",
+      "x": "Was fehlt, und warum das trotzdem zählt"
+    },
+    {
+      "t": "p",
+      "x": "Nicht im Release: das KV-Cache-Management und der Lastausgleich über Replikate hinweg, beide zu eng mit DeepSeeks interner Infrastruktur verwoben, heißt es; ein Beitrag auf Zhihu beschreibt zumindest die Funktionsweise. Auch die Trennung von Prefill und Decode auf verschiedene Maschinen bleibt den Betreibern überlassen, und das kleinste als effizient beschriebene Setup umfasst 64 GPUs fürs Prefill und weitere 64 fürs Decode, kein Heimprojekt also. DeepSeek beziffert die eigene Last in einem Deployment-Dokument auf 155 Billionen Token pro Tag in einem einzigen Cluster. Warum die Öffnung trotzdem Gewicht hat: Scheduler, Verifikationslogik und Batch-Invarianz zeigen im Detail, wie DeepSeek seine Preise drückt, und es wäre nicht das erste Mal, dass solche Ideen in vLLM und SGLang auftauchen."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "DeepInfer ist DeepSeeks Produktions-Engine unter Apache 2.0, vorerst nur für DeepSeek-V4.1-Flash.",
+        "Spekulative Decodierung mit Konfidenz-Prüfung und Bounded Replay sind die großen Durchsatzhebel.",
+        "Batch-invariante Inferenz macht Ergebnisse reproduzierbar, allerdings nur auf NVIDIA-Chips.",
+        "Für den Eigenbetrieb brauchst du dreistellige GPU-Zahlen; der eigentliche Wert liegt im offengelegten Know-how."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich DeepInfer zu Hause ausprobieren?",
+      "a": "Realistisch nicht. DeepSeek beschreibt 64 GPUs fürs Prefill plus 64 fürs Decode als kleinstes effizientes Setup. Das Release richtet sich an Inferenz-Anbieter und Forschungslabore, nicht an Einzelnutzer."
+    },
+    {
+      "q": "Welche Modelle laufen damit?",
+      "a": "Vorerst ausschließlich DeepSeek-V4.1-Flash. DeepSeek hat angekündigt, Inferenz-Code für künftige Modelle in dasselbe Repository zu legen."
+    },
+    {
+      "q": "Warum öffnet DeepSeek seine Engine?",
+      "a": "Offiziell, um das Kernproblem der Inferenz, große Nutzerzahlen zu vertretbaren Preisen, gemeinsam zu lösen. Die Öffnung stärkt auch das Ökosystem um DeepSeeks Modelle: Wer die Engine nutzt, bleibt in der Nähe des Anbieters."
+    }
+  ],
+  "sources": [
+    {
+      "title": "deepseek-ai/DeepInfer",
+      "publisher": "GitHub",
+      "url": "https://github.com/deepseek-ai/DeepInfer",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "DeepSeek open-sources DeepInfer, the inference framework behind its production services",
+      "publisher": "SiliconANGLE",
+      "url": "https://siliconangle.com/2026/10/20/deepseek-open-sources-deepinfer-the-inference-framework-behind-its-production-services/",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "AI News Oct 22, 2026: PHP2Shell, Railway breach, Claude Duet",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-22/",
+      "accessed": "2026-10-23"
+    }
+  ],
+  "related": [
+    "recursive-flint-laptop-coding-modell",
+    "google-torchtpu-open-source-pytorch"
+  ]
+}

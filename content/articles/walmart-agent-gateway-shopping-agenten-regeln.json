@@ -1,0 +1,117 @@
+{
+  "slug": "walmart-agent-gateway-shopping-agenten-regeln",
+  "lang": "de",
+  "section": "trends",
+  "type": "news",
+  "title": "Walmart öffnet sich für Shopping-Agenten, mit festen Regeln",
+  "dek": "Während Amazon KI-Einkaufsagenten aussperrt, baut Walmart ihnen ein eigenes Tor: einen Agent Gateway per MCP, eigene Agent-Profile mit Ausgabenlimits und verbindliche Verhaltensregeln. Das Rückgaberecht gilt auch, wenn der Agent Mist baut.",
+  "published": "2026-10-23T10:04:00+02:00",
+  "modified": "2026-10-23T10:04:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Walmart",
+    "Agentic Commerce",
+    "Shopping-Agenten",
+    "MCP",
+    "Amazon"
+  ],
+  "key_takeaways": [
+    "Walmart startet einen Agent Gateway als MCP-Server, über den zugelassene KI-Agenten bei Walmart und Sam's Club suchen und einkaufen können, zunächst als Beta für Unternehmen und Entwickler.",
+    "Agent Profiles kommen im nächsten Monat: Jeder Agent bekommt ein eigenes Profil im Kundenkonto, mit Ausgabenlimits (etwa 50, 100 oder 200 Dollar) oder Pflicht-Freigabe pro Kauf, jederzeit löschbar, ohne Walmart+-Pflicht.",
+    "Verbindliche Agenten-Regeln: keine Zahlungsdaten für Agenten, nur die nötigen Daten pro Aufgabe, keine Aktionen über die Absicht des Käufers hinaus, Verstöße führen zur Sperrung.",
+    "Amazon geht den umgekehrten Weg und blockiert Einkaufsagenten; Walmart kooperiert bereits mit Muse, ChatGPT und Gemini."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein freundlicher Roboter schiebt einen Einkaufswagen durch ein leuchtendes Tor in einen Supermarkt",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Die große Frage des Agenten-Zeitalters, ob Händler KI-Einkäufer einlassen oder aussperren, beantworten die zwei größten gerade gegensätzlich. Amazon blockiert Shopping-Agenten, Walmart rollt ihnen den roten Teppich aus, aber mit Hausordnung: eigener Zugang, eigene Profile, Ausgabenlimits und schriftliche Regeln."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Bausteine für den Agenten-Einkauf"
+    },
+    {
+      "t": "p",
+      "x": "Wie [Walmart selbst beschreibt](https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers), besteht das Paket aus drei Teilen. Der Agent Gateway ist ein MCP-Server, über den Agenten zuverlässiger einkaufen als über die für Menschen gebaute Website; er startet als Beta für Unternehmen und Entwickler. Praktischer Nebeneffekt: Der Gateway kann dem Agenten die üblichen Einkäufe eines Kunden vorschlagen, ohne dessen persönliche Daten oder Kaufhistorie preiszugeben. Agent Profiles, startend im nächsten Monat, geben jedem Agenten ein eigenes Profil im Kundenkonto: Käufe des Agenten werden getrennt ausgewiesen, Kunden setzen ein Ausgabenlimit oder verlangen eine Freigabe pro Kauf, und das Profil lässt sich jederzeit löschen. Walmart vergleicht das mit einer Zusatzkarte zur Kreditkarte mit eigenem Limit. Und schließlich legen verbindliche Bedingungen fest, was Agenten dürfen und was nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Die Hausordnung im Detail"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Kunden behalten die Kontrolle: Standardmäßig ist jede Agenten-Bestellung freigabepflichtig, Walmart kann auch innerhalb der Limits zusätzliche Freigaben verlangen.",
+        "Agenten sehen keine Zahlungsdaten und können keine Zahlungsarten ändern.",
+        "Agenten bekommen nur die Daten, die für den konkreten Auftrag nötig sind, und dürfen nicht über die Absicht des Käufers hinaus handeln.",
+        "Das normale Rückgaberecht gilt auch dann, wenn ein Agent nicht wie beabsichtigt gehandelt hat.",
+        "Agenten, die gegen die Regeln verstoßen, werden von der Seite gesperrt."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Zwei Strategien, eine Richtungsentscheidung"
+    },
+    {
+      "t": "p",
+      "x": "Der Kontrast ist bemerkenswert: Amazon hat KI-Agenten kurz zuvor vom Einkaufen für Kunden ausgesperrt, auch Reise- und Buchungsportale riegeln ihre Sites ab, wie [TechCrunch](https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/) einordnet. Walmart setzt stattdessen auf gesteuerte Öffnung und kooperiert bereits mit Metas Muse, ChatGPT und Gemini. Der Zeitpunkt ist kein Zufall: Meta meldete am selben Tag über zehn Millionen eingerichtete Muse-Agenten, und Shopping ist dort laut Mark Zuckerberg der größte Anwendungsfall. Walmart verspricht außerdem Preisparität: Agenten sehen dieselben Preise wie Menschen, inklusive aller Angebote und Gebühren vor dem Kauf."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Erster großer Händler mit eigenem Regelwerk und dediziertem Zugang für KI-Einkaufsagenten: Walmart.",
+        "Ausgabenlimits, getrennte Käufe und Löschknopf machen das Agent-Profil zum Kontrollinstrument, nicht zur Vertrauensfrage.",
+        "Rückgaberecht gilt auch bei Agenten-Fehlkäufen, das senkt die Einstiegshürde erheblich.",
+        "Wenn das Modell trägt, werden begrenzte Identität, Limits und Haftungsversprechen zur Blaupause für den Handel."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ein Agent einfach mit meinem Geld einkaufen?",
+      "a": "Nur innerhalb deiner Vorgaben. Du legst beim Agent Profile fest, ob jeder Kauf einzeln freigegeben werden muss oder ob ein Limit gilt, etwa 50, 100 oder 200 Dollar. Zahlungsdaten bekommt der Agent nie zu sehen, und du kannst das Profil jederzeit löschen."
+    },
+    {
+      "q": "Was passiert, wenn der Agent etwas Falsches kauft?",
+      "a": "Es gilt Walmarts normales Rückgaberecht, ausdrücklich auch für den Fall, dass ein Agent nicht wie beabsichtigt gehandelt hat. Das ist Teil der offiziellen Agenten-Bedingungen."
+    },
+    {
+      "q": "Warum sperrt Amazon Agenten aus, während Walmart sie einlädt?",
+      "a": "Amazon schützt so sein Werbegeschäft und die Kontrolle über die Kaufstrecke. Walmart versucht umgekehrt, über Partnerschaften mit Muse, ChatGPT und Gemini früh der bevorzugte Händler der Agenten zu werden, unter eigenen Regeln statt chaotischer Browser-Bots."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Walmart Makes It Possible for Agents to Shop on Behalf of Customers, While Keeping Customers in Control",
+      "publisher": "Walmart Corporate",
+      "url": "https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "While Amazon blocks AI agents, Walmart rolls out the welcome mat",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "AI News Oct 22, 2026: PHP2Shell, Railway breach, Claude Duet",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-22/",
+      "accessed": "2026-10-23"
+    }
+  ],
+  "related": [
+    "claude-duet-persoenlicher-ki-agent",
+    "openai-modelle-google-cloud"
+  ]
+}

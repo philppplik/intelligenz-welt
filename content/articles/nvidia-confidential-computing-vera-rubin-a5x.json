@@ -1,0 +1,111 @@
+{
+  "slug": "nvidia-confidential-computing-vera-rubin-a5x",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "NVIDIA schützt Modellgewichte auf fremder Hardware",
+  "dek": "Mit Confidential Computing auf Rack-Ebene sollen KI-Labore ihre wertvollsten Modelle auch auf fremder Infrastruktur betreiben, ohne sie preiszugeben. Gleichzeitig kündigt Google Cloud die Verfügbarkeit seiner Vera-Rubin-A5X-Instanzen an, der erste Kunde kommt aus London.",
+  "published": "2026-10-23T10:10:00+02:00",
+  "modified": "2026-10-23T10:10:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "NVIDIA",
+    "Confidential Computing",
+    "Vera Rubin",
+    "Google Cloud",
+    "Rechenzentren"
+  ],
+  "key_takeaways": [
+    "NVIDIA Confidential Computing kommt jetzt als Bare Metal, Container und VMs; mit Vera Rubin NVL72 wird ein ganzer Rack mit 72 GPUs und 36 Vera-CPUs zu einer einzigen geschützten Sicherheitsdomäne.",
+    "Google Cloud bringt Confidential Computing auf Rack-Ebene auf A4X-Max-Instanzen und macht es auf G4-VMs mit RTX PRO 6000 Blackwell allgemein verfügbar.",
+    "Die neuen A5X-Instanzen mit Vera Rubin NVL72 werden im November allgemein verfügbar, Europa-Ausbau geplant; Google will auf bis zu 960.000 Rubin-GPUs skalieren.",
+    "Erster A5X-Kunde ist Ineffable Intelligence, das Londoner Labor von AlphaGo-Schöpfer David Silver, für groß angelegtes Reinforcement Learning."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein Server-Rack in einem leuchtenden Tresor, dessen Tür einen Spalt weit offen steht und Schaltkreise zeigt",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Die wertvollsten Güter der KI-Branche sind keine Chips, sondern Modellgewichte. Genau die halten Labore bisher davon ab, ihre Modelle auf fremder Infrastruktur zu betreiben. NVIDIAs neue Confidential-Computing-Generation will diesen Engpass lösen, und Google Cloud liefert gleich die passenden Instanzen dazu."
+    },
+    {
+      "t": "h2",
+      "x": "Der Tresor für Modellgewichte"
+    },
+    {
+      "t": "p",
+      "x": "Confidential Computing schützt Daten und Modelle während ihrer Nutzung, also genau dann, wenn sie sonst im Klartext im Speicher liegen. Laut [NVIDIA](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/) geht die dritte Generation mit der Rubin-Architektur jetzt auf Rack-Ebene: Eine Vera-Rubin-NVL72-Einheit bildet über NVLink eine gemeinsame Sicherheitsdomäne aus 72 Rubin-GPUs und 36 Vera-CPUs und isoliert GPU-Ausführung, Speicher und Registerzustände über Training, Feintuning und Inferenz hinweg, bei laut NVIDIA nahezu unveränderter Leistung gegenüber unverschlüsseltem Betrieb. Erhältlich ist die Technik als Bare Metal, als Container unter Kubernetes und als VMs, sodass Labore ihren kompletten Software-Stack auf fremden GPU-Servern laufen lassen können, während die Hardware die Gewichte abschirmt. Cohere baut den Schutz in sein Model Vault ein."
+    },
+    {
+      "t": "h2",
+      "x": "A5X: Rubin kommt in die Cloud"
+    },
+    {
+      "t": "p",
+      "x": "Zeitgleich kündigte [Google Cloud](https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/) an, seine A5X-Instanzen mit Vera Rubin NVL72 im November allgemein verfügbar zu machen, samt ConnectX-9-SuperNICs, dem hauseigenen Virgo-Netzwerk und Flüssigkühlung der vierten Generation. Geplant ist ein Ausbau auf bis zu 960.000 Rubin-GPUs an mehreren Standorten, inklusive einer Expansion nach Europa. Confidential Computing auf Rack-Ebene kommt zunächst auf A4X-Max-Instanzen mit GB300 NVL72, zusätzlich ist es ab sofort auf G4-VMs mit RTX-PRO-6000-Blackwell-Karten allgemein verfügbar. Erster A5X-Kunde ist Ineffable Intelligence, das Londoner Labor von AlphaGo-Mitbegründer David Silver, das damit groß angelegtes Reinforcement Learning für kontinuierlich lernende „Superlearner“ betreibt. Auch die Marketinggruppe WPP testete ihre Kreativ-Agenten auf A5X: Workloads, die sonst einen Multi-Node-Cluster brauchten, liefen auf einer einzigen Instanz."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das gerade jetzt kommt"
+    },
+    {
+      "t": "p",
+      "x": "Der Zeitpunkt ist kein Zufall. Diese Woche zeigten die Vorfälle bei Railway und OpenCode, dass Zugangsdaten und KI-Schlüssel inzwischen gezielt gestohlen werden. Wer zusätzlich um die Modellgewichte selbst fürchtet, verzichtet komplett auf fremde Infrastruktur, und genau diese Zurückhaltung bremst Neoclouds, Sovereign-Cloud-Angebote und europäische Anbieter. Hardware-verankerte Isolation macht fremde Rechenzentren für Frontier-Labore erst nutzbar. Für Europa kommt hinzu, dass Google Cloud den A5X-Ausbau ausdrücklich auch hierher plant, was Datenschutz- und Souveränitätsdebatten eine neue technische Option gibt."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Confidential Computing schützt Modelle und Daten während der Nutzung, jetzt auf ganzer Rack-Ebene.",
+        "Google Cloud macht A5X mit Vera Rubin NVL72 im November verfügbar und zielt auf bis zu 960.000 Rubin-GPUs.",
+        "Erster Kunde: David Silvers Londoner Labor Ineffable für verstärkendes Lernen.",
+        "Hardware-Isolation könnte die Verbreitung von Frontier-Modellen auf fremde und europäische Infrastruktur entsperren."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was schützt Confidential Computing genau?",
+      "a": "Daten und Modelle während sie verarbeitet werden, also Training, Feintuning und Inferenz. Bisher liegen sie in diesem Moment ungeschützt im Speicher des Betreibers. Die NVIDIA-Technik isoliert Ausführung, Speicher und Registerzustände auf Hardware-Ebene, mit laut Hersteller kaum messbarem Leistungsverlust."
+    },
+    {
+      "q": "Ab wann kann man A5X buchen?",
+      "a": "Google Cloud kündigt die allgemeine Verfügbarkeit für November an. Confidential Computing auf G4-VMs mit RTX PRO 6000 Blackwell ist bereits verfügbar, die Rack-Ebene auf A4X Max folgt. Eine Ausweitung der A5X-Kapazität nach Europa ist Teil der Pläne."
+    },
+    {
+      "q": "Wer ist Ineffable Intelligence?",
+      "a": "Ein Londoner KI-Labor von David Silver, dem Mitbegründer von AlphaGo. Ineffable arbeitet an „Superlearnern“, Systemen, die durch groß angelegtes Reinforcement Learning kontinuierlich aus eigener Erfahrung lernen, und ist der erste Kunde der neuen A5X-Instanzen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Google Cloud and NVIDIA Announce General Availability of NVIDIA Vera Rubin Infrastructure",
+      "publisher": "NVIDIA Blog",
+      "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "AI Security with Confidential Computing",
+      "publisher": "NVIDIA",
+      "url": "https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "AI News Oct 22, 2026: PHP2Shell, Railway breach, Claude Duet",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-22/",
+      "accessed": "2026-10-23"
+    }
+  ],
+  "related": [
+    "google-torchtpu-open-source-pytorch",
+    "openai-modelle-google-cloud"
+  ]
+}

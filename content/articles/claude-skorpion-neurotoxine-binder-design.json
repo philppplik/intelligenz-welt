@@ -1,0 +1,122 @@
+{
+  "slug": "claude-skorpion-neurotoxine-binder-design",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Claude entwirft Protein-Binder gegen Skorpion-Neurotoxine",
+  "dek": "Ein internes Forschungsmodell von Anthropic hat in 64 Stunden weitgehend eigenständig über 300.000 Protein-Designs erzeugt. 211 wurden im Labor getestet, 17 binden ein Skorpiongift. Ein Gegengift ist das noch nicht, aber ein echter Nasslabor-Beleg für KI in der Wirkstoffforschung.",
+  "published": "2026-10-23T10:02:00+02:00",
+  "modified": "2026-10-23T10:02:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Anthropic",
+    "Claude",
+    "Wirkstoffforschung",
+    "Proteine",
+    "Gegengift"
+  ],
+  "key_takeaways": [
+    "Ein internes Forschungsmodell in Claude Science arbeitete 64 Stunden weitgehend autonom und erzeugte 318.484 Protein-Designs gegen fünf Skorpion-Neurotoxine.",
+    "211 Designs wurden von Adaptyv Bio und Twist Bioscience im Labor getestet, 17 erfüllten die Binder-Kriterien, die besten mit Affinitäten im einstelligen Nanomolar-Bereich.",
+    "Kein einziger Multi-Toxin-Binder funktionierte, und Neutralisation wurde nicht getestet: Anthropic beansprucht ausdrücklich kein Gegengift.",
+    "Alle 211 Designs samt Bindungsdaten werden veröffentlicht; Skorpionstiche treffen jährlich über 1,2 Millionen Menschen, mehr als 3.250 sterben, meist Kinder."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein stilisierter Skorpion, dessen Stachel von einem leuchtenden Proteinband umschlungen wird",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Anthropic hat ein internes Forschungsmodell von Claude Protein-Binder gegen Skorpion-Neurotoxine entwerfen lassen, und die Designs hielten einem echten Labortest stand. 17 der 211 getesteten Kandidaten binden ihr Zielgift nachweislich. Das ist kein Gegengift, aber einer der bisher ehrlichsten Belege dafür, was KI-gestützte Wirkstoffforschung heute kann, und was nicht."
+    },
+    {
+      "t": "h2",
+      "x": "64 Stunden, 318.484 Designs"
+    },
+    {
+      "t": "p",
+      "x": "Ausgangspunkt war eine Frage der Investment-Recherchefirma Citrini Research: Können motivierte Nicht-Experten mit Claude ein echtes Gesundheitsproblem angehen? Das Team landete bei Skorpionen. Deren Stiche treffen laut [Anthropics Forschungsbericht](https://www.anthropic.com/research/claude-scorpion-toxin-binder-design) jährlich über 1,2 Millionen Menschen, mehr als 3.250 sterben, überwiegend Kinder in Regionen mit schlechter medizinischer Versorgung. Herkömmliche Gegengifte stammen aus Pferdeblut, brauchen Monate und wirken nur gegen wenige Toxine. Claude arbeitete nach einem Start-Prompt und vier Nachfragen 64 Stunden weitgehend autonom, nutzte zwölf Design-Werkzeuge, erzeugte 318.484 Designs, prüfte 553.052 Design-Toxin-Paare per Co-Folding und wählte am Ende 180 Kandidaten aus; 31 weitere kamen mit Claudes Hilfe dazu. Die Kampagne kostete rund 10.000 GPU-Stunden."
+    },
+    {
+      "t": "figure",
+      "file": "claude-skorpion-neurotoxine-binder-design-chart1.jpg",
+      "alt": "Stufendiagramm (nicht maßstabsgerecht): von 318.484 erzeugten Protein-Designs wurden 211 im Labor getestet, 17 erfüllten die Binder-Kriterien.",
+      "caption": "Claudes Design-Kampagne gegen Skorpion-Neurotoxine: vom Rechenentwurf zum Labortreffer. Stufenbalken nicht maßstabsgerecht, sie zeigen die Reihenfolge, nicht die Mengenverhältnisse. Quelle: Anthropic, Stand 20.10.2026."
+    },
+    {
+      "t": "h2",
+      "x": "Was das Labor zeigte"
+    },
+    {
+      "t": "p",
+      "x": "Getestet haben die unabhängigen Auftragslabore Adaptyv Bio und Twist Bioscience, mit zwei komplementären Methoden und der Bindungsmessung per Oberflächenplasmonenresonanz. Die Kriterien waren streng: Ein Design galt nur als Binder, wenn es in beiden Laboren in jeder Wiederholung mit einer Affinität von mindestens 1 Mikromolar band und kein Signal gegen ein unbeteiligtes menschliches Protein zeigte. 17 Designs bestanden, jeweils gegen genau ein Toxin: sieben gegen Cn2, vier gegen AaH II, vier gegen AaH I und zwei gegen LqhIII. Die stärksten beiden, Cn2-B1 und Cn2-B2, binden im einstelligen Nanomolar-Bereich und konkurrieren mit einem Antikörper, der Mäuse vor dem Toxin schützt. Bei den 60 Einzel-Toxin-Designs lag die Trefferquote bei 18 Prozent, ein für Protein-Design-Kampagnen typischer Wert. Beim [früheren Benchmark mit 16 Zielproteinen](https://www.adaptyvbio.com/blog/anthropic-1) hatte Adaptyv Bio im August für Claude sogar eine durchschnittliche Trefferquote von 26,8 Prozent gemessen."
+    },
+    {
+      "t": "callout",
+      "title": "Ehrliche Grenzen",
+      "x": "Keines der 91 Multi-Toxin-Designs band mehr als ein Toxin, dabei wäre ein Universal-Binder der günstigste Weg zu einem Breitband-Gegengift. Neutralisation in Zellen oder Tieren wurde nicht getestet, Anthropic beansprucht ausdrücklich kein Gegengift. Externe Fachleute wie Susana Vázquez Torres (CNIO Madrid) und Timothy P. Jenkins (DTU) nennen die Arbeit einen vielversprechenden ersten Schritt: Binden sei nicht mehr der Engpass, der Rest der Therapie-Pipeline sei es."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das über Skorpione hinaus zählt"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic veröffentlicht alle 211 Designs samt Bindungsdaten, damit andere Forschende darauf aufbauen können. Das Vorgehen selbst ist die eigentliche Nachricht: Ein agentisches System, das Literatur wertet, Schwellen setzt, Werkzeuge orchestriert, Designs per E-Mail an ein Syntheselabor schickt und den Abschlussbericht entwirft, unter Aufsicht von Menschen. Für vernachlässigte Krankheiten, bei denen sich klassische Entwicklung wirtschaftlich nicht rechnet, könnte genau diese Kostenstruktur den Unterschied machen. Anthropic weist zugleich darauf hin, dass 10.000 GPU-Stunden für die meisten Labore unerreichbar sind; eine vereinfachte Variante mit einem Agenten und einer GPU über 24 Stunden erreiche vergleichbare rechnerische Ergebnisse."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "KI kann heute in Tagen glaubwürdige Protein-Binder entwerfen, die im Nasslabor bestehen, 17 Treffer aus 211 Tests.",
+        "Vom Binder zum Medikament ist es ein langer Weg: Neutralisation, Zell- und Tierversuche stehen noch aus.",
+        "Multi-Toxin-Design, der Schlüssel zum Universal-Gegengift, ist vorerst gescheitert.",
+        "Alle Daten sind offen, die Studie ist damit ein realistischer Maßstab für KI-Versprechen in der Pharmaforschung."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hat Claude ein Gegengift erfunden?",
+      "a": "Nein. Die 17 Binder heften sich nachweislich an die Toxine, ob sie das Gift in Zellen oder im Körper unschädlich machen, wurde nicht getestet. Anthropic betont ausdrücklich, kein Gegengift entwickelt zu haben. Bis zu einem Medikament wären weitere Jahre nötig."
+    },
+    {
+      "q": "Warum ausgerechnet Skorpione?",
+      "a": "Skorpionstiche sind eine vernachlässigte Tropenkrankheit: über 1,2 Millionen Betroffene pro Jahr, mehr als 3.250 Tote, meist Kinder. Weil sich neue Behandlungen wirtschaftlich kaum rechnen, investiert die Industrie wenig, ein Feld, in dem günstige KI-gestützte Forschung viel verändern könnte."
+    },
+    {
+      "q": "Wie autonom hat Claude wirklich gearbeitet?",
+      "a": "Nach dem Start-Prompt lief die Kampagne 24 Stunden ohne Eingriff, danach gab es vier gezielte Nachfragen des Teams, vor allem Richtung Multi-Toxin-Design. Zielstrukturen, Hotspots, Qualitätsschwellen und Werkzeugwahl legte Claude selbst fest. Menschen prüften die Ergebnisse und koordinierten die Labore."
+    }
+  ],
+  "sources": [
+    {
+      "title": "How Claude designed protein binders against scorpion neurotoxins",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "Case study: Benchmarking Claude's protein designs in the wet lab",
+      "publisher": "Adaptyv Bio",
+      "url": "https://www.adaptyvbio.com/blog/anthropic-1",
+      "accessed": "2026-10-23"
+    },
+    {
+      "title": "AI News Oct 22, 2026: PHP2Shell, Railway breach, Claude Duet",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-22/",
+      "accessed": "2026-10-23"
+    }
+  ],
+  "related": [
+    "claude-duet-persoenlicher-ki-agent",
+    "anthropic-s1-leak-einblick-zahlen"
+  ]
+}
