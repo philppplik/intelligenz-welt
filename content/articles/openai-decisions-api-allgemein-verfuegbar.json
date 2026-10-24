@@ -1,0 +1,126 @@
+{
+  "slug": "openai-decisions-api-allgemein-verfuegbar",
+  "lang": "de",
+  "section": "tools",
+  "type": "news",
+  "title": "OpenAIs Decisions API ist ab sofort für alle verfügbar",
+  "dek": "Die Entscheidungs-API verlässt die Beta: bis zu zehnmal schneller als GPT-6 Luna über die Responses API, 400 Fragen pro Anfrage, Inferenz-Residenz in USA und EU. Kunden wie Datadog und Sierra melden drastisch gesunkene Latenzen.",
+  "published": "2026-10-24T09:06:00+02:00",
+  "modified": "2026-10-24T09:06:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenAI",
+    "Decisions API",
+    "Entwickler",
+    "Klassifikation",
+    "Routing"
+  ],
+  "key_takeaways": [
+    "Die Decisions API ist seit dem 22. Oktober allgemein verfügbar und beantwortet Multiple-Choice-Fragen bis zu zehnmal schneller als GPT-6 Luna über die Responses API.",
+    "Neu seit der Beta: native GPT-Live-Integration, Prompt-Caching, Inferenz-Residenz in USA und EU, native JSON-Eingaben, Bilder in Anweisungen und bis zu 400 Fragen pro Anfrage.",
+    "Kundenberichte: Sierra unter 280 Millisekunden p95 bei 90 Prozent niedrigeren Kosten, Ramp viermal schneller bei 30 Prozent weniger Kosten, Speak von 1,4 auf 0,13 Sekunden.",
+    "Anbieter-Angaben, keine unabhängigen Tests: In externen Ranglisten liegen OpenAIs Entscheidungsmodelle hinter Angeboten von Liquid und Base Labs, eigene Tests auf der eigenen Last sind Pflicht."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine futuristische Weiche, an der leuchtende Datenpakete blitzschnell auf verschiedene Gleise verteilt werden",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Viele KI-Anwendungen brauchen gar keine offene Antwort, sondern nur eine schnelle, verlässliche Entscheidung: Welches Team ist zuständig, welcher Ton passt, welche Kategorie trifft zu. Genau dafür ist die Decisions API gebaut, und sie ist jetzt für alle da."
+    },
+    {
+      "t": "h2",
+      "x": "Was die API macht"
+    },
+    {
+      "t": "p",
+      "x": "Die Decisions API beantwortet Fragen mit begrenztem Antwortraum: Du definierst die Frage und die erlaubten Optionen, das Modell wählt deterministisch aus. Gebaut ist sie mit GPT-6 Luna und laut [OpenAI](https://openai.com/index/decisions-api) bis zu zehnmal schneller als Luna über die allgemeine Responses API. Gegenüber der Beta kommen hinzu: native GPT-Live-Integration für Echtzeit-Anwendungen, Prompt-Caching, wählbare Inferenz-Residenz in den USA oder der EU, native JSON-Eingaben, Bilder in Anweisungen und bis zu 400 Fragen pro Anfrage, doppelt so viele wie zuvor. Typische Latenzen liegen laut Produktverantwortlichem Nikunj Handa bei 100 bis 180 Millisekunden pro Aufruf, wo bisherige Klassifikations-Setups oft ein bis drei Sekunden brauchten, berichtet [Morning Tokens](https://morningtokens.com/issues/2026-10-23/)."
+    },
+    {
+      "t": "h2",
+      "x": "Was Kunden berichten"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Box wählt damit rund fünfmal schneller den richtigen Agenten aus, bei gleicher Genauigkeit.",
+        "Datadog bewertet agentengenerierte Shell-Befehle mit 40-mal schnellerem p95.",
+        "Ramp ordnet Ausgaben viermal schneller zu, bei 30 Prozent niedrigeren Kosten.",
+        "Sierra liegt unter 280 Millisekunden p95, dreimal schneller bei 90 Prozent niedrigeren Kosten.",
+        "Speak senkte die Sprach-Latenz von 1,4 auf 0,13 Sekunden."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Alle Zahlen stammen aus dem OpenAI-Release und sind keine unabhängigen Messungen. OpenAI selbst nutzt die API intern unter anderem für dots, die Kategorisierung in Personal Finance und die Klassifikation von Kommunikation."
+    },
+    {
+      "t": "h2",
+      "x": "Wo sie ins Stack-Bild passt"
+    },
+    {
+      "t": "p",
+      "x": "Die API ersetzt kein generisches Modell, sondern den Schritt davor: Routing, Klassifikation, Policy-Checks, Moderation, Intent-Erkennung. Überall dort, wo heute ein großes Modell mit einem strikten Prompt und anschließendem Parsen misshandelt wird, verspricht sie eine schnellere, billigere und vorhersehbare Antwort. Für Agenten-Systeme ist das der Unterschied zwischen fühlbar trägen und sofort."
+    },
+    {
+      "t": "callout",
+      "title": "Vor dem Umstieg testen",
+      "x": "In unabhängigen Ranglisten liegen OpenAIs Entscheidungsmodelle auf zwei Indizes nur auf den Plätzen 8 und 14, hinter Liquid D1 Ultra und Base Labs Elephant-1, berichtet TechCrunch. Der Konkurrent Jev landet auf Platz 7 beziehungsweise 3 und führt bei Opper PacMan. Ob die Decisions API für deine Last die richtige ist, entscheidet nur ein Test auf deinen eigenen Fällen."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Decisions API ist GA: Multiple-Choice-Entscheidungen mit GPT-6 Luna, bis zu zehnmal schneller als über die Responses API.",
+        "EU-Inferenz-Residenz, Prompt-Caching und 400 Fragen pro Anfrage sind neu seit der Beta.",
+        "Kunden melden Latenzen unter 300 Millisekunden und Kostenreduktionen bis 90 Prozent, alles Anbieter-Angaben.",
+        "Externe Ranglisten sehen OpenAI nicht vorn, eigene Tests schlagen Marketing."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wofür nutze ich die Decisions API statt eines normalen Chat-Modells?",
+      "a": "Immer dann, wenn die Antwort aus einer festen Menge von Optionen kommt: Routing an das richtige Team, Kategorisierung, Freigabe-Checks, Intent-Erkennung. Das Modell muss nichts formulieren, nur wählen, deshalb ist es deutlich schneller und billiger als eine freie Antwort."
+    },
+    {
+      "q": "Was kostet die Decisions API?",
+      "a": "OpenAI nennt im Release keine Preisliste; Kundenberichte sprechen von 30 bis 90 Prozent niedrigeren Kosten als den bisherigen Setups. Konkrete Preise stehen in der Entwicklerdokumentation, rechne für deine Last selbst nach."
+    },
+    {
+      "q": "Gibt es die API mit Datenhaltung in der EU?",
+      "a": "Ja, seit der allgemeinen Verfügbarkeit lässt sich die Inferenz-Residenz zwischen USA und EU wählen. Das gilt für die Verarbeitung zur Laufzeit; prüfe für deinen Vertrag zusätzlich die übrigen Datenverarbeitungsbedingungen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing the Decisions API",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/decisions-api",
+      "accessed": "2026-10-24"
+    },
+    {
+      "title": "AI News Oct 23, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-23/",
+      "accessed": "2026-10-24"
+    },
+    {
+      "title": "OpenAI API Documentation",
+      "publisher": "OpenAI Developers",
+      "url": "https://developers.openai.com",
+      "accessed": "2026-10-24"
+    }
+  ],
+  "related": [
+    "openai-offline-training-cache-side-channel",
+    "kimi-k3-1-pro-open-weights"
+  ]
+}

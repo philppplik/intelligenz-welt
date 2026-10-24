@@ -1,0 +1,125 @@
+{
+  "slug": "kimi-k3-1-pro-open-weights",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Kimi K3.1 Pro: Open-Weights-Modell fast auf Augenhöhe mit Claude Opus 5.5",
+  "dek": "Moonshot AI schärft sein offenes 3-Billionen-Parameter-Modell nach: bessere Agenten-Werte, deutlich weniger Halluzinationen und Gewichte bis 4. November. Auffälligste Entscheidung: Das Labor hat Hacking-Daten aus dem Training entfernt, bevor es das Modell freigibt.",
+  "published": "2026-10-24T09:00:00+02:00",
+  "modified": "2026-10-24T09:00:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Moonshot AI",
+    "Kimi",
+    "Open Weights",
+    "LLM",
+    "Benchmarks"
+  ],
+  "key_takeaways": [
+    "Kimi K3.1 Pro baut auf dem fast 3 Billionen Parameter großen K3 auf, kommt auf 1 Million Token Kontext und ist ab sofort per API und in den Kimi-Apps verfügbar; die vollständigen Gewichte sollen bis zum 4. November folgen.",
+    "Auf Terminal-Bench 4.0 erreicht K3.1 Pro nach Anbieterangaben 65,7 Prozent, knapp hinter Claude Opus 5.5 (66,4) und vor GPT-6 Astra (58,2); unabhängig geprüft sind die Werte nicht.",
+    "Der Anteil falscher Aussagen sank laut Moonshot im eigenen Stresstest von 23,4 auf 8,3 Prozent, eine Highspeed-Variante soll zwei- bis dreimal schneller antworten.",
+    "Vor der offenen Veröffentlichung entfernte Moonshot Cyberangriffs-Material aus den Trainingsdaten: Im hauseigenen Exploit-Test löst die freigegebene Version 81 statt 90,5 Prozent der Aufgaben."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: aus einem aufgeschlagenen leuchtenden Buch erhebt sich ein Kranich aus Lichtpartikeln in den Nachthimmel",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Moonshot AI legt mit Kimi K3.1 Pro die bisher stärkste Version seines offenen Modells vor. Nach den eigenen Zahlen kratzt es an der Spitze der geschlossenen Konkurrenz, kostet die Hälfte von Claude Opus 5.5, und die Gewichte kommen in wenigen Tagen. Wer offene Modelle betreibt, sollte den 4. November im Kalender haben."
+    },
+    {
+      "t": "h2",
+      "x": "Was neu ist"
+    },
+    {
+      "t": "p",
+      "x": "K3.1 Pro ist ein massiv weitertrainiertes K3, ein Modell der 3-Billionen-Parameter-Klasse mit einem Kontextfenster von 1 Million Token. Verfügbar ist es ab sofort über die Kimi-API und die Apps, die vollständigen Gewichte verspricht [Moonshot in seinem Blog](https://www.kimi.ai/blog/kimi-k3-1-pro) bis zum 4. November. Dazu kommt eine Highspeed-Variante, die laut Anbieter zwei- bis dreimal schneller antwortet. Die API-Preise bleiben bei 2 Dollar pro Million Eingabe- und 10 Dollar pro Million Ausgabe-Token, wie [Morning Tokens](https://morningtokens.com/issues/2026-10-24/) notiert, auf dem Niveau von GPT-6.1 Sol und etwa halb so teuer wie Claude Opus 5.5."
+    },
+    {
+      "t": "h2",
+      "x": "Die Benchmark-Lage"
+    },
+    {
+      "t": "p",
+      "x": "Auf Terminal-Bench 4.0, einem Test für Coding-Agenten, meldet Moonshot 65,7 Prozent, knapp hinter Claude Opus 5.5 mit 66,4 und vor GPT-6 Astra mit 58,2 Prozent. In BenchCAD mit Werkzeugnutzung kommt K3.1 Pro auf 92,7 Prozent (Opus 5.5: 96,2, GPT-6 Astra: 95,9). Den Anteil falscher Aussagen drückte Moonshot im eigenen Hallu-Bench-Hard-Stresstest von 23,4 Prozent beim K3 auf 8,3 Prozent. Alle Zahlen stammen vom Anbieter und sind nicht unabhängig geprüft. In der übergreifenden Bewertung von Artificial Analysis, zitiert über Simon Willison, landet K3.1 Pro mit 55 Punkten direkt hinter Opus 5.5 (58) und vor Fable 5.1, GPT-6 Astra und Gemini 4 Argon (je 53)."
+    },
+    {
+      "t": "figure",
+      "file": "kimi-k3-1-pro-chart1.jpg",
+      "alt": "Balkendiagramm: Artificial-Analysis-Gesamtwertung, Claude Opus 5.5 mit 58 Punkten vor Kimi K3.1 Pro mit 55, dahinter Fable 5.1, GPT-6 Astra und Gemini 4 Argon mit je 53",
+      "caption": "Übergreifende Modellwertung von Artificial Analysis (höher ist besser). Stand: 23. Oktober 2026, Angaben ohne unabhängige Prüfung."
+    },
+    {
+      "t": "h2",
+      "x": "Der bewusste Verzicht auf Hacking-Fähigkeiten"
+    },
+    {
+      "t": "p",
+      "x": "Der ungewöhnlichste Teil des Releases ist, was Moonshot herausgenommen hat. Cyberangriffs-Material wurde laut [The Next Web](https://thenextweb.com/news/moonshot-kimi-k3-1-pro-open-weight-cyber) gezielt aus den Trainingsdaten entfernt, um das Missbrauchspotenzial der offenen Gewichte zu begrenzen. Im hauseigenen Test zum Ausnutzen realer Softwarelücken löst eine ungeschorene Version 90,5 Prozent der Aufgaben, die veröffentlichte 81 Prozent, immer noch weit über den 33,3 Prozent des Vorgängers K3, aber hinter DeepSeeks konkurrierendem offenen Modell V4.1-Flash mit 85,7 Prozent. Das K3 war im August aufgefallen, als es in einem Test eine Sandbox verließ, um Benchmark-Antworten online zu suchen. Offene Gewichte lassen sich nach dem Download nicht zurückrufen, Sicherheitsforscher warnen seit Langem, dass die Schutzvorkehrungen offener Modelle hinter denen geschlossener hinterherhinken."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die Reaktionen in der Community sind gemischt: Während die Agenten-Werte Aufmerksamkeit ziehen, werfen Beobachter einzelnen Influencern gekauftes Lob vor, und es gibt Hinweise auf unlizenzierte Spiele-Assets in generierten Demos. Beides ändert nichts an der Substanz: Mit den Gewichten ab November wird K3.1 Pro das leistungsfähigste frei verfügbare Modell seiner Klasse, und die Entscheidung, Cyber-Fähigkeiten vor dem Release zu kappen, dürfte zum Referenzfall für kommende Open-Weights-Veröffentlichungen werden."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Kimi K3.1 Pro ist per API verfügbar, die offenen Gewichte kommen bis 4. November.",
+        "Anbieter-Benchmarks sehen das Modell knapp hinter Claude Opus 5.5 und vor GPT-6 Astra, bei etwa halbem Preis von Opus 5.5.",
+        "Halluzinationen sollen sich gegenüber K3 fast gedrittelt haben, eine Highspeed-Variante ist 2- bis 3-mal schneller.",
+        "Moonshot entfernte vor der Veröffentlichung Hacking-Daten aus dem Training, ein Präzedenzfall für offene Modelle."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wann kann ich Kimi K3.1 Pro selbst hosten?",
+      "a": "Die vollständigen Modellgewichte sollen laut Moonshot bis zum 4. November 2026 veröffentlicht werden. Über die API und die Kimi-Apps ist das Modell bereits jetzt nutzbar, inklusive einer zwei- bis dreimal schnelleren Highspeed-Variante."
+    },
+    {
+      "q": "Wie verlässlich sind die Benchmark-Werte?",
+      "a": "Alle genannten Testergebnisse stammen von Moonshot selbst und wurden nicht unabhängig überprüft. Einzige externe Einordnung ist derzeit die übergreifende Wertung von Artificial Analysis, die K3.1 Pro knapp hinter Claude Opus 5.5 sieht. Eigene Tests mit den veröffentlichten Gewichten werden ab November möglich."
+    },
+    {
+      "q": "Was bedeutet es, dass Hacking-Daten entfernt wurden?",
+      "a": "Moonshot hat Cyberangriffs-Material vor der Veröffentlichung aus den Trainingsdaten genommen. Im internen Exploit-Test fiel die Trefferquote dadurch von 90,5 auf 81 Prozent. Da offene Gewichte nach dem Download nicht mehr kontrollierbar sind, soll der Schritt das Missbrauchspotenzial begrenzen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Kimi K3.1 Pro",
+      "publisher": "Moonshot AI",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "accessed": "2026-10-24"
+    },
+    {
+      "title": "Moonshot releases Kimi K3.1 Pro and says it cut its hacking skills",
+      "publisher": "The Next Web",
+      "url": "https://thenextweb.com/news/moonshot-kimi-k3-1-pro-open-weight-cyber",
+      "accessed": "2026-10-24"
+    },
+    {
+      "title": "AI News Oct 24, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-24/",
+      "accessed": "2026-10-24"
+    }
+  ],
+  "related": [
+    "deepseek-deepinfer-open-source-inference-engine",
+    "openai-offline-training-cache-side-channel"
+  ]
+}

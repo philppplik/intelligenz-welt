@@ -1,0 +1,116 @@
+{
+  "slug": "litellm-11070-supply-chain-stealer",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "LiteLLM 1.107.0: Zwei Stunden lang ein Credential-Stealer auf PyPI",
+  "dek": "Die Release-Pipeline von LiteLLM wurde gekapert und schob eine Version mit Diebstahl-Schadsoftware auf PyPI und Docker Hub. Rund 49.000 Downloads später ist klar: Wer sie installiert hat, muss jetzt Maschinen neu aufsetzen und Schlüssel rotieren.",
+  "published": "2026-10-24T08:56:00+02:00",
+  "modified": "2026-10-24T08:56:00+02:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "LiteLLM",
+    "Supply Chain",
+    "Sicherheit",
+    "PyPI",
+    "Credential Theft"
+  ],
+  "key_takeaways": [
+    "Am 21. Oktober schob eine kompromittierte Release-Pipeline das Paket litellm==1.107.0 mit einem Credential-Stealer auf PyPI und Docker Hub; die Schadversion war rund zwei Stunden online und kam laut Wiz auf etwa 49.000 Downloads.",
+    "Die Malware läuft bei jedem Python-Start und sammelt Browser-Passwörter, SSH- und Cloud-Schlüssel, CI-Geheimnisse und gezielt die Konfigurationen von KI-Werkzeugen wie ~/.cursor und ~/.claude.",
+    "Angriffsweg laut LiteLLM: gestohlene GitHub-CLI-OAuth-Token dreier Entwickler-Konten, erbeutet aus den Logs einer öffentlich erreichbaren internen Installation; der GitHub-Quelltag selbst ist sauber.",
+    "Betroffene sollen die Umgebung als kompromittiert behandeln: nicht zuerst pip starten, Schaddateien löschen, Maschinen neu aufsetzen, alle erreichbaren Schlüssel rotieren und auf 1.106.2 pinnen."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein hölzernes Trojanisches Pferd, aus dem leuchtende Datenkabel wie Tentakeln in einen Serverraum wachsen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** LiteLLM, die Bibliothek, die in unzähligen KI-Anwendungen vor den Modell-API-Keys sitzt, wurde selbst zum Angriffsziel. Zwei Stunden lang lieferte die offizielle Versionsnummer 1.107.0 einen Diebstahl-Trojaner aus. Der Vorfall ist eingedämmt, aber für alle, die in dem Zeitfenster installiert oder gepullt haben, beginnt die Arbeit jetzt."
+    },
+    {
+      "t": "h2",
+      "x": "Was genau passiert ist"
+    },
+    {
+      "t": "p",
+      "x": "Am frühen Morgen des 21. Oktober wurde LiteLLMs Release-Pipeline kompromittiert und veröffentlichte die Version 1.107.0 auf PyPI und als Docker-Images, wie das [LiteLLM-Team in seinem Incident-Bericht](https://docs.litellm.ai/blog/security-incident-oct-21-2026) dokumentiert. Auf PyPI war das Schadpaket von 11:39 bis 13:23 UTC erreichbar, die Docker-Tags v1.107.0, latest, main-latest und main-stable von 11:46 bis etwa 14:20 UTC. Laut [Wiz](https://www.wiz.io/blog/litellm-compromised-steals-credentials) wurde die PyPI-Version rund 49.000-mal heruntergeladen; die Dependency-Firewall von AISLE markierte das erste Paket bereits drei Minuten und 14 Sekunden nach dem Upload. Der offizielle Quelltext-Tag auf GitHub ist sauber, die kompromittierten Pakete wurden aus einem vom Angreifer kontrollierten Repository gebaut."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Malware tut"
+    },
+    {
+      "t": "p",
+      "x": "Die Schadsoftware installiert drei Dateien direkt ins site-packages-Verzeichnis: cook.pth, cook.py und sitecustomize.py. Damit startet sie bei jedem Python-Interpreter-Start, ganz ohne dass litellm importiert wird, ein zweiter Lademechanismus holt stündlich weiteren Code nach. Gesammelt werden Browser-Passwörter, SSH-Schlüssel, Cloud-Zugänge samt Instanz-Metadaten, Kubernetes-, Vault- und CI-Geheimnisse, Tokens aus .npmrc, .pypirc und .git-credentials, und bezeichnenderweise die Konfigurationen von KI-Werkzeugen, darunter ~/.cursor und ~/.claude. Die Beute wird verschlüsselt exfiltriert. Angreifer behandeln die Ordner von Coding-Agenten inzwischen also gezielt als Zugangsdaten-Lager."
+    },
+    {
+      "t": "h2",
+      "x": "Der Angriffsweg"
+    },
+    {
+      "t": "p",
+      "x": "Nach der LiteLLM-Untersuchung gelangte der Angreifer über eine öffentlich erreichbare interne Installation an GitHub-CLI-OAuth-Token, die dort in Logdateien gelandet waren. Mit den Tokens dreier Entwickler-Konten wurde der Release-Workflow ausgelöst und freigegeben. Eine Branch-Protection-Regel blockierte zunächst eine unautorisierte Workflow-Änderung, wurde aber Sekunden später von einem privilegierten Konto überstimmt. Alle beteiligten Token sind inzwischen widerrufen. Für Enterprise-Kunden verteilt LiteLLM parallel eine geschützte Version, die eine noch embargoisierte Sicherheitslücke schließt; deren Veröffentlichung ist für den 27. Oktober geplant."
+    },
+    {
+      "t": "callout",
+      "title": "Wenn du betroffen sein könntest",
+      "x": "Prüfe Lockfiles, Container-Images und CI-Caches nach litellm==1.107.0 und den Image-Digests. Wichtig: Starte nicht zuerst pip, jeder Python-Start führt die Schaddateien erneut aus. Lösche zuerst cook.pth, cook.py, sitecustomize.py und die passenden __pycache__-Dateien, setze die Umgebung neu auf, rotiere jeden erreichbaren Schlüssel und pinne auf 1.106.2 oder älter. Wer nur Versionen vor 1.107.0 nutzt, ist laut LiteLLM nicht betroffen."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Ein Supply-Chain-Angriff traf mit LiteLLM das Tor zu den Modell-API-Keys vieler KI-Stacks, rund 49.000 Downloads in zwei Stunden.",
+        "Die Malware zielt ausdrücklich auf KI-Werkzeug-Konfigurationen, Agenten-Ordner sind jetzt Angriffsziel.",
+        "Gepinnte Versionen hätten geschützt: Betroffen ist nur, wer 1.107.0 im Zeitfenster installiert oder gepullt hat.",
+        "Gegenmaßnahmen: Schaddateien vor dem ersten Python-Start löschen, Umgebung neu aufsetzen, Schlüssel rotieren, auf 1.106.2 pinnen."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Woher weiß ich, ob ich betroffen bin?",
+      "a": "Suche in Lockfiles, Container-Images und CI-Caches nach litellm==1.107.0 sowie auf Dateisystemen nach litellm-1.107.0.dist-info, cook.pth und sitecustomize.py. Wer die Version zwischen 11:39 und 13:23 UTC am 21. Oktober per pip installiert oder ein betroffenes Docker-Image gestartet hat, sollte die Umgebung als kompromittiert behandeln. Ein Nichtergebnis bei der Dateisuche beweist allerdings nicht, dass alles sauber ist."
+    },
+    {
+      "q": "Warum darf ich nicht einfach pip install --upgrade laufen lassen?",
+      "a": "Weil jeder Start des Python-Interpreters, also auch der von pip, die Schaddateien cook.pth und sitecustomize.py erneut ausführt. Erst die Dateien und ihre __pycache__-Reste von der Shell aus löschen, dann die Umgebung neu aufsetzen."
+    },
+    {
+      "q": "Ist die aktuelle Version wieder sicher?",
+      "a": "Die Schadversion ist von PyPI, Docker Hub und GHCR entfernt, und alle am Angriff beteiligten Token wurden widerrufen. LiteLLM empfiehlt, vorerst explizit auf 1.106.2 oder eine frühere Version zu pinnen. Der GitHub-Quelltag war nie infiziert, die Pakete stammten aus einem fremden Repository."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Contained: Oct 21, 2026 LiteLLM release v1.107.0 Compromised",
+      "publisher": "LiteLLM",
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+      "accessed": "2026-10-24"
+    },
+    {
+      "title": "LiteLLM Compromised, Steals Credentials",
+      "publisher": "Wiz Blog",
+      "url": "https://www.wiz.io/blog/litellm-compromised-steals-credentials",
+      "accessed": "2026-10-24"
+    },
+    {
+      "title": "AI News Oct 23, 2026: Storm-0940 weaponises ARTEX",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-23/",
+      "accessed": "2026-10-24"
+    }
+  ],
+  "related": [
+    "php2shell-ki-findet-jahrzehntealte-php-luecken",
+    "deepseek-deepinfer-open-source-inference-engine"
+  ]
+}
