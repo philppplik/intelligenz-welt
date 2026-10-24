@@ -3,10 +3,10 @@
   "lang": "de",
   "section": "news",
   "type": "news",
-  "title": "PHP2Shell: KI findet jahrzehntealte Lücken in 70 Prozent des Webs",
+  "title": "PHP2Shell: KI findet jahrzehntealte Lücken im PHP-Kern",
   "dek": "Zwei kritische Lücken im PHP-Kern erlauben Code-Ausführung aus dem Netz, betroffen ist fast jede PHP-Version seit einem Jahrzehnt. Gefunden hat sie kein Mensch, sondern Frontier-Modelle. Patches sind da, und die ersten Angriffe laufen bereits.",
   "published": "2026-10-23T10:00:00+02:00",
-  "modified": "2026-10-23T10:00:00+02:00",
+  "modified": "2026-10-24T08:20:00+02:00",
   "author": "philipp-paulik",
   "tags": [
     "PHP2Shell",
@@ -17,7 +17,7 @@
   ],
   "key_takeaways": [
     "Zwei kritische Lücken im PHP-Kern (CVE-2026-109618 und CVE-2026-109619, jeweils CVSS 9.2) erlauben unauthentifizierte Code-Ausführung und das Auslesen von Prozess-Speicher mit Passwörtern und API-Keys.",
-    "Betroffen ist praktisch jede PHP-Version seit 5.4; PHP treibt laut Wiz rund 70 Prozent aller Websites an, darunter WordPress, Drupal, Joomla und MediaWiki.",
+    "Betroffen ist praktisch jede PHP-Version seit 5.4; PHP treibt laut W3Techs 69,3 Prozent der Websites mit bekannter serverseitiger Programmiersprache an, darunter WordPress, Drupal, Joomla und MediaWiki.",
     "Wiz Research fand die Lücken mit den Frontier-Modellen Gemini 4 Argon und GPT-5.6 Sol; ein zweiter Fund kam von Calif aus OpenAIs Programm Patch the Planet.",
     "Patches gibt es seit dem 21. Oktober für PHP 8.5.12, 8.4.27, 8.3.36 und 8.2.35; Amazon beobachtete erste Ausnutzungsversuche schon am 17. Oktober, CISA fordert: patchen oder Systeme abschalten."
   ],
@@ -131,6 +131,12 @@
       "publisher": "Morning Tokens",
       "url": "https://morningtokens.com/issues/2026-10-22/",
       "accessed": "2026-10-23"
+    },
+    {
+      "title": "Usage Statistics and Market Share of PHP for Websites",
+      "publisher": "W3Techs",
+      "url": "https://w3techs.com/technologies/details/pl-php",
+      "accessed": "2026-10-24"
     }
   ],
   "related": [
