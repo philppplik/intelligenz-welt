@@ -5,10 +5,14 @@ Aufruf aus build.py: from leadwall import build_leadwall; build_leadwall(page, O
 
 CONSENT = ('Ja, ich melde mich für den kostenlosen PDF-Zugang zur täglichen Tagesausgabe von Intelligenz Welt an. '
  'Nach der Bestätigung meiner E-Mail-Adresse (Double-Opt-In) kann ich die aktuelle Ausgabe als PDF laden. '
- 'Ein Newsletter-Abonnement oder regelmäßiger E-Mail-Versand ist damit nicht verbunden; die Anmeldung dient dem Zugang zum PDF. Ich kann meine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, '
+ 'Ich kann meine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, '
  'z. B. per E-Mail an <a href="mailto:philipp.l.paulik@gmail.com">philipp.l.paulik@gmail.com</a>. '
  'Der Versand der E-Mails erfolgt über den Dienstleister Resend (PLUS FIVE FIVE, Inc., USA); eine Übermittlung in die USA kann dabei stattfinden; '
  'Details in der <a href="/datenschutz/#tagesbericht-anmeldung">Datenschutzerklärung</a>.')
+
+CONSENT_NL = ('Ja, ich möchte zusätzlich den Wochenrückblick von Intelligenz Welt erhalten (sonntags per E-Mail). '
+ 'Diese Einwilligung ist freiwillig und unabhängig vom PDF-Zugang; ich kann sie jederzeit gesondert widerrufen, '
+ 'z. B. über den Abmeldelink in jeder Wochenrückblick-Mail oder per E-Mail an <a href="mailto:philipp.l.paulik@gmail.com">philipp.l.paulik@gmail.com</a>.')
 
 CSS = ('<style>.lw{max-width:560px}.lw label{display:block;font-weight:600;margin:18px 0 6px}.lw input[type=email]{box-sizing:border-box;width:100%;min-height:46px;'
  'padding:10px 12px;font:inherit;border:1px solid var(--line,#cbd5e1);border-radius:8px;background:var(--bg,#fff);color:var(--fg,#0f172a)}'
@@ -24,6 +28,7 @@ FORM = ('<form class="lw" id="lw-form" data-ep="iwsub" method="post" novalidate>
  '<input id="lw-email" name="email" type="email" autocomplete="email" inputmode="email" required>'
  '<div class="lw-hp" aria-hidden="true"><label>Nicht ausfüllen<input name="website" tabindex="-1" autocomplete="off"></label></div>'
  '<label class="lw-c" for="lw-consent"><input id="lw-consent" name="consent" type="checkbox" required><span>' + CONSENT + '</span></label>'
+ '<label class="lw-c" for="lw-nl"><input id="lw-nl" name="nl" type="checkbox"><span>' + CONSENT_NL + '</span></label>'
  '<button class="lw-go" type="submit">Kostenlos anmelden</button><div class="lw-msg" id="lw-msg" hidden></div>'
  '<small>Nur die E-Mail-Adresse ist Pflicht. Kein Kauf, kein Preis. Keine Tracking-Pixel in unseren E-Mails. '
  'Anmeldezeitpunkt, Bestätigungszeitpunkt, Textversion und IP-Adresse werden als Einwilligungsnachweis gespeichert.</small></form>')
@@ -64,7 +69,7 @@ JS = r'''(function(){
     if(!f.consent.checked)return show('Bitte stimme der Anmeldung zur Tagesausgabe zu (Checkbox).',1);
     if(!API)return show('Die Anmeldung ist noch nicht freigeschaltet.',1);
     b.disabled=true;
-    fetch(API+'/api/'+(f.getAttribute('data-ep')||'iwsub'),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:em,consent:true,website:f.website.value})})
+    fetch(API+'/api/'+(f.getAttribute('data-ep')||'iwsub'),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:em,consent:true,nl:!!(f.nl&&f.nl.checked),website:f.website.value})})
       .then(function(r){return r.json()}).then(function(j){b.disabled=false;
         if(j.ok)show('Fast geschafft: Wir haben dir eine Bestätigungsmail geschickt. Bitte klicke auf den Link darin (auch im Spam-Ordner nachsehen).');
         else show('Das hat nicht geklappt. Bitte prüfe die Eingaben.',1)})
