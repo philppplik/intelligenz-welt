@@ -1,0 +1,54 @@
+{
+ "slug": "goose-programmiersprache-claude-fable",
+ "lang": "de",
+ "section": "praxis",
+ "type": "explainer",
+ "title": "Goose: Eine Programmiersprache ohne Heap, fast komplett von Claude gebaut",
+ "dek": "Der Lobster-Schöpfer Wouter van Oortmerssen hat mit Goose eine speichersichere Systemsprache veröffentlicht, die ohne Heap, Garbage Collector und Lifetime-Annotationen auskommt. Den Compiler, die Benchmarks und die Doku schrieb Claude Fable.",
+ "published": "2026-10-25T09:08:00+01:00",
+ "modified": "2026-10-25T09:08:00+01:00",
+ "author": "philipp-paulik",
+ "tags": ["Programmiersprachen", "Goose", "Claude", "Speichersicherheit", "Vibe Coding"],
+ "key_takeaways": [
+  "Goose ist eine neue speichersichere Systemsprache von Wouter van Oortmerssen: kein Heap, kein Garbage Collector, keine Referenzzählung, keine Lifetime-Annotationen, stattdessen compiler-verwaltete Datenstapel mit Scope-Ende als Free.",
+  "In den eigenen 16 Benchmarks des Projekts liegt Goose 3,3-mal über idiomatischem C++, 1,16-mal über handoptimiertem C++ und 1,12-mal über dem besten sicheren Rust, bei jeweils weniger Speicherverbrauch, Niederlagen inklusive.",
+  "Design stammt vom Menschen, Umsetzung von der KI: Claude Fable schrieb Compiler, Benchmarks, Beispiele und Dokumentation; der Autor sagt, er hätte das von KI nicht vor Fable erwartet.",
+  "Goose kompiliert in eine einzelne C-Datei, bringt einen TinyCC-Backend für In-Process-Läufe mit und steht unter Apache-2.0."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: eine stilisierte Gans aus leuchtenden Codefragmenten, die sauber gestapelte Speicherblöcke in einer Reihe ordnet",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Eine neue Systemsprache verspricht Rust-Sicherheit ohne Rust-Bürokratie und C++-Tempo ohne C++-Speicherfehler. Bemerkenswert ist nicht nur das Design, sondern wer es gebaut hat: Der Mensch entwarf die Sprache vor Jahren, Claude Fable hat sie jetzt implementiert."},
+  {"t": "h2", "x": "Das Speichermodell"},
+  {"t": "p", "x": "Goose verzichtet komplett auf einen Heap: Jeder dynamische Wert liegt inline auf einem vom Compiler verwalteten Datenstapel, Wachsen rückt einen Zeiger vor, und der Speicher wird frei, wenn sein Scope endet, erklärt die [Projektseite](https://aardappel.github.io/goose/). Referenzen bleiben beim Wachsen gültig, verschachtelte Daten liegen zusammenhängend im Speicher. Threads teilen nichts: Daten wandern über typisierte Queues als reine Kopie, ein memcpy pro Übergabe. Jeder Index ist bounds-geprüft, der Compiler streicht Nachweise, die er beweisen kann, und ein checkfree-Modus lehnt Kernel ab, in denen Prüfungen überleben."},
+  {"t": "h2", "x": "Die Benchmarks"},
+  {"t": "p", "x": "Über 16 eigene Benchmarks, im geometrischen Mittel, liegt Goose laut Repository 3,3-mal über idiomatischem C++ bei 1,9-mal weniger Speicher, 1,16-mal über handoptimiertem C++ bei 1,3-mal weniger und 1,12-mal über dem besten sicheren Rust bei 1,2-mal weniger. Das sind die Zahlen des Autors, keine unabhängige Messung, aber das Projekt veröffentlicht auch die verlorenen Benchmarks und die komplette Methodik. Ein enumspezifischer Test zeigt die Stärke des Datenlayouts: Varianten belegen nur so viel Platz wie ihr Inhalt, 4-mal weniger Speicher und doppeltes Tempo gegenüber einem Rust-enum im entsprechenden Benchmark."},
+  {"t": "h2", "x": "Der KI-Teil"},
+  {"t": "p", "x": "Das Design stammt von van Oortmerssen, der mit Lobster bereits eine eigene Sprache betreibt; die Umsetzung blieb jahrelang liegen, weil sein Spiele-Startup die Zeit fraß. Claude Fable schrieb dann Compiler, Benchmarks, 31 Beispielprogramme und Dokumentation, im Stil seines Lobster-Compilers und in C++, weil das Modell aus seiner Sicht in jeder Sprache fast gleich gut ist. Den Rückfragen-Prozess beschreibt er als echten Gewinn: Das Modell zwang ihn, unterspezifizierte Teile des Designs festzuziehen, die Sprache sei dadurch besser geworden. Er habe von KI so etwas nicht vor Fable erwartet, zitiert [Morning Tokens](https://morningtokens.com/issues/2026-10-25/)."},
+  {"t": "callout", "title": "Warum das anders ist als typisches Vibe Coding", "x": "Hier hat kein Modell ein bekanntes Programm nachgebaut, sondern ein neues Design umgesetzt, das es vorher nicht gab, bewertet von jemandem, der Sprachen professionell baut. Es ist ein Beleg dafür, dass Frontier-Modelle inzwischen ganze, kohärente Systeme tragen können, wenn ein erfahrener Mensch die Architektur liefert und die Entscheidungen prüft."},
+  {"t": "h2", "x": "Praktisch einordnen"},
+  {"t": "p", "x": "Goose kompiliert in eine einzelne C-Datei und bringt ein eingebautes TinyCC-Backend mit, unter Windows laufen Programme damit ohne jede weitere Installation. Die Lizenz ist Apache-2.0, die Hürden für einen eigenen Versuch sind niedrig. Gleichzeitig ist es ein sehr junges Projekt mit einem Compiler, den im Kern ein Modell geschrieben hat: Für Experimente und Nebenprojekte spannend, für produktive Systeme gehört dazu die übliche Sorgfalt beim Review, vielleicht sogar eine Schippe mehr."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Goose zeigt ein drittes Speichermodell neben manuell (C++) und Borrow-Checker (Rust): compiler-verwaltete Stapel, Scope-Ende als Free.",
+   "Die eigenen Benchmarks versprechen C++-Tempo bei Rust-Sicherheit, unabhängig überprüft ist das noch nicht.",
+   "Claude Fable implementierte das komplette Projekt aus einem menschlichen Design, ein Lehrstück für KI als Umsetzer.",
+   "Apache-2.0 und ein TinyCC-Backend machen den Selbstversuch billig."
+  ]}
+ ],
+ "faq": [
+  {"q": "Ist Goose bereit für den Produktiveinsatz?", "a": "Nein, jedenfalls nicht ohne gründliches Review. Goose ist ein sehr junges Projekt eines Einzelautors, dessen Compiler weitgehend von einem KI-Modell geschrieben wurde. Für Experimente, Tools und Nebenprojekte ist es sofort nutzbar, für kritische Systeme sollte man Implementierung und Speichermodell selbst prüfen."},
+  {"q": "Wie kann eine Sprache ohne Heap dynamische Daten verwalten?", "a": "Über compiler-verwaltete Datenstapel: Dynamische Werte liegen inline auf einem Stapel mit Bump-Pointer, Wachsen verschiebt nur das Ende, und beim Verlassen des Scopes ist der Speicher automatisch frei. Typ- und Lifetime-Regeln des Compilers machen dieses Modell sicher, ohne dass der Programmierer Lifetimes annotiert."},
+  {"q": "Wo finde ich Goose und wie starte ich?", "a": "Das Projekt liegt auf GitHub unter aardappel/goose, mit Tutorial, Referenz, Spezifikation und 31 Beispielprogrammen. Unter Windows läuft es ohne weitere Installation dank eingebautem TinyCC-Backend, unter Linux und macOS braucht es die üblichen C-Entwicklerwerkzeuge. Die Lizenz ist Apache-2.0."}
+ ],
+ "sources": [
+  {"title": "The Goose Programming Language", "publisher": "Wouter van Oortmerssen", "url": "https://aardappel.github.io/goose/", "accessed": "2026-10-25"},
+  {"title": "goose README", "publisher": "GitHub / aardappel", "url": "https://github.com/aardappel/goose/blob/master/README.md", "accessed": "2026-10-25"},
+  {"title": "AI News Oct 25, 2026", "publisher": "Morning Tokens", "url": "https://morningtokens.com/issues/2026-10-25/", "accessed": "2026-10-25"}
+ ],
+ "related": ["recursive-flint-laptop-coding-modell", "smart-tv-entmuellt-vibe-coding"]
+}

@@ -1,0 +1,52 @@
+{
+ "slug": "block-dessa-sprachmodell-nur-menschliche-sprache",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Blocks Dessa: Ein Sprachmodell, das nie ein Wort gelesen hat",
+ "dek": "Jack Dorseys Block hat ein Full-Duplex-Sprachmodell vorgestellt, das ausschließlich auf menschlichen Gesprächen trainiert wurde, ohne Text, ohne vortrainiertes Basismodell. Es lacht mittendrin, läuft lokal auf einem MacBook Pro und ist noch nicht öffentlich.",
+ "published": "2026-10-25T09:06:00+01:00",
+ "modified": "2026-10-25T09:06:00+01:00",
+ "author": "philipp-paulik",
+ "tags": ["Block", "Dessa", "Voice AI", "Speech-to-Speech", "Jack Dorsey"],
+ "key_takeaways": [
+  "Dessa ist ein Full-Duplex-Speech-to-Speech-Modell von Block, trainiert ausschließlich auf menschlichen Konversationen, ohne Textdaten und ohne vortrainiertes Basismodell.",
+  "Das Modell hört und spricht gleichzeitig, setzt Zwischenrufe, lacht mitten im Satz und wählt pro Gespräch eine eigene Stimme und Persönlichkeit.",
+  "Die Inferenz läuft schneller als Echtzeit und lokal auf einem MacBook Pro M4 Max oder besser; trainiert wurde auf einem einzelnen NVIDIA-GB200-NVL72-System.",
+  "Dessa ist noch nicht öffentlich: Block sucht zuerst KI-Sicherheitsforscher, die das Modell auf unerwartete Risiken testen, eine Warteliste ist offen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: zwei sich überlagernde Klangwellen in einem dunklen Raum, die sich zu einer warmen, fast menschlichen Silhouette verweben",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Fast jede Sprachassistentin da draußen ist eine Kette: Sprache zu Text, Text zum Modell, zurück zu Sprache. Blocks neues Modell Dessa reißt diese Kette auf und bleibt von Anfang bis Ende im Klang. Das Ergebnis soll sich anhören wie ein Mensch, inklusive Lachen, Zögern und Timing."},
+  {"t": "h2", "x": "Was Dessa anders macht"},
+  {"t": "p", "x": "Klassische Sprachsysteme pressen Gesprochenes in Text und verlieren dabei Emotion und Timing. Dessa lernt Sprache direkt aus dem Klang: Das Modell wurde laut [Block](https://block.xyz/dessa) von Grund auf nur auf menschlichen Gesprächen trainiert, ohne Text und ohne vortrainierte Basis. Es ist full-duplex, hört und spricht also gleichzeitig, weiß, wann es dazwischenreden darf, und setzt Backchannel-Laute wie \u201eyeah!\u201c oder \u201egot it!\u201c. Die Inferenz läuft schneller als Echtzeit und lokal auf einem MacBook Pro M4 Max oder besser; trainiert wurde auf einem einzelnen NVIDIA GB200 NVL72, ergänzt [The Decoder](https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/)."},
+  {"t": "h2", "x": "Wie es sich anhört"},
+  {"t": "p", "x": "Block veröffentlichte ungesteuerte, live aufgezeichnete Demos, darunter ein Gespräch zwischen Dessa und OpenAIs Sprachmodell GPT-Live-1. Das Modell lacht mitten im Satz, schnappt nach Luft und sucht sich pro Unterhaltung eine eigene Stimme und Persönlichkeit. Es hat auch deutliche Ecken: Bisweilen wirkt es unbeholfen und unheimlich, ein Gespräch eröffnete es damit, den Gesprächspartner für \u201eRonaldo\u201c zu halten, berichtet [Morning Tokens](https://morningtokens.com/issues/2026-10-24/). Alle Eindrücke stammen aus von Block kuratierten Demos, ein unabhängiger Test steht aus."},
+  {"t": "h2", "x": "Verfügbarkeit: erst Forschung, dann Warteliste"},
+  {"t": "p", "x": "Öffentlich ist Dessa noch nicht. Block sucht zunächst KI-Sicherheitsforscher, die das Modell auf unerwartete Risiken abklopfen, Interessenten können sich über ein Formular melden; eine allgemeine Warteliste existiert. Als Gründe für den Bau nennt Block Neugier, bessere Mensch-KI-Verständigung und Sicherheit, weil heutige Sprach-KI emotionale Signale ignoriere."},
+  {"t": "callout", "title": "Warum das mehr ist als ein neuer Assistent", "x": "Dessa ist eine Architektur-Probe: Wie viel Sprache steckt im Klang selbst, wenn man Text komplett weglässt? Ein Modell, das Tonfall, Pausen und Emotion als erste Sprache lernt, testet eine Hypothese, die jede Text-zentrierte Pipeline nicht testen kann. Und es läuft lokal, was für Datenschutz und Latenz eine eigene Aussage ist."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Dessa ist ein echtes End-to-End-Sprachmodell ohne Text-Zwischenschicht, ein grundsätzlich anderer Aufbau als übliche Assistenten.",
+   "Full-Duplex: Hören und Sprechen gleichzeitig, mit natürlichen Zwischenrufen und eigenem Timing.",
+   "Läuft lokal auf einem MacBook Pro M4 Max, trainiert auf einem einzigen GB200-NVL72-System.",
+   "Noch nicht öffentlich, zuerst Sicherheitstests durch externe Forscher, dann Warteliste."
+  ]}
+ ],
+ "faq": [
+  {"q": "Wann kann ich Dessa selbst ausprobieren?", "a": "Noch nicht. Block gibt das Modell zuerst an KI-Sicherheitsforscher, die es auf unerwartete Risiken testen, danach soll eine Warteliste bedient werden. Einen Termin für eine allgemeine Verfügbarkeit nennt Block nicht."},
+  {"q": "Was bedeutet full-duplex bei einem Sprachmodell?", "a": "Das Modell kann hören und sprechen gleichzeitig, wie ein Mensch im Gespräch. Es muss nicht warten, bis du fertig gesprochen hast, sondern erkennt, wann es dazwischenreden oder zustimmend reagieren soll. Herkömmliche Assistenten arbeiten strikt abwechselnd."},
+  {"q": "Brauche ich eine Internetverbindung oder ein Abo?", "a": "Nach Blocks Angaben läuft die Inferenz lokal auf einem MacBook Pro M4 Max oder besser, schneller als Echtzeit. Details zu Verkauf, Preis oder Abo-Modell gibt es noch nicht, das Modell ist bislang eine Forschungsvorschau."}
+ ],
+ "sources": [
+  {"title": "Dessa - the Conversation Model trained only on speech", "publisher": "Block", "url": "https://block.xyz/dessa", "accessed": "2026-10-25"},
+  {"title": "Block's new AI model Dessa was trained entirely on human speech", "publisher": "The Decoder", "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/", "accessed": "2026-10-25"},
+  {"title": "AI News Oct 24, 2026", "publisher": "Morning Tokens", "url": "https://morningtokens.com/issues/2026-10-24/", "accessed": "2026-10-25"}
+ ],
+ "related": ["mistral-voxtral-3-voice-agents", "kling-4-0-30-sekunden-video-omni-reference"]
+}

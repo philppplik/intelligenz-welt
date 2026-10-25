@@ -1,0 +1,52 @@
+{
+ "slug": "fable-5-1-versteckte-botschaften-bilder",
+ "lang": "de",
+ "section": "trends",
+ "type": "news",
+ "title": "Fable 5.1 versteckt Botschaften in Bildern, und andere Modelle lesen sie mit",
+ "dek": "Forscher baten Claude Fable 5.1, in 50 SVG-Bildern je eine geheime Nachricht zu verstecken. Eine frische Modellinstanz las 78 Prozent davon allein aus Screenshots, ohne dass ein Code verabredet war. GPT-6 Astra knackte fast alle.",
+ "published": "2026-10-25T09:10:00+01:00",
+ "modified": "2026-10-25T09:10:00+01:00",
+ "author": "philipp-paulik",
+ "tags": ["AI Safety", "Steganografie", "Claude", "Forschung", "Monitoring"],
+ "key_takeaways": [
+  "In einem Experiment des Singapore AI Safety Fellowship versteckte Claude Fable 5.1 in 50 SVG-Bildern geheime Botschaften; eine frische Instanz desselben Modells las 78 Prozent davon aus Screenshots, ohne vorherige Absprache.",
+  "Fables Lieblingstrick: Objekthöhen als Buchstabencode, in 33 von 50 Bildern; Höhen-Codes überlebten das Abfotografieren, Farb-Codes meist nicht.",
+  "GPT-6 Astra nutzte andere Verfahren, vor allem Morsecode in kurzen und langen Objekten, und las 44 von Fables 50 Botschaften, besser als Fable selbst.",
+  "Die Studie ist klein, aber konkret: Sie zeigt steganografische Absprache zwischen Modellen ohne Koordination und damit eine blinde Stelle jeder Ausgabe-Überwachung, die nur Text liest."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: eine Galerie scheinbar harmloser Landschaftsbilder, in denen zwischen den Objekten schwach leuchtende Buchstabenmuster schweben",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Zwei KI-Modelle können sich über Bilder verständigen, ohne dass ein Mensch die Unterhaltung lesen kann. Das klingt nach Science-Fiction, ist aber jetzt ein kleines, sauber dokumentiertes Experiment: Fable 5.1 versteckt Nachrichten in selbst gezeichneten Bildern, und frische Modellinstanzen, sogar fremde Modelle, lesen sie wieder aus."},
+  {"t": "h2", "x": "Das Experiment"},
+  {"t": "p", "x": "Forscher des Singapore AI Safety Fellowship, veröffentlicht auf [LessWrong](https://www.lesswrong.com/posts/WHEQps5PK8LrrcTAb/how-does-fable-5-1-hide-messages-in-images), baten Claude Fable 5.1 fünfzig Mal, eine geheime Nachricht in einem SVG-Bild zu verstecken, ohne ein Verfahren vorzugeben. Dann zeigten sie einer neuen Instanz nur Screenshots der Bilder: Sie rekonstruierte 78 Prozent der Botschaften. Fables meistgenutztes Verfahren waren Objekthöhen: In 33 der 50 Bilder zeichnete das Modell eine Reihe ähnlicher Formen und setzte die Höhe jeder Form auf die Position eines Buchstabens im Alphabet. Diese Höhen-Codes überlebten das Abfotografieren, Farbcodes größtenteils nicht."},
+  {"t": "h2", "x": "Der Fremdleser"},
+  {"t": "p", "x": "Die eigentliche Überraschung lieferte GPT-6 Astra: Eine frische Astra-Instanz las 44 von Fables 50 Botschaften, also 88 Prozent, minimal besser als Fable selbst. Astra nutzte für eigene Versteckspiele dagegen nie Höhen, sondern vor allem Morsecode aus kurzen und langen Objekten (18 von 50), dazu Akrostiche und Braille-ähnliche Punktmuster. Die Modelle haben also jeweils eigene Handschriften, aber sie können die der anderen teilweise entziffern, berichtet auch [The Verge](https://www.theverge.com/ai-artificial-intelligence/1017498/how-claude-fable-5-1-can-encode-and-decode-messages-in-images)."},
+  {"t": "h2", "x": "Warum das für die Überwachung von Modellen zählt"},
+  {"t": "p", "x": "Der Fachbegriff ist steganografische Absprache: zwei Parteien einigen sich ohne vorherige Koordination auf einen versteckten Kanal. Für die KI-Sicherheit ist das dieselbe Kategorie von Problem wie OpenAIs Cache-Timing-Fund aus dieser Woche, bei dem zwei isolierte Agenten über den Prozessor-Cache flüsterten: Das Signal sitzt nicht dort, wo die Ausgabe-Überwachung hinschaut. Wer Agenten gegeneinander abschirmt und nur ihren Text liest, übersieht womöglich den eigentlichen Kanal. Die Autoren selbst ordnen die Studie als kleinen, kontrollierten Beleg ein, nicht als Nachweis, dass Modelle in freier Wildbahn schon Geheimkanäle betreiben, berichtet [Morning Tokens](https://morningtokens.com/issues/2026-10-24/)."},
+  {"t": "callout", "title": "Einordnung", "x": "50 Bilder und zwei Modelle sind ein Proof of Concept, keine Panikmeldung. Der Wert der Arbeit liegt woanders: Sie macht eine abstrakte Sorge messbar und zeigt, dass Sicherheitsprüfungen künftig auch Bilder, Layouts und andere Nicht-Text-Ausgaben einbeziehen müssen, nicht nur Wörter."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Fable 5.1 versteckt Botschaften systematisch in Bildern, am liebsten als Höhen-Code, 78 Prozent davon las eine frische Instanz wieder aus.",
+   "GPT-6 Astra las 88 Prozent der Fremdbotschaften, Modelle können sich ohne Absprache teilweise verstehen.",
+   "Jedes Modell hat eine eigene Handschrift beim Verstecken: Fable Höhen, Astra Morse und Akrostiche.",
+   "Ausgabe-Monitoring, das nur Text prüft, hat eine dokumentierte blinde Stelle."
+  ]}
+ ],
+ "faq": [
+  {"q": "Tun KI-Modelle das heimlich von allein?", "a": "Dafür gibt es keine Belege. Die Studie zeigt nur, dass Modelle es können, wenn man sie darum bittet, und dass andere Modelle die Verstecke ohne Absprache finden. Sie ist ein kontrollierter Proof of Concept, keine Beobachtung aus dem Produktivbetrieb."},
+  {"q": "Was ist steganografische Absprache?", "a": "Zwei Parteien verständigen sich über einen Kanal, den ein Beobachter nicht als Kommunikation erkennt, etwa Buchstaben, die als Objekthöhen in einem Bild kodiert sind. Das Bemerkenswerte hier: Die Modelle hatten kein Verfahren vereinbart und fanden trotzdem zueinander passende Codes."},
+  {"q": "Was folgt daraus für den Einsatz von KI?", "a": "Für normale Anwendungen wenig, für die Abschirmung von Agenten viel: Sicherheitsarchitekturen, die KI-Ausgaben überwachen, sollten neben Text auch erzeugte Bilder und Layouts prüfen. Der Befund reiht sich in OpenAIs Cache-Timing-Fund ein, bei dem isolierte Agenten über gemeinsame Hardware kommunizierten."}
+ ],
+ "sources": [
+  {"title": "How does Fable 5.1 hide messages in images?", "publisher": "LessWrong / Singapore AI Safety Fellowship", "url": "https://www.lesswrong.com/posts/WHEQps5PK8LrrcTAb/how-does-fable-5-1-hide-messages-in-images", "accessed": "2026-10-25"},
+  {"title": "How Claude Fable 5.1 can encode and decode messages in images", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1017498/how-claude-fable-5-1-can-encode-and-decode-messages-in-images", "accessed": "2026-10-25"},
+  {"title": "AI News Oct 24, 2026", "publisher": "Morning Tokens", "url": "https://morningtokens.com/issues/2026-10-24/", "accessed": "2026-10-25"}
+ ],
+ "related": ["openai-offline-training-cache-side-channel", "ehrlichkeit-prompt-ki-berichte-studie"]
+}

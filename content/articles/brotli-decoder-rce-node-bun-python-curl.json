@@ -1,0 +1,59 @@
+{
+ "slug": "brotli-decoder-rce-node-bun-python-curl",
+ "lang": "de",
+ "section": "news",
+ "type": "news",
+ "title": "Brotli-Lücke CVE-2026-111497: RCE-Risiko weit über Node.js hinaus",
+ "dek": "Der Out-of-bounds-Write im Brotli-Decoder betrifft alles, was Brotli entpackt: Node.js und Bun sind gepatcht, aber Python-Clients, Envoy und statisch gelinkte curl-Builds brauchen eigene Updates. Gefunden hat die Lücke OpenAIs Sicherheitsteam.",
+ "published": "2026-10-25T09:02:00+01:00",
+ "modified": "2026-10-25T09:02:00+01:00",
+ "author": "philipp-paulik",
+ "tags": ["Sicherheit", "CVE-2026-111497", "Brotli", "Node.js", "RCE"],
+ "key_takeaways": [
+  "CVE-2026-111497 ist ein Out-of-bounds-Write im Brotli-Decoder (Versionen 1.0.3 bis 1.2.0), der laut Brotli-Projekt entfernte Codeausführung erlaubt, in beide Richtungen: böswillige Server können Clients knacken und umgekehrt.",
+  "Gepatcht sind Node.js (22.23.4, 24.22.1, 26.12.1) und Bun (1.4.4); Python-Nutzer brauchen Brotli 1.2.1 beziehungsweise brotlicffi 1.2.1.0, Envoy und statisch gelinkte curl-Builds eigene Updates.",
+  "Gemeldet wurde die Lücke von OpenAI Codex Security; die Ursache war im Februar im Brotli-Quellcode behoben worden, ohne dass jemand sie als Sicherheitsproblem erkannte, bis 21. Oktober kam kein Release mit dem Fix.",
+  "Falle für Python: requests, httpx und aiohttp laden Brotli automatisch, wenn es installiert ist, und Advisory-Datenbanken verknüpften die CVE zunächst nicht mit den PyPI-Paketen, Scanner können sie übersehen."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein undichter, leuchtender Datenstrom, der aus einem Kompressions-Zahnrad austritt und sich auf viele verbundene Systeme verteilt",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {"t": "p", "x": "**Kurz gesagt:** Wenn du diese Woche nur eine Sicherheitsmeldung ernst nimmst, dann diese: Der Brotli-Decoder, der in unzähligen Servern und Clients HTTP-Kompression entpackt, hat eine Speicherlücke mit RCE-Potenzial. Node.js und Bun sind gefixt, aber der Fix muss überall einzeln ankommen, und bei Python übersehen ihn gängige Scanner."},
+  {"t": "h2", "x": "Die Lücke"},
+  {"t": "p", "x": "Ein ungültiger Blockwechsel wurde vom Streaming-Decoder als \u201ebrauche mehr Daten\u201c statt als Formatfehler behandelt, sodass der Decoder weiter Bytes in einen internen Acht-Byte-Puffer schrieb, erklärt das [Node.js-Sicherheitsblog](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases). Wer Brotli-Daten an eine verwundbare Anwendung liefert, kann Prozessspeicher korrumpieren, bis hin zu Absturz, Speicherleck oder entfernter Codeausführung. Betroffen sind die Brotli-Versionen 1.0.3 bis 1.2.0, behoben in 1.0.10, 1.1.1 und 1.2.1, wie die [Release-Notes des Brotli-Projekts](https://github.com/google/brotli/releases/tag/v1.2.1) bestätigen, die von entfernter Codeausführung sprechen. Entdeckt und gemeldet wurde die Lücke von OpenAI Codex Security (Khai Tran und Sylvie Mayer). Besonders perfide: Die Grundursache war bereits im Februar im Quellcode repariert worden, nur niemand hatte den Fix als sicherheitsrelevant erkannt, sodass bis zum 21. Oktober kein Release ihn enthielt."},
+  {"t": "h2", "x": "Wer patchen muss"},
+  {"t": "table", "head": ["Software", "Betroffen", "Fix"], "rows": [
+   ["Node.js", "vor 22.23.4 / 24.22.1 / 26.12.1", "Update auf 22.23.4, 24.22.1 oder 26.12.1"],
+   ["Bun", "1.0.21 bis 1.4.3", "Bun 1.4.4; mit bun build --compile gebaute Programme neu bauen"],
+   ["Python (Brotli/brotlicffi)", "ältere Paketversionen", "Brotli 1.2.1 beziehungsweise brotlicffi 1.2.1.0"],
+   ["Envoy", "ältere Versionen", "1.40.0 / 1.39.3 / 1.38.6 / 1.37.8 (laut Morning Tokens)"],
+   ["curl & libbrotli-Builds", "statisch gelinkte Builds", "Neu bauen mit gepatchtem Brotli"]
+  ]},
+  {"t": "p", "x": "Nicht standardmäßig betroffen sind laut [Morning Tokens](https://morningtokens.com/issues/2026-10-25/) Apache mit mod_brotli und Nginx, weil sie Brotli nicht selbst dekodieren. Die Python-Falle verdient eigene Aufmerksamkeit: requests, httpx und aiohttp laden Brotli automatisch, sobald es installiert ist, und am 23. Oktober hatten Advisory-Datenbanken die CVE noch nicht mit den PyPI-Paketen verknüpft, pip-audit, Dependabot und Safety schlagen also möglicherweise nicht an."},
+  {"t": "callout", "title": "In beide Richtungen verwundbar", "x": "Der Angriff funktioniert bidirektional: Ein böswilliger Client kann einen ungepatchten Server übernehmen, der hochgeladene oder Proxy-Daten entpackt, und ein böswilliger Server jeden Client, der komprimierte Antworten akzeptiert. Buns Advisory weist zudem darauf hin, dass ein Angreifer im Netzwerkpfad einer unverschlüsselten Verbindung Daten an den Decoder liefern kann. Eine Web Application Firewall hilft dagegen nicht."},
+  {"t": "h2", "x": "Einordnung: Das Muster der Woche"},
+  {"t": "p", "x": "Wie PHP2Shell Anfang der Woche wurde auch diese Lücke von einem Frontier-Modell-gestützten Sicherheitsteam aufgespürt, und wie dort sitzt das Risiko in der Kette: Eine Bibliothek, die überall gebündelt wird, ein stiller Fix, der spät als Sicherheitsfix erkannt wird, und ein langer Schwanz an Projekten, die einzeln nachziehen müssen. Wer diese Woche LiteLLM rotiert hat, sollte Brotli gleich mitnehmen."},
+  {"t": "h2", "x": "Was du mitnehmen kannst"},
+  {"t": "ul", "items": [
+   "Node.js und Bun sofort aktualisieren, selbst kompilierte Bun-Programme neu bauen.",
+   "Python-Projekte: Brotli-Paketversionen von Hand prüfen, Scanner erkennen die CVE hier derzeit nicht zuverlässig.",
+   "Alles, was libbrotli statisch linkt (zum Beispiel curl-Builds), braucht einen Rebuild.",
+   "Die Lücke wirkt in beide Richtungen, Clients sind genauso Ziel wie Server."
+  ]}
+ ],
+ "faq": [
+  {"q": "Bin ich betroffen, wenn ich nur eine Webanwendung betreibe?", "a": "Ja, wenn dein Stack Brotli-komprimierte Daten aus fremden Quellen entpackt, etwa HTTP-Antworten mit Content-Encoding: br, Uploads oder Proxy-Traffic. Prüfe Node- und Bun-Versionen, Python-Pakete und alles, was libbrotli statisch einbindet. Apache und Nginx sind in der Standardkonfiguration nicht betroffen."},
+  {"q": "Warum zeigt mein Dependency-Scanner nichts an?", "a": "Für Python lautet die Antwort laut Morning Tokens: Die Advisory-Datenbanken hatten die CVE zunächst nicht den PyPI-Paketen Brotli und brotlicffi zugeordnet, deshalb schlagen pip-audit, Dependabot und Safety dort nicht an. Prüfe die installierte Version direkt, sie muss 1.2.1 beziehungsweise 1.2.1.0 sein."},
+  {"q": "Gibt es einen Workaround ohne Update?", "a": "Für Bun nur eingeschränkt: fetch mit decompress: false sendet kein Accept-Encoding: br und dekodiert die Antwort nicht, gilt aber nur pro Anfrage. Ein prozessweiter Workaround existiert nicht, das Update ist der einzige verlässliche Weg."}
+ ],
+ "sources": [
+  {"title": "Node.js October 2026 security releases", "publisher": "Node.js", "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases", "accessed": "2026-10-25"},
+  {"title": "Bundled brotli decoder has an out-of-bounds write (CVE-2026-111497)", "publisher": "Bun (GitHub Security Advisory)", "url": "https://github.com/oven-sh/bun/security/advisories/GHSA-663w-cv8g-jj2p", "accessed": "2026-10-25"},
+  {"title": "AI News Oct 25, 2026", "publisher": "Morning Tokens", "url": "https://morningtokens.com/issues/2026-10-25/", "accessed": "2026-10-25"}
+ ],
+ "related": ["php2shell-ki-findet-jahrzehntealte-php-luecken", "litellm-11070-supply-chain-stealer"]
+}

@@ -1,0 +1,125 @@
+{
+  "slug": "gvs5h-selbst-orchestrierung-qwen-livecodebench",
+  "lang": "de",
+  "section": "tools",
+  "type": "news",
+  "title": "GVS5H: Fünf offene 27B-Modelle im Verbund erreichen Fable-5-Niveau",
+  "dek": "Ein trainingsfreies Harness lässt frische Kopien eines Modells über einen geteilten Dateiordner zusammenarbeiten und hebt das offene Qwen3.8-27B auf LiveCodeBench Hard von 66,8 auf 92,4 Prozent, über Claude Fable 5, auf einer einzigen GPU.",
+  "published": "2026-10-25T09:04:00+01:00",
+  "modified": "2026-10-25T09:04:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Open Source",
+    "Coding",
+    "LiveCodeBench",
+    "Qwen",
+    "Orchestrierung"
+  ],
+  "key_takeaways": [
+    "GVS5H (ledger-based zero-shot self-orchestration) lässt mehrere frische Instanzen eines Modells ein Problem zerlegen und über einen geteilten Ordner mit Plan, Notizen und aktuellem Lösungsstand koordinieren, ganz ohne Training.",
+    "Auf den 100 neuesten schweren LiveCodeBench-Aufgaben steigt das lokal laufende, offene Qwen3.8-27B von 66,8 auf 92,4 Prozent, Claude Fable 5 liegt bei 90,4 Prozent.",
+    "Orchestriert erreicht Qwen3.8 Flash Next 93,0 Prozent bei etwa 9 Prozent der Kosten von Fable 5; über elf getestete Modelle hinweg beträgt der Gewinn bis zu 25,6 Prozentpunkte.",
+    "Wichtige Einschränkungen: Nicht jedes Modell profitiert, manche werden schlechter, und LiveCodeBench Hard ist Wettkampfprogrammierung, keine Entwicklung an echten Repositories."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: fünf identische leuchtende Figuren, die an einem geteilten holografischen Notizbuch über einem Schaltplan zusammenarbeiten",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Statt ein größeres Modell zu kaufen, lass fünf Kopien desselben kleinen Modells zusammenarbeiten. Genau das macht das neue Open-Source-Harness GVS5H, und die Zahlen sind beachtlich: Frontier-Niveau beim Coden, auf einer einzigen lokalen GPU, für einen Bruchteil der Kosten."
+    },
+    {
+      "t": "h2",
+      "x": "Wie es funktioniert"
+    },
+    {
+      "t": "p",
+      "x": "GVS5H steht für ledger-based zero-shot self-orchestration: Frische Instanzen ein und desselben Modells zerlegen eine Aufgabe und koordinieren sich über ein geteiltes Dateisystem, das Plan, Notizen und den aktuellen Lösungsstand enthält, wie das [Paper auf arXiv](https://arxiv.org/abs/2608.26480) beschreibt. Es kommt ohne Training oder Feintuning aus. Getestet wurde über elf offene und geschlossene Modelle hinweg, mit Gewinnen bis zu 25,6 Prozentpunkten auf fixierten Backends. Eine Transkript-Analyse führt den Gewinn auf die Zerlegung der Probleme und den persistenten Kontext zurück. Der Code steht unter MIT-Lizenz auf [GitHub](https://github.com/slee-persis/GVS5H), Paper und Laufdaten unter CC BY 4.0."
+    },
+    {
+      "t": "figure",
+      "file": "gvs5h-chart1.jpg",
+      "alt": "Balkendiagramm: LiveCodeBench-Hard-Trefferquote, Qwen3.8-27B einzeln 66,8 Prozent, Qwen3.8-27B orchestriert 92,4 Prozent, Qwen3.8 Flash Next orchestriert 93,0 Prozent, Claude Fable 5 einzeln 90,4 Prozent",
+      "caption": "Pass@1 auf den 100 neuesten LiveCodeBench-Hard-Aufgaben. Quelle: arXiv 2608.26480. Stand: 25. Oktober 2026, Angaben der Autoren."
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen im Detail"
+    },
+    {
+      "t": "p",
+      "x": "Auf den 100 neuesten schweren LiveCodeBench-Problemen steigt Qwen3.8-27B durch die Orchestrierung von 66,8 auf 92,4 Prozent pass@1, das Ergebnis läuft auf einer einzelnen lokalen GPU. Das orchestrierte Qwen3.8 Flash Next kommt auf 93,0 Prozent und liegt damit über den 90,4 Prozent von Claude Fable 5, bei laut Autoren etwa 9 Prozent der Kosten. Alle Werte stammen aus dem Paper der Entwickler und sind keine unabhängige Replikation."
+    },
+    {
+      "t": "h2",
+      "x": "Die Einschränkungen"
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren sind selbst ungewöhnlich offen: Die Gewinne sind nicht universell, manche Modelle verbessern sich nicht oder werden schlechter. Zwei methodische Punkte kommen hinzu, berichtet [Morning Tokens](https://morningtokens.com/issues/2026-10-25/): Die Opus-5-Baseline lief über ein älteres Gerüst durch OpenRouter, und LiveCodeBench Hard misst Wettkampfprogrammierung, nicht die Arbeit an echten, großen Repositories. Ob sich der Vorsprung auf Alltags-Entwicklung überträgt, müssen eigene Tests zeigen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung: Inferenz-Organisation als Hebel"
+    },
+    {
+      "t": "p",
+      "x": "GVS5H ist ein weiterer Beleg dafür, dass die Organisation der Inferenz inzwischen so viel bringen kann wie ein Modell-Upgrade, dieselbe Logik hinter Microsofts MAI-DxO in der Diagnostik oder den Manager-Ansätzen der letzten Monate. Das Ledger-Muster, ein geteilter Ordner als Gedächtnis der Gruppe, ist simpel genug, um es in bestehende Agenten-Flotten zu kopieren, und die MIT-Lizenz lädt genau dazu ein. Für Teams, die aus Kosten- oder Datenschutzgründen auf offene Gewichte setzen, ist das einer der praktisch relevantesten Releases des Herbstes."
+    },
+    {
+      "t": "h2",
+      "x": "Was du mitnehmen kannst"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Trainingsfreie Selbst-Orchestrierung hebt offene 27B-Modelle auf Frontier-Coding-Niveau, auf einer einzelnen GPU.",
+        "Bis zu 25,6 Prozentpunkte Gewinn über elf Modelle, aber nicht bei allen, manche verschlechtern sich.",
+        "Code unter MIT, Paper und Daten unter CC BY 4.0, sofort nachbaubar.",
+        "Benchmark ist Wettkampfprogrammierung, nicht Repo-Arbeit, eigene Tests auf der eigenen Codebasis bleiben Pflicht."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Brauche ich dafür mehrere GPUs oder ein Cluster?",
+      "a": "Nein. Das gezeigte Ergebnis mit Qwen3.8-27B läuft auf einer einzelnen lokalen GPU, weil die Instanzen nacheinander oder getaktet arbeiten und sich über das Dateisystem abstimmen. Die Kosten steigen mit der Zahl der Modellaufrufe, liegen aber laut den Autoren weit unter denen eines Frontier-Modells."
+    },
+    {
+      "q": "Funktioniert das mit jedem Modell?",
+      "a": "Nein. Über elf getestete Modelle hinweg zeigten manche keinen Gewinn oder wurden sogar schlechter. Die Autoren empfehlen implizit, den Effekt pro Backend zu messen, statt ihn vorauszusetzen."
+    },
+    {
+      "q": "Ist das dasselbe wie ein Multi-Agenten-Framework?",
+      "a": "Verwandt, aber minimalistisch: Es gibt keine spezialisierten Agenten-Rollen oder trainierten Manager, sondern frische Kopien desselben Modells, die sich nur über einen geteilten Ordner mit Plan, Notizen und Lösungsstand abstimmen. Genau diese Einfachheit macht es leicht übertragbar."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GVS5H: Five Qwen3.8-27B Models Match Claude Fable 5 on LiveCodeBench Hard",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2608.26480",
+      "accessed": "2026-10-25"
+    },
+    {
+      "title": "GVS5H auf GitHub",
+      "publisher": "GitHub / slee-persis",
+      "url": "https://github.com/slee-persis/GVS5H",
+      "accessed": "2026-10-25"
+    },
+    {
+      "title": "AI News Oct 25, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-25/",
+      "accessed": "2026-10-25"
+    }
+  ],
+  "related": [
+    "google-harness2-open-source-agenten",
+    "deepseek-v4-1-flash-coding-agenten"
+  ]
+}
