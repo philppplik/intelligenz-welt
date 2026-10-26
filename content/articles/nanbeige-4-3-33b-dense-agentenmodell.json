@@ -1,0 +1,140 @@
+{
+  "slug": "nanbeige-4-3-33b-dense-agentenmodell",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Nanbeige4.3-33B: Dichtes 33B-Agentenmodell mit 512K-Kontext unter Apache 2.0",
+  "dek": "Das Nanbeige-Team von BOSS Zhipin hat ein dichtes 33-Milliarden-Parameter-Modell unter Apache 2.0 veröffentlicht: 512K Kontext, starke Terminal-Bench-Werte laut Eigenangabe, gebaut als Lehrmodell für kommende kleinere Varianten.",
+  "published": "2026-10-26T08:21:00+01:00",
+  "modified": "2026-10-26T08:21:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Open Weights",
+    "Nanbeige",
+    "Apache 2.0",
+    "Coding",
+    "Modelle"
+  ],
+  "key_takeaways": [
+    "Nanbeige4.3-33B ist ein dichtes 33B-Modell (kein Mixture-of-Experts) mit 524.288 Token Kontext, seit dem 24. Oktober 2026 unter Apache 2.0 auf Hugging Face verfügbar.",
+    "Den Herstellerangaben zufolge liegt das Modell in der 30B-Klasse vorn: 80,9 auf Terminal-Bench 2.1 und 65,5 auf DeepSWE, jeweils vor Qwen3.8-27B, Muse-Glimmer-30B und Gemma4-31B. Bei SWE-Bench Pro und GDPval bleibt Qwen3.8-27B knapp vorn.",
+    "Alle Benchmark-Zahlen sind Anbieter-Angaben ohne unabhängige Prüfung.",
+    "Das Modell ist explizit als Teacher für eine Distillations-Pipeline gedacht, ein Nanbeige4.3-3B ist angekündigt."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: kompakter leuchtender Würfel aus dicht verflochtenen Datensträngen über einer offenen Hand, Symbol für ein dichtes Sprachmodell",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Nanbeige LLM Lab, das KI-Team der chinesischen Recruiting-Plattform BOSS Zhipin, hat mit Nanbeige4.3-33B ein dichtes Agentenmodell unter der freien Apache-2.0-Lizenz veröffentlicht: 33 Milliarden Parameter, 524.288 Token (512K) Kontext und laut Modellkarte die stärksten Agentenwerte in der 30B-Klasse. Die Gewichte stehen seit dem 24. Oktober auf Hugging Face."
+    },
+    {
+      "t": "h2",
+      "x": "Steckbrief"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Merkmal",
+        "Wert"
+      ],
+      "rows": [
+        [
+          "Parameter",
+          "33 Mrd., dicht (LlamaForCausalLM, 52 Schichten)"
+        ],
+        [
+          "Kontext",
+          "524.288 Token (512K), nativ über hohe RoPE-Basisfrequenz"
+        ],
+        [
+          "Lizenz",
+          "Apache 2.0"
+        ],
+        [
+          "Sprachen",
+          "Englisch, Chinesisch"
+        ],
+        [
+          "Veröffentlichung",
+          "Gewichte 24.10.2026, Modellkarte 25.10.2026"
+        ],
+        [
+          "Rolle",
+          "Flaggschiff-Teacher der Nanbeige4.3-Serie (Distillation zu 3B angekündigt)"
+        ]
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Die Benchmarks (Herstellerangaben)"
+    },
+    {
+      "t": "p",
+      "x": "Die Modellkarte vergleicht mit Qwen3.8-27B, Muse-Glimmer-30B und Gemma4-31B, alle mit höchster Reasoning-Stufe und nach Angabe des Teams mit identischen Inferenz-Hyperparametern und demselben Harness je Benchmark. Nanbeige4.3-33B führt die meisten Reihen an: 80,9 auf Terminal-Bench 2.1 (Qwen3.8-27B: 73,0), 65,5 auf DeepSWE (42,5) und 23,8 auf Terminal-Bench 4.0, wo die Vergleichsmodelle zwischen 0,0 und 6,3 liegen. Bei den klassischen Reasoning-Werten liegen alle vier dicht beieinander (AIME 2026: 95,2; GPQA Diamond: 89,5, hier führt Gemma4-31B mit 91,3)."
+    },
+    {
+      "t": "callout",
+      "title": "Wichtig",
+      "x": "Alle genannten Werte sind Anbieter-Angaben. Eine unabhängige Auswertung lag zum Redaktionsschluss nicht vor. Behandle die Tabelle als Leistungsanspruch, nicht als bestätigtes Ergebnis."
+    },
+    {
+      "t": "h2",
+      "x": "Wo es nicht vorn liegt"
+    },
+    {
+      "t": "p",
+      "x": "Ausgerechnet auf dem viel beachteten SWE-Bench Pro bleibt Qwen3.8-27B mit 61,7 gegenüber 60,3 vorn, ebenso bei GDPval (86,4 gegenüber 84,8). Wer vor allem an echten Repositories arbeitet, sollte also beide Modelle gegeneinander testen, statt die Tabelle als klare Siegererklärung zu lesen."
+    },
+    {
+      "t": "h2",
+      "x": "Bemerkenswert: bewusst dicht statt MoE"
+    },
+    {
+      "t": "p",
+      "x": "Während viele neue offene Modelle auf Mixture-of-Experts setzen, ist Nanbeige4.3-33B ein klassisches dichtes Modell: Jeder Parameter ist an jedem Token beteiligt. Das 512K-Fenster erreicht das Modell nativ über eine sehr hohe RoPE-Basisfrequenz, nicht über nachträgliche Verlängerung. Für mehrstufige Tool-Workflows empfiehlt das Team die Option preserve_thinking, damit das Reasoning früherer Züge im Kontext bleibt. Als Teacher-Modell soll es künftig kleinere Varianten speisen, ein Nanbeige4.3-3B ist bereits angekündigt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich Nanbeige4.3-33B lokal laufen lassen?",
+      "a": "Die BF16-Gewichte eines 33B-Modells brauchen rund 66 GB Speicher, für den 512K-Kontext kommt KV-Cache hinzu. Lokal ist das eher etwas für Workstations mit großer Grafikkarte oder Quantisierung, alternativ über Hosting-Anbieter. Die Apache-2.0-Lizenz erlaubt kommerzielle Nutzung."
+    },
+    {
+      "q": "Was heißt Teacher-Modell?",
+      "a": "Das Modell soll nicht nur direkt eingesetzt werden, sondern als Lehrer für die Distillation kleinerer Modelle dienen. Als erstes Beispiel nennt das Team ein kommendes Nanbeige4.3-3B. Bisher hatte das Labor fast ausschließlich 3B-Modelle veröffentlicht."
+    },
+    {
+      "q": "Wie verlässlich sind die Benchmark-Zahlen?",
+      "a": "Sie stammen vollständig vom Anbieter. Das Team gibt an, alle Modelle mit denselben Hyperparametern und demselben Harness je Benchmark gemessen zu haben, eine unabhängige Bestätigung gibt es aber noch nicht."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Nanbeige/Nanbeige4.3-33B (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "Nanbeige4.3-33B: Apache 2.0 dense agentic coding model with 512K context and benchmarks",
+      "publisher": "Data Studios",
+      "url": "https://www.datastudios.org/post/nanbeige-4-3-33b-open-weight-dense-agentic-model-512k-context",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "AI News Oct 26, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-26/",
+      "accessed": "2026-10-26"
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-open-weights",
+    "muse-spark-open-meta-816b-open-weights"
+  ]
+}

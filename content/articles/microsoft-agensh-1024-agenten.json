@@ -1,0 +1,103 @@
+{
+  "slug": "microsoft-agensh-1024-agenten",
+  "lang": "de",
+  "section": "tools",
+  "type": "news",
+  "title": "Agensh: Microsofts Open-Source-Harness skaliert auf 1.024 Coding-Agenten",
+  "dek": "Microsoft Research hat Agensh unter der MIT-Lizenz veröffentlicht: ein Multi-Agenten-Harness ohne zentralen Orchestrator, das die Test-Pass-Rate einer Pandoc-Migration von 33,89 auf 55,06 Prozent hebt, wenn statt einem 1.024 Agenten arbeiten.",
+  "published": "2026-10-26T08:21:00+01:00",
+  "modified": "2026-10-26T08:21:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Multi-Agenten",
+    "Microsoft Research",
+    "Open Source",
+    "Coding"
+  ],
+  "key_takeaways": [
+    "Agensh ist ein selbst-organisierter Multi-Agenten-Harness von Microsoft Research: Es gibt keinen zentralen Orchestrator, die Agenten beanspruchen Teilaufgaben selbst und stimmen sich über einen geteilten Arbeitsbereich (Gitea) und Nachrichten (Mattermost) ab.",
+    "Auf den fünf schwersten ProgramBench-Aufgaben steigt die mittlere Test-Pass-Rate von 19,31 Prozent mit einem Agenten auf 28,78 Prozent mit 128 Agenten (GPT-5.6-sol, hohe Reasoning-Stufe, Sechs-Stunden-Budget).",
+    "Bei einer Pandoc-Migration steigt die Rate von 33,89 Prozent (1 Agent) über 50,94 Prozent (128) auf 55,06 Prozent (1.024 Agenten). Mit dem neueren GPT-6.1-sol erreichen 32 Agenten 79,59 Prozent.",
+    "Der Code steht unter MIT-Lizenz auf GitHub. Die Token-Kosten der Großversuche wurden nicht berichtet."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: Schwarm vieler kleiner leuchtender Agenten-Figuren, die ohne sichtbaren Dirigenten gemeinsam an einem großen Code-Mosaik arbeiten",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Statt einen Chef-Agenten Aufgaben verteilen zu lassen, organisieren sich bei Agensh die Agenten selbst. Microsoft Research hat den Harness unter der MIT-Lizenz geöffnet und zeigt, dass die Lösungsqualität mit der Zahl der Agenten wächst: Bei einer sechsstündigen Pandoc-Migration von 33,89 Prozent mit einem Agenten auf 55,06 Prozent mit 1.024 Agenten."
+    },
+    {
+      "t": "h2",
+      "x": "Wie Agensh funktioniert"
+    },
+    {
+      "t": "p",
+      "x": "Die Skalierbarkeit heutiger Multi-Agenten-Systeme leidet laut dem Team am zentralen Orchestrator, der Aufgaben zuweisen und Arbeiter koordinieren muss. Agensh ersetzt ihn durch eine Kooperationsschleife: Die Agenten sammeln fortlaufend Kontext, beanspruchen Teilaufgaben selbst, handeln, teilen Ergebnisse, verifizieren und mergen asynchron. Die Infrastruktur dahinter besteht aus drei Teilen: einem geteilten Arbeitsbereich (ein Gitea-Repositorium) für vorgeschlagene, laufende und fertige Arbeit, einer Nachrichtenschnittstelle (Mattermost) und einem geteilten Kontext für wiederverwendbare Erkenntnisse."
+    },
+    {
+      "t": "h2",
+      "x": "Die Skalierungszahlen"
+    },
+    {
+      "t": "figure",
+      "file": "microsoft-agensh-1024-agenten-chart1.jpg",
+      "alt": "Balkendiagramm: Test-Pass-Raten steigen mit der Agentenzahl, ProgramBench von 19,31 auf 28,78 Prozent bei 128 Agenten, Pandoc mit GPT-5.6-sol von 33,89 auf 55,06 Prozent bei 1.024 Agenten, Pandoc mit GPT-6.1-sol von 56,19 auf 79,59 Prozent bei 32 Agenten",
+      "caption": "Finale Test-Pass-Raten nach Agentenzahl (Sechs-Stunden-Budget, hohe Reasoning-Stufe). Quelle: Microsoft Agensh, GitHub-README und arXiv 2609.26781. Stand: 26. Oktober 2026."
+    },
+    {
+      "t": "p",
+      "x": "Gemessen wurde auf den fünf schwersten ProgramBench-Aufgaben mit GPT-5.6-sol bei hoher Reasoning-Stufe, Sechs-Stunden-Budget und ohne Internetzugang: von 19,31 Prozent mit einem Agenten auf 28,78 Prozent mit 128 Agenten, rund 49 Prozent relativer Gewinn. Auf Pandoc steigt die finale Rate mit demselben Modell von 33,89 über 50,94 Prozent (128 Agenten) auf 55,06 Prozent bei 1.024 Agenten. Mit dem neueren GPT-6.1-sol kommen bereits 32 Agenten auf 79,59 Prozent (ein Agent: 56,19 Prozent). Größere Organisationen erreichen vergleichbare Raten außerdem früher, und laut Paper entstehen mit wachsender Größe nach und nach standardisierte Kooperationsformen und Spezialrollen."
+    },
+    {
+      "t": "h2",
+      "x": "Die Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Der Grenznutzen nimmt sichtbar ab: Der Sprung von 128 auf 1.024 Agenten bringt auf Pandoc nur noch gut vier Prozentpunkte. Die Token-Kosten der Läufe wurden nicht berichtet, bei Hunderten parallel laufender Frontier-Modell-Sitzungen dürften sie erheblich sein. Und gemessen wurde an fünf Aufgaben mit klaren Tests, nicht an typischem Entwickleralltag. Agensh ist damit vor allem ein Skalierungsbeweis und eine Antwort auf harte Zeitbudgets, noch keine Abkürzung für jedes Projekt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Brauche ich dafür 1.024 Agenten?",
+      "a": "Nein. Schon 32 bis 128 Agenten bringen den Großteil des Gewinns: Mit GPT-6.1-sol erreichen 32 Agenten auf Pandoc 79,59 Prozent. Die 1.024-Agenten-Konfiguration ist ein Skalierungsexperiment, kein empfohlenes Standard-Setup."
+    },
+    {
+      "q": "Was kostet ein solcher Lauf?",
+      "a": "Das berichten die Autoren nicht. Bekannt ist nur das Sechs-Stunden-Budget je Lauf und dass Frontier-Modelle zum Einsatz kamen. Wer Agensh ausprobiert, sollte die Token-Kosten selbst eng beobachten."
+    },
+    {
+      "q": "Wie unterscheidet sich Agensh von GVS5H?",
+      "a": "GVS5H lässt wenige frische Kopien eines offenen Modells über einen geteilten Ordner auf einer einzigen GPU zusammenarbeiten, Agensh skaliert dagegen Hunderte bis Tausende Agenten mit geteiltem Arbeitsbereich und Messaging, ohne zentralen Orchestrator. Beide zeigen denselben Trend: Koordination wird zur eigenen Leistungsdimension."
+    }
+  ],
+  "sources": [
+    {
+      "title": "microsoft/Agensh (README)",
+      "publisher": "GitHub",
+      "url": "https://github.com/microsoft/Agensh",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "Agensh: Scaling Organizational Intelligence to 1,024 Agents",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2609.26781",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "AI News Oct 26, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-26/",
+      "accessed": "2026-10-26"
+    }
+  ],
+  "related": [
+    "gvs5h-selbst-orchestrierung-qwen-livecodebench",
+    "google-harness2-open-source-agenten"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "arc-prize-astra-harness-luecke",
+  "lang": "de",
+  "section": "analyse",
+  "type": "news",
+  "title": "62,7 oder 99,9 Prozent: Wie der Harness über GPT-6 Astras ARC-AGI-3-Ergebnis entscheidet",
+  "dek": "Auf der verifizierten ARC-Prize-Seite steht für OpenAIs GPT-6 Astra zweimal ein Ergebnis: 62,7 Prozent mit dem Standard-Harness, 99,9 Prozent mit dem Provider-Adapter. Der Unterschied steckt nicht im Modell, sondern im Gerüst drumherum.",
+  "published": "2026-10-26T08:21:00+01:00",
+  "modified": "2026-10-26T08:21:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Benchmarks",
+    "ARC Prize",
+    "OpenAI",
+    "Evaluation"
+  ],
+  "key_takeaways": [
+    "Auf der verifizierten ARC-Prize-Ergebnisseite erreicht GPT-6 Astra auf ARC-AGI-3 mit dem Standard-Harness 62,7 Prozent (maximale Reasoning-Stufe, rund 26.098 US-Dollar je Lauf) und mit dem Provider-Adapter-Harness 99,9 Prozent (hohe Reasoning-Stufe, rund 18.817 US-Dollar).",
+    "Der Standard-Harness lässt das Modell nur selbst gewählte Notizen zwischen den Schritten weitertragen. Der Provider-Adapter erhält den opaken Reasoning-Zustand des Modells zwischen den Anfragen und komprimiert längere Verläufe.",
+    "ARC Prize verifiziert und dokumentiert beide Konfigurationen offen; der OpenAI-Eintrag umfasst zwölf Harness-Konfigurationen. Ein Regelverstoß ist nicht belegt.",
+    "Für Benchmark-Vergleiche heißt das: Ein Score ohne Angabe von Harness und Kosten pro Lauf verliert seine Aussagekraft."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: zwei nebeneinander laufende identische Roboter auf getrennten Laufbahnen, einer deutlich weiter vorn",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Wie gut ist OpenAIs GPT-6 Astra wirklich auf ARC-AGI-3, dem Benchmark für interaktive Reasoning-Aufgaben? Die verifizierte Ergebnisseite von ARC Prize beantwortet das mit zwei Zahlen: 62,7 Prozent mit dem Standard-Harness, 99,9 Prozent mit dem Provider-Adapter-Harness. Beides ist korrekt, und genau darin liegt die Lehre."
+    },
+    {
+      "t": "h2",
+      "x": "Die zwei Zahlen"
+    },
+    {
+      "t": "figure",
+      "file": "arc-prize-astra-harness-luecke-chart1.jpg",
+      "alt": "Balkendiagramm: GPT-6 Astra auf ARC-AGI-3 erreicht 62,7 Prozent mit dem Standard-Harness bei rund 26.098 US-Dollar je Lauf und 99,9 Prozent mit dem Provider-Adapter-Harness bei rund 18.817 US-Dollar je Lauf",
+      "caption": "Beste beobachtete ARC-AGI-3-Ergebnisse (Semi-Private-Set) von GPT-6 Astra je Harness. Quelle: ARC Prize, verifizierte Ergebnisse. Stand: 26. Oktober 2026."
+    },
+    {
+      "t": "p",
+      "x": "Beim Standard-Harness führt das Modell selbst gewählte Notizen durch die Umgebung: Es entscheidet, welche Strategienotizen es zwischen den Schritten behalten will. Der Provider-Adapter-Harness dagegen erhält den opaken Reasoning-Zustand des Modells zwischen den Anfragen und nutzt Kompaktierung für längere Verläufe, das Modell kann also frühere Arbeit direkt weiterverwenden. Der OpenAI-Eintrag stammt vom 2. September 2026 und umfasst zwölf Harness-Konfigurationen bei Tokenpreisen von 10 US-Dollar je Million Eingabe- und 50 US-Dollar je Million Ausgabetokens."
+    },
+    {
+      "t": "h2",
+      "x": "Warum der Adapter so viel besser abschneidet"
+    },
+    {
+      "t": "p",
+      "x": "ARC-AGI-3 besteht aus interaktiven Umgebungen mit langen Horizonten: Das Modell muss Regeln durch Ausprobieren entdecken und über viele Schritte verfolgen. Laut dem ARC-Prize-Blog führt Astra dabei Strategienotizen zu Objekten, Koordinaten, Regeln und offenen Plänen und entwickelt eine eigene kompakte Notation für die Umgebungen. Mit dem Adapter muss es dieses Verständnis nicht bei jeder Anfrage neu aufbauen. Dass der Adapter-Lauf zugleich besser und rund 28 Prozent günstiger ist, passt dazu: Weniger Wiederentdeckung heißt weniger Tokens."
+    },
+    {
+      "t": "h2",
+      "x": "Was das für Benchmarks bedeutet"
+    },
+    {
+      "t": "p",
+      "x": "Der Fall ist ein sauber dokumentiertes Beispiel für eine Entwicklung, die fast alle Agenten-Benchmarks betrifft: Das Ergebnis hängt zunehmend am Gerüst um das Modell, nicht nur am Modell. Wer Scores vergleicht, muss drei Dinge zusammen betrachten: den Harness, die Reasoning-Stufe und die Kosten pro Lauf. ARC Prize geht dabei vorbildlich offen mit den Daten um: Beide Konfigurationen sind verifiziert, mit Preisen und Konfigurationsdetails einsehbar. Ein Täuschungsvorwurf ist damit nicht belegt, wohl aber ein Vergleichbarkeitsproblem für alle, die nur die Schlagzeilenzahl lesen."
+    },
+    {
+      "t": "p",
+      "x": "Für die Praxis ist die Adapter-Zahl die relevantere: Wer das Modell über die API produktiv einsetzt, bekommt genau diese Infrastruktur mitgeliefert. Wer dagegen wissen will, was das nackte Modell ohne Provider-Unterstützung leistet, muss auf die 62,7 Prozent schauen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welche der beiden Zahlen ist die richtige?",
+      "a": "Beide, sie beantworten verschiedene Fragen. 62,7 Prozent misst das Modell mit minimalem, neutralem Gerüst. 99,9 Prozent misst das Modell so, wie ein API-Kunde es tatsächlich nutzt, mit erhaltenem Reasoning-Zustand. Vergleiche sind nur innerhalb derselben Harness-Klasse fair."
+    },
+    {
+      "q": "Hat OpenAI sich damit einen Vorteil erschlichen?",
+      "a": "Dafür gibt es keinen Beleg. ARC Prize selbst verifiziert beide Ergebnisse, beschreibt die Harness-Unterschiede öffentlich und listet alle zwölf getesteten Konfigurationen. Der Adapter ist Teil der Provider-Infrastruktur, keine geheime Sonderlösung."
+    },
+    {
+      "q": "Was heißt das für andere Benchmark-Vergleiche?",
+      "a": "Frage bei jedem Score nach Harness, Reasoning-Stufe und Kosten pro Lauf. Ein Modell mit schwächerem Roh-Score kann mit besserem Gerüst praktisch stärker sein, und umgekehrt kann eine hohe Schlagzeilenzahl an teure Infrastruktur gebunden sein."
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenAI GPT-6 Astra: Verifizierte ARC-AGI-3-Ergebnisse",
+      "publisher": "ARC Prize",
+      "url": "https://arcprize.org/results/openai-gpt-6-astra",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "OpenAI's GPT-6 Astra on ARC-AGI-3",
+      "publisher": "ARC Prize (Blog)",
+      "url": "https://arcprize.org/blog/astra",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "AI News Oct 26, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-26/",
+      "accessed": "2026-10-26"
+    }
+  ],
+  "related": [
+    "gvs5h-selbst-orchestrierung-qwen-livecodebench",
+    "taste-bench-ki-agenten-langzeit-entscheidungen"
+  ]
+}

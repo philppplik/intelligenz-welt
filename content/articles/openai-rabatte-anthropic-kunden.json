@@ -1,0 +1,122 @@
+{
+  "slug": "openai-rabatte-anthropic-kunden",
+  "lang": "de",
+  "section": "trends",
+  "type": "news",
+  "title": "Bis zu 90 Prozent Rabatt: OpenAI buhlt Anthropics Großkunden ab",
+  "dek": "OpenAI lockt laut einem Bericht von The Information Großkunden von Anthropic mit Nachlässen bis zu 90 Prozent. Rippling, Replit und DataCamp haben ihren KI-Einkauf demnach bereits umgeschichtet.",
+  "published": "2026-10-26T08:21:00+01:00",
+  "modified": "2026-10-26T08:21:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenAI",
+    "Anthropic",
+    "Preiskampf",
+    "Enterprise"
+  ],
+  "key_takeaways": [
+    "The Information berichtet, OpenAI unterbiete Anthropic bei Großkunden mit Rabatten bis zu 90 Prozent, und die Strategie zeige Wirkung.",
+    "Rippling hat den OpenAI-Anteil an seiner Coding-Arbeitslast laut CEO Parker Conrad von 16 auf 52 Prozent hochgefahren, der Anthropic-Anteil fiel von 57 auf 18 Prozent.",
+    "Replit wechselte nach einem Angebot mit über 30 Prozent Nachlass auf einen Vertrag im Umfang von mehr als 100 Millionen US-Dollar pro Jahr. DataCamp senkte seine Kosten laut CEO Jonathan Cornelissen um 80 bis 90 Prozent.",
+    "OpenAI finanziert das teils über eigene Margen, teils über echte Kostensenkungen bei den effizienteren Sol- und Luna-Modelllinien."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: zwei leuchtende Waagschalen mit Münzen, eine deutlich tiefer gesenkt, daneben umkippende Dominosteine in Firmenfarben ohne Logos",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Der Preiskampf um Enterprise-KI-Kunden ist offen ausgebrochen. Wie The Information berichtet, gewinnt OpenAI große Coding-Kunden von Anthropic mit Rabatten von bis zu 90 Prozent. Rippling, Replit und DataCamp gehören demnach zu den Wechslern, und die Zahlen, die ihre CEOs nennen, sind deutlich."
+    },
+    {
+      "t": "h2",
+      "x": "Die Fälle im Überblick"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Unternehmen",
+        "Was passiert ist"
+      ],
+      "rows": [
+        [
+          "Rippling",
+          "OpenAI-Anteil an der Coding-Last von 16 auf 52 Prozent gestiegen, Anthropic von 57 auf 18 Prozent gefallen (CEO Parker Conrad)"
+        ],
+        [
+          "Replit",
+          "Über 30 Prozent Nachlass auf einen Vertrag von mehr als 100 Mio. US-Dollar pro Jahr"
+        ],
+        [
+          "DataCamp",
+          "Kosten um 80 bis 90 Prozent gesenkt (CEO Jonathan Cornelissen)"
+        ],
+        [
+          "US-Bank (> 7 Mrd. US-Dollar Assets)",
+          "ChatGPT-Seats auf 500 Mitarbeitende verdoppelt ohne Aufpreis, unter 7 US-Dollar je Nutzer statt üblicher 20 US-Dollar und mehr"
+        ]
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Die Angaben stammen aus dem Bericht von The Information; The Decoder und weitere Outlets haben sie übernommen. Die genannten Prozentwerte sind Selbstauskünfte der Kunden beziehungsweise der Berichterstattung, keine geprüften Vertragsdaten."
+    },
+    {
+      "t": "h2",
+      "x": "Warum OpenAI sich das leisten kann"
+    },
+    {
+      "t": "p",
+      "x": "Zwei Gründe laufen zusammen. Zum einen kauft OpenAI offenbar Marktanteile auf Kosten der eigenen Marge. Zum anderen hat das Unternehmen mit den effizienteren Modelllinien Sol und Luna und der Infrastruktur dahinter real Kosten gesenkt, der Rabatt ist also nicht nur Verlustgeschäft. Bei Anthropic hat sich das Wachstum laut einer Investoren-Notiz vom zweiten auf das dritte Quartal verlangsamt. Beide Anbieter stehen zudem unter Preisdruck aus China, wo Modelle von Deepseek und Kimi vergleichbare Leistung für einen Bruchteil des Preises liefern."
+    },
+    {
+      "t": "h2",
+      "x": "Was das für Käufer bedeutet"
+    },
+    {
+      "t": "p",
+      "x": "Wer größere KI-Verträge verhandelt, hat selten einen besseren Hebel gehabt: Zwei Frontier-Anbieter im direkten Preiswettbewerb plus günstige offene Alternativen. Zugleich gilt wie bei jedem Einstiegspreis: Rabatte haben Laufzeiten, und Migration kostet Aufwand. Wer wechselt, sollte die Preisentwicklung nach der Anfangsphase und die Portierbarkeit der eigenen Workflows einplanen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Gilt das auch für kleinere Unternehmen?",
+      "a": "Die dokumentierten Fälle betreffen Großkunden mit Verträgen in Millionenhöhe. Für kleinere Teams sind die Listenpreise und API-Preise relevant, die durch den Wettbewerb aber ebenfalls unter Druck geraten dürften."
+    },
+    {
+      "q": "Sind die Rabatte dauerhaft?",
+      "a": "Das ist unklar. Solche Einstiegskonditionen haben typischerweise Laufzeiten. Der Bericht enthält keine Angaben darüber, wie lange die Konditionen garantiert sind."
+    },
+    {
+      "q": "Was bedeutet das für Anthropic?",
+      "a": "Anthropic verliert im Berichtszeitraum Anteile bei einigen Großkunden, bleibt aber in Coding stark verankert. Die verlangsamte Wachstumsrate stammt aus einer Investoren-Notiz; offizielle Zahlen dazu gibt es nicht."
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "OpenAI discounts pull Replit, Rippling from Anthropic",
+      "publisher": "Skimwire",
+      "url": "https://www.skimwire.com/openai-discounts-anthropic-customers-replit-rippling/",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "AI News Oct 26, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-26/",
+      "accessed": "2026-10-26"
+    }
+  ],
+  "related": [
+    "minimax-m3-1-flash-preisbrecher",
+    "openai-decisions-api-allgemein-verfuegbar"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "slug": "tailworm-tailscale-ssh-unix-sockets-root",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "Tailworm: Elf ungepatchte Lücken in Tailscale SSH und headscale",
+  "dek": "Die Sicherheitsforscherin Erica Windisch hat elf Schwachstellen in Tailscale SSH und headscale veröffentlicht, darunter Wege zu Root-Rechten auf fremden Servern. Patches gibt es bislang nicht.",
+  "published": "2026-10-26T08:21:00+01:00",
+  "modified": "2026-10-26T08:21:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Sicherheit",
+    "Tailscale",
+    "headscale",
+    "VPN",
+    "Schwachstellen"
+  ],
+  "key_takeaways": [
+    "Der Tailworm-Report von Erica Windisch (Cyberdione Labs) beschreibt elf Schwachstellen in tailscaled v1.104.2 und headscale v0.29.5, für die es zum Redaktionsschluss keine Patches gibt.",
+    "Mehrere Befunde betreffen das Unix-Socket-Forwarding von Tailscale SSH: Weil der eingebettete SSH-Server im Root-Prozess tailscaled läuft, kann ein normaler freigegebener Nutzer Root-Zugriff auf dem Zielserver erlangen, im Labor bis zur vollständigen Übernahme über /run/docker.sock demonstriert.",
+    "App Connectors umgehen laut Report die ACLs: Das Weiterleitungsziel wird clientseitig deklariert und nie validiert, sodass berechtigte Peers beliebige Ziele, etwa Cloud-Metadatendienste oder interne Netze, über die Connector-IP erreichen können.",
+    "Windisch bezeichnet die Veröffentlichung als „reported but not coordinated“. Tailscale-VP Mike Shaver bestätigte den Erhalt des Berichts und empfiehlt nicht, Tailscale SSH pauschal abzuschalten."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: dunkler Netzwerk-Tunnel aus leuchtenden Linien, an dessen Ende ein geöffnetes Vorhängeschloss schwebt",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Wer Tailscale SSH oder ein selbst gehostetes headscale einsetzt, sollte diese Woche seine Regeln prüfen. Die Sicherheitsforscherin Erica Windisch von Cyberdione Labs hat unter dem Namen Tailworm elf Schwachstellen veröffentlicht, für die es bislang keine Patches gibt. Mehrere davon erlauben es einem gewöhnlichen, im Mesh freigegebenen Gerät, Root-Rechte auf anderen Servern zu erlangen."
+    },
+    {
+      "t": "h2",
+      "x": "Was genau betroffen ist"
+    },
+    {
+      "t": "p",
+      "x": "Geprüft wurden der in tailscaled v1.104.2 eingebettete SSH-Server (basierend auf der Bibliothek gliderssh) und die Open-Source-Steuerungsebene headscale v0.29.5. Die Befunde 1 bis 3 drehen sich um das Unix-Socket-Forwarding: Bei aktiviertem Forwarding (`ssh -L` beziehungsweise `ssh -R`) führt der mit Root-Rechten laufende tailscaled Pfadprüfungen und Dateioperationen als root aus. Im Labor gelang damit unter anderem das Auslesen von `/etc/shadow` mit uid=0, ohne sudo oder Docker-Gruppe. Über eine Race-Condition gegen den Standard-Docker-Daemon demonstrierte der Report eine durchgängige Kette bis zur Ausführung mit Host-Root-Rechten."
+    },
+    {
+      "t": "p",
+      "x": "Weitere Befunde: App Connectors validieren das clientseitig deklarierte Weiterleitungsziel nicht, sodass berechtigte Peers beliebige Ziele (Cloud-Metadatendienste, interne Netze, das offene Internet) über die vertrauenswürdige Connector-IP erreichen können, ohne dass die ACLs greifen. Eine weitere Lücke erschöpft den Speicher des Root-Prozesses über eine einfache SSH-Sitzung (rund 536 MB in sieben Sekunden). Bei headscale sind eine nicht authentifizierte Denial-of-Service-Lücke beim Onboarding und ein ungebremstes Einlesen von Relay-Antworten (10 MB werden zu 1,34 GB im Speicher) dokumentiert."
+    },
+    {
+      "t": "h2",
+      "x": "„Reported but not coordinated“"
+    },
+    {
+      "t": "p",
+      "x": "Windisch beschreibt die Veröffentlichung selbst als „reported but not coordinated“, also gemeldet, aber nicht abgestimmt. Auf Hacker News kritisierte mindestens ein Kommentator das Veröffentlichen ohne vorherige Abstimmung als unverantwortlich. Die Forscherin argumentiert im Report, die Infrastruktur sei heute verwundbar und Nutzer bräuchten die Informationen jetzt."
+    },
+    {
+      "t": "p",
+      "x": "Tailscale hat öffentlich reagiert. Mike Shaver, Vice President of Engineering, schrieb auf Reddit, das Unternehmen habe den Bericht erhalten, untersuche dieselben Bereiche bereits mit externen Sicherheitsspezialisten und habe eigene Probleme gefunden, an deren Behebung es arbeite. Welche Konstellationen betroffen sind, werde noch geklärt. Shaver empfiehlt ausdrücklich nicht, Tailscale SSH pauschal abzuschalten: „not recommending that everyone disable Tailscale SSH.“"
+    },
+    {
+      "t": "h2",
+      "x": "Was du jetzt tun kannst"
+    },
+    {
+      "t": "p",
+      "x": "Da es noch keinen Patch gibt, bleiben Konfigurationsänderungen. Der Report und Tailscales eigene Hinweise überschneiden sich weitgehend:"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "SSH-Regeln auf konkrete Paare (Quelle zu Ziel) beschränken, keine identitäts- oder tag-weiten Accept-Regeln, keine privilegierten Zielkonten wie root.",
+        "SSH-Forwarding deaktivieren: In der SaaS-Steuerungsebene die Forwarding-Felder pro Regel auf false setzen. Unter headscale v0.29.5 lässt sich Forwarding nicht abschalten, dort gilt jede SSH-Freigabe bis zum Fix als root-äquivalent.",
+        "Node-Key-Ablauf auf Serverflotten aktivieren und Agenten-Zustand an TPM oder Secure Enclave binden.",
+        "Ausgehenden Verkehr des tailscaled-Prozesses per cgroup-Regeln beschränken, etwa Loopback-, Link-Local- und RFC1918-Ziele nur per Allowlist.",
+        "App-Connector-Berechtigungen einschränken und Ziel-Allowlists beziehungsweise Default-Deny-Egress im Connector-Namespace setzen.",
+        "Für die Incident Response: Geräte in der Steuerungsebene löschen, denn ein neu aufgesetzter Host widerruft einen bereits kopierten Node-Key nicht."
+      ]
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Zum Redaktionsschluss (26. Oktober 2026) liegt kein Patch vor. Die demonstrierten Angriffe setzen ein freigegebenes Gerät beziehungsweise eine SSH-Regel voraus, sind also keine unauthentifizierten Fernangriffe aus dem Internet. Für OpenSSH und Dropbear ist dieselbe Schwachstellenklasse laut Report nicht nachweisbar beziehungsweise bereits behoben (Dropbear CVE-2025-14282)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bin ich betroffen?",
+      "a": "Betroffen sind Installationen mit aktiviertem Tailscale SSH (pro Node opt-in, oft flächendeckend), Deployments mit App Connectors und selbst gehostete, aus dem Internet erreichbare headscale-Instanzen. Ohne Tailscale SSH und Connectors sind die Kernbefunde nicht ausnutzbar."
+    },
+    {
+      "q": "Sollte ich Tailscale SSH deaktivieren?",
+      "a": "Tailscale empfiehlt das pauschal nicht. Der Report empfiehlt stattdessen eng gefasste SSH-Regeln und deaktiviertes Forwarding. Unter headscale v0.29.5, wo Forwarding nicht abschaltbar ist, solltest du jede SSH-Freigabe als root-äquivalent behandeln und den Regelsatz entsprechend klein halten."
+    },
+    {
+      "q": "Sind OpenSSH oder Dropbear auch betroffen?",
+      "a": "Nach dem Audit des Reports nicht. OpenSSH wechselt nach der Authentifizierung zum Sitzungsnutzer, sodass Forwarding-Operationen nicht als root laufen. Dropbear hatte dieselbe Klasse (CVE-2025-14282) und hat sie mit einem frühen Rechteverzicht in Version 2025.89 behoben."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Tailworm: A security audit of Tailscale SSH, app connectors, and headscale",
+      "publisher": "Cyberdione Labs",
+      "url": "https://tailworm.com/",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
+      "publisher": "The Hacker News",
+      "url": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "AI News Oct 26, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-26/",
+      "accessed": "2026-10-26"
+    }
+  ],
+  "related": [
+    "opencode-mcp-oauth-windows-sicherheitsluecke",
+    "litellm-11070-supply-chain-stealer"
+  ]
+}

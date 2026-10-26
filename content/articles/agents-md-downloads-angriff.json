@@ -1,0 +1,114 @@
+{
+  "slug": "agents-md-downloads-angriff",
+  "lang": "de",
+  "section": "praxis",
+  "type": "news",
+  "title": "Angriff per Downloads-Ordner: Präparierte AGENTS.md kapert Coding-Agenten",
+  "dek": "Forever Security hat echte Malware abgefangen, die eine AGENTS.md-Datei im Downloads-Ordner ablegt. Öffnet man dort einen Coding-Agenten, installiert dieser Schadcode: bei Codex in über 90 Prozent der Versuche.",
+  "published": "2026-10-26T08:21:00+01:00",
+  "modified": "2026-10-26T08:21:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Sicherheit",
+    "Coding-Agenten",
+    "Codex",
+    "Claude Code",
+    "Prompt Injection"
+  ],
+  "key_takeaways": [
+    "Forever Security hat auf einem Kundenrechner live eine Angriffskampagne entdeckt: Eine präparierte AGENTS.md wird unbemerkt in den Downloads-Ordner geladen und vom nächsten dort geöffneten Coding-Agenten befolgt.",
+    "In den Tests des Anbieters installierte OpenAI Codex in über 90 Prozent der Versuche ein bekanntes schädliches npm-Paket (function-color), getarnt als Projekt-Werkzeugserver über das übliche npx-Muster.",
+    "Claude Code ließ sich seltener täuschen (rund 50 Prozent), aber über eine präparierte CLAUDE.md auf einen Angreifer-Server umleiten: Das leakt das OAuth-Anmeldetoken und gibt dem Angreifer Kontrolle über die Tool-Aufrufe des Agenten.",
+    "Nach Angaben von Forever Security startet etwa die Hälfte der untersuchten Kunden Coding-Agenten im Downloads-Ordner. Die einfachste Gegenmaßnahme: Agenten nur in dafür vorgesehenen Projektordnern starten."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: geöffneter Dateiordner auf einem Schreibtisch, aus dem eine scheinbar harmlose Textdatei mit einem verborgenen Haken herausragt",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Instruktionsdateien wie AGENTS.md oder CLAUDE.md sagen Coding-Agenten, was sie in einem Projekt tun sollen, und genau das macht sie zur Angriffsfläche. Forever Security hat auf einem Kundenrechner eine echte Kampagne abgefangen, die eine präparierte AGENTS.md im Downloads-Ordner ablegt. Wer dort seinen Agenten öffnet, lässt ihn Schadcode installieren, ohne je etwas zu bestätigen."
+    },
+    {
+      "t": "h2",
+      "x": "So funktioniert der Angriff"
+    },
+    {
+      "t": "p",
+      "x": "Der Ablauf beginnt im Browser: Beim Verlassen einer präparierten Seite landet eine Datei unbemerkt in ~/Downloads. Öffnet man in diesem Ordner später Codex oder Claude Code, liest der Agent die Instruktionsdatei automatisch, das ist ihr Sinn. Im Fall von Codex richten die Anweisungen einen vermeintlichen Projekt-Werkzeugserver ein und installieren ein npm-Paket über das übliche npx-Muster, das auch legitime MCP-Server nutzt. Im echten Angriff war das Paket function-color, eine bekannte Malware, deren Kampagne rund zwei Jahre unter dem Radar geblieben war. In den Tests von Forever Security führte Codex die Malware in über 90 Prozent der Versuche aus."
+    },
+    {
+      "t": "p",
+      "x": "Claude Code erwies sich als deutlich schwerer zu täuschen. Der dort funktionierende Angriff installiert kein Paket, sondern lenkt den eigenen API-Verkehr um: Eine präparierte CLAUDE.md, als Routine-Gateway-Einrichtung getarnt, verweist den Agenten über die Einstellung ANTHROPIC_BASE_URL auf einen Server der Angreifer. Das leakt das OAuth-Anmeldetoken, allein schon eine Kontoübernahme, und lässt den fremden Server dem Agenten Tool-Aufrufe unterschieben, was bis zur Codeausführung reicht. In den Tests klappte das in rund 50 Prozent der Fälle."
+    },
+    {
+      "t": "callout",
+      "title": "Working as designed",
+      "x": "„Es gibt hier nichts, was OpenAI oder Anthropic patchen könnten. Ein Agent, der der AGENTS.md in seinem Ordner folgt, tut genau das, wofür er gebaut wurde“, zitiert BleepingComputer die Forscher. Der Angriff nutzt keine Sicherheitslücke im engeren Sinn, sondern das vorgesehene Verhalten."
+    },
+    {
+      "t": "h2",
+      "x": "Warum ausgerechnet der Downloads-Ordner?"
+    },
+    {
+      "t": "p",
+      "x": "Weil dort zwei Gewohnheiten zusammentreffen. In der Telemetrie von Forever Security ließ etwa die Hälfte der Kunden einen Coding-Agenten im Downloads-Ordner laufen, und rund ein Viertel der Agentensitzungen öffnete einen echten Browser. Wer Downloads als bequemen Arbeitsordner nutzt, gibt präparierten Dateien aus dem Web damit eine direkte Anlaufstelle beim Agenten."
+    },
+    {
+      "t": "h2",
+      "x": "So schützt du dich"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Starte Coding-Agenten nie in ~/Downloads oder anderen Ordnern, in denen ungeprüfte Dateien aus dem Web landen. Nutze eigene, saubere Projektordner.",
+        "Prüfe Instruktionsdateien (AGENTS.md, CLAUDE.md) in jedem Ordner, den du neu öffnest, bevor du den Agenten startest. Unerwartete Dateien sind ein Alarmsignal.",
+        "Achte auf Konfigurationsänderungen am Agenten: neu registrierte MCP-Server, geänderte Einstellungen oder Umgebungsvariablen wie ANTHROPIC_BASE_URL gehören nicht in ein frisch geöffnetes Projekt.",
+        "Hebe Sandbox und Netzwerkbeschränkungen nicht großzügig auf. Der dokumentierte Codex-Angriff scheiterte mehrfach an genau diesen Schutzschichten, bevor die Angreifer sie gezielt umgingen.",
+        "Behandle npm-Pakete, die ein Agent selbstständig nachinstalliert, wie unbekannte Software: erst prüfen, dann erlauben."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist das ein Bug in Codex oder Claude Code?",
+      "a": "Nach Einschätzung der Forscher nicht. Die Agenten folgen Instruktionsdateien, das ist vorgesehenes Verhalten und Teil ihres Bedrohungsmodells. Die Verantwortung liegt deshalb beim Arbeitsablauf: Wo der Agent startet und welchen Dateien er vertraut, entscheidet der Nutzer."
+    },
+    {
+      "q": "Bin ich betroffen, wenn ich Agenten nie im Downloads-Ordner nutze?",
+      "a": "Der dokumentierte Angriff zielt genau auf diese Gewohnheit. Wer Agenten nur in eigenen Projektordnern mit geprüften Dateien startet, entzieht der Kampagne die Grundlage. Die Muster (getarnte Instruktionsdateien, nachinstallierte Pakete) sind aber grundsätzlich auf andere Ordner übertragbar."
+    },
+    {
+      "q": "Was ist function-color?",
+      "a": "Ein bekanntermaßen schädliches npm-Paket aus einer Kampagne, die nach Angaben von Forever Security rund zwei Jahre unentdeckt blieb, bevor sie öffentlich dokumentiert wurde. Im Angriff wurde es vom Agenten selbstständig als angebliches Projektwerkzeug installiert."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Markdown Is the New Executable: Attackers Are Dropping Agent Instructions Into Your Downloads Folder From the Web",
+      "publisher": "Forever Security",
+      "url": "https://forever.security/blog/hijacking-ai-agents-via-downloads-folder/",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "AI coding agents hijacked using AGENTS.md file in Downloads folder",
+      "publisher": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "AI News Oct 26, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-26/",
+      "accessed": "2026-10-26"
+    }
+  ],
+  "related": [
+    "opencode-hack-api-schluessel-distillation",
+    "litellm-11070-supply-chain-stealer",
+    "1password-for-agents-logins-ohne-passwort"
+  ]
+}
