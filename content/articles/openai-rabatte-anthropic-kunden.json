@@ -3,10 +3,10 @@
   "lang": "de",
   "section": "trends",
   "type": "news",
-  "title": "Bis zu 90 Prozent Rabatt: OpenAI buhlt Anthropics Großkunden ab",
+  "title": "Bericht: OpenAI buhlt Anthropics Großkunden mit bis zu 90 Prozent Rabatt ab",
   "dek": "OpenAI lockt laut einem Bericht von The Information Großkunden von Anthropic mit Nachlässen bis zu 90 Prozent. Rippling, Replit und DataCamp haben ihren KI-Einkauf demnach bereits umgeschichtet.",
   "published": "2026-10-26T08:21:00+01:00",
-  "modified": "2026-10-26T08:21:00+01:00",
+  "modified": "2026-10-26T08:29:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "OpenAI",
@@ -17,8 +17,8 @@
   "key_takeaways": [
     "The Information berichtet, OpenAI unterbiete Anthropic bei Großkunden mit Rabatten bis zu 90 Prozent, und die Strategie zeige Wirkung.",
     "Rippling hat den OpenAI-Anteil an seiner Coding-Arbeitslast laut CEO Parker Conrad von 16 auf 52 Prozent hochgefahren, der Anthropic-Anteil fiel von 57 auf 18 Prozent.",
-    "Replit wechselte nach einem Angebot mit über 30 Prozent Nachlass auf einen Vertrag im Umfang von mehr als 100 Millionen US-Dollar pro Jahr. DataCamp senkte seine Kosten laut CEO Jonathan Cornelissen um 80 bis 90 Prozent.",
-    "OpenAI finanziert das teils über eigene Margen, teils über echte Kostensenkungen bei den effizienteren Sol- und Luna-Modelllinien."
+    "The Information berichtet, Replit sei nach einem Angebot mit über 30 Prozent Nachlass auf einen Vertrag im Umfang von mehr als 100 Millionen US-Dollar pro Jahr gewechselt. DataCamp senkte seine Kosten laut CEO Jonathan Cornelissen um 80 bis 90 Prozent.",
+    "Dem Bericht zufolge finanziert OpenAI das teils über eigene Margen, teils über echte Kostensenkungen bei den effizienteren Sol- und Luna-Modelllinien."
   ],
   "hero": {
     "alt": "KI-generierte Illustration: zwei leuchtende Waagschalen mit Münzen, eine deutlich tiefer gesenkt, daneben umkippende Dominosteine in Firmenfarben ohne Logos",
