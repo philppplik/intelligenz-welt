@@ -1,5 +1,53 @@
 [
   {
+    "title": "Nutzerbericht: KI-Sperre bei Reverse Engineering von Fernsehern",
+    "url": "https://www.heise.de/news/Reverse-Engineering-von-Smart-TVs-Blockiert-Claude-solche-Anfragen-11501812.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793109240.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Anthropics Claude hilft unter Umständen nicht mehr beim Reverse Engineering von Smart TVs. Das legt zumindest ein Nutzerbericht nahe.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-10-27T15:24:36.552819+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "DuckDB 2.0.0: Neues LTS-Release bringt Performanceschub und KI-Agent-Erkennung",
+    "url": "https://www.heise.de/news/DuckDB-2-0-0-Neues-LTS-Release-bringt-Performanceschub-und-KI-Agent-Erkennung-11501487.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793103120.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "DuckDB 2.0.0 verbessert den Servermodus, unterstützt asynchrones I/O und SQL-Trigger, erkennt KI-Agenten und erhält Support bis Oktober 2027.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-10-27T15:24:36.553000+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI-Agent löscht M365-Dateien? Veeam will gezielt zurückspulen",
+    "url": "https://www.heise.de/news/KI-Agent-loescht-M365-Dateien-Veeam-will-gezielt-zurueckspulen-11501353.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793098020.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Veeam Intelligent ResOps für Microsoft 365 erkennt KI-Agenten-Zugriffe und macht Änderungen rückgängig. Auch für Okta und Code.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-10-27T15:24:36.553098+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "GPT-6.1 Terra: Günstiges Modell für effiziente Computerarbeit",
+    "url": "https://www.heise.de/news/GPT-6-1-Terra-Guenstiges-Modell-fuer-effiziente-Computerarbeit-11501275.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793092620.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "OpenAI bringt GPT-6.1 Terra als günstigeres Modell für KI-Agenten. Unabhängige Tests zeigen starke Effizienzgewinne.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-10-27T15:24:36.553184+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "Erste KI-Blase geplatzt? Chinas KI-Leitindex 40 Prozent unter dem Höchststand",
     "url": "https://www.heise.de/news/Erste-KI-Blase-geplatzt-Chinas-KI-Leitindex-40-Prozent-unter-dem-Hoechststand-11501107.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1793080380.0,
