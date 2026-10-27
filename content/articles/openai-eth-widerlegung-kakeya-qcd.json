@@ -1,0 +1,110 @@
+{
+  "slug": "openai-eth-widerlegung-kakeya-qcd",
+  "section": "analyse",
+  "title": "OpenAI meldet KI-Beweise: ETH widerlegt, Kakeya gelöst, QCD rigoros",
+  "dek": "OpenAI hat drei von seinen Modellen erzeugte mathematische Ergebnisse vorgestellt, darunter eine Widerlegung der Exponential Time Hypothesis. Alle sind Lean-formalisiert, keines ist bislang peer-reviewt.",
+  "tags": [
+    "OpenAI",
+    "Mathematik",
+    "Lean",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "OpenAI hat am 26. Oktober 2026 drei KI-erzeugte Forschungsergebnisse angekündigt: eine Widerlegung der Exponential Time Hypothesis (ETH), einen Beweis der Local-Smoothing-Vermutung in allen Dimensionen (der Kakeya und Stein folgert) und einen rigorosen Existenzbeweis für Quantenfeldtheorien einschließlich QCD.",
+    "Alle Angaben stammen von OpenAI; keines der Ergebnisse ist bislang peer-reviewt. Der ETH-Widerlegung und dem Kakeya-Ergebnis liegen Lean-Formaliserungen bei, die im öffentlichen Repositorium openai/math einsehbar sind.",
+    "Die ETH-Widerlegung wird von einer Gruppe um Russell Impagliazzo und Ramamohan Paturi (die ETH-Urheber) sowie Ryan Williams verifiziert; die Physik-Arbeit hält eine Gruppe um David Gross die KI-Artefakte vorerst zurück und schreibt sie selbst auf.",
+    "OpenAI erhebt ausdrücklich keinen Anspruch auf wissenschaftliche Anerkennung, die Arbeitsgruppen unterschreiben keine NDAs und bleiben unbezahlt."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: Tafel mit leuchtenden mathematischen Formeln, ein digitales Prüfsiegel schwebt darüber",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt). Das Prüfsiegel steht symbolisch für OpenAIs Anspruch; eine unabhängige Verifizierung der Ergebnisse steht aus.",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** OpenAI behauptet, seine Modelle hätten drei bedeutende offene Probleme gelöst: die Exponential Time Hypothesis aus der Komplexitätstheorie widerlegt, die Local-Smoothing-Vermutung (und damit Kakeya) in allen Dimensionen bewiesen und die Existenz von Quantenfeldtheorien einschließlich QCD mathematisch rigoros begründet. Wichtig vorweg: Das sind Ankündigungen des Anbieters, keine begutachteten Resultate. Bemerkenswert ist trotzdem, wie offen die Prüfung organisiert ist."
+    },
+    {
+      "t": "h2",
+      "x": "Die drei Ansprüche im Detail"
+    },
+    {
+      "t": "p",
+      "x": "**Informatik:** Die ETH besagt, dass 3-SAT nicht in subexponentieller Zeit lösbar ist; Hunderte Härteergebnisse in Graphentheorie, Datenbanken, Bioinformatik und Geometrie hängen davon ab. Laut OpenAI fand sein System am 16. Oktober einen natürlichsprachlichen Gegenbeweis und formalisierte ihn am 17. Oktober in Lean. Eine Gruppe um Russell Impagliazzo und Ramamohan Paturi (beide UC San Diego, Urheber der ETH) sowie Ryan Williams (MIT) soll das Ergebnis nun verifizieren und erklären. Auf Wunsch der Gruppe hat OpenAI alle Rohdaten öffentlich gemacht und finanziert eine Konferenz zu den Implikationen."
+    },
+    {
+      "t": "p",
+      "x": "**Mathematik:** Die Local-Smoothing-Vermutung von Sogge (1991) war bisher nur in zwei Raumdimensionen bewiesen (Guth, Wang, Zhang 2019); die Kakeya-Vermutung wurde 2025 in 3D gezeigt (Wang, Zahl). Das Modell von OpenAI lieferte am 18. Oktober einen Beweis für alle Dimensionen über eine neuartige Hilfs-Differentialgleichung, am nächsten Tag formalisiert. Da Local Smoothing Kakeya und die Stein-Restriktionsvermutung impliziert, wären beide damit allgemein gelöst."
+    },
+    {
+      "t": "p",
+      "x": "**Physik:** Das dritte Ergebnis ist ein Existenzbeweis für vierdimensionale Quantenfeldtheorien mit Eichfeldern und Fermionen, einschließlich QCD und einer vereinheitlichten Vervollständigung des Standardmodells, aufbauend auf Balabans konstruktivem Ansatz. Als Teilergebnis steckt der Existenzteil des Yang-Mills-Millennium-Problems darin. Eine Gruppe um Nobelpreisträger David Gross (mit Douglas, Jaffe, Klebanov und Nekrasov) kontrolliert hier die Veröffentlichung und hält die KI-Artefakte vorerst zurück, um die Arbeit selbst aufzuschreiben."
+    },
+    {
+      "t": "h2",
+      "x": "Wie glaubwürdig ist das?"
+    },
+    {
+      "t": "p",
+      "x": "Die Lean-Formaliserungen sind stark: Ein Lean-Checker prüft Beweisschritte mechanisch. Was ein Checker nicht prüft, ist die Übersetzung: ob die formalisierte Aussage exakt das ist, was die Vermutung umgangssprachlich meint. Genau dafür sind die Fachgruppen da. Im Repositorium openai/math sind die Ergebnisse nach Verifikationsstand sortiert; OpenAI selbst weist darauf hin, dass nicht alle Resultate bereits eine Lean-Formaliserung haben. Peer-Review steht bei keinem der drei Resultate aus."
+    },
+    {
+      "t": "callout",
+      "title": "Ungewöhnliche Spielregeln",
+      "x": "OpenAI sucht nach eigener Aussage keine akademische Anerkennung für die Entdeckungen, die Gruppen unterschreiben keine Verschwiegenheitserklärungen, bleiben unbezahlt und sprechen für sich selbst. Dazu kommen fünf Millionen US-Dollar an die Simons Foundation für Workshops zu KI-erzeugten Resultaten."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Unabhängig vom Ausgang der Prüfungen ist der Vorgang ein Präzedenzfall: Erstmals übergibt ein Labor mehrere KI-erzeugte Spitzenresultate gleichzeitig an die Fachcommunity, mit drei unterschiedlichen Umgangsweisen (sofort offen mit Gruppe, offen ohne Gruppe, zurückgehalten bis zur eigenen Aufschreibung). Falls die ETH-Widerlegung hält, müsste eine ganze Schicht konditionaler unterer Schranken in der Algorithmik neu bewertet werden; falls sie fällt, war es ein Lehrstück über Verifikation. Beides ist für die Forschung gewonnene Erkenntnis."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist die ETH jetzt widerlegt?",
+      "a": "Nein. Es liegt eine von OpenAI veröffentlichte, Lean-formalisierte Behauptung vor. Die zuständige Fachgruppe um die ETH-Urheber prüft und erklärt das Ergebnis erst noch. Bis dahin gilt der Status als unbestätigter, aber ernst zu nehmender Anspruch."
+    },
+    {
+      "q": "Warum reicht eine Lean-Formaliserung nicht als Beweis?",
+      "a": "Lean prüft mechanisch, ob ein formaler Beweis korrekt ist. Offen bleibt, ob die formalisierte Aussage die ursprüngliche Vermutung exakt trifft und ob das natürlichsprachliche Argument sauber in die Formale übertragen wurde. Genau diese Übersetzungsarbeit leisten die Arbeitsgruppen."
+    },
+    {
+      "q": "Was hätte eine ETH-Widerlegung für Folgen?",
+      "a": "Sehr viele Härteergebnisse in der Informatik sind konditional: Sie gelten unter der Annahme, dass die ETH wahr ist. Fiele die ETH, müssten diese unteren Schranken neu bewertet werden, und es eröffneten sich Fragen, wie viel schneller bestimmte Probleme lösbar wären. Praktische bessere Algorithmen wären aber ein weiter, eigener Weg."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Working with academic communities to build scientific understanding",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "openai/math (Repositorium mit Lean-Formaliserungen)",
+      "publisher": "GitHub",
+      "url": "https://github.com/openai/math",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "AI News Oct 27, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-27/",
+      "accessed": "2026-10-27"
+    }
+  ],
+  "related": [
+    "arc-prize-astra-harness-luecke",
+    "ehrlichkeit-prompt-ki-berichte-studie"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-27T08:52:00+01:00",
+  "modified": "2026-10-27T08:52:00+01:00"
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "anthropic-s1-eingereicht-nasdaq-ant",
+  "section": "trends",
+  "title": "Anthropic reicht S-1 ein: Börsengang unter dem Kürzel ANT",
+  "dek": "Anthropic hat am 26. Oktober seinen Börsenprospekt bei der SEC eingereicht: 16,3 Milliarden US-Dollar Halbjahresumsatz, erstmals ein operativer GAAP-Gewinn im zweiten Quartal, aber auch Rechenzentrums-Verpflichtungen in dreistelliger Milliardenhöhe.",
+  "tags": [
+    "Anthropic",
+    "IPO",
+    "S-1",
+    "Finanzen"
+  ],
+  "key_takeaways": [
+    "Anthropic hat am 26. Oktober 2026 offiziell ein S-1 bei der SEC eingereicht und will seine Class-A-Aktien an der Nasdaq unter dem Kürzel ANT listen; Goldman Sachs und Morgan Stanley führen den Prozess. Umfang und Preisspanne stehen noch nicht fest.",
+    "Der Umsatz des ersten Halbjahrs 2026 lag bei 16,3 Milliarden US-Dollar (plus 1.300 Prozent zum Vorjahr), das zweite Quartal allein bei 11,6 Milliarden. Erstmals wies Anthropic ein positives GAAP-Betriebsergebnis aus: 974 Millionen US-Dollar im zweiten Quartal.",
+    "Der Halbjahres-Nettoverlust von 80,7 Milliarden US-Dollar ist überwiegend nicht zahlungswirksam und hängt mit der Bewertung wandelbarer Schuldverschreibungen zusammen, nicht mit laufenden Cash-Ausgaben.",
+    "Die Verpflichtungen für Rechenkapazität sind enorm: rund 417 Milliarden US-Dollar an künftigen Mindestzahlungen, dazu geschätzte 125 bis 150 Milliarden für Kapazität ab 2028."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: Börsenticker-Band über einer gläsernen Bilanz, Pfeil nach oben, ruhige Szene ohne Menschen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Nach Wochen von Leaks ist es offiziell: Anthropic hat den Börsenprospekt (Form S-1) bei der US-Börsenaufsicht SEC eingereicht. Das Dokument gibt erstmals einen geprüften Blick in die Zahlen eines Frontier-Labors: extremes Wachstum, erstmals operativ profitabel, aber auch ein Risikoprofil, das von festen Rechenzentrums-Verpflichtungen dominiert wird."
+    },
+    {
+      "t": "figure",
+      "file": "anthropic-s1-eingereicht-nasdaq-ant-chart1.jpg",
+      "alt": "Balkendiagramm: Umsatz im ersten Halbjahr, 1,2 Milliarden US-Dollar 2025 gegenüber 16,3 Milliarden US-Dollar 2026",
+      "caption": "Umsatz im ersten Halbjahr im Vorjahresvergleich; die Balkenwerte sind gerundet, die Wachstumsrate von 1.300 Prozent nennt der S-1 aus ungerundeten Werten. Quelle: Anthropic S-1 (SEC). Stand: 27. Oktober 2026."
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen aus dem Prospekt"
+    },
+    {
+      "t": "p",
+      "x": "Der Umsatz des ersten Halbjahrs 2026 betrug 16,3 Milliarden US-Dollar nach 1,2 Milliarden im Vorjahreszeitraum; das zweite Quartal allein brachte 11,6 Milliarden (zum Vergleich: 376 Millionen im ersten Quartal 2025). Das zweite Quartal 2026 war das erste mit positivem GAAP-Betriebsergebnis: 974 Millionen US-Dollar. Die Nettoumsatzbindung (Net Revenue Retention) liegt bei rund 900 Prozent. Zum 30. September 2026 zählte Anthropic mehr als 11.900 Kunden mit mindestens 100.000 US-Dollar Jahresumsatz, über 1.900 mit mehr als einer Million und etwa 250 mit mehr als zehn Millionen. Die fünf größten Kunden stehen für rund ein Viertel des Umsatzes, keiner für mehr als zehn Prozent."
+    },
+    {
+      "t": "h2",
+      "x": "Verlust auf dem Papier, Ausgaben in echt"
+    },
+    {
+      "t": "p",
+      "x": "Der Halbjahres-Nettoverlust von 80,7 Milliarden US-Dollar sieht dramatischer aus, als er ist: Er ist überwiegend nicht zahlungswirksam und entsteht durch die Neubewertung wandelbarer Schuldverschreibungen, die mit dem Unternehmenswert steigen. Das ist eine Bilanzierungsfolge des stark gestiegenen Unternehmenswerts, keine operative Cash-Belastung. Operativ ist das Bild mit dem ersten GAAP-Gewinn im zweiten Quartal ohnehin gedreht."
+    },
+    {
+      "t": "p",
+      "x": "Echte künftige Cash-Verpflichtungen stehen dagegen bei der Rechenkapazität: Seit Jahreswechsel hat Anthropic Verträge mit künftigen Mindestzahlungen von rund 417 Milliarden US-Dollar abgeschlossen (Rechenzentrums-Leasing und Cloud-Abnahmen, Laufzeiten bis 20 Jahre), dazu kommen Vereinbarungen über geschätzte 125 bis 150 Milliarden für Kapazitäten zwischen 2028 und 2031. Im Prospekt warnt das Unternehmen zudem, dass die Hyperscaler, von denen es Kapazität bezieht, Anthropic zunehmend als Konkurrenten sehen und eigene Interessen priorisieren könnten."
+    },
+    {
+      "t": "h2",
+      "x": "Governance und offene Punkte"
+    },
+    {
+      "t": "p",
+      "x": "Die sieben Mitgründer halten über eine Founder LLC 50,1 Prozent der Stimmrechte, und der Long-Term Benefit Trust ernennt den Großteil des Boards, die Kontrolle bleibt damit auch nach dem Börsengang intern. Der Prospekt enthält keine detaillierten Umsatzzahlen für das dritte Quartal: Die Umsatzdarstellung endet am 30. Juni, Kundenkennzahlen reichen bis zum 30. September."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wann kann man Anthropic-Aktien kaufen?",
+      "a": "Das steht noch nicht fest. Die Registrierung ist eingereicht, aber noch nicht wirksam; Stückzahl und Preisspanne des Angebots sind offen. Bis die Registrierung wirksam wird, dürfen die Aktien weder verkauft noch zum Kauf angeboten werden."
+    },
+    {
+      "q": "Ist Anthropic jetzt profitabel?",
+      "a": "Operativ im zweiten Quartal 2026 erstmals ja (974 Millionen US-Dollar GAAP-Betriebsergebnis). Auf Nettoebene steht für das Halbjahr ein hoher Verlust, der aber überwiegend aus der nicht zahlungswirksamen Neubewertung wandelbarer Schulden stammt."
+    },
+    {
+      "q": "Was ist das größte Risiko laut Prospekt?",
+      "a": "Die Diskrepanz zwischen festen, langfristigen Rechenzentrums-Verpflichtungen in dreistelliger Milliardenhöhe und dem variablen, nutzungsbasierten Umsatz. Wächst die Nachfrage langsamer als die gebuchte Kapazität, drückt das direkt auf die Marge."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "Anthropic PBC, Form S-1 Registration Statement",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "AI News Oct 27, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-27/",
+      "accessed": "2026-10-27"
+    }
+  ],
+  "related": [
+    "anthropic-s1-leak-einblick-zahlen",
+    "openai-rabatte-anthropic-kunden"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-27T08:52:00+01:00",
+  "modified": "2026-10-27T08:52:00+01:00"
+}

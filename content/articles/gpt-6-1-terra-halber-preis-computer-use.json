@@ -1,0 +1,141 @@
+{
+  "slug": "gpt-6-1-terra-halber-preis-computer-use",
+  "section": "modelle",
+  "title": "GPT-6.1 Terra: OpenAIs Computer-Use-Modell zum halben Preis",
+  "dek": "GPT-6.1 Terra kostet in der API einen US-Dollar je Million Eingabetokens, 50 Prozent unter GPT-5.6 Terra und GPT-6.1 Sol, und soll Computer-Use-Aufgaben auf Astra-Niveau erledigen: zu einem Zehntel des Tokenpreises.",
+  "tags": [
+    "OpenAI",
+    "GPT-6.1 Terra",
+    "Computer Use",
+    "Preise"
+  ],
+  "key_takeaways": [
+    "GPT-6.1 Terra ist seit dem 26. Oktober in ChatGPT Work, Codex und der API verfügbar: 1 US-Dollar je Million Eingabetokens, 0,05 US-Dollar gecacht, 5 US-Dollar Ausgabe, 50 Prozent unter GPT-5.6 Terra und GPT-6.1 Sol.",
+    "Laut OpenAI erreicht Terra auf Agents' Last Exam bei mittlerem Effort 15 Punkte mehr als GPT-5.6 Terra bei etwa einem Drittel der Kosten und liegt gleichauf mit GPT-6 Astra bei einem Zehntel dessen Tokenpreises.",
+    "Die Fehlerrate auf OpenAIs internem Faktizitätstest sank von 53,6 auf 16,7 Prozent (niedriger Effort) beziehungsweise auf 4,3 Prozent bei maximalem Effort. Auf Terminal-Bench 4.0 löst Terra 50,3 Prozent der Aufgaben (GPT-5.6 Terra: 21,5).",
+    "Alle Leistungsangaben sind Herstellerzahlen; für die schwersten Coding-Aufgaben verweist OpenAI weiterhin auf Sol und Astra."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: flinker Roboter, der flüssig zwischen vielen schwebenden Anwendungsfenstern arbeitet, Preisschild-Motiv",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** OpenAI hat mit GPT-6.1 Terra die günstige, schnelle Modellstufe erneuert: halber Preis gegenüber GPT-5.6 Terra und GPT-6.1 Sol, deutlich weniger Fehler, doppelt so gut auf Terminal-Bench 4.0. Für die massenhaften, preisgebundenen Agentenaufgaben des Arbeitsalltags (Formulare, Rechnungen, Browser) dürfte Terra damit zum sinnvollen Standard werden."
+    },
+    {
+      "t": "h2",
+      "x": "Preise und Verfügbarkeit"
+    },
+    {
+      "t": "table",
+      "head": [
+        "Position",
+        "GPT-6.1 Terra"
+      ],
+      "rows": [
+        [
+          "Eingabe",
+          "1 US-Dollar je Mio. Tokens"
+        ],
+        [
+          "Gecachte Eingabe",
+          "0,05 US-Dollar je Mio. Tokens"
+        ],
+        [
+          "Ausgabe",
+          "5 US-Dollar je Mio. Tokens"
+        ],
+        [
+          "Verfügbarkeit",
+          "ChatGPT Work und Codex (Plus, Pro, Enterprise, Edu), API als gpt-6.1-terra"
+        ],
+        [
+          "Vergleich",
+          "50 Prozent unter GPT-5.6 Terra und GPT-6.1 Sol"
+        ]
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Computer Use: Astra-Niveau zum Zehntelpreis"
+    },
+    {
+      "t": "p",
+      "x": "Auf Agents' Last Exam, einem Benchmark beruflicher Aufgaben (etwa Architekturzeichnungen in 3D-Modelle überführen), liegt Terra bei mittlerem Reasoning-Effort 15 Prozentpunkte über GPT-5.6 Terra bei rund einem Drittel der Kosten, und gleichauf mit dem Flaggschiff GPT-6 Astra bei einem Zehntel von dessen Tokenpreis. Bei maximalem Effort soll Terra dreimal so token-effizient sein wie Claude Opus 5.5 bei einem Viertel des Tokenpreises, was OpenAI auf rund neunmal niedrigere Kosten je Aufgabe rechnet. Die Aufgaben erledigt Terra demnach über dreimal schneller als Astra und Sol."
+    },
+    {
+      "t": "figure",
+      "file": "gpt-6-1-terra-halber-preis-computer-use-chart1.jpg",
+      "alt": "Zwei Balkendiagramme: Terminal-Bench 4.0 bei maximalem Effort, GPT-5.6 Terra 21,5 Prozent, GPT-6.1 Terra 50,3 Prozent; Fehlerrate bei niedrigem Effort, GPT-5.6 Terra 53,6 Prozent, GPT-6.1 Terra 16,7 Prozent",
+      "caption": "Herstellerangaben von OpenAI zu GPT-6.1 Terra gegenüber GPT-5.6 Terra. Quelle: OpenAI, „Introducing GPT-6.1 Terra“. Stand: 27. Oktober 2026."
+    },
+    {
+      "t": "h2",
+      "x": "Faktizität und Coding"
+    },
+    {
+      "t": "p",
+      "x": "Auf OpenAIs internem Test besonders fehleranfälliger Prompts sank die Fehlerrate bei niedrigem Effort von 53,6 auf 16,7 Prozent, bei maximalem Effort auf 4,3 Prozent, nahe an Astra- und Sol-Niveau. Beim Coden löst GPT-6.1 Terra auf Terminal-Bench 4.0 bei maximalem Effort 50,3 Prozent der Aufgaben, mehr als doppelt so viele wie GPT-5.6 Terra mit 21,5 Prozent. Für die komplexesten Software-Aufgaben empfiehlt OpenAI weiterhin Sol und Astra."
+    },
+    {
+      "t": "callout",
+      "title": "Herstellerzahlen",
+      "x": "Alle genannten Leistungswerte stammen von OpenAI beziehungsweise aus dessen internen Benchmarks. Eine unabhängige Auswertung lag zum Redaktionsschluss nicht vor."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Der interessanteste Punkt ist nicht ein einzelner Benchmark, sondern die Verschiebung des sinnvollen Standardmodells: Die meisten Agentenworkloads sind preis- und nicht intelligenzlimitiert. Ein Modell, das Browser- und Büroarbeit nahe am Flaggschiff erledigt und dabei den Plan-Verbrauch in ChatGPT Work und Codex spürbar streckt, verändert die Default-Empfehlung für Automatisierung mehr als jede neue Spitzenfähigkeit. Sicherheitsseitig erfüllt Terra laut OpenAI die Critical-Schwelle für Cybersicherheit im eigenen Preparedness Framework und übernimmt die Schutzmaßnahmen von GPT-6 Astra."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Für wen lohnt sich GPT-6.1 Terra?",
+      "a": "Für alle, die viele gleichförmige Computer-Use- und Büroaufgaben automatisieren: Formulare, Rechnungseingang, Browserarbeit, einfachere Codearbeit. Wer an der Leistungsgrenze forscht oder sehr komplexe Softwareprojekte hat, bleibt laut OpenAI bei Sol oder Astra besser aufgehoben."
+    },
+    {
+      "q": "Sind die Benchmarks unabhängig geprüft?",
+      "a": "Nein, die hier genannten Werte sind Herstellerangaben vom Veröffentlichungstag. Unabhängige Messungen, etwa von Browser-Use-Benchmarks oder der Community, werden in den nächsten Tagen erwartet."
+    },
+    {
+      "q": "Was heißt das für mein ChatGPT-Abo?",
+      "a": "In ChatGPT Work und Codex deckt dasselbe Nutzungskontingent mit Terra mehr Aufgaben ab als mit Sol oder Astra, weil das Modell günstiger ist. Wer ein festes monatliches Kontingent hat, kommt mit Terra also deutlich weiter."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing GPT-6.1 Terra",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "GPT-6.1 Terra: Benchmarks, Pricing and Access",
+      "publisher": "DataCamp",
+      "url": "https://www.datacamp.com/blog/gpt-6-1-terra",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "AI News Oct 27, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-27/",
+      "accessed": "2026-10-27"
+    }
+  ],
+  "related": [
+    "minimax-m3-1-flash-preisbrecher",
+    "openai-decisions-api-allgemein-verfuegbar"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-27T08:52:00+01:00",
+  "modified": "2026-10-27T08:52:00+01:00"
+}

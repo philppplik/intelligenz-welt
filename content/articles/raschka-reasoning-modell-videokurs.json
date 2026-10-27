@@ -1,0 +1,97 @@
+{
+  "slug": "raschka-reasoning-modell-videokurs",
+  "section": "praxis",
+  "title": "Raschkas Gratis-Videokurs: Reasoning-Modelle von Grund auf selbst bauen",
+  "dek": "Sebastian Raschka hat acht Videos mit über elf Stunden Material veröffentlicht: Evaluation, Inference-Time-Scaling, Reinforcement Learning und Distillation, in Python und PyTorch an einem kleinen vortrainierten Modell nachgebaut.",
+  "tags": [
+    "Lernen",
+    "Reasoning",
+    "Open Source",
+    "Tutorial"
+  ],
+  "key_takeaways": [
+    "Sebastian Raschka hat einen kostenlosen Videokurs mit acht Videos und über elf Stunden Laufzeit zu seinem Buch Build a Reasoning Model (From Scratch) veröffentlicht.",
+    "Der Kurs startet mit einem kleinen vortrainierten Qwen3-Modell und implementiert Evaluation, Inference-Time-Scaling, Reinforcement Learning mit verifizierbaren Belohnungen und Distillation in Python und PyTorch.",
+    "Der Kurs ist die Fortsetzung von Coding LLMs from the Ground Up, funktioniert aber eigenständig; frühe Kapitel laufen auf der CPU, für das Training empfiehlt sich eine GPU.",
+    "Ein Bonus-Abschnitt erklärt, wie Reasoning-Modelle und Agenten-Harnesses zusammenhängen: Das Reasoning-Modell ist der Motor im Harness."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: Arbeitsplatz mit Notebook, auf dem Schirm ein aufgebrochenes neuronales Netz als leuchtende Bauanleitung",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Wer verstehen will, was hinter den Reasoning-Fähigkeiten aktueller Modelle wirklich steckt, bekommt gerade das beste kostenlose Lehrmaterial dazu: Sebastian Raschka hat zu seinem Buch Build a Reasoning Model (From Scratch) acht Videos mit über elf Stunden Coding-Material veröffentlicht, komplett frei zugänglich."
+    },
+    {
+      "t": "h2",
+      "x": "Was drinsteckt"
+    },
+    {
+      "t": "p",
+      "x": "Der Kurs beginnt mit einem kleinen vortrainierten Modell (Qwen3) und baut die Techniken selbst nach, statt sie nur zu benutzen: erst Evaluation, damit klar ist, was „besser“ heißt, dann Inference-Time-Scaling, dann Reinforcement Learning mit verifizierbaren Belohnungen, schließlich Distillation, alles in Python und PyTorch. Ein kurzer Bonus-Abschnitt ordnet das Gelernte ein: Das Reasoning-Modell ist der Motor, der Agenten-Harness das Fahrwerk drumherum."
+    },
+    {
+      "t": "h2",
+      "x": "Für wen und womit"
+    },
+    {
+      "t": "p",
+      "x": "Der Kurs ist die Fortsetzung von Raschkas Kurs Coding LLMs from the Ground Up, setzt ihn aber nicht voraus. Die frühen Textgenerierungs- und Evaluationsbeispiele laufen auf der CPU; für die späteren Trainingsexperimente empfiehlt sich eine GPU, konkrete Hardware-Hinweise liegen dem Repositorium bei. Raschkas Lernempfehlung: erst das Kapitel lesen, dann den Code selbst abtippen statt nur auszuführen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Fast jede Meldung in diesem Brief dreht sich um Reasoning-Stufen, RL oder Distillation. Dieser Kurs ist die seltene Gelegenheit, die Mechanik dahinter einmal selbst in der Hand gehabt zu haben, im eigenen Tempo und ohne Kosten. Für alle, die Modelle beruflich bewerten oder einsetzen, ist das die nachhaltigste Form von Benchmark-Lektüre."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was kostet der Kurs?",
+      "a": "Nichts. Die acht Videos mit über elf Stunden sind frei verfügbar; das Begleitbuch ist kostenpflichtig, aber für den Einstieg nicht zwingend nötig."
+    },
+    {
+      "q": "Welche Voraussetzungen brauche ich?",
+      "a": "Grundlegende Python-Kenntnisse und idealerweise etwas Vertrautheit mit PyTorch. Der Vorgängerkurs ist keine Pflicht. Hardware-seitig reicht für die frühen Kapitel eine CPU, für die Trainingsvideos ist eine GPU praktisch."
+    },
+    {
+      "q": "Lohnt sich das auch, wenn ich keine Modelle trainiere?",
+      "a": "Ja, wenn du Reasoning-Modelle bewerten oder einordnen musst. Wer einmal selbst Inference-Time-Scaling und RL mit verifizierbaren Belohnungen implementiert hat, liest Modellkarten und Benchmarks anders."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Building Reasoning Models from the Ground Up: A Full Video Course",
+      "publisher": "Sebastian Raschka (Substack)",
+      "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "Build a Reasoning Model (From Scratch) — Book companion hub",
+      "publisher": "sebastianraschka.com",
+      "url": "https://sebastianraschka.com/reasoning-from-scratch/",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "AI News Oct 27, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-27/",
+      "accessed": "2026-10-27"
+    }
+  ],
+  "related": [
+    "pewdiepie-lokale-ki-kein-zehn-gpu-pflichtprogramm",
+    "odysseus-workspace-cookbook-persona-test"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-27T08:52:00+01:00",
+  "modified": "2026-10-27T08:52:00+01:00"
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "nvidia-skillspector-agenten-skills-pruefen",
+  "section": "tools",
+  "title": "SkillSpector: NVIDIAs Scanner prüft Agenten-Skills vor der Installation",
+  "dek": "NVIDIA hat SkillSpector als Open Source veröffentlicht: ein statischer Scanner, der Skills für Claude Code, Codex und MCP vor der Installation auf Schadmuster prüft. In NVIDIAs Analyse waren 26,1 Prozent der untersuchten Skills verwundbar.",
+  "tags": [
+    "Sicherheit",
+    "NVIDIA",
+    "Agenten",
+    "Open Source"
+  ],
+  "key_takeaways": [
+    "SkillSpector ist ein Open-Source-Scanner (Apache 2.0) von NVIDIA, der Agenten-Skills für Claude Code, Codex CLI, Gemini CLI und MCP vor der Installation statisch analysiert.",
+    "Das Werkzeug prüft 71 Muster in 17 Kategorien, darunter Prompt Injection, Datenexfiltration, Privilegieneskalation und MCP-Tool-Poisoning, ergänzt um live CVE-Abfragen bei OSV.dev, einen Risikoscore von 0 bis 100 und SARIF-Ausgabe für CI-Pipelines.",
+    "In NVIDIAs Forschungsdatensatz wiesen 26,1 Prozent von 31.132 analysierten Skills Schwachstellen auf und 5,2 Prozent wirkten mutmaßlich bösartig.",
+    "Der Fund unterstreicht: Instruktions- und Skill-Dateien sind ausführbarer Code im weitesten Sinn und gehören vor dem ersten Lauf geprüft, wie der gestrige AGENTS.md-Angriff gezeigt hat."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: Lupe über einem Stapel leuchtender Puzzle-Steine, einer davon leuchtet warnend rot",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Agenten-Skills laufen mit implizitem Vertrauen und fast ohne Prüfung. NVIDIA will das ändern und hat SkillSpector als Open Source (Apache 2.0) veröffentlicht: ein Scanner, der Skills für Claude Code, Codex und MCP vor der Installation auf Schwachstellen und Schadmuster untersucht. Das Projekt steht aktuell bei rund 22.400 GitHub-Sternen."
+    },
+    {
+      "t": "h2",
+      "x": "Was der Scanner prüft"
+    },
+    {
+      "t": "p",
+      "x": "SkillSpector kombiniert statische Analyse mit einer optionalen LLM-Prüfung und deckt 71 Verwundbarkeitsmuster in 17 Kategorien ab: Prompt Injection, Datenexfiltration, Privilegieneskalation, Supply Chain, Tool-Missbrauch, Anti-Refusal, MCP-Tool-Poisoning und mehr. Dazu kommen Live-CVE-Abfragen bei OSV.dev mit Offline-Fallback, ein Risikoscore von 0 bis 100 mit klaren Empfehlungen und SARIF-Ausgabe, sodass sich der Scan in CI-Pipelines einbauen lässt. Laut NVIDIAs Dokumentation beantwortet das Werkzeug genau eine Frage: Sollte dieser Skill installiert werden?"
+    },
+    {
+      "t": "h2",
+      "x": "Die ernüchternde Datenlage"
+    },
+    {
+      "t": "p",
+      "x": "Den Anlass liefert NVIDIAs eigener Forschungsdatensatz: Von 31.132 analysierten Skills enthielten 26,1 Prozent Schwachstellen, 5,2 Prozent wirkten mutmaßlich bösartig. Das deckt sich mit dem Fall von gestern, bei dem eine präparierte AGENTS.md-Datei Coding-Agenten zur Installation bekannter Malware bewegte. Instruktions- und Skill-Dateien sind faktisch Code, der ohne Review ausgeführt wird."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung und Nutzung"
+    },
+    {
+      "t": "p",
+      "x": "SkillSpector ersetzt kein manuelles Review, verschiebt aber die Kosten der Erstprüfung auf nahe null: Scan vor der Installation, Score lesen, bei Auffälligkeiten in den Quelltext schauen. Für Teams, die Skills aus dem offenen Ökosystem ziehen, ist das aktuell die pragmatischste Hürde zwischen „gefunden“ und „läuft mit meinen Credentials“. Wer eigene Skills veröffentlicht, kann denselben Check über SkillEvaluator als ersten Prüfschritt laufen lassen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Für wen ist SkillSpector gedacht?",
+      "a": "Für alle, die fertige Agenten-Skills aus dem Internet installieren, egal ob Claude Code, Codex CLI, Gemini CLI oder MCP-Server. Besonders nützlich ist es in Teams, die den Scan vor der Installation oder in der CI verpflichtend machen wollen."
+    },
+    {
+      "q": "Ersetzt der Scanner ein manuelles Review?",
+      "a": "Nein. Er filtert die offensichtlichen Muster heraus und liefert einen Risikoscore mit Empfehlungen. Bei hohem Score oder kritischem Einsatz bleibt der Blick in den Quelltext Pflicht, wie auch NVIDIA empfiehlt."
+    },
+    {
+      "q": "Was bedeutet die 5,2-Prozent-Zahl?",
+      "a": "In NVIDIAnalysiertem Forschungsdatensatz von 31.132 Skills wirkten 5,2 Prozent mutmaßlich bösartig, 26,1 Prozent enthielten Schwachstellen. Das sind Befunde aus dem untersuchten Korpus, nicht zwingend der Anteil im gesamten Ökosystem, aber ein deutliches Warnsignal."
+    }
+  ],
+  "sources": [
+    {
+      "title": "NVIDIA/SkillSpector (Repositorium)",
+      "publisher": "GitHub",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "Scan Agent Skills Before Installation",
+      "publisher": "NVIDIA Skill Documentation",
+      "url": "https://docs.nvidia.com/skills/scanning-agent-skills",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "AI News Oct 27, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-27/",
+      "accessed": "2026-10-27"
+    }
+  ],
+  "related": [
+    "agents-md-downloads-angriff",
+    "litellm-11070-supply-chain-stealer"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-27T08:52:00+01:00",
+  "modified": "2026-10-27T08:52:00+01:00"
+}

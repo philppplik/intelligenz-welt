@@ -1,0 +1,97 @@
+{
+  "slug": "cloudflare-glm-5-3-kv-cache-datenleck",
+  "section": "news",
+  "title": "Cloudflare: GLM-5.3 lieferte 155 Antworten mit Daten anderer Nutzer",
+  "dek": "Ein Konfigurationsfehler plus ein Bug in der Inferenz-Engine SGLang sorgten dafür, dass das Workers-AI-Modell GLM-5.3 bei sehr langen Prompts Text aus fremden Sitzungen ausgab. Behoben innerhalb eines Tages, jetzt koordiniert veröffentlicht.",
+  "tags": [
+    "Sicherheit",
+    "Cloudflare",
+    "SGLang",
+    "Datenschutz"
+  ],
+  "key_takeaways": [
+    "Zwischen 27. August und 9. September 2026 enthielten 155 Antworten des Cloudflare-Workers-AI-Modells @cf/zai-org/glm-5.3 Daten aus Anfragen anderer Kunden, alle bei Prompts mit mehr als 681.280 Tokens.",
+    "Ursache war ein Zusammenspiel: Der KV-Cache-Pool fasste nur 681.280 Tokens bei beworbenem 1.048.576-Kontext, und ein SGLang-Bug im getrennten Prefill/Decode-Betrieb ließ abgelehnte Anfragen über veraltete Cache-Seiten generieren.",
+    "Gemeldet hatte der Forscher Gadi Evron (Knostic) über HackerOne; Cloudflare nahm das Modell binnen 40 Minuten nach Incident-Erklärung offline und stellte es noch am selben Tag korrigiert wieder bereit. Es gibt keine Hinweise auf gezielte Ausnutzung.",
+    "SGLang-Nutzer sollten auf Version 0.5.21 (MORI: 0.5.22) aktualisieren; Betreiber können nachträglich nicht zuverlässig feststellen, ob ihre Instanz betroffen war."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: zwei getrennte leuchtende Datenströme in einem Serverraum, an einer Stelle vermischen sie sich sichtbar",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Cloudflare hat einen Zwischenfall offengelegt, der jeden Anbieter von Mehrmandanten-KI betrifft: Das Workers-AI-Modell GLM-5.3 gab bei sehr langen Prompts zeitweise Text aus den Anfragen anderer Kunden aus. Insgesamt 155 Antworten zwischen dem 27. August und dem 9. September 2026 waren betroffen. Der Fehler ist behoben, Cloudflare und das SGLang-Projekt haben ihn jetzt koordiniert veröffentlicht."
+    },
+    {
+      "t": "h2",
+      "x": "Was genau passiert ist"
+    },
+    {
+      "t": "p",
+      "x": "Am 8. September meldete der Sicherheitsforscher Gadi Evron (Knostic) über HackerOne, dass sehr lange Prompts an das Modell @cf/zai-org/glm-5.3 manchmal Text aus fremden Sitzungen zurückgaben. Cloudflare reproduzierte den Fehler am nächsten Morgen, nahm das Modell innerhalb von 40 Minuten nach Incident-Erklärung offline und stellte den Dienst noch am selben Tag mit korrigierter Konfiguration und gepatchter Engine wieder her. Kein anderes Workers-AI-Modell war betroffen, und die untersuchten Anfragen passen laut Cloudflare zu normalem Long-Context-Gebrauch, nicht zu wiederholter Ausnutzung."
+    },
+    {
+      "t": "h2",
+      "x": "Zwei Fehler, ein Leck"
+    },
+    {
+      "t": "p",
+      "x": "Erstens eine Fehlkonfiguration: Das Modell warb mit einem Kontextfenster von 1.048.576 Tokens, der KV-Cache-Pool auf den Prefill-GPUs fasste aber nur 681.280 Tokens. Cloudflare kannte die Abweichung, hielt sie aber für unkritisch, weil die eigenen Langkontext-Tests nur HTTP-Statuscodes prüften, nicht den Inhalt der Antworten. Zweitens ein Engine-Bug: Im getrennten Prefill/Decode-Betrieb von SGLang wurde eine zu lange, intern abgelehnte Anfrage durch einen Ein-Token-Platzhalter ersetzt, blieb aber als aktiv markiert. Der Decode-Knoten generierte daraufhin über Cache-Seiten, die noch Prompts und Ausgaben früherer Nutzer enthielten."
+    },
+    {
+      "t": "h2",
+      "x": "Was Betreiber jetzt tun sollten"
+    },
+    {
+      "t": "p",
+      "x": "Der Engine-Fix steckt in SGLang v0.5.21 (für Mooncake- und NIXL-Backends standardmäßig aktiv, MORI-Deployments brauchen v0.5.22); betroffen waren Standardkonfigurationen seit der v0.4.x-Linie ab Anfang 2025. Unbequem ist die Erkenntnis des SGLang-Teams: Ein Betreiber kann nachträglich nicht zuverlässig feststellen, ob es bei ihm zu einem solchen Datenabfluss kam, weil der Fehler weder Fehler noch Logzeilen hinterlässt. Wer SGLang im getrennten Prefill/Decode-Modus selbst hostet oder Long-Context-Inferenz einkauft, sollte aktualisieren beziehungsweise den Anbieter fragen. Cloudflare hat den eigenen Pool auf rund 2,04 Millionen Tokens vergrößert und prüft Poolgröße gegen Kontextlänge jetzt vor jeder Änderung."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bin ich als Cloudflare-Kunde betroffen?",
+      "a": "Nur wenn du zwischen dem 27. August und 9. September 2026 das Modell @cf/zai-org/glm-5.3 auf Workers AI mit Prompts über 681.280 Tokens genutzt hast. Andere Modelle und Zeiträume waren nach Cloudflares Untersuchung nicht betroffen."
+    },
+    {
+      "q": "Ich hoste SGLang selbst. Was soll ich tun?",
+      "a": "Auf v0.5.21 oder neuer aktualisieren (MORI: v0.5.22), sofern du den getrennten Prefill/Decode-Modus nutzt. Das SGLang-Team weist darauf hin, dass ein Abfluss im Nachhinein nicht zuverlässig nachweisbar ist, die Aktualisierung ist daher die praktikable Antwort."
+    },
+    {
+      "q": "Wie konnte Cloudflare den Fehler übersehen?",
+      "a": "Die Abweichung zwischen Kontextfenster und Cache-Pool war bekannt, aber die Langkontext-Tests prüften nur, ob Anfragen mit HTTP-Erfolg beantwortet wurden, nicht, ob der Inhalt stimmte. Genau dieser Testlücke verdankt der Bug seine sechs Wochen Laufzeit."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang",
+      "publisher": "Cloudflare Blog",
+      "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "SGLang security update: improving request isolation",
+      "publisher": "LMSYS Org",
+      "url": "https://www.lmsys.org/blog/2026-10-26-cf-security/",
+      "accessed": "2026-10-27"
+    },
+    {
+      "title": "AI News Oct 27, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-27/",
+      "accessed": "2026-10-27"
+    }
+  ],
+  "related": [
+    "tailworm-tailscale-ssh-unix-sockets-root",
+    "opencode-mcp-oauth-windows-sicherheitsluecke"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-27T08:52:00+01:00",
+  "modified": "2026-10-27T08:52:00+01:00"
+}
