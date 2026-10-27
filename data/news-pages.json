@@ -1,5 +1,41 @@
 [
   {
+    "title": "Apples Kreativ-Abo bekommt KI-Helfer – vorerst nur auf Englisch",
+    "url": "https://www.heise.de/news/Apples-Kreativ-Abo-bekommt-KI-Helfer-vorerst-nur-auf-Englisch-11502081.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793121060.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Apple kündigt KI-Assistenten in Logic Pro, Keynote, Pages und Numbers an. Final Cut Pro erhält MotionVFX-Inhalte. Die Updates kommen aber erst im November.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-10-27T22:20:42.063763+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Anthropics Börsengang: Die Milliardenrisiken hinter dem KI-Boom",
+    "url": "https://www.heise.de/news/Anthropics-Boersengang-Die-Milliardenrisiken-hinter-dem-KI-Boom-11502267.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793118120.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Anthropics Geschäft boomt. Doch der geplante Börsengang bringt erhebliche Risiken ans Licht, wie ein genauerer Blick auf die Börsenunterlagen zeigt.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-10-27T22:20:42.063901+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Neue Sprachen für Siri AI – aber bloß kein Deutsch",
+    "url": "https://www.heise.de/news/Apple-bringt-Siri-AI-mehr-Sprachen-bei-ausser-Deutsch-11502247.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793117280.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Lange parlierte Siri AI nur auf Englisch, nun reicht Apple unter anderem Französisch und Spanisch nach. Weitere Sprachen sind angekündigt, aber Deutsch fehlt.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-10-27T22:20:42.063959+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "Nutzerbericht: KI-Sperre bei Reverse Engineering von Fernsehern",
     "url": "https://www.heise.de/news/Reverse-Engineering-von-Smart-TVs-Blockiert-Claude-solche-Anfragen-11501812.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1793109240.0,
