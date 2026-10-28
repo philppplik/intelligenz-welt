@@ -13,7 +13,7 @@ PID = 'https://philipp-paulik.de/#person'
 AUTHOR_URL = BASE + '/redakteur/philipp-paulik/'
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 E = lambda s: html.escape(s or '', quote=True)
-SECTIONS = {'news': 'News', 'trends': 'Trends', 'tools': 'Tools', 'modelle': 'Modelle', 'analyse': 'Analyse', 'praxis': 'Praxis'}
+SECTIONS = {'news': 'News', 'trends': 'Trends', 'tools': 'Tools', 'modelle': 'Modelle', 'analyse': 'Analyse', 'praxis': 'Praxis', 'ueberblick': 'Überblick'}
 TYPES = {'news': 'NewsArticle', 'analysis': 'NewsArticle', 'explainer': 'Article'}
 NEWS_TYPES = {'news', 'analysis'}
 REQ = ['slug', 'title', 'dek', 'section', 'type', 'published', 'modified', 'author', 'tags', 'key_takeaways', 'hero', 'body', 'sources']
@@ -279,6 +279,29 @@ LEGAL_FOOT_NEW = '<a href="/transparenz/">KI-Transparenz</a><a href="/redaktion/
 IMPRESSUM_ADD = ('<h2>KI-unterstützte Inhalte</h2><p>Redaktionelle Beiträge dieser Website werden mit Unterstützung von KI-Systemen erstellt und vor Veröffentlichung redaktionell geprüft (siehe <a href="/transparenz/">KI-Transparenz</a>).</p>'
                  '<h2>Streitbeilegung</h2><p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>')
 
+def export_indexnow(out, arts, now):
+    """IndexNow-Export: nur neue/geaenderte Artikel (Status: data/indexnow-state.json).
+    Der Push erfolgt im Deploy-Job NACH erfolgreichem Deployment; erst dann aktualisiert der
+    Workflow data/indexnow-state.json. Schlaegt der Push fehl, werden die URLs beim naechsten
+    Build automatisch erneut exportiert. Erstlauf: nur Artikel der letzten 48h, kein Vollpush."""
+    try:
+        state = json.load(open(os.path.join(ROOT, 'data', 'indexnow-state.json'), encoding='utf-8'))
+    except Exception:
+        state = {}
+    new = []
+    for a in arts:
+        m = a.get('modified') or ''
+        if state.get(a['slug']) == m:
+            continue
+        if a['slug'] not in state and (now - a['_pub']).total_seconds() >= 172800:
+            continue
+        new.append('%s/artikel/%s/' % (BASE, a['slug']))
+    open(os.path.join(ROOT, 'data', 'indexnow-urls.txt'), 'w', encoding='utf-8').write('\n'.join(sorted(new)) + ('\n' if new else ''))
+    key = os.environ.get('INDEXNOW_KEY', '').strip()
+    if key:
+        open(os.path.join(out, key + '.txt'), 'w', encoding='utf-8').write(key + '\n')
+    print('indexnow_new', len(new))
+
 def patch_sitemaps(out, arts, sections, now):
     p = os.path.join(out, 'sitemap.xml'); x = open(p, encoding='utf-8').read()
     x = x.replace('http://www.google.com/schemas/image/1.1', 'http://www.google.com/schemas/sitemap-image/1.1')
@@ -394,6 +417,7 @@ def main():
             open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(list_page('%s | Intelligenz Welt' % SECTIONS[k], 'KI-Artikel zum Thema %s auf Intelligenz Welt.' % SECTIONS[k], '%s/thema/%s/' % (BASE, k), SECTIONS[k], 'Artikel zum Thema %s.' % SECTIONS[k], [a for a in arts if a['section'] == k], head, foot))
     LEGAL[:] = legal_pages(out, head, foot)
     n = patch_sitemaps(out, arts, sections, now) if arts else 0
+    export_indexnow(out, arts, now)
     patch_feed(out, arts); patch_site(out, arts)
     branding(out); patch_home(out, arts); og_fallback(out)
     ok = ireport.build(arts, now, out, ROOT, BASE)
