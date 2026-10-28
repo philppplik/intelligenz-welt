@@ -19,7 +19,7 @@ class ExitIntentTests(unittest.TestCase):
         self.assertIn('Escape',s); self.assertIn('Tab',s)
         self.assertIn('data-x',s)  # X + "Nein, danke" + backdrop close
     def test_links_point_to_current_report(self):
-        self.assertIn('href="/berichte/intelligenz-welt-tagesausgabe.pdf"',m.SNIPPET)
+        self.assertIn('href="/tagesbericht-anmelden/"',m.SNIPPET)
         self.assertIn('href="/berichte/"',m.SNIPPET)
     def test_no_tracking_no_external_calls(self):
         s=m.SNIPPET
