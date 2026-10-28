@@ -1,15 +1,48 @@
 {
-  "version": 1,
-  "consentRevision": "2026-10-ga4-live-3",
+  "version": 2,
+  "consentRevision": "2026-11-ga4-rich-1",
   "analytics": {
     "enabled": true,
     "provider": "ga4",
     "measurementId": "G-E1XCJME97G",
     "activationApproved": true,
     "privacyReviewed": true,
-    "eventRetentionMonths": 2,
+    "eventRetentionMonths": 14,
     "cookieLifetimeDays": 180,
-    "resetRetentionOnActivity": false
+    "resetRetentionOnActivity": false,
+    "attribution": "cleaned",
+    "excludePaths": [
+      "^/tagesbericht-anmelden/",
+      "^/abmelden",
+      "^/.*-bestaetigt"
+    ],
+    "contentGroups": {
+      "^/$": "startseite",
+      "^/artikel/": "artikel",
+      "^/thema/": "thema",
+      "^/news/": "news",
+      "^/modelle/": "ki-modelle",
+      "^/suche/": "suche",
+      "^/(redaktion|transparenz|korrekturen|quellen|ueber-uns)/": "redaktion",
+      "^/(datenschutz|impressum|kontakt|cookies|werben|werbung)/": "rechtliches",
+      ".*": "sonstiges"
+    },
+    "downloadAllowlist": [],
+    "outboundAllowlist": [],
+    "toolUsageAllowlist": [],
+    "campaignValues": {
+      "source": [
+        "newsletter",
+        "rss",
+        "x",
+        "linkedin"
+      ],
+      "medium": [
+        "email",
+        "social"
+      ],
+      "campaign": []
+    }
   },
   "advertising": {
     "enabled": false

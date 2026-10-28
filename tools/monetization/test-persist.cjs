@@ -1,7 +1,7 @@
 // Developer-only: consent persistence (reject/accept/withdraw), no close/Escape dismissal, cookie fallback.
 // NODE_PATH=/path/to/node_modules node tools/monetization/test-persist.cjs  (uses site/out)
 const { chromium } = require('playwright-core'), http = require('http'), fs = require('fs'), path = require('path'), assert = require('assert');
-const root = path.resolve(__dirname, '../../site/out'), P = 'iw';
+const root = process.env.IW_OUT || path.resolve(__dirname, '../../site/out'), P = 'iw';
 const server = http.createServer((q, s) => { let f = path.join(root, decodeURI(q.url.split('?')[0])); if (f.endsWith('/')) f += 'index.html'; try { s.setHeader('Content-Type', f.endsWith('.css') ? 'text/css' : f.endsWith('.js') ? 'text/javascript' : f.endsWith('.svg') ? 'image/svg+xml' : 'text/html'); s.end(fs.readFileSync(f)); } catch (e) { s.statusCode = 404; s.end('x'); } });
 let n = 0; const ok = (v, m) => { assert(v, m); n++; };
 (async () => {

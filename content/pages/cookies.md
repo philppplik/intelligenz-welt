@@ -1,7 +1,7 @@
-<!-- desc: Datenschutzauswahl und lokaler Speicher auf Intelligenz Welt. Statistik und Werbung sind derzeit deaktiviert. -->
+<!-- desc: Datenschutzauswahl und lokaler Speicher auf Intelligenz Welt. Statistik nur mit Einwilligung; Werbung deaktiviert. -->
 # Cookies & Einstellungen
 
-Statistik- und Werbedienste sind derzeit ausgeschaltet. Ohne Einwilligung werden sie nicht geladen. Sie können die Datenschutzeinstellungen jederzeit über die gleichnamige Schaltfläche im Footer öffnen, Ihre Auswahl ändern oder eine Einwilligung zurücknehmen. Ablehnen schränkt das Lesen und Suchen nicht ein.
+Externe Werbedienste sind ausgeschaltet. Statistik (Google Analytics 4) wird erst nach Ihrer Einwilligung geladen; ohne Einwilligung wird sie nicht geladen. Sie können die Datenschutzeinstellungen jederzeit über die gleichnamige Schaltfläche im Footer öffnen, Ihre Auswahl ändern oder eine Einwilligung zurücknehmen. Ablehnen schränkt das Lesen und Suchen nicht ein.
 
 ## Notwendige Auswahl speichern
 
@@ -13,9 +13,9 @@ Diese Speicherung dient ausschließlich dazu, Ihre ausdrücklich gewählte Daten
 
 Sitzungsmarke für den Hinweisdialog: Damit der Hinweis auf die kostenlose Tagesausgabe (PDF) höchstens einmal pro Browsersitzung erscheint, legt die Seite eine Marke im Sitzungsspeicher ab (Eintrag **iw-exit-report**, kein Cookie). Sie wird nicht übertragen und beim Schließen des Tabs automatisch gelöscht. Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG.
 
-## Statistik: derzeit aus
+## Statistik: nur mit Einwilligung
 
-Es ist noch kein Statistikdienst aktiviert. Es werden keine Analytics-Cookies und keine Analytics-Anfragen gesendet. Die vorbereitete Statistikoption ist deshalb nicht auswählbar. Vor einer Aktivierung werden Anbieter, Datenarten, Zwecke, Speicherdauer und mögliche Übermittlungen hier und in der Datenschutzerklärung konkret benannt. Optionale Statistik erfordert eine eigene freiwillige Einwilligung.
+Google Analytics 4 wird erst nach Ihrer freiwilligen Statistik-Einwilligung geladen. Bei Ablehnung werden keine Google-Tags geladen und keine Statistik-Anfragen gesendet. Mit Einwilligung kann Google Analytics 4 die First-Party-Cookies **_ga** und **_ga_<Container-ID>** setzen (jeweils nur auf dieser Domain gültig, bis zu 180 Tage, keine automatische Verlängerung bei jedem Besuch): eine zufällige Besucherkennung und der Sitzungszustand. Anbieter, Datenarten, Zwecke, Speicherdauer und mögliche Übermittlungen stehen im Abschnitt Google Analytics 4 in der [Datenschutzerklärung](/datenschutz/).
 
 ## Werbung: derzeit aus
 
@@ -27,4 +27,4 @@ Werbe- oder Affiliate-Links sind normale Links. Erst beim Anklicken verlassen Si
 
 [Datenschutzerklärung](/datenschutz/) · [Werbung & Affiliate](/werbung/) · [Impressum](/impressum/)
 
-Stand: 19. Oktober 2026, Vorbereitung ohne aktive Statistik- oder Werbedienste.
+Stand: 28. Oktober 2026. Statistik nur mit Einwilligung; Werbedienste aus.

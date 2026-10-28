@@ -6,7 +6,7 @@ Philipp Paulik, Mozartstraße 1, 53819 Neunkirchen-Seelscheid, E-Mail: philipp.l
 
 ## Kurzfassung
 
-Diese Website nutzt derzeit keine Analyse- oder Werbedienste und bindet keine externen Schriftarten oder Social-Media-Plugins ein. Ihre Datenschutzauswahl wird ausschließlich im lokalen Speicher Ihres Browsers und in einem technisch notwendigen First-Party-Cookie gespeichert, nicht als Tracking-Cookie. Alle optionalen Dienste sind ausgeschaltet. Die Teilen-Schaltflächen in den Artikeln sind reine Links und übertragen keine Daten an die genannten Dienste, solange Sie sie nicht anklicken. Es gibt kein Kontaktformular und keine Registrierung.
+Diese Website nutzt Google Analytics 4 nur nach Ihrer Statistik-Einwilligung; externe Werbedienste, externe Schriftarten und Social-Media-Plugins binden wir nicht ein. Ihre Datenschutzauswahl wird ausschließlich im lokalen Speicher Ihres Browsers und in einem technisch notwendigen First-Party-Cookie gespeichert, nicht als Tracking-Cookie. Ohne Einwilligung bleibt Statistik ausgeschaltet; externe Werbung bleibt unabhängig davon aus. Die Teilen-Schaltflächen in den Artikeln sind reine Links und übertragen keine Daten an die genannten Dienste, solange Sie sie nicht anklicken. Es gibt kein Kontaktformular und keine Konto-Registrierung auf der Website. Die freiwillige Anmeldung zur Tagesausgabe beziehungsweise zum Wochenrückblick mit E-Mail-Adresse ist unten als eigener Abschnitt beschrieben.
 
 ## Datenschutzauswahl und optionale Dienste
 
@@ -14,7 +14,7 @@ Die Datenschutzeinstellungen im Footer lassen sich jederzeit öffnen. Ihre Auswa
 
 Hinweisdialog zur Tagesausgabe: Beim Verlassen der Seite kann ein Hinweis auf die kostenlose Tagesausgabe (PDF) erscheinen. Damit dieser Hinweis höchstens einmal pro Browsersitzung gezeigt wird, legt die Seite eine Sitzungsmarke im Sitzungsspeicher Ihres Browsers ab (Eintrag **iw-exit-report**, kein Cookie). Diese Angabe verlässt Ihr Gerät nicht, wird weder an uns noch an Dritte übertragen und wird automatisch gelöscht, sobald Sie den Browser-Tab schließen. Rechtsgrundlage ist § 25 Abs. 2 Nr. 2 TDDDG (unbedingt erforderlich für diesen ausdrücklich angeforderten Dienst); eine Einwilligung ist nicht erforderlich, da keine Daten verarbeitet oder übertragen werden.
 
-Statistik und externe Werbung werden erst nach gesonderter Einrichtung, ergänzten Datenschutzhinweisen und Ihrer freiwilligen Einwilligung aktiviert (Art. 6 Abs. 1 lit. a DSGVO; soweit erforderlich § 25 Abs. 1 TDDDG). Ein Widerruf ist jederzeit in den Datenschutzeinstellungen möglich und wirkt für die Zukunft. Derzeit sind Google Analytics, Google AdSense und Affiliate-Netzwerke nicht eingebunden. Es werden weder Google-Tags noch ein Tag Manager vorgeladen.
+Statistik wird nur nach Ihrer freiwilligen Einwilligung aktiviert (Art. 6 Abs. 1 lit. a DSGVO; soweit erforderlich § 25 Abs. 1 TDDDG); Details siehe Abschnitt Google Analytics 4 auf dieser Seite. Ein Widerruf ist jederzeit in den Datenschutzeinstellungen möglich und wirkt für die Zukunft. Google AdSense und Affiliate-Netzwerke sind nicht eingebunden. Vor der Einwilligung werden keine Google-Tags vorgeladen; ein Tag Manager wird nicht verwendet.
 
 ## Tagesausgabe (PDF): Anmeldung und Zugang
 
