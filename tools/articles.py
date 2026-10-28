@@ -20,8 +20,15 @@ REQ = ['slug', 'title', 'dek', 'section', 'type', 'published', 'modified', 'auth
 MONTHS = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
 DISCLOSURE = ('Transparenzhinweis: Dieser Artikel ist ein redaktioneller Beitrag von Philipp Paulik und entstand mit KI-Unterstützung '
               '(Recherche und Textentwurf). Alle Quellen sind unten verlinkt; Zahlen und Aussagen stammen aus diesen Quellen. '
-              'Das Titelbild ist KI-generiert und im Bild entsprechend gekennzeichnet. Die News-Übersicht auf dieser Seite wird dagegen automatisch aus öffentlichen Feeds aggregiert. '
+              'Die News-Übersicht auf dieser Seite wird dagegen automatisch aus öffentlichen Feeds aggregiert. '
               '<a href="/transparenz/">So arbeiten wir</a>.')
+IMG_AI_NOTE = 'Das Titelbild ist KI-generiert und im Bild entsprechend gekennzeichnet. '
+def disclosure(hero):
+    # KI-Hinweis nur, wenn das Titelbild tatsaechlich KI-generiert ist (hero.ai_generated).
+    parts = DISCLOSURE.split('Die News-Übersicht', 1)
+    if hero.get('ai_generated'):
+        return parts[0] + IMG_AI_NOTE + 'Die News-Übersicht' + parts[1]
+    return DISCLOSURE
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from share import share_block, SHARE_CSS
 import mdpages
@@ -229,7 +236,7 @@ def article_page(a, arts, head, foot):
             '<figure><img src="%s"%s width="1600" height="900" alt="%s" fetchpriority="high" decoding="async"><figcaption>%s</figcaption></figure>'
             '<div class="facts"><h2>Die wichtigsten Fakten</h2><ul>%s</ul></div><div class="body">%s%s</div>%s<h2>Quellen</h2><ol class="src">%s</ol>%s%s<p class="note">%s</p></article>') % (
         a['section'], SECTIONS[a['section']], E(SECTIONS[a['section']]), E(a['title']), AUTHOR_URL, a['published'], de_date(a['_pub']), modtxt, mins,
-        img_rel, srcset, E(h['alt']), E(h['caption']) + (' · Illustration: KI-generiert' if h.get('ai_generated') and 'KI-generiert' not in h['caption'] else ''), facts, body_html(a), method, faq, src, more, share_block(url, a['title'], 'iw'), DISCLOSURE)
+        img_rel, srcset, E(h['alt']), E(h['caption']) + (' · Illustration: KI-generiert' if h.get('ai_generated') and 'KI-generiert' not in h['caption'] else ''), facts, body_html(a), method, faq, src, more, share_block(url, a['title'], 'iw'), disclosure(h))
     body = body.replace('</p><figure>', '</p>' + share_block(url, a['title'], 'iw', True) + '<figure>', 1)
     return finalize_cites(hh + body + foot)
 
@@ -258,7 +265,7 @@ def redaktion_page(head, foot):
          '<p>Intelligenz Welt wird von Philipp Paulik betrieben und verantwortet (<a href="/impressum/">Impressum</a>, <a href="/redakteur/philipp-paulik/">Autorenprofil</a>, <a href="/kontakt/">Kontakt</a>).</p>'
          '<h2>Zwei Bereiche</h2><p>Die <a href="/news/">KI-News</a> und das Modell-Radar werden automatisch aus öffentlichen Feeds und APIs aggregiert und führen zu den Originalquellen. Die <a href="/artikel/">Artikel</a> sind eigene redaktionelle Beiträge.</p>'
          '<h2 id="ki-einsatz">Einsatz von KI</h2><p>Artikel entstehen mit KI-Unterstützung (Recherche und Textentwurf). Themenauswahl, Quellenprüfung und Veröffentlichung verantwortet Philipp Paulik. Jeder Artikel nennt seine Quellen; Zahlen und Aussagen stammen aus diesen Quellen. Wir erfinden keine Zitate, Zahlen oder Studien und kennzeichnen Unsicherheit im Text.</p>'
-         '<h2 id="bildrechte">Bilder</h2><p>Titelbilder sind KI-generiert und im Bild mit „KI-generiert“ gekennzeichnet. Sie sind Symbolbilder und kein offizielles Material der genannten Unternehmen. Alle Bilder haben einen Alternativtext. Eine Verlinkung mit Quellenangabe (Intelligenz Welt, intelligenz-welt.de) ist erlaubt; für weitere Nutzung bitte per E-Mail anfragen.</p>'
+         '<h2 id="bildrechte">Bilder</h2><p>Titelbilder sind entweder KI-generiert — dann im Bild mit „KI-generiert“ gekennzeichnet — oder eigene Datengrafiken der Redaktion, erkennbar am Hinweis „Eigene Grafik“. Sie sind Symbolbilder und kein offizielles Material der genannten Unternehmen. Alle Bilder haben einen Alternativtext. Eine Verlinkung mit Quellenangabe (Intelligenz Welt, intelligenz-welt.de) ist erlaubt; für weitere Nutzung bitte per E-Mail anfragen.</p>'
          '<h2>Korrekturen</h2><p>Fehler werden im Artikel korrigiert. Bei inhaltlichen Änderungen setzen wir das Aktualisierungsdatum und vermerken die Korrektur im Text. Hinweise bitte per E-Mail an die Adresse im <a href="/kontakt/">Kontakt</a>.</p>'
          '<h2>Werbung und Unabhängigkeit</h2><p>Intelligenz Welt verkauft derzeit keine Anzeigen und nimmt keine bezahlten Beiträge an. Sollte sich das ändern, wird bezahlter Inhalt klar gekennzeichnet. Wir nehmen keine Stellung zu parteipolitischen Themen.</p></article>')
     return hh + b + foot
