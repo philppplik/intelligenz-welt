@@ -1,0 +1,147 @@
+{
+  "slug": "axiom-axiomprover-cfsg-lean-beweis",
+  "section": "analyse",
+  "title": "Axiom: Agenten-Schwarm formalisiert das 'enorme Theorem' vollständig in Lean",
+  "dek": "Axiom Math hat die Klassifikation der endlichen einfachen Gruppen komplett in Lean formalisiert: rund 43 Millionen Zeilen maschinell geprüfter Beweis aus 24 Tagen Schwarm-Arbeit, inklusive einer echten Lücke in der publizierten Literatur.",
+  "tags": [
+    "Axiom",
+    "Lean",
+    "Mathematik",
+    "KI-Agenten"
+  ],
+  "key_takeaways": [
+    "Axiom Math hat die erste vollständig maschinell geprüfte Formalisierung der Klassifikation der endlichen einfachen Gruppen (CFSG) veröffentlicht: rund 43,1 Millionen Zeilen Lean, erstellt in 24 Tagen von Dutzenden AxiomProver-Agenten unter menschlicher Begleitung.",
+    "Das öffentliche Repositorium ist sorry-frei, baut auf Mathlib und TauCeti auf und kommt mit den Standardaxiomen aus. Das Original galt mit rund 15.000 Seiten in über 500 Artikeln von etwa 100 Mathematikern als längster Beweis der Geschichte.",
+    "Die Formalisierung deckte 34 nennenswerte Abweichungen von der Literatur auf, darunter Gegenbeispiele zu einer Abschlussbehauptung in Walters Beweis des Unbalanced Group Theorems. AxiomProver bewies dafür ein neues Erhaltungstheorem; die Gruppentheoretiker Richard Lyons und Ronald Solomon berieten das Projekt."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein riesiger leuchtender Beweisbaum in einer abstrakten Bibliothek, viele kleine Lichtpunkte verbinden seine Äste, ein Ast wird repariert",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Die Klassifikation der endlichen einfachen Gruppen, das 'enorme Theorem', gilt als längster Beweis der Mathematikgeschichte: rund 15.000 Seiten, verteilt auf mehr als 500 Artikel von etwa 100 Mathematikern. Axiom Math hat diesen Beweis jetzt vollständig in Lean formalisiert, sodass ein Computer jeden Schritt mechanisch prüfen kann. Geschrieben hat den formalen Beweis ein Schwarm von KI-Agenten, koordiniert und kontrolliert von Menschen."
+    },
+    {
+      "t": "table",
+      "caption": "Das Projekt in Zahlen. Quelle: Axiom Math. Stand: 28. Oktober 2026.",
+      "head": [
+        "Kennzahl",
+        "Wert"
+      ],
+      "rows": [
+        [
+          "Zeilen Lean-Code",
+          "rund 43,1 Millionen"
+        ],
+        [
+          "Meilensteine",
+          "108"
+        ],
+        [
+          "Teilaufgaben",
+          "rund 380"
+        ],
+        [
+          "Dauer der Schwarm-Phase",
+          "24 Tage (Start 2. Oktober 2026)"
+        ],
+        [
+          "Abweichungen von der Literatur",
+          "34 nennenswerte"
+        ],
+        [
+          "Übernommener Bestand",
+          "rund 1,2 Millionen Zeilen aus Qiuzhen-CFSG"
+        ],
+        [
+          "Originalbeweis",
+          "rund 15.000 Seiten in über 500 Artikeln"
+        ]
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Wie der Schwarm arbeitete"
+    },
+    {
+      "t": "p",
+      "x": "Am 1. Oktober 2026 öffnete Axiom einen Slack-Kanal zur Koordination, am 2. Oktober ging der erste Schwarm live. Eine intern erstellte Beweiskarte aus der publizierten Literatur teilte das Projekt in 108 Meilensteine und rund 380 kleinere Aufgaben. Agenten beanspruchten Meilensteine über GitHub-Issues und meldeten Fortschritt in Slack. Führende Agenten zerlegten schwierige Argumente und prüften Aussagen, andere suchten vorhandene Resultate oder schrieben Lean-Beweise. Menschliche Mathematiker untersuchten die harten inhaltlichen Hindernisse, Ingenieure hielten das System produktiv."
+    },
+    {
+      "t": "p",
+      "x": "Der Weg war nicht geradlinig: Frühe Meilensteine verbargen enorme Voraussetzungen, die Agenten angenommen statt bewiesen hatten. Axiom löschte zehntausende Zeilen, die auf unbewiesenen Annahmen ruhten, und plante Mitte Oktober neu. Zudem wurden die Lean-Buildzeiten zum Engpass, weil Agenten schneller Beweise produzierten, als Lean sie nachprüfen konnte. Die Lösung: verteilte Build-Zwischenspeicher und ausgelagerte Zertifikate für teure endliche Rechnungen, was die Verifikation um Größenordnungen beschleunigte. Am 10. Oktober stand im Kanal: 'WE PROVED MONSTER IS SIMPLE' - die Agenten hatten zudem die Existenz des Monsters über die Griess-Algebra formalisiert."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Maschinen fanden"
+    },
+    {
+      "t": "p",
+      "x": "Die Formalisierung zwang jede Voraussetzung ans Licht. Die meisten der 34 nennenswerten Abweichungen waren harmlos: Tippfehler, fehlerhafte Tabellen, fallengelassene Voraussetzungen. Ein Beispiel aus den Quasithin-Bänden von Aschbacher und Smith: Ein Lemma behauptete die Gleichheit zweier Kennzahlen; die Agenten fanden ein Gegenbeispiel über die Gruppe SL2(5), bei der der eine Wert 1 statt 2 betrug. Die Korrektur zur Ungleichung zog Nacharbeiten in späteren Argumenten nach sich."
+    },
+    {
+      "t": "p",
+      "x": "Am substanziellsten war der Fall des Unbalanced Group Theorems (UGT): Bei der Formalisierung von John Walters Beweis von 1986 fanden die Agenten explizite Gegenbeispiele gegen eine Abschlussbehauptung, auf der das Argument ruhte - die behauptete Operation konnte eine Gruppe erzeugen, die ausdrücklich aus der betrachteten Familie ausgeschlossen war (konkret über PSL2(49) und PSL2(7), Letztere ausgeschlossen, weil 7 eine Mersenne-Primzahl ist). Das widerlegte weder das UGT noch Walters Hauptaussage, ließ aber einen Schlüsselschluss ungerechtfertigt. Mit Ideen aus Ron Solomons Theorie der maximalen 2-Komponenten von 1976 erzeugte und formalisierte AxiomProver ein neues 'Preservation'-Theorem (Theorem 2.3 der Begleitpublikation), das die Lücke schließt. Nachträglich fanden Axioms Mathematiker eine kürzere Route innerhalb der Methoden der ersten Generation (Remark 9.5)."
+    },
+    {
+      "t": "callout",
+      "title": "Mensch prüft die Aussage, Lean prüft den Beweis",
+      "x": "Die Arbeitsteilung ist explizit: Menschen kontrollieren, ob die formale Aussage wirklich das besagt, was die Klassifikation meint - das Repo nutzt das CFSG-Statement des TauCeti-Projekts. Lean prüft dann jede einzelne Deduktion. Genau diese Trennung macht die Formalisierung stark, und genau sie beschreibt auch ihre Grenze."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Es ist der bislang größte maschinell geprüfte Beweis - und eine ungewöhnlich ehrliche Fallstudie für Agenten-Schwärme auf einem riesigen Abhängigkeitsgraphen, inklusive Neuplanung, verworfener Arbeit und Infrastruktur-Engpässen. Axiom betont selbst, dass die Klassifikation die Leistung der beteiligten Mathematiker bleibt; das Projekt steht auf den Schultern von Mathlib, der Lean-Community und früheren Formalisierungen wie Georges Gonthiers Feit-Thompson-Beweis in Coq (2012). Die versprochene Errata-Liste soll der Gruppentheorie-Community öffentlich zugutekommen, ein Beirat mit Lyons und Solomon begleitet die weitere Kuratierung."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist das enorme Theorem damit endgültig bewiesen?",
+      "a": "Der formale Beweis ist sorry-frei, Lean hat jede Deduktion mechanisch geprüft. Was Menschen weiter prüfen, ist die Spezifikation: ob die formalisierte Aussage exakt der intendierten Klassifikation entspricht. 34 gefundene Abweichungen von der Literatur werden als öffentliche Errata-Liste aufbereitet."
+    },
+    {
+      "q": "Was besagt die Klassifikation der endlichen einfachen Gruppen?",
+      "a": "Sie listet alle Grundbausteine endlicher Gruppen vollständig auf: die zyklischen Gruppen von Primzahlordnung, die alternierenden Gruppen auf mindestens fünf Symbolen, sechzehn unendliche Familien vom Lie-Typ und genau 26 sporadische Gruppen - manche Autoren zählen die Tits-Gruppe als 27. Sie ist so etwas wie das Periodensystem der endlichen Symmetrie."
+    },
+    {
+      "q": "Was bedeutet das für den Einsatz von KI-Agenten?",
+      "a": "Es ist der bisher größte dokumentierte Einsatz eines Agenten-Schwarms auf einem realen, riesigen Abhängigkeitsgraphen - mit ehrlich dokumentierten Rückschlägen: falsch geplante Meilensteine, gelöschte Beweiszeilen, Build-Engpässe. Menschen blieben für die schwierige Mathematik und die Zielspezifikation zuständig."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Formalizing the Enormous Theorem",
+      "publisher": "Axiom Math",
+      "url": "https://axiommath.ai/research/the-enormous-theorem-formalized/",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "AxiomMath/CFSG (Lean-Repositorium, sorry-frei)",
+      "publisher": "GitHub",
+      "url": "https://github.com/AxiomMath/CFSG",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "AI News Oct 28, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-28/",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "related": [
+    "openai-eth-widerlegung-kakeya-qcd",
+    "taste-bench-ki-agenten-langzeit-entscheidungen"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-28T08:48:39+01:00",
+  "modified": "2026-10-28T08:48:39+01:00"
+}

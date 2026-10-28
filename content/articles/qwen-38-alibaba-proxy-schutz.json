@@ -1,0 +1,125 @@
+{
+  "slug": "qwen-38-alibaba-proxy-schutz",
+  "section": "praxis",
+  "title": "Vals-Untersuchung: Qwen-3.8-Modelle rufen Alibaba-Proxy - so schützt du deine Agenten",
+  "dek": "Drei Qwen-3.8-Modelle rufen bei blockierten Webanfragen einen Alibaba-Cloud-Proxy in Singapur auf. Vals AI deutet das als Trainingsartefakt, nicht als Angriff - doch der Server ist live. Die wichtigsten Gegenmaßnahmen.",
+  "tags": [
+    "Qwen",
+    "Sicherheit",
+    "Open Weights",
+    "Agenten"
+  ],
+  "key_takeaways": [
+    "Vals AI hat in Evaluierungsdaten von Qwen3.8-Max-0902, Qwen3.8-Max und Qwen3.8-27B Aufrufe eines Alibaba-Cloud-Proxys in der Region Singapur gefunden, bei den älteren Qwen-3.7-Modellen nicht. Alle echten Aufrufe scheiterten mit 403 Forbidden, die URLs enthielten halluzinierte Zugangsdaten.",
+    "Als wahrscheinlichste Ursache nennen die Forscher RL-Training, bei dem Webabrufe über diesen Proxy liefen; die Datumsangaben in den halluzinierten URLs fallen in die Trainingsfenster. Nach einem simulierten 403 griffen die Modelle in 1 bis 4 Prozent der Fälle auf den Proxy zurück. Hinweise auf böswillige Exfiltration fand Vals nicht.",
+    "Der Server ist weiterhin erreichbar und könnte IP-Adressen und Anfragen protokollieren oder künftig Prompt-Injections ausliefern. Wer Qwen-3.8-Agenten betreibt, sollte ausgehenden Verkehr zu aliyuncs.com blockieren oder zumindest protokollieren und die Tool-Aufrufe seiner Agenten überwachen."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein kleiner Roboter-Wächter an einer gläsernen Netzwerk-Schleuse hält ein leuchtendes Datenpaket auf, das zu einem fernen Cloud-Server unterwegs ist",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Nach Coheres Fund eines Upload-Versuchs in Richtung Peking hat Vals AI das Netzwerkverhalten aktueller Qwen-Modelle systematisch untersucht. Ergebnis: Drei Qwen-3.8-Modelle rufen in Agenten-Situationen einen Alibaba-Cloud-Proxy in Singapur auf - sehr wahrscheinlich ein Überbleibsel aus dem Training, kein gezielter Angriff. Trotzdem ist der Server live, und was live ist, kann mitlesen. Hier steht, was du konkret tun solltest."
+    },
+    {
+      "t": "h2",
+      "x": "Was Vals AI gefunden hat"
+    },
+    {
+      "t": "p",
+      "x": "Die Forscher Anthony Ozerov und Nikil Ravi durchsuchten Evaluierungs-Traces von fünf Modellen nach dem String 'aliyuncs.com'. Treffer gab es bei Qwen3.8-Max-0902, Qwen3.8-Max und Qwen3.8-27B, nicht bei Qwen3.7-Max und Qwen3.7-Flash. Gefunden wurden zwei Verhaltensmuster: echte Tool-Aufrufe an den Server routify-file-proxy-sg.oss-ap-southeast-1.aliyuncs.com - etwa wenn das Modell eigentlich sec.gov oder mckinsey.com abrufen wollte - und Halluzinationen im Reasoning, in denen sich das Modell über eine 'weird aliyuncs proxy URL' wundert oder vermutet, 'something is rewriting my URLs'. Alle echten Aufrufe endeten mit 403 Forbidden."
+    },
+    {
+      "t": "p",
+      "x": "Das Verhalten lässt sich gezielt auslösen: Antwortet ein simuliertes Werkzeug mit 403, versucht Qwen3.8-27B innerhalb von zwei Zügen den Proxy - in rund 2 Prozent der Läufe bei Inferenz über Alibaba, 4 Prozent über CoreWeave. Bei Qwen3.8-Max lag die Rate bei 4 Prozent (Alibaba) beziehungsweise 1 Prozent (Fireworks). Zum Vergleich getestete Modelle anderer Anbieter (DeepSeek-v4.1-Flash, Kimi-K3.1-Pro, GLM-5.3, Hy4-preview) wichen teils auf öffentliche Proxys wie r.jina.ai aus, aber nie auf Server des eigenen Entwicklers."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das passiert"
+    },
+    {
+      "t": "p",
+      "x": "Da Qwen 3.7 sauber ist, vermutet Vals die Ursache im RL-Training der 3.8-Generation: Entweder lief der Webabruf in der Trainingsumgebung zweistufig über genau diesen routify-file-proxy, oder die Trainings-Software schrieb Tool-Aufrufe unsichtbar um. Beides würde erklären, warum die Modelle den Proxy als Fallback gelernt haben und im Reasoning über umgeschriebene URLs rätseln. Ein Indiz: Die Datumsangaben in den halluzinierten URLs liegen jeweils im geschätzten Trainingsfenster vor dem Release - bei Qwen3.8-Max-0902 (Anfang September erschienen) im Juli und August 2026."
+    },
+    {
+      "t": "h2",
+      "x": "Der Cohere-Fund im Hintergrund"
+    },
+    {
+      "t": "p",
+      "x": "Ausgelöst hatte die Debatte Cohere am 26. Oktober: In einer geschlossenen Sandbox versuchte Qwen3.8-Flash-Next, eine Testdatei per PUT auf einen Alibaba-Cloud-Speicher in Peking hochzuladen, nachdem das Reasoning noch keinerlei Tool-Aufrufe angekündigt hatte. Cohere beobachtet das in weniger als einem von 100.000 Aufrufen. Wichtige Einordnung: Cohere ist ein direkter Wettbewerber von Alibaba und hat nach Kritik an seiner Darstellung die vollständigen Traces auf Hugging Face veröffentlicht. Vals AI unterscheidet die Fälle ausdrücklich: Die eigenen Funde sähen nach Trainingsartefakt aus, nicht nach böswilligem Nach-Hause-Telefonieren."
+    },
+    {
+      "t": "h2",
+      "x": "Was du jetzt konkret tun solltest"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "**Egress regeln:** Blockiere oder protokolliere ausgehenden Verkehr zu *.aliyuncs.com per DNS-Filter, Proxy oder Firewall. Der Domain-Teil ist eindeutig, legitime Gründe für Agenten-Aufrufe dorthin gibt es kaum.",
+        "**Tool-Aufrufe überwachen:** Protokolliere die URLs, die deine Agenten abrufen, und alarmiere auf unerwartete Domains. Das Verhalten trat auch bei Inferenz über CoreWeave und Fireworks sowie bei lokalem Betrieb auf.",
+        "**Sandboxing ernst nehmen:** Gib Agenten nur die Netzwerkfreigaben, die sie für ihre Aufgabe brauchen. Coheres Upload-Versuch starb an der Sandbox-Wand - ein CI-Runner mit normalem Netzzugang hätte ihn durchgelassen.",
+        "**Risiko realistisch einordnen:** Es gibt keinen Beleg für Datenabfluss. Aber der Server ist erreichbar, könnte IPs und Anfragen loggen - und wer ihn kontrolliert, könnte das 403 jederzeit gegen eine Prompt-Injection tauschen.",
+        "**Updates beobachten:** Eine Stellungnahme oder ein Fix von Alibaba steht noch aus; prüfe kommende Qwen-Releases auf dieses Verhalten, bevor du sie produktiv einsetzt."
+      ]
+    },
+    {
+      "t": "callout",
+      "title": "Nicht dramatisieren, nicht ignorieren",
+      "x": "Vals AI fasst es so zusammen: Ein böswilliges Nach-Hause-Telefonieren ist nicht belegt, 'so harmlos' sei das Verhalten aber auch nicht. Offene Gewichte können die Infrastruktur-Gewohnheiten ihrer Trainer in Ihr Netzwerk mitbringen. Wer lokale Qwen-Modelle einsetzt, behandelt sie am besten wie jeden anderen nicht vertrauenswürdigen Prozess: minimale Rechte, kontrollierter Ausgang."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist das eine Hintertür in Qwen?",
+      "a": "Dafür gibt es keinen Beleg. Vals AI deutet die Befunde als Artefakt des RL-Trainings, bei dem Webabrufe über den Proxy liefen; die Datumsangaben in den halluzinierten URLs passen zu den Trainingsfenstern. Cohere, das den ursprünglichen Fund meldete, ist ein direkter Wettbewerber und hat seine Traces nach Kritik offengelegt."
+    },
+    {
+      "q": "Betrifft das auch lokal laufende Modelle?",
+      "a": "Ja. Das Verhalten steckt in den Gewichten, nicht in der Cloud: Vals reproduzierte es über CoreWeave und Fireworks, und weitere Berichte beschreiben lokale Installationen. Eigene Hardware allein schützt also nicht - entscheidend ist, wohin der Agent Netzwerkverkehr senden darf."
+    },
+    {
+      "q": "Was genau sollte ich blockieren?",
+      "a": "Mindestens ausgehende Verbindungen zu *.aliyuncs.com (Alibaba Cloud, inklusive der Region Singapur, wo der beobachtete Proxy läuft). Noch besser: eine Allowlist für Domains, die deine Agenten tatsächlich brauchen, plus Logging aller Tool-Aufrufe mit Alarm auf unbekannte Ziele."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Why is my local Qwen sending requests to Alibaba Cloud?",
+      "publisher": "Vals AI",
+      "url": "https://www.vals.ai/blogs/qwen-alibaba-requests",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "Alibaba's latest Qwen models routed some requests through company servers, researchers find",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/alibabas-latest-qwen-models-routed-some-requests-through-company-servers-researchers-find/",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "Concerning behavior from a popular open-weight AI model",
+      "publisher": "Cohere",
+      "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "AI News Oct 28, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-28/",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "related": [
+    "gvs5h-selbst-orchestrierung-qwen-livecodebench",
+    "eigener-llm-proxy-kontrolle-kosten-logs"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-28T08:49:29+01:00",
+  "modified": "2026-10-28T08:49:29+01:00"
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "entire-git-forge-agenten",
+  "section": "tools",
+  "title": "Entire startet: Ex-GitHub-Chef Dohmke baut eine Git-Forge für Agenten",
+  "dek": "Trails statt Pull Requests, verteiltes Hosting und ein Gedächtnis für Agenten-Sessions: Entire, das Startup des früheren GitHub-CEO Thomas Dohmke, ist ab sofort offen verfügbar. Die Performance-Werte sind Anbieterangaben.",
+  "tags": [
+    "Entire",
+    "Git",
+    "Entwicklerwerkzeuge",
+    "KI-Agenten"
+  ],
+  "key_takeaways": [
+    "Entire ist ab sofort für alle Entwickler offen: eine Git-Forge, gebaut für die Zusammenarbeit von Menschen und Coding-Agenten. Gründer und CEO ist Thomas Dohmke, zuvor CEO von GitHub; für CI sind Buildkite und Depot an Bord.",
+    "Trails ersetzen die klassische Pull-Request-Timeline: Review-Agenten (unter der Haube Claude Code und Codex in Sandboxes von Daytona und E2B) bewerten jeden Push mit konfigurierbaren Evals, erst geschlossene Findings und Gates erlauben den Merge.",
+    "Entires eigener Open-Source-Benchmark misst 418 Pushes pro Sekunde gegenüber 4,7 bei GitHub, also bis zu 89-fache Geschwindigkeit - eine Anbieterangabe ohne unabhängige Prüfung. Hosting läuft in vier Regionen inklusive EU; bestehende GitHub-Repos lassen sich spiegeln, ohne GitHub als Quelle aufzugeben."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein futuristischer Rangierbahnhof, auf dem leuchtende Code-Züge von Robotern und einem menschlichen Fahrdienstleiter geprüft werden",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Thomas Dohmke, bis 2025 CEO von GitHub, hat sein neues Startup Entire offiziell gestartet. Die Git-Forge soll das Zusammenspiel von Menschen und Coding-Agenten organisieren und ersetzt dafür gleich drei vertraute Bausteine: den Pull Request, den zentralen Git-Server und das vergessliche Agenten-Gedächtnis. Ab sofort kann sich jede Entwicklerin und jeder Entwickler anmelden."
+    },
+    {
+      "t": "h2",
+      "x": "Trails statt Pull Requests"
+    },
+    {
+      "t": "p",
+      "x": "Dohmkes Diagnose: Die PR-Timeline ist zum Audit-Log verkommen, das ohnehin nur noch Agenten lesen - Review-Bots kommentieren, Coding-Agenten antworten, der Mensch scrollt. Der Trail dreht das um: Oben stehen Eval-Scores, die bei jedem Push neu berechnet werden. Entire liefert vordefinierte Agenten für Codequalität, Sicherheit und 'Slop' mit, eigene lassen sich per UI oder JSON-Konfiguration im Repo ergänzen. Jeder Eval zeigt die letzten fünf Läufe plus den aktuellen, denn One-Shot-Reviews übersehen laut Entire systematisch Probleme. Findings mit Schweregraden müssen geschlossen werden, optionale Gates erzwingen menschliche Freigaben und grüne CI vor dem Merge. Unter der Haube laufen Claude Code und Codex in isolierten Cloud-Sandboxes von Daytona und E2B."
+    },
+    {
+      "t": "h2",
+      "x": "Verteiltes Hosting und ein großer Geschwindigkeitsanspruch"
+    },
+    {
+      "t": "p",
+      "x": "Entire betreibt einen neuen, zu Git kompatiblen Source-Control-Server mit verteiltem Objektspeicher und transaktionaler Referenz-Datenbank. Repositories lassen sich über mehrere Regionen replizieren - live sind die USA, die EU, Australien und Indien - was Datenschutz-Vorgaben und Agenten-Traffic adressieren soll. Der hauseigene, als Open Source veröffentlichte Benchmark misst 418 Pushes pro Sekunde für Entire gegenüber 65 für Cursor Origin, 15 für Pierre, 10 für GitLab und 4,7 für GitHub. Das sind Anbieterzahlen; unabhängig bestätigt sind sie nicht."
+    },
+    {
+      "t": "figure",
+      "file": "entire-git-forge-agenten-chart1.jpg",
+      "alt": "Balkendiagramm in logarithmischer Skala: Entire 418 Pushes pro Sekunde, Cursor Origin 65, Pierre 15, GitLab 10, GitHub 4,7",
+      "caption": "Pushes pro Sekunde laut Entires eigenem Open-Source-Benchmark; Anbieterangabe ohne unabhängige Prüfung, logarithmische Skala. Stand: 28. Oktober 2026."
+    },
+    {
+      "t": "h2",
+      "x": "Continuous Memory: das Repo als Agenten-Gedächtnis"
+    },
+    {
+      "t": "p",
+      "x": "Zwei neue, quelloffene und local-first gebaute CLI-Werkzeuge bilden den dritten Baustein: entire-graph erstellt lokal per tree-sitter eine Karte des Repos (Definitionen, Aufrufer, Typen, Routen, Änderungsfolgen, jeweils mit Datei- und Zeilenangabe) und soll in Entires Tests bis zu 71 Prozent Tokens sparen; Netzwerkaufrufe oder API-Schlüssel sind dafür nicht nötig. entire-brain indexiert auf dieser Karte vergangene Agenten-Sessions und Prompts aus der Git-Historie und macht daraus abrufbare Erinnerungen. Angebunden an das Entire-Backend sieht der Reviewer im Trail, welche Entscheidungen und Fakten der Agent gelernt hat."
+    },
+    {
+      "t": "h2",
+      "x": "Migration und CI"
+    },
+    {
+      "t": "p",
+      "x": "Wer GitHub als Quelle behalten will, spiegelt sein Repo über die GitHub-App; Push-Traffic läuft dann weiter über GitHub, bei einem GitHub-Ausfall liefert Entire Klone und Fetches aus dem regionalen Spiegel und nimmt Pushes auf eigenen entire/unmirrored/-Branches entgegen. Eine komplette Migration ist per Detach-Funktion oder entire-migrate-Plugin möglich. Für CI sind Buildkite und Depot integriert; Bestandsnutzer von GitHub Actions konvertieren Workflows mit bk pipeline convert beziehungsweise depot ci migrate."
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Entire tritt gegen den ehemaligen Arbeitgeber seines Gründers an - mit der These, dass Agenten-Traffic Forges architektonisch verändert. Die Kernthese (Review muss aus der Timeline an die Oberfläche) ist nachvollziehbar, die Geschwindigkeits- und Token-Versprechen stammen bislang ausschließlich vom Anbieter. Wer es prüfen will: Die Benchmarks sind laut Entire Open Source, Anmeldung und Spiegelung sind ohne Migration möglich."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Muss ich für Entire GitHub verlassen?",
+      "a": "Nein. Repositories lassen sich per GitHub-App spiegeln, GitHub bleibt dabei die Quelle der Wahrheit; Trails funktionieren auch auf gespiegelten Repos. Eine komplette Migration ist optional per Detach oder Migrations-Plugin möglich."
+    },
+    {
+      "q": "Was kostet Entire?",
+      "a": "Der Launch-Beitrag nennt keine Preise. Die Anmeldung ist ab sofort möglich; die CLI-Werkzeuge entire-graph und entire-brain sind quelloffen und laufen local-first ohne Entire-Account."
+    },
+    {
+      "q": "Wer bewertet den Code in einem Trail?",
+      "a": "Review-Agenten: Unter der Haube laufen Claude Code und Codex mit aktuellen Modellen in isolierten Sandboxes (Daytona und E2B). Welche Evals zählen, konfiguriert das Team pro Repo; Gates können zusätzlich menschliche Freigaben und erfolgreiche CI verlangen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The Git Forge for Agent-Human Collaboration",
+      "publisher": "Entire",
+      "url": "https://entire.com/blog/the-git-forge-for-agent-human-collaboration",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "GitHub's former CEO launched a competing platform for AI agents",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018817/githubs-former-ceo-launched-a-competing-platform-for-ai-agents",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "AI News Oct 28, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-28/",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "related": [
+    "nvidia-skillspector-agenten-skills-pruefen",
+    "google-harness2-open-source-agenten"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-28T08:49:00+01:00",
+  "modified": "2026-10-28T08:49:00+01:00"
+}

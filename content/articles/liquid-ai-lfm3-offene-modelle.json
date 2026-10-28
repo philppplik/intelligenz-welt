@@ -1,0 +1,119 @@
+{
+  "slug": "liquid-ai-lfm3-offene-modelle",
+  "section": "modelle",
+  "title": "LFM3: Liquid AI veröffentlicht sechs offene 2B-Modelle auf einem Backbone",
+  "dek": "Text, Vision, Audio, Omni und zwei Decision-Modelle aus derselben Basis: Liquid AIs LFM3-Familie bringt eine neue Tri-Hybrid-Architektur, 256K Kontext und offene Gewichte. Die Benchmarks stammen vom Anbieter.",
+  "tags": [
+    "Liquid AI",
+    "LFM3",
+    "Open Weights",
+    "Edge AI"
+  ],
+  "key_takeaways": [
+    "Liquid AI hat LFM3 veröffentlicht: sechs Modelle der 2B-Klasse (Text, Vision, Audio, Omni und zwei Decision-Modelle), alle aus der gemeinsamen Basis LFM3-1.7B-Base trainiert. Gewichte sind offen und ab sofort auf Hugging Face, im Playground und über die Liquid AI API verfügbar.",
+    "Die neue Tri-Hybrid-Architektur mischt 13 Faltungsschichten, 5 Sliding-Window-Attention- und 6 globale Attention-Schichten; trainiert wurde auf 22 Billionen Tokens. Das Textmodell hat 256K Kontext und belegt bei 4-Bit-Präzision rund 1 GB Speicher.",
+    "Laut Anbieter übertrifft LFM3-1.7B das größere LFM2.5-2.6B bei 35 Prozent weniger Parametern; alle Leistungsangaben sind Anbieter-Benchmarks. Liquid selbst rät in der Dokumentation wegen der Modellgröße von agentischem Coding und komplexem mehrstufigem Reasoning ab."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein kleiner leuchtender Chip auf einem Schreibtisch sendet fünf Lichtstrahlen aus, die zu Symbolen für Text, Bild, Ton und Entscheidungen werden",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Liquid AI, bekannt für effiziente Hybrid-Modelle jenseits reiner Transformer, hat mit LFM3 seine neue Generation vorgestellt. Die Idee: nicht ein großes Generalisten-Modell, sondern eine Familie kleiner Spezialisten auf einem gemeinsamen Rückgrat, die lokal laufen und sich auf einer einzelnen GPU verfeinern lassen. Die erste Ausbaustufe umfasst sechs Modelle der 2B-Klasse."
+    },
+    {
+      "t": "h2",
+      "x": "Architektur: drei Operatoren, 24 Schichten"
+    },
+    {
+      "t": "p",
+      "x": "LFM3 kombiniert drei Sequenz-Operatoren: 13 Schichten gated short convolutions (Kernelgröße 7 statt bisher 3), 5 Sliding-Window-Attention-Schichten mit 256-Token-Fenster und 6 Schichten globale Attention, deren Köpfe sich über ein Sigmoid-Gate abschalten können. Dazu kommen Partial RoPE auf den globalen Schichten und eine Sandwich-Normalisierung. Gesucht wurde die Architektur wie schon bei LFM2 automatisiert mit Hardware im Loop - diesmal über 14 Geräte- und Backend-Kombinationen, vom Galaxy S26 Ultra über einen Raspberry Pi 5 bis zu Apple M4 Max, AMD-Ryzen-AI-Laptops, Cloud-CPUs, GPUs und Qualcomms Hexagon-NPU."
+    },
+    {
+      "t": "figure",
+      "file": "liquid-ai-lfm3-offene-modelle-chart1.jpg",
+      "alt": "Balkendiagramm: 13 Schichten Gated Short Convolution, 5 Sliding-Window-Attention, 6 globale Attention von insgesamt 24 Schichten",
+      "caption": "Der Schicht-Mix der LFM3-Architektur. Quelle: Liquid AI (Anbieterangaben). Stand: 28. Oktober 2026."
+    },
+    {
+      "t": "p",
+      "x": "Trainiert wurde LFM3-1.7B-Base auf 22 Billionen Tokens; die letzten 3,5 Billionen sind eine kuratierte Mid-Training-Phase mit mehr agentischen Traces und Tool-Aufrufen, die auch das Kontextfenster auf 256.000 Tokens streckt. Der Wortschatz umfasst 128.000 Tokens, laut Dokumentation werden 16 Sprachen unterstützt, darunter Deutsch. Die Lizenz ist die hauseigene LFM Open License v1.0."
+    },
+    {
+      "t": "h2",
+      "x": "Sechs Modelle, ein Rückgrat"
+    },
+    {
+      "t": "p",
+      "x": "Aus der Basis zweigen vier Eingabe-Modalitäten ab (Text, Vision, Audio und Omni) plus zwei Decision-Modelle, die aus den Vision- und Omni-Varianten spezialisiert wurden. Das Textmodell LFM3-1.7B (1,73 Milliarden Parameter) ist für lokale Agenten in Harnesses wie Hermes Agent, Pi und OpenClaw nach-trainiert und passt bei 4-Bit-Präzision in etwa 1 GB Speicher. Reasoning ist standardmäßig aktiv und lässt sich abschalten; FP8- und NVFP4-Checkpoints stehen für GPU-Inferenz bereit."
+    },
+    {
+      "t": "h2",
+      "x": "Benchmarks und Demos - alles Anbieterangaben"
+    },
+    {
+      "t": "p",
+      "x": "Liquid AI berichtet, LFM3-1.7B schlage das Vorgänger-LFM2.5-2.6B bei 35 Prozent weniger Parametern und sei bei 8K Kontext rund 25 Prozent schneller als LFM2-1.2B. Im hauseigenen Agenten-Benchmark LiveClaw erreicht es 45,6 Punkte gegenüber 14,7 für LFM2.5-2.6B. Unabhängig geprüft ist das nicht. Die Praxis-Demos sind konkreter: Eine kurze Verfeinerung von LFM3-VL-2B an rund 3.000 Drohnenfotos von Windkraftflügeln hob die Klassifikationsgenauigkeit für Schäden von unter 10 Prozent auf 67 Prozent; als Roboter-Controller erreichte ein VLA-Ausbau 96,2 Prozent Erfolg über die vier LIBERO-Suiten und liefert auf einem Jetson AGX Orin Aktions-Chunks in unter 50 Millisekunden."
+    },
+    {
+      "t": "callout",
+      "title": "Ehrliche Einschränkung aus den eigenen Docs",
+      "x": "Liquid AI schreibt in der Modell-Dokumentation selbst: Für agentisches Coding und komplexes mehrstufiges Reasoning wird LFM3-1.7B wegen seiner geringen Größe nicht empfohlen; für wissenslastige Aufgaben rät der Anbieter zu Retrieval. Das Modell soll spezialisiert und verfeinert werden, nicht alles können."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit"
+    },
+    {
+      "t": "p",
+      "x": "Alle Basis- und nach-trainierten Gewichte stehen seit dem 27. Oktober auf Hugging Face, im Liquid Playground und über die Liquid AI API. llama.cpp, MLX und vLLM werden von Tag eins an unterstützt, LM Studio, Ollama und Unsloth sind im Ökosystem dabei. Zu den Launch-Partnern zählen AMD, Arm, Intel (via OpenVINO), NVIDIA, Qualcomm, OpenRouter und Vercel; Mercedes-Benz und Shopify haben laut Liquid vorab getestet."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Läuft LFM3 auf meinem Laptop oder Handy?",
+      "a": "Das ist der Anspruch: Das Textmodell belegt bei 4-Bit-Präzision rund 1 GB und wurde mit Hardware im Loop für Geräte vom Raspberry Pi 5 bis zu aktuellen Smartphones optimiert. llama.cpp, MLX und vLLM werden nativ unterstützt, GGUF-Builds sind auf Hugging Face verlinkt."
+    },
+    {
+      "q": "Darf ich LFM3 kommerziell nutzen?",
+      "a": "Die Modelle stehen unter Liquids eigener LFM Open License v1.0. Die Gewichte sind offen und lokal verfeinerbar; die konkreten Lizenzbedingungen solltest du im Modell-Repositorium prüfen, bevor du sie kommerziell einsetzt."
+    },
+    {
+      "q": "Wie groß ist der Unterschied zu LFM2?",
+      "a": "Neue Tri-Hybrid-Architektur mit mehr Attention-Anteil, doppelt so großem Convolutions-Kernel und deutlich mehr Training (22 Billionen Tokens plus kuratierte Mid-Training-Phase). Laut Anbieter schlägt das 1,7B-Modell den 2,6B-Vorgänger - eine Anbieterangabe, die noch keiner unabhängigen Prüfung unterlag."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing LFM3: Every Modality for Specialized Intelligence",
+      "publisher": "Liquid AI",
+      "url": "https://www.liquid.ai/blog/lfm3",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "LFM3-1.7B (Modell-Dokumentation)",
+      "publisher": "Liquid AI Docs",
+      "url": "https://docs.liquid.ai/lfm/models/lfm3-1.7b",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "AI News Oct 28, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-28/",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-open-weights",
+    "nanbeige-4-3-33b-dense-agentenmodell"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-28T08:48:59+01:00",
+  "modified": "2026-10-28T08:48:59+01:00"
+}

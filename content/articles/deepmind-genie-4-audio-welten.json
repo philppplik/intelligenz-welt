@@ -1,0 +1,123 @@
+{
+  "slug": "deepmind-genie-4-audio-welten",
+  "section": "news",
+  "title": "DeepMind stellt Genie 4 vor: Weltmodell mit nativem Ton und sprechenden Figuren",
+  "dek": "Genie 4 erzeugt als erstes DeepMind-Weltmodell auch Audio nativ, inklusive interaktiver Dialoge, und lässt sich in Echtzeit per Text steuern. Zunächst Research Preview für Trusted Tester, Ultra-Abonnenten und API-Partner folgen.",
+  "tags": [
+    "Google DeepMind",
+    "Genie 4",
+    "Weltmodelle",
+    "Audio"
+  ],
+  "key_takeaways": [
+    "DeepMind hat Genie 4 am 27. Oktober 2026 angekündigt: das erste Weltmodell des Labors mit nativem Audio - Umgebungsgeräusche, Musik und Figuren, die Dialoge führen. Die Szenen lassen sich in Echtzeit per Tastatur und Text steuern.",
+    "Gemini Omni verankert Aussehen und Verhalten der Welten, Gemini 3.8 Flash überwacht die Szene als führender Agent. DeepMind nennt die Grenzen selbst: Details driften in längeren Sitzungen, Physik, Audio-Genauigkeit und lesbarer Text sind offene Probleme.",
+    "Genie 4 läuft zunächst als Research Preview für Trusted Tester; als Nächstes kommen Google-AI-Ultra-Abonnenten in Project Genie und Early-Access-Partner in der Gemini API und in AI Studio. Preis und Modell-ID stehen noch nicht fest; Ultra startet laut Ars Technica bei 100 US-Dollar im Monat. Alle Videos und Audios tragen SynthID-Wasserzeichen."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine simulierte Wiesenlandschaft, deren Horizont in sichtbare Schallwellen übergeht, eine stilisierte Figur spricht",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Google DeepMind hat Genie 4 angekündigt, die nächste Generation seines Weltmodells. Die wichtigste Neuerung: Genie 4 erzeugt als erstes Weltmodell des Labors Ton direkt mit - vom Umgebungsrauschen über Musik bis zu Figuren, die auf Eingaben und Ereignisse in der Szene reagieren und sprechen. Gleichzeitig lassen sich die Welten in Echtzeit steuern: Kamera bewegen, Wetter ändern, neue Figuren einführen, alles per natürlicher Sprache."
+    },
+    {
+      "t": "h2",
+      "x": "Was Genie 4 neu kann"
+    },
+    {
+      "t": "p",
+      "x": "Genie 4 rendert erkundbare Umgebungen Bild für Bild aus Tastatursteuerung und Text-Prompts. Laut DeepMind setzt das Modell neue Maßstäbe bei der Physiksimulation, etwa bei Aerodynamik und Kollisionen, und vor allem bei Menschen: Figuren bewegen sich natürlicher, reagieren organisch auf ihre Umgebung und lassen sich interaktiv steuern. Das Modell ist nativ multimodal: Jede Welt trägt die Geräuschkulisse ihrer Szene, und die interaktiven Dialoge passen sich laufend an - eine Fähigkeit, die DeepMind selbst als 'die eigentliche Grenze' bezeichnet."
+    },
+    {
+      "t": "h2",
+      "x": "Gemini steuert im Hintergrund"
+    },
+    {
+      "t": "p",
+      "x": "Technisch baut Genie 4 auf der Gemini-Familie auf: Gemini Omni verankert die Simulation in realistischem Aussehen und Verhalten, während Gemini 3.8 Flash laut Ars Technica als führender Agent im Loop arbeitet - es beobachtet die Szene, zerlegt Ziele in Schritte und prüft jedes neue Bild auf Fortschritt. In einem Experiment mit Gemini 4 Argon und Gemini Robotics simuliert das Duo etwa den humanoiden Roboter Apollo von Apptronik beim Dame-Spielen, aufgeteilt in Echtzeit-Teilschritte. DeepMind sieht darin den Weg zu hybriden Weltmodellen, die logische Planung mit pixelgenauer Simulation verbinden."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit und Preis"
+    },
+    {
+      "t": "p",
+      "x": "Genie 4 startet als Research Preview für eine begrenzte Gruppe von Trusted Testern aus Kreativbranche, Journalismus, Bildung, Spieleentwicklung und Engineering. Als Nächstes sollen Google-AI-Ultra-Abonnenten in Project Genie und Early-Access-Partner in der Gemini API und in AI Studio folgen; eine Warteliste ist geöffnet. Eine Modell-ID, Preise und Dokumentation gibt es noch nicht. Ars Technica weist darauf hin, dass Google AI Ultra ab 100 US-Dollar im Monat startet und Genie 3 nie über ein sehr limitiertes Web-Erlebnis hinauskam."
+    },
+    {
+      "t": "h2",
+      "x": "Grenzen, die DeepMind selbst nennt"
+    },
+    {
+      "t": "p",
+      "x": "DeepMind listet die offenen Probleme ausdrücklich auf: In längeren Sitzungen driften visuelle Details und Objekt-Permanenz, komplexe physikalische Interaktionen, die Genauigkeit des Echtzeit-Audios, lesbarer Text, räumliche Präzision und Langzeit-Konsistenz sind aktive Forschungsfelder. Laut Ars Technica bleiben Genie-4-Welten derzeit nur einige Minuten konsistent, bevor sie vergessen, wie alles begann."
+    },
+    {
+      "t": "callout",
+      "title": "Wasserzeichen inklusive",
+      "x": "Alle von Genie 4 erzeugten Videos und Audios tragen SynthID, DeepMinds unhörbares beziehungsweise unsichtbares digitales Wasserzeichen zur Kennzeichnung von KI-Inhalten. Vor der Preview liefen laut DeepMind interne Sicherheitsevaluierungen; der Rollout über Trusted Tester soll frühes Feedback einholen, bevor das Modell breiter verfügbar wird."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das über Spielerei hinausgeht"
+    },
+    {
+      "t": "p",
+      "x": "DeepMind positioniert Weltmodelle als sichere, unendlich variable Trainingsumgebungen für Roboter und Agenten - und als Werkzeug für Film, Journalismus, Spiele und Fertigung. Tester nutzen Genie 4 bereits als 'Entwurfsmodus' für Pre-Visualisierung: Filmemacher laufen mehrere Takes einer Szene in Echtzeit durch, Fotojournalisten verwandeln einzelne Archivbilder in begehbare Simulationen, Spieleentwickler testen Stile und Mechaniken, bevor eine Zeile Engine-Code geschrieben ist. Ob daraus ein Entwicklerprodukt wird, hängt am angekündigten API-Zugang."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich Genie 4 schon nutzen?",
+      "a": "Noch nicht allgemein. Aktuell ist Genie 4 eine Research Preview für ausgewählte Trusted Tester. Als Nächstes sollen Google-AI-Ultra-Abonnenten über Project Genie und Early-Access-Partner über die Gemini API und AI Studio folgen. Eine Warteliste für Project Genie ist geöffnet."
+    },
+    {
+      "q": "Was kostet Genie 4?",
+      "a": "Google nennt noch keinen Preis für den Modellzugang und hat weder Modell-ID noch API-Dokumentation veröffentlicht. Der Verbraucherzugang läuft über Google AI Ultra, das laut Ars Technica ab 100 US-Dollar im Monat kostet."
+    },
+    {
+      "q": "Wofür will DeepMind Weltmodelle einsetzen?",
+      "a": "Als sichere Trainingsumgebungen für Roboter und Agenten sowie als Kreativwerkzeug, etwa für Film-Previsualisierung, Journalismus, Spiele-Prototyping und industrielle Simulation. Die Simulation der Welt bezeichnet DeepMind als entscheidenden Schritt auf dem Weg zu allgemeiner KI."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Genie 4: A new generation of world simulation",
+      "publisher": "Google DeepMind",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "We're announcing Genie 4, our new world model for real-time interactive simulation",
+      "publisher": "Google (Blog)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "DeepMind unveils Genie 4 world model promising more realistic physics and humans",
+      "publisher": "Ars Technica",
+      "url": "https://arstechnica.com/google/2026/10/deepminds-genie-4-world-model-adds-audio-and-more-realistic-people-to-simulations/",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "AI News Oct 28, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-28/",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "related": [
+    "kling-4-0-30-sekunden-video-omni-reference",
+    "gemini-4-argon-agenten-minecraft-durchgespielt"
+  ],
+  "lang": "de",
+  "type": "news",
+  "author": "philipp-paulik",
+  "published": "2026-10-28T08:48:38+01:00",
+  "modified": "2026-10-28T08:48:38+01:00"
+}
