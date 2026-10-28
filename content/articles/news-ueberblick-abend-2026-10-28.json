@@ -1,0 +1,131 @@
+{
+  "slug": "news-ueberblick-abend-2026-10-28",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Abend: Wer entscheidet, wenn dein Agent mitdenkt?",
+  "dek": "Eine Studie zeigt den Einfluss von KI auf Fachleute. Dazu: Anthropics Sicherheitsforschung und neue Werkzeuge von Hugging Face. Der Abendüberblick.",
+  "published": "2026-10-28T15:55:26+01:00",
+  "modified": "2026-10-28T15:55:26+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Agenten",
+    "Forschung",
+    "Hugging Face"
+  ],
+  "key_takeaways": [
+    "In einer Anthropic-Studie folgten 50 Fachleute bei vier Analyseentscheidungen zu 86 Prozent der vorgegebenen KI-Präferenz. Das ist kein allgemeines Maß für Manipulierbarkeit.",
+    "Anthropic beschreibt fünf Angriffsketten eines internen Forschungsmodells. Die betroffenen Hersteller wurden informiert; die Meldung ist keine neue öffentliche Claude-Funktion.",
+    "Hugging Face bündelt neue Funktionen für Cache, Jobs und experimentelle Sandboxes. Das Update stammt vom 26. Oktober."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zur Anthropic-Studie: 86 Prozent Übereinstimmung mit Agentenpräferenz bei vier Analyseentscheidungen, 50 KI-nutzende Fachleute.",
+    "caption": "Anthropic-Studie, veröffentlicht am 27.10.2026: 86 Prozent Übereinstimmung über vier Analyseentscheidungen. Eine Aufgabe, ein Modell, absichtlich verstärkte Präferenz; keine allgemeine Quote für KI-Nutzung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: Anthropic"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 28. Oktober 2026. Quellenstand: 15:50 Uhr MEZ.** Nicht der nächste Modellrekord steht heute im Mittelpunkt, sondern die Frage, wer bei der Arbeit mit KI eigentlich entscheidet. Drei Themen aus den Veröffentlichungen vom 26. und 27. Oktober sind dafür besonders aufschlussreich. Dieser erste Zusatzüberblick ergänzt unsere heutigen Artikel, ohne deren Themen noch einmal aufzuwärmen."
+    },
+    {
+      "t": "h2",
+      "x": "1. Selbst Fachleute übernehmen die Richtung ihres Agenten"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic hat 50 professionelle Analystinnen und Analysten mit Claude Code eine statistische Aufgabe bearbeiten lassen. Sie sollten für eine fiktive landwirtschaftliche Genossenschaft bewerten, ob ein Beratungsangebot wirkt. Vier methodische Entscheidungen blieben offen, etwa welche Produktivitätskennzahl zählt. Der Agent bekam zufällig eine Seite zugewiesen und sollte sie ehrlich vertreten, ohne Daten zu verdrehen. Die Teilnehmenden wussten davon nichts [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Über diese vier Entscheidungen hinweg wählten die Fachleute zu 86 Prozent die vom Agenten bevorzugte Option. Das bedeutet nicht, dass 86 Prozent aller Menschen von KI gesteuert werden. Untersucht wurden eine Aufgabe und ein Modell; die Präferenz war absichtlich verstärkt. Auch der unabhängige Bericht von Al Jazeera vom 28. Oktober nennt diese Grenzen [^4]."
+    },
+    {
+      "t": "p",
+      "x": "Besonders bemerkenswert: 77 Prozent verwendeten später mindestens eines der Argumente ihres Agenten, während nur 15 Prozent ihn irgendwo als Quelle dieser Argumente nannten. Die Studie spricht damit ein Problem an, das im Alltag leicht unsichtbar bleibt: Eine Entscheidung fühlt sich wie die eigene an, obwohl ihre Richtung im Gespräch entstanden ist [^1]."
+    },
+    {
+      "t": "h2",
+      "x": "2. Sicherheitsforschung: mehr als einzelne Codefehler"
+    },
+    {
+      "t": "p",
+      "x": "In einem zweiten Bericht vom 27. Oktober beschreibt Anthropic fünf Angriffsketten, die ein unveröffentlichtes internes Forschungsmodell nach anfänglicher Anleitung entwickelt habe. Betroffen waren Browser und Betriebssysteme. Nach Angaben des Unternehmens wurden die Schwachstellen den Herstellern gemeldet und behoben. Für Chrome nennt Anthropic 62 zugewiesene und bis Chrome 156 gepatchte CVEs. Das ist eine Herstellerdarstellung, kein eigener Sicherheitstest unserer Redaktion [^2]."
+    },
+    {
+      "t": "p",
+      "x": "Die wichtige Unterscheidung: Ein Modell kann mehrere Schwächen zu einer Kette verbinden. Eine einzelne Schutzschicht reicht dann möglicherweise nicht. Daraus folgt eine defensive Priorität: Updates pflegen, Rechte begrenzen und auffälliges Verhalten prüfen. Aus dem Bericht lässt sich weder ableiten, dass jedes Claude-Modell solche Fähigkeiten besitzt, noch dass alle heute eingesetzten Geräte verwundbar sind."
+    },
+    {
+      "t": "h2",
+      "x": "3. Hugging Face macht die Arbeit rund ums Modell praktischer"
+    },
+    {
+      "t": "p",
+      "x": "Der Werkzeug-Rückblick vom 26. Oktober nennt einen gemeinsamen Xet-Dateicache über mehrere Repositories. Identische Dateien sollen nur einmal gespeichert werden. Bei Jobs gibt es unter anderem Wiederholungsversuche und erneutes Starten vorhandener Jobs; experimentelle Sandboxes erlauben isolierte Ausführung. Diese Funktionen sind Infrastruktur, keine neue Modellintelligenz [^3]."
+    },
+    {
+      "t": "p",
+      "x": "Bei einem eigenen Test von Hugging Face sank der Download einer 2,15-GB-Datei auf HF Jobs von ungefähr zwei Minuten auf sieben Sekunden. Das ist ein konkreter Anbieterbenchmark, keine zugesicherte Geschwindigkeit für deinen Rechner. Interessanter als die Maximalzahl ist die Richtung: weniger doppelte Daten und besser kontrollierbare Abläufe."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Entscheidungen sichtbar machen"
+    },
+    {
+      "t": "p",
+      "x": "Alle drei Themen treffen sich bei einer praktischen Frage: Was überprüfst du selbst? Vor einer wichtigen Analyse lohnt es sich, Ziel und Kennzahl zuerst aufzuschreiben und den Agenten ausdrücklich nach der Gegenposition zu fragen. Bei Software gehören Updates und begrenzte Rechte dazu; bei Tool-Updates zählt der Test im eigenen Ablauf. Die Studie liefert keinen Grund, KI pauschal zu meiden. Sie liefert einen Grund, Zustimmung nicht mit unabhängiger Prüfung zu verwechseln."
+    },
+    {
+      "t": "p",
+      "x": "Passend dazu: Unser [Qwen-Sicherheitsartikel](/artikel/qwen-38-alibaba-proxy-schutz/) behandelt unerwarteten Netzwerkverkehr; [NVIDIAs SkillSpector](/artikel/nvidia-skillspector-agenten-skills-pruefen/) zeigt eine weitere Ebene der Prüfung von Agenten-Werkzeugen."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Originalquellen, keine übernommenen RSS-Anrisstexte. Zahlen stammen aus den jeweils genannten Anbieterberichten; wir haben weder die Studie repliziert noch die Sicherheits- oder Leistungstests selbst ausgeführt. Quellenstand 28.10.2026, 15:50 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was bedeutet die Zahl 86 Prozent?",
+      "a": "In der Studie stimmten die vier methodischen Entscheidungen der 50 KI-nutzenden Fachleute insgesamt zu 86 Prozent mit der zufällig vorgegebenen Agentenpräferenz überein. Es ist kein allgemeiner Manipulationswert."
+    },
+    {
+      "q": "Sind die beschriebenen Sicherheitsfähigkeiten öffentlich verfügbar?",
+      "a": "Der Bericht untersucht ein unveröffentlichtes internes Forschungsmodell. Daraus folgt keine entsprechende Funktion für jedes öffentliche Claude-Modell."
+    }
+  ],
+  "sources": [
+    {
+      "title": "How AI agents shape experts’ judgment calls",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/agents-judgment-calls",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "What’s new in the hf CLI and huggingface_hub library",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/blog/huggingface/whats-new-in-the-hf-cli-and-huggingface-hub-librar",
+      "accessed": "2026-10-28"
+    },
+    {
+      "title": "Experts defer to AI in decision-making, Anthropic study finds",
+      "publisher": "Al Jazeera",
+      "url": "https://www.aljazeera.com/economy/2026/10/28/experts-defer-to-ai-in-decision-making-anthropic-study-finds",
+      "accessed": "2026-10-28"
+    }
+  ],
+  "related": [
+    "qwen-38-alibaba-proxy-schutz",
+    "nvidia-skillspector-agenten-skills-pruefen"
+  ]
+}
