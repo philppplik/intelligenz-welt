@@ -1,0 +1,125 @@
+{
+  "slug": "news-ueberblick-morgen-2026-10-29",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Morgen: Agenten starten jetzt vier von zehn Pull Requests",
+  "dek": "GitHubs Jahresbericht zeigt den Agenten-Alltag in Zahlen. Dazu: Chrome holt Formularhilfen aus Gmail, und Akai öffnet einen Sampler für Vibe-Coding-Mods. Der Morgenüberblick.",
+  "published": "2026-10-29T06:48:03+01:00",
+  "modified": "2026-10-29T06:48:03+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Agenten",
+    "GitHub",
+    "Chrome"
+  ],
+  "key_takeaways": [
+    "Im September starteten Agenten über 40 Prozent der Pull Requests auf GitHub, im März waren es 17 Prozent. Gezählt wird nur erkennbare Agentennutzung auf einer Plattform.",
+    "Chromes erweitertes Autofill kann Bestellnummern, Sendungsdaten und Flugbuchungen aus Gmail in Formulare vorschlagen. Der Rollout beginnt in den USA, die Steuerung liegt in den Chrome-Einstellungen.",
+    "Akai zeigt einen noch nicht offiziell angekündigten Sampler mit offener Firmware und Vibe-Coding-Mods. SDK und weitere Öffnung sind Zusagen, noch keine ausgelieferten Produkte."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu GitHub Octoverse 2026: Über 40 Prozent der Pull Requests im September mit Agenten-Start, im März 17 Prozent. Dazu Jahreswerte 17,9 Milliarden Pushes und 1,3 Milliarden gemergte Pull Requests.",
+    "caption": "GitHub Octoverse 2026, veröffentlicht am 28.10.2026: Anteil der Pull Requests mit Agenten-Start, März 17 Prozent, September über 40 Prozent. Plattformtelemetrie, nur erkennbare Agentennutzung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: GitHub Octoverse 2026"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 29. Oktober 2026. Quellenstand: 07:30 Uhr MEZ.** Drei Veröffentlichungen vom 28. Oktober zeigen aus drei Richtungen, wie sehr der erste Arbeitsschritt bereits an Maschinen fällt: beim Code, beim Formular und sogar am Musikgerät. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne deren Themen vorwegzunehmen."
+    },
+    {
+      "t": "h2",
+      "x": "1. GitHub: Der Agent macht den ersten Entwurf"
+    },
+    {
+      "t": "p",
+      "x": "GitHubs Octoverse-Bericht misst das Jahr von Oktober 2025 bis September 2026: 17,9 Milliarden Pushes, 34,3 Milliarden Commits und 1,3 Milliarden gemergte Pull Requests. Der auffälligste Wert steckt in den Pull Requests. Im September starteten Agenten mehr als 40 Prozent davon mit einem ersten Entwurf, im März waren es noch 17 Prozent. Allein im September waren das 110 Millionen Pull Requests [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Agenten-PRs ändern häufiger mehrere Dateien (87 gegenüber 79 Prozent) und wurden zuletzt sogar schneller gemergt: 90 Prozent innerhalb von zwei Wochen, der Vergleichswert ohne erkannte Agentenbeteiligung liegt bei 86 Prozent. TypeScript bleibt die meistgenutzte Sprache vor Python und JavaScript; Rust verdoppelte seine Gemeinschaft. Deutschland zählt 6,3 Millionen Entwicklerinnen und Entwickler auf der Plattform [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Wichtig für die Einordnung: GitHub misst seine eigene Plattform und zählt Agenten nur dort, wo sie erkennbar sind. Die tatsächliche Nutzung liegt eher höher. Und dass Repositories mit Agenten-Konfigurationsdatei achtmal so viele Commits sammeln, ist ein Zusammenhang, kein Beweis dafür, dass die Datei die Ursache ist."
+    },
+    {
+      "t": "h2",
+      "x": "2. Chrome: Autofill liest jetzt in Gmail mit"
+    },
+    {
+      "t": "p",
+      "x": "Chromes Autofill kannte bisher Stammdaten wie Name, Adresse und Kreditkarte. Ab sofort kann die erweiterte Version auch Inhalte aus Gmail vorschlagen: Bestellnummern, Sendungsverfolgung und Flugbuchungen erscheinen direkt im Formular. Dahinter steckt Gemini mit Personal Intelligence [^2]."
+    },
+    {
+      "t": "p",
+      "x": "Google betont, sensible Daten blieben verschlüsselt, und in den Chrome-Einstellungen legst du fest, ob die Funktion läuft und worauf sie zugreifen darf. Der Rollout beginnt in den USA auf Desktop, Android und iOS, für Nutzer von Gemini in Chrome mit aktivierter Personal Intelligence. Ein Termin für Deutschland steht nicht in der Ankündigung. Wenn die Funktion hier startet, lohnt der erste Weg in die Einstellungen, bevor das erste Formular sie nutzt [^2]."
+    },
+    {
+      "t": "h2",
+      "x": "3. Akai: Vibe Coding kommt auf den Sampler"
+    },
+    {
+      "t": "p",
+      "x": "Der MPC Sample Key ist noch nicht einmal offiziell angekündigt, und Akai zeigt schon, was Modder damit bauen: 37 Tasten statt Pads, dazu eine offene Firmware. In kurzen Videos laufen per Vibe Coding gebaute Erweiterungen, etwa der Synthesizer Massive, Virtual-Analog- und FM-Klänge, in einem Fall ein komplett eigenes Betriebssystem. Einige Mods entstanden nach den Clips mit Claude [^3]."
+    },
+    {
+      "t": "p",
+      "x": "Firmenchef Jack O’Donnell sagte The Verge, man wolle Entwicklern früh Geräte geben, Teile der Software quelloffen legen und ein SDK bereitstellen. Die Community-Funktionen sollen auch auf das normale MPC Sample kommen. Das ist eine bemerkenswerte Kehrtwende: Statt Mods zu verklagen, liefert ein Hersteller die Werkzeuge dafür. Ankündigung und Auslieferung sind aber zwei verschiedene Dinge [^3]."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Der erste Schritt gehört zunehmend der Maschine"
+    },
+    {
+      "t": "p",
+      "x": "Ein Agent schreibt den ersten Entwurf, der Browser schlägt die Bestellnummer vor, die KI baut den Synth-Mod. Was bleibt, ist dein Teil: das Ziel setzen, das Ergebnis prüfen und die Zugriffe steuern. Auf GitHub heißt das Review-Kultur statt blindem Merge, in Chrome ein bewusster Blick in die Einstellungen, bei Akai abwarten, was das SDK wirklich liefert."
+    },
+    {
+      "t": "p",
+      "x": "Passend dazu: [Entire zeigt eine Git Forge, die für Agenten gebaut ist](/artikel/entire-git-forge-agenten/), und [warum Websites ChatGPT- und Chrome-Agenten sperren](/artikel/chatgpt-chrome-agenten-websites-sperren/)."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Originalquellen, keine übernommenen RSS-Anrisstexte. Die GitHub-Zahlen stammen aus Plattformtelemetrie des Anbieters, die Chrome-Funktion aus einer Produktankündigung und der Akai-Bericht aus einem Interview; wir haben nichts davon selbst nachgemessen. Quellenstand 29.10.2026, 07:30 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Heißt 40 Prozent, dass Agenten fast die Hälfte aller Pull Requests schreiben?",
+      "a": "Nein. Gemessen wird der erste Entwurf durch einen erkennbaren Agenten auf GitHub. Menschen prüfen und mergen weiterhin, und Nutzung außerhalb der Messung fehlt."
+    },
+    {
+      "q": "Bekomme ich das Gmail-Autofill in Deutschland?",
+      "a": "Der Rollout beginnt in den USA. Einen Termin für Deutschland nennt die Ankündigung nicht."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Octoverse: Commits, pushes, reach new highs in 2026 as developers build with agents",
+      "publisher": "GitHub Blog",
+      "url": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Chrome enhanced autofill now pulls data from Gmail",
+      "publisher": "Google Blog (Chrome)",
+      "url": "https://blog.google/products-and-platforms/products/chrome/enhanced-autofill-gmail/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Akai is embracing vibe-coded mods with an open-source MPC",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key",
+      "accessed": "2026-10-29"
+    }
+  ],
+  "related": [
+    "entire-git-forge-agenten",
+    "chatgpt-chrome-agenten-websites-sperren"
+  ]
+}
