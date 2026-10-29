@@ -1,0 +1,137 @@
+{
+  "slug": "news-ueberblick-abend-2026-10-29",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Abend: Mistral Large 4 ist jetzt open weight",
+  "dek": "Mistral veröffentlicht die Gewichte von Large 4, mit einer Lizenzbedingung für Anbieter. Dazu: Deepgram kauft Pipecat, ChatGPT kommt an Oracle-Daten.",
+  "published": "2026-10-29T16:07:00+01:00",
+  "modified": "2026-10-29T16:07:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Mistral",
+    "Sprach-Agenten",
+    "Enterprise"
+  ],
+  "key_takeaways": [
+    "Mistral veröffentlicht die Gewichte von Large 4; sie sind ab sofort auf Hugging Face ladbar. Die Lizenz erlaubt Nutzung, Anpassung und kommerzielle Produkte, verlangt aber von Model-as-a-Service-Anbietern eine Zusatzlizenz.",
+    "Deepgram übernimmt Daily, die Macher des offenen Sprach-Frameworks Pipecat. Pipecat soll unter BSD-Lizenz frei bleiben und eine unabhängige Foundation bekommen.",
+    "Oracle bringt ChatGPT über den AI Workspace an Geschäftsdaten. Bestehende Berechtigungen sollen gelten, viele Ankündigungen haben noch keinen Starttermin."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu Mistral Large 4: Sprung im Benchmark Terminal-Bench 4.0 von 28 auf 41 Prozent laut Anbieter, dazu Hinweise auf Lizenzbedingung und sofortige Verfügbarkeit der Gewichte.",
+    "caption": "Mistral Large 4, Veröffentlichung am 29.10.2026: Der Terminal-Bench-4.0-Wert ist eine Anbieterangabe aus Mistrals eigenem Release. Die Lizenz ist ein abgewandeltes MIT mit Zusatzlizenzpflicht für Model-as-a-Service.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: Mistral AI (Anbieterangaben)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 29. Oktober 2026. Quellenstand: 16:05 Uhr MEZ.** Heute dreht sich alles um die Frage, was offen ist und was kontrolliert bleibt: Mistral gibt sein Spitzenmodell zum Herunterladen frei, ein Sprach-KI-Pionier verkauft sich und verspricht Offenheit per Stiftung, und Oracle lässt ChatGPT an die Firmendaten, aber nur innerhalb der bestehenden Rechte. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+    },
+    {
+      "t": "h2",
+      "x": "1. Mistral Large 4: Die Gewichte sind da, die Lizenz hat eine Bedingung"
+    },
+    {
+      "t": "p",
+      "x": "Mistral hat heute die Gewichte von Large 4 veröffentlicht, intern \"Le Chonk\" genannt: eine Billion Parameter, von Grund auf multimodal, in Europa trainiert. Der Download auf Hugging Face ist bereits freigeschaltet; dazu gibt es Bereitstellungen über Mistral Studio, die API, OpenRouter, Microsoft Foundry und als NVIDIA-NIM-Container. Für lokale Versuche existieren GGUF-Quantisierungen von Unsloth und dem llama.cpp-Team; Hugging Face nennt als Referenz ein vLLM-Rezept auf acht H200-GPUs mit 131K Kontext [^1][^2]."
+    },
+    {
+      "t": "p",
+      "x": "Wichtig ist der Kleingedruckte: Die Mistral Ecosystem Open-Weight License ist ein abgewandeltes MIT. Nutzen, verändern, fine-tunen und kommerziell einsetzen ist erlaubt. Einzige Bedingung: Wer das Modell als Model-as-a-Service für andere betreibt, braucht eine separate kommerzielle Lizenz von Mistral [^2]. Open weight heißt hier also nicht bedingungslos frei."
+    },
+    {
+      "t": "p",
+      "x": "Zur Leistung meldet Mistral nach drei Wochen Reinforcement Learning im Benchmark Terminal-Bench 4.0 einen Sprung von 28 auf 41 Prozent bei 30 Prozent weniger Output-Token. Im Coding Agent Index von Artificial Analysis soll das Modell bei 48 Prozent mit GLM-5.3 gleichziehen und dabei 47 Prozent weniger Token pro Aufgabe brauchen. In Blindtests von Surge Code wurde es nur von Claude Opus 5.5 geschlagen. Das sind Angaben aus Mistrals eigenem Release; eine unabhängige Nachmessung dieser Werte steht mit dem heutigen Release noch aus [^1]."
+    },
+    {
+      "t": "h2",
+      "x": "2. Deepgram kauft die Macher von Pipecat"
+    },
+    {
+      "t": "p",
+      "x": "Die Sprach-KI-Firma Deepgram übernimmt Daily, das Team hinter Pipecat, dem verbreitetsten Open-Source-Framework für Sprach-Agenten. Pipecat soll unter der BSD-Lizenz frei und herstellerneutral bleiben; dazu gründen die Beteiligten eine unabhängige Pipecat Foundation. Dailys Team wechselt komplett, Mitgründer Kwindla Hultman Kramer wird Head of Open Source bei Deepgram [^3]."
+    },
+    {
+      "t": "p",
+      "x": "Technisch interessant ist der gleich vorgestellte Real-Time Context Standard: Ein offenes Protokoll soll verhindern, dass zwischen Erkennung, Sprachmodell und Ausgabe der Klangkontext verloren geht, etwa ein Flüstern oder eine unklare Stelle. Adapter übersetzen die Signale für Modelle verschiedener Anbieter. Eine fertige Voice Agent Platform kündigt Deepgram für später an; Details folgen erst nach der heutigen Entwicklerkonferenz [^3]."
+    },
+    {
+      "t": "h2",
+      "x": "3. ChatGPT darf bei Oracle an die Geschäftsdaten"
+    },
+    {
+      "t": "p",
+      "x": "Auf der Oracle AI World hat der Konzern am 27. Oktober den AI Workspace vorgestellt: Beschäftigte sollen über ChatGPT auf Fusion Applications, NetSuite, die Oracle AI Database und OCI zugreifen und autorisierte Abläufe ausführen können, etwa Lieferprobleme untersuchen oder den Monatsabschluss vorbereiten. Bestehende Berechtigungen und Freigaben sollen erhalten bleiben; wo nötig, prüfen Menschen vor der Ausführung [^4]."
+    },
+    {
+      "t": "p",
+      "x": "Dazu kommen der App Composer, der KI-erstellte Anwendungen unter Kontrolle der Firmen-IT in OCI betreibt, und ein verwalteter Sicherheitstest-Dienst namens Security Mesh, für den Oracle OpenAI-Modelle nennt, aber keine Versionen. OpenAI spricht von 130.000 aktiven ChatGPT- und 95.000 Codex-Nutzern bei Oracle; dass eine Marktrecherche der Recruiter statt zwei bis vier Tagen nur noch 15 bis 20 Minuten dauert, ist ein Anbieterbeispiel, kein unabhängiger Test [^5]. Vieles steht erst in begrenztem Zugang, feste Starttermine fehlen [^4]."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Offen ist, was du prüfen kannst"
+    },
+    {
+      "t": "p",
+      "x": "Drei Meldungen, drei Modelle von Offenheit: Mistral legt die Gewichte auf den Tisch, knüpft aber den Weiterverkauf als Dienst an eine Zusatzlizenz. Deepgram lagert sein Framework in eine Foundation aus, bisher ein Versprechen. Oracle öffnet die Firmendaten nur innerhalb der vorhandenen Rechte. Für dich heißt das: Wer Mistral testen will, kann ab sofort selbst messen, statt Anbieterwerte zu glauben. Wer Sprach-Agenten baut, sollte Pipecats Foundation und den neuen Standard beobachten. Und wer in einem Oracle-Haus arbeitet, sollte den AI Workspace zuerst mit den eigenen Berechtigungen ausprobieren."
+    },
+    {
+      "t": "p",
+      "x": "Passend dazu: [Voxtral 3 zeigt, wie Mistrals Sprach-Agenten hören und antworten](/artikel/mistral-voxtral-3-voice-agents/), und [Yelp lässt die KI schon im Restaurant anrufen](/artikel/yelp-check-for-me-ki-telefoniert-restaurant/)."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen: Mistrals Veröffentlichung, der Hugging-Face-Blogbeitrag mit Lizenztext, die Pressemitteilung von Deepgram, zwei heise-Artikel und die Ankündigung von OpenAI, keine übernommenen RSS-Anrisstexte. Benchmark- und Nutzungszahlen sind Anbieterangaben; wir haben nichts selbst nachgemessen. Quellenstand 29.10.2026, 16:05 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist Mistral Large 4 wirklich kostenlos nutzbar?",
+      "a": "Für eigene Anwendungen, auch kommerzielle, ja. Wer das Modell als gehosteten Dienst für andere anbietet (Model-as-a-Service), braucht eine separate kommerzielle Lizenz von Mistral."
+    },
+    {
+      "q": "Bleibt Pipecat nach der Übernahme wirklich offen?",
+      "a": "Das ist die Zusage: BSD-Lizenz, Herstellerneutralität und eine unabhängige Foundation. Ob das dauerhaft trägt, wird sich an den nächsten Releases zeigen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Mistral Large 4 (Le Chonk) is now open weight",
+      "publisher": "Mistral AI",
+      "url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Mistral Large 4 on Hugging Face",
+      "publisher": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/mistral-large4",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Deepgram is acquiring Daily, makers of Pipecat",
+      "publisher": "Deepgram (Pressemitteilung)",
+      "url": "https://deepgram.com/blog/daily-pipecat-deepgram",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Oracle lässt ChatGPT an die Geschäftsdaten",
+      "publisher": "heise online",
+      "url": "https://www.heise.de/news/Oracle-laesst-ChatGPT-an-die-Geschaeftsdaten-11504915.html",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/oracle-apps-in-chatgpt/",
+      "accessed": "2026-10-29"
+    }
+  ],
+  "related": [
+    "mistral-voxtral-3-voice-agents",
+    "yelp-check-for-me-ki-telefoniert-restaurant"
+  ]
+}
