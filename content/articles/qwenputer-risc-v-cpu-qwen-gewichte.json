@@ -1,0 +1,157 @@
+{
+  "slug": "qwenputer-risc-v-cpu-qwen-gewichte",
+  "section": "modelle",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Qwenputer: Eine komplette RISC-V-CPU, kompiliert in die Gewichte von Qwen 3.5",
+  "dek": "Divyansh Agrawal hat einen 32-Bit-RISC-V-Prozessor in die Gewichte von Qwen 3.5 4B kompiliert - ohne Training. Die CPU nutzt den DeltaNet-State des Modells als exaktes RAM, besteht die offiziellen RISC-V-Tests und läuft millionenfach fehlerfrei.",
+  "tags": [
+    "Qwen",
+    "RISC-V",
+    "Open Source",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "Qwenputer steckt eine vollständige 32-Bit-RISC-V-CPU (RV32IM plus Erweiterungen) in elf zusätzlichen Transformer-Layern vor Qwen 3.5 4B - sämtliche Gewichte werden von einem Compiler berechnet, kein einziges wird trainiert.",
+    "Der Gated-DeltaNet-State des Modells dient als exakt überschreibbares RAM: Die CPU besteht die offiziellen riscv-tests und lief 18 Millionen Instruktionen ohne einen einzigen Fehler.",
+    "Auf dem NUPA-Benchmark für lange Integer-Arithmetik steigt die Trefferquote von 48,6 auf 100 Prozent; ein experimentelles Dateisystem übersteht sogar den Wechsel in einen neuen Chat.",
+    "Das Projekt ist komplett offen (GitHub, Hugging Face, ModelScope), braucht aber 18,8 GByte Speicher und ein eigenes Ladeprogramm - als praktisches Werkzeug ist es nicht gedacht."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: leuchtender Prozessor-Chip, der in ein Netz aus Transformer-Gewichten eingebettet ist, Platine in Tiefblau, ohne Menschen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Entwickler Divyansh Agrawal hat einen Computer in ein Sprachmodell kompiliert. Qwenputer ist ein unverändertes Qwen 3.5 4B, dem elf zusätzliche Transformer-Layer vorangestellt sind - und diese elf Layer sind eine vollständige 32-Bit-RISC-V-CPU. Kein Plugin, kein Tool, keine Sandbox: Ein selbst geschriebener Compiler berechnet jedes einzelne Gewicht, trainiert wird nichts. Das Projekt ist Open Source und eines der ungewöhnlichsten KI-Experimente des Jahres."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Qwenputer ist ein experimentelles Modell: Qwen 3.5 4B mit einer 32-Bit-RISC-V-CPU, die direkt in die Gewichte kompiliert wurde. Die CPU nutzt den internen DeltaNet-State des Modells als RAM, führt C- und MicroPython-Programme innerhalb der Forward-Passes aus und besteht die offiziellen RISC-V-Tests. Code und Modelle stehen auf GitHub, Hugging Face und ModelScope."
+    },
+    {
+      "t": "h2",
+      "x": "Wie das funktioniert"
+    },
+    {
+      "t": "p",
+      "x": "Die CPU ist ein RV32IM-Kern mit Zba-Erweiterung und einer kleinen Bignum-Einheit für große Zahlen. Ihr RAM liegt im Gated-DeltaNet-State des Modells: Weil dessen Delta-Regel den laufenden Zustand Zeile für Zeile exakt überschreiben kann, wird jede Zeile zu einer Speicherzelle - der Compiler setzt Gate-Wert, Beta und Schlüssel so, dass Code, Daten, Register und Programmzähler dort bitgenau liegen. Qwen schickt der CPU Instruktionen über das Tool-Call-Format, in dem das Modell ohnehin gut trainiert ist; ein kleines Ladeprogramm namens RvChat lädt die Firmware und hält die Trace-Token aus Qwens eigentlichen Layern heraus. Jeder Forward-Pass simuliert Taktzyklen des Prozessors."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Zahlen zeigen"
+    },
+    {
+      "t": "p",
+      "x": "Die offiziellen riscv-tests besteht die CPU, ihre Programme stimmen mit dem Referenz-Emulator qemu überein, und im freien Lauf - ohne korrigierende Referenzmaschine zwischen den Schritten - hat sie 18 Millionen Instruktionen ohne einen einzigen Fehler ausgeführt. Rund 230.000 ausgegebene Positionen hat Agrawal gegen eine Referenzmaschine zurückgespielt: null Abweichungen. Und die Sprachfähigkeit leidet nicht messbar: Der normale Text des Modells bleibt innerhalb des Rauschens des Basis-Modells (KL-Divergenz 6e-4 bei einem Rauschfloor von 5e-4)."
+    },
+    {
+      "t": "table",
+      "head": [
+        "Benchmark",
+        "Qwen 3.5 4B",
+        "Qwen 3.5 4B + Python-Tool",
+        "Qwenputer"
+      ],
+      "rows": [
+        [
+          "div_big (DeepMind-Set)",
+          "72,5 %",
+          "95,0 %",
+          "97,5 %"
+        ],
+        [
+          "mul_div_multiple_longer (DeepMind-Set)",
+          "90,0 %",
+          "97,5 %",
+          "100 %"
+        ],
+        [
+          "NUPA long-int",
+          "48,6 %",
+          "100 %",
+          "100 %"
+        ]
+      ],
+      "caption": "Rechen-Benchmarks aus dem Qwenputer-Blog; Messungen des Projektteams, nicht unabhängig geprüft. Quelle: divagr.com/blog/qwenputer, Stand: 29.10.2026."
+    },
+    {
+      "t": "p",
+      "x": "Lesenswert ist die Logik hinter den Ergebnissen: In den arithmetischen DeepMind-Sets schlägt die eingebaute CPU sogar das Python-Tool, weil sie exakt rechnet statt zu raten. Der Fairness halber: Das Basismodell würde diese Aufgaben sonst per Tool-Aufruf lösen - Qwenputer zeigt, dass dieselbe Exaktheit auch komplett in den Gewichten stecken kann."
+    },
+    {
+      "t": "h2",
+      "x": "Ein Dateisystem, das den Chat überlebt"
+    },
+    {
+      "t": "p",
+      "x": "Weil das RAM schon funktionierte, hat Agrawal ihm ein Dateisystem spendiert: über interne put-, append-, get-, list- und delete-Operationen - wieder ohne echte Tool-Aufrufe. Dateinamen werden in einen von 1.024 Slots gehasht, der Text liegt verkettet mit acht Token pro Zeile; insgesamt passen bis zu 512 Dateien mit rund 53.000 Token in den DeltaNet-State. Der Zustand lässt sich am Ende eines Gesprächs speichern und im nächsten laden - die Dateien sind noch da. Damit beantwortet Qwen Fragen zu Fakten, die sich zwischen zwei Chats geändert haben, zu 90 Prozent richtig; werden die alten Chats stattdessen eingefügt, sind es nur 30 Prozent. Gegen Python-basierte Memory-Tools hält das Dateisystem mit (83,3 zu 78,9 Prozent). Dieser Teil ist noch experimentell und liegt auf einem separaten Branch (rv-store)."
+    },
+    {
+      "t": "h2",
+      "x": "Die Grenzen"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Der Checkpoint wächst auf 18,8 GByte - grob das Doppelte des Basismodells, wobei ein Großteil davon Null-Padding ist.",
+        "Qwenputer braucht das Ladeprogramm RvChat: Mit einem normalen generate()-Aufruf startet die CPU nicht.",
+        "Jede CPU-Instruktion kostet ein paar dekodierte Token - große Rechnungen dauern Sekunden statt Millisekunden. Der gebatchte Executor der Benchmarks schafft rund 3.200 CPU-Token pro Sekunde auf einer L4.",
+        "Das Projekt ist eine Machbarkeitsstudie, kein Produkt: Agrawal beschreibt es selbst als Experiment."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Warum das wichtig ist"
+    },
+    {
+      "t": "p",
+      "x": "Die Idee steht auf Forschung zu linearen Transformer-Schichten als schnelle Gewichts-Programmierer (Schlag et al., 2021) - Qwenputer treibt sie ins Extrem und zeigt, dass exakte, klassische Berechnung vollständig in den Gewichten eines Modells leben kann. Relevant wird das auch für die Sicherheitsforschung: Als Nächstes will Agrawal testen, ob ein Modell schädliches Reasoning im RNN-State verstecken kann, ohne dass Chain-of-Thought-Überwachung es bemerkt - und ob kompilierte, exakte Gewichte als Monitor im Modell selbst taugen. Beides sind offene Fragen der Alignment-Forschung, für die Qwenputer ein ungewöhnlich greifbares Testbett liefert."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich Qwenputer einfach ausprobieren?",
+      "a": "Ja, aber mit Aufwand: Code und Modelle sind offen (GitHub, Hugging Face, ModelScope). Du brauchst knapp 19 GByte Speicher für den Checkpoint und das mitgelieferte Ladeprogramm RvChat - ein normaler Chat-Aufruf startet die CPU nicht."
+    },
+    {
+      "q": "Wurde am Modell etwas trainiert?",
+      "a": "Nein. Qwen 3.5 4B bleibt unverändert; alle Gewichte der elf CPU-Layer werden von einem Compiler berechnet. Es gibt kein Training und kein Finetuning."
+    },
+    {
+      "q": "Ist die CPU schnell genug für den Praxiseinsatz?",
+      "a": "Nein, und das ist nicht das Ziel. Jede Instruktion kostet ein paar dekodierte Token; der Benchmark-Executor schafft rund 3.200 CPU-Token pro Sekunde auf einer L4. Qwenputer ist eine Machbarkeitsstudie - es zeigt, dass exakte Berechnung in Gewichten möglich ist, nicht dass sie praktisch überlegen wäre."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Qwenputer: A computer, compiled into the weights of a language model",
+      "publisher": "Divyansh Agrawal (Blog)",
+      "url": "https://divagr.com/blog/qwenputer",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "divagr18/qwenputer",
+      "publisher": "GitHub",
+      "url": "https://github.com/divagr18/qwenputer",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "AI News Oct 29, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-29/",
+      "accessed": "2026-10-29"
+    }
+  ],
+  "related": [
+    "qwen-38-alibaba-proxy-schutz",
+    "gvs5h-selbst-orchestrierung-qwen-livecodebench"
+  ],
+  "published": "2026-10-29T09:06:39+01:00",
+  "modified": "2026-10-29T09:06:39+01:00"
+}

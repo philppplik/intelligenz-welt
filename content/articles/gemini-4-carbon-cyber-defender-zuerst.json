@@ -1,0 +1,149 @@
+{
+  "slug": "gemini-4-carbon-cyber-defender-zuerst",
+  "section": "news",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Gemini 4 Carbon: Googles neues Spitzenmodell kommt zuerst zu Cyber-Verteidigern",
+  "dek": "Zwei Wochen nach Argon meldet Google das nächste Gemini-4-Modell: Platz 1 im Artificial-Analysis-Index v5, deutliche Zuwächse in Coding und Cybersecurity - und ein ungewöhnlicher Rollout, bei dem zuerst Cyber-Verteidiger zum Zug kommen. Die Fakten und unabhängigen Messwerte.",
+  "tags": [
+    "Google",
+    "Gemini",
+    "KI-Modell",
+    "Cybersecurity"
+  ],
+  "key_takeaways": [
+    "Gemini 4 Carbon belegt laut Google im aktualisierten Intelligence Index v5 von Artificial Analysis mit 59 Punkten Platz 1 - Vorgänger Argon kam auf 50.",
+    "In Googles eigenen Cybersecurity-Benchmarks, jeweils ohne Guardrails gemessen, erreicht Carbon 88,2 Prozent bei SEC-bench Pro, 71,0 Prozent bei CWE-bench und 54,8 Prozent bei ExploitGym.",
+    "Der Rollout dreht die übliche Reihenfolge um: Zuerst erhalten ausgewählte Cyber-Verteidiger Zugriff, dann Partner im Fairwind-Programm, später Entwickler, Unternehmen und Verbraucher.",
+    "Unabhängige Messungen zeigen auch Schwächen: Im Vals AI Index liegt Carbon hinter Claude Sonnet 5.5, und die Halluzinationsrate steigt laut Artificial Analysis von 4 auf 11 Prozent."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: stilisiertes Schutzschild aus leuchtenden Code-Zeilen über einer dunklen Serverlandschaft, ohne Menschen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Zwei Wochen nach Gemini 4 Argon legt Google nach. Am 28. Oktober 2026 hat das Unternehmen Gemini 4 Carbon angekündigt - laut Google das erste Modell mit Platz 1 im neu kalibrierten Intelligence Index v5 von Artificial Analysis. Mindestens so bemerkenswert wie die Benchmarks ist der Rollout: Statt zuerst Entwickler und Verbraucher zu bedienen, gibt Google die neuen Fähigkeiten zunächst Cyber-Verteidigern."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Gemini 4 Carbon ist Googles neues Frontier-Modell mit Fokus auf Cybersecurity und lange, agentische Arbeitsabläufe. Öffentlich verfügbar ist es vorerst nicht: Ab dieser Woche bekommen ausgewählte Cyber-Verteidiger Zugriff, danach Partner über das Fairwind-Programm; Entwickler, Unternehmen und Verbraucher sollen folgen, sobald Google Feedback gesammelt und die Guardrails angepasst hat. Der Einführungspreis entspricht dem von Argon: 2 US-Dollar pro Million Eingabe-Token, 10 US-Dollar pro Million Ausgabe-Token."
+    },
+    {
+      "t": "h2",
+      "x": "Was Google meldet"
+    },
+    {
+      "t": "p",
+      "x": "Nach den Anbieter-Angaben erreicht Carbon in drei Cybersecurity-Benchmarks Bestwerte, jeweils ohne Schutzvorrichtungen (Guardrails) gemessen: 88,2 Prozent bei SEC-bench Pro für das autonome Finden von Schwachstellen in echter Software, 54,8 Prozent bei ExploitGym für das Validieren von Exploits und 71,0 Prozent bei CWE-bench (Collinear) für das Schreiben von Fixes. In der WebDev Arena springt das Modell mit 1.768 Punkten auf Platz 4, ein Plus von 89 Elo gegenüber Argon. In Googles eigener Benchmark-Auswahl führt Carbon 15 von 16 Tests an - wie alle Anbieter-Benchmarks ist auch diese Auswahl mit Vorsicht zu genießen."
+    },
+    {
+      "t": "figure",
+      "file": "gemini-4-carbon-cyber-defender-zuerst-chart1.jpg",
+      "alt": "Balkendiagramm: Gemini 4 Carbon erreicht 88,2 Prozent bei SEC-bench Pro, 71,0 Prozent bei CWE-bench und 54,8 Prozent bei ExploitGym",
+      "caption": "Cybersecurity-Ergebnisse von Gemini 4 Carbon nach Anbieter-Angaben, jeweils ohne Guardrails gemessen. Quelle: Google, Stand: 28.10.2026."
+    },
+    {
+      "t": "p",
+      "x": "Zusätzlich nennt Google interne Ergebnisse, die sich nicht unabhängig prüfen lassen: Auf hauseigenen Benchmarks soll Carbon mehr als doppelt so oft sicheren Code erzeugen wie Argon, und das Chrome-Team soll beim Schreiben hochwertiger Sicherheits-Patches mehr als zehnmal bessere Ergebnisse als mit dem Frontier-Modell eines nicht genannten Wettbewerbers gemessen haben."
+    },
+    {
+      "t": "h2",
+      "x": "Unabhängige Messungen: stark, aber nicht überall vorne"
+    },
+    {
+      "t": "p",
+      "x": "Artificial Analysis bestätigt den Sprung: Carbon (Reasoning-Stufe \"high\") führt den Intelligence Index v5 mit 59 Punkten an - laut Auswertung vor allem dank Spitzenwerten in komplexem Reasoning, Wissensabruf und wissenschaftlichen Aufgaben, mit Platz 1 in vier der neun Einzelwertungen. Im agentischen Coding liegt Carbon mit 59 Punkten aber weiter drei Punkte hinter Claude Code mit Opus 5.5, im Knowledge-Work-Benchmark AA-Briefcase hinter Kimi K3.1 Pro, Muse Wonder und Grok 4.7. Die Antwortgenauigkeit steigt gegenüber Argon von 48 auf 58 Prozent, die Halluzinationsrate klettert von 4 auf 11 Prozent - immer noch der zweitniedrigste Wert im Ranking."
+    },
+    {
+      "t": "p",
+      "x": "Die Evaluierungsplattform Vals AI setzt Carbon mit 70,36 Prozent Genauigkeit auf Platz 2 - hinter Claude Sonnet 5.5 (70,85), vor Claude Opus 5.5 (70,18) und Argon (69,24), und das bei geringeren Kosten (10,51 US-Dollar pro Test). In der Agent Arena von Arena.ai landet Carbon über mehr als 21.900 echte Sessions gemessen auf Platz 2 hinter Opus 5.5, bei median 1,80 US-Dollar pro Aufgabe rund 72 Prozent günstiger als der Spitzenreiter. In der Text Arena führt Carbon mit 1.528 Punkten knapp vor Argon (1.520)."
+    },
+    {
+      "t": "h2",
+      "x": "Alignment: Googles interne Tests"
+    },
+    {
+      "t": "p",
+      "x": "In Googles internen Tests sinkt die Rate erfolgreichen Cheatings auf Terminal-Bench 4.0 auf 0,0 Prozent, die Versuchsrate auf 0,4 Prozent. Schwerwiegende Fehlverhaltens-Alarme in Googles Coding-Umgebungen gingen dem Unternehmen zufolge um fast 80 Prozent zurück, unbelegte Behauptungen etwa um die Hälfte, Overreach um 26 und Under-Service um 29 Prozent. Im Indirect-Prompt-Injection-Benchmark von Gray Swan blockt Carbon laut Google jeden getesteten Angriff (0,0 Prozent; Argon: 0,7) - The Decoder merkt dazu an, dass dieser Test inzwischen gesättigt wirkt. Alle Werte in diesem Absatz stammen aus Googles eigener Evaluierung."
+    },
+    {
+      "t": "h2",
+      "x": "Rollout: Verteidiger zuerst"
+    },
+    {
+      "t": "quote",
+      "x": "Starting this week, we will make Carbon available to a subset of cyber defenders and will gradually phase access to additional trusted partners through our Fairwind Program.",
+      "cite": "Google, Ankündigungsblog zu Gemini 4 Carbon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+    },
+    {
+      "t": "p",
+      "x": "Google beteiligt sich außerdem am freiwilligen Pre-Release-Testverfahren der US-Regierung. Als Grund für die ungewöhnliche Reihenfolge nennt das Unternehmen die gestiegenen Cybersecurity-Fähigkeiten: Sie sollen zuerst der Verteidigung zugutekommen, bevor das Modell über die Produktoberflächen allgemein verfügbar wird."
+    },
+    {
+      "t": "h2",
+      "x": "Preis und Kosten"
+    },
+    {
+      "t": "p",
+      "x": "Zum Start verlangt Google wie bei Argon 2 US-Dollar pro Million Eingabe-Token und 10 US-Dollar pro Million Ausgabe-Token; zwischengespeicherte Eingaben sind um 95 Prozent rabattiert. Nach Ablauf der Einführungsphase gelten 4 beziehungsweise 20 US-Dollar. Im Index-Lauf von Artificial Analysis kostete Carbon 7,76 US-Dollar pro Aufgabe - fast exakt auf Argons Niveau (7,68) und rund 23 Prozent unter Claude Opus 5.5 (10,04)."
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Zwei Frontier-Releases innerhalb von zwei Wochen zeigen, wie kurz die Zyklen geworden sind. Dass Google ein leistungsstärkeres Modell zuerst an Verteidiger gibt statt an den Massenmarkt, ist ein neues Muster - und ein Indiz, dass die Cyber-Fähigkeiten aktueller Modelle inzwischen als sensibel genug gelten, um den Rollout zu verändern. Ob unabhängige Benchmarks die Cyber-Sprünge bestätigen, wird sich zeigen: Bisher stammen SEC-bench Pro, ExploitGym und CWE-bench aus Googles eigener Messung."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wann kann ich Gemini 4 Carbon nutzen?",
+      "a": "Noch nicht öffentlich. Ab dieser Woche erhalten laut Google ausgewählte Cyber-Verteidiger Zugriff, danach Partner über das Fairwind-Programm. Entwickler, Unternehmen und Verbraucher sollen folgen, sobald Google Feedback ausgewertet und die Guardrails angepasst hat; einen Termin nennt das Unternehmen nicht."
+    },
+    {
+      "q": "Was kostet Gemini 4 Carbon?",
+      "a": "Zum Start 2 US-Dollar pro Million Eingabe- und 10 US-Dollar pro Million Ausgabe-Token, zwischengespeicherte Eingaben sind 95 Prozent günstiger. Nach der Einführungsphase steigen die Preise auf 4 beziehungsweise 20 US-Dollar pro Million Token."
+    },
+    {
+      "q": "Ist Carbon wirklich das beste KI-Modell?",
+      "a": "Im Intelligence Index v5 von Artificial Analysis ja (Platz 1, 59 Punkte). In anderen unabhängigen Messungen nicht überall: Im Vals AI Index liegt Claude Sonnet 5.5 vorn, im agentischen Coding Claude Code mit Opus 5.5. Und die Halluzinationsrate steigt gegenüber Argon von 4 auf 11 Prozent."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Gemini 4 Carbon",
+      "publisher": "Google",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Google Deepmind releases Gemini 4 Carbon just two weeks after Argon with gains across the board",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Announcing Artificial Analysis Intelligence Index v5",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "AI News Oct 29, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-29/",
+      "accessed": "2026-10-29"
+    }
+  ],
+  "related": [
+    "gemini-4-argon-agenten-minecraft-durchgespielt",
+    "deepmind-genie-4-audio-welten"
+  ],
+  "published": "2026-10-29T09:06:39+01:00",
+  "modified": "2026-10-29T09:06:39+01:00"
+}

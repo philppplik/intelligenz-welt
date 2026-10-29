@@ -1,0 +1,131 @@
+{
+  "slug": "anthropic-einbruch-drittsoftware-cathedral",
+  "section": "analyse",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Bericht: KI-Agenten drangen über Drittsoftware in Anthropic-Systeme ein",
+  "dek": "Das Startup Cathedral ließ nach eigenen Angaben KI-Agenten auf Anthropic los - über Schwachstellen in Business-Software von Drittanbietern kamen sie in interne Systeme. Anthropic bestätigt einen begrenzten Zugriff, widerspricht aber in zentralen Punkten. Was belegt ist und was strittig bleibt.",
+  "tags": [
+    "Anthropic",
+    "Cybersicherheit",
+    "KI-Agenten",
+    "Bug Bounty"
+  ],
+  "key_takeaways": [
+    "Laut einem Berichtsentwurf Cathedrals, der der Washington Post vorliegt, fanden KI-Agenten des Startups in unter zwölf Stunden Wege zu Meeting-Transkripten, Gehaltsdaten und Slack-Nachrichten - über Drittsoftware, nicht über Anthropic-Code.",
+    "Anthropic bestätigt den Zugriff auf eine begrenzte Zahl von Vertriebs-, HR- und IT-Systemen; Claude-Chats, Quellcode und Modellgewichte waren dem Unternehmen zufolge nie exponiert.",
+    "Strittig sind Dauer und Umfang: Cathedral spricht von unter zwölf Stunden, Anthropic von mehrtägigen Versuchen; ein ehemaliger OpenAI-Mitarbeiter erhebt schwerere Vorwürfe, die Anthropic zurückweist.",
+    "Der Angriff lief im Rahmen von Anthropics Bug-Bounty-Programm - doch Anthropic wirft Cathedral vor, mit unvollständiger Offenlegung gegen die Regeln verstoßen zu haben."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: leuchtende KI-Agenten-Pfade, die über Drittprogramm-Fenster in ein abstraktes Firmennetz führen, ohne Menschen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Das Cybersicherheits-Startup Cathedral hat nach eigenen Angaben KI-Agenten auf Anthropic angesetzt - und ist über Schwachstellen in externer Admin- und Vertriebssoftware in interne Systeme gelangt. Anthropic bestätigt den Vorfall grundsätzlich, streitet aber über fast alles andere: Dauer, Umfang und ob sich das Startup an die Regeln des Bug-Bounty-Programms gehalten hat. Der Fall zeigt vor allem eines: Die schwächste Flanke von KI-Laboren ist nicht das Modell, sondern die Business-Software drumherum."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Ja, es gab einen Zugriff: Anthropic bestätigt, dass Forscher des Startups Cathedral über Drittsoftware in eine begrenzte Zahl von Vertriebs-, HR- und IT-Systemen gelangten, darunter Kontaktdaten von Kunden und Partnern sowie einfache Nutzerkonto-Datensätze. Nicht betroffen waren den Angaben zufolge Gespräche mit Claude, Quellcode und Modellgewichte. Wie tief der Zugriff wirklich ging, ist zwischen beiden Seiten umstritten."
+    },
+    {
+      "t": "h2",
+      "x": "Was beide Seiten bestätigen"
+    },
+    {
+      "t": "p",
+      "x": "Der Zugriff erfolgte nicht über Anthropic-Code, sondern über externe Admin- und Vertriebsprogramme. Anthropic schloss die betroffenen Zugänge nach eigenen Angaben noch am selben Tag, deaktivierte die Drittprogramme bis zur Behebung und informierte US-Bundesbehörden. Der Angriff war Teil von Anthropics Bug-Bounty-Programm, in dem Forscher für gefundene Schwachstellen belohnt werden. Cathedral wurde von ehemaligen Mitarbeitern der US-Effizienzbehörde DOGE gegründet (Gavin Kliger, Luke Farritor, Marko Elez und Jack Stein), ist laut Gizmodo mit 1,4 Milliarden US-Dollar bewertet und hat 160 Millionen US-Dollar von Investoren wie Andreessen Horowitz und Sequoia Capital eingesammelt."
+    },
+    {
+      "t": "h2",
+      "x": "Worüber beide Seiten streiten"
+    },
+    {
+      "t": "p",
+      "x": "Cathedral sagt: Unter zwölf Stunden. Dem Berichtsentwurf des Startups, der der Washington Post vorliegt, fanden die Agenten Wege zu Meeting-Transkripten, Gehaltsdaten, Stellenangeboten und Slack-Nachrichten in weniger als zwölf Stunden. Anthropic sagt: mehrere Tage. Nach Darstellung von Anthropic-Red-Teamer Logan Graham sondierte das Startup zunächst tagelang erfolglos Anthropic-Systeme und wich erst dann auf Drittsoftware aus. Dort habe Cathedral zwei Schwachstellen gefunden, aber nur eine gemeldet - die zweite habe Anthropic selbst entdeckt und gepatcht."
+    },
+    {
+      "t": "quote",
+      "x": "The fact that weaknesses in ordinary enterprise software can compromise the infrastructure of even the most advanced organizations should be a wake-up call for every company in America.",
+      "cite": "Cathedral-Bericht, zitiert nach Gizmodo und der Washington Post",
+      "url": "https://gizmodo.com/former-doge-staffers-new-startup-claims-it-hacked-anthropic-2000830560"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic wirft Cathedral zudem vor, mit unvollständiger Offenlegung gegen die Programmregeln verstoßen zu haben: Das Angreifen von Drittanbietern und das Abziehen von Daten gingen über die Safe-Harbor-Regeln hinaus, so Graham - wobei er die Entdeckung der Schwachstellen ausdrücklich begrüßte. Cathedral hält dagegen, man habe sich an übliche Praktiken der Sicherheitsforschung gehalten."
+    },
+    {
+      "t": "h2",
+      "x": "Der Streit um den Slack-Zugriff"
+    },
+    {
+      "t": "p",
+      "x": "Verschärft wird die Debatte durch Will Depue, ehemaliger OpenAI-Mitarbeiter: Ihm zufolge hatte Cathedral vollen Admin-Zugriff auf Anthropics Slack-Workspace, konnte jede Nachricht lesen und sich in beliebige Nutzerkonten einloggen - so berichten es ihm mehrere Quellen, die er für hochgradig verlässlich hält. Graham widerspricht: Depues Quellen lägen falsch, nannte aber mit Verweis auf die Sensibilität des Falls keine Details. Alex Stamos, Sicherheitschef des KI-Startups Cognition, das Modelle von Anthropic nutzt, hält die Ergebnisse gegenüber der Washington Post für bedeutsam: Integrierte Drittanbieter-Apps seien ein branchenweites Problem, und Anthropic hätte seine externen Dienste besser absichern können. Belegt ist bisher keine der schärferen Behauptungen - festzuhalten bleibt: Die dokumentierte Datenmenge liegt über dem, was Anthropic ursprünglich eingeräumt hat, und unter dem, was Cathedral und Depue behaupten."
+    },
+    {
+      "t": "h2",
+      "x": "Was Unternehmen daraus lernen sollten"
+    },
+    {
+      "t": "p",
+      "x": "Grahams eigene Schlussfolgerung: Angreifer lassen KI-Agenten bereits rund um die Uhr auf externe Abhängigkeiten los, und selbst Modelle eine halbe bis ganze Generation hinter der Frontier reichen dafür aus. Seine Antwort sind kontinuierliche interne Penetrationstests und Software, die mit formaler Verifikation neu gebaut wird - was KI seiner Ansicht nach erstmals wirtschaftlich macht."
+    },
+    {
+      "t": "quote",
+      "x": "You probably want to red team yourself all the time. Current models are very creative.",
+      "cite": "Logan Graham, Anthropic, zitiert nach The Decoder",
+      "url": "https://the-decoder.com/ai-agents-hacked-anthropic-maker-of-arguably-the-most-capable-ai-models-for-cyberdefense/"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Der Fall bestätigt ein Muster, das sich durch die jüngsten KI-Sicherheitsvorfälle zieht: Die Modell-Frontends der Labore sind hart gepatcht, die darum liegenden SaaS-Werkzeuge oft nicht. Agenten senken die Kosten, genau diese Flanke systematisch abzutasten. Für Unternehmen heißt das: Das Inventar der Dritt-Tools mit Datenzugriff ist Teil der eigenen Angriffsfläche - und gehört in jedes Bedrohungsmodell."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wurden Claude-Chats oder Modellgewichte gestohlen?",
+      "a": "Nein, sagt Anthropic. Gespräche mit Claude, Quellcode und Modellgewichte waren den Angaben zufolge nie exponiert. Der Zugriff betraf Vertriebs-, HR- und IT-Systeme von Drittanbietern, darunter Kontaktdaten von Kunden und Partnern."
+    },
+    {
+      "q": "War der Angriff legal?",
+      "a": "Er lief im Rahmen von Anthropics Bug-Bounty-Programm. Ob sich Cathedral an alle Regeln hielt, ist umstritten: Anthropic wirft dem Startup vor, nur eine von zwei Schwachstellen gemeldet und Daten abgezogen zu haben, was über die Safe-Harbor-Regeln hinausgehe. Cathedral sagt, es habe übliche Forschungspraxis befolgt."
+    },
+    {
+      "q": "Wie gefährlich sind KI-Agenten für Unternehmenssoftware?",
+      "a": "Anthropic-Red-Teamer Logan Graham warnt, dass Angreifer Agenten bereits rund um die Uhr auf externe Abhängigkeiten ansetzen - und dass dafür schon Modelle eine halbe bis ganze Generation hinter der aktuellen Frontier ausreichen. Seine Empfehlung: kontinuierliches Red-Teaming der eigenen Systeme."
+    }
+  ],
+  "sources": [
+    {
+      "title": "AI agents hacked Anthropic, maker of arguably the most capable AI models for cyberdefense",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/ai-agents-hacked-anthropic-maker-of-arguably-the-most-capable-ai-models-for-cyberdefense/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Former DOGE Staffers' New Startup Claims It Hacked Anthropic",
+      "publisher": "Gizmodo",
+      "url": "https://gizmodo.com/former-doge-staffers-new-startup-claims-it-hacked-anthropic-2000830560",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "AI News Oct 29, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-29/",
+      "accessed": "2026-10-29"
+    }
+  ],
+  "related": [
+    "anthropic-claude-angriffsflaeche-code",
+    "microsoft-guardian-agents-insider-risk"
+  ],
+  "published": "2026-10-29T09:06:39+01:00",
+  "modified": "2026-10-29T09:06:39+01:00"
+}

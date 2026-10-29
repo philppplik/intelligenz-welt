@@ -1,0 +1,121 @@
+{
+  "slug": "android-studio-bring-your-own-agent",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Android Studio Rabbit 2: „Bring Your Own Agent“ bringt über 40 Coding-Agenten in die IDE",
+  "dek": "Google öffnet Android Studio: Mit dem stabilen Rabbit-2-Release lassen sich über 40 ACP-kompatible Coding-Agenten in der IDE installieren - von Claude über Codex bis Antigravity. Dazu kommen offizielle Plugins für Claude Code und Codex sowie Terminal-Werkzeuge, die den Token-Verbrauch senken sollen.",
+  "tags": [
+    "Android",
+    "Google",
+    "Entwicklerwerkzeuge",
+    "KI-Agenten"
+  ],
+  "key_takeaways": [
+    "„Bring Your Own Agent“ (BYOA) ist mit Android Studio Rabbit 2 stabil: Über 40 Agenten, die das offene Agent Client Protocol sprechen, lassen sich per Marketplace installieren und parallel nutzen.",
+    "Die Agenten bekommen direkten Zugriff auf Projektstruktur, Symbolauflösung, Compose Previews, Emulator und Logcat; ein neuer „Change Review“-Agent prüft KI-Änderungen auf Knopfdruck.",
+    "Die Android CLI ist jetzt offizielles Plugin für Claude Code und Codex; in Googles internen Tests erledigten Agenten UI-Aufgaben damit 77 Prozent schneller und brauchten bis zu dreimal weniger Token.",
+    "Für Apps selbst bringt Google eine Agentic API auf Basis von Gemini Nano 4 (Alpha) und die AppFunctions API (Beta) als einheitliche Tool-Schicht für lokale und systemweite Agenten."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: abstrakte IDE-Oberfläche mit mehreren Agenten-Icons, die sich in eine Werkzeugleiste einreihen, dunkelblauer Hintergrund, ohne Menschen",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Auf dem Android Dev Summit hat Google am 28. Oktober 2026 Android Studio Rabbit 2 vorgestellt - und die IDE damit endgültig für fremde Coding-Agenten geöffnet. „Bring Your Own Agent“, im September als Canary-Vorschau gestartet, ist jetzt stabil: Über das offene Agent Client Protocol (ACP) lassen sich mehr als 40 Agenten direkt in Android Studio installieren. Wer Android-Apps baut, muss sich nicht mehr für einen KI-Anbieter entscheiden."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "„Bring Your Own Agent“ ist jetzt stabil in Android Studio Rabbit 2: Über 40 ACP-kompatible Coding-Agenten - darunter Claude Agent, OpenAIs Codex und Google Antigravity - lassen sich über den eingebauten Marketplace installieren, parallel betreiben und jederzeit wechseln. Die Agenten erhalten direkten Zugriff auf Projektstruktur, Symbolauflösung, Compose Previews, Emulator und Logcat."
+    },
+    {
+      "t": "h2",
+      "x": "Bring Your Own Agent: Was stabil wurde"
+    },
+    {
+      "t": "p",
+      "x": "Installiert werden die Agenten über Settings > Tools > AI > Agents; mehrere lassen sich gleichzeitig einrichten und im Wechsel nutzen - etwa wenn das Kontingent eines Anbieters erschöpft ist. Über ACP bekommen die Agenten das, was die IDE ohnehin weiß: den vollständigen Projektgraphen, Build-Setup und Plattformdetails, dazu Build-Diagnosen, UI-Werkzeuge wie Compose Previews, SDK-Tools und die Kontrolle des Emulators. Wer Antigravity nutzt, bekommt über die Anmeldung Zugriff auf die neuesten Gemini-Modelle, sobald sie erscheinen."
+    },
+    {
+      "t": "h2",
+      "x": "Review, Migration, Benchmark"
+    },
+    {
+      "t": "p",
+      "x": "Große KI-Änderungen zu prüfen, ist eine der meistgenannten Schmerzstellen - Googles Antwort heißt Change Review: Aus den anstehenden Agenten-Änderungen oder dem Git-Fenster heraus erzeugt Android Studio auf Wunsch einen Bericht potenzieller Probleme, per /review-Befehl auch mit geführtem Walkthrough durch lange Änderungen. Der Migrations-Assistent übersetzt alte XML-Layouts in idiomatisches Jetpack Compose (derzeit im Canary), und Android Bench 2.0 misst, wie Modelle und Harnesses bei echten, mehrtägigen Android-Aufgaben abschneiden - bewertet wird, ob das Ergebnis tatsächlich funktioniert, plus Zeit und Kosten."
+    },
+    {
+      "t": "h2",
+      "x": "Terminal: Android CLI wird offizielles Plugin"
+    },
+    {
+      "t": "p",
+      "x": "Für alle, die ihre Agenten im Terminal oder in CI-Pipelines laufen lassen, ist die Android CLI jetzt als offizielles Plugin für Claude Code und Codex verfügbar (ebenso für Antigravity). Neu ist der Befehl android preview: Er rendert Compose Previews ohne Emulator, damit Agenten ihre UI-Änderungen selbst visuell prüfen können. In Googles internen Tests erledigten Agenten UI-Aufgaben damit 77 Prozent schneller und verbrauchten bis zu dreimal weniger Token. Die LeakCanary-Integration (android profiler leakcanary) wertet Heap-Dumps auf dem Rechner statt auf dem Gerät aus - laut Google fanden die leistungsstärksten Modelle Speicherlecks damit fast doppelt so schnell bei rund 25 Prozent weniger Token. Echte Hardware gibt es per android device remote aus Googles Gerätelabor."
+    },
+    {
+      "t": "h2",
+      "x": "Agenten in Apps: Gemini Nano 4 und AppFunctions"
+    },
+    {
+      "t": "p",
+      "x": "Über die Entwicklerwerkzeuge hinaus öffnet Google die Plattform selbst: Eine Agentic API (Alpha) in ML Kit, angetrieben von Gemini Nano 4, führt Funktionen automatisch aus, verwaltet Chat-Verläufe und die Orchestrierungsschleife samt Sicherheitsfiltern - lokal auf dem Gerät. Die AppFunctions API (Beta) nutzt das Model Context Protocol als einheitliche Tool-Schicht, damit Apps ihre Funktionen lokalen oder systemweiten Agenten anbieten können; A2UI (Alpha) lässt Agenten statt Textblöcken interaktive Oberflächen aus echten App-Komponenten anzeigen. Über die Connected Apps Platform sollen App-Dienste in Google-Suche und Gemini-App einziehen - laut The Decoder sind bereits über 50 Partner-Integrationen live, darunter Adobe, Peloton und Experian."
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Mit BYOA dreht Google die IDE-Logik der letzten zwei Jahre um: Statt Entwickler an das eigene Modell zu binden, wirbt Android Studio jetzt offen um Claude-, Codex- und sonstige Nutzer. Das offene ACP-Protokoll macht den Wechsel zwischen Agenten zur Sache von Minuten - der Wettbewerb verschiebt sich vom Modellzugang zur Qualität der Werkzeug-Anbindung. Für Android-Entwickler ist das ab sofort Alltag, keine Vorschau mehr."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welche Agenten kann ich in Android Studio nutzen?",
+      "a": "Über 40 Agenten, die das offene Agent Client Protocol (ACP) sprechen - darunter Claude Agent, OpenAIs Codex und Google Antigravity. Installiert werden sie über Settings > Tools > AI > Agents; mehrere Agenten lassen sich parallel einrichten und wechseln."
+    },
+    {
+      "q": "Ist Bring Your Own Agent schon stabil?",
+      "a": "Ja. Nach der Canary-Vorschau im September ist BYOA mit Android Studio Rabbit 2 stabil verfügbar. Einzelne Zusatzfunktionen wie der Migrations-Assistent für XML-Layouts liegen weiter im Canary-Kanal."
+    },
+    {
+      "q": "Brauche ich dafür ein bestimmtes KI-Abo?",
+      "a": "Du meldest dich mit deinem bestehenden Plan beim jeweiligen Anbieter an oder hinterlegst einen API-Schlüssel. Laut Google werden Enterprise- und Consumer-Pläne unterstützt - Details hängen vom Agenten-Anbieter ab."
+    }
+  ],
+  "sources": [
+    {
+      "title": "What's new in Android developer tools and performance at Android Dev Summit",
+      "publisher": "Android Developers Blog (Google)",
+      "url": "https://developer.android.com/blog/posts/android-dev-summit-26-developer-tools-performance",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Build your way: Use any AI agent of your choice in Android Studio",
+      "publisher": "Android Developers Blog (Google)",
+      "url": "https://developer.android.com/blog/posts/build-your-way-use-any-ai-agent-of-your-choice-in-android-studio",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Google opens Android development to third-party AI agents and unveils new Gemini APIs",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/google-opens-android-development-to-third-party-ai-agents-and-unveils-new-gemini-apis/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "AI News Oct 29, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-29/",
+      "accessed": "2026-10-29"
+    }
+  ],
+  "related": [
+    "google-harness2-open-source-agenten",
+    "entire-git-forge-agenten"
+  ],
+  "published": "2026-10-29T09:06:39+01:00",
+  "modified": "2026-10-29T09:06:39+01:00"
+}
