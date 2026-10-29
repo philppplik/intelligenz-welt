@@ -5,8 +5,8 @@
   "type": "news",
   "title": "KI am Mittag: Ein offenes Modell, das dir richtig zuhört",
   "dek": "NVIDIAs offenes Sprachmodell transkribiert, übersetzt und ordnet Sprecher zu. Dazu: schärfere Benchmark-Regeln gegen Test-Schummelei und Valves Antwort auf KI-Klone. Der Mittagsüberblick.",
-  "published": "2026-10-29T09:58:00+01:00",
-  "modified": "2026-10-29T09:58:00+01:00",
+  "published": "2026-10-29T10:00:00+01:00",
+  "modified": "2026-10-29T10:00:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "KI-Überblick",
@@ -28,7 +28,7 @@
   "body": [
     {
       "t": "p",
-      "x": "**Mittagsüberblick vom 29. Oktober 2026. Quellenstand: 10:30 Uhr MEZ.** Am Vormittag geht es um eine Frage in drei Varianten: Wem vertraust du die Arbeit an? Ein offenes Sprachmodell, das auf deiner Hardware laufen kann, ein Benchmark, der seine Antworten versteckt, damit ihn keiner auswendig lernt, und eine Plattform, die KI-Klone nicht verbieten will. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+      "x": "**Mittagsüberblick vom 29. Oktober 2026. Quellenstand: 10:00 Uhr MEZ.** Am Vormittag geht es um eine Frage in drei Varianten: Wem vertraust du die Arbeit an? Ein offenes Sprachmodell, das auf deiner Hardware laufen kann, ein Benchmark, der seine Antworten versteckt, damit ihn keiner auswendig lernt, und eine Plattform, die KI-Klone nicht verbieten will. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
     },
     {
       "t": "h2",
@@ -85,7 +85,7 @@
     {
       "t": "callout",
       "title": "So ist dieser Überblick entstanden",
-      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen, keine übernommenen RSS-Anrisstexte. Modellwerte stammen vom Anbieter und von Leaderboards, Benchmark-Verschiebungen aus einem Fachbericht, Valve-Aussagen aus einem Konferenzbericht; wir haben nichts davon selbst nachgemessen. Quellenstand 29.10.2026, 10:30 Uhr MEZ."
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen, keine übernommenen RSS-Anrisstexte. Modellwerte stammen vom Anbieter und von Leaderboards, Benchmark-Verschiebungen aus einem Fachbericht, Valve-Aussagen aus einem Konferenzbericht; wir haben nichts davon selbst nachgemessen. Quellenstand 29.10.2026, 10:00 Uhr MEZ."
     }
   ],
   "faq": [
