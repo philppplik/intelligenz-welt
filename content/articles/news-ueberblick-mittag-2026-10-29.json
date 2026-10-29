@@ -1,0 +1,131 @@
+{
+  "slug": "news-ueberblick-mittag-2026-10-29",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Mittag: Ein offenes Modell, das dir richtig zuhört",
+  "dek": "NVIDIAs offenes Sprachmodell transkribiert, übersetzt und ordnet Sprecher zu. Dazu: schärfere Benchmark-Regeln gegen Test-Schummelei und Valves Antwort auf KI-Klone. Der Mittagsüberblick.",
+  "published": "2026-10-29T09:58:00+01:00",
+  "modified": "2026-10-29T09:58:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Sprachmodelle",
+    "Benchmarks",
+    "Steam"
+  ],
+  "key_takeaways": [
+    "NVIDIA Nemotron 3.5 Transcribe bündelt Transkription in 40 Sprachen, Übersetzung in 31 und Sprecherzuordnung in 13 in einem offenen Modell. Die Spitzenwerte stammen von Anbieter- und Leaderboard-Messungen, nicht von unserem Test.",
+    "Der Intelligence Index von Artificial Analysis legt jetzt 60 Prozent seines Gewichts auf geheime Testsätze. Der gemessene Abstand offener Modelle zur Spitze springt dadurch von 3 auf 12 Punkte.",
+    "Valve rät Indie-Studios gegen KI-Klone zu Community und regelmäßigen Updates statt Verboten. Gemeldete Erpressungsfälle will die Plattform verfolgen."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu NVIDIA Nemotron 3.5 Transcribe: Transkription in 40 Sprachen, Übersetzung in 31, Sprecherzuordnung in 13, Aufnahmen bis zu einer Stunde und acht Sprecher.",
+    "caption": "NVIDIA Nemotron 3.5 Transcribe, veröffentlicht am 28.10.2026: Sprachabdeckung nach Aufgabe. Anbieter- und Leaderboard-Angaben, keine Redaktionsmessung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: NVIDIA / Hugging Face"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Mittagsüberblick vom 29. Oktober 2026. Quellenstand: 10:30 Uhr MEZ.** Am Vormittag geht es um eine Frage in drei Varianten: Wem vertraust du die Arbeit an? Ein offenes Sprachmodell, das auf deiner Hardware laufen kann, ein Benchmark, der seine Antworten versteckt, damit ihn keiner auswendig lernt, und eine Plattform, die KI-Klone nicht verbieten will. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+    },
+    {
+      "t": "h2",
+      "x": "1. Nemotron 3.5 Transcribe: ein Checkpoint für das ganze Meeting"
+    },
+    {
+      "t": "p",
+      "x": "NVIDIAs neues offenes Sprachmodell erledigt vier Aufgaben in einem einzigen Checkpoint: transkribieren in 40 Sprachen, übersetzen in 31 davon, Sprecher in 13 Sprachen zuordnen und Fragen zum Audio beantworten. Aufnahmen bis zu einer Stunde und bis zu acht Sprecher sind vorgesehen. Gesteuert wird per normaler Anweisung, etwa \"Transkribiere und kennzeichne jeden Sprecher\" [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Die Messwerte sind stark: Erster Platz unter den offenen Modellen auf Hugging Faces englischer ASR-Bestenliste mit 5,33 Prozent Wortfehlerrate, dazu der beste Wert in zwei Sprecher-Benchmarks. Von den 30 Milliarden Parametern sind pro Token nur etwa 4 Milliarden aktiv. Wichtig: Das sind Anbieter- und Leaderboard-Messungen, kein Test aus unserer Redaktion. In einer medizinischen Fallstudie senkte Feintuning die Fehlerrate auf zuvor unbekannten Sprechern von 22,4 auf 12,2 Prozent [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Praktisch: Das Modell läuft ab sofort über vLLM, quantisierte Versionen für lokale RTX-Rechner sind angekündigt. Es ist für aufgezeichnetes Audio gebaut, nicht für Live-Streams. Wer Fachvokabular braucht, kann es im Prompt nennen oder mit den offenen Granary-v2-Daten nachjustieren [^1]."
+    },
+    {
+      "t": "h2",
+      "x": "2. Benchmarks: Weniger Punkte für Auswendiglernen"
+    },
+    {
+      "t": "p",
+      "x": "Artificial Analysis hat seinen Intelligence Index auf Version 5 umgestellt: Neun Einzeltests in vier gleich gewichteten Kategorien, und erstmals entfallen 60 Prozent des Gewichts auf geheime Testsätze. Ziel ist, das gezielte Trainieren auf bekannte Testfragen zu erschweren. Die Methodik-Seite weist die Gewichte einzeln aus [^2]."
+    },
+    {
+      "t": "p",
+      "x": "Die Folgen sind sichtbar: Das offene Kimi K3.1 Pro fällt von Platz vier auf neun, Grok 4.7 verliert zwölf Punkte, und der gemessene Abstand offener Modelle zur Spitze wächst von 3 auf 12 Punkte. Der KI-Forscher Nathan Lambert warnt vor vorschnellen Schlüssen: Viele Trainingsumgebungen ähneln ohnehin den Benchmarks. Und geheime Tests haben einen Preis: Fehler in den Fragen kann niemand mehr von außen prüfen; bei einem Wissenstest musste Artificial Analysis genau das einräumen [^3]."
+    },
+    {
+      "t": "h2",
+      "x": "3. Valve: Gegen KI-Klone helfen Community und Updates"
+    },
+    {
+      "t": "p",
+      "x": "Indie-Entwickler in Korea berichteten Valve von Erpressermails: Zahlt, oder wir bauen euer Spiel per KI nach und veröffentlichen es vor euch. Valves Antwort auf der Entwicklerveranstaltung Steam Indie Connect: keine Verbote für KI-Werkzeuge, kein Gatekeeping. Klone habe es schon immer gegeben, KI beschleunige sie nur [^4]."
+    },
+    {
+      "t": "p",
+      "x": "Stattdessen empfiehlt Valve zwei Verteidigungslinien: eine eigene Community, die dem Studio vertraut, und kontinuierliche Updates, die das Original besser machen als jede Kopie. Für die Erpressungen selbst sei die Strafverfolgung zuständig; gemeldete Fälle wolle man verfolgen. Zusätzlich erklärte Valve die Next-Fest-Beschwerden: In den ersten zwei Tagen spielt Steam Demos fast zufällig aus, erst danach greifen personalisierte Empfehlungen. Die KI-Offenlegung im Shop bleibt ohnehin Pflicht [^4]."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Vertrauen wandert, aber es verschwindet nicht"
+    },
+    {
+      "t": "p",
+      "x": "Beim Sprachmodell vertraust du deinen eigenen Rechner statt einer Cloud. Beim Benchmark vertraust du versteckten Tests statt offenen Fragen. Bei Steam vertraut Valve der Community statt dem Kontrollgremium. Die praktische Aufgabe bleibt dieselbe: Kennze die Grenzen dessen, was du prüfen kannst, und prüfe es. Bei Transkripten heißt das: Namen und Sprecherwechsel stichprobenartig gegen das Original hören. Bei Benchmarks: auf die Methodik schauen, nicht nur auf den Rang."
+    },
+    {
+      "t": "p",
+      "x": "Passend dazu: [Warum Dessa nur menschliche Sprache verstehen soll](/artikel/block-dessa-sprachmodell-nur-menschliche-sprache/) und [als Gemini 4 Argon Minecraft durchspielte](/artikel/gemini-4-argon-agenten-minecraft-durchgespielt/)."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen, keine übernommenen RSS-Anrisstexte. Modellwerte stammen vom Anbieter und von Leaderboards, Benchmark-Verschiebungen aus einem Fachbericht, Valve-Aussagen aus einem Konferenzbericht; wir haben nichts davon selbst nachgemessen. Quellenstand 29.10.2026, 10:30 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist Nemotron 3.5 Transcribe für Live-Untertitel geeignet?",
+      "a": "Nein, das Modell ist für aufgezeichnetes Audio gebaut. Für Echtzeit-Streams nennt NVIDIA es nicht."
+    },
+    {
+      "q": "Warum fallen offene Modelle im neuen Index ab?",
+      "a": "Weil 60 Prozent des Gewichts jetzt auf geheimen Testsätzen liegen, auf die nicht trainiert werden konnte. Ob die alte oder die neue Platzierung näher an der Praxis liegt, ist offen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
+      "publisher": "NVIDIA / Hugging Face Blog",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Artificial Analysis Intelligence Index: Methodik",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "New Artificial Analysis index widens the gap between open and closed models",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/new-artificial-analysis-index-widens-the-gap-between-open-and-closed-models/",
+      "accessed": "2026-10-29"
+    },
+    {
+      "title": "Valve zu KI-Klonen: Community und Updates sollen Indie-Spiele schützen",
+      "publisher": "heise online",
+      "url": "https://www.heise.de/news/Valve-zu-KI-Klonen-Community-und-Updates-sollen-Indie-Spiele-schuetzen-11504029.html",
+      "accessed": "2026-10-29"
+    }
+  ],
+  "related": [
+    "block-dessa-sprachmodell-nur-menschliche-sprache",
+    "gemini-4-argon-agenten-minecraft-durchgespielt"
+  ]
+}
