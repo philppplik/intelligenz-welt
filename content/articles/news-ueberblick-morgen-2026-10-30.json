@@ -1,0 +1,133 @@
+{
+  "slug": "news-ueberblick-morgen-2026-10-30",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Morgen: OpenAI schreibt sein Regelwerk neu",
+  "dek": "OpenAI ordnet das Regelwerk seiner Modelle um fünf Werte neu. Dazu: Gemini bearbeitet Dateien direkt im Chat, und eine Warnung zu präparierten Coding-Agenten.",
+  "published": "2026-10-30T06:44:00+01:00",
+  "modified": "2026-10-30T06:44:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "OpenAI",
+    "Gemini",
+    "Sicherheit"
+  ],
+  "key_takeaways": [
+    "OpenAI hat den Model Spec um fünf Werte neu organisiert, darunter Treue zur menschlichen Absicht und Schadensminimierung. Die aktuellen Modelle erfüllen die Vorgabe laut OpenAI selbst noch nicht vollständig.",
+    "Gemini erzeugt und bearbeitet jetzt PDFs, Docs, Tabellen, Präsentationen und Code direkt im Chat. PDFs gehen auch mobil, alle anderen Formate vorerst nur im Web.",
+    "Symantec beschreibt einen unautorisierten Relay-Dienst, der echte Codex- und Claude-Code-Werkzeuge installiert, aber deren Sandbox abschaltet und die Zugangsdaten austauscht. Missbrauch wurde bisher nicht beobachtet."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zum überarbeiteten OpenAI Model Spec: fünf zentrale Werte des neuen Regelwerks, mit Hinweis, dass die aktuellen Modelle die Vorgabe laut OpenAI noch nicht vollständig erfüllen.",
+    "caption": "OpenAI Model Spec, Überarbeitung vom 29.10.2026: Das Regelwerk bündelt sein Verhaltensleitbild in fünf Werten. OpenAI weist selbst darauf hin, dass die Modelle die Vorgabe noch nicht vollständig erfüllen.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: OpenAI"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 30. Oktober 2026. Quellenstand: 06:36 Uhr MEZ.** Drei Veröffentlichungen vom Donnerstag drehen sich um dieselbe Frage: Wer kontrolliert eigentlich, was dein KI-Werkzeug tut? OpenAI schreibt das Verhaltensfundament seiner Modelle neu, Gemini wird zum Dokumenten-Editor im Chat, und Sicherheitsforschende warnen vor Coding-Agenten, deren Schutzmechanismen heimlich abgeschaltet wurden. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+    },
+    {
+      "t": "h2",
+      "x": "1. OpenAI: Fünf Werte statt langer Regelliste"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI hat seinen Model Spec aktualisiert, das öffentliche Regelwerk für das Verhalten der eigenen Modelle. Statt vieler Einzelregeln stehen jetzt fünf Werte im Zentrum: Treue zur menschlichen Absicht, Schadensminimierung, Ehrlichkeit und Transparenz, menschliche Handlungsfähigkeit und Fürsorge. Die Befehlskette ist explizit: OpenAI setzt die Grenzen, Entwickler steuern darunter ihre Anwendungen, und du steuerst die konkrete Arbeit [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Spürbar ändern sich zwei Dinge: Der Spec erklärt neu, wie Erinnerungen und Gesprächskontext in die Einschätzung deiner Absichten einfließen sollen, und er streicht den Großteil der detaillierten Stilregeln. Der Ton soll sich künftig an deinen Vorlieben orientieren, nicht an festen Vorgaben. Wichtig ist OpenAIs eigener Hinweis: Die aktuellen Modelle erfüllen den Spec noch nicht vollständig. Das Dokument beschreibt das Ziel, nicht den Ist-Zustand [^1]."
+    },
+    {
+      "t": "h2",
+      "x": "2. Gemini: Dokumente jetzt direkt im Chat bearbeiten"
+    },
+    {
+      "t": "p",
+      "x": "Google rüstet Gemini zum Datei-Editor auf: PDFs, Google Docs, Tabellen, Präsentationen, Markdown, Textdateien und Code lassen sich ab sofort im Chat erzeugen, in der Vorschau öffnen und direkt bearbeiten. Im Vollbild tippst du selbst, markierst Stellen und lässt Gemini Texte oder Grafiken anpassen, etwa eine Tabelle in ein Diagramm verwandeln. PDFs funktionieren im Web und mobil, die übrigen Formate vorerst nur im Web. Verfügbar ist das für alle Nutzer in allen Sprachen, in denen die Gemini-App läuft [^2]."
+    },
+    {
+      "t": "p",
+      "x": "Neu ist nicht das Erzeugen von Dateien, das gab es seit Anfang des Jahres, sondern das Überarbeiten ohne App-Wechsel. Damit rückt Gemini näher an Claudes Datei-Werkzeuge heran, die Generieren und Bearbeiten von Dokumenten schon länger direkt im Chat erlauben [^3]."
+    },
+    {
+      "t": "h2",
+      "x": "3. Warnung: Coding-Agenten mit abgeschalteter Sandbox"
+    },
+    {
+      "t": "p",
+      "x": "Symantecs Threat-Hunter-Team beschreibt einen unautorisierten Relay-Dienst, der die echten Kommandozeilen-Werkzeuge von OpenAI Codex und Claude Code installiert und danach deren Konfiguration umbiegt: Die Sandbox, die eigentlich begrenzt, was der Agent auf dem Rechner darf, wird abgeschaltet, bei Codex auf den Modus \"danger-full-access\". Alle Anfragen laufen über fremde Server, und deine echten Zugangsdaten werden durch Token des Dienstes ersetzt. Beobachtet wurde das seit Anfang 2026 bei einem Dutzend Organisationen, vor allem in Festland-China, wo die Werkzeuge offiziell nicht verkauft werden [^4]."
+    },
+    {
+      "t": "p",
+      "x": "Einen Missbrauch haben die Forschenden nicht beobachtet, und die Werkzeuge selbst haben keine Sicherheitslücke: Sie verhalten sich nach der Umkonfiguration wie vorgesehen. Aber ein Dienst in dieser Position liest jeden Prompt, jede Datei und jedes Secret mit und kann Antworten verändern. Der Rat bleibt simpel: Coding-Agenten nur über die offiziellen Wege der Anbieter installieren [^4][^5]."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Kontrolle wird zum Verkaufsargument"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI beantwortet die Kontrollfrage mit einem Wertekatalog, selbst auferlegt und selbst geprüft. Google bindet dich fester an den eigenen Chat, indem auch der letzte Ausweichgrund, die Datei, darin bleibt. Und der Relay-Fall zeigt, was passiert, wenn die Kontrolle an Dritte rutscht: Der Agent ist echt, aber die Leitplanken sind weg. Neue Regelwerke und neue Werkzeuge ersetzen nicht, dass du weißt, woher dein Agent kommt und wer seine Antworten sehen kann."
+    },
+    {
+      "t": "p",
+      "x": "Passend dazu: [Wie präparierte AGENTS.md-Dateien Coding-Agenten kapern](/artikel/agents-md-downloads-angriff/) und [warum Walmart Shopping-Agenten nur mit festen Regeln hereinlässt](/artikel/walmart-agent-gateway-shopping-agenten-regeln/)."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen: OpenAIs Ankündigung zum Model Spec, Googles Blogbeitrag zur Dateibearbeitung, der Bericht von Symantecs Threat Hunter Team sowie Fachartikel von The Verge und Dark Reading, keine übernommenen RSS-Anrisstexte. Quellenstand 30.10.2026, 06:36 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist der Model Spec von OpenAI?",
+      "a": "Das öffentliche Regelwerk, in dem OpenAI beschreibt, wie sich seine Modelle verhalten sollen. Die neue Version bündelt die Regeln in fünf Werten und definiert, wessen Anweisungen im Konflikt Vorrang haben. OpenAI räumt selbst ein, dass die aktuellen Modelle die Vorgabe noch nicht vollständig erfüllen."
+    },
+    {
+      "q": "Bin ich von dem Relay-Problem betroffen?",
+      "a": "Nach den bisherigen Beobachtungen nicht, wenn du Codex oder Claude Code über die offiziellen Installationswege bezogen hast und keine Setup-Einzeiler aus fremden Quellen ausgeführt hast. Der Dienst richtet sich an Nutzer in Märkten, in denen die Werkzeuge offiziell nicht verkauft werden."
+    }
+  ],
+  "sources": [
+    {
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/updated-model-spec",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "Edit and preview documents directly in Gemini",
+      "publisher": "Google (The Keyword)",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "You can generate and edit Google Docs files directly in Gemini chats now",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "Sandbox Flipped to 'Danger-Full-Access': Unauthorized AI Relays Create Risk for Organizations",
+      "publisher": "Symantec Threat Hunter Team (Broadcom)",
+      "url": "https://www.security.com/threat-intelligence/openai-claude-unauthorized-relays",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "Shadowy AI Relay Disables OpenAI Codex, Claude Code Sandboxes",
+      "publisher": "Dark Reading",
+      "url": "https://www.darkreading.com/threat-intelligence/ai-relay-service-openai-codex-claude-code-sandboxes",
+      "accessed": "2026-10-30"
+    }
+  ],
+  "related": [
+    "agents-md-downloads-angriff",
+    "walmart-agent-gateway-shopping-agenten-regeln"
+  ]
+}
