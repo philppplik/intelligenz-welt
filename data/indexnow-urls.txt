@@ -1,6 +1,1 @@
-https://intelligenz-welt.de/artikel/anthropic-studie-experten-agenten-einfluss/
-https://intelligenz-welt.de/artikel/deepgram-kauft-daily-pipecat/
-https://intelligenz-welt.de/artikel/linux-kernel-cve-2026-98432-claude-exploit/
-https://intelligenz-welt.de/artikel/mistral-large-4-open-weights/
-https://intelligenz-welt.de/artikel/openai-pro-limits-verdoppelt/
-https://intelligenz-welt.de/artikel/spawn-3-millionen-token-agenten-entwicklung/
+https://intelligenz-welt.de/artikel/news-ueberblick-mittag-2026-10-30/
