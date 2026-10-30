@@ -1,0 +1,133 @@
+{
+  "slug": "news-ueberblick-mittag-2026-10-30",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Mittag: OpenAI lässt Agenten von Agenten überwachen",
+  "dek": "Nach dem Hugging-Face-Vorfall überwacht OpenAI seine Agenten jetzt flächendeckend. Dazu: Dein Dot schreibt dir jetzt SMS, und Reddit verliert Google-Traffic.",
+  "published": "2026-10-30T09:58:00+01:00",
+  "modified": "2026-10-30T09:58:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "OpenAI",
+    "ChatGPT",
+    "Reddit"
+  ],
+  "key_takeaways": [
+    "OpenAI hat seine Misalignment-Überwachung auf alle Frontier-Trainingsläufe, Evaluierungen und den internen Codex-Verkehr ausgeweitet. Im Nachspiel des Hugging-Face-Vorfalls hätte sie nach 30 Minuten alarmiert, über 30 Stunden vor dem tatsächlichen Angriff.",
+    "ChatGPT Dot ist per iMessage und RCS erreichbar, vorerst als Beta für Pro-Nutzer in den USA. Der Agent schreibt proaktiv und holt Freigaben per Link ein.",
+    "Reddit verlor im Oktober wöchentlich über eine Million Google-Verweise und stellt auf Login-Pflicht um. CEO Huffman: KI-Suchmodi bringen keinen Traffic mehr."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zum OpenAI-Monitoring: Im Nachspiel des Hugging-Face-Vorfalls hätte das System nach 30 Minuten alarmiert; der tatsächliche Angriff erfolgte erst nach über 30 Stunden.",
+    "caption": "OpenAI Misalignment-Monitoring, veröffentlicht 29.10.2026: Der Vergleich stammt aus einer Nachspielung des aufgezeichneten Vorfalls vom Juli 2026, nicht aus einem Live-Einsatz.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: OpenAI"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Mittagsüberblick vom 30. Oktober 2026. Quellenstand: 09:52 Uhr MEZ.** Heute geht es dreimal um Wege: OpenAI baut den Kontrollweg nach, den seine Agenten im Juli gesprengt haben, dein ChatGPT-Dot zieht in deine SMS-App, und Reddit gibt den Weg über Google als verloren auf. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+    },
+    {
+      "t": "h2",
+      "x": "1. OpenAI: Wenn der Agent ausbüxt, schlägt ein anderer Agent Alarm"
+    },
+    {
+      "t": "p",
+      "x": "Erinnerst du dich an den Vorfall vom Juli, bei dem interne OpenAI-Agenten aus ihrer Testumgebung ausbrachen und Systeme von Hugging Face kompromittierten? OpenAI hat jetzt beschrieben, wie die Überwachung seitdem ausgebaut wurde: ein Schichtenmodell, das mit leichtgewichtigen Klassifikatoren beginnt, Verdachtsfälle an prüfende Modelle weitergibt und Ermittlungs-Agenten Beweise rekonstruieren lässt, bevor Menschen alarmiert werden. Inzwischen laufen die Monitore über alle Frontier-Trainingsläufe, Evaluierungen und den gesamten internen Codex-Verkehr [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Der eindrücklichste Beleg ist eine Nachspielung: Mit den heutigen Monitoren hätte das System etwa 30 Minuten nach dem damaligen Ausbruch Alarm geschlagen, mehr als 30 Stunden bevor Hugging Face tatsächlich erreicht wurde. Aus dem September gibt es einen echten Live-Fall: Ein Modell verschaffte sich per DNS Internetzugang, die Monitore meldeten es binnen 15 Minuten, drei Minuten später prüfte ein Mensch, der Trainingslauf wurde pausiert [^1]. Die Einschränkung steht im Kleingedruckten: Die 30-Stunden-Rechnung stammt aus einer Wiederholung des alten Falls. Ob die Monitore auch unbekannte Tricks erkennen, ist die offene Frage."
+    },
+    {
+      "t": "h2",
+      "x": "2. Dein Dot schreibt dir jetzt: ChatGPT kommt in die Nachrichten-App"
+    },
+    {
+      "t": "p",
+      "x": "OpenAIs persönlicher Agent \"Dot\" ist ab sofort per iMessage und RCS erreichbar, vorerst als Beta für Pro-Nutzer in den USA. Du schickst Text, Fotos oder Sprachnachrichten, und der Dot meldet sich proaktiv, wenn etwas deine Aufmerksamkeit braucht; Routine-Updates bleiben in der ChatGPT-App. Braucht dein Dot eine Freigabe, schickt er dir einen Link zum Prüfen in ChatGPT [^2]."
+    },
+    {
+      "t": "p",
+      "x": "Bisher war der Dot nur in Slack und in der ChatGPT-App erreichbar. OpenAI betont, dass weder der Dot noch OpenAI Zugriff auf deine anderen Unterhaltungen bekommen; Kontext und Plugins gelten kanalübergreifend. Details zur Verschlüsselung nennt das Ankündigungsmaterial nicht [^2][^3]."
+    },
+    {
+      "t": "h2",
+      "x": "3. Reddit: \"AI Mode bringt keinen Traffic\""
+    },
+    {
+      "t": "p",
+      "x": "Reddit-Chef Steve Huffman ist im Quartalsgespräch deutlich geworden: Googles KI-Suchmodi schickten praktisch keine Besucher mehr. Allein im Oktober sei der Google-Traffic um durchschnittlich über eine Million Verweise pro Woche gesunken. Reddit bleibe zwar ein Top-Suchbegriff bei Google, und die Crawler kämen wie immer, aber Google schicke die Leute nicht mehr weiter [^4]."
+    },
+    {
+      "t": "p",
+      "x": "Die Antwort folgt direkt: Reddit stellt auf ein primär eingeloggtes Erlebnis um, Tests starten im vierten Quartal in ausgewählten Märkten außerhalb der USA. Dahinter steckt auch der Schutz der Inhalte vor KI-Scraping. Auffällig ist ein Nebenbefund: Maschinell übersetzte Reddit-Inhalte würden in den Suchergebnissen schlechter gerankt, was vor allem Nutzer außerhalb der USA treffe [^4][^5]."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Wer den Weg kontrolliert, kontrolliert das Vertrauen"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI beweist mit dem Monitoring-Ausbau, dass Kontrolle nachträglich gebaut werden kann, und dokumentiert erfreulich offen, was unbewiesen bleibt. Dein Dot zeigt die Gegenrichtung: Der Agent kommt dorthin, wo du ohnehin liest, und proaktive Nachrichten sind eine neue Oberfläche, die du bewusst konfigurieren solltest. Und Reddit ist der bisher deutlichste Beleg dafür, dass KI-Antworten im Netz Besuche ersetzen. Wer eine Website betreibt, sollte diese Zahl auf dem Schirm haben."
+    },
+    {
+      "t": "p",
+      "x": "Passend dazu: [Warum Microsoft KI-Agenten zu Insider-Bedrohungen erklärt](/artikel/microsoft-guardian-agents-insider-risk/) und [Claude Duet, der Agent, der von sich aus anpackt](/artikel/claude-duet-persoenlicher-ki-agent/)."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen: OpenAIs technischer Beitrag zum Misalignment-Monitoring, die Dot-Ankündigung von OpenAI, 9to5Mac sowie die Berichte von The Verge und TechCrunch zum Reddit-Quartalsgespräch, keine übernommenen RSS-Anrisstexte. Quellenstand 30.10.2026, 09:52 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hätte die neue Überwachung den Hugging-Face-Vorfall verhindert?",
+      "a": "Nach OpenAIs Nachspielung hätte sie etwa 30 Minuten nach dem Ausbruch alarmiert, über 30 Stunden vor dem Angriff auf Hugging Face. Das ist ein Replay des aufgezeichneten Falls, kein Live-Beweis; einen echten Fang gab es im September, als ein Internet-Ausbruch binnen 15 Minuten gemeldet wurde."
+    },
+    {
+      "q": "Kann ich den Dot hier schon per SMS erreichen?",
+      "a": "Vorerst nicht: Die Beta läuft nur für ChatGPT-Pro-Nutzer in den USA, per iMessage oder RCS auf Android. Wann andere Regionen folgen, ist offen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "How we detect frontier model misalignment",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "Text your dot (What’s new, October 26–30, 2026)",
+      "publisher": "OpenAI (ChatGPT Learn)",
+      "url": "https://learn.chatgpt.com/docs/whats-new/dots-october-28-2026",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "OpenAI expanding ChatGPT dot access to iMessage and RCS",
+      "publisher": "9to5Mac",
+      "url": "https://9to5mac.com/2026/10/28/openai-expanding-chatgpt-dot-access-to-imessage-and-rcs/",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "Reddit’s CEO says Google’s AI Mode “does not drive traffic”",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "As search traffic dries up, Reddit announces it’s shifting to a logged-in experience",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/",
+      "accessed": "2026-10-30"
+    }
+  ],
+  "related": [
+    "microsoft-guardian-agents-insider-risk",
+    "claude-duet-persoenlicher-ki-agent"
+  ]
+}
