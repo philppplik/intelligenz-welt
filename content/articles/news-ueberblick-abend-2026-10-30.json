@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-abend-2026-10-30",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Abend: Dein iPhone hört jetzt mit offenen Modellen zu",
+  "dek": "Offene Sprachmodelle laufen jetzt lokal auf Apple-Geräten. Dazu: Amazons neue KI-Geräte fürs Zuhause und ein Zähltest, der Spitzenmodelle blamiert.",
+  "published": "2026-10-30T16:10:00+01:00",
+  "modified": "2026-10-30T16:10:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Lokale KI",
+    "Smart Home",
+    "Benchmarks"
+  ],
+  "key_takeaways": [
+    "Zwei neue Swift-Pakete bringen offene Spracherkennung und Entscheidungsmodelle lokal auf Apple-Geräte, mit frei wählbarer Engine. In sauberen Tests erreichen sie Wortfehlerraten um 1,5 Prozent, bei echten Meetings scheitern alle Systeme.",
+    "Amazon stellt fünf neue Alexa-Geräte vor: Der Echo Studio bekommt eine Kamera und erkennt Gegenstände, der Echo Time Wecker misst den Schlaf per Ultraschall. Drei Geräte kommen auch nach Deutschland.",
+    "Der neue DecoyCount-Test legt Zählschwächen von Spitzenmodellen offen: Keins der im Paper verglichenen kommt über 50 Prozent. Das neue Modell Glimpse schafft 50,48 Prozent, allerdings unter nicht ganz vergleichbaren Bedingungen."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zur lokalen Spracherkennung auf Apple-Geräten: Wortfehlerraten von Parakeet-Varianten und Apples Engine im Selbsttest der Entwickler, mit Hinweis auf die Messbedingungen.",
+    "caption": "Lokale Spracherkennung, Wortfehlerraten auf LibriSpeech test-clean: Alle Werte stammen aus der Selbstmessung der Paket-Entwickler auf einem einzelnen M4 Max; bei Meeting-Aufnahmen lagen alle Systeme über 23 Prozent.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: Hugging Face (Entwickler-Selbstmessung)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 30. Oktober 2026. Quellenstand: 16:01 Uhr MEZ.** Zum Wochenausklang rückt die KI näher an dich heran: offene Modelle ziehen direkt auf dein Apple-Gerät, Amazon packt Kameras und Schlafsensoren in Lautsprecher und Wecker, und ein neuer Test zeigt, wie leicht sich Spitzenmodelle beim Zählen täuschen lassen. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+    },
+    {
+      "t": "h2",
+      "x": "1. Offene Sprachmodelle ziehen aufs Apple-Gerät"
+    },
+    {
+      "t": "p",
+      "x": "Hugging Face hat zwei Swift-Pakete vorgestellt, die Apples Sprach-API mit austauschbaren Engines hinterlegen: AnySpeechRecognizer übernimmt die neue SpeechAnalyzer-Schnittstelle aus iOS 26 und macOS 26 eins zu eins, lässt dich aber das Modell wählen, etwa Nvidias Parakeet v3 mit 25 europäischen Sprachen oder Alibabas Qwen3-ASR mit 30 Sprachen und 22 chinesischen Dialekten. Alle laufen lokal per Core ML, dazu gibt es eine Sprechererkennung für bis zu vier Personen, die Apples eigenes Framework nicht bietet. Das zweite Paket, AnyDecisionModel, beantwortet Ja-Nein-, Auswahl- und Bewertungsfragen direkt aus den Wahrscheinlichkeiten des Modells, statt erst Text zu erzeugen [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Die mitgemessenen Werte: Parakeet-Varianten kommen auf sauberen englischen Aufnahmen auf Wortfehlerraten zwischen 1,43 und 1,66 Prozent, Apples eigene Engine auf 2,12. Der ehrliche Haken steht gleich daneben: Bei Meeting-Aufnahmen mit überlappenden Stimmen lagen alle getesteten Systeme über 23 Prozent, und gemessen wurde nur auf einem einzigen Mac. Die Modelle stehen unter offenen Lizenzen auf dem Hub, die Messwerkzeuge sind öffentlich, du kannst mit eigenem Audio nachmessen [^1]."
+    },
+    {
+      "t": "h2",
+      "x": "2. Amazon: KI zieht ins Wohnzimmer, mit Kamera und Schlafsensor"
+    },
+    {
+      "t": "p",
+      "x": "Fünf neue Geräte hat Amazon für seine Alexa-Plattform vorgestellt. Der Echo Studio bekommt erstmals eine Kamera und erkennt damit, was im Raum passiert: ein hochgehaltener Spielkarton, die leere Müslipackung oder ein Blick von unterwegs per App. Der neue Wecker Echo Time verzichtet bewusst auf eine Kamera und misst stattdessen per Ultraschall deine Atmung, um dich in einer leichten Schlafphase zu wecken. Der Echo Dot bekommt Amazons neuen AZ3-Chip mit KI-Beschleuniger, eingebauten Smart-Home-Hub und WLAN-Verstärker [^2]."
+    },
+    {
+      "t": "p",
+      "x": "Echo Studio, Echo Time und Echo Dot kommen auch nach Deutschland; der KI-Fotorahmen und das große Echo Show 16 starten vorerst nur in den USA. Für viele Funktionen brauchst du Alexa+, das im Prime-Abo steckt [^2][^3]."
+    },
+    {
+      "t": "h2",
+      "x": "3. Ein Zähltest mit Spiegeln blamiert die Spitzenmodelle"
+    },
+    {
+      "t": "p",
+      "x": "Wie viele Äpfel sind auf dem Bild, wenn einer davon nur eine Spiegelung ist? Der neue DecoyCount-Test stellt solche Fangfragen über sieben Täuschungsmechanismen. Ergebnis: Keines der im Paper verglichenen Spitzenmodelle kommt über 50 Prozent. GPT-6 Astra erreicht 43,17 Prozent, Claude Fable 5.1 landet bei 25,22. Der Test trennt dabei sauber, ob ein Modell das Objekt übersieht oder die Spiegelung doppelt zählt, also Sehen von Denken [^4]."
+    },
+    {
+      "t": "p",
+      "x": "Das Startup Elorian meldet für sein neues Modell Glimpse 50,48 Prozent, als einziges über der Hälfte. Der Haken: Der Wert stammt aus einem internen Einzellauf ohne Werkzeugumgebung, während die Konkurrenz über jeweils drei Läufe gemittelt wurde. Die Testbilder seien aus dem Training ausgeschlossen worden, sagt Elorians Chef, ein externer Beweis steht noch aus [^4]."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Näher dran heißt genauer hinschauen"
+    },
+    {
+      "t": "p",
+      "x": "Alle drei Meldungen bringen KI näher an dein Gerät, dein Zimmer und deine Wahrnehmung. Das ist gut, wenn du die Kontrolle behältst: Offene Modelle lokal auszuführen bedeutet, deine Sprachdaten bleiben bei dir, und die Messwerkzeuge liegen offen. Bei Amazons neuer Sensorik entscheidest du, welche Kamera in dein Zuhause darf. Und DecoyCount erinnert daran, dass selbst faire Zahlen eine Schlagseite haben können, lies die Bedingungen, nicht nur die Balken."
+    },
+    {
+      "t": "p",
+      "x": "Passend dazu: [Unser Test eines RTX-Spark-Notebooks für lokale KI](/artikel/rtx-spark-notebook-lokale-ki-test/) und [wie Mistrals Voxtral-3-Sprach-Agenten hören und antworten](/artikel/mistral-voxtral-3-voice-agents/)."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen: der Hugging-Face-Blogbeitrag zu den Swift-Paketen, Amazons Geräteankündigung, das heise KI-Update und der Latent-Space-Artikel zu DecoyCount, keine übernommenen RSS-Anrisstexte. Wortfehlerraten und Benchmarkwerte sind Anbieter- beziehungsweise Autorenangaben; wir haben nichts selbst nachgemessen. Quellenstand 30.10.2026, 16:01 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Lohnt sich lokale Spracherkennung schon?",
+      "a": "Für Dateien und klare Aufnahmen ja: Die offenen Parakeet-Modelle liegen in den Selbstmessungen der Entwickler vor Apples eigener Engine, und die Daten bleiben auf dem Gerät. Für chaotische Meetings mit übereinander redenden Teilnehmern ist noch kein System gut genug."
+    },
+    {
+      "q": "Brauche ich für die neuen Echo-Geräte ein Abo?",
+      "a": "Die Geräte funktionieren auch so, aber viele der neuen KI-Funktionen setzen Alexa+ voraus, das in einer Prime-Mitgliedschaft enthalten ist. In Deutschland starten zunächst Echo Studio, Echo Time und Echo Dot."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+      "publisher": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/anydecisionmodel",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "Amazon unveils its newest lineup of Alexa devices",
+      "publisher": "About Amazon",
+      "url": "https://www.aboutamazon.com/news/devices/new-alexa-devices-2026",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "KI-Update kompakt: Mistral ML4, Cohere, KI-Empfehlungen, KI klont Indie-Spiele",
+      "publisher": "heise online",
+      "url": "https://www.heise.de/news/KI-Update-kompakt-Mistral-ML4-Cohere-KI-Empfehlungen-KI-klont-Indie-Spiele-11506040.html",
+      "accessed": "2026-10-30"
+    },
+    {
+      "title": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning",
+      "publisher": "Latent Space",
+      "url": "https://latent.space/p/elorian/",
+      "accessed": "2026-10-30"
+    }
+  ],
+  "related": [
+    "rtx-spark-notebook-lokale-ki-test",
+    "mistral-voxtral-3-voice-agents"
+  ]
+}
