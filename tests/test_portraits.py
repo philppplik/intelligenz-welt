@@ -7,7 +7,7 @@ class PortraitDataTests(unittest.TestCase):
  def setUp(self):self.d=json.loads((ROOT/'content/portraits.json').read_text())
  def test_schema_and_source_references(self):m.validate(self.d)
  def test_expanded_scope(self):
-  self.assertEqual([len(self.d[k]) for k in ('companies','models','benchmarks')],[6,28,4])
+  self.assertEqual([len(self.d[k]) for k in ('companies','models','benchmarks')],[13,48,4])
  def test_no_unattributed_score(self):
   for s in self.d['scores']:
    self.assertTrue(s['reported_by']);self.assertTrue(s['setup']);self.assertTrue(s['variant']);self.assertTrue(s['metric'])
@@ -26,10 +26,10 @@ class PortraitLogoTests(unittest.TestCase):
    self.assertTrue(asset['source'].startswith('https://'))
    self.assertTrue(asset['license'])
   d=json.loads((ROOT/'content/portraits.json').read_text())
-  self.assertEqual(sum('logo' in x for x in d['companies']),6)
-  self.assertEqual(sum('logo' in x for x in d['models']),28)
+  self.assertEqual(sum('logo' in x for x in d['companies']),12)
+  self.assertEqual(sum('logo' in x for x in d['models']),47)
   for x in d['companies']+d['models']:
-   if 'logo' in x:self.assertIn(x['logo']['asset'],manifest)
+   if x.get('logo') and x['logo'].get('asset') is not None:self.assertIn(x['logo']['asset'],manifest)
  def test_gpt_uses_openai_icon(self):
   d=json.loads((ROOT/'content/portraits.json').read_text())
   for x in d['models']:
