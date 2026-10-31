@@ -1,0 +1,123 @@
+{
+  "slug": "news-ueberblick-mittag-2026-10-31",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Mittag: Per SMS den Tisch buchen lassen",
+  "dek": "Ein neuer Assistent bucht Restauranttische direkt aus dem SMS-Verlauf, Meta baut deinen Kleiderschrank mit KI nach, und ein Datenschutz-Pionier gibt auf.",
+  "published": "2026-10-31T11:15:00+01:00",
+  "modified": "2026-10-31T11:15:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Assistenten",
+    "Produkte",
+    "Datenschutz"
+  ],
+  "key_takeaways": [
+    "Zest bringt einen Restaurant-Concierge in deine SMS: Er schlägt Lokale passend zu deinem Geschmack vor, stimmt in Gruppenchats ab und bucht den Tisch über OpenTable, Resy oder SevenRooms. Deinen Geschmack kennt er aus deinen Kartenzahlungen.",
+    "Metas neue App Style Sketch baut aus deinen Instagram-Fotos einen digitalen Kleiderschrank und schlägt Outfits vor, inklusive Anprobe an einem KI-Modell mit deiner Statur. Vorerst nur in Indonesien, Singapur und Thailand.",
+    "Der Datenschutz-Assistent Ollie stellt am 6. November den Betrieb ein. Er war laut TechCrunch eine der ersten Mainstream-Apps mit einem unabhängigen SOC-2-Audit; die Nutzer bekommen ihre Daten exportiert und laufende Abos erstattet."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zum Ablauf des Zest-Concierge: Von der SMS-Frage über das Geschmacksprofil aus Kartenzahlungen bis zur Tischbuchung über OpenTable, Resy oder SevenRooms.",
+    "caption": "So arbeitet der Zest-Concierge: SMS-Anfrage, Geschmacksprofil aus den Kategorien Essen und Trinken der eigenen Kartenzahlungen (via Plaid), Vorschläge, Buchung über OpenTable, Resy oder SevenRooms. Darstellung nach Anbieterangaben.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: TechCrunch (Anbieterangaben)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Mittagsüberblick vom 31. Oktober 2026. Quellenstand: 09:50 Uhr MEZ.** Drei Produktmeldungen zeigen, wie alltäglich KI-Assistenten werden und wie hart ihr Markt ist: Einer zieht in deine SMS, einer in deinen Kleiderschrank, und ein Datenschutz-Vorreiter muss aufgeben. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+    },
+    {
+      "t": "h2",
+      "x": "1. Zest: Der Restaurant-Concierge in der SMS"
+    },
+    {
+      "t": "p",
+      "x": "Die App Zest hat am Donnerstag einen KI-Concierge gestartet, der komplett per SMS funktioniert: Du schreibst ihm, was du suchst, Küche, Anlass, Stadtteil, und er schlägt Lokale vor und bucht direkt über OpenTable, Resy oder SevenRooms. Besonders: Du kannst ihn in einen Gruppenchat holen, wo er die Geschmäcker aller mischt, abstimmen lässt und am Ende den Tisch für alle reserviert [^1]."
+    },
+    {
+      "t": "p",
+      "x": "Deinen Geschmack lernt Zest nicht durch Befragung, sondern aus deinen echten Restaurantbesuchen: Wer mag, verknüpft seine Zahlungskarte über den Finanzdienst Plaid, und Zest wertet nur Ausgaben für Essen und Trinken aus. Zest hatte den Concierge seit September getestet und den Start bewusst zurückgehalten, bis die Buchung funktionierte. In TechCrunchs Test klappte die Suche nach Uhrzeit, Personenzahl und Ort gut; auf Wunsch schickt der Agent auch die Speisekarte oder Auskunft über WLAN und Auslastung. Ähnliche SMS-Agenten wie Instinct oder Poke zeigen, dass der Chat-Verlauf zur neuen App-Oberfläche wird [^1]."
+    },
+    {
+      "t": "h2",
+      "x": "2. Meta baut deinen Kleiderschrank digital nach"
+    },
+    {
+      "t": "p",
+      "x": "Style Sketch heißt Metas neue Mode-App, die ohne Ankündigung in Indonesien, Singapur und Thailand erschienen ist. Sie liest auf Wunsch deine Instagram-Fotos aus und baut daraus einen digitalen Kleiderschrank, du kannst Teile auch per Foto oder Video hinzufügen. Die App schlägt Outfits aus deinen eigenen Sachen vor, zeigt sie an einem KI-Modell mit deiner Statur und Hautfarbe und plant auf Wunsch tageweise fürs Reisegepäck, mit Wetterbericht [^2]."
+    },
+    {
+      "t": "p",
+      "x": "Meta schweigt zu weiteren Plänen; ob die App nach Deutschland kommt, ist offen. Die Idee ist nicht neu, Startups wie Alta oder Werkzeuge in Google Photos digitalisieren Kleiderschränke ebenfalls. Metas Vorteil: Dein Kleiderschrank existiert auf den Fotos, die du längst hochgeladen hast. Die App reiht sich in eine Welle kleiner KI-Apps des Konzerns ein, zuletzt das Tamagotchi-artige Waddle World, das Coding-Spielzeug Pocket und das Video-Werkzeug Vibes [^2]."
+    },
+    {
+      "t": "h2",
+      "x": "3. Ollie: Datenschutz-Pionier gibt auf"
+    },
+    {
+      "t": "p",
+      "x": "Eine Woche noch, dann ist Schluss: Der Assistent Ollie stellt am 6. November den Betrieb ein. Ollie wollte Familien organisieren, mit Anbindung an E-Mail und Kalender, Terminbuchungen, Essensplanung und Hilfe bei Rechnungszahlungen, und war laut TechCrunch eine der ersten Mainstream-Apps mit einem unabhängigen SOC-2-Audit, also einer externen Prüfung interner Kontrollen, typischerweise zu Sicherheit und Vertraulichkeit. Der genaue Prüfungsumfang geht aus der Meldung nicht hervor. Gründer Bill Lennon schreibt, der Markt sei mit neuen Anbietern wie Muse und Instinct zu hart geworden [^3][^4]."
+    },
+    {
+      "t": "p",
+      "x": "Für die Nutzer ist der Abschied vorbildlich geregelt: Ollie schickt jedem eine Datei mit den eigenen Daten, die sich an einen anderen Assistenten übergeben lässt, und erstattet angefangene Abo-Monate [^4]."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: Der Assistent kommt zu dir, oder gar nicht"
+    },
+    {
+      "t": "p",
+      "x": "Das Muster der Woche: Erfolg verspricht, wer dir ins bestehende Leben folgt, in die SMS, auf die Fotoplattform, statt eine neue App-Gewohnheit zu verlangen. Zest zeigt zugleich den Preis dafür: Der bequemste Assistent ist der, der deine Kontobewegungen kennt, eine Abwägung, die du bewusst treffen solltest. Und Ollies Ende legt nahe, dass geprüfte Prozesse allein kein Überleben sichern, umso wichtiger, dass der Daten-Export hier sauber gelöst ist. Passend dazu: [Wie Yelp jetzt für dich im Restaurant anruft](/artikel/yelp-check-for-me-ki-telefoniert-restaurant/) und [wie Walmart sein Tor für Shopping-Agenten regelt](/artikel/walmart-agent-gateway-shopping-agenten-regeln/)."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen: die TechCrunch-Artikel zu Zest, Ollie und Style Sketch sowie Ollies Abschiedsbrief, keine übernommenen Anrisstexte. Finanzdetails wie Finanzierungsrunden haben wir bewusst weggelassen. Quellenstand 31.10.2026, 09:50 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Muss ich Zest meine Kreditkarte geben?",
+      "a": "Die Verknüpfung ist die Basis für die Geschmacksempfehlungen: Zest liest über den Dienst Plaid nur Ausgaben für Essen und Trinken aus. Ohne diese Daten kennt der Assistent deine bisherigen Restaurantbesuche nicht."
+    },
+    {
+      "q": "Was passiert mit meinen Ollie-Daten?",
+      "a": "Ollie schickt dir vor dem 6. November einen Export deiner Daten per SMS, den du an einen anderen Assistenten übergeben kannst. Laufende Abos werden beendet und anteilig erstattet."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Zest's new AI agent finds restaurants and books reservations over text",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Meta quietly launches an AI fashion app called Style Sketch",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/meta-quietly-launches-an-ai-fashion-app-called-style-sketch/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Ollie, a privacy-focused AI assistant, is shutting down",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "A farewell to Ollie",
+      "publisher": "Ollie",
+      "url": "https://ollie.ai/farewell/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "yelp-check-for-me-ki-telefoniert-restaurant",
+    "walmart-agent-gateway-shopping-agenten-regeln"
+  ]
+}
