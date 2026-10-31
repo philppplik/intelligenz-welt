@@ -5,13 +5,18 @@
  "anthropic-einbruch-drittsoftware-cathedral": "2026-10-29T09:10:00+01:00",
  "anthropic-s1-eingereicht-nasdaq-ant": "2026-10-27T08:57:00+01:00",
  "anthropic-studie-experten-agenten-einfluss": "2026-10-30T09:11:00+01:00",
+ "anthropic-ultra-max-20x-umbenannt-5-stunden-limit": "2026-10-31T08:52:02+01:00",
  "axiom-axiomprover-cfsg-lean-beweis": "2026-10-28T09:00:00+01:00",
+ "claude-sonnet-5-maus-hirnchirurgie-agent": "2026-10-31T08:56:45+01:00",
  "cloudflare-glm-5-3-kv-cache-datenleck": "2026-10-27T08:57:00+01:00",
+ "cursor-marketplace-claude-code-backdoor": "2026-10-31T08:54:29+01:00",
  "deepgram-kauft-daily-pipecat": "2026-10-30T09:11:00+01:00",
  "deepmind-genie-4-audio-welten": "2026-10-28T09:00:00+01:00",
  "entire-git-forge-agenten": "2026-10-28T09:00:00+01:00",
+ "epoch-ai-glm-firefox-patch-gap-exploits": "2026-10-31T08:55:14+01:00",
  "gemini-4-carbon-cyber-defender-zuerst": "2026-10-29T09:10:00+01:00",
  "github-octoverse-2026-agenten-pull-requests": "2026-10-29T09:10:00+01:00",
+ "google-sleep-framework-continual-learning": "2026-10-31T08:53:40+01:00",
  "gpt-6-1-terra-halber-preis-computer-use": "2026-10-27T08:57:00+01:00",
  "linux-kernel-cve-2026-98432-claude-exploit": "2026-10-30T09:11:00+01:00",
  "liquid-ai-lfm3-offene-modelle": "2026-10-28T09:00:00+01:00",
@@ -30,5 +35,6 @@
  "qwen-38-alibaba-proxy-schutz": "2026-10-28T09:00:00+01:00",
  "qwenputer-risc-v-cpu-qwen-gewichte": "2026-10-29T09:10:00+01:00",
  "raschka-reasoning-modell-videokurs": "2026-10-27T08:57:00+01:00",
- "spawn-3-millionen-token-agenten-entwicklung": "2026-10-30T09:11:00+01:00"
+ "spawn-3-millionen-token-agenten-entwicklung": "2026-10-30T09:11:00+01:00",
+ "voicestudio-open-source-lokale-stimmen": "2026-10-31T08:55:53+01:00"
 }
