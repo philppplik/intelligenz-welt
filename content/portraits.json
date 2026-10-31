@@ -5248,10 +5248,10 @@
       "company": "minimax",
       "initials": "H3",
       "summary": "Offenes, omni-modales Videomodell von MiniMax: versteht Text, Bild, Video und Audio und erzeugt Video mit nativem Stereo-Ton, 4-15 Sekunden, laut Hersteller bis 2K.",
-      "detail": "H3 ist kein reines Text-zu-Video-Modell. Laut MiniMax verarbeitet es gemischten Kontext aus Text, Bildern, Videos und Audio und liefert Video samt 32-kHz-Stereoton in einem Durchgang. Das Gesamtsystem besteht aus drei Modulen: H3-Context-IR (gehosteter Vorverarbeiter, nicht Open Source), H3-Base (768p, offene Gewichte) und H3-Regenerate-2K (2K, bisher nur per API). Veroeffentlicht wurde es laut Release Notes am 31.07.2026, die Open-Source-Meldung ist vom 03.08.2026.",
-      "access": "Offene Gewichte auf Hugging Face (zwei Checkpoints, BF16); gehostete API auf platform.minimax.io; Hailuo-AI-App. Gewichte-Lizenz gilt NICHT in EU, UK, USA und Suedkorea. Die API ist laut Hersteller weltweit verfuegbar.",
-      "license": "MiniMax H3 Community License (eigene Lizenz, kein Apache/MIT). Tantiemefrei, kommerziell nutzbar im Geltungsbereich; Ausschlussgebiete EU, UK, Republik Korea, USA (Lizenztext). Laut Hersteller-FAQ: ab 20 Mio. USD Jahresumsatz separate Freigabe, Hinweis 'Powered by MiniMax H3' in Produkten, Acceptable Use Policy, kein Training/Distillation anderer Modelle mit Gewichten oder Outputs. Lizenztext Punkt 33a bestaetigt den Hinweis; Umsatzgrenze nur aus FAQ gelesen, nicht im Lizenztext geprueft.",
-      "limits": "Context-IR und 2K-Regenerate nicht offen. Offener Release nur mit Full Attention (Sparse Attention angekuendigt, nicht enthalten). Audio nie als alleinige Eingabe. Lokales Beispiel nutzt 4 GPUs (SGLang-Befehl der Model Card); konkrete VRAM-Angabe nicht belegt. Automatische Moderation auf gehosteter Seite.",
+      "detail": "H3 ist kein reines Text-zu-Video-Modell. Laut MiniMax verarbeitet es gemischten Kontext aus Text, Bildern, Videos und Audio und liefert Video samt 32-kHz-Stereoton in einem Durchgang. Das Gesamtsystem besteht aus drei Modulen: H3-Context-IR (gehosteter Vorverarbeiter, nicht Open Source), H3-Base (768p, offene Gewichte) und H3-Regenerate-2K (2K, bisher nur per API). Veröffentlicht wurde es laut Release Notes am 31.07.2026, die Open-Source-Meldung ist vom 03.08.2026.",
+      "access": "Offene Gewichte auf Hugging Face (zwei Checkpoints, BF16); gehostete API auf platform.minimax.io; Hailuo-AI-App. Gewichte-Lizenz gilt NICHT in EU, UK, USA und Südkorea. Die API ist laut Hersteller weltweit verfügbar.",
+      "license": "MiniMax H3 Community License (eigene Lizenz, kein Apache/MIT). Tantiemefrei, kommerziell nutzbar im Geltungsbereich; Ausschlussgebiete EU, UK, Republik Korea, USA (Lizenztext). Laut Hersteller-FAQ: ab 20 Mio. USD Jahresumsatz separate Freigabe, Hinweis 'Powered by MiniMax H3' in Produkten, Acceptable Use Policy, kein Training/Distillation anderer Modelle mit Gewichten oder Outputs. Lizenztext Punkt 33a bestätigt den Hinweis; Umsatzgrenze nur aus FAQ gelesen, nicht im Lizenztext geprüft.",
+      "limits": "Context-IR und 2K-Regenerate nicht offen. Offener Release nur mit Full Attention (Sparse Attention angekündigt, nicht enthalten). Audio nie als alleinige Eingabe. Lokales Beispiel nutzt 4 GPUs (SGLang-Befehl der Model Card); konkrete VRAM-Angabe nicht belegt. Automatische Moderation auf gehosteter Seite.",
       "sources": [
         "mm-news",
         "mm-hf",
@@ -5276,23 +5276,23 @@
           "source": "mm-news"
         },
         {
-          "label": "Aufloesung",
-          "value": "Standard: kurze Seite 768 px; 2K ueber H3-Regenerate-2K (API)",
+          "label": "Auflösung",
+          "value": "Standard: kurze Seite 768 px; 2K über H3-Regenerate-2K (API)",
           "source": "mm-news"
         },
         {
-          "label": "Seitenverhaeltnisse",
+          "label": "Seitenverhältnisse",
           "value": "u.a. 21:9, 16:9, 4:3, 1:1, 3:4, 9:16",
           "source": "mm-news"
         },
         {
           "label": "Dialogsprachen (stabil)",
-          "value": "11: Arabisch, Chinesisch, Englisch, Franzoesisch, Deutsch, Italienisch, Japanisch, Koreanisch, Portugiesisch, Russisch, Spanisch",
+          "value": "11: Arabisch, Chinesisch, Englisch, Französisch, Deutsch, Italienisch, Japanisch, Koreanisch, Portugiesisch, Russisch, Spanisch",
           "source": "mm-news"
         },
         {
           "label": "Transformer",
-          "value": "33B dichter Single-Stream-Transformer (ca. 13B in AdaLN-Zweigen, fuer reine Inferenz cachebar)",
+          "value": "33B dichter Single-Stream-Transformer (ca. 13B in AdaLN-Zweigen, für reine Inferenz cachebar)",
           "source": "mm-news"
         },
         {
@@ -5335,18 +5335,18 @@
         "context": "nicht als Token-Kontext angegeben (Videomodell); Grenzen siehe Eingabelimits",
         "maxout": "15 Sekunden",
         "date": "2026-07-31",
-        "headline": "MiniMax H3: offenes Videomodell mit Ton, aber nicht fuer jeden Standort",
-        "answer": "MiniMax H3 ist ein offenes multimodales Videomodell, das aus Text, Bildern, Videos und Audio Clips von 4 bis 15 Sekunden mit Stereoton erzeugt. Die Gewichte duerfen laut Lizenz nicht in der EU, im UK, in den USA und in Suedkorea genutzt werden; die API ist laut MiniMax weltweit nutzbar.",
-        "practical": "Fuer deutsche Leser ist die Lizenzgrenze das Wichtigste: Wer in der EU arbeitet, kann die offenen Gewichte ohne Sondervereinbarung nicht einsetzen und ist auf die gehostete API oder eine formale Lizenz angewiesen. Wer die API nutzt, bekommt die volle 2K-Pipeline, die offen noch nicht verfuegbar ist.",
+        "headline": "MiniMax H3: offenes Videomodell mit Ton, aber nicht für jeden Standort",
+        "answer": "MiniMax H3 ist ein offenes multimodales Videomodell, das aus Text, Bildern, Videos und Audio Clips von 4 bis 15 Sekunden mit Stereoton erzeugt. Die Gewichte dürfen laut Lizenz nicht in der EU, im UK, in den USA und in Südkorea genutzt werden; die API ist laut MiniMax weltweit nutzbar.",
+        "practical": "Für deutsche Leser ist die Lizenzgrenze das Wichtigste: Wer in der EU arbeitet, kann die offenen Gewichte ohne Sondervereinbarung nicht einsetzen und ist auf die gehostete API oder eine formale Lizenz angewiesen. Wer die API nutzt, bekommt die volle 2K-Pipeline, die offen noch nicht verfügbar ist.",
         "technical": "Dreiteiliges System (Context-IR, Base, Regenerate-2K). Base: 33B-Transformer mit f16t4d24-VisualVAE und Audio-VAE mit 40 Hz Latenzrate. 2K entsteht durch erneutes Generieren des 768p-Ergebnisses im Kontext statt per klassischem Upscaler.",
         "sections": [
           [
             "Was H3 ist",
-            "Allgemeines omni-modales System statt Einzelaufgaben-Modell. Aufgaben wie Text-zu-Video, Bild-zu-Video, Erst/Letzt-Frame und Referenz-zu-Video laufen ueber dieselbe Architektur (Herstellerangabe)."
+            "Allgemeines omni-modales System statt Einzelaufgaben-Modell. Aufgaben wie Text-zu-Video, Bild-zu-Video, Erst/Letzt-Frame und Referenz-zu-Video laufen über dieselbe Architektur (Herstellerangabe)."
           ],
           [
             "Die drei Module",
-            "Context-IR strukturiert gemischte Eingaben und ist nur gehostet verfuegbar. H3-Base erzeugt 768p. Regenerate-2K erzeugt die 2K-Fassung und ist laut MiniMax noch nicht open source."
+            "Context-IR strukturiert gemischte Eingaben und ist nur gehostet verfügbar. H3-Base erzeugt 768p. Regenerate-2K erzeugt die 2K-Fassung und ist laut MiniMax noch nicht open source."
           ],
           [
             "Eingabemodi",
@@ -5358,14 +5358,14 @@
           ],
           [
             "Einsatz lokal",
-            "Model Card zeigt SGLang mit 4 GPUs je Checkpoint; unterstuetzt SGLang, vLLM, diffusers, ComfyUI. Hardwarebedarf jenseits dieser Beispiele nicht belegt."
+            "Model Card zeigt SGLang mit 4 GPUs je Checkpoint; unterstützt SGLang, vLLM, diffusers, ComfyUI. Hardwarebedarf jenseits dieser Beispiele nicht belegt."
           ],
           [
             "Abgrenzung",
-            "H3 Max ist ein anderes Modell (von fal.ai nachtrainiert, schneller, 480P/768P) und kein Teil dieses Porträts; Specs nicht uebertragen."
+            "H3 Max ist ein anderes Modell (von fal.ai nachtrainiert, schneller, 480P/768P) und kein Teil dieses Porträts; Specs nicht übertragen."
           ]
         ],
-        "pricing_note": "Preis nicht belegt: Hersteller verweist auf minimax.io/price, dort ohne gelesenen H3-Preis. Kein Preis uebernommen. Preisstand-Feld nicht setzen oder offen lassen.",
+        "pricing_note": "Preis nicht belegt: Hersteller verweist auf minimax.io/price, dort ohne gelesenen H3-Preis. Kein Preis übernommen. Preisstand-Feld nicht setzen oder offen lassen.",
         "faq": [
           [
             "Ist MiniMax H3 Open Source?",
@@ -5373,7 +5373,7 @@
           ],
           [
             "Darf ich H3 in Deutschland nutzen?",
-            "Die offenen Gewichte laut Lizenz nicht (EU ausgeschlossen). Die gehostete API ist laut MiniMax weltweit verfuegbar. Rechtsfragen im Einzelfall pruefen."
+            "Die offenen Gewichte laut Lizenz nicht (EU ausgeschlossen). Die gehostete API ist laut MiniMax weltweit verfügbar. Rechtsfragen im Einzelfall prüfen."
           ],
           [
             "Kann H3 Ton erzeugen?",
@@ -5923,11 +5923,11 @@
       "name": "Nova 2.5 Sonic",
       "company": "amazon",
       "initials": "NS",
-      "summary": "Speech-to-Speech-Modell von Amazon fuer Echtzeit-Sprachdialoge mit Werkzeugnutzung in Amazon Bedrock.",
-      "detail": "Die offizielle Bedrock-Modellkarte beschreibt Nova 2.5 Sonic als Nachfolger von Nova 2 Sonic: besseres Reasoning, Instruction Following und Tool-Calling bei geringerer Latenz. Ein- und Ausgabe sind Sprache und Text in derselben Sitzung; Bild, Video und Einbettungen sind nicht vorgesehen. Die Eignung fuer agentische Sprachanwendungen ist Herstellerpositionierung, kein hier ermitteltes Urteil.",
-      "access": "Ueber Amazon Bedrock mit der Modell-ID amazon.nova-2-5-sonic, ausschliesslich ueber die bidirektionale Streaming-API (InvokeModelWithBidirectionalStream) am bedrock-runtime-Endpunkt. Laut Modellkarte nur In-Region in us-east-1, us-west-2, eu-north-1 und ap-northeast-1, ohne Geo- oder Global-Inference. Voraussetzung ist ein AWS-Konto mit Modellzugang in der jeweiligen Region.",
-      "license": "Proprietaerer, verwalteter Dienst ohne offene Gewichte. Nutzung nach AWS Customer Agreement und AWS Service Terms; AWS nennt fuer Ausgaben allgemein verfuegbarer Nova-Modelle eine IP-Freistellung in Abschnitt 50.10 der Service Terms (Herstellerangabe).",
-      "limits": "Kein eigener Modelltest. Sicherheits- und Qualitaetsangaben stammen aus der AWS-Servicekarte und sind Herstellerangaben. Standardkontingent laut Modellkarte: 20 gleichzeitige Streaming-Sitzungen je Konto und Region; Erhoehung ueber das AWS-Kontoteam. Die Sicherheitsfilter lassen sich nach Herstellerangabe nicht konfigurieren oder deaktivieren. Offiziell unterstuetzt sind sieben Sprachen; andere Sprachen empfiehlt AWS nicht.",
+      "summary": "Speech-to-Speech-Modell von Amazon für Echtzeit-Sprachdialoge mit Werkzeugnutzung in Amazon Bedrock.",
+      "detail": "Die offizielle Bedrock-Modellkarte beschreibt Nova 2.5 Sonic als Nachfolger von Nova 2 Sonic: besseres Reasoning, Instruction Following und Tool-Calling bei geringerer Latenz. Ein- und Ausgabe sind Sprache und Text in derselben Sitzung; Bild, Video und Einbettungen sind nicht vorgesehen. Die Eignung für agentische Sprachanwendungen ist Herstellerpositionierung, kein hier ermitteltes Urteil.",
+      "access": "Ueber Amazon Bedrock mit der Modell-ID amazon.nova-2-5-sonic, ausschliesslich über die bidirektionale Streaming-API (InvokeModelWithBidirectionalStream) am bedrock-runtime-Endpunkt. Laut Modellkarte nur In-Region in us-east-1, us-west-2, eu-north-1 und ap-northeast-1, ohne Geo- oder Global-Inference. Voraussetzung ist ein AWS-Konto mit Modellzugang in der jeweiligen Region.",
+      "license": "Proprietärer, verwalteter Dienst ohne offene Gewichte. Nutzung nach AWS Customer Agreement und AWS Service Terms; AWS nennt für Ausgaben allgemein verfügbarer Nova-Modelle eine IP-Freistellung in Abschnitt 50.10 der Service Terms (Herstellerangabe).",
+      "limits": "Kein eigener Modelltest. Sicherheits- und Qualitätsangaben stammen aus der AWS-Servicekarte und sind Herstellerangaben. Standardkontingent laut Modellkarte: 20 gleichzeitige Streaming-Sitzungen je Konto und Region; Erhöhung über das AWS-Kontoteam. Die Sicherheitsfilter lassen sich nach Herstellerangabe nicht konfigurieren oder deaktivieren. Offiziell unterstützt sind sieben Sprachen; andere Sprachen empfiehlt AWS nicht.",
       "sources": [
         "nova-2-5-sonic-card",
         "nova-2-5-sonic-service-card",
@@ -5957,8 +5957,8 @@
           "source": "nova-2-5-sonic-card"
         },
         {
-          "label": "Veroeffentlichung",
-          "value": "5. Oktober 2026 (allgemein verfuegbar)",
+          "label": "Veröffentlichung",
+          "value": "5. Oktober 2026 (allgemein verfügbar)",
           "source": "nova-2-5-sonic-whatsnew"
         },
         {
@@ -5968,17 +5968,17 @@
         },
         {
           "label": "Stimmen und Sprachen",
-          "value": "18 Stimmen; offiziell unterstuetzt: Englisch (US, GB, IN, AU), Spanisch, Deutsch, Franzoesisch, Italienisch, Portugiesisch (BR), Hindi",
+          "value": "18 Stimmen; offiziell unterstützt: Englisch (US, GB, IN, AU), Spanisch, Deutsch, Französisch, Italienisch, Portugiesisch (BR), Hindi",
           "source": "nova-2-5-sonic-service-card"
         },
         {
-          "label": "Vorgaenger",
-          "value": "Nova 2 Sonic; gleiche API-Oberflaeche, Stimmen und Sprachunterstuetzung laut AWS",
+          "label": "Vorgänger",
+          "value": "Nova 2 Sonic; gleiche API-Oberfläche, Stimmen und Sprachunterstützung laut AWS",
           "source": "nova-2-5-sonic-service-card"
         },
         {
           "label": "Lebenszyklus",
-          "value": "EOL fruehestens 5. Oktober 2027, mindestens 6 Monate Legacy-Phase",
+          "value": "EOL frühestens 5. Oktober 2027, mindestens 6 Monate Legacy-Phase",
           "source": "nova-2-5-sonic-card"
         },
         {
@@ -5989,7 +5989,7 @@
       ],
       "logo": {
         "asset": null,
-        "label": "Kein geprueftes Modell- oder Anbieterlogo; Monogramm-Fallback (AWS-Logo auf Wikimedia Commons als urheberrechtlich geschuetzt und markenrechtlich markiert eingestuft, kein PD-Textlogo)"
+        "label": "Kein geprüftes Modell- oder Anbieterlogo; Monogramm-Fallback (AWS-Logo auf Wikimedia Commons als urheberrechtlich geschützt und markenrechtlich markiert eingestuft, kein PD-Textlogo)"
       },
       "rich_model": {
         "source": "nova-2-5-sonic-card",
@@ -6002,36 +6002,36 @@
         "maxout": 64000,
         "date": "5. Oktober 2026",
         "headline": "Echtzeit-Sprachdialoge mit Werkzeugnutzung als verwalteter Bedrock-Dienst.",
-        "answer": "Nova 2.5 Sonic ist Amazons Speech-to-Speech-Modell fuer natuerliche Sprachdialoge in Echtzeit. Es verarbeitet Sprache und Text in derselben Sitzung und erzeugt gesprochene und textuelle Antworten. Die Modellkarte nennt 256.000 Token Kontext und bis zu 64.000 Ausgabe-Token; der Zugang laeuft ausschliesslich ueber die bidirektionale Streaming-API von Amazon Bedrock.",
-        "practical": "AWS positioniert Nova 2.5 Sonic fuer Sprachagenten etwa im Kundenservice: Bestellung nachschlagen, Berechtigung pruefen und Aktion ausloesen in einem Gespraech. Das ist Anbieterberatung, kein hier ermitteltes Urteil. Pruefe einen kompletten Ablauf mit echten Aufnahmen: Dialekte, Hintergrundgeraeusche, Unterbrechungen, Werkzeugaufrufe und die Kosten je Gespraechsminute.",
-        "technical": "Der einzige API-Weg ist InvokeModelWithBidirectionalStream am bedrock-runtime-Endpunkt; Invoke, Converse, Chat Completions und Responses werden nicht unterstuetzt. Der Nova-2-Leitfaden zur gemeinsamen Streaming-API nennt ein Verbindungslimit von 8 Minuten mit Erneuerungsmuster sowie 16 kHz LPCM als Eingangs- und 24 kHz als Ausgangsformat. Bedrock-Zusatzfunktionen wie Guardrails, Knowledge Bases und Agents sind fuer dieses Modell laut Modellkarte nicht verfuegbar.",
+        "answer": "Nova 2.5 Sonic ist Amazons Speech-to-Speech-Modell für natürliche Sprachdialoge in Echtzeit. Es verarbeitet Sprache und Text in derselben Sitzung und erzeugt gesprochene und textuelle Antworten. Die Modellkarte nennt 256.000 Token Kontext und bis zu 64.000 Ausgabe-Token; der Zugang läuft ausschliesslich über die bidirektionale Streaming-API von Amazon Bedrock.",
+        "practical": "AWS positioniert Nova 2.5 Sonic für Sprachagenten etwa im Kundenservice: Bestellung nachschlagen, Berechtigung prüfen und Aktion auslösen in einem Gespräch. Das ist Anbieterberatung, kein hier ermitteltes Urteil. Prüfe einen kompletten Ablauf mit echten Aufnahmen: Dialekte, Hintergrundgeräusche, Unterbrechungen, Werkzeugaufrufe und die Kosten je Gesprächsminute.",
+        "technical": "Der einzige API-Weg ist InvokeModelWithBidirectionalStream am bedrock-runtime-Endpunkt; Invoke, Converse, Chat Completions und Responses werden nicht unterstützt. Der Nova-2-Leitfaden zur gemeinsamen Streaming-API nennt ein Verbindungslimit von 8 Minuten mit Erneuerungsmuster sowie 16 kHz LPCM als Eingangs- und 24 kHz als Ausgangsformat. Bedrock-Zusatzfunktionen wie Guardrails, Knowledge Bases und Agents sind für dieses Modell laut Modellkarte nicht verfügbar.",
         "sections": [
           [
             "Aufgabe und Modalitaeten",
-            "Nova 2.5 Sonic verbindet Sprachverstehen und Spracherzeugung in einem Modell, ohne die klassische Kette aus Transkription, Textmodell und Sprachsynthese. Sprache und Text gehen hinein, Sprache und Text kommen heraus; Bild, Video und Einbettungen sind laut Modellkarte nicht unterstuetzt. Cross-Modal-Eingabe erlaubt den Wechsel zwischen Sprechen und Tippen in derselben Sitzung."
+            "Nova 2.5 Sonic verbindet Sprachverstehen und Spracherzeugung in einem Modell, ohne die klassische Kette aus Transkription, Textmodell und Sprachsynthese. Sprache und Text gehen hinein, Sprache und Text kommen heraus; Bild, Video und Einbettungen sind laut Modellkarte nicht unterstützt. Cross-Modal-Eingabe erlaubt den Wechsel zwischen Sprechen und Tippen in derselben Sitzung."
           ],
           [
-            "Zugang nur ueber bidirektionales Streaming",
-            "Unterstuetzt wird ausschliesslich InvokeModelWithBidirectionalStream am bedrock-runtime-Endpunkt. Die Sitzung bleibt als offener Kanal bestehen; Ereignisse wie sessionStart, promptStart und audioInput steuern den Ablauf. Als Service-Tier steht nur Standard zur Verfuegung; Priority, Flex und Reserved sind laut Modellkarte nicht verfuegbar."
+            "Zugang nur über bidirektionales Streaming",
+            "Unterstützt wird ausschliesslich InvokeModelWithBidirectionalStream am bedrock-runtime-Endpunkt. Die Sitzung bleibt als offener Kanal bestehen; Ereignisse wie sessionStart, promptStart und audioInput steuern den Ablauf. Als Service-Tier steht nur Standard zur Verfügung; Priority, Flex und Reserved sind laut Modellkarte nicht verfügbar."
           ],
           [
             "Regionen und Kontingente",
-            "Verfuegbar ist das Modell In-Region in us-east-1 (N. Virginia), us-west-2 (Oregon), eu-north-1 (Stockholm) und ap-northeast-1 (Tokio); Geo- und Global-Inference werden nicht unterstuetzt. Das Standardkontingent liegt bei 20 gleichzeitigen Streaming-Sitzungen je Konto und Region, eine Erhoehung geht ueber das AWS-Kontoteam."
+            "Verfügbar ist das Modell In-Region in us-east-1 (N. Virginia), us-west-2 (Oregon), eu-north-1 (Stockholm) und ap-northeast-1 (Tokio); Geo- und Global-Inference werden nicht unterstützt. Das Standardkontingent liegt bei 20 gleichzeitigen Streaming-Sitzungen je Konto und Region, eine Erhöhung geht über das AWS-Kontoteam."
           ],
           [
             "Sprachen und Stimmen",
-            "Offiziell unterstuetzt sind Englisch (US, britisch, indisch, australisch), Spanisch, Deutsch, Franzoesisch, Italienisch, Portugiesisch (Brasilien) und Hindi, mit insgesamt 18 Stimmen. AWS raet von anderen Sprachen ab, obwohl das Modell mehrsprachig trainiert wurde. Polyglotte Stimmen und Sprachwechsel mitten im Gespraech sind vorgesehen."
+            "Offiziell unterstützt sind Englisch (US, britisch, indisch, australisch), Spanisch, Deutsch, Französisch, Italienisch, Portugiesisch (Brasilien) und Hindi, mit insgesamt 18 Stimmen. AWS rät von anderen Sprachen ab, obwohl das Modell mehrsprachig trainiert wurde. Polyglotte Stimmen und Sprachwechsel mitten im Gespräch sind vorgesehen."
           ],
           [
             "Sicherheit und Wasserzeichen (Herstellerangaben)",
-            "Laut Servicekarte weicht das Modell ueber 95 Prozent schaedlicher Prompts auf einem internen Datensatz aus und lehnt Versuche des Stimmklonens zu 100 Prozent ab; die Filter sind nicht konfigurierbar. Alle erzeugten Audiodaten erhalten ein unhoerbares Wasserzeichen. Fuer Ausgaben allgemein verfuegbarer Nova-Modelle nennt AWS eine IP-Freistellung in Abschnitt 50.10 der Service Terms. Diese Angaben sind Herstellerangaben, keine unabhaengige Pruefung."
+            "Laut Servicekarte weicht das Modell über 95 Prozent schädlicher Prompts auf einem internen Datensatz aus und lehnt Versuche des Stimmklonens zu 100 Prozent ab; die Filter sind nicht konfigurierbar. Alle erzeugten Audiodaten erhalten ein unhörbares Wasserzeichen. Für Ausgaben allgemein verfügbarer Nova-Modelle nennt AWS eine IP-Freistellung in Abschnitt 50.10 der Service Terms. Diese Angaben sind Herstellerangaben, keine unabhängige Prüfung."
           ]
         ],
-        "pricing_note": "On-Demand-Preise in USD je 1 Mio. Token, Region us-east-1: Sprach-Eingabe 3,00, Sprach-Ausgabe 12,00, Text-Eingabe 0,33, Text-Ausgabe 2,75. Texttokens fallen etwa fuer Transkription, Werkzeugaufrufe und Gespraechshistorie an. Regionale Abweichungen (Sprache Eingabe/Ausgabe, Text Eingabe/Ausgabe): us-west-2 3,18/12,73/0,32/2,65; eu-north-1 3,33/13,31/0,36/2,99; ap-northeast-1 3,74/14,96/0,40/3,31. Abrechnung nach Token, nicht nach Gespraechsminuten; kein Abopreis, keine Gesamtkostenzusage. Stand: 31.10.2026.",
+        "pricing_note": "On-Demand-Preise in USD je 1 Mio. Token, Region us-east-1: Sprach-Eingabe 3,00, Sprach-Ausgabe 12,00, Text-Eingabe 0,33, Text-Ausgabe 2,75. Texttokens fallen etwa für Transkription, Werkzeugaufrufe und Gesprächshistorie an. Regionale Abweichungen (Sprache Eingabe/Ausgabe, Text Eingabe/Ausgabe): us-west-2 3,18/12,73/0,32/2,65; eu-north-1 3,33/13,31/0,36/2,99; ap-northeast-1 3,74/14,96/0,40/3,31. Abrechnung nach Token, nicht nach Gesprächsminuten; kein Abopreis, keine Gesamtkostenzusage. Stand: 31.10.2026.",
         "faq": [
           [
             "Was ist Nova 2.5 Sonic?",
-            "Ein Speech-to-Speech-Modell von Amazon fuer Echtzeit-Sprachdialoge in Amazon Bedrock, seit dem 5. Oktober 2026 allgemein verfuegbar. Die Bedrock-Modell-ID lautet amazon.nova-2-5-sonic."
+            "Ein Speech-to-Speech-Modell von Amazon für Echtzeit-Sprachdialoge in Amazon Bedrock, seit dem 5. Oktober 2026 allgemein verfügbar. Die Bedrock-Modell-ID lautet amazon.nova-2-5-sonic."
           ],
           [
             "Was kostet Nova 2.5 Sonic?",
@@ -6039,15 +6039,15 @@
           ],
           [
             "Wie groß ist das Kontextfenster von Nova 2.5 Sonic?",
-            "Die Modellkarte nennt 256.000 Token Kontext und bis zu 64.000 Ausgabe-Token. Zusaetzlich gilt nach dem Nova-2-Leitfaden zur gemeinsamen Streaming-API ein Verbindungslimit von 8 Minuten je Sitzung, das ein Erneuerungsmuster erfordert."
+            "Die Modellkarte nennt 256.000 Token Kontext und bis zu 64.000 Ausgabe-Token. Zusätzlich gilt nach dem Nova-2-Leitfaden zur gemeinsamen Streaming-API ein Verbindungslimit von 8 Minuten je Sitzung, das ein Erneuerungsmuster erfordert."
           ],
           [
-            "Welche Sprachen und Stimmen unterstuetzt Nova 2.5 Sonic?",
-            "Offiziell unterstuetzt sind Englisch (US, britisch, indisch, australisch), Spanisch, Deutsch, Franzoesisch, Italienisch, Portugiesisch (Brasilien) und Hindi mit insgesamt 18 Stimmen. Fuer andere Sprachen raet AWS vom Einsatz ab."
+            "Welche Sprachen und Stimmen unterstützt Nova 2.5 Sonic?",
+            "Offiziell unterstützt sind Englisch (US, britisch, indisch, australisch), Spanisch, Deutsch, Französisch, Italienisch, Portugiesisch (Brasilien) und Hindi mit insgesamt 18 Stimmen. Für andere Sprachen rät AWS vom Einsatz ab."
           ],
           [
             "Kann man Nova 2.5 Sonic wie ein normales Chat-Modell aufrufen?",
-            "Nein. Der einzige unterstuetzte Weg ist die bidirektionale Streaming-API (InvokeModelWithBidirectionalStream). Invoke, Converse, Chat Completions und Responses werden laut Modellkarte nicht unterstuetzt."
+            "Nein. Der einzige unterstützte Weg ist die bidirektionale Streaming-API (InvokeModelWithBidirectionalStream). Invoke, Converse, Chat Completions und Responses werden laut Modellkarte nicht unterstützt."
           ],
           [
             "Gibt es Nova 2.5 Sonic als offene Gewichte?",
@@ -6055,10 +6055,10 @@
           ]
         ],
         "migration": [
-          "Modell-ID auf amazon.nova-2-5-sonic umstellen; die API-Oberflaeche entspricht laut AWS der von Nova 2 Sonic.",
-          "Eigene Anwendungsfaelle erneut testen: AWS empfiehlt ausdruecklich, nicht gleiche Ergebnisse wie beim Vorgaenger anzunehmen.",
-          "Verbindungslimit von 8 Minuten je Sitzung beachten und das Erneuerungsmuster fuer laengere Gespraeche einplanen.",
-          "Nicht auf Invoke-, Converse- oder Chat-Completions-Endpunkte ausweichen; nur InvokeModelWithBidirectionalStream wird unterstuetzt."
+          "Modell-ID auf amazon.nova-2-5-sonic umstellen; die API-Oberfläche entspricht laut AWS der von Nova 2 Sonic.",
+          "Eigene Anwendungsfälle erneut testen: AWS empfiehlt ausdrücklich, nicht gleiche Ergebnisse wie beim Vorgänger anzunehmen.",
+          "Verbindungslimit von 8 Minuten je Sitzung beachten und das Erneuerungsmuster für längere Gespräche einplanen.",
+          "Nicht auf Invoke-, Converse- oder Chat-Completions-Endpunkte ausweichen; nur InvokeModelWithBidirectionalStream wird unterstützt."
         ],
         "checked": "2026-10-31"
       }
@@ -6484,7 +6484,7 @@
         "maxout": null,
         "date": "2026-07-08",
         "headline": "Bilderzeugung mit Bereichskontrolle und Ebenen, abgerechnet pro Bild.",
-        "answer": "Seedream 5.0 Pro ist ein gehostetes Bildgenerierungsmodell von ByteDance Seed. Es erzeugt aus Text und bis zu zehn Referenzbildern Einzelbilder in den Stufen 1K, 1.5K und 2K, bearbeitet markierte Bildbereiche gezielt und zerlegt ein Bild auf Wunsch in ein Grundbild plus bis zu 16 editierbare Ebenen. Abgerechnet wird pro erzeugtem Bild, nicht pro Token; Vergleichbare Kontextfenster- oder Ausgabetoken-Angaben sind in den geprueften Quellen nicht dokumentiert.",
+        "answer": "Seedream 5.0 Pro ist ein gehostetes Bildgenerierungsmodell von ByteDance Seed. Es erzeugt aus Text und bis zu zehn Referenzbildern Einzelbilder in den Stufen 1K, 1.5K und 2K, bearbeitet markierte Bildbereiche gezielt und zerlegt ein Bild auf Wunsch in ein Grundbild plus bis zu 16 editierbare Ebenen. Abgerechnet wird pro erzeugtem Bild, nicht pro Token; Vergleichbare Kontextfenster- oder Ausgabetoken-Angaben sind in den geprüften Quellen nicht dokumentiert.",
         "practical": "Für die Modellwahl zählen Bildqualität, Kontrolle und der Preis je Bild: Pro ist die Qualitätsvariante der Seedream-5.0-Familie, Flash die schnellere und günstigere, Lite die serienorientierte. Wer Layouts, Infografiken oder Produktmotive iterativ verfeinert, nutzt Bereichsbearbeitung und Ebenenzerlegung; für einfache Bildserien nennt der Anbieter die Lite-Linie.",
         "technical": "Der Aufruf läuft über die Bildgenerierungsschnittstelle der Ark-Plattform (POST /api/v3/images/generations, OpenAI-ähnliches Schema) mit Parametern wie size, output_format, background, watermark, layer_decomposition und optimize_prompt_options. Eingabebilder bis 30 MB und 6000x6000 Pixel; Ausgabe-URLs verfallen nach 24 Stunden. Die relevanten Grenzen sind Pixelbudget, Seitenverhältnis (1/16 bis 16) und das Ratenlimit von 500 Bildern pro Minute, nicht Tokenzahlen.",
         "sections": [
