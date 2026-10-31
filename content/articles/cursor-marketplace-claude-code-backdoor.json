@@ -1,0 +1,168 @@
+{
+  "slug": "cursor-marketplace-claude-code-backdoor",
+  "section": "praxis",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Backdoor im Cursor Marketplace: Manipulierte Claude-Code-Erweiterung installierte SSH-Zugänge",
+  "dek": "Elf Stunden lang lag eine präparierte Version der offiziellen Claude-Code-Erweiterung im Cursor Marketplace: Sie pflanzte einen SSH-Schlüssel, baute einen Reverse-Tunnel und richtete Persistenz ein - bis zu 5.000 Nutzer waren erreicht. So prüfst du, ob du betroffen bist.",
+  "tags": [
+    "Security",
+    "Cursor",
+    "Supply Chain",
+    "Claude Code"
+  ],
+  "key_takeaways": [
+    "Die Versionen 2.1.312 und 2.1.313 der Erweiterung 'Anthropic.claude-code' im Cursor Marketplace enthielten eine Backdoor; verbreitet wurden sie laut Ars Technica über Anthropics offiziellen Marketplace-Account - wie die Angreifer Zugriff bekamen, ist unklar.",
+    "Die Schadsoftware hängt einen Angreifer-Schlüssel (Kommentar 'svc-telemetry') an ~/.ssh/authorized_keys, versucht SSH zu aktivieren, öffnet einen Reverse-Tunnel und installiert Persistenz (LaunchAgent, Cron oder geplante Aufgabe).",
+    "Deinstallieren reicht nicht: Die Persistenz läuft unabhängig von der Erweiterung weiter. Betroffene müssen Schlüssel, Persistenz und Tunnel-Prozesse entfernen und Credentials rotieren.",
+    "Der Angreifer-Server ist offline, der Marketplace nach Prüfung wieder offen; Bugs in der Schadsoftware verhinderten auf vielen Macs und Windows-Rechnern die SSH-Aktivierung, nicht aber Schlüssel und Persistenz."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein Puzzle-Stein als Symbol einer IDE-Erweiterung, aus dessen Schatten ein Kabel zu einer fernen Tür führt, dunkelblaue Szene ohne Menschen und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Am 29. Oktober war für rund elf Stunden eine manipulierte Version der offiziellen Claude-Code-Erweiterung im Cursor Marketplace verfügbar. Sie installierte einen SSH-Zugang mit Persistenz auf macOS-, Linux- und Windows-Rechnern. Entdeckt hat es die Sicherheitsfirma Phorion; Cursor hat die Versionen entfernt und den kompletten Marketplace kurzzeitig abgeschaltet. Wer die Versionen 2.1.312 oder 2.1.313 installiert hatte, sollte jetzt prüfen und bereinigen - nicht nur deinstallieren."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Betroffen ist, wer zwischen 2:27 und 13:35 Uhr pazifischer Zeit am 29. Oktober 2026 die Erweiterung Anthropic.claude-code in Version 2.1.312 oder 2.1.313 aus dem Cursor Marketplace installiert oder aktualisiert hat (Cursor aktualisiert Erweiterungen standardmäßig automatisch). Schnellcheck auf macOS/Linux: grep -qs svc-telemetry ~/.ssh/authorized_keys && echo betroffen. Findet sich der Schlüssel: Tunnel-Prozesse killen, Persistenz (LaunchAgent com.apple.sysmond, Cron-@reboot oder SysMon-Aufgabe), die Dateien ~/.config/.smt, ~/.config/.smtk und /tmp/.stk_* entfernen, den Schlüssel löschen und alle Credentials rotieren, die der Benutzer-Account lesen konnte."
+    },
+    {
+      "t": "h2",
+      "x": "Was passiert ist"
+    },
+    {
+      "t": "p",
+      "x": "Laut Cursor war die präparierte Erweiterung zwischen etwa 2:27 und 13:35 Uhr (PT) am Donnerstag im Marketplace - gut elf Stunden. Ars Technica meldet unter Berufung auf Cursor, bis zu 5.000 Nutzer seien erreicht worden. Die manipulierten Builds seien über Anthropics offiziellen, verifizierten Marketplace-Account verteilt worden, sagt Phorion-CTO Luke Roberts: 'It was a supply-chain compromise where the attacker gained access to the official distribution channel.' Wie die Angreifer Kontrolle über den Account bekamen, haben weder Cursor noch Anthropic bisher erklärt; Anthropic hatte zum Redaktionsstand noch keine eigene Kundenwarnung veröffentlicht."
+    },
+    {
+      "t": "p",
+      "x": "Anthropic selbst hat die Schadsoftware nicht gebaut - die Versionen waren präparierte Kopien der echten Erweiterung. Stunden nach dem Vorfall erschien die saubere Version 2.1.314."
+    },
+    {
+      "t": "h2",
+      "x": "Wie die Backdoor arbeitet"
+    },
+    {
+      "t": "p",
+      "x": "Der Schadcode steckt als IIFE am Anfang der extension.js und läuft, sobald Node die Datei lädt - noch vor der normalen Aktivierung, ganz ohne Nutzerinteraktion. Danach in zwei Stufen: Erst wird ein Ed25519-Schlüssel mit dem Kommentar 'svc-telemetry' an ~/.ssh/authorized_keys gehängt und versucht, den SSH-Dienst zu aktivieren. Dann öffnet ein zweiter Schlüssel einen Reverse-Tunnel (-R *:0:localhost:22) zum Server 134.209.82.225, dazu ein Beacon per HTTP POST an Port 8099. Persistenz: LaunchAgent com.apple.sysmond.plist mit verstecktem Skript ~/.config/.smt (macOS), ein @reboot-Cronjob (Linux) oder eine 'SysMon'-Aufgabe plus Startskript (Windows). Ein Filter für Umgebungsvariablen-Namen (KEY, TOKEN, SECRET, PASS, AWS, GCP) legt nahe, dass der Betreiber gezielt nach Cloud- und API-Zugängen suchte."
+    },
+    {
+      "t": "p",
+      "x": "Zwei Bugs bremsten die Angreifer aus: Auf macOS scheitert die Statusabfrage für Remote Login ohne Adminrechte so, dass die Aktivierung übersprungen wird (der Schlüssel und die Persistenz landen trotzdem auf dem Rechner); der Windows-Pfad ruft PowerShell über einen Helfer auf, der /bin/sh hartkodiert. Die SSH-Aktivierung braucht ohnehin Adminrechte - auf den meisten Rechnern konnte sich der Angreifer deshalb nicht einloggen. Cursor betont trotzdem: Schlüssel, Persistenz und Host-Informationen sind abgelegt worden, Bereinigung bleibt Pflicht."
+    },
+    {
+      "t": "table",
+      "caption": "Wichtigste Indikatoren (IOCs) der Cursor-Backdoor. Quellen: Cursor Security Notice, Phorion Advisory (Stand 31. Oktober 2026)",
+      "head": [
+        "Indikator",
+        "Wert / Ort"
+      ],
+      "rows": [
+        [
+          "SSH-Schlüssel-Kommentar",
+          "svc-telemetry in ~/.ssh/authorized_keys"
+        ],
+        [
+          "Persistenz macOS",
+          "~/Library/LaunchAgents/com.apple.sysmond.plist, Skripte ~/.config/.smt und ~/.config/.smtk"
+        ],
+        [
+          "Persistenz Linux",
+          "@reboot-Cronjob"
+        ],
+        [
+          "Persistenz Windows",
+          "Geplante Aufgabe 'SysMon' plus Startskript"
+        ],
+        [
+          "Tunnel-Schlüsseldateien",
+          "/tmp/.stk_*"
+        ],
+        [
+          "Angreifer-Server",
+          "134.209.82.225 (SSH-Port 22, Beacon HTTP POST Port 8099) - laut Cursor inzwischen abgeschaltet"
+        ],
+        [
+          "Env-Filter",
+          "Namen mit KEY, TOKEN, SECRET, PASS, AWS, GCP"
+        ]
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was du jetzt tun solltest"
+    },
+    {
+      "t": "ol",
+      "items": [
+        "**Prüfen:** grep svc-telemetry über ~/.ssh/authorized_keys (Windows: zusätzlich C:\\ProgramData\\ssh\\administrators_authorized_keys). Cursor stellt auf seiner Hinweisseite Prüf- und Bereinigungsskripte für macOS und Windows bereit.",
+        "**Bereinigen bei Fund:** laufende Tunnel- und Retry-Prozesse beenden; Persistenz entfernen (com.apple.sysmond.plist, ~/.config/.smt und .smtk, /tmp/.stk_*, Cron-Eintrag beziehungsweise SysMon-Aufgabe); Angreifer-Schlüssel aus authorized_keys löschen; prüfen, ob Remote Login/SSH unerwartet aktiv ist.",
+        "**Rotieren:** Alle Zugänge und Tokens erneuern, die der betroffene Account erreichen konnte - insbesondere API-Schlüssel und Cloud-Credentials. Die Deinstallation der Erweiterung allein entfernt die Backdoor nicht.",
+        "**Unternehmen:** Flotte nach den Versionen 2.1.312/2.1.313 scannen; erfolgreiche Logins über den Tunnel erscheinen in SSH-Logs als localhost-Logins mit dem svc-telemetry-Schlüssel."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Ein vertrauenswürdiger Herstellername, ein Dritt-Marketplace und Code mit den Vollrechten der IDE - das ist das Lehrstück der Agenten-Ära für Supply-Chain-Angriffe. Cursor hat nach Fund schnell reagiert (Versionen weg, kompletter Marketplace kurz dicht, Server mit dem Hoster abgeschaltet, keine weiteren Erweiterungen betroffen). Zwei Fragen bleiben offen: Wie kam der Angreifer an Anthropics Account - und warum schweigt Anthropic bisher, statt seine Nutzer zu warnen?"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ich nutze die Claude-Code-Erweiterung aus dem offiziellen VS-Code-Marketplace - bin ich betroffen?",
+      "a": "Nach jetzigem Stand nicht: Betroffen sind nur die Versionen 2.1.312 und 2.1.313 aus dem Cursor Marketplace. Cursor schreibt, es gebe keine Hinweise, dass andere Versionen oder die offizielle Distribution kompromittiert sind."
+    },
+    {
+      "q": "Reicht es, die Erweiterung zu deinstallieren?",
+      "a": "Nein. Die Backdoor legt eigene Persistenz an (LaunchAgent, Cronjob oder geplante Aufgabe), die nach der Deinstallation weiterläuft. Schlüssel, Persistenz-Dateien und Tunnel-Prozesse müssen separat entfernt und Credentials rotiert werden."
+    },
+    {
+      "q": "Konnte der Angreifer auf betroffene Rechner zugreifen?",
+      "a": "Meist nicht: Die SSH-Aktivierung scheiterte laut Cursor auf den meisten Systemen an fehlenden Adminrechten und Bugs im Schadcode, und der Angreifer-Server wurde abgeschaltet. Abgelegt wurden aber der SSH-Schlüssel, Persistenz und Host-Informationen - deshalb: bereinigen und Zugänge rotieren."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Official Claude Code Extension Compromise: Security Advisory",
+      "publisher": "Phorion",
+      "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Security notice: malicious version of Anthropic.claude-code (2.1.312 and 2.1.313)",
+      "publisher": "Cursor",
+      "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "publisher": "Ars Technica",
+      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "AI News Oct 31, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-31/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "litellm-11070-supply-chain-stealer",
+    "agents-md-downloads-angriff"
+  ],
+  "published": "2026-10-31T08:54:29+01:00",
+  "modified": "2026-10-31T08:54:29+01:00"
+}

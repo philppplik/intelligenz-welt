@@ -1,0 +1,111 @@
+{
+  "slug": "voicestudio-open-source-lokale-stimmen",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "VoiceStudio: Der komplett lokale ElevenLabs-Ersatz kommt mit MCP-Anbindung",
+  "dek": "Stimmen klonen, Videos synchronisieren, Hörbücher erzeugen - alles lokal auf dem eigenen Rechner: VoiceStudio bündelt dutzende Open-Source-Sprachmodelle in einer App für 646 Sprachen. Dank lokaler API und MCP lässt es sich direkt von Agenten aufrufen.",
+  "tags": [
+    "Open Source",
+    "Voice AI",
+    "Tools",
+    "Lokal"
+  ],
+  "key_takeaways": [
+    "VoiceStudio ist eine Open-Source-App (AGPL-3.0) für Stimmklonen, Stimm-Design per Textbeschreibung, Video-Dubbing, Diktat, Transkription und Hörbuch-Produktion - komplett lokal, in 646 Sprachen.",
+    "Standard-Engine ist OmniVoice (k2-fsa); ein Model Manager lädt weitere Engines, jede mit eigener Lizenz-Anzeige. Nutzbar auf CPU, schneller mit CUDA, ROCm, Metal oder Vulkan.",
+    "Stabile Builds gibt es für macOS (Apple Silicon), Windows und Linux plus Docker; Android- und iOS-Versionen laufen als On-Device-Previews.",
+    "Über die lokale API und MCP-Unterstützung kann ein Coding- oder Agenten-Setup VoiceStudio direkt ansteuern - etwa für automatisierte Vertonung. Das Projekt steht aktuell bei rund 96.000 GitHub-Stars (Stand 31. Oktober, GitHub-API)."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein stilisiertes Mikrofon auf einem Schreibtisch, umgeben von schwebenden Audiospuren und Untertitel-Kacheln, dunkelblaue Szene ohne Menschen und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** VoiceStudio will das sein, was ein lokales Stable Diffusion für Bilder war - nur für Stimmen: Klonen, Entwerfen, Synchronisieren, Diktieren, Transkribieren und Vorlesen, komplett auf der eigenen Hardware, ohne Cloud-Konto und ohne Minutenpreise. Das Projekt wächst gerade steil und bringt mit lokaler API und MCP das richtige Steckinterface für Agenten mit."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "VoiceStudio (github.com/debpalash/VoiceStudio, AGPL-3.0) ist eine Desktop-App für sechs Sprachaufgaben: Stimmen aus Referenzaufnahmen klonen, Stimmen per Textbeschreibung entwerfen, Videos lippensynchron übersetzen, Diktat-Widget, lokale Transkription und Hörbuch-/Batch-Produktion - in 646 Sprachen. Installer für macOS, Windows und Linux (plus Docker); Modelle werden erst auf Nachfrage heruntergeladen. Steuerbar per lokaler API und MCP."
+    },
+    {
+      "t": "h2",
+      "x": "Was die App kann"
+    },
+    {
+      "t": "p",
+      "x": "Der Funktionsumfang deckt die klassischen ElevenLabs-Aufgaben ab, nur lokal: Voice Cloning verwandelt eine saubere Referenzaufnahme in Sprache mit bekannter Stimme; Voice Design erzeugt Stimmen aus Beschreibungen; Dubbing übersetzt Videos mit an das Original getimter Sprache; dazu Diktat und Transkription sowie Kapitel- und Stapelverarbeitung für Hörbücher. Standard-Engine ist OmniVoice von k2-fsa; über den Model Manager lassen sich laut Projektseite dutzende weitere Engines nachinstallieren, jede mit eigener Lizenzangabe. Ohne GPU läuft alles auf der CPU, nur langsamer; GGUF-basierte Engines nutzen wahlweise CUDA, ROCm, Metal oder Vulkan."
+    },
+    {
+      "t": "h2",
+      "x": "Warum MCP der eigentliche Hebel ist"
+    },
+    {
+      "t": "p",
+      "x": "Technisch interessant wird VoiceStudio durch die Automatisierungsschicht: eine lokale, OpenAI-kompatible API, einen MCP-Server, wiederverwendbare 'Recipes' und Watch-Ordner. Damit kann ein Agent - etwa aus Claude Code oder einem anderen MCP-Client - Text zur Vertonung übergeben, ohne dass ein Mensch die App bedient. Für Workflows wie mehrsprachige Videoausgabe oder automatisch gesprochene Artikelversionen ist das der Unterschied zwischen Spielzeug und Infrastruktur."
+    },
+    {
+      "t": "h2",
+      "x": "Rechtliches und Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Die App steht unter AGPL-3.0, kommerzielle Nutzung ist unter deren Bedingungen erlaubt. Modellgewichte, Stimmen und Ausgaben haben eigene Lizenzen, die der Model Manager pro Modell anzeigt. Das Projekt selbst weist ausdrücklich darauf hin, Stimmen nur mit Einverständnis der Person zu klonen - bei lokalem Klonen gibt es keine Anbieter-Instanz, die Missbrauch abbremst. Qualität und Sprachabdeckung hängen vom gewählten Modell ab; die Zahl 646 Sprachen bezieht sich auf die Gesamtabdeckung der unterstützten Engines, nicht auf jedes einzelne Modell."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Lokale Sprachsynthese war lange Bastelei aus Einzelmodellen; VoiceStudio packt sie in eine App mit Installer und Agenten-Schnittstelle - und trifft damit genau den Nerv der Woche, in der Deepgram und Daily den Cloud-Stack konsolidieren. Wer Datenschutz, Kostenkontrolle oder Offline-Betrieb braucht, bekommt hier eine ernst zu nehmende Alternative. Realistisch bleiben: ElevenLabs-Niveau erreicht nicht jede Engine, und AGPL ist für manche Firmen ein Diskussionsthema. Aber als Werkzeugkasten mit MCP-Anschluss ist das Projekt jetzt schon nützlich."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist VoiceStudio wirklich kostenlos?",
+      "a": "Die App ist Open Source unter AGPL-3.0 und kostenlos nutzbar, auch kommerziell unter den Lizenzbedingungen. Kosten entstehen nur über die eigene Hardware; einzelne nachgeladene Modelle können eigene Lizenzbedingungen haben, die der Model Manager anzeigt."
+    },
+    {
+      "q": "Brauche ich eine GPU?",
+      "a": "Nein, die App läuft vollständig auf der CPU, nur langsamer. Schneller wird es mit NVIDIA (CUDA), AMD (ROCm, wahlweise), Apple Silicon (Metal) oder Vulkan für GGUF-Engines."
+    },
+    {
+      "q": "Was heißt MCP-Support konkret?",
+      "a": "VoiceStudio stellt seine Funktionen über das Model Context Protocol bereit. MCP-fähige Agenten und Coding-Assistenten können damit direkt Stimmen erzeugen, transkribieren oder synchronisieren - ohne dass jemand die App-Oberfläche bedient."
+    }
+  ],
+  "sources": [
+    {
+      "title": "debpalash/VoiceStudio",
+      "publisher": "GitHub",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "VoiceStudio Docs: Local API und MCP-Server",
+      "publisher": "VoiceStudio",
+      "url": "https://voicestudio.sh/docs",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "AI News Oct 31, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-31/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "mistral-voxtral-3-voice-agents",
+    "deepgram-kauft-daily-pipecat"
+  ],
+  "published": "2026-10-31T08:55:53+01:00",
+  "modified": "2026-10-31T08:55:53+01:00"
+}

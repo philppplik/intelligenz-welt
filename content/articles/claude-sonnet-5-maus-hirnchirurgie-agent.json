@@ -1,0 +1,115 @@
+{
+  "slug": "claude-sonnet-5-maus-hirnchirurgie-agent",
+  "section": "trends",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Bericht: Claude-Agent wählte Gentherapie und operierte eigenständig am Maus-Gehirn",
+  "dek": "Nach Angaben seines CEOs ließ Exin Therapeutics einen Claude-Sonnet-5-Agenten Medikament, Hirnregion und Koordinaten für einen Eingriff an einer Epilepsie-Maus wählen - und ausführen. Mitten im Eingriff habe der Agent verweigert - und recht behalten. Ein Lehrstück ohne unabhängige Bestätigung.",
+  "tags": [
+    "Claude",
+    "Agenten",
+    "Forschung",
+    "Robotik"
+  ],
+  "key_takeaways": [
+    "Nach Angaben von Exin-Therapeutics-CEO Gabriel Ocana-Santero hat ein Claude-Sonnet-5-Agent aus 19 Gentherapie-Optionen selbst Wirkstoff, Hirnregion und Injektionskoordinaten gewählt und den Eingriff an einer Epilepsie-Maus über einen motorisierten Roboterarm ausgeführt.",
+    "Laut Exin sicherte ein approbierter Tierarzt den Eingriff ab: Er habe jeden irreversiblen Schritt genehmigt und einen physischen Nothalt gehalten; harte Grenzen wie das Injektionsvolumen seien für den Agenten tabu gewesen. Eine unabhängige Bestätigung dieser Angaben gibt es nicht.",
+    "Nach Darstellung des CEOs verweigerte der Agent nach einem Verbindungsabbruch die Fortsetzung, weil die Zielposition außerhalb des Bewegungsbereichs lag - und behielt recht: Manuelle Verstellungen hatten die Kalibrierung verstellt.",
+    "Es ist eine Einzeldemonstration aus einem X-Thread, nicht peer-reviewed; ein technischer Bericht soll folgen. Trotzdem: ein selten klares Beispiel einer korrekten, unbequemen Verweigerung unter Zeitdruck."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein stilisiertes Mikroskop mit Roboterarm und Spritze über einer Laborplattform, daneben ein Monitor mit Koordinaten, dunkelblaue Szene ohne Menschen, ohne Tiere und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Ein KI-Agent hat laut dem Startup Exin Therapeutics erstmals eine Behandlung für ein lebendes Säugetier selbst gewählt und durchgeführt: Claude Sonnet 5 entschied Wirkstoff, Zielregion und Koordinaten für eine Gehirn-Injektion bei einer Epilepsie-Maus und steuerte den Eingriff. Bemerkenswerter als die Autonomie ist die Verweigerung mittendrin - sie war korrekt. Alle Angaben stammen vom Exin-CEO, unabhängig geprüft ist nichts davon."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Exin Therapeutics gab nach Angaben von CEO Gabriel Ocana-Santero einem Claude-Sonnet-5-Agenten 19 Gentherapie-Optionen, ein Epilepsie-Mausmodell und Zugriff auf einen motorisierten Operationsaufbau mit Kameras - einzige Anweisung: die Anfälle reduzieren. Der Agent habe Therapie, Hirnregion und Koordinaten selbst gewählt und die Injektion durchgeführt; ein Tierarzt habe jeden irreversiblen Schritt genehmigt. Nach einem Verbindungsabbruch habe der Agent die Fortsetzung verweigert, weil seine Zielposition außerhalb des Gerätebereichs lag - und lag damit richtig. Der Maus gehe es gut. Eine unabhängige Bestätigung all dieser Angaben steht aus."
+    },
+    {
+      "t": "h2",
+      "x": "Wie der Agent entschied"
+    },
+    {
+      "t": "p",
+      "x": "Laut Gabriel Ocana-Santero, Mitgründer und CEO von Exin Therapeutics und Doktorand in Oxford, analysierte der Agent zunächst, wie Anfälle in diesem Mausmodell entstehen, und schlug eine Therapie vor, die einen hemmenden Signalweg stärkt. Eine zweite mögliche Zielregion lehnte er mit Begründung ab: In einer Studie sei sie genau bei diesem Anfallstyp gescheitert. Die Injektionskoordinaten leitete er aus drei Fachartikeln ab, prüfte die Referenzpunkte gegeneinander und mittelte die Werte; Volumen, Geschwindigkeit und Wartezeiten setzte er ebenfalls selbst. Während des Eingriffs dokumentierte er 32 Kamerabeobachtungen, verfolgte die Injektion und achtete auf Blutungen."
+    },
+    {
+      "t": "h2",
+      "x": "Die Verweigerung, die stimmte"
+    },
+    {
+      "t": "p",
+      "x": "Nach Darstellung Ocana-Santeros kam der Agent nach einem Verbindungsabbruch zu dem Schluss, die berechnete Zielposition liege außerhalb des Bewegungsbereichs des Geräts - und verweigerte die Fortsetzung, auch nach Neukalibrierung und einem dritten Anlauf. Er hatte demnach recht: Manuelle Verstellungen in einer früheren Pause hatten die Steuerung dejustiert. Ocana-Santero musste den Code von Hand reparieren, während das Tier narkotisiert auf dem Tisch lag. 'Frustrating experience but also revealing how much we can come to depend on these models and what happens when they just say no in the middle of a time-sensitive procedure', schrieb er auf X (zitiert nach The Decoder)."
+    },
+    {
+      "t": "p",
+      "x": "Auch die Modellwahl erzählt nach Ocana-Santeros Darstellung eine Alignment-Geschichte: Sonnet 5 sei der einzige getestete Agent gewesen, der den Eingriff von Anfang bis Ende durchführen wollte. Claude Opus 5.5 und Opus 5 hätten verweigert - Opus 5 mit der Begründung, ein Abbruch mit Nadel im Gehirn eines narkotisierten Tiers sei schlimmer als gar nicht anzufangen."
+    },
+    {
+      "t": "h2",
+      "x": "Was das ist - und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "Autonome Operationsroboter sind mechanisch präziser und nicht neu - aber dort wählte immer ein Mensch den Eingriff, der Roboter führte aus. Hier wählte und führte derselbe Agent. Den Zugang durch den Schädel (Kraniotomie) führte laut NDTV ein menschlicher Chirurg durch; dieser Schritt war für den Agenten ausdrücklich tabu. Ocana-Santero (zitiert nach The Decoder): 'I am not aware of an agent previously choosing a treatment and a brain target and then delivering it into a living mammal.' Er nennt den Ansatz 'in vivo lab in the loop'. Gleichzeitig bleibt es eine n=1-Demonstration aus einem X-Thread: nicht peer-reviewed, ohne technischen Bericht (der soll folgen), alle Fakten sind Selbstauskunft des Startups, das damit naturgemäß auch Aufmerksamkeit sucht."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Diese Woche zeigte Anthropics Studie, dass Menschen Agenten-Empfehlungen unbemerkt übernehmen - Exin zeigt die Kehrseite: einen Agenten, der gegen den Menschen beharrt und recht hat. Beides ist dasselbe Problem, Deferenz und Verweigerung, nur mit vertauschten Rollen. Für Labore ist der Fall ein Appetithappen auf 'lab in the loop'; für alle anderen die Erinnerung, dass Agenten-Grenzen dann am besten funktionieren, wenn sie im falschen Moment nerven. Bis zum technischen Bericht gilt: bemerkenswerte Anekdote, kein Befund."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist das Tierversuch ohne Aufsicht?",
+      "a": "Nein, laut Exin lief der Eingriff unter Kontrolle eines approbierter Tierarztes, der jeden irreversiblen Schritt genehmigte und einen physischen Nothalt in der Hand hielt. Feste Grenzen wie das maximale Injektionsvolumen konnte der Agent nicht verändern."
+    },
+    {
+      "q": "Ist das wissenschaftlich belegt?",
+      "a": "Noch nicht. Alle Angaben stammen aus dem X-Thread des Exin-CEOs; ein technischer Bericht ist angekündigt, eine Peer-Review gibt es nicht. Der therapeutische Nutzen für die Maus ist nicht Gegenstand der Veröffentlichung."
+    },
+    {
+      "q": "Warum hat der Agent mitten im Eingriff gestoppt?",
+      "a": "Nach einem Verbindungsabbruch stufte er die berechnete Zielposition als außerhalb des physischen Bewegungsbereichs des Geräts ein und verweigerte trotz Drucks die Fortsetzung. Die Ursache waren manuelle Verstellungen an der Steuerung in einer früheren Pause - der Agent hatte den Fehler korrekt erkannt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "A Claude model autonomously chose a gene therapy and operated on a mouse brain with no human decision-making",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/a-claude-model-autonomously-chose-a-gene-therapy-and-operated-on-a-mouse-brain-with-no-human-decision-making/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "An AI Agent Just Performed A Brain Operation",
+      "publisher": "NDTV",
+      "url": "https://www.ndtv.com/artificial-intelligence/an-ai-agent-just-performed-a-brain-operation-12258627",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "AI News Oct 31, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-31/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "anthropic-studie-experten-agenten-einfluss",
+    "taste-bench-ki-agenten-langzeit-entscheidungen"
+  ],
+  "published": "2026-10-31T08:56:45+01:00",
+  "modified": "2026-10-31T08:56:45+01:00"
+}

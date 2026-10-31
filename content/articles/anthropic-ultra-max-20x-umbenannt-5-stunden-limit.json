@@ -1,0 +1,107 @@
+{
+  "slug": "anthropic-ultra-max-20x-umbenannt-5-stunden-limit",
+  "section": "news",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Anthropic: Aus Max 20x wird Ultra - und das 5-Stunden-Limit fällt",
+  "dek": "Anthropic benennt sein 200-Dollar-Abo von Max 20x in Ultra um und streicht für verifizierte Konten das 5-Stunden-Limit. Einen Tag nach OpenAIs Limit-Verdopplung bessert damit auch der zweite Anbieter sein Top-Abo nach. Was sich konkret ändert - und was unklar bleibt.",
+  "tags": [
+    "Anthropic",
+    "Claude",
+    "Preise",
+    "Abo"
+  ],
+  "key_takeaways": [
+    "Max 20x heißt jetzt Ultra, Max 5x heißt jetzt Max - die Preise bleiben bei 200 beziehungsweise 100 US-Dollar pro Monat, Bestandskunden werden automatisch umgestellt.",
+    "Verifizierte Ultra-Konten haben kein 5-Stunden-Limit mehr; die Verifizierung läuft laut Anthropic automatisch über Konto- und Zahlungshistorie.",
+    "Das wöchentliche Nutzungslimit bleibt: Ultra umfasst laut Hilfeseite das Zehnfache des Pro-Kontingents pro Woche, über alle Modelle hinweg, plus ein separates Wochenlimit für Fable.",
+    "Der Schritt kommt einen Tag nach OpenAIs Limit-Verdopplung bei ChatGPT Pro - beide 200-Dollar-Abos haben sich binnen 48 Stunden zugunsten der Nutzer verändert."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine stilisierte Sanduhr, deren oberes Glas sich auflöst und frei wird, dunkelblaue Szene ohne Menschen und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Anthropic räumt seine Abo-Namen auf (Max 20x wird Ultra, Max 5x wird Max) und streicht das umstrittene 5-Stunden-Limit für verifizierte Ultra-Konten. Der Preis bleibt bei 200 US-Dollar im Monat. Es ist der zweite Tarif-Bonus in zwei Tagen: Gestern hatte OpenAI die Pro-Limits verdoppelt."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Ultra kostet 200 US-Dollar pro Monat und umfasst laut Anthropics Hilfeseite das Zehnfache der Pro-Nutzung pro Woche. Verifizierte Konten arbeiten ohne 5-Stunden-Fenster innerhalb dieses Wochenlimits; die Verifizierung erfolgt automatisch anhand von Konto- und Zahlungshistorie, es gibt nichts zu beantragen. Ob dein Konto verifiziert ist, siehst du unter Einstellungen > Nutzung: Fehlt dort der Balken 'Aktuelle Sitzung', ist das Konto verifiziert."
+    },
+    {
+      "t": "h2",
+      "x": "Was sich ändert"
+    },
+    {
+      "t": "p",
+      "x": "Die Umbenennung betrifft beide oberen Verbraucher-Tarife: Aus Max 5x wird Max (100 US-Dollar), aus Max 20x wird Ultra (200 US-Dollar). Bestandskunden werden laut Hilfeseite automatisch umgezogen, der Preis ändert sich nicht. Ultra gibt es vorerst nur als Monatsabo; wer von einem jährlichen Pro-Abo hochstuft, bekommt Restguthaben unter Bedingungen gutgeschrieben (gleiche Rechnungsadresse). Enthalten sind außerdem monatliche API-Guthaben (laut Hilfeseite); OpenAI hat laut Morning Tokens diese Woche ein ähnliches Extra für zahlende Nutzer nachgezogen."
+    },
+    {
+      "t": "p",
+      "x": "Die eigentliche Neuerung ist das Ende des 5-Stunden-Limits: Bisher deckelte ein rollierendes Sitzungsfenster, wie viel man am Stück arbeiten konnte - gerade bei langen Agenten-Sessions mit Claude Code die Grenze, die zuerst zuschlug. Für verifizierte Ultra-Konten entfällt sie; übergangsweise gilt für nicht verifizierte Konten ein temporäres Limit, das automatisch verschwindet. Boris Cherny (Claude Code) bestätigte auf X (zitiert nach Morning Tokens): 'We're removing the 5-hour limit for verified Ultra accounts'."
+    },
+    {
+      "t": "h2",
+      "x": "Was unklar bleibt"
+    },
+    {
+      "t": "p",
+      "x": "Die Hilfeseite beziffert Ultra auf das Zehnfache des Pro-Wochenkontingents - der alte Name suggerierte 20-fach. Das muss kein Widerspruch sein: Der Name bezog sich möglicherweise auf ein anderes Bezugsfenster als das Wochenkontingent der Hilfeseite. Ob sich am realen Kontingent etwas geändert hat oder nur die Namenslogik, beantwortet Anthropic bisher nicht eindeutig; in den Antworten auf die Ankündigung fragen Nutzer genau das. Das Wochenlimit selbst bleibt auf jeden Fall bestehen und gilt über alle Modelle hinweg; für Fable gibt es ein separates Wochenlimit. Anthropic behält sich zudem weitere Kapazitätsgrenzen nach eigenem Ermessen vor."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Der Abo-Wettbewerb läuft jetzt über Limits: OpenAI verdoppelt, Anthropic streicht die Sitzungsbremse - beide innerhalb von 48 Stunden, beide ohne Preisänderung. Für Vielnutzer ist das Ende des 5-Stunden-Fensters der spürbarere Schritt, weil Agenten-Sessions nicht mehr mitten in der Arbeit abreißen. Der Preis dafür ist eine Verifizierung über Konto- und Zahlungshistorie - Missbrauchsbremse statt Self-Service. Und die offene 10x/20x-Frage sollte Anthropic schnell klären, sonst liest sich die Umbenennung als verdeckte Kürzung."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Muss ich als Max-20x-Kunde etwas tun?",
+      "a": "Nein. Bestehende Max-20x-Abos werden automatisch auf Ultra umgestellt, der Preis bleibt bei 200 US-Dollar pro Monat."
+    },
+    {
+      "q": "Wie werde ich 'verifiziert'?",
+      "a": "Automatisch: Anthropic prüft Konto- und Zahlungshistorie, ein Antrag ist nicht nötig. Der Status ist unter Einstellungen > Nutzung sichtbar - wenn dort kein Balken 'Aktuelle Sitzung' erscheint, ist das Konto verifiziert. Die Telefonnummern-Bestätigung beim Kauf ist ein separater Schritt und hebt das Limit nicht auf."
+    },
+    {
+      "q": "Ist das Wochenlimit jetzt auch weg?",
+      "a": "Nein. Ultra behält ein wöchentliches Nutzungslimit über alle Modelle (laut Hilfeseite das Zehnfache von Pro) plus ein separates Wochenlimit für Fable. Entfallen ist nur das 5-Stunden-Sitzungslimit für verifizierte Konten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "What is the Ultra plan?",
+      "publisher": "Claude Help Center (Anthropic)",
+      "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Anthropic renames Claude Max 5x and 20x plans, removes Ultra's 5-hour limit",
+      "publisher": "Windows Report",
+      "url": "https://windowsreport.com/anthropic-renames-claude-max-5x-and-20x-plans-removes-ultras-5-hour-limit/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "AI News Oct 31, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-31/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "openai-pro-limits-verdoppelt",
+    "openai-rabatte-anthropic-kunden"
+  ],
+  "published": "2026-10-31T08:52:02+01:00",
+  "modified": "2026-10-31T08:52:02+01:00"
+}

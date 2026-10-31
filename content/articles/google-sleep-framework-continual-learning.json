@@ -1,0 +1,115 @@
+{
+  "slug": "google-sleep-framework-continual-learning",
+  "section": "modelle",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Googles Sleep-Framework: Sprachmodelle sollen im Schlaf weiterlernen",
+  "dek": "Google Research stellt ein Framework vor, das Sprachmodelle zwischen Wach- und Schlafphase wechseln lässt: Im Schlaf wandert Kurzzeitwissen in die Parameter, 'Träume' dienen dem Selbsttraining. Laut Paper: fast kein Vergessen, Langzeitgedächtnis bis 10 Millionen Tokens.",
+  "tags": [
+    "Google",
+    "Forschung",
+    "Continual Learning",
+    "LLM"
+  ],
+  "key_takeaways": [
+    "Das Sleep-Framework von Google Research wechselt zwischen einer aktiven Phase (normale Nutzung) und einer Schlafphase, in der das Modell Kurzzeitwissen in stabile Langzeit-Parameter überführt.",
+    "Zwei Stufen: 'Memory Consolidation' (neue Low-Rank-Experten in einer MoE-Struktur speichern Neues, ohne Altes zu überschreiben) und 'Dreaming' (das Modell erzeugt synthetische Übungsdaten und trainiert sich selbst).",
+    "Laut Paper nahezu null Vergessen bei fortlaufender Übersetzung in ungesehene Sprachen, fast perfektes Skalieren auf 10 Millionen Tokens Kontext im BABILong-Benchmark und bessere Mathe-Ergebnisse als Feintuning-Baselines - alles Angaben der Autoren.",
+    "Das würde das starre Wissens-Cutoff-Problem gelöster Modelle angehen; bisher ist es ein Forschungsprototyp auf der Hope-Architektur, kein Produkt-Feature."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein stilisiertes neuronales Netz über einer schlafenden, mondbeschienenen Landschaft, Wissen wandert als Lichtpunkte in stabile Strukturen, ohne Menschen und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Heutige Sprachmodelle hören nach dem Training auf zu lernen - alles Neue lebt nur im Kontextfenster und ist nach der Sitzung weg. Google Research schlägt vor, Modelle regelmäßig 'schlafen' zu schicken: In der Offline-Phase wird Kurzzeitwissen in die Parameter konsolidiert und mit selbst erzeugten Daten geübt. Die im Paper berichteten Ergebnisse sind stark, aber es ist ein Forschungsprototyp, kein angekündigtes Produkt."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Das Sleep-Framework (Ali Behrouz, Vahab Mirrokni und Kollegen, Google Research) gibt einem Sprachmodell zwei Zustände: wach (normal arbeiten, Kurzzeitgedächtnis füllen) und schlafen (offline konsolidieren und selbst verbessern). Im Schlaf werden neue Low-Rank-Experten in einer Mixture-of-Experts-Struktur freigeschaltet, die neues Wissen aufnehmen, ohne alte Parameter zu überschreiben; danach erzeugt das Modell synthetische 'Traum'-Daten und trainiert sich daran selbst. Alle Leistungswerte stammen aus dem Paper der Autoren."
+    },
+    {
+      "t": "h2",
+      "x": "Warum Modelle vergessen"
+    },
+    {
+      "t": "p",
+      "x": "Das Ausgangsproblem ist bekannt: Nach dem Training bleibt ein Modell statisch, sein Wissen endet am Cutoff-Datum. Nachschulen per Feintuning löst 'catastrophic forgetting' aus - neue Aufgaben überschreiben alte Fähigkeiten. In-Context-Learning ist die heutige Notlösung, aber alles im Kontextfenster Gelernte verschwindet mit der Sitzung. Die Autoren vergleichen das mit anterograder Amnesie: Das Modell erlebt jede Sitzung, als wäre sie die erste."
+    },
+    {
+      "t": "h2",
+      "x": "Wie die Schlafphase funktioniert"
+    },
+    {
+      "t": "p",
+      "x": "Die erste Stufe, Memory Consolidation, baut auf der Hope-Architektur des Teams auf: Wissen liegt zunächst in schnellen, flüchtigen Schichten und wird per Knowledge Seeding in neue, niederfrequente Low-Rank-Experten überführt - technisch über eine Kombination aus On-Policy-Distillation und belohnungsbasierter Imitation (der Student wird danach belohnt, wie ähnlich seine Fortsetzungen denen der Lehrer-Version sind). Danach werden die temporären Parameter zurückgesetzt ('synaptic pruning') und der Kurzzeit-Speicher ist wieder frei."
+    },
+    {
+      "t": "p",
+      "x": "Die zweite Stufe heißt Dreaming: Der MoE-Router aktiviert bei der Datenerzeugung absichtlich zufällige Experten, damit das Modell Wissensdomänen mischt; die erzeugten 'Träume' werden gradientenbasiert gefiltert und die besten per Reinforcement Learning und überwachtem Feintuning nach trainiert - rekursive Selbstverbesserung ohne menschliche Aufsicht."
+    },
+    {
+      "t": "h2",
+      "x": "Die Ergebnisse"
+    },
+    {
+      "t": "p",
+      "x": "Vier Messreihen nennt der Blogpost: Bei fortlaufender Übersetzung in Sprachen, die das Modell nie gesehen hat (Mandschurisch, Kalamang), blieb der Leistungsabfall laut Paper nahe null, während In-Context-Learning und Feintuning massiv vergaßen. Im Langkontext-Benchmark BABILong skalierte das Verfahren laut Autoren nahezu perfekt bis 10 Millionen Tokens und lag vor GPT-4 und Titans. Bei Faktenwissen (SQuAD) erreichte es 48,9 Prozent (Single-Task) beziehungsweise 46,2 Prozent (Continued Pre-Training), vor den getesteten Baselines. Und auf den Mathe-Benchmarks AIME 24/25 und HMMT 25 kam es auf 79,2, 69,0 und 46,1 Prozent - jeweils vor SFT, GRPO und Selbst-Distillation. Alle Werte: Angaben der Autoren, unabhängige Replikation steht aus."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Wenn sich das in freier Wildbahn bestätigt, ändert es, was ein 'Modell' ist: kein eingefrorener Stand mehr, sondern ein System mit Lebenszyklus - und Gedächtnis, das Sitzungen überlebt. Genau darin liegt auch die Brisanz: Ein Modell, das sich im Schlaf selbst weitertrainiert, braucht neue Antworten auf Prüfbarkeit und Kontrolle. Bis dahin ist es das, was es ist: ein starkes Paper (seit September 2025 auf OpenReview, jetzt als Google-Blogpost) mit selbst gemessenen Ergebnissen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann mein Chatbot das schon?",
+      "a": "Nein. Das Sleep-Framework ist ein Forschungsansatz von Google Research auf der Hope-Architektur - kein Feature von Gemini oder einem anderen Produkt. Ob und wann daraus etwas Produktreifes wird, ist offen."
+    },
+    {
+      "q": "Was ist der Unterschied zu Feintuning?",
+      "a": "Klassisches Feintuning überschreibt gelernte Fähigkeiten (catastrophic forgetting). Das Sleep-Framework erweitert das Modell stattdessen periodisch um neue Low-Rank-Experten, die neues Wissen aufnehmen, während alte Parameter unangetastet bleiben - dazu kommt eine Selbsttrainings-Phase mit synthetischen Daten."
+    },
+    {
+      "q": "Wo kann ich das Paper lesen?",
+      "a": "Unter dem Titel 'Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories' auf arXiv (2606.03979); der Google-Research-Blogpost fasst es zusammen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+      "publisher": "Google Research",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2606.03979",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "AI News Oct 31, 2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-10-31/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "google-torchtpu-open-source-pytorch",
+    "openai-offline-training-cache-side-channel"
+  ],
+  "published": "2026-10-31T08:53:40+01:00",
+  "modified": "2026-10-31T08:53:40+01:00"
+}
