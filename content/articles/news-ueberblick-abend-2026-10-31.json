@@ -1,0 +1,113 @@
+{
+  "slug": "news-ueberblick-abend-2026-10-31",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Abend: Siri soll sich an frühere Chats erinnern",
+  "dek": "Apples neue Siri-KI merkt sich frühere Gespräche - in der EU bleibt sie außen vor. Fujifilm verfünffacht die Bandproduktion, Proteine entstehen per Stichwort.",
+  "published": "2026-10-31T16:13:00+01:00",
+  "modified": "2026-10-31T16:13:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Apple",
+    "Siri",
+    "Speichertechnik",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "Mit iOS 27.2 und macOS Golden Gate 27.2 bekommt Siri ein Gedächtnis: Die KI erinnert frühere Gespräche und greift auf Voicemails, Nachrichten-Anhänge und Safari zu. Per App lässt sich das ausschließen. In der EU und auf dem chinesischen Festland ist die neue Siri-KI nicht verfügbar.",
+    "Fujifilm verfünffacht die Produktionskapazität für LTO-Magnetbänder, weil Rechenzentren KI-Daten offline archivieren wollen. Solange eine Kassette offline im Regal lagert, ist sie für Ransomware nicht erreichbar - aktiv angebundene Bandsysteme bleiben dagegen angreifbar.",
+    "Zwei neue Systeme übersetzen Alltagssprache in Biologie: Pinal entwirft Proteine per Stichwort, Carbon X analysiert DNA auf dem eigenen Laptop. Beide zeigen, wie zugänglich KI-Werkzeuge für die Forschung werden - und wie ehrlich ihre Grenzen sind."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu den neuen Siri-KI-Funktionen in iOS 27.2: Gedächtnis für frühere Gespräche, Zugriff auf Voicemails und Anhänge, Ausschluss einzelner Apps - und der Hinweis, dass die Funktionen in der EU nicht verfügbar sind.",
+    "caption": "Was Siri mit iOS 27.2 neu kann: Gespräche merken, mehr Datenquellen nutzen, einzelne Apps ausschließen, fünf neue Sprachen. In der EU und auf dem chinesischen Festland starten die Siri-KI-Funktionen nicht. Darstellung nach Apple-Angaben.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: Apple via Ars Technica (Anbieterangaben)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 31. Oktober 2026. Quellenstand: 16:05 Uhr MEZ.** Drei Meldungen zum Samstagabend: Apple rüstet Siri mit einem Gedächtnis nach - ausgerechnet ohne Europa. Fujifilm baut die Produktion einer Speichertechnik massiv aus, die viele für tot hielten. Und in der Forschung lassen sich Proteine und DNA plötzlich in normaler Sprache beschreiben. Dieser Überblick ergänzt unsere einzelnen Tagesartikel."
+    },
+    {
+      "t": "h2",
+      "x": "1. Apple: Siri bekommt ein Gedächtnis - aber nicht hier"
+    },
+    {
+      "t": "p",
+      "x": "Mit iOS 27.2 und macOS Golden Gate 27.2 lernt Siri, sich an frühere Unterhaltungen mit dir zu erinnern. Fragst du später noch einmal nach, weiß der Assistent, worüber ihr schon gesprochen habt. Dafür darf die KI auf mehr Quellen zugreifen als bisher: Voicemails, Anhänge in Nachrichten und dein Surfverhalten in Safari kommen neu dazu. Wer das nicht will, kann einzelne Apps über eine neue Einstellung namens \"Excluded Apps\" gezielt aussperren. Außerdem spricht die neue Siri-KI fünf weitere Sprachen: Französisch, Japanisch, Koreanisch, Portugiesisch und Spanisch."
+    },
+    {
+      "t": "p",
+      "x": "Der Haken für uns: Die neuen Siri-KI-Funktionen sind nach Apples Release-Notes weder in der Europäischen Union noch auf dem chinesischen Festland verfügbar. Einen Termin nennt Apple nicht. Der Rest von iOS 27.2 kommt auch hierzulande: Fotos kennzeichnet KI-Bilder mit einem SynthID-Wasserzeichen, Nachrichten schlägt Antworten passend zum Gesprächskontext vor, Siri-Antworten lassen sich abschnittweise markieren und kopieren, und Apple TV bekommt echte Profile pro Person."
+    },
+    {
+      "t": "h2",
+      "x": "2. Fujifilm: Das Magnetband erlebt ein KI-Revival"
+    },
+    {
+      "t": "p",
+      "x": "Fujifilm verfünffacht die Produktionskapazität für Magnetbänder des Standards LTO Ultrium 10 gegenüber dem Geschäftsjahr 2025. Aufgestockt wird das Werk in Odawara (Präfektur Kanagawa), der Ausbau läuft über die Geschäftsjahre 2026 bis 2028. Grund: Rechenzentren brauchen Platz für die riesigen Datenmengen, die generative KI erzeugt und die langfristig aufbewahrt werden soll. Fujifilm setzt dabei auf neue, besonders feine Magnetpartikel aus Bariumferrit und Strontium. Das LTO-Konsortium rechnet in seiner Roadmap bereits mit den Generationen 11 bis 14 - eine Planungsvorgabe der Hersteller, keine Zusage."
+    },
+    {
+      "t": "p",
+      "x": "Warum ausgerechnet Band? Weil ein Band im Regal physisch vom Netz getrennt ist - Fachleute nennen das Air Gap. Ransomware, die Server und Festplatten verschlüsselt, erreicht eine Offline-Kassette nicht. Für dich heißt das: Ein Teil deiner Cloud-Backups und großer KI-Trainingsdaten wird künftig wahrscheinlich auf einer Technik lagern, die älter ist als viele ihrer Nutzer."
+    },
+    {
+      "t": "h2",
+      "x": "3. Vibe-Genomik: Proteine und DNA per Stichwort"
+    },
+    {
+      "t": "p",
+      "x": "Forscher haben mit Pinal ein System vorgestellt, das Proteine per Beschreibung in normaler Sprache entwirft. Ein erstes Modell übersetzt die Beschreibung in einen Strukturplan, ein zweites erzeugt daraus die Aminosäuresequenz. Trainiert wurde das System mit massenhaft Text-Protein-Paaren - allein eine der drei Datenbanken enthielt 800 Millionen. In einem Test ließen die Forschenden 50.000 Kandidaten für ein grün leuchtendes Protein erzeugen, 29 davon testeten sie im Labor - eines fluoreszierte tatsächlich. Das klingt mager, ist aber als Machbarkeitsnachweis im Fachjournal Nature erschienen. Die Trefferquote zeigt ehrlich, wie früh die Technik ist."
+    },
+    {
+      "t": "p",
+      "x": "Das zweite System heißt Carbon X und kommt unter anderem von Hugging Face: ein DNA-Sprachmodell mit offenen Gewichten, das lokal auf einem MacBook läuft. Wer es nutzt, muss keine sensiblen Erbgutdaten an einen Cloud-Anbieter schicken. Der Anbieter vergleicht Carbon X mit dem Modell GPT-6.1 Sol und sieht es auf Augenhöhe - diese Zahlen stammen aus internen, unveröffentlichten Tests und sind nicht unabhängig belegt. Bekannte Schwächen: exakte Positionen im Genom verliert das Modell eher, und wie alle Sprachmodelle kann es Dinge erfinden."
+    },
+    {
+      "t": "callout",
+      "x": "Was das für dich bedeutet: In Deutschland warten wir weiter auf die neue Siri - wer ein iPhone nutzt, bekommt mit 27.2 trotzdem Wasserzeichen für KI-Bilder und bessere Nachrichten-Vorschläge. Hinter den Kulissen kehrt das Magnetband als Schutzschild gegen Erpressungstrojaner zurück. Und in Laboren werden KI-Werkzeuge so einfach zu bedienen wie eine Suchmaschine."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bekomme ich die neue Siri-KI in Deutschland?",
+      "a": "Zunächst nicht. Laut Apples Release-Notes zu iOS 27.2 sind die Siri-KI-Funktionen in der Europäischen Union und auf dem chinesischen Festland nicht verfügbar. Einen Termin für die EU nennt Apple nicht. Die übrigen Funktionen von iOS 27.2 erscheinen auch hier."
+    },
+    {
+      "q": "Kann ich einzelne Apps von Siris Gedächtnis ausschließen?",
+      "a": "Ja. Über die neue Einstellung \"Excluded Apps\" legst du fest, auf welche Apps die Siri-KI nicht zugreifen darf. Damit lassen sich etwa Nachrichten oder Safari von der Erinnerungsfunktion ausnehmen."
+    },
+    {
+      "q": "Sind Magnetbänder nicht längst veraltet?",
+      "a": "Für den Alltag schon, in Rechenzentren nicht. Dort gelten Bänder als günstige, langlebige Archivschicht - und weil sie offline lagern, als Schutz vor Ransomware. Genau diese Nachfrage lässt Fujifilm die Produktion verfünffachen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
+      "publisher": "Ars Technica",
+      "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+      "publisher": "Ars Technica",
+      "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "\"Vibe genes\": Naturalish language comes to protein, genome design software",
+      "publisher": "Ars Technica",
+      "url": "https://arstechnica.com/science/2026/10/vibe-genes-naturalish-language-comes-to-protein-genome-design-software/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "qwenputer-risc-v-cpu-qwen-gewichte",
+    "smart-tv-entmuellt-vibe-coding"
+  ]
+}
