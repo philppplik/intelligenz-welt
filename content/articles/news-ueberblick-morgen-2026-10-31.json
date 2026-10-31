@@ -1,0 +1,123 @@
+{
+  "slug": "news-ueberblick-morgen-2026-10-31",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Morgen: Googles Satellit schreibt Haikus im All",
+  "dek": "Erstmals liefert ein Rechenzentrums-Chip aus dem Orbit eine KI-Antwort. Dazu: Rivians Assistent für VW und ein Realitätscheck für Bestell-Agenten.",
+  "published": "2026-10-31T06:42:24+01:00",
+  "modified": "2026-10-31T06:42:24+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Weltraum",
+    "Sprachassistenten",
+    "Agenten"
+  ],
+  "key_takeaways": [
+    "Googles Suncatcher-Prototyp hat erstmals ein KI-Modell auf einem Rechenzentrums-Chip im All ausgeführt: Das offene Gemma 4 antwortete mit einem Haiku. Vier TPUs sind an Bord, aber nur eine kann etwa 20 Minuten am Stück laufen.",
+    "Rivian lizenziert seinen KI-Sprachassistenten an Volkswagen. Er versteht, was du im Auto tun willst, und leitet die Aktion an die richtige Fahrzeugsoftware weiter. Erster Kandidat: der kleine ID EVERY1.",
+    "So viel zum Agenten-Hype: Beim Lieferdienst DoorDash kamen bislang nur einige hundert Bestellungen über fremde KI-Agenten herein, bei drei Millionen Lieferungen pro Tag im Jahresschnitt 2025. Die Zeiträume sind nicht direkt vergleichbar."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu Googles Suncatcher-Satelliten: Zeitstrahl vom Start Anfang Oktober über die Inbetriebnahme bis zur ersten KI-Antwort aus dem Orbit, mit Ausblick auf zwei vernetzte Satelliten 2027.",
+    "caption": "Suncatcher-Zeitstrahl: Start am 1. Oktober, drei Wochen Inbetriebnahme, erste KI-Antwort von Gemma 4 aus dem Orbit in dieser Woche; 2027 sollen zwei per Laser vernetzte Satelliten folgen. Vier TPUs an Bord, nur eine kann rund 20 Minuten am Stück laufen.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: Google, TechCrunch"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 31. Oktober 2026. Quellenstand: 06:36 Uhr MEZ.** Zum Wochenende verlassen KI-Chips die Erde, Sprachassistenten wandern von Auto zu Auto, und ein Lieferdienst liefert seltene Zahlen zum Agenten-Hype. Dieser Zusatzüberblick ergänzt unsere heutigen Artikel, ohne ihre Themen zu wiederholen."
+    },
+    {
+      "t": "h2",
+      "x": "1. Googles KI-Satellit meldet sich, mit einem Haiku"
+    },
+    {
+      "t": "p",
+      "x": "Ein Monat nach dem Start hat Googles Suncatcher-Prototyp sein erstes Lebenszeichen geschickt: Während eines Überflugs über der Bodenstation in Svalbard lud das Team einen Prompt hoch, und das vorinstallierte offene Modell Gemma 4 antwortete aus dem Orbit mit einem Haiku über den Weltraum. Danach folgten Limericks und, wichtiger, Telemetrie-Abfragen zum Zustand der Systeme. Es ist das erste Mal, dass ein Rechenzentrums-Chip dieser Klasse eine KI-Antwort aus dem All liefert [^1][^2]."
+    },
+    {
+      "t": "p",
+      "x": "Die Einschränkungen zeigen, wie früh das ist: Vier TPUs sind an Bord, doch der Satellit erzeugt nur etwa ein Kilowatt Strom, deshalb kann immer nur eine TPU für rund 20 Minuten laufen. Als Nächstes testet Google, wie die Chips mit Hitze und Strahlung klarkommen. Das Haiku selbst: „Blue marble below / Data streams in silent grace / Starlight feeds my core.“ Vor dem Start hatte Google die Chips in Teilchenbeschleunigern getestet; danach dürfte Strahlung vor allem fürs Training problematisch sein, weniger fürs Antworten. Ob das stimmt, zeigt jetzt der Praxistest. Klappt alles, sollen 2027 zwei vernetzte Satelliten folgen, die sich per Laser unterhalten [^1][^2]."
+    },
+    {
+      "t": "h2",
+      "x": "2. Rivians Sprachassistent zieht in VW-Autos ein"
+    },
+    {
+      "t": "p",
+      "x": "Rivian lizenziert Teile seines KI-Sprachassistenten an Volkswagen. Der Assistent läuft seit Mai in Rivians großen Modellen und seit Oktober im neuen R2; er erkennt, welche Aktion du im Auto auslösen willst, und leitet sie an die passende Softwarekomponente weiter, etwa Klima, Navigation oder Fahrwerksmodi. Welche VW-Modelle ihn bekommen, steht noch nicht fest, aber der kleine Elektrowagen ID EVERY1 gilt als erster Kandidat. Auch zu den Konditionen schweigen beide Seiten [^3]."
+    },
+    {
+      "t": "p",
+      "x": "Spannend ist die Perspektive: Rivian hat dafür ein eigenes Agenten-Framework gebaut und könnte künftig auch KI-Agenten anderer Anbieter im Auto laufen lassen, Anthropic wird als Beispiel genannt [^3]."
+    },
+    {
+      "t": "h2",
+      "x": "3. Realitätscheck: Fast niemand bestellt per KI-Agent"
+    },
+    {
+      "t": "p",
+      "x": "DoorDash hat in seiner Bilanzpressekonferenz eine Zahl genannt, die den Agenten-Hype erdet: Über fremde KI-Agenten kamen bislang insgesamt nur einige hundert Bestellungen herein. Das Unternehmen nennt in seinem Jahresbericht für 2025 im Schnitt drei Millionen Lieferungen pro Tag; Gesamtzahl seit Start und Tagesdurchschnitt stammen aus unterschiedlichen Zeiträumen und sind nicht direkt vergleichbar. Laut Xu bestellen die Kunden weiter überwiegend direkt in der App. Chef Tony Xu sagte, man wolle den Trend weder bekämpfen noch sich etwas vormachen. Langfristig könne er sich sogar Werbung innerhalb der fremden Agenten vorstellen [^4]."
+    },
+    {
+      "t": "p",
+      "x": "DoorDash baut parallel eigene Bestell-Agenten, etwa einen Chatbot und eine Schnittstelle, über die fremde Chatbots Firmenbestellungen auslösen können. Und die Plattformen sortieren sich: Amazon blockiert fremde Einkaufs-Agenten, Walmart lässt sie ausdrücklich herein [^4]. Passend dazu: [Wie Walmart sein Tor für Shopping-Agenten regelt](/artikel/walmart-agent-gateway-shopping-agenten-regeln/) und [wie Yelp jetzt für dich im Restaurant anruft](/artikel/yelp-check-for-me-ki-telefoniert-restaurant/)."
+    },
+    {
+      "t": "h2",
+      "x": "Unsere Einordnung: KI verlässt das Rechenzentrum, langsam"
+    },
+    {
+      "t": "p",
+      "x": "Der Haiku aus dem All ist ein schönes Bild für eine frühe Machbarkeit: Der Chip funktioniert da oben, mehr beweist er noch nicht. Der VW-Deal zeigt den realistischeren Weg, Spezialsoftware wandert dorthin, wo sie gebraucht wird. Und die DoorDash-Zahl erinnert daran, dass zwischen Agenten-Demo und Alltag eine Menge Gewohnheit liegt. Lies bei solchen Vergleichen immer die Zeiträume mit: Gesamt seit Start und pro Tag sind zwei verschiedene Welten."
+    },
+    {
+      "t": "callout",
+      "title": "So ist dieser Überblick entstanden",
+      "x": "Eigene Zusammenfassung tatsächlich gelesener Quellen: Googles Blogbeitrag zu Suncatcher, die TechCrunch-Artikel zum Satelliten, zu Rivian/VW und zu DoorDash, keine übernommenen Anrisstexte. Angaben zu Leistung, Zeitfenstern und Bestellzahlen sind Anbieter- beziehungsweise Berichtsangaben, wir haben nichts selbst nachgemessen. Quellenstand 31.10.2026, 06:36 Uhr MEZ."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ein Satellit wirklich KI rechnen?",
+      "a": "Ja, aber bisher nur in Mini-Dosen: Der Strom reicht für eine von vier TPUs für etwa 20 Minuten am Stück. Google will nun testen, ob die Chips Hitze und Strahlung im All dauerhaft aushalten, erst dann folgen 2027 größere Schritte."
+    },
+    {
+      "q": "Wann kommt der Rivian-Assistent in meinen VW?",
+      "a": "Das ist noch offen. Fest steht nur die Lizenzvereinbarung; als erstes Fahrzeug mit Rivian-Software gilt der geplante Kleinwagen ID EVERY1. Einen Termin hat keiner der beiden Hersteller genannt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "We’ve received our first response from the Project Suncatcher prototype satellite",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Google's first data center satellite is online and writing poetry",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "Rivian expands joint venture with VW to include AI assistant",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant/",
+      "accessed": "2026-10-31"
+    },
+    {
+      "title": "DoorDash said it's only received 'several hundred' orders from AI agents",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+      "accessed": "2026-10-31"
+    }
+  ],
+  "related": [
+    "walmart-agent-gateway-shopping-agenten-regeln",
+    "yelp-check-for-me-ki-telefoniert-restaurant"
+  ]
+}
