@@ -1,0 +1,125 @@
+{
+  "slug": "robots-txt-policy-token-ki-training",
+  "section": "praxis",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Ein Opt-out für alle: Was der geplante robots.txt-Policy-Token für deine Website bedeutet",
+  "dek": "Google, Microsoft, OpenAI und Anthropic wollen einen gemeinsamen Schalter in der robots.txt unterstützen, mit dem Websites KI-Training über viele Anbieter hinweg untersagen. Google hat nun erklärt, wie es das Token interpretieren wird - und bis wann.",
+  "tags": [
+    "Praxis",
+    "Web",
+    "KI-Training",
+    "Standard"
+  ],
+  "key_takeaways": [
+    "Vier große KI-Anbieter wollen ein gemeinsames Policy-Token in der robots.txt unterstützen, mit dem Website-Betreiber ihre Trainingspräferenz einmal statt pro Anbieter einzeln festlegen; Grundlage ist die AIPREF-Arbeitsgruppe der IETF.",
+    "Google wird das Token so lesen: Opt-out per gemeinsamem Token gilt wie ein Verbot für Google-Extended - es sei denn, Google-Extended ist ausdrücklich anders angegeben. Bestehende anbieterspezifische Regeln bleiben parallel gültig.",
+    "Zeitpläne: Anthropic unterstützt das Signal schon, OpenAI spricht von den kommenden Monaten, Google und Microsoft peilen 2027 an; Meta signalisiert Zustimmung ohne Zusage.",
+    "Praktisch heißt das: Noch ist nichts zu ändern - wer heute aussperren will, nutzt weiter die Einzel-Tokens der Anbieter. Der Standard vereinfacht das später, ersetzt aber keine Lizenzen und löst den Umgang mit Crawlern, die Regeln ignorieren, nicht."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine stilisierte Eingangstür mit einem Schild, davor mehrere kleine Roboter, die artig in einer Reihe warten, dunkelblaue Szene ohne Menschen und ohne lesbare Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Wer heute verhindern will, dass KI-Firmen die eigene Website fürs Training auslesen, pflegt eine Liste einzelner Crawler-Regeln - pro Anbieter eine. Ein gemeinsamer Standard soll das auf einen Eintrag reduzieren. Google hat am 30. Oktober als Erster der vier beteiligten Konzerne konkret beschrieben, wie es das künftige gemeinsame Signal interpretieren wird."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Google, Microsoft, OpenAI und Anthropic haben angekündigt, ein gemeinsames Policy-Token in der robots.txt zu unterstützen, mit dem Websites ihre KI-Trainingspräferenz einmal für alle teilnehmenden Anbieter erklären. Technisch basiert es auf der AIPREF-Arbeitsgruppe der IETF; das vorgeschlagene Token stammt von Kevin Kelley, Standards-Lead bei Anthropic. Google plant, ein Opt-out über das gemeinsame Token wie ein Verbot für Google-Extended zu behandeln, sofern Google-Extended nicht explizit anders konfiguriert ist. Die Syntax steht noch nicht final fest; Googles Unterstützung ist für 2027 angekündigt."
+    },
+    {
+      "t": "h2",
+      "x": "Was genau angekündigt wurde"
+    },
+    {
+      "t": "p",
+      "x": "Die Ankündigung bündelt sich in Googles Search-Central-Blog (30. Oktober, verfasst von Search Advocate John Mueller): Website-Betreiber sollen statt getrennter Anweisungen für jeden KI-Entwickler ein gemeinsames Policy-Token in der robots.txt nutzen können, das bei allen teilnehmenden Anbietern gilt. Die anbieterspezifischen Regeln bleiben bestehen - wer will, setzt also weiter Feinsteuerung pro Anbieter obendrauf. Google betont außerdem: Websites, die Google-Extended ausdrücklich erlauben, bleiben berechtigt, in den Gemini-Apps über Grounding in Antworten aufzutauchen und Klicks zu bekommen - ein Anreiz, Training und Sichtbarkeit getrennt zu steuern."
+    },
+    {
+      "t": "p",
+      "x": "Der Vorschlag kommt nicht aus dem Nichts: Er greift die Trainings-Definition auf, die in der IETF-Arbeitsgruppe AIPREF erarbeitet wurde, während am Rest des AIPREF-Vokabulars noch diskutiert wird. Google verweist außerdem darauf, dass der Entwurf zum EU-Verhaltenskodex für Anbieter von KI-Modellen mit allgemeinem Verwendungszweck (GPAI) unter dem EU-AI-Act passt - der robots.txt als primären Weg für maschinenlesbare Präferenzen anerkennt."
+    },
+    {
+      "t": "h2",
+      "x": "Wer macht ab wann mit"
+    },
+    {
+      "t": "ul",
+      "x": [
+        "Anthropic: unterstützt das Signal bereits (The Verge, 30.10.)",
+        "OpenAI: will es in den kommenden Monaten implementieren",
+        "Google: plant Unterstützung zusammen mit anderen Anbietern im Jahr 2027",
+        "Microsoft: 2027 geplant, zusätzlich mit feineren Reglern - getrenntes Opt-out für Training und für Grounding; die Bing-Suche bleibt laut Microsoft von den Präferenzen unberührt",
+        "Meta: Kommunikationschef Andy Stone nennt ein gemeinsames Signal einen wichtigen Schritt, sagt aber nicht, ob Meta es respektieren wird"
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was du heute tun solltest"
+    },
+    {
+      "t": "p",
+      "x": "Kurzfristig: nichts. Das Token existiert als Entwurf, die endgültige Syntax ist noch nicht veröffentlicht. Wer jetzt aussperren will, nutzt die bestehenden Einzel-Regeln - etwa Google-Extended für Google oder die entsprechenden Tokens der anderen Anbieter. Mittelfristig lohnt es sich, die eigene robots.txt-Strategie zu ordnen: Soll das Opt-out pauschal für alle gelten, dann wird der gemeinsame Eintrag später reichen. Willst du einzelne Anbieter unterschiedlich behandeln - etwa Training verbieten, aber in KI-Suchantworten sichtbar bleiben -, brauchst du weiter die Einzel-Tokens, denn der gemeinsame Standard deckt nur die Trainingsfrage ab."
+    },
+    {
+      "t": "p",
+      "x": "Zwei Grenzen solltest du kennen: Erstens ist das Token ein Höflichkeits-Standard - es bindet nur Anbieter, die mitmachen; Crawler, die robots.txt grundsätzlich ignorieren, stoppt es nicht (dafür sind Ansätze wie Cloudflares standardmäßiges Blockieren von KI-Crawlern gedacht). Zweitens regelt es Nutzungspräferenzen, keine Vergütung - wer Crawler zur Kasse bitten will, schaut auf parallele Initiativen wie Really Simple Licensing (RSL)."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Der gemeinsame Token ist ein spätes, aber echtes Stück Netzhygiene: Vier Konkurrenten einigen sich auf einen Schalter, statt vier verschiedene zu bauen - das senkt die Hürde für Opt-outs massiv und nimmt den Anbietern das Verwirrungsspiel-Argument. Substanzielle Fragen bleiben offen: die finale Syntax, Metas Haltung und die Durchsetzung gegen Crawler ohne Anstand. Für Betreiber ist das ein guter Moment, die eigene robots.txt ohnehin einmal sauber zu strukturieren - der Standard belohnt dann die, die wissen, was sie wollen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Muss ich meine robots.txt jetzt ändern?",
+      "a": "Nein. Das gemeinsame Token ist ein Entwurf ohne finale Syntax; Googles Umsetzung ist für 2027 angekündigt. Bestehende anbieterspezifische Regeln funktionieren weiter und bleiben auch dann gültig."
+    },
+    {
+      "q": "Sperrt das Token auch die klassische Google-Suche aus?",
+      "a": "Nein. Es geht um KI-Training. Microsoft betont ausdrücklich, dass Websites unabhängig von ihrer Präferenz weiter in Bing erscheinen; Google trennt die Trainingssperre (Google-Extended) schon heute von der Suchsichtbarkeit."
+    },
+    {
+      "q": "Gilt das Opt-out dann für alle KI-Firmen weltweit?",
+      "a": "Nur für die, die den Standard unterstützen. Anthropic unterstützt das Signal bereits; Google und Microsoft haben die Umsetzung für 2027 angekündigt, OpenAI spricht von den kommenden Monaten; eine verbindliche Zusage von Meta steht aus. Crawler außerhalb des Standards respektieren das Token nicht zwingend."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Supporting a shared AI training control for websites",
+      "publisher": "Google Search Central Blog",
+      "url": "https://developers.google.cn/search/blog/2026/10/ai-training-control",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "The biggest names in AI are backing a new way to opt out of scraping",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Google, Microsoft, OpenAI and Anthropic back one AI training opt-out",
+      "publisher": "The Next Web",
+      "url": "https://thenextweb.com/news/ai-training-opt-out-robots-txt-google-openai-microsoft-anthropic",
+      "accessed": "2026-11-01"
+    }
+  ],
+  "related": [
+    "chatgpt-chrome-agenten-websites-sperren",
+    "ki-training-ross-urteil-fair-use-faktencheck"
+  ],
+  "published": "2026-11-01T08:58:00+01:00",
+  "modified": "2026-11-01T08:58:00+01:00"
+}

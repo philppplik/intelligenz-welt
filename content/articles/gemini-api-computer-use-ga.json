@@ -1,0 +1,115 @@
+{
+  "slug": "gemini-api-computer-use-ga",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Gemini API: Computer Use ist allgemein verfügbar - das steckt in Googles Agenten-Werkzeug",
+  "dek": "Googles Computer-Use-Tool steuert Browser, Mobilgeräte und Desktops per Screenshot und UI-Aktionen - ab 30. Oktober nicht mehr Preview, sondern GA in der Gemini API. Was es kann, welche Modelle es tragen und was der Betrieb kostet.",
+  "tags": [
+    "Google",
+    "Gemini",
+    "Agenten",
+    "API"
+  ],
+  "key_takeaways": [
+    "Computer Use ist seit dem 30. Oktober 2026 allgemein verfügbar (GA) - in der Interactions- und in der GenerateContent-API der Gemini API.",
+    "Das Werkzeug lässt Modelle per Screenshot den Bildschirm sehen und Aktionen wie Klicks und Tastatureingaben erzeugen; die Ausführung liegt beim eigenen Client. Unterstützt werden Browser-, Mobile- und Desktop-Umgebungen.",
+    "Gemini-4- und Gemini-3.x-Modelle bringen Zusatzfunktionen mit: Aktions-Intents mit Begründung, konfigurierbare Sicherheitsrichtlinien und eine opt-in Erkennung von Prompt-Injection in Screenshots.",
+    "Kosten fallen über das gewählte Modell an, etwa Gemini 3.8 Flash: 0,75 US-Dollar pro Million Eingabe-Tokens und 3,75 pro Million Ausgabe-Tokens (Einführungspreise bis 31. Dezember 2026, danach 1,50 bzw. 7,50 US-Dollar)."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein stilisierter Bildschirm mit Browser-Fenstern, über dem ein abstrakter leuchtender Zeiger schwebt, dunkelblaue Szene ohne Menschen und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Wer Agenten bauen will, die echte Software bedienen, bekommt bei Google jetzt ein fertiges Fundament: Das Computer-Use-Tool der Gemini API ist laut offiziellem Changelog seit dem 30. Oktober allgemein verfügbar. Die Reifegrad-Stufe bedeutet vor allem: keine Preview-Haken mehr, klare Modellunterstützung und produktive Nutzung in zwei API-Varianten."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "Computer Use ist ein Werkzeug der Gemini API, mit dem Gemini-Modelle Bildschirme per Screenshot auswerten und konkrete UI-Aktionen (Mausklicks, Tastatureingaben) vorschlagen; dein Code führt die Aktionen dann aus. Seit 30. Oktober 2026 ist das Tool GA - in der Interactions-API und in der GenerateContent-API. Unterstützt werden Gemini-4- und Gemini-3.x-Modelle, darunter Gemini 3.8 Flash."
+    },
+    {
+      "t": "h2",
+      "x": "Was das Werkzeug kann"
+    },
+    {
+      "t": "p",
+      "x": "Das Prinzip ist Function Calling mit Augen: Du aktivierst das Tool computer_use, übergibst eine Umgebung (browser, mobile oder desktop), und das Modell bekommt Screenshots zu sehen und antwortet mit Aktionen. Die eigentliche Ausführung - Klicks, Eingaben, das erneute Aufnehmen von Screenshots - implementierst du clientseitig selbst. Google nennt als Einsatzfelder das Automatisieren von Dateneingabe und Formularen, das Testen von Webanwendungen und Recherchen über mehrere Websites, etwa Preisvergleiche."
+    },
+    {
+      "t": "p",
+      "x": "Bei den aktuellen Gemini-4- und Gemini-3.x-Modellen kommen drei Funktionen dazu, die für den Praxiseinsatz zählen: Aktionen tragen ein intent-Feld, das den Grund des Modells für jeden Schritt mitliefert; Sicherheitsverhalten lässt sich über eingebaute Richtlinien-Kategorien mit eigenen Ausnahmen konfigurieren; und eine opt-in Prüfung scannt Screenshots auf versteckte Anweisungen - also auf Prompt-Injection, die über den Bildinhalt hereinkommt."
+    },
+    {
+      "t": "h2",
+      "x": "Der Weg zur GA"
+    },
+    {
+      "t": "p",
+      "x": "Aus dem Changelog der Gemini API lässt sich die Entwicklungslinie ablesen: Im Herbst 2025 startete ein Gemini-2.5-Computer-Use-Preview, gefolgt von der Unterstützung in den Preview-Modellen Gemini 3 Pro und 3 Flash. Gemini 3.5 Flash brachte dann die öffentliche Preview mit den heutigen Kernfunktionen - vereinfachte Aktionen mit Intents, die drei Umgebungen, konfigurierbare Sicherheitsrichtlinien und die Injection-Erkennung. Am 30. Oktober 2026 folgte die GA für beide API-Varianten."
+    },
+    {
+      "t": "h2",
+      "x": "Was der Betrieb kostet"
+    },
+    {
+      "t": "p",
+      "x": "Abgerechnet wird über das Modell, nicht über das Tool. Für Gemini 3.8 Flash nennt die Preisseite als Einführungskonditionen bis 31. Dezember 2026: 0,75 US-Dollar pro Million Eingabe-Tokens und 3,75 US-Dollar pro Million Ausgabe-Tokens (inklusive Denk-Tokens); ab 1. Januar 2027 gelten 1,50 beziehungsweise 7,50 US-Dollar. Ein kostenloses Kontingent existiert, ist aber für produktive Agentenläufe mit ihren vielen Screenshot-Eingaben schnell erschöpft - Computer-Use-Schleifen sind eingabelastig, weil jeder Schritt einen neuen Screenshot ins Modell schickt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Computer Use wird zum Commodity: OpenAI hat sein Operator-Erbe in der API, Anthropic hat Computer Use seit Langem im Angebot, Google zieht mit GA jetzt gleich - inklusive der beiden Funktionen, die in der Praxis über Produktionsreife entscheiden: begründete Aktionen und ein eingebauter Schutz vor Injektionen über den Bildschirminhalt. Wer Agenten baut, sollte Letzteres nicht als Beiwerk lesen: Jeder Screenshot ist ein Eingabekanal für fremde Anweisungen. Die Alternative, Bedienstrukturen statt Pixel auszulesen (etwa Vercels quelloffenes Agent Desktop), zeigt zugleich, dass der Screenshot-Ansatz weiter Konkurrenz bekommt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Brauche ich für Computer Use ein bestimmtes Modell?",
+      "a": "Ja - das Tool läuft mit Gemini-4- und Gemini-3.x-Modellen. In den Beispielen der Dokumentation kommt Gemini 3.8 Flash zum Einsatz; die Liste der unterstützten Modelle steht in der Modellübersicht der Gemini API."
+    },
+    {
+      "q": "Führt Google die Aktionen für mich aus?",
+      "a": "Nein. Das Modell liefert nur die Aktionen (Klick, Eingabe, Scrollen) zurück; die Ausführungsumgebung - Browser-Steuerung, Screenshot-Aufnahme, Sicherheitsgrenzen - baust du selbst, ähnlich wie bei klassischem Function Calling."
+    },
+    {
+      "q": "Was kostet ein typischer Agentenlauf?",
+      "a": "Google nennt keine Pauschale. Abgerechnet werden Modell-Tokens; weil jeder Schritt einen Screenshot als Eingabe enthält, dominieren die Eingabe-Kosten. Für Gemini 3.8 Flash gelten bis Ende 2026 0,75 US-Dollar pro Million Eingabe- und 3,75 pro Million Ausgabe-Tokens."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini API Release Notes (Computer Use GA, 30. Oktober 2026)",
+      "publisher": "Google AI for Developers",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Computer use - Interactions API",
+      "publisher": "Google AI for Developers",
+      "url": "https://ai.google.dev/gemini-api/docs/computer-use",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Gemini Developer API pricing",
+      "publisher": "Google AI for Developers",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "accessed": "2026-11-01"
+    }
+  ],
+  "related": [
+    "gpt-6-1-terra-halber-preis-computer-use",
+    "gemini-4-argon-agenten-minecraft-durchgespielt"
+  ],
+  "published": "2026-11-01T08:58:00+01:00",
+  "modified": "2026-11-01T08:58:00+01:00"
+}

@@ -1,0 +1,165 @@
+{
+  "slug": "volta-infostealer-llm-opfer-bewertung",
+  "section": "analyse",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Talos-Analyse: VOLTA-Infostealer lässt Claude, Kimi und Gemini Opfer nach Wert sortieren",
+  "dek": "Ein neuer Windows-Infostealer stiehlt nicht nur Zugangsdaten, sondern schickt das Diebesgut noch vom Opferrechner aus an ein Sprachmodell - mit der Anweisung, als Geheimdienst-Analyst eine Zielbewertung zu schreiben. Cisco Talos hat die Schadsoftware VOLTA seziert.",
+  "tags": [
+    "Sicherheit",
+    "Malware",
+    "LLM-Missbrauch",
+    "Analyse"
+  ],
+  "key_takeaways": [
+    "VOLTA ist laut Cisco Talos ein selbstlöschender Windows-Infostealer, der nach dem Diebstahl von Zugangsdaten, Sessions und Krypto-Wallets ein strukturiertes Beweisbündel an ein LLM schickt und die Opfer nach Verwertbarkeit sortieren lässt.",
+    "Der Aufruf läuft über OpenRouter mit anthropic/claude-opus-4.6 als Standard; bei Verweigerung weicht die Malware auf moonshotai/kimi-k2 und danach google/gemini-2.5-flash aus - die Entwickler rechnen also fest mit den Schutzmaßnahmen der Modelle.",
+    "Die Inferenz läuft komplett über die Internetverbindung des Opfers, auf dessen Rechner; eigene Angreifer-Infrastruktur gibt es laut Talos nicht.",
+    "Gegenmaßnahmen: Chrome-Start mit --headless per Richtlinie einschränken, nach einem Befall Tokens widerrufen und Passwörter wechseln; Krypto-Wallets mit kompromittierter Seed-Phrase als vollständig verloren behandeln."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: ein stilisiertes Akten-Dossier mit einer Lupe, aus dem Datenströme in ein abstraktes neuronales Netz fließen, dunkelblaue Szene ohne Menschen und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Die Schadsoftware VOLTA - sie nennt sich selbst VOLTA-AUTODOXER - klaut wie viele Infostealer alles, was nicht niet- und nagelfest ist. Der neue Dreh: Danach baut sie aus dem Diebesgut ein Dossier über den Menschen hinter dem Rechner und lässt ein Sprachmodell bewerten, wie viel dieses Opfer wert ist. Cisco Talos beschreibt die Malware in einer Analyse als reifen Stealer mit einer KI-Schicht, die dem Betreiber Denkarbeit abnimmt."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "VOLTA ist ein selbstlöschender Windows-Infostealer, der nach dem Sammeln von Passwörtern, Cookies, Sessions und Krypto-Wallets eine Datei Identity_Report.txt erzeugt, als JSON an OpenRouter schickt und vom Modell eine priorisierte Opferbewertung zurückbekommt (AI_Analysis.txt). Beides wandert gemeinsam ins Exfiltrations-Archiv volta_dox.zip. Entdeckt wurde die Malware im Rahmen der Talos-Forschungsinitiative CAIRN; der Bericht stammt von Talos-Analyst Ryan Fetterman (31. Oktober 2026)."
+    },
+    {
+      "t": "h2",
+      "x": "Wie der Angriff abläuft"
+    },
+    {
+      "t": "p",
+      "x": "VOLTA erntet zunächst das klassische Stealer-Spektrum: Browser-Zugangsdaten, Cookies und gespeicherte Zahlungskarten aus Chromium-Browsern, dazu Firefox, Thunderbird, Outlook-Profile, Slack-Workspaces, Steam- und Battle.net-Sessions, Discord-Token, Telegram-Sessions, Roblox-Konten sowie SSH- und Cloud-Konfigurationen. Gespeicherte WLAN-Passwörter landen im Klartext im Bericht. Bei Krypto-Wallets kopiert die Malware nicht nur die Tresore, sondern startet laut Talos gleich einen eingebauten Cracker dagegen."
+    },
+    {
+      "t": "p",
+      "x": "Dann wird es ungemütlich persönlich: Mit den gestohlenen Gmail-Tokens durchsucht VOLTA das Postfach des Opfers nach Bestellbestätigungen von Amazon, DoorDash, Uber Eats, Grubhub, Walmart und PayPal, um eine bestätigte Wohnadresse zu ermitteln. Uber-Eats- und DoorDash-Sessions fragt die Malware direkt nach der Bestellhistorie ab; Discord-Konten reichert sie über das gestohlene Token an; sogar ein Roblox-Inventar bewertet sie live über einen externen Dienst. Heraus kommt ein Beweisbündel mit Geodaten, Arbeitgeber, vermutetem Geburtsjahr, Kartenendziffern und Dokumenten-Metadaten."
+    },
+    {
+      "t": "h2",
+      "x": "Der LLM-Anruf aus der Malware"
+    },
+    {
+      "t": "p",
+      "x": "Das Bündel geht per HTTP POST an die OpenRouter-API - mit einem Systemprompt, der das Modell als forensischen Analysten anweist, wörtlich als \"a forensic intelligence analyst drafting a target assessment\". Gefordert ist unter anderem ein Abschnitt mit der Überschrift \"WHAT THEY'RE WORTH\", der Wertgegenstände nach Monetarisierbarkeit in die Stufen niedrig, mittel und hoch sortiert, plus ein Abschnitt \"THEIR OPSEC\" zur Sicherheitshygiene des Opfers. Das Modell soll dabei auch Querverbindungen ziehen - etwa zwischen Namen, Adressen oder Universitäten und Mustern in den Passwörtern des Opfers."
+    },
+    {
+      "t": "table",
+      "caption": "Die hartkodierte LLM-Konfiguration von VOLTA (Quelle: Cisco Talos, 31.10.2026)",
+      "head": [
+        "Eigenschaft",
+        "Wert"
+      ],
+      "rows": [
+        [
+          "Endpunkt",
+          "openrouter.ai/api/v1/chat/completions"
+        ],
+        [
+          "Standard-Modell",
+          "anthropic/claude-opus-4.6"
+        ],
+        [
+          "Fallback-Kette",
+          "moonshotai/kimi-k2, danach google/gemini-2.5-flash"
+        ],
+        [
+          "Temperatur",
+          "0,2 (deterministische, konsistente Ausgaben)"
+        ],
+        [
+          "Request-Format",
+          "handgebautes JSON, kein SDK, User-Agent Mozilla/5.0"
+        ]
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Auffällig ist die Fallback-Logik: Die Malware prüft Antworten auf Formulierungen wie \"I can't\" oder \"I'm not able\" und weicht dann auf das nächste Modell aus. Talos wertet das als Beleg, dass die Entwickler fest mit Verweigerungen rechnen - und auf kleinere, weniger abgesicherte Modelle ausweichen. Ist gar kein API-Schlüssel vorhanden, läuft der Stealer auch ohne die KI-Stufe."
+    },
+    {
+      "t": "h2",
+      "x": "Verbreitungsmodell und Spuren"
+    },
+    {
+      "t": "p",
+      "x": "VOLTA ist offenbar Ware: Der Code enthält sechs austauschbare Platzhalter für Telegram-Kanal, API-Schlüssel und Einstellungen, die beim Bau der jeweiligen Kunden-Binary gefüllt werden - ein Builder-Modell, bei dem der Autor den Zugang verkauft und Kunden eigene Werte eintragen. Die eingesetzte Verschlüsselung dieser Platzhalter ist laut Talos bestenfalls Kosmetik; wer die Datei untersucht, kann die Schlüssel rekonstruieren. Sämtliche beobachteten Endpunkte liegen bei Dritten, eigene Angreifer-Server gibt es nicht."
+    },
+    {
+      "t": "ul",
+      "x": [
+        "SHA256: 57ef4242666d78c50df145b34023df564f0fad38812d6a580e66433d427e2279 (Dateinamen 9BY0tjwOc3ut.exe / yLP9m5J3i2Aw.exe, PE32+ x86-64)",
+        "Artefakte auf dem Opferrechner: Identity_Report.txt, AI_Analysis.txt, Exfiltration als volta_log.zip, volta_dox.zip und ggf. volta_doxnet.zip",
+        "Forensik-Hinweis: Die Hauptdatei löscht sich selbst, aber %APPDATA%\\volta_debug.txt bleibt - ein Zeitstempel-Protokoll darüber, was gesammelt wurde und ob der LLM-Aufruf klappte"
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was dagegen hilft"
+    },
+    {
+      "t": "p",
+      "x": "Viele Token-Diebstähle von VOLTA beruhen laut Talos darauf, die App-Bound-Encryption von Chrome zu umgehen - dafür startet die Malware Chrome mit dem Parameter --headless. Eine Anwendungskontrolle, die festlegt, welche Prozesse Chrome so starten dürfen, blockiert diesen Pfad komplett; mindestens alarmieren sollte man, wenn ein unbekannter Prozess Chrome headless aufruft. Nach einem Befall: Tokens widerrufen, Passwörter ändern, Zugänge in Hardware-Tresore umziehen. Lag eine Seed-Phrase im Klartext auf der Platte, gilt das Wallet als vollständig kompromittiert - Guthaben auf ein neues Wallet mit einer auf einem abgeschotteten Gerät erzeugten Phrase umziehen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "VOLTA macht KI nicht schneller oder stärker - es ersetzt den teuersten Rohstoff der Cyberkriminalität: menschliche Aufmerksamkeit beim Sortieren der Beute. Talos nennt das Effort Displacement und erwartet, dass Verweigerungs-Resistenz zum Standard-Design solcher Malware wird. Für Anbieter ist das ein neuer Missbrauchsvektor aus fremder Infrastruktur heraus; für Nutzer heißt es: Sessions und Tokens sind inzwischen mehr wert als Passwörter, weil sie den Kontext für genau diese Opferprofile liefern."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist VOLTA schon weit verbreitet?",
+      "a": "Talos macht keine Angaben zur Verbreitung. Das Builder-Modell mit austauschbaren Platzhaltern deutet auf einen Verkauf an mehrere Kunden hin; konkrete Opferzahlen nennt die Analyse nicht."
+    },
+    {
+      "q": "Kann OpenRouter oder können die Modellanbieter das unterbinden?",
+      "a": "Die Aufrufe laufen mit regulären API-Schlüsseln über die Netzwerkverbindung des Opfers. Die Fallback-Kette zeigt, dass die Angreifer einzelne Sperren einkalkulieren. Anbieter können Schlüssel sperren und Missbrauchsmuster erkennen - Talos beschreibt die Verweigerungs-Umgehung aber als einkalkuliertes Design."
+    },
+    {
+      "q": "Woher weiß ich, ob ich betroffen bin?",
+      "a": "Ein konkreter Hinweis ist die Datei %APPDATA%\\volta_debug.txt - ein Protokoll der Malware selbst. Talos empfiehlt zudem, auf Chrome-Prozesse zu achten, die von unbekannten Programmen mit --headless gestartet werden. Bei Verdacht: Tokens widerrufen und Passwörter wechseln."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Appraisal by AI: Model-driven victim prioritization in the VOLTA infostealer",
+      "publisher": "Cisco Talos",
+      "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Spooky New Infostealer Malware Uses AI to 'Autodox' Victims",
+      "publisher": "WIRED",
+      "url": "https://www.wired.com/story/kernel-panic-volta-autodoxer-ai-infostealer-malware/",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Cisco Talos Details VOLTA Infostealer's LLM Victim-Ranking Stage",
+      "publisher": "Unite.AI",
+      "url": "https://www.unite.ai/cisco-talos-details-volta-infostealers-llm-victim-ranking-stage/",
+      "accessed": "2026-11-01"
+    }
+  ],
+  "related": [
+    "litellm-11070-supply-chain-stealer",
+    "cursor-marketplace-claude-code-backdoor"
+  ],
+  "published": "2026-11-01T08:58:00+01:00",
+  "modified": "2026-11-01T08:58:00+01:00"
+}

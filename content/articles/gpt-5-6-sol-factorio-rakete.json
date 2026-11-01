@@ -1,0 +1,111 @@
+{
+  "slug": "gpt-5-6-sol-factorio-rakete",
+  "section": "trends",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "GPT-5.6 Sol durchspielt Factorio: Raketenstart nach 13,5 Stunden Spielzeit",
+  "dek": "Entwickler Ryan Madden ließ GPT-5.6 Sol in Codex eine komplette Partie Factorio im friedlichen Modus spielen - bis zum Raketenstart. 13,5 Stunden Spielzeit, ein Python-Interface statt Maus, und am Ende rettet der Agent den Lauf mit einer menschenwürdigen Notlösung.",
+  "tags": [
+    "Agenten",
+    "Benchmark",
+    "OpenAI",
+    "Factorio"
+  ],
+  "key_takeaways": [
+    "Ryan Madden hat GPT-5.6 Sol in Codex (niedrige Denkstufe) eine Partie Factorio im Peaceful-Modus durchspielen lassen: Raketenstart nach 13,5 Stunden Spielzeit - dokumentiert mit Timelapse-Video und Produktionsstatistiken.",
+    "Der Agent spielte über eine Python-Bibliothek, die dieselben Beschränkungen erzwingt wie die Menschen-GUI (Reichweite, Fog of War) - kein Screenshot-Klicken, sondern programmatisches Spielen unter fairen Regeln.",
+    "Der Erfolg war kein Selbstläufer: Im Spätspiel schaffte Sol die Rakete nur, indem es fehlerhaft verkabelte Produktionsstränge mit endlosem Hin- und Hertragen von Material umgangen hat.",
+    "Vergleichswert: Der Vorgänger GPT-5.5 scheiterte in Maddens Versuchen schon daran, überhaupt Fließbänder zu benutzen. Ein Einzelexperiment (n=1), aber mit kompletter Aufzeichnung."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine stilisierte Rakete, die von einer Fabrik aus Fließbändern und Zahnrädern abhebt, daneben eine kleine Spielfigur-Silhouette als abstraktes Symbol ohne Gesicht, dunkelblaue Szene ohne lesbare Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Factorio gilt unter Agenten-Forschern als heimlicher Härtetest: Das Aufbauspiel verlangt stundenlange Planung, Logistik und das Reparieren der eigenen Fehler. Entwickler Ryan Madden hat nun GPT-5.6 Sol - in Codex, mit niedriger Denkstufe - eine komplette Partie im friedlichen Modus (ohne Angreifer) bis zum Raketenstart spielen lassen. 13,5 Stunden Spielzeit, komplett aufgezeichnet."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "In einem Blog-Experiment von Ryan Madden (31. Oktober 2026) hat GPT-5.6 Sol, eingebettet in Codex mit niedriger Denkstufe, eine Peaceful-Partie Factorio eigenständig bis zum Raketenstart gespielt - Spielzeit 13,5 Stunden. Der Agent steuerte das Spiel programmatisch über eine Python-Bibliothek, die dieselben Regeln erzwingt wie die GUI für Menschen. Madden dokumentiert den Lauf mit Timelapse und Produktionsstatistiken; es ist ein Einzelexperiment, kein Benchmark."
+    },
+    {
+      "t": "h2",
+      "x": "Wie der Lauf aufgesetzt war"
+    },
+    {
+      "t": "p",
+      "x": "Madden baute dem Modell einen Game Manager: Eine kleine Python-Bibliothek erlaubt dem Agenten, die Fabrik programmatisch zu bedienen - und erzwingt dabei exakt die Beschränkungen, die auch menschliche Spieler in der GUI haben, etwa die Reichweite der Spielfigur und den Fog of War. Der Agent sieht also keine Pixel und klickt nicht, sondern ruft Aktionen auf, die unter fairen Bedingungen zählen. Den kompletten Lauf zeichnete Madden auf; ein Timelapse liegt auf YouTube, dazu Produktionsstatistiken mit markierten Forschungsmeilensteinen."
+    },
+    {
+      "t": "p",
+      "x": "Ursprünglich wollte Madden den Versuch nach der blauen Wissenschaftsstufe abbrechen. \"I had planned to terminate the run after blue science research, but Sol's surprising effectiveness convinced me to keep it going\", schreibt er - die Skalierungsprobleme, die er für jene Phase erwartet hatte, traten erst später auf und bremsten den Fortschritt dann deutlich."
+    },
+    {
+      "t": "h2",
+      "x": "Der ehrlichste Teil des Berichts"
+    },
+    {
+      "t": "p",
+      "x": "Die Rakete flog nicht, weil der Agent das Spätspiel beherrschte - sondern weil er seine Fehler ausbügelte. Sol bekam bestimmte Produktionssysteme nicht mehr korrekt angebunden und kaschierte das, indem es Material immer wieder per Figur zwischen Fabrikbereichen hin- und herschleppte. Madden nennt das selbst einen erheblichen \"manuellen\" Kraftakt des Agenten. Das ist zugleich Stärke und Diagnose: Genug Beharrlichkeit und Werkzeuggebrauch, um ein Ziel trotz eigener Planungslücken zu erreichen - aber eben nicht die saubere Fabrik, die ein starker menschlicher Spieler gebaut hätte."
+    },
+    {
+      "t": "p",
+      "x": "Zum Vergleich: GPT-5.5 scheiterte in Maddens früheren Versuchen bereits daran, überhaupt Transportbänder zu verwenden - ohne Bänder keine Fabrik, keine Rakete. Madden hatte zuvor schon Claude Code Factorio spielen lassen und mit Faketorio ein eigenes Agenten-Testfeld für das Spiel beschrieben. Weitere Modelle, höhere Denkstufen und Partien mit Gegnern hat er angekündigt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Factorio ist für Agenten das, was Go für Brettspiel-KI war: langfristig, offen, unbarmherzig gegen Planungsfehler - und für Zuschauer verständlich. Der Lauf zeigt zwei Trends zugleich: Denkstufe 'low' reicht inzwischen für Aufgaben, die vor einem Jahr High-End-Reasoning frassen; und der Fortschritt zeigt sich weniger in fehlerfreiem Spiel als in der Fähigkeit, mit den eigenen Fehlern zu leben. N=1 und Peaceful-Modus, klar - aber mit offener Aufzeichnung zählt das mehr als ein Marketing-Chart."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum ist Factorio ein guter Agenten-Test?",
+      "a": "Das Spiel verlangt über Stunden konsistente Planung, Ressourcenlogistik und das Erkennen und Reparieren eigener Fehler - Fähigkeiten, die kurze Benchmarks kaum messen. Madden hebt außerdem hervor, dass Factorio für Beobachter viel lesbarer ist als Code, was die Diskussion über Modellverhalten erleichtert."
+    },
+    {
+      "q": "Hat der Agent wirklich alles allein gemacht?",
+      "a": "Nach Maddens Darstellung ja - der Agent spielte über die Python-Bibliothek ohne menschliche Eingriffe. Einschränkungen: friedlicher Modus ohne Gegner, ein einzelner Lauf, und der Erfolg im Endspiel beruhte auf einer ineffizienten Umgehungslösung statt sauberer Fabrikplanung."
+    },
+    {
+      "q": "Wo kann ich den Lauf sehen?",
+      "a": "Madden verlinkt in seinem Blogpost ein Timelapse-Video auf YouTube und veröffentlichte Produktionsstatistiken des gesamten Laufs; ein ausführlicher Kommentar ist angekündigt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GPT-5.6 Sol can beat Factorio",
+      "publisher": "Ryan Madden (Blog)",
+      "url": "https://ryanmadden.net/gpt-56-beats-factorio/",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "GPT-5.6 Sol can beat Factorio on peaceful mode (Diskussion)",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=50318871",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "GPT-5.6 Sol, running in Codex, finishes a peaceful-mode Factorio game",
+      "publisher": "Snape Report",
+      "url": "https://snapereport.com/s/gpt-5-6-sol-beats-factorio",
+      "accessed": "2026-11-01"
+    }
+  ],
+  "related": [
+    "gemini-4-argon-agenten-minecraft-durchgespielt",
+    "taste-bench-ki-agenten-langzeit-entscheidungen"
+  ],
+  "published": "2026-11-01T08:58:00+01:00",
+  "modified": "2026-11-01T08:58:00+01:00"
+}

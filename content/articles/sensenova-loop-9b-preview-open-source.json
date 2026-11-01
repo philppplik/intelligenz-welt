@@ -1,0 +1,153 @@
+{
+  "slug": "sensenova-loop-9b-preview-open-source",
+  "section": "modelle",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "SenseNova Loop 9B: SenseTimes offenes Modell durchläuft seine Schichten zweimal",
+  "dek": "Mehr Tiefe ohne mehr Parameter: SenseTimes SenseNova-Loop-9B-Preview führt einen Block von 24 Decoder-Schichten zweimal aus und kommt so auf 56 Schicht-Berechnungen pro Durchlauf. Das Modell steht unter Apache 2.0 auf Hugging Face.",
+  "tags": [
+    "Open Source",
+    "Modelle",
+    "SenseTime",
+    "Architektur"
+  ],
+  "key_takeaways": [
+    "SenseTime hat SenseNova-Loop-9B-Preview am 30. Oktober als Open Source veröffentlicht (Apache 2.0, Gewichte auf Hugging Face, Code und Doku auf GitHub).",
+    "Kernidee: Ein Block von 24 der 32 Decoder-Schichten wird mit geteilten Gewichten zweimal ausgeführt - 56 Schicht-Berechnungen pro Vorwärtspass bei nur 32 gespeicherten Gewichtssätzen; rund 9 Milliarden Gesamtparameter, rund 14,6 Milliarden Inferenzparameter.",
+    "Multimodal: Text und Bilder hinein, Text heraus; Trainings-Sequenzlängen bis 262.144 Tokens; Ziel sind lange Kontexte und agentische Workflows.",
+    "SenseTime bewirbt Leistung auf 27B-Niveau und Siege über Qwen3.5-27B in drei Benchmarks - das sind Herstellerangaben ohne unabhängige Prüfung; auf Terminal Bench 2.1 und einem Banking-Benchmark liegt das Modell den eigenen Zahlen zufolge hinten."
+  ],
+  "hero": {
+    "alt": "KI-generierte Illustration: eine stilisierte Schleife aus leuchtenden Schichten, die sich wie ein Band zweimal durch einen Kristall wendet, dunkelblaue Szene ohne Menschen und ohne Schrift",
+    "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+    "ai_generated": true,
+    "credit": "KI-generiert (Intelligenz Welt)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Kurz gesagt:** Kleine Modelle stärker machen, ohne sie größer zu machen - das verspricht SenseTime mit SenseNova-Loop-9B-Preview. Der Trick: Ein Teil des Modells rechnet doppelt. Die Gewichte stehen seit dem 30. Oktober unter der Apache-2.0-Lizenz auf Hugging Face; das Unternehmen bewirbt das 9B-Modell mit dem Satz \"Scaling compute depth, not just model size\"."
+    },
+    {
+      "t": "callout",
+      "title": "Direkte Antwort",
+      "x": "SenseNova-Loop-9B-Preview ist ein offenes multimodales Modell von SenseTime (Text und Bild rein, Text raus, Apache 2.0). Sein Decoder hat 32 Schichten, wovon die Schichten 4 bis 27 zweimal hintereinander mit denselben Gewichten durchlaufen werden - das ergibt 56 Schicht-Ausführungen pro Vorwärtspass. Trainiert wurde mit Sequenzen bis 262.144 Tokens für lange Kontexte, Dokumentverständnis, Coding und Werkzeugaufrufe."
+    },
+    {
+      "t": "h2",
+      "x": "Wie die Schleife funktioniert"
+    },
+    {
+      "t": "p",
+      "x": "Klassische Decoder schicken die Eingabe einmal durch jede Schicht. SenseNova-Loop führt nach den ersten vier Schichten den Block der Schichten 4 bis 27 zweimal hintereinander aus - mathematisch B(B(h)) - und schließt mit den Schichten 28 bis 31 plus Ausgabekopf ab. Weil der wiederholte Block seine Gewichte teilt, steigen die Parameter nicht mit der Rechentiefe: rund 9 Milliarden Parameter insgesamt, rund 14,6 Milliarden bei der Inferenz."
+    },
+    {
+      "t": "p",
+      "x": "Damit Informationen die Doppelschleife sauber durchlaufen, setzt SenseTime auf zwei Mechanismen: sogenannte Two-Stream-mHC (manifold-constrained hyper-connections) führen zwei Restströme um die Schichtberechnungen herum, deren Mischung gelernte Abbildungen steuern - mit Sinkhorn-Normalisierung, in der dokumentierten Konfiguration mit 20 Iterationen. Dazu kommt hybride Aufmerksamkeit: In jeder Vierergruppe folgen auf drei Linear-Attention-Schichten eine mit voller Aufmerksamkeit; die Schleifengrenzen liegen exakt auf diesen Gruppen."
+    },
+    {
+      "t": "table",
+      "caption": "Die wichtigsten Spezifikationen laut Modellkarte (Stand 30.10.2026)",
+      "head": [
+        "Eigenschaft",
+        "Wert"
+      ],
+      "rows": [
+        [
+          "Architektur",
+          "Autoregressiver multimodaler Decoder, Loop-Block mit Two-Stream-mHC"
+        ],
+        [
+          "Parameter",
+          "rund 9 Mrd. gesamt, rund 14,6 Mrd. bei Inferenz"
+        ],
+        [
+          "Eigene Decoder-Schichten",
+          "32"
+        ],
+        [
+          "Schleife",
+          "Schichten 4-27 zweimal, geteilte Gewichte"
+        ],
+        [
+          "Schicht-Ausführungen pro Pass",
+          "56"
+        ],
+        [
+          "Aufmerksamkeit",
+          "hybrid: 3x linear + 1x voll je Vierergruppe"
+        ],
+        [
+          "Trainingskontext",
+          "bis 262.144 Tokens"
+        ],
+        [
+          "Lizenz",
+          "Apache 2.0"
+        ]
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was SenseTime verspricht - und was offen ist"
+    },
+    {
+      "t": "p",
+      "x": "Nach den vom Unternehmen veröffentlichten Zahlen erreicht das 9B-Modell Ergebnisse auf dem Niveau von 27B-Klassen-Modellen und schlägt Alibabas Qwen3.5-27B auf WorkBuddy Bench (66,89 zu 60,53), RaccoonPPTBench (70,70 zu 59,08) und AutomationBench (13,72 zu 10,17); die mHC-Technik allein soll 4,42 Punkte auf GPQA Diamond und 13,34 auf TeamBench bringen. Wichtig: Das sind Herstellerangaben aus der eigenen Benchmark-Grafik, die zum Veröffentlichungszeitpunkt niemand unabhängig geprüft hat - und RaccoonPPTBench ist laut Fußnote ein interner Benchmark. Ehrlicherweise zeigt das Schaubild auch Gegenbeispiele: Auf Terminal Bench 2.1 liegt SenseNova-Loop mit 40,45 hinter Qwen3.5-27B (47,19), auf dem Banking-Benchmark T3 mit 18,56 hinter 19,59."
+    },
+    {
+      "t": "p",
+      "x": "Offen ist noch einiges: Der technische Bericht ist auf der Modellkarte als \"TBD\" markiert; zwei der angekündigten Beschleunigungsverfahren (Dspark und Dflash2) befinden sich noch im Training, Multi-Token-Prediction ist dagegen verfügbar. Der Betrieb verlangt Transformers 5.18.0 mit eigenem Modellcode; als Serving-Option nennt SenseTime sein LightLLM-Framework. Die Demo-Beispiele auf der Modellseite - animierte HTML-Seiten, Folien, Datenanalysen - stammen aus SenseTimes eigenem Raccoon-Work-Produkt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "Parameter-geteilte Schleifen sind kein neuer Gedanke, aber selten in einem voll ausgebauten, multimodalen Open-Weights-Modell zu sehen - schon gar nicht unter Apache 2.0. Wenn sich die Herstellerzahlen auch nur teilweise unabhängig bestätigen, ist das ein starker Beleg dafür, dass Rechentiefe ein dritter Skalierungshebel neben Parametern und Daten ist. Bis dahin gilt: vielversprechende Architektur, Preview-Status, unausgegorener Report - und ein erster Praxistest gehört bei Apache 2.0 dir, nicht dem Marketing."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich SenseNova-Loop-9B kommerziell nutzen?",
+      "a": "Die Lizenz ist Apache 2.0, die kommerzielle Nutzung erlaubt. Zu beachten sind die üblichen Apache-Bedingungen; das Modell trägt den Zusatz Preview, und der technische Bericht fehlt noch."
+    },
+    {
+      "q": "Was heißt 'Inferenzparameter 14,6 Milliarden'?",
+      "a": "Die Modellkarte unterscheidet rund 9 Milliarden Parameter insgesamt von rund 14,6 Milliarden Parametern, die bei der Inferenz wirken - die Doppelausführung des Blocks erhöht die Rechentiefe, ohne die gespeicherten Gewichte zu verdoppeln."
+    },
+    {
+      "q": "Sind die Benchmark-Zahlen verlässlich?",
+      "a": "Sie stammen vollständig von SenseTime selbst; eine unabhängige Bestätigung gab es bei Veröffentlichung nicht. Das Schaubild des Herstellers zeigt neben Siegen über Qwen3.5-27B auch zwei Benchmarks, auf denen das Modell verliert."
+    }
+  ],
+  "sources": [
+    {
+      "title": "sensenova/SenseNova-Loop-9B-Preview (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "OpenSenseNova (Code und Dokumentation)",
+      "publisher": "GitHub",
+      "url": "https://github.com/OpenSenseNova",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "SenseTime open sources SenseNova-Loop-9B-Preview, a model that runs its layers twice",
+      "publisher": "Tech City Authority",
+      "url": "https://www.techcityauthority.com/2026/10/sensetime-open-sources-sensenova-loop-9b-preview-looped.html",
+      "accessed": "2026-11-01"
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-open-weights",
+    "mistral-large-4-open-weights"
+  ],
+  "published": "2026-11-01T08:58:00+01:00",
+  "modified": "2026-11-01T08:58:00+01:00"
+}
