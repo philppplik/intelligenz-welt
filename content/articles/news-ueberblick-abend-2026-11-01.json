@@ -1,0 +1,121 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-01",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "Chainalysis meldet Angriff mit KI-Agent",
+  "dek": "Chainalysis meldet einen Einbruch mit agentischen KI-Techniken. Google stellt Jules ein, und bei Aeon sortieren und stapeln jetzt Roboter mit physischer KI.",
+  "published": "2026-11-01T16:05:00+01:00",
+  "modified": "2026-11-01T16:05:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Chainalysis",
+    "Google",
+    "Robotik",
+    "Sicherheit"
+  ],
+  "key_takeaways": [
+    "Chainalysis meldet: Ein externer Angreifer ist mit \"offensiven agentischen Techniken\" in Systeme und interne Tools eingedrungen. Erfasst wurden Nutzer-IDs, Namen, E-Mail-Adressen und Rollenbezeichnungen; für Ermittlungsinhalte, Passwörter und Sitzungstokens gebe es bisher keinen Beleg eines Zugriffs. Technische Details nennt das Unternehmen nicht.",
+    "Google stellt den Coding-Agenten Jules ein: Sitzungen lassen sich bis 11. November abschließen, danach ist Jules schreibgeschützt, am 31. Dezember ist Schluss. Erkenntnisse fließen in Antigravity; ein Termin für Hintergrund-Aufgaben dort steht noch aus.",
+    "Aeon und Mujin haben in Kawaguchi ein Logistikzentrum in Vollbetrieb genommen, in dem erstmals die Kette von der Sortierung bis zum gemischten Verladen automatisiert läuft - mit Robotern, die Ladepläne simulieren und per 3D-Sicht auf verrutschende Kisten reagieren."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zum Jules-Zeitstrahl: Ankündigung 29. Oktober, letzter Tag für aktive Sitzungen 11. November (danach schreibgeschützt), eingestellt am 31. Dezember 2026, mit Hinweis auf den Datenexport.",
+    "caption": "Der Abschiedsplan für Jules: Sitzungen lassen sich bis 11. November abschließen, danach ist der Dienst nur noch lesbar, am 31. Dezember wird er eingestellt. Ein Export sichert Einstellungen, Verläufe und Erinnerungen lokal. Darstellung nach dem offiziellen Changelog.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: jules.google/docs/changelog"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 1. November 2026. Quellenstand: 16:00 Uhr MEZ.** Drei Meldungen zum Sonntagabend: Die Blockchain-Analysefirma Chainalysis meldet einen Einbruch, bei dem erstmals agentische KI-Techniken als Angriffsmethode genannt werden. Google gibt seinem Coding-Agenten Jules ein Enddatum. Und in Japan geht ein Logistikzentrum in Betrieb, dessen physisch anspruchsvollster Schritt jetzt Robotern gehört. Dieser Überblick ergänzt unsere einzelnen Tagesartikel."
+    },
+    {
+      "t": "h2",
+      "x": "1. Chainalysis meldet Einbruch mit agentischen KI-Techniken"
+    },
+    {
+      "t": "p",
+      "x": "Chainalysis, deren Software Ermittlern beim Verfolgen von Krypto-Transaktionen hilft, hat selbst einen Sicherheitsvorfall gemeldet. Dem Unternehmen zufolge hat ein externer Akteur \"offensive agentische Techniken\" genutzt, um sich unbefugt Zugang zu Systemen und internen Tools zu verschaffen. Eine solche Formulierung in einer offiziellen Incident-Meldung ist bislang ungewöhnlich: Damit benennt ein bekannter Sicherheitsanbieter die Angriffsseite ausdrücklich als KI-Agenten."
+    },
+    {
+      "t": "p",
+      "x": "Erfasst wurden der Mitteilung zufolge Nutzer-IDs, vollständige Namen, E-Mail-Adressen und Rollenbezeichnungen von auf der Plattform angelegten Nutzern. Für Ermittlungsinhalte wie Graphen und Fälle, Transaktions- und Abfrageergebnisse, Klartext-Passwörter, MFA-Geheimnisse und Sitzungstokens gebe es bisher keine Belege für einen Zugriff - eine Momentaufnahme, keine Absolution, die Analyse laufe noch. Welche Schwachstellen ausgenutzt wurden und was genau hinter \"agentisch\" steckt, sagt Chainalysis nicht. Das Unternehmen betont, der Vorfall stehe in keinem Zusammenhang mit dem jüngsten Diebstahl bei Binance. Bemerkenswert ist auch die Gegenseite: Chainalysis setzt für die eigene Sicherheitsüberprüfung nun große Sprachmodelle ein. Kunden sollen Zwei-Faktor-Authentifizierung aktivieren und sich vor unerwarteten Passwort-Resets und angeblichen Recovery-Helfern hüten."
+    },
+    {
+      "t": "h2",
+      "x": "2. Google stellt Jules ein - mit knapper Übergangsfrist"
+    },
+    {
+      "t": "p",
+      "x": "Google beendet seinen asynchronen Coding-Agenten Jules. Laut offiziellem Changelog können Nutzer ihre Sitzungen nur noch bis 11. November zu Ende bringen; danach schaltet der Dienst auf schreibgeschützt, am 31. Dezember 2026 wird er eingestellt. Jules war Ende 2024 als Experiment gestartet: Der Agent übernahm Programmieraufgaben in einer Cloud-Umgebung und öffnete fertige Pull Requests, während der Entwickler etwas anderes tat."
+    },
+    {
+      "t": "p",
+      "x": "Google begründet den Schritt mit der Bündelung der eigenen Agenten-Arbeit: Die Erkenntnisse aus Jules fließen in Antigravity, die agenten-zentrierte Entwicklungsplattform. Einen Termin, wann Jules-artige Hintergrund-Aufgaben dort verfügbar sein werden, nennt Google nicht; eine automatische Migration gespeicherter Verläufe gibt es ebenfalls nicht. Dafür steht ein Export bereit: Über die Jules-Kommandozeile und einen vorbereiteten Prompt für einen Coding-Agenten lassen sich Einstellungen, Umgebungsvariablen, geplante Aufgaben, verbundene Repositories, Erinnerungen und die komplette Sitzungshistorie lokal sichern. Code, Branches und Pull Requests liegen ohnehin bei GitHub. Wer geplante Aufgaben wie nächtliche Updates auf Jules aufgebaut hat, sollte beachten: Die verlieren schon nach dem 11. November ihre Funktion, nicht erst zum Jahresende."
+    },
+    {
+      "t": "h2",
+      "x": "3. Aeon: Roboter übernehmen Sortierung und Verladung"
+    },
+    {
+      "t": "p",
+      "x": "Der japanische Handelskonzern Aeon und das Robotik-Unternehmen Mujin haben am 29. Oktober das Logistikzentrum Kawaguchi-Higashi XD in der Präfektur Saitama in Vollbetrieb genommen. Es ist laut Mitteilung der erste Aeon-Standort, an dem die gesamte Kette von der filialbezogenen Sortierung bis zum gemischten Verladen automatisiert läuft. Das Zentrum beliefert die kleinen My-Basket-Supermärkte in der Region Tokio."
+    },
+    {
+      "t": "p",
+      "x": "Der Kern ist das, was Mujin \"Physical AI\" nennt: Ein Palettierroboter simuliert den Ladeplan für jeden Auslieferungsauftrag vorab, prüft den Stapel per 3D-Sicht und steuert seine Bewegungen in Echtzeit nach, wenn Kisten verrutschen oder eine Ladung kippt - bislang eine Aufgabe, die als zu komplex für die Automatisierung galt. Dazu kommen ein Shuttle-Lagersystem, ein Entpalettierroboter ohne Stammdaten sowie laut dem Branchendienst LNEWS 82 fahrerlose Transportfahrzeuge, gesteuert von einem gemeinsam entwickelten Warenfluss-System, das Maschinen und menschliche Arbeit gleichermaßen dirigiert. Aeon strebt laut dem Branchendienst LNEWS 80 Prozent Automatisierung von Wareneingang bis -ausgang an; konkrete Durchsatz- oder Personalkennzahlen nennt die Mitteilung nicht. Hintergrund ist Japans Arbeitskräftemangel in der Logistik."
+    },
+    {
+      "t": "callout",
+      "x": "So ist dieser Überblick entstanden: Wir haben die Originalquellen - die Incident-Meldung von Chainalysis, das Jules-Changelog und die Pressemitteilung von Mujin - vollständig gelesen und eigenständig zusammengefasst. Angaben, die ein Unternehmen nur für sich beansprucht (etwa die Angriffsmethode bei Chainalysis), sind entsprechend zugeordnet. Wo Zahlen aus Sekundärquellen stammen, ist das markiert."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind bei Chainalysis Kundendaten weg?",
+      "a": "Der Mitteilung zufolge wurden Nutzer-IDs, Namen, E-Mail-Adressen und Rollenbezeichnungen erfasst. Für Ermittlungsinhalte, Passwörter, MFA-Geheimnisse und Sitzungstokens gebe es bisher keinen Beleg eines Zugriffs. Das ist der Stand der Unternehmensangaben - die forensische Analyse läuft noch, und welche Datensätze pro Organisation betroffen sind, will Chainalysis noch aufschlüsseln."
+    },
+    {
+      "q": "Muss ich als Jules-Nutzer jetzt etwas tun?",
+      "a": "Ja, zwei Fristen beachten: Sitzungen lassen sich bis 11. November 2026 abschließen, danach ist Jules nur noch lesbar; am 31. Dezember 2026 wird der Dienst eingestellt. Der offizielle Export sichert Einstellungen, Umgebungsvariablen, geplante Aufgaben, Erinnerungen und Sitzungshistorie lokal. Code und Pull Requests liegen bei GitHub und bleiben erhalten."
+    }
+  ],
+  "related": [
+    "volta-infostealer-llm-opfer-bewertung",
+    "walmart-agent-gateway-shopping-agenten-regeln"
+  ],
+  "sources": [
+    {
+      "title": "Chainalysis Security Incident Information",
+      "url": "https://www.chainalysis.com/blog/security-incident-october-30/",
+      "publisher": "Chainalysis",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Jules Changelog: Jules Turndown",
+      "url": "https://jules.google/docs/changelog/",
+      "publisher": "Jules (Google) - Changelog",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Mujin-Pressemitteilung: Ieon Kawaguchi-Higashi XD geht in Betrieb (japanisch)",
+      "url": "https://www.mujin.co.jp/news/11382/",
+      "publisher": "Mujin",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "BleepingComputer: Chainalysis discloses data breach from \"offensive agentic techniques\"",
+      "url": "https://www.bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques/",
+      "publisher": "BleepingComputer",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "LNEWS: Aeon und Mujin eröffnen Logistikzentrum Kawaguchi-Higashi XD (japanisch)",
+      "url": "https://www.lnews.jp/2026/10/s1029501.html",
+      "publisher": "LNEWS",
+      "accessed": "2026-11-01"
+    }
+  ]
+}
