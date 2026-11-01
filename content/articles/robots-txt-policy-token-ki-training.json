@@ -52,7 +52,7 @@
     },
     {
       "t": "ul",
-      "x": [
+      "items": [
         "Anthropic: unterstützt das Signal bereits (The Verge, 30.10.)",
         "OpenAI: will es in den kommenden Monaten implementieren",
         "Google: plant Unterstützung zusammen mit anderen Anbietern im Jahr 2027",

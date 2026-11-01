@@ -98,7 +98,7 @@
     },
     {
       "t": "ul",
-      "x": [
+      "items": [
         "SHA256: 57ef4242666d78c50df145b34023df564f0fad38812d6a580e66433d427e2279 (Dateinamen 9BY0tjwOc3ut.exe / yLP9m5J3i2Aw.exe, PE32+ x86-64)",
         "Artefakte auf dem Opferrechner: Identity_Report.txt, AI_Analysis.txt, Exfiltration als volta_log.zip, volta_dox.zip und ggf. volta_doxnet.zip",
         "Forensik-Hinweis: Die Hauptdatei löscht sich selbst, aber %APPDATA%\\volta_debug.txt bleibt - ein Zeitstempel-Protokoll darüber, was gesammelt wurde und ob der LLM-Aufruf klappte"
