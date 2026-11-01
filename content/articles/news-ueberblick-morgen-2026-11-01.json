@@ -1,0 +1,113 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-01",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Morgen: Claude-Texte werden unsichtbar markiert",
+  "dek": "Anthropic baut ein unlesbares Wasserzeichen in Claude-Texte ein, OpenAI nutzt Sicherheits-Sessions fürs Training, und Agenten lernen den Desktop bedienen.",
+  "published": "2026-11-01T06:46:00+01:00",
+  "modified": "2026-11-01T06:46:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Anthropic",
+    "OpenAI",
+    "Kennzeichnung",
+    "Werkzeuge"
+  ],
+  "key_takeaways": [
+    "Anthropic versieht Claude-Antworten mit einem unsichtbaren Wasserzeichen in der Wortwahl - Anthropic begründet den Schritt mit dem EU-AI-Act. Die Erweiterung auf vier ältere Modelle läuft gerade an; bei zweien greift die Markierung nur, wenn Entwickler die Standardeinstellungen nicht verändern.",
+    "OpenAI darf Inhalte aus Daybreak-Sicherheitssessions auf privaten Konten künftig fürs Training nutzen - auch wenn du das Training abgeschaltet hast. Nach Protest kündigte OpenAI einen separaten Opt-out an.",
+    "Vercels quelloffenes Agent Desktop lässt Coding-Agenten Programme am PC bedienen - nicht über Screenshots, sondern über die Bedienstruktur des Betriebssystems. Das soll Klicks verlässlicher machen."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zum Text-Wasserzeichen von Anthropic: Wie es funktioniert (Muster in der Wortwahl), wer prüfen darf (nur berechtigte Stellen) und was es nicht kann (keine Personenzuordnung, bei kurzen Texten schwach).",
+    "caption": "So funktioniert das Text-Wasserzeichen: ein unmerkliches Muster in der Wortwahl, keine Zusatzzeichen, keine Nutzerinformationen. Prüfen dürfen vorerst nur berechtigte Stellen wie Regulierer, Medien und Forschende. Darstellung nach Anthropic-Angaben. Rechtsgrundlage der Pflicht: Artikel 50 Absatz 2 EU-AI-Act, mit gesetzlichen Ausnahmen.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: Anthropic (Anbieterangaben)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 1. November 2026. Quellenstand: 06:42 Uhr MEZ.** Drei Meldungen zum Sonntagmorgen: Anthropic markiert Claude-Texte mit einem Wasserzeichen, das niemand sieht. OpenAI ändert die Regeln für Sicherheits-Sessions - und erntet Protest. Und ein neues Open-Source-Werkzeug lässt KI-Agenten deinen Rechner bedienen, ohne auf Pixel zu starren. Dieser Überblick ergänzt unsere einzelnen Tagesartikel."
+    },
+    {
+      "t": "h2",
+      "x": "1. Anthropic: Das Wasserzeichen, das du nie sehen wirst"
+    },
+    {
+      "t": "p",
+      "x": "Claude-Antworten bekommen ein unsichtbares Wasserzeichen: Bei jeder Wortwahl, bei der mehrere Wörter gleich gut passen, folgt die Auswahl einem geheimen Muster. Für dich ändert sich nichts - der Text liest sich wie immer, es kommen keine Zeichen dazu. Aber wer den Schlüssel kennt, kann später prüfen, ob ein Text wahrscheinlich von Claude stammt. Hintergrund ist nach Anthropic-Angaben der EU-AI-Act: Er verpflichtet Anbieter generativer KI-Systeme, KI-erzeugte Inhalte maschinell lesbar zu kennzeichnen (Artikel 50 Absatz 2; Ausnahmen gelten etwa bei unterstützender Standardbearbeitung). Die Markierung gilt weltweit, auch auf AWS, Google Cloud und Microsoft Foundry, und lässt sich nicht abschalten. Dateien wie Bilder behandelt Anthropic getrennt: Sie erhalten einen C2PA-Herkunftsnachweis in den Metadaten, den passende Werkzeuge auslesen können."
+    },
+    {
+      "t": "p",
+      "x": "Gerade weitet Anthropic das Wasserzeichen auf vier ältere Modelle aus: Mythos 5, Opus 4.7, Opus 4.6 und Sonnet 4.6, wie aus einer Kunden-E-Mail hervorgeht, über die am 31. Oktober berichtet wurde. Der Haken: Bei Opus 4.6 und Sonnet 4.6 greift die Markierung nur, wenn Entwickler die drei Zufallsparameter auf den Standardwerten lassen - wer sie verstellt, umgeht das Wasserzeichen. Prüfen kann den Text vorerst auch nicht jeder: Die Erkennung läuft über eine Schnittstelle in geschlossener Testphase, offen etwa für Regulierer, Medien, Faktenchecker und Forschende. Wichtig zu wissen: Das Wasserzeichen enthält keine Informationen über dich oder deine Chats, und bei kurzen oder sehr faktendichten Texten ist das Signal schwach. Auch eine komplette Umschreibung entfernt das Muster - dann ist allerdings strittig, ob der Text noch als KI-generiert gilt."
+    },
+    {
+      "t": "h2",
+      "x": "2. OpenAI: Sicherheits-Sessions werden zum Trainingsmaterial"
+    },
+    {
+      "t": "p",
+      "x": "OpenAIs Daybreak-Programm gibt Sicherheitsforschern großzügigere Freigaben für heikle Abfragen, etwa zur Schadsoftware-Analyse. Genau diese Sessions stehen jetzt im Fokus: Auf privaten Konten darf OpenAI Inhalte aus Daybreak-Sessions künftig fürs Training nutzen - selbst wenn du den Schalter \"Modell für alle verbessern\" ausgeschaltet hast. Das steht inzwischen so auf OpenAIs Hilfeseite; als Grund nennt das Unternehmen den Schutz vor Cyber-Missbrauch. Laut einer Kunden-E-Mail gilt die Änderung ab 29. November. Die Kritik aus der Sicherheitsszene kam prompt - Forscher befürchten, dass ihre heikelsten Arbeitsinhalte ins Modell einfließen. Nach dem Protest kündigte OpenAI in einer zweiten E-Mail einen separaten Opt-out an; auf der Hilfeseite war er bei Redaktionsschluss noch nicht zu finden. Geschäftskonten und die API sind vom Training standardmäßig ausgenommen; betroffen ist nur der Bereich private Konten plus Daybreak. Wer Sicherheitsarbeit mit dem privaten Konto macht, sollte die Sessions bis zum angekündigten Opt-out wie Trainingsmaterial behandeln."
+    },
+    {
+      "t": "h2",
+      "x": "3. Agent Desktop: Der Agent klickt nicht mehr ins Blaue"
+    },
+    {
+      "t": "p",
+      "x": "Vercel hat mit Agent Desktop ein quelloffenes Werkzeug veröffentlicht (Apache-2.0-Lizenz), mit dem Coding-Agenten Programme auf deinem Rechner bedienen können - unter macOS, Windows und Linux. Bisherige Computer-Use-Ansätze schicken Screenshots an ein Modell und lassen es Klick-Koordinaten raten. Agent Desktop liest stattdessen die Bedienstruktur aus, die das Betriebssystem ohnehin für Hilfstechnologien bereitstellt: Der Agent sieht echte Schaltflächen und Eingabefelder statt Pixel. Das soll Aktionen verlässlicher und wiederholbar machen; jeder Agent bekommt dabei einen eigenen Mauszeiger und arbeitet im Hintergrund. Das Projekt ist in Rust geschrieben und wird seit Wochen aktiv weiterentwickelt."
+    },
+    {
+      "t": "callout",
+      "x": "So ist dieser Überblick entstanden: Alle drei Meldungen beruhen auf vollständig gelesenen Originalquellen - den Informationsseiten von Anthropic und OpenAI sowie dem Code-Repository von Vercel. Aussagen aus den Kunden-E-Mails sind als solche gekennzeichnet. Der Text wurde mit KI-Unterstützung erstellt und redaktionell geprüft."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich selbst prüfen, ob ein Text von Claude stammt?",
+      "a": "Vorerst nicht. Die Erkennung läuft über eine Schnittstelle in geschlossener Testphase, die nur berechtigten Stellen offensteht - etwa Regulierern, Medien, Faktencheckern und Forschenden. Anthropic will den Zugang mit der Zeit erweitern."
+    },
+    {
+      "q": "Bin ich von OpenAIs Daybreak-Trainingsregel betroffen?",
+      "a": "Nur wenn du mit einem privaten Konto Daybreak-Sessions nutzt - also die besonderen Freigaben für Sicherheitsarbeit. Für alle anderen Chats gilt weiter dein normaler Trainingsschalter. Business-, Enterprise- und API-Konten sind standardmäßig vom Training ausgenommen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "How Claude's text watermarking works",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-text-watermark",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "How Claude marks AI-generated content",
+      "publisher": "Claude Help Center",
+      "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Anthropic's watermark rollout leaves a loophole on two older Claude models",
+      "publisher": "THE DECODER",
+      "url": "https://the-decoder.com/anthropics-watermark-rollout-leaves-a-loophole-on-two-older-claude-models/",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "Data controls in ChatGPT",
+      "publisher": "OpenAI Help Center",
+      "url": "https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt",
+      "accessed": "2026-11-01"
+    },
+    {
+      "title": "vercel-labs/agent-desktop (Repository und CONCEPTS.md)",
+      "publisher": "GitHub / Vercel Labs",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "accessed": "2026-11-01"
+    }
+  ],
+  "related": [
+    "chatgpt-chrome-agenten-websites-sperren",
+    "anthropic-claude-angriffsflaeche-code"
+  ]
+}
