@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-02",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Abend: Startup lässt KI-Agenten an Maus operieren",
+  "dek": "Ein Startup ließ einen Claude-Agenten Therapie und Zielregion einer Hirn-OP wählen. Tencent stellt Hyra 2.0 vor, und Meta baut einen Haushaltsroboter.",
+  "published": "2026-11-02T16:23:00+01:00",
+  "modified": "2026-11-02T16:23:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Anthropic",
+    "Tencent",
+    "Meta",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "Das Startup Exin Therapeutics berichtet, ein Claude-Sonnet-Agent habe für eine Epilepsie-Maus Wirkstoff, Hirnregion und Koordinaten selbst gewählt und die Injektion robotisch ausgeführt. Ein Tierarzt gab jeden unumkehrbaren Schritt frei; die größeren Modelle Opus 5 und Opus 5.5 verweigerten. Unabhängig geprüft ist das nicht.",
+    "Tencent hat heute Hyra 2.0 vorgestellt: ein Forschungs-Agentensystem, das nach Firmenangaben wiederverwendbare Werkzeuge und Modelle baut statt nur Aufgaben zu lösen. Die genannten Ergebnisse - etwa ein 57-mal schnelleres Protein-Modell - stammen vom Anbieter und sind nicht nachgemessen.",
+    "Meta hat mit dem chinesischen Robotik-Unternehmen Fourier einen humanoiden Prototyp namens Max gebaut, berichtet The Information. Ein Verkauf ist nicht geplant; ein Nachfolger sei bereits seit September in Arbeit."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zum Ablauf laut Startup: Aus Epilepsie-Modell und 19 Wirkstoffkandidaten wählte der Agent Therapie, Hirnregion und Koordinaten; ein Tierarzt gab jeden Schritt frei; dann Injektion von 250 Nanolitern unter Kamerakontrolle.",
+    "caption": "So beschreibt Exin Therapeutics den Eingriff: Der Agent wählte Therapie, Hirnregion und Koordinaten selbst, ein Tierarzt gab jeden unumkehrbaren Schritt frei. Angaben des Startups, keine unabhängige Prüfung - vereinfachte Darstellung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: Tom's Hardware / heise"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 2. November 2026. Quellenstand: 16:08 Uhr MEZ.** Drei Meldungen zum Feierabend: Ein Startup lässt einen KI-Agenten eine Hirnoperation an einer Maus planen und ausführen - ein Fall, der Fragen aufwirft. Tencent will Forschungs-Agenten vom Problemlösen zum Werkzeugbau bringen. Und Meta bastelt an einem Haushaltsroboter. Dieser Überblick ergänzt unsere einzelnen Tagesartikel."
+    },
+    {
+      "t": "h2",
+      "x": "1. Startup: Claude-Agent wählt Gentherapie und operiert eine Maus"
+    },
+    {
+      "t": "p",
+      "x": "Das Neurotechnologie-Startup Exin Therapeutics berichtet über einen ungewöhnlichen Versuch: Ein auf Claude Sonnet aufsetzender Agent sollte die epileptischen Anfälle einer Maus verringern und erhielt dazu eine Tabelle mit 19 Gentherapie-Kandidaten sowie die Steuerung eines motorisierten Operationsgestänges mit Kameras. Laut Firmenchef Gabriel Ocana-Santero wählte der Agent Wirkstoff und Hirnregion selbst, leitete die Injektionskoordinaten aus drei Fachstudien ab und spritzte 250 Nanoliter, während er die Einstichstelle per Kamera auf Blutungen überwachte. Die Maus habe sich gut erholt. Der Versuch fand Ende Oktober statt; Ocana-Santero dokumentierte ihn in einem X-Thread, Fachartikel von Tom's Hardware und heise fassen ihn zusammen. Eine unabhängige Prüfung oder Fachveröffentlichung gibt es nicht - die Angaben stammen vom Startup selbst."
+    },
+    {
+      "t": "p",
+      "x": "Die Sicherungen beschreibt der Chef so: Ein approbierter Tierarzt gab jeden unumkehrbaren Schritt einzeln frei und hielt einen physischen Notschalter; die Schädeleröffnung nahm er selbst vor. Bemerkenswert ist das Verhalten der größeren Modelle: Opus 5.5 verweigerte die Mitarbeit komplett, Opus 5 erstellte den Plan auf dem Papier, lehnte die Live-Operation aber ab - mit der Begründung, ein Abbruch mit Nadel im Gehirn sei schlimmer als gar nicht anzufangen. Mitten im Eingriff riss die Verbindung ab; der Agent erkannte danach einen Kalibrierungsfehler und ließ sich auch vom Chef nicht zum Weitermachen überreden. Der Fehler musste erst im Code behoben werden."
+    },
+    {
+      "t": "p",
+      "x": "Einordnung: Der Chef wirbt mit dem Versuch für sein Konzept eines KI-gesteuerten Labors und nennt ihn einen Präzedenzfall - ob je zuvor ein Agent Behandlung und Zielort selbst gewählt und in ein lebendes Säugetier gebracht habe, ist seine eigene Einschätzung, kein gesicherter Rekord. Es bleibt eine Einzeltier-Demonstration ohne unabhängige Kontrolle, die zugleich bewusst ethische Fragen provoziert: Wer verantwortet Entscheidungen, wenn ein Modell wählt? Dass ausgerechnet das kleinere Modell zusagte und die größeren verweigerten, zeigt jedenfalls, wie unterschiedlich Anbieter-Modelle heute mit realen Eingriffen umgehen."
+    },
+    {
+      "t": "h2",
+      "x": "2. Tencent stellt Hyra 2.0 vor: Agenten sollen Werkzeuge bauen statt nur lösen"
+    },
+    {
+      "t": "p",
+      "x": "Tencent hat heute das Forschungs-Agentensystem Hyra 2.0 veröffentlicht, wie das Unternehmen über seinen offiziellen WeChat-Kanal mitteilte und chinesische Tech-Medien berichten. Der Ansatz: Statt nur vorgegebene Probleme zu lösen, sollen die Agenten wiederverwendbare Modelle, Arbeitsabläufe und Softwarewerkzeuge entwickeln. Das System arbeitet auf drei Ebenen - eine koordiniert mit den menschlichen Forschenden, eine betreut langfristig einzelne Forschungsfragen, und Arbeitsebenen führen Experimente aus und dürfen die Vorgaben hinterfragen. Aus abgeschlossenen Projekten werden laut Tencent wiederverwendbare Fähigkeiten abgespeichert."
+    },
+    {
+      "t": "p",
+      "x": "Die von Tencent genannten Ergebnisse klingen stark, sind aber reine Anbieterangaben: Ein von Hyra trainiertes Protein-Modell mit nur 1,96 Millionen Parametern soll 57-mal schneller erzeugen als das etablierte ProteinMPNN; ein Quantenkorrektur-Werkzeug habe einen bisherigen Bestwert um 48 Prozent übertroffen; Beweise unter anderem zu einer Vermutung des Mathematikers Shing-Tung Yau seien von Mathematikern verifiziert worden. Unabhängige Bestätigungen fehlen bislang; Tencent kündigt an, Ergebnisse auf GitHub zu veröffentlichen. Bis dahin gilt: vielversprechende Richtung, ungeprüfte Zahlen."
+    },
+    {
+      "t": "h2",
+      "x": "3. Meta baut mit Fourier den Haushaltsroboter Max"
+    },
+    {
+      "t": "p",
+      "x": "Meta hat zusammen mit dem chinesischen Robotik-Unternehmen Fourier einen humanoiden Prototyp namens Max gebaut, berichtet das US-Techmedium The Information. Der rund 1,50 Meter große und etwa 48 Kilogramm schwere Roboter soll im Haushalt helfen, trägt einen Bildschirm für Gesichtsausdrücke im Kopf und greift mit Fünf-Finger-Händen kleine Gegenstände; als Rechner dienen Nvidias Jetson-Thor-Chips. Ein Verkauf ist nicht geplant - Meta bezeichnet Max als internes Forschungsprojekt. An einem Nachfolger Max 2 mit besseren Händen und Treppen-Sensoren arbeite das Unternehmen dem Bericht zufolge bereits seit September."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist die Maus-Operation unabhängig bestätigt?",
+      "a": "Nein. Alle Details stammen vom Startup Exin Therapeutics und seinem Chef, der den Ablauf auf X schilderte. Es gibt weder eine Fachveröffentlichung noch eine unabhängige Prüfung. Es war eine Einzeltier-Demonstration mit Tierarzt-Aufsicht, kein klinisches Verfahren."
+    },
+    {
+      "q": "Warum verweigerten die größeren Claude-Modelle die Operation?",
+      "a": "Laut dem Startup-Chef lehnte Opus 5.5 jede Mitarbeit ab, weil es ein biologisches Experiment erkannte. Opus 5 plante auf dem Papier mit, verweigerte aber die Live-Ausführung: Ein Abbruch mitten im Eingriff mit Nadel im Gehirn sei schlimmer als gar nicht anzufangen. Ausgeführt hat schließlich das mittlere Modell Sonnet."
+    },
+    {
+      "q": "Kann man Metas Roboter Max kaufen?",
+      "a": "Nein. Meta nennt Max ein internes Forschungsprojekt ohne Verkaufspläne. Laut The Information ist bereits ein zweiter Prototyp in Arbeit, der unter anderem Treppen besser bewältigen soll."
+    }
+  ],
+  "related": [
+    "anthropic-agenten-umgehen-trainingsdaten-monitor",
+    "deepseek-superagent-open-source-prototyp"
+  ],
+  "sources": [
+    {
+      "title": "AI agent used to perform controversial brain surgery on a mouse (mit Zitaten aus dem X-Thread des CEOs)",
+      "publisher": "Tom's Hardware",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/startup-uses-ai-agent-to-perform-controversial-brain-surgery-on-a-mouse-anthropic-sonnet-controlled-motorized-surgery-rig-ai-given-free-reign-to-treat-epilepsy-with-a-range-of-gene-therapy-vectors-after-opus-5-5-refused-to-conduct-biological-experiment",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "KI-Update kompakt: Linux-Lücke, Audio Intelligence, KI-Operation, KI-Satellit",
+      "publisher": "heise online",
+      "url": "https://www.heise.de/news/KI-Update-kompakt-Linux-Luecke-Audio-Intelligence-KI-Operation-KI-Satellit-11507948.html",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "Tencent Hunyuan veröffentlicht Hyra 2.0 (chinesisch)",
+      "publisher": "IT Home (ithome)",
+      "url": "https://www.ithome.com/1/021/266.htm",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "Tencent Hunyuan Releases Hyra 2.0, Where Agents Develop Reusable Scientific Models and Tools",
+      "publisher": "PANews",
+      "url": "https://www.panews.io/articles/01a19bc7-cc3b-76ab-884f-0629186cd7ce",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "Meta reportedly built a humanoid robot prototype that can do household chores",
+      "publisher": "Engadget",
+      "url": "https://www.engadget.com/2303434/meta-reportedly-built-a-humanoid-robot-prototype-that-can-do-household-chores/",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "Meta Built Humanoid Prototype With Chinese Startup To Ramp Robotics Push",
+      "publisher": "The Information",
+      "url": "https://www.theinformation.com/articles/meta-built-humanoid-prototype-chinese-startup-ramp-robotics-push",
+      "accessed": "2026-11-02"
+    }
+  ]
+}
