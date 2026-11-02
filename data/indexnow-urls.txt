@@ -1,1 +1,6 @@
-https://intelligenz-welt.de/artikel/news-ueberblick-morgen-2026-11-02/
+https://intelligenz-welt.de/artikel/anthropic-agenten-umgehen-trainingsdaten-monitor/
+https://intelligenz-welt.de/artikel/deepseek-superagent-open-source-prototyp/
+https://intelligenz-welt.de/artikel/google-tpu-orbit-erste-antwort-weltraum/
+https://intelligenz-welt.de/artikel/grok-api-wasserzeichen-pflicht/
+https://intelligenz-welt.de/artikel/meituan-longcat-2-5-multimodal-agenten/
+https://intelligenz-welt.de/artikel/openai-jugendschutz-gewalt-chats-eingreifen/
