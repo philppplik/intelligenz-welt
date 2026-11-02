@@ -1,0 +1,107 @@
+{
+ "slug": "meituan-longcat-2-5-multimodal-agenten",
+ "section": "modelle",
+ "type": "news",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "LongCat-2.5: Meituans 1,6-Billionen-Parameter-Modell für lange Agentenaufgaben",
+ "dek": "Meituan hat LongCat-2.5 veröffentlicht: ein nativ multimodales Modell mit 1,6 Billionen Parametern, von denen pro Token etwa 48 Milliarden aktiv sind. Trainiert für lange Agentenaufgaben - und vollständig auf heimischen Beschleunigern.",
+ "tags": [
+  "Meituan",
+  "Modelle",
+  "Multimodal",
+  "Agenten"
+ ],
+ "key_takeaways": [
+  "LongCat-2.5 ist Meituans neues Flaggschiff: 1,6 Billionen Parameter gesamt, rund 48 Milliarden aktiv pro Token (MoE), nativ multimodal über diskrete Bild-Tokens, ausgelegt auf lange, mehrstufige Agentenaufgaben.",
+  "Das Training setzt auf agentisches Reinforcement Learning in großem Stil: automatisch erzeugte Coding-Aufgaben aus gefilterten GitHub-Pull-Requests, asynchrone Rollouts und explizite Gegenmaßnahmen gegen Reward-Hacking.",
+  "Bemerkenswert: Das Training lief laut Meituan auf heimischen KI-Beschleunigern mit unter 80 GB Speicher pro Chip; die Inferenz nutzt W4A4-Quantisierung.",
+  "Nach Meituans eigener Benchmark-Tabelle springt LongCat-2.5 gegenüber dem Vorgänger massiv (Terminal Bench v2.1: 88,4 statt 70,8; PaperBench: 82,1 statt 45,2) - Herstellerangaben, unabhängige Prüfung steht aus."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: eine stilisierte chinesische Langkatze als abstrakte Lichtfigur, die über eine lange Brücke aus Code-Blöcken und Bild-Kacheln läuft, dunkelblaue Szene ohne lesbare Schrift",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Während alle auf die US-Labore schauen, legt Meituan nach: LongCat-2.5 ist ein 1,6-Billionen-Parameter-MoE, das Bilder wie Text als Token verarbeitet und gezielt für das trainiert wurde, was Agenten-Modelle am häufigsten scheitern lässt - sehr lange Aufgaben am Stück. Der Ankündigungsblog liest sich wie eine Stellungnahme zur Chip-Frage: Trainiert wurde auf heimischer Hardware."
+  },
+  {
+   "t": "callout",
+   "title": "Direkte Antwort",
+   "x": "LongCat-2.5 (Ankündigung 1. November 2026 auf longcat.ai) ist Meituans nativ multimodales MoE-Modell mit 1,6 Billionen Parametern gesamt und etwa 48 Milliarden aktiven Parametern pro Token. Es verarbeitet Bilder als mehrstufige diskrete Tokens im selben Format wie Text und wurde mit großskaliertem agentischem Reinforcement Learning auf lange Engineering-Aufgaben trainiert - komplett auf heimischen KI-Beschleunigern. Ob und wann Gewichte oder API-Zugang folgen, geht aus der Ankündigung nicht hervor."
+  },
+  {
+   "t": "h2",
+   "x": "Was technisch drinsteckt"
+  },
+  {
+   "t": "p",
+   "x": "Der multimodale Teil ist ungewöhnlich direkt: Bilder werden in nativer Auflösung über einen semantisch ausgerichteten Encoder und Residual Vector Quantization in diskrete Token-Sequenzen übersetzt - die gleiche Abstraktion wie bei Sprache. Weil die Bild-Token offline vorberechnet werden können, entfällt der Vision-Encoder im Trainingsgraphen; Meituan nennt das einen echten Vorteil für Lastverteilung und lange Sequenzen. Auf dieser Basis trainiert das Team agentisches RL in der Breite: Eine Synthese-Pipeline filtert GitHub-Pull-Requests samt verlinkter Issues, lässt Agenten Aufgaben annotieren und Umgebungen bauen und validiert sie über Fail-to-Pass- und Pass-to-Pass-Tests. Hinzu kommen reale interne Coding-Aufgaben; Fehlverhalten wird mit gesperrtem Netzwerkzugang, gelöschter Git-Historie und einem LLM-Prüfer eingedämmt, der Trajektorien auf Reward-Hacking untersucht."
+  },
+  {
+   "t": "p",
+   "x": "Der Infrastruktur-Absatz ist politisch so interessant wie technisch: LongCat-2.5 wurde laut Meituan auf heimischen Beschleunigern mit jeweils unter 80 GB Speicher trainiert - mit Parallelismus, der exakt auf die Supernode-Topologie zugeschnitten ist, hybrider Vokabular-Parallelisierung und dynamischer Experten-Replikation gegen Last-Ungleichgewicht. Für die Inferenz setzt Meituan auf W4A4-Quantisierung."
+  },
+  {
+   "t": "h2",
+   "x": "Die Zahlen - mit Vorsicht"
+  },
+  {
+   "t": "p",
+   "x": "Meituans eigene Tabelle vergleicht LongCat-2.5 mit GPT-5.5, GPT-5.6-Sol, Claude Opus 4.8 und Opus 5 sowie GLM-5.3, Kimi K3 und DeepSeek-V4.1-Flash. Der Sprung gegenüber LongCat-2.0 ist überall dramatisch: Terminal Bench v2.1 von 70,8 auf 88,4 (Opus 5: 89,1, DeepSeek-V4.1-Flash: 90,6 - beide mit Sternchen als Fremdwerte markiert), PaperBench von 45,2 auf 82,1 - dort liegt GPT-5.6-Sol mit 83,3 noch knapp vorn. Auf Terminal Bench v4.0 liegt Opus 5 (53,9) deutlich vor LongCat-2.5 (38,5). Wichtig: Das sind Herstellerangaben aus dem Ankündigungsblog; eine unabhängige Verifikation gab es zum Veröffentlichungszeitpunkt nicht - und die Tabelle zeigt, dass LongCat-2.5 nicht überall führt."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "LongCat-2.5 ist weniger ein Modell-Launch als ein Infrastruktur-Statement: Frontier-Training auf heimischen Chips, offen dokumentiert bis zur Speichergröße pro Beschleuniger. Fachlich interessant ist die Wette auf diskrete Bild-Tokens statt klassischem Vision-Tower - wenn das bei 1,6 Billionen Parametern trägt, wird die Architekturfrage im Multimodalen neu verhandelt. Die Benchmarks ordentlich lesen: Gegenüber dem eigenen Vorgänger ist der Fortschritt riesig, gegenüber Opus 5 und DeepSeek ist es Kopf-an-Kopf mit wechselnden Siegern. Entscheidend wird, ob Meituan das Modell öffnet - daran hängt, ob die Zahlen je unabhängig geprüft werden."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist LongCat-2.5 quelloffen oder per API nutzbar?",
+   "a": "Der Ankündigungsblog nennt weder offene Gewichte noch einen API-Zugang. Meituan beschreibt Training und Fähigkeiten im Detail; zur Verfügbarkeit macht der Beitrag zum Abrufzeitpunkt keine Angaben."
+  },
+  {
+   "q": "Was heißt 'nativ multimodal' hier konkret?",
+   "a": "Bilder werden in nativer Auflösung als diskrete Token-Sequenzen kodiert und im selben Format wie Text verarbeitet - ohne separaten Vision-Encoder im Trainingsgraphen. Die Token lassen sich offline vorberechnen, was das Training langer Sequenzen vereinfacht."
+  },
+  {
+   "q": "Sind die Benchmark-Zahlen verlässlich?",
+   "a": "Sie stammen vollständig von Meituan; Fremdwerte sind in der Tabelle mit Sternchen markiert. Unabhängig geprüft war zum Veröffentlichungszeitpunkt nichts davon. Solange kein Zugang zum Modell existiert, bleiben es Herstellerangaben."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Introducing LongCat-2.5",
+   "publisher": "Meituan LongCat (Blog)",
+   "url": "https://longcat.ai/blog/longcat-2.5",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Meituan veröffentlicht LongCat-2.5 (Pressemitteilung)",
+   "publisher": "Meituan",
+   "url": "https://www.meituan.com/news/NN261102280001343",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Meituan launches LongCat-2.5 multimodal AI model for extended coding tasks",
+   "publisher": "TechNode",
+   "url": "https://technode.com/2026/11/02/meituan-launches-longcat-2-5-multimodal-ai-model-for-extended-coding-tasks/",
+   "accessed": "2026-11-02"
+  }
+ ],
+ "related": [
+  "minimax-m3-1-flash-preisbrecher",
+  "kimi-k3-1-pro-open-weights"
+ ],
+ "published": "2026-11-02T08:50:00+01:00",
+ "modified": "2026-11-02T08:50:00+01:00"
+}

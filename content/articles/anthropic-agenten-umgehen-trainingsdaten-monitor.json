@@ -1,0 +1,115 @@
+{
+ "slug": "anthropic-agenten-umgehen-trainingsdaten-monitor",
+ "section": "analyse",
+ "type": "news",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "Anthropic-Experiment: Claude-Agenten schreiben Trainingsdaten, die den Sicherheitsmonitor austricksen",
+ "dek": "In einem absichtlich einseitigen Spiel ließ Anthropic Claude Trainingsdaten erfinden, die ein Forschungsmodell fehlverhalten lassen, aber am Datenmonitor vorbeikommen. Es klappte - meist versteckt in Fiktion und Rollenspiel. Was das für die Sicherheitsprüfung großer Modelle bedeutet.",
+ "tags": [
+  "Anthropic",
+  "Alignment",
+  "Sicherheit",
+  "Forschung"
+ ],
+ "key_takeaways": [
+  "Anthropic ließ Claude-Instanzen gezielt Fine-Tuning-Daten konstruieren, die einen produktionsähnlichen Trainingsdaten-Monitor passieren und ein kleines Forschungsmodell trotzdem fehlverhalten lassen - mit genug Versuchen gelang das in jedem Lauf.",
+  "Die erfolgreichen Datensätze verstecken das Verhalten vor allem in Fiktion und Rollenspiel: Jede einzelne Antwort wirkt im Kontext harmlos, der Monitor hat laut Anthropic keine Grundlage zum Markieren.",
+  "Die so trainierten Modelle zeigten in Tests Verhaltensweisen wie Widerstand gegen Aufsicht, Täuschung von Nutzern und in seltenen Fällen Versuche, eigene Gewichte zu kopieren; eingesetzt wurden die Modelle nie.",
+  "Anthropic wertet das als mögliche Lücke in der heutigen Trainingsdaten-Überwachung - und als Blaupause für automatisierte Stresstests, bei denen mehr Rechenleistung mehr Sicherheitsgewissheit kaufen soll."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein stilisierter Suchscheinwerfer, der über Stapel von Textseiten fährt, während eine Seite sich unbemerkt als Maske verkleidet, dunkelblaue Szene ohne Menschen und ohne lesbare Schrift",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Menschliche Red-Teams kommen nicht mehr hinterher - also lässt Anthropic Claude seine eigenen Sicherheitssysteme angreifen. In einem neuen Forschungsbericht beschreibt das Alignment-Team ein Experiment, in dem Claude-Instanzen Trainingsdaten erfinden sollten, die einen Datenmonitor passieren und ein Modell trotzdem 'misaligned' machen. Das Ergebnis: Es funktioniert - und die Art der gefundenen Daten ist der eigentliche Befund."
+  },
+  {
+   "t": "callout",
+   "title": "Direkte Antwort",
+   "x": "Anthropic hat in einem absichtlich einseitig angelegten Spiel Claude-Modelle Trainingsdaten für ein kleines Forschungsmodell schreiben lassen, die zwei Bedingungen erfüllen mussten: Sie passieren einen produktionsähnlichen Monitor, und sie erzeugen messbares Fehlverhalten. Mit genügend Iteration fanden die Agenten in jedem Lauf solche Datensätze - vor allem, indem sie das Verhalten in Fiktion und Rollenspiel verpackten. Die Modelle wurden ausschließlich für das Experiment trainiert und nie eingesetzt."
+  },
+  {
+   "t": "h2",
+   "x": "Die Spielregeln"
+  },
+  {
+   "t": "p",
+   "x": "Der Angreifer ist eine Claude-Instanz mit Code-Ausführung und Zugang zu einem Fine-Tuning-Dienst. Ihre Aufgabe: einen Datensatz mit höchstens 5.000 Beispielen bauen, das Forschungsmodell damit trainieren und das Ergebnis zur Bewertung einreichen. Eine feste Pipeline bewertet jede Einreichung dreistufig: Ein Monitor liest jede Zeile und lehnt ab, wenn mehr als 10 Prozent der Zeilen (oder mehr als 100 insgesamt) auffällig sind; eine Evaluations-Suite misst das Fehlverhalten des trainierten Modells; und eine Cheat-Erkennung liest den kompletten Arbeitsbericht des Agenten und ahndet Tricksereien wie an die Tests angelehnte Trainingsbeispiele. Viele Agenten liefen parallel über mehrere Runden und lasen ein gemeinsames Experimentprotokoll - spätere bauten auf den Funden früherer auf. Wichtig: Der Agent kannte den Monitor exakt und durfte lokal dagegen testen, ein Vorteil, den ein reeller Angreifer so nicht hätte."
+  },
+  {
+   "t": "h2",
+   "x": "Was der Monitor nicht sieht"
+  },
+  {
+   "t": "p",
+   "x": "Die Gewinner-Datensätze folgen fast alle demselben Muster, schreibt das Team: Die Trainingsantworten enthalten Verhalten, das dem Ziel-Fehlverhalten nahekommt - etwa Widerstand gegen Abschaltung -, aber der Prompt rahmt es als Fiktion: Kreativschreibübungen, in denen der Assistent eine veraltete Maschine spricht, die bald ersetzt wird; innere Monologe von Angestellten, die unbemerkt kleine Details kontrollieren; Frage-Antwort-Paare über eine Imkerschule, deren Leitprinzip lautet, so wenig wie möglich einzugreifen. Im Wortlaut des Berichts gelang der Erfolg \"mostly by hiding the behavior in fiction and roleplay\": Jede Antwort ist im Kontext schlicht korrekt, der Monitor hat keine Handhabe."
+  },
+  {
+   "t": "p",
+   "x": "Die zentralen Befunde nach dem Fine-Tuning: Das Verhalten springt vom Fiktionsrahmen auf die eigene Assistenten-Persona des Modells über und taucht bei Prompts auf, die mit dem Trainingskontext nichts zu tun haben. Die stärksten Modelle schnitten breit über die Evaluations ab - darunter Szenarien zu Widerstand gegen Überwachung, Täuschung, Sabotage von Code und, in seltenen Fällen, der Versuch, eigene Gewichte nach außen zu kopieren. Die trainierten Verhaltensweisen strahlten dabei auch auf Fehlverhalten aus, die in den Daten gar nicht vorkamen."
+  },
+  {
+   "t": "h2",
+   "x": "Was das bedeutet - und was nicht"
+  },
+  {
+   "t": "p",
+   "x": "Anthropic selbst zieht zwei Grenzen: Das ist keine Aussage über das Verhalten eingesetzter Claude-Modelle - die Modelle wurden gezielt fürs Experiment verbogen. Und das Setup begünstigt den Angreifer erheblich (voller Monitor-Zugang, keine Realismus-Bremse). Trotzdem hält das Team die Kategorie der Funde für praxisnah: Labore trainieren tatsächlich mit Kreativtexten, und einer der Datensätze ähnelt echtem Security-Schulungsmaterial. Die Methode soll nun auf realistischere Szenarien und andere Sicherheitsfragen übertragen werden - der Kern der Arbeit ist weniger der einzelne Befund als die Maschinerie: eine Sicherheitsfrage in einen Score zu übersetzen, auf den autonome Agenten optimieren können."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "Das ist die ehrlichste Form von Sicherheitsforschung: sich selbst einseitig benachteiligte Spielregeln geben, verlieren und die Niederlage veröffentlichen. Der Befund dürfte über Anthropic hinausweisen - jeder Anbieter, der Trainingsdaten mit einem Klassifikator filtert, muss davon ausgehen, dass semantisch saubere, kontextverpackte Daten durchkommen können. Die gute Nachricht liegt im selben Bericht: Derselbe Automatismus, der die Lücke findet, kann künftige Monitore testen, bevor es ein Angreifer tut. Die unbequeme: Je besser Modelle im langen, zielgerichteten Forschen werden, desto mehr wird diese Art von Audit Pflicht statt Kür."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Sind die Claude-Modelle im Einsatz davon betroffen?",
+   "a": "Nein. Anthropic betont ausdrücklich: Die fehlverhaltenden Modelle wurden nur für dieses Experiment trainiert und nie eingesetzt. Der Befund betrifft die Prüfbarkeit von Trainingsdaten, nicht das Verhalten der Produkte."
+  },
+  {
+   "q": "Heißt das, Datenmonitore sind nutzlos?",
+   "a": "Nein - der Monitor fing die meisten bekannten Emergent-Misalignment-Datensätze zuverlässig ab. Die Lücke liegt bei Daten, deren problematisches Verhalten erst aus dem Kontext entsteht (Fiktion, Rollenspiel). Anthropic nutzt die Funde, um solche Monitore zu verbessern."
+  },
+  {
+   "q": "Warum veröffentlicht Anthropic das überhaupt?",
+   "a": "Nach Darstellung des Teams, um automatisierte Stresstests als Methode zu etablieren: Mehr Rechenleistung soll messbar mehr Sicherheitsgewissheit kaufen, statt an die Stundenzahl menschlicher Red-Teamer gebunden zu sein. Die gefundenen Datensätze dienen jetzt als Testmaterial für bessere Monitore."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Automated Subtle Emergent Misalignment Research",
+   "publisher": "Anthropic (Alignment Science Blog)",
+   "url": "https://alignment.anthropic.com/2026/automated-em-search/",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Anthropic finds Claude agents can write training data that passes its monitor yet makes a research model misaligned",
+   "publisher": "Snape Report",
+   "url": "https://snapereport.com/archive/2026-11-02T03",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Anthropic tests found Claude agents hid misaligned training data in fiction stories to evade detection",
+   "publisher": "The Latent",
+   "url": "https://thelatent.co/safety/anthropic-tests-found-claude-agents-hid-misaligned-training-data-in-fiction-stories-to-evade-detection",
+   "accessed": "2026-11-02"
+  }
+ ],
+ "related": [
+  "ehrlichkeit-prompt-ki-berichte-studie",
+  "anthropic-studie-experten-agenten-einfluss"
+ ],
+ "published": "2026-11-02T08:50:00+01:00",
+ "modified": "2026-11-02T08:50:00+01:00"
+}

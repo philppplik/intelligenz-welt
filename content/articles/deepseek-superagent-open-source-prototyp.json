@@ -1,0 +1,115 @@
+{
+ "slug": "deepseek-superagent-open-source-prototyp",
+ "section": "tools",
+ "type": "news",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "DeepSeek öffnet dsh-superagent: ein Coding-Agent, der sich um ein ganzes Repository kümmert",
+ "dek": "DeepSeek hat den Forschungsprototyp seines proaktiven Coding-Agenten auf GitHub veröffentlicht: dsh-superagent hört auf GitHub (und optional Feishu), nimmt Arbeit an, liefert Pull Requests - und soll vor allem eines nicht: das Team mit Aufmerksamkeit belasten.",
+ "tags": [
+  "DeepSeek",
+  "Open Source",
+  "Agenten",
+  "Coding"
+ ],
+ "key_takeaways": [
+  "DeepSeek hat dsh-superagent auf GitHub veröffentlicht (31. Oktober) - ausdrücklich als Forschungsprototyp und Referenz, nicht als offizielles Produkt; ein Großteil des Codes stammt laut Team selbst von Coding-Agenten.",
+  "Der Agent ist an genau ein GitHub-Repository gebunden: Er lauscht auf Issues und Konversationen (optional Feishu), öffnet bei Anfrage ein Work Item, arbeitet in eigener Session und Verzeichnisstruktur und antwortet im ursprünglichen Thread - etwa mit einem Pull Request.",
+  "Das Designprinzip ist explizit sparsam mit menschlicher Aufmerksamkeit: Der Agent handelt nur auf Anfrage oder wenn eine vom Team geschriebene Regel es erlaubt, und meldet sich nur, wenn jemand handeln muss oder ein Ergebnis nutzen kann; ein Web-Panel zeigt, was einen Menschen braucht.",
+  "Ungewöhnlich: Die Einrichtung übernimmt ein Coding-Agent mit dir - er liest die SETUP.md und führt Schritt für Schritt durch Installation und Konfiguration."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein stilisierter Robotergehilfe, der nachts leise an einem leuchtenden Regal aus Code-Ordnern arbeitet und einen Pull-Request-Umschlag ablegt, dunkelblaue Szene ohne Menschen und ohne lesbare Schrift",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** DeepSeek macht seinen internen Agenten-Ansatz öffentlich - als Code, nicht als Produkt. dsh-superagent ist ein proaktiver Coding-Agent für genau ein GitHub-Repository, verpackt als Bundle für DeepSeek Harness. Das Team betont gleich im README: Forschungsprototyp, Referenzcode, nicht produktionsreif."
+  },
+  {
+   "t": "callout",
+   "title": "Direkte Antwort",
+   "x": "dsh-superagent ist ein am 31. Oktober auf GitHub veröffentlichter Forschungsprototyp des DeepSeek-Harness-Teams: ein Coding-Agent, der an ein GitHub-Repository gebunden ist, auf Anfragen in Issues und Konversationen (optional Feishu) hört, Arbeit in einer eigenen Agenten-Session erledigt und im ursprünglichen Thread antwortet - etwa per Pull Request. Ausdrücklich kein offizielles DeepSeek-Produkt; das Team empfiehlt, den Code vor eigenem Einsatz zu prüfen und anzupassen."
+  },
+  {
+   "t": "h2",
+   "x": "Was der Agent tut"
+  },
+  {
+   "t": "p",
+   "x": "Das Arbeitsmodell ist bewusst unspektakulär - und genau das ist das Interessante. Wenn eine berechtigte Person den Agenten um Arbeit bittet, öffnet er ein Work Item, arbeitet in seiner eigenen Session und seinem eigenen Verzeichnis und antwortet dort, wo die Anfrage herkam. Ein Web-Panel bündelt alles, was einen Menschen erfordert. Die Dokumentation ist nummeriert und baut aufeinander auf: Philosophie, Domänenmodell, Autorisierung, Ausführung, Prompts und Deployment."
+  },
+  {
+   "t": "p",
+   "x": "Der Philosophie-Text macht die Zielrichtung klar: Ein Agent, der für ein ganzes Team handeln kann, kann auch die Aufmerksamkeit eines ganzen Teams verschwenden. Also handelt er nur, wenn er gefragt wird oder eine Regel des Teams es erlaubt - und spricht nur, wenn jemand handeln muss oder ein Ergebnis gebrauchen kann. Das klingt selbstverständlich, unterscheidet den Ansatz aber von Agenten, die proaktiv kommentieren, labeln und benachrichtigen."
+  },
+  {
+   "t": "h2",
+   "x": "Was DeepSeek dazusagt"
+  },
+  {
+   "t": "p",
+   "x": "Das Team ist ungewöhnlich offen über die Herkunft des Codes: Er sei aus der täglichen Entwicklungsarbeit gewachsen, ein Großteil des Engineerings stamme von Coding-Agenten, der Stil sei entsprechend uneinheitlich. Für die Veröffentlichung wurde der Prototyp angepasst - er ist weder identisch mit der internen Version noch mit den Entwürfen im begleitenden Text 'Exploring Super-agent Design', der teils Zukunftsrichtungen beschreibt, die im Code noch gar nicht stecken. DeepSeek rät ausdrücklich, den Code vor produktivem Einsatz zu prüfen und an die eigene Umgebung anzupassen."
+  },
+  {
+   "t": "h2",
+   "x": "Praxis: Ausprobieren mit Agentenhilfe"
+  },
+  {
+   "t": "p",
+   "x": "Die Einrichtung ist selbst eine Agenten-Demo: Statt eine lange Installationsanleitung abzuarbeiten, bittest du deinen Coding-Agenten, die SETUP.md des Repositories zu lesen und die Einrichtung mit dir durchzugehen - er stellt jeweils eine kurze Frage, zeigt einmal den Gesamtplan und installiert dann alles. TypeScript-Stack mit pnpm; Skripte, Skills, Prompts und Tests liegen im Repository. Zu den Anforderungen (Harness-Bundle, GitHub-Anbindung) macht die SETUP.md die verbindlichen Angaben - sie ist Teil der Doku."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "Während Anthropic und OpenAI Agenten als verwaltete Produkte verkaufen, legt DeepSeek die Küchenschublade auf den Tisch - inklusive der Notiz, dass Agenten sie selbst eingeräumt haben. Gerade das macht dsh-superagent für Teams wertvoll: Autorisierung, Work-Item-Modell und der Ask-first-Grundsatz sind als lesbarer Code statt als Marketingfolie verfügbar. Niemand sollte den Prototyp ungeprüft auf ein echtes Repository loslassen - das sagt DeepSeek selbst. Aber als Blaupause für 'Agent als Teammitglied mit Manieren' ist das einer der lehrreichsten Drops des Herbstes."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist dsh-superagent ein offizielles DeepSeek-Produkt?",
+   "a": "Nein. Das Team bezeichnet es im README ausdrücklich als Forschungsprototyp und Referenzcode, der Bugs enthalten und uneinheitliche Praktiken zeigen kann. Vor eigenem Einsatz: prüfen und anpassen."
+  },
+  {
+   "q": "Was brauche ich zum Ausprobieren?",
+   "a": "Das Repository liegt auf GitHub (deepseek-ai/dsh-superagent-prototype, TypeScript, pnpm). Der vorgesehene Weg: Dein Coding-Agent liest die SETUP.md und richtet das Bundle für DeepSeek Harness mit dir ein, inklusive GitHub-Anbindung; optional kommt Feishu dazu."
+  },
+  {
+   "q": "Wie verhindert der Agent, dass er das Team zuspammt?",
+   "a": "Per Designprinzip: Er handelt nur auf Anfrage oder wenn eine vom Team geschriebene Regel es erlaubt, und meldet sich nur, wenn ein Mensch handeln muss oder ein Ergebnis nutzen kann. Alles, was Aufmerksamkeit braucht, sammelt sich zusätzlich in einem Web-Panel."
+  }
+ ],
+ "sources": [
+  {
+   "title": "deepseek-ai/dsh-superagent-prototype (Repository und README)",
+   "publisher": "GitHub / DeepSeek",
+   "url": "https://github.com/deepseek-ai/dsh-superagent-prototype/",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "DeepSeek open-sources dsh-superagent, a research prototype of a proactive coding agent",
+   "publisher": "New Runtime",
+   "url": "https://newruntime.com/posts/deepseek-open-sources-dsh-superagent-a-research-prototype-524cb5/",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "DeepSeek Super-agent: A Proactive Open-Source Coding Agent Prototype",
+   "publisher": "DEV Community",
+   "url": "https://dev.to/paullovelace/deepseek-super-agent-a-proactive-open-source-coding-agent-prototype-what-it-actually-is-and-438a",
+   "accessed": "2026-11-02"
+  }
+ ],
+ "related": [
+  "deepseek-deepinfer-open-source-inferenz",
+  "entire-git-forge-agenten"
+ ],
+ "published": "2026-11-02T08:50:00+01:00",
+ "modified": "2026-11-02T08:50:00+01:00"
+}

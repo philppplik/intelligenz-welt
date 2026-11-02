@@ -1,0 +1,99 @@
+{
+ "slug": "grok-api-wasserzeichen-pflicht",
+ "section": "news",
+ "type": "news",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "Grok-API bekommt unsichtbares Wasserzeichen: Ab 7. November standardmäßig aktiv",
+ "dek": "SpaceXSI (vormals xAI) versieht die Textausgaben von sieben Grok-Modellen ab 7. November automatisch mit einem unsichtbaren Wasserzeichen - Begründung: der EU-AI-Act. Wer es nicht will, kann pro Modell abwählen; ein Header verrät, ob eine Antwort markiert ist.",
+ "tags": [
+  "xAI",
+  "Grok",
+  "Wasserzeichen",
+  "EU-AI-Act"
+ ],
+ "key_takeaways": [
+  "Ab 7. November 2026 versehen die Grok-Modelle 4.7, 4.6, 4.5, 4.3 sowie 4.20-reasoning, 4.20-non-reasoning und 4.20-multi-agent ihre Textausgaben standardmäßig mit einem unsichtbaren Wasserzeichen.",
+  "Das Wasserzeichen gilt auf allen API-Endpunkten (auch api.x.ai) und deckt normale Antworten, strukturierte Ausgaben und Tool-Call-Argumente ab; für Bestandsintegrationen ändert sich nichts, es gibt keinen neuen Parameter.",
+  "Der Antwort-Header x-watermark: true zeigt an, ob eine Ausgabe markiert wurde; Team-Admins können das Wasserzeichen pro Modell in der Konsole abschalten.",
+  "SpaceXSI begründet den Schritt in der Entwicklerdokumentation mit der Einhaltung des EU-AI-Act - die maschinenlesbare Kennzeichnung von KI-Text zieht damit in einen weiteren API-Standard ein."
+ ],
+ "hero": {
+  "alt": "KI-generierte Illustration: ein stilisierter Wassertropfen, der in einen Textstrom aus Zeichen fällt und feine leuchtende Muster erzeugt, dunkelblaue Szene ohne Menschen und ohne lesbare Schrift",
+  "caption": "Symbolbild, KI-generiert (Intelligenz Welt).",
+  "ai_generated": true,
+  "credit": "KI-generiert (Intelligenz Welt)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Kurz gesagt:** Nach Anthropic beim Modelltext zieht SpaceXSI (vormals xAI) nun auf API-Ebene nach: Die Grok-API markiert Textausgaben ab 7. November automatisch mit einem unsichtbaren Wasserzeichen. Das steht so in der offiziellen Entwicklerdokumentation - inklusive Modellliste, Prüf-Header und Opt-out."
+  },
+  {
+   "t": "callout",
+   "title": "Direkte Antwort",
+   "x": "Laut Entwicklerdokumentation von SpaceXSI (vormals xAI) enthalten Textantworten von grok-4.7, grok-4.6, grok-4.5, grok-4.3, grok-4.20-reasoning, grok-4.20-non-reasoning und grok-4.20-multi-agent ab 7. November 2026 standardmäßig ein unsichtbares Wasserzeichen. Es gilt auf allen API-Endpunkten, erfordert keinen Request-Parameter und lässt sich pro Modell in der SpaceXSI-Console durch Team-Admins abschalten. Ob eine Antwort markiert ist, zeigt der Header x-watermark: true."
+  },
+  {
+   "t": "h2",
+   "x": "Was genau markiert wird"
+  },
+  {
+   "t": "p",
+   "x": "Das Wasserzeichen steckt im generierten Text selbst - also in normalen Antworten, aber auch in strukturierten Ausgaben (JSON) und in den Argumenten von Tool-Aufrufen, wie die Dokumentation ausdrücklich festhält. Abgedeckt sind alle Text-Endpunkte, darunter die Responses API und die Chat Completions API. Für Entwickler heißt das: Keine Code-Änderung nötig; wer prüfen will, ob eine konkrete Antwort markiert ist, liest den x-watermark-Header der Antwort aus."
+  },
+  {
+   "t": "p",
+   "x": "Gesteuert wird die Funktion pro Modell und für das ganze Team: Standard ist an, Team-Admins können in der Konsole pro Modell abwählen. SpaceXSI begründet die Einführung in der Dokumentation ausdrücklich mit der Einhaltung des EU-AI-Act."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "Zwei Tage, zwei Wasserzeichen: Anthropic markiert Claude-Texte auf Modelebene mit einem Muster in der Wortwahl (unser Morgenüberblick vom Sonntag), SpaceXSI zieht jetzt auf API-Ebene nach - beide Male mit dem EU-AI-Act als Begründung. Bemerkenswert ist der Unterschied im Umgang: Anthropic lässt kein Opt-out zu, SpaceXSI baut einen offiziellen Schalter pro Modell ein. Damit wird maschinenlesbare Kennzeichnung zum Standard-Feature großer APIs - und wer KI-Text unmarkiert weiterreichen will, muss das künftig aktiv entscheiden. Für Entwickler bleibt die praktische Kernfrage, wie robust die Markierung gegen Umschreiben ist; dazu macht die Doku keine Angaben."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Muss ich meine Integration ändern?",
+   "a": "Nein. Laut Dokumentation gibt es keinen neuen Request-Parameter; bestehende Integrationen funktionieren unverändert, mit oder ohne Wasserzeichen."
+  },
+  {
+   "q": "Kann ich das Wasserzeichen abschalten?",
+   "a": "Ja, Team-Admins können es pro Modell in der SpaceXSI-Console abwählen. Standardmäßig ist es für die genannten sieben Modelle aktiv."
+  },
+  {
+   "q": "Woher weiß ich, ob eine Antwort markiert ist?",
+   "a": "Der Antwort-Header x-watermark steht auf true, wenn die Ausgabe mit Wasserzeichen erzeugt wurde. Jeder andere Wert oder ein fehlender Header bedeutet: nicht markiert."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Output Watermarking (Entwicklerdokumentation)",
+   "publisher": "SpaceXSI Docs (docs.x.ai)",
+   "url": "https://docs.x.ai/developers/advanced-api-usage/watermarking",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Grok API to watermark text from seven models by default from November 7",
+   "publisher": "DataStudios",
+   "url": "https://www.datastudios.org/post/grok-api-invisible-text-watermarking-default-november-7-eu-ai-act",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "xAI Will Add Invisible Watermarks to Grok API Text Nov. 7",
+   "publisher": "TokenPost",
+   "url": "https://www.tokenpost.com/news/technology/45622",
+   "accessed": "2026-11-02"
+  }
+ ],
+ "related": [
+  "fable-5-1-versteckte-botschaften-bilder",
+  "ki-training-ross-urteil-fair-use-faktencheck"
+ ],
+ "published": "2026-11-02T08:50:00+01:00",
+ "modified": "2026-11-02T08:50:00+01:00"
+}
