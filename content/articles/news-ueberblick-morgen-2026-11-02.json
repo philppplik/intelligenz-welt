@@ -1,0 +1,121 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-02",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Morgen: Anthropic bestätigt Claude-Spiele-Regel",
+  "dek": "Anthropic bestätigt die umstrittene Spiele-Regel in Claude Code. OpenAI bündelt ChatGPT- und Codex-Kontingente, und ein SDK-Update bringt neue Stellschrauben.",
+  "published": "2026-11-02T06:45:00+01:00",
+  "modified": "2026-11-02T06:45:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "Anthropic",
+    "OpenAI",
+    "Claude Code",
+    "Entwickler"
+  ],
+  "key_takeaways": [
+    "Anthropic bestätigt: Zwei Sätze im Prompt von Claude Code (Opus 5.5) sollen das Modell vom Nachbau konkreter fremder Spiele abhalten. Original-, Genre- und eigene Spiele sollen laut Mitarbeiter Addy Osmani weiter funktionieren; an der Balance werde weiter gefeilt. Nutzer melden weiterhin Fehlverweigerungen.",
+    "OpenAI führt ab Dezember ein gemeinsames Kontingent für ChatGPT und Codex ein (Plus, Pro, Business), abgerechnet in Tokens. Instant-Chats sollen nicht aus dem Topf zählen. Konkrete Mengen pro Tarif nennt die Hilfeseite nicht.",
+    "Das OpenAI-Python-SDK 3.42.0 macht Kontext-Verdichtung, Session-Reviews und API-Schlüssel pro Aufruf einstellbar - Kontrolle für Entwickler, aber auch neue Stellschrauben mit Kostenwirkung."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zur Anthropic-Bestätigung als Zeitstrahl: 27. Oktober Regeltext von Nutzern entdeckt, 30. Oktober im Programmcode verifiziert, 30. Oktober von Anthropic-Mitarbeiter Osmani bestätigt.",
+    "caption": "Vom Leak zur Bestätigung: Der Regeltext gegen Spiele-Nachbauten war zuerst von Nutzern auf X aufgetaucht, XDA fand ihn im Programmcode, dann bestätigte ihn Anthropic-Mitarbeiter Addy Osmani. Zeitstrahl, Abstände nicht maßstäblich.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: XDA / Game Developer"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 2. November 2026. Quellenstand: 06:37 Uhr MEZ.** Drei Meldungen zum Wochenstart: Anthropic bestätigt offiziell die Spiele-Sperre in Claude Code, über die wir gestern noch als unbestätigte Berichtslage geschrieben hatten. OpenAI legt ChatGPT- und Codex-Nutzung ab Dezember in einen Topf. Und ein SDK-Update gibt Entwicklern neue Kontrollschrauben. Dieser Überblick ergänzt unsere einzelnen Tagesartikel."
+    },
+    {
+      "t": "h2",
+      "x": "1. Anthropic bestätigt: Spiele-Regel ist offiziell"
+    },
+    {
+      "t": "p",
+      "x": "Es war ein Wochenende der Spekulation, jetzt gibt es Klarheit: Anthropic-Mitarbeiter Addy Osmani hat auf X bestätigt, dass das Unternehmen \"zwei Sätze zum Prompt von Claude Code auf Opus 5.5\" hinzugefügt hat, um das Modell vom Nachbau konkreter fremder Spiele abzuhalten - Begründung: Das Vervielfältigen fremder Spiele verletze geistiges Eigentum und damit die Nutzungsbedingungen. Der kursierende Regeltext, den Nutzer Ende Oktober entdeckt hatten, erlaubt ausdrücklich Original-Spiele, Genre-Spiele und Spiele aus eigenen Designs und Assets; verboten ist nur die Rekonstruktion eines konkreten bestehenden Spiels, auch unter neuem Namen."
+    },
+    {
+      "t": "p",
+      "x": "Osmani betont, diese erlaubten Fälle sollten weiter funktionieren, und kündigt Nachjustieren an: Wer fälschlich abgelehnt werde, solle sich melden. Das ist auch nötig - ein Wargaming-Anbieter meldet in einem GitHub-Issue, Claude Code verweigere seit der Regel bezahlte Kundenarbeit an legalen digitalen Umsetzungen physischer Spiele; eine öffentliche Antwort von Anthropic stand dort zuletzt aus (Stand der Berichte: 1. November). Entwickler von XDA hatten den Regeltext unabhängig im Programmcode von Claude Code 2.1.314 gefunden und zeigen zwei Verteilwege: einen serverseitig steuerbaren Prompt-Slot und ein Opus-5.5-Paket. Welche Konten welchen Weg erhalten, sagt Anthropic bislang nicht."
+    },
+    {
+      "t": "h2",
+      "x": "2. OpenAI: Ein Kontingent für ChatGPT und Codex"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI stellt die Abrechnung seiner Verbrauchstarife um: Ab Dezember teilen sich ChatGPT und Codex laut aktualisierter Hilfeseite ein gemeinsames Kontingent - für Plus-, Pro- und Business-Tarife. Gemessen wird künftig in Tokens statt in Nachrichten: Stärkere Modelle und komplexere Aufgaben ziehen mehr vom gemeinsamen Topf ab. Ausgenommen bleiben laut Seite Instant-Chats. Wer das Limit erreicht, kann auf den Reset warten, upgraden oder Guthaben kaufen; Restkontingent und Reset-Zeiten zeigt OpenAI unter Einstellungen, dann Nutzung."
+    },
+    {
+      "t": "p",
+      "x": "Begründet wird der Schritt damit, dass die Agenten-Fähigkeiten von ChatGPT Work in das Hauptprodukt wandern. OpenAI schreibt, man erwarte, dass die meisten Nutzer nicht häufiger als bisher auf einen Reset warten müssen - eine Anbietererwartung, keine Garantie. Offen lässt die Seite das Wichtigste: wie groß die gemeinsamen Kontingente pro Tarif ausfallen, was mit Free-, Enterprise- und Edu-Plänen passiert und welche Modelle als \"Instant\" zählen. Für Vielnutzer, die bisher ausgiebig in ChatGPT recherchiert und parallel in Codex gebaut haben, ändert sich die Rechnung spürbar: Beides frisst künftig am selben Budget."
+    },
+    {
+      "t": "h2",
+      "x": "3. OpenAI-SDK 3.42.0: Kontext-Verdichtung wird einstellbar"
+    },
+    {
+      "t": "p",
+      "x": "Fast unbemerkt ist am 31. Oktober Version 3.42.0 des offiziellen OpenAI-Python-SDK erschienen. Laut Release-Notes lassen sich damit Einstellungen zur Kontext-Verdichtung (Compaction) pro Aufruf setzen, dazu Session-Reviews, Werkzeug-Einstellungen und eine experimentelle Zeitwahrnehmung für Agenten. Neu ist auch, API-Schlüssel als \"callable\" an einzelne Requests zu binden, statt einen langlaufenden Schlüssel über einen ganzen Agenten-Pool zu teilen."
+    },
+    {
+      "t": "p",
+      "x": "Relevant wird das für alle, die längere Agenten-Läufe bauen: kdcube beschreibt die Neuerung so: Was bisher ein intransparenter Server-Default war, wird zur Client-Option. Der Branchendienst kdcube weist auf die Kehrseite hin: Hintergrund-Verdichtung sei standardmäßig aktiv und könne den Token-Verbrauch erhöhen - wer das SDK nutzt, sollte die Einstellung explizit setzen und messen, statt den Default zu übernehmen. Ob und wie stark sich das in der Praxis auswirkt, werden erste Vergleichsmessungen zeigen müssen."
+    },
+    {
+      "t": "callout",
+      "x": "So ist dieser Überblick entstanden: Wir haben die Originalquellen - Osmanis Bestätigung samt Berichten von Game Developer und XDA, die OpenAI-Hilfeseite und die SDK-Release-Notes - vollständig gelesen und eigenständig zusammengefasst. Anbietererwartungen und Nutzerberichte sind als solche gekennzeichnet. Der erste Punkt aktualisiert unsere Meldung vom Sonntagmittag, in der die Regel noch unbestätigt war."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Darf Claude mir jetzt noch ein Spiel programmieren?",
+      "a": "Ja - der bestätigte Regeltext erlaubt Original-Spiele, Genre-Spiele und Spiele aus eigenen Designs und Assets ausdrücklich. Verboten ist nur der Nachbau eines konkreten bestehenden Spiels, auch unter neuem Namen. Anthropic-Mitarbeiter Osmani sagt, diese Fälle sollten weiter funktionieren, und bittet um Meldung von Fehlverweigerungen; einzelne Nutzer berichten genau solche Fälle bereits."
+    },
+    {
+      "q": "Wird mein ChatGPT-Abo im Dezember schlechter?",
+      "a": "Das hängt von deinem Nutzungsmuster ab: ChatGPT und Codex teilen sich dann ein Token-Kontingent, stärkere Modelle und längere Aufgaben ziehen mehr ab. Instant-Chats sollen nicht zählen. OpenAI erwartet, dass die meisten Nutzer nicht häufiger auf Resets warten müssen - ob das für dich stimmt, hängt davon ab, wie groß das Kontingent deines Tarifs ausfällt, und das ist noch unbekannt."
+    }
+  ],
+  "related": [
+    "chatgpt-chrome-agenten-websites-sperren",
+    "anthropic-claude-angriffsflaeche-code"
+  ],
+  "sources": [
+    {
+      "title": "Anthropic tells Claude to stop remaking video games (mit Osmani-Statement)",
+      "publisher": "Game Developer",
+      "url": "https://www.gamedeveloper.com/programming/anthropic-appears-to-have-ordered-ai-tool-claude-to-stop-remaking-video-games",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "Anthropic testing crackdown on vibe-coded ports (Regeltext im Binary verifiziert)",
+      "publisher": "XDA Developers",
+      "url": "https://www.xda-developers.com/anthropic-testing-potential-crackdown-on-vibe-coded-ports-of-existing-games/",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "Understanding ChatGPT and Codex usage limits",
+      "publisher": "OpenAI Help Center",
+      "url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "openai-python Releases v3.42.0",
+      "publisher": "GitHub / OpenAI",
+      "url": "https://github.com/openai/openai-python/releases",
+      "accessed": "2026-11-02"
+    },
+    {
+      "title": "DeepSeek's Unprompted Coding Agent & OpenAI's Settable Compaction",
+      "publisher": "kdcube",
+      "url": "https://kdcube.tech/news/industry/ai/2026-11-02-news",
+      "accessed": "2026-11-02"
+    }
+  ]
+}
