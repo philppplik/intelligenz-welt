@@ -1,0 +1,137 @@
+{
+ "slug": "news-ueberblick-mittag-2026-11-02",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "title": "KI am Mittag: Anthropic weitet Text-Wasserzeichen aus",
+ "dek": "Ab morgen tragen vier weitere Claude-Modelle ein Wasserzeichen. Microsoft öffnet einen kleinen Rechner-Agenten, und Adobe forscht an selbstprüfender Bild-KI.",
+ "published": "2026-11-02T10:05:00+01:00",
+ "modified": "2026-11-02T10:05:00+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "KI-Überblick",
+  "Anthropic",
+  "Microsoft",
+  "Adobe",
+  "Open Source"
+ ],
+ "key_takeaways": [
+  "Anthropic erweitert laut Kunden-E-Mail ab dem 3. November das unsichtbare Text-Wasserzeichen auf Claude Mythos 5, Opus 4.7, Opus 4.6 und Sonnet 4.6. Bei den beiden 4.6-Modellen greift es laut The Decoder nur bei unveränderten Standardeinstellungen der Stichproben-Parameter.",
+  "Microsoft hat Mage-VL-Cowork veröffentlicht: einen quelloffenen Agenten mit 4 Milliarden Parametern (Apache 2.0), der Rechner per Mausklick und per Code bedient. Die angegebenen 66 Prozent im OSWorld-Verified-Test stammen vom Hersteller und sind nicht unabhängig nachgemessen.",
+  "Adobes EditAgent-Forschung zeigt: Ein Bild-KI-Agent, der Spezialwerkzeuge nutzt und Ergebnisse anhand von Messdaten vergleicht, trifft bessere Entscheidungen als extra trainierte Bewertungsmodelle. Der Preis: rund zehnmal so viel Rechenaufwand."
+ ],
+ "hero": {
+  "alt": "Eigene Grafik zur Wasserzeichen-Ausweitung: Vier Claude-Modelle (Mythos 5, Opus 4.7, Opus 4.6, Sonnet 4.6) erhalten ab 3. November ein Text-Wasserzeichen; bei den beiden 4.6-Modellen nur bei Standardeinstellungen.",
+  "caption": "Ab dem 3. November weitet Anthropic sein unsichtbares Text-Wasserzeichen laut Kunden-E-Mail auf vier ältere Claude-Modelle aus. Bei Opus 4.6 und Sonnet 4.6 greift es Berichten zufolge nur, wer die Standardeinstellungen nicht verändert - vereinfachte Darstellung.",
+  "ai_generated": false,
+  "credit": "Eigene Grafik (Redaktion), Daten: The Decoder / Anthropic-Hilfeseite"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "**Mittagsüberblick vom 2. November 2026. Quellenstand: 09:57 Uhr MEZ.** Drei Meldungen zur Mittagszeit: Anthropic weitet sein Text-Wasserzeichen ab morgen auf ältere Modelle aus - mit einer bemerkenswerten Lücke. Microsoft öffnet einen kleinen Agenten, der komplette Rechner bedienen kann. Und Adobe-Forscher zeigen, wie Bild-KI ihre eigenen Ergebnisse zuverlässiger prüft. Dieser Überblick ergänzt unsere einzelnen Tagesartikel."
+  },
+  {
+   "t": "h2",
+   "x": "1. Wasserzeichen ab morgen auch auf vier älteren Claude-Modellen"
+  },
+  {
+   "t": "p",
+   "x": "Anthropic weitet sein unsichtbares Text-Wasserzeichen ab dem 3. November auf vier weitere Modelle aus: Claude Mythos 5, Opus 4.7, Opus 4.6 und Sonnet 4.6. Das geht aus einer E-Mail an API-Kunden hervor, aus der The Decoder und Mashable zitieren. Neuere Modelle wie Opus 5.5 tragen die Markierung bereits seit ihrem Start. Auf Amazons Bedrock-Plattform könne die Umstellung wenige Tage länger dauern, heißt es in den Berichten."
+  },
+  {
+   "t": "p",
+   "x": "Die relevante Einschränkung: Bei Opus 4.6 und Sonnet 4.6 soll das Wasserzeichen nur greifen, wenn Nutzer die drei Zufalls-Parameter (temperature, top_p, top_k) auf ihren Standardwerten belassen, berichtet The Decoder aus der Kunden-Mail. Schon eine kleine Änderung an einem der Regler genüge demnach, um die Markierung zu umgehen. Anthropic warne in der Mail selbst: Wer das Wasserzeichen für die eigene Compliance brauche, solle die Standards nicht anfassen. Für Mythos 5 und Opus 4.7 wird diese Einschränkung nicht genannt."
+  },
+  {
+   "t": "p",
+   "x": "Anthropics Hilfeseite nennt als Rahmen die EU-KI-Verordnung: Das Unternehmen hat den Verhaltenskodex zu Artikel 50 unterzeichnet; als Grund für die jetzige Nachrüstung älterer Modelle nennt Anthropic Berichten zufolge eine Dezember-Frist. Die Markierung gilt weltweit, verändert laut Anbieter weder Sinn noch Lesbarkeit und enthält keine Nutzerinformationen. Prüfen können sie bislang nur freigeschaltete Stellen wie Regulierer, Medien und Forschende - eine öffentliche Prüfung gibt es nicht. Das Verfahren beruht auf einem Muster in der Wortwahl; Kritiker wie Blogger John Gruber bezweifeln, dass das völlig ohne Qualitätsverlust geht."
+  },
+  {
+   "t": "h2",
+   "x": "2. Microsoft öffnet Mage-VL-Cowork: 4-Milliarden-Parameter-Agent für den ganzen Rechner"
+  },
+  {
+   "t": "p",
+   "x": "Microsoft hat heute Mage-VL-Cowork auf Hugging Face veröffentlicht: einen quelloffenen Agenten (Apache 2.0) mit vier Milliarden Parametern, der einen Desktop-Computer sowohl per Maus und Tastatur als auch per Terminal-Befehlen bedienen kann - beides in einem einzigen Modell, ohne äußere Steuerlogik. In Microsofts Messung erreicht der Agent 66,0 Prozent im anerkannten OSWorld-Verified-Test für Rechner-Bedienung, der beste Wert in seiner Größenklasse; der menschliche Referenzwert liegt bei 72,4 Prozent. Alle Zahlen sind Herstellerangaben ohne unabhängige Nachmessung."
+  },
+  {
+   "t": "p",
+   "x": "Praktisch relevant: Mit rund 9,5 Gigabyte Speicherbedarf läuft das Modell auf handelsüblicher Hardware. Technisch steckt ein Qwen3-4B-Sprachmodell dahinter, trainiert in fünf Stufen mit Verstärkungslernen. Interessant für Selbsthoster: Microsoft legt das komplette Trainingsrezept inklusive der 293.806 erzeugten Übungsaufgaben offen."
+  },
+  {
+   "t": "h2",
+   "x": "3. Adobe EditAgent: Besser prüfen statt öfter raten"
+  },
+  {
+   "t": "p",
+   "x": "Forscher von Adobe Research und der UC San Diego stellen EditAgent vor, einen Prototyp für Bild-Bearbeitung per Anweisung. Ausgangspunkt: In ihrem Test mit 600 Bearbeitungswünschen scheiterte ein universelles Bearbeitungsmodell in 42,7 Prozent der Fälle - Spezialwerkzeuge für Schärfen, Drehen oder Zoomen lösten etwa zwei Drittel dieser Fälle. EditAgent wählt daher pro Schritt das passende Werkzeug und erzeugt Varianten parallel."
+  },
+  {
+   "t": "p",
+   "x": "Der eigentliche Trick ist die Prüfung: Ein handelsübliches Sprachmodell vergleicht die Varianten anhand von Ausschnitten, Änderungskarten und Messwerten zu Helligkeit und Farbe. Mit diesen Zahlen traf es in 81,3 Prozent der Fälle eine Wahl, die auch Profis für brauchbar hielten - besser als eigens trainierte Bewertungsmodelle. Der Haken: etwa zehnmal so viel Rechenaufwand pro Bild. Die Ergebnisse stammen aus dem eigenen Testaufbau der Forscher; ein Produkttermin steht nicht fest. Die geprüften Ergebnisse könnten künftig schnellere Modelle trainieren."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ändert sich am 3. November für Claude-Nutzer?",
+   "a": "Texte von Claude Mythos 5, Opus 4.7, Opus 4.6 und Sonnet 4.6 sollen laut Kunden-E-Mail ein unsichtbares Wasserzeichen erhalten. Sichtbar ändert sich nichts; nachweisbar ist die Markierung nur für freigeschaltete Prüfstellen. Bei den beiden 4.6-Modellen greift sie Berichten zufolge nur bei unveränderten Standardeinstellungen."
+  },
+  {
+   "q": "Kann ich Mage-VL-Cowork selbst ausprobieren?",
+   "a": "Ja, das Modell steht unter der freien Apache-2.0-Lizenz auf Hugging Face und braucht rund 9,5 Gigabyte Speicher. Es richtet sich an Entwickler; Einrichtung und Betrieb eines Rechner-Agenten erfordern Fachkenntnis und eine abgesicherte Testumgebung."
+  },
+  {
+   "q": "Ist EditAgent schon in Photoshop verfügbar?",
+   "a": "Nein, EditAgent ist ein Forschungsprototyp von Adobe Research und der UC San Diego. Die Ergebnisse stammen aus einem eigenen Testaufbau mit 600 Bearbeitungen. Ob und wann das Verfahren in Produkte einfließt, ist nicht kommuniziert."
+  }
+ ],
+ "related": [
+  "grok-api-wasserzeichen-pflicht",
+  "gemini-api-computer-use-ga"
+ ],
+ "sources": [
+  {
+   "title": "How Claude marks AI-generated content (Hilfeseite)",
+   "publisher": "Anthropic",
+   "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Anthropic's watermark rollout leaves a loophole on two older Claude models",
+   "publisher": "The Decoder",
+   "url": "https://the-decoder.com/anthropics-watermark-rollout-leaves-a-loophole-on-two-older-claude-models/",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Anthropic expands text watermarking to older Claude versions beginning November 3",
+   "publisher": "Mashable",
+   "url": "https://mashable.com/tech/anthropic-expands-text-watermarking-to-older-claude-versions",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "microsoft/Mage-VL-Cowork (Modellkarte)",
+   "publisher": "Hugging Face / Microsoft",
+   "url": "https://huggingface.co/microsoft/Mage-VL-Cowork",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Mage-VL-Cowork: 4B Hybrid GUI + Code Computer-Use Agent (Projektseite)",
+   "publisher": "Microsoft",
+   "url": "https://microsoft.github.io/Mage/cowork/",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "Adobe is testing how well AI agents can use editing tools like a Photoshop professional would",
+   "publisher": "The Decoder",
+   "url": "https://the-decoder.com/adobe-is-testing-how-well-ai-agents-can-use-editing-tools-like-a-photoshop-professional-would/",
+   "accessed": "2026-11-02"
+  },
+  {
+   "title": "EditAgent: Rethinking Agentic Image Editing (Paper)",
+   "publisher": "arXiv (Adobe Research / UC San Diego)",
+   "url": "https://arxiv.org/abs/2610.39664",
+   "accessed": "2026-11-02"
+  }
+ ]
+}
