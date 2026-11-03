@@ -1,9 +1,9 @@
 {
   "slug": "anthropic-message-threads-api-beta",
   "section": "tools",
-  "type": "article",
+  "type": "news",
   "lang": "de",
-  "author": "Philipp Paulik",
+  "author": "philipp-paulik",
   "title": "Anthropics Message Threads: Claude-Agenten schicken nur noch die neuen Nachrichten",
   "dek": "Die Messages API hält Unterhaltungen in einer öffentlichen Beta kurzzeitig auf dem Server. Pro Runde reisen nur noch die neuen Nachrichten - Anthropic verspricht spürbar schnellere Antwortstarts in langen Agenten-Sessions.",
   "tags": [

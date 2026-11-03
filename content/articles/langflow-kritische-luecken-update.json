@@ -1,9 +1,9 @@
 {
   "slug": "langflow-kritische-luecken-update",
   "section": "praxis",
-  "type": "article",
+  "type": "news",
   "lang": "de",
-  "author": "Philipp Paulik",
+  "author": "philipp-paulik",
   "title": "Langflow: Zwei kritische Lücken mit Score 9,8 - so aktualisierst du auf 1.13.0",
   "dek": "IBM warnt vor vier Schwachstellen in Langflow OSS 1.0.0 bis 1.12.8, zwei davon kritisch und ohne Login ausnutzbar. Einen Workaround gibt es nicht - nur das Update auf Version 1.13.0.",
   "tags": [

@@ -1,9 +1,9 @@
 {
   "slug": "weight-space-programming-llm-bearbeitet-gewichte",
   "section": "analyse",
-  "type": "article",
+  "type": "analysis",
   "lang": "de",
-  "author": "Philipp Paulik",
+  "author": "philipp-paulik",
   "title": "Weight-Space Programming: Ein Sprachmodell, das neuronale Netze von Hand repariert",
   "dek": "MIT-Forschende berichten, GPT-6 Astra könne Modellgewichte lesen und gezielt umschreiben - bei einem kleinen Qwen-Modell stieg der Mathe-Wert dadurch von 7,9 auf 48,1 Prozent. Die Ergebnisse sind früh, nicht peer-reviewt und trotzdem bemerkenswert.",
   "tags": [
