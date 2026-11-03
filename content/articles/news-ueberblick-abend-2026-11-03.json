@@ -1,0 +1,131 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-03",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-03T16:06:00+01:00",
+  "modified": "2026-11-03T16:06:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Designing responsible AI for learning",
+      "publisher": "Google",
+      "url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "New research shows how Guided Learning supports students",
+      "publisher": "Google",
+      "url": "https://blog.google/products-and-platforms/products/education/guided-learning-uk-japan/",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Introducing Hume's Audio Decision API: A decision layer for speech and sound",
+      "publisher": "Hume AI",
+      "url": "https://www.hume.ai/blog/introducing-hume-audio-decision-api",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Audio Decisions API launch",
+      "publisher": "Hume API-Dokumentation",
+      "url": "https://dev.hume.ai/audio-decisions/changelog/2026/11/2",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Hume AI launches the Jev of voice AI",
+      "publisher": "The Deep View",
+      "url": "https://www.thedeepview.com/articles/hume-ai-launches-the-jev-of-voice-ai",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "AGIBOT Unveils GO-3 Preview, Takes Top Spot on Three Embodied AI Benchmarks",
+      "publisher": "AGIBOT, Pressemitteilung bei PR Newswire",
+      "url": "https://www.prnewswire.com/apac/news-releases/agibot-unveils-go-3-preview-takes-top-spot-on-three-embodied-ai-benchmarks-302927277.html",
+      "accessed": "2026-11-03"
+    }
+  ],
+  "title": "KI am Abend: Google bringt Lernhilfe ins Klassenzimmer",
+  "dek": "Google startet Guided Learning in Classroom. Hume will Tonaufnahmen ohne Umweg über Text beurteilen, AGIBOT stellt ein lernendes Robotermodell vor.",
+  "tags": [
+    "KI-Überblick",
+    "Google",
+    "Bildung",
+    "Hume AI",
+    "Robotik"
+  ],
+  "key_takeaways": [
+    "Google startet nach eigenen Angaben den weltweiten Classroom-Rollout von Guided Learning. Der Search-Pilot folgt erst später im November an ausgewählten US-Schulen; neue Kontrollen für Schülerkonten sind noch angekündigt.",
+    "Humes Audio Decision API liefert laut Anbieter Wahrscheinlichkeiten für selbst gewählte Antworten auf Fragen zu Audio. Der Blog verweist für API-Zugang auf eine Warteliste; das Changelog beschreibt zunächst einen Dateiendpunkt.",
+    "AGIBOT stellt GO-3 Preview vor und meldet Lernen vor, nach und während des Einsatzes. Die behaupteten Benchmark-Spitzenplätze sind Herstellerangaben; vollständiges Open Source ist erst bis Ende 2026 angekündigt."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu Googles angekündigten Lernfunktionen: Classroom-Rollout startet weltweit, Search-Pilot später im November an ausgewählten US-Schulen, neue Schülerkonto-Kontrollen folgen erst nach weiteren Informationen.",
+    "caption": "Drei verschiedene Zeitstände in Googles Ankündigung vom 3. November. Rollout und Pläne laut Google, kein eigener Produkttest - vereinfachte Darstellung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quelle: Google"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 3. November 2026. Quellenstand: 16:01 Uhr MEZ.** Zum Feierabend geht es um Lernen in drei Formen: eine KI-Lernhilfe für den Unterricht, strukturierte Fragen an Tonaufnahmen und Roboter, die nach Herstellerangaben auch aus ihrer Arbeit lernen sollen."
+    },
+    {
+      "t": "h2",
+      "x": "Google startet Lernhilfe in Classroom"
+    },
+    {
+      "t": "p",
+      "x": "Google beginnt heute nach eigenen Angaben mit dem weltweiten Rollout von Guided Learning in Google Classroom. Lehrkräfte weisen eine Lernaktivität zu und können sie an Unterrichtsmaterial binden. Die KI soll Schülerinnen und Schüler mit Fragen und schrittweisen Hilfen zum Verständnis führen, statt sofort die fertige Lösung zu liefern. Neue Einblicke in die Nutzung sollen Lehrkräften zeigen, wo zusätzliche Hilfe gebraucht wird."
+    },
+    {
+      "t": "p",
+      "x": "Für die Google-Suche gilt ein anderer Zeitplan: Ein Pilot an ausgewählten US-Schulen soll erst später im November beginnen. Bei bestimmten Hausaufgabenfragen soll Search dann durch das Problem führen. Auch die angekündigten Kontrollen sind noch kein fertiger Rollout: Google will den Zugang zu Gemini, Gemini Notebook, Gemini in Classroom und Google Search für K-12-Schülerkonten künftig ausgeschaltet lassen, bis die Schulverwaltung ihn ausdrücklich einschaltet. Weitere Einzelheiten sollen Schulen in den kommenden Monaten vor der Umstellung erhalten."
+    },
+    {
+      "t": "p",
+      "x": "Google nennt zudem eigene Forschungsdaten: In einer randomisierten Studie mit mehr als 300 Studierenden der Universität Tokio stiegen die Statistik-Testwerte nach einem halben Tag mit Standard-Webhilfen um 5,3 Prozentpunkte, mit zusätzlichem Guided Learning um 8,1 Prozentpunkte. Das ist ein Ergebnis einer bestimmten Lernsitzung, kein Beleg für dauerhaft bessere Noten. Eine vierwöchige Erprobung an drei britischen Sekundarschulen floss laut Google in die Classroom-Funktionen ein. Die Angaben stammen aus Googles Blog, nicht aus einer eigenen Nachprüfung der Studien."
+    },
+    {
+      "t": "h2",
+      "x": "Hume will mehr hören als ein Transkript"
+    },
+    {
+      "t": "p",
+      "x": "Hume AI hat am 2. November eine Audio Decision API vorgestellt. Entwickler geben eine Tonaufnahme, eine Frage und mögliche Antworten vor; zurück kommen Wahrscheinlichkeiten für diese Antworten. Denkbar sind Fragen nach Hintergrundgeräuschen, Sprecherwechseln oder hörbarer Frustration. Anders als ein Transkript soll das Verfahren auch Pausen, Seufzer und Überschneidungen berücksichtigen. Ob jemand frustriert klingt, bleibt jedoch eine Wahrnehmungsfrage und ist kein direkter Zugang zu dessen Gefühlen."
+    },
+    {
+      "t": "p",
+      "x": "In einer ersten eigenen Auswertung meldet Hume 70,7 Prozent Übereinstimmung mit dem Durchschnittsurteil eines menschlichen Panels; die Vergleichsbasis einzelner Bewertender liege bei 56,5 Prozent. Das sind Anbieterwerte, keine universelle Erkennungsquote. Für API-Zugang verweist der Blog auf eine Warteliste. Das Changelog dokumentiert den Start eines Dateiendpunkts; Echtzeit- und Umgebungsanwendungen bezeichnet der Blog zugleich als längerfristige Chance, während sich die Echtzeitfähigkeiten weiterentwickeln. Ein allgemein verfügbarer Live-Dienst lässt sich daraus nicht ableiten."
+    },
+    {
+      "t": "h2",
+      "x": "AGIBOT meldet Lernen nach dem Robotereinsatz"
+    },
+    {
+      "t": "p",
+      "x": "AGIBOT stellt heute GO-3 Preview vor. Laut Hersteller soll das Modell Aufgabenverständnis, Vorhersagen künftiger Zustände und Bewegungen verbinden. Für das Nachtraining nennt AGIBOT eine Kombination aus 100 physischen Robotern, Physiksimulation und Weltmodellen. Im späteren Einsatz soll das System Erfahrungen speichern und daraus sowohl abrufbares Wissen als auch Material für weiteres Training gewinnen."
+    },
+    {
+      "t": "p",
+      "x": "Eine Vorführung im Convenience-Store mit dem Genie-G2-Roboter soll nach Herstellerdarstellung zeigen, wie Fehler erkannt und Strategien angepasst werden. AGIBOT nennt das eine Form physischer Selbstverbesserung. Die Pressemitteilung belegt damit keine unbegrenzte autonome Lernfähigkeit. Auch die gemeldeten ersten Plätze auf RoboDojo, RoboTwin und RoboColiseum sind Herstellerangaben ohne eigene Nachmessung. Die vollständige Open-Source-Veröffentlichung ist bis Ende 2026 angekündigt; eine bereits vollständige Freigabe ist durch die Mitteilung nicht belegt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist Guided Learning jetzt überall in der Google-Suche aktiv?",
+      "a": "Nein. Google startet den weltweiten Classroom-Rollout; für Search ist zunächst ein Pilot später im November an ausgewählten US-Schulen angekündigt. Auch die neuen K-12-Zugangskontrollen folgen erst nach weiteren Informationen."
+    },
+    {
+      "q": "Kann Hume Gefühle zuverlässig feststellen?",
+      "a": "Hume bewertet, wie Sprache und Geräusche wirken, und gibt Wahrscheinlichkeiten aus. Eine wahrgenommene Emotion ist kein sicherer Beleg für den inneren Zustand einer Person. Die genannten Panelwerte stammen von Hume selbst."
+    },
+    {
+      "q": "Ist GO-3 Preview bereits Open Source?",
+      "a": "Die Hersteller-Pressemitteilung kündigt die vollständige Open-Source-Veröffentlichung bis Ende 2026 an. Sie belegt noch keine bereits verfügbare vollständige Veröffentlichung."
+    }
+  ],
+  "related": [
+    "anthropic-message-threads-api-beta",
+    "deepseek-superagent-open-source-prototyp"
+  ]
+}
