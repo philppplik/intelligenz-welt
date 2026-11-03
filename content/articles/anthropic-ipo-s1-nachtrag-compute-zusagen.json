@@ -1,0 +1,137 @@
+{
+  "slug": "anthropic-ipo-s1-nachtrag-compute-zusagen",
+  "section": "news",
+  "type": "article",
+  "lang": "de",
+  "author": "Philipp Paulik",
+  "title": "Anthropic meldet 17 Milliarden Dollar Quartalsumsatz - und 895 Milliarden Compute-Zusagen",
+  "dek": "Der nachgereichte Börsenprospekt zeigt erstmals das dritte Quartal: Der Umsatz wächst weiter rasant, der Nettoverlust liegt bei 23,3 Milliarden Dollar - und die Zusagen für Rechenleistung summieren sich auf 895,4 Milliarden Dollar.",
+  "tags": [
+    "Anthropic",
+    "Börsengang",
+    "S-1",
+    "Rechenzentren",
+    "Claude"
+  ],
+  "key_takeaways": [
+    "Anthropic hat am Montag den ergänzten Börsenprospekt (S-1/A) bei der US-Börsenaufsicht SEC eingereicht; er enthält erstmals die Zahlen zum dritten Quartal.",
+    "Der Quartalsumsatz liegt bei rund 17 Milliarden Dollar, der Nettoverlust bei 23,29 Milliarden Dollar; der Neun-Monats-Verlust von 104 Milliarden geht laut CNBC größtenteils auf Bewertungsänderungen von Wandelanleihen und Derivaten zurück.",
+    "Die Kaufzusagen und Mietverträge für Rechenleistung und Infrastruktur summieren sich auf rund 895,4 Milliarden Dollar.",
+    "Im Prospekt warnt Anthropic in neuer Risiko-Sprache, interne Schätzungen könnten bald die eigene Schwelle für 'dramatisch beschleunigten Fortschritt durch KI' erreichen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Stapel Börsendokumente unter einem Vergrößerungsglas aus Licht, daneben leuchtende Rechenzentrums-Konturen in Nachtblau und Gold.",
+    "caption": "Anthropics ergänzter Börsenprospekt legt erstmals Q3-Zahlen und Compute-Zusagen offen. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat am Montag den Nachtrag zu seinem Börsenprospekt (Formular S-1/A) bei der US-Börsenaufsicht SEC eingereicht. Die erste Fassung Ende Oktober enthielt nur Zahlen bis zum Halbjahr; die Ergänzung liefert jetzt das dritte Quartal nach - und damit den bisher vollständigsten Blick in die Bücher des Claude-Herstellers."
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen im Überblick"
+    },
+    {
+      "t": "p",
+      "x": "In den neun Monaten bis Ende September erzielte Anthropic 33,24 Milliarden Dollar Umsatz, rund 1.200 Prozent mehr als im Vorjahreszeitraum. Im dritten Quartal allein waren es etwa 17 Milliarden Dollar, ein Plus von rund 1.127 Prozent gegenüber dem Vorjahresquartal. Das berichtet CNBC aus dem Prospekt."
+    },
+    {
+      "t": "p",
+      "x": "Dem steht ein Nettoverlust von 23,29 Milliarden Dollar im Quartal gegenüber. Über die neun Monate summiert sich der Verlust auf 104 Milliarden Dollar - laut CNBC größtenteils eine Folge von Bewertungsänderungen bei Wandelanleihen und derivativen Verbindlichkeiten, nicht des laufenden Betriebs. Im Vorjahreszeitraum hatte der Verlust 25,1 Milliarden Dollar betragen."
+    },
+    {
+      "t": "callout",
+      "kind": "info",
+      "x": "Das Wachstum flacht quartalsweise ab: Gegenüber dem Vorquartal legte der Umsatz im dritten Quartal rund 47 Prozent zu - nach 144 Prozent im zweiten und 132 Prozent im ersten Quartal, rechnet CNBC vor."
+    },
+    {
+      "t": "h2",
+      "x": "895,4 Milliarden Dollar an Zusagen"
+    },
+    {
+      "t": "p",
+      "x": "Der auffälligste Posten steht nicht in der Gewinn- und Verlustrechnung, sondern bei den Verpflichtungen: Kaufzusagen und Mietverträge mit einem Gesamtvolumen von rund 895,4 Milliarden Dollar, \"substantially all of which is related to compute and infrastructure\", heißt es im Prospekt (zitiert nach CNBC). Die Compute- und Infrastrukturausgaben stiegen in den neun Monaten um 14,4 Milliarden Dollar, ein Plus von 329 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Aus dem Prospekt gehen laut einer Zusammenfassung von Bloomberg und Unite.AI auch einzelne Mindestverpflichtungen hervor: mindestens 44,9 Milliarden Dollar gegenüber Microsoft (November 2026 bis Juni 2033), etwa 121,3 Milliarden gegenüber Google (April 2026 bis Juli 2033) und mindestens 110 Milliarden gegenüber Amazon (Mai 2026 bis April 2036), dazu Master-Leasingverträge unter anderem mit Broadcom über rund 161,2 Milliarden Dollar Miete. Rund die Hälfte der Gesamtzusagen soll demnach vor Ende 2030 fällig werden."
+    },
+    {
+      "t": "h2",
+      "x": "Börsengang und Japan-Tranche"
+    },
+    {
+      "t": "p",
+      "x": "Parallel hat Anthropic in Japan eine Wertpapierregistrierung über bis zu 552,9 Milliarden Yen (rund 3,5 Milliarden Dollar) eingereicht, geführt von Mizuho Securities, wie CNA unter Berufung auf Reuters berichtet. Das Wall Street Journal schreibt unter Berufung auf Mitwirkende, institutionelle Investoren drängten auf eine Bewertung von 1,5 bis 1,6 Billionen Dollar - spürbar unter den zuletzt kolportierten zwei Billionen. Anthropic hat sich dazu nicht geäußert; beide Angaben sind nicht offiziell bestätigt."
+    },
+    {
+      "t": "h2",
+      "x": "Der Satz über beschleunigten Fortschritt"
+    },
+    {
+      "t": "p",
+      "x": "Neu ist auch ein Absatz in den Risikofaktoren: Interne Schätzungen zu künftigen Modellen deuteten darauf hin, dass Anthropic die eigene Definition von \"dramatically accelerated progress attributable to AI\" aus seiner Responsible Scaling Policy möglicherweise bald erreiche - \"may imminently meet\", heißt es im Filing (zitiert nach Morning Tokens). Kein aktuelles Modell sei über dieser Schwelle eingestuft, man prüfe die Daten weiter. Im selben Abschnitt räumt das Unternehmen ein, in der Vergangenheit Fähigkeitssprünge teils erst im Nachhinein erkannt zu haben."
+    },
+    {
+      "t": "p",
+      "x": "Die Einordnung bleibt Sache der Leserin: Ein S-1 ist zugleich Offenlegung und Werbeschrift, merkt TechCrunch an - Übertreibung ist darin riskanter als Zurückhaltung. Dass ein Frontier-Labor eine Warnung vor selbstbeschleunigender Entwicklung erstmals in ein verbindliches Wertpapierdokument schreibt, ist dennoch ein neuer Schritt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Der Nachtrag macht greifbar, was bisher Schätzungen waren: Das Umsatzwachstum ist real und weiter dreistellig, die Kostenstruktur dahinter jetzt erstmals öffentlich. Mehr als 90 Seiten Risikofaktoren zählt der Prospekt laut CNBC - von der Rechenleistungs-Abhängigkeit von Amazon, Google und SpaceX bis zum Spagat zwischen Sicherheitsanspruch und Geschäftszielen. Der Börsengang an der Nasdaq unter dem Kürzel \"ANT\" soll Berichten zufolge noch im November starten."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum verliert Anthropic trotz Umsatzsprung so viel Geld?",
+      "a": "Der Großteil des Neun-Monats-Verlusts von 104 Milliarden Dollar ist laut CNBC ein Bilanzierungseffekt: Bewertungsänderungen von Wandelanleihen und Derivaten. Daneben steigen die laufenden Compute- und Infrastrukturkosten deutlich - um 329 Prozent in neun Monaten."
+    },
+    {
+      "q": "Was bedeuten die 895,4 Milliarden Dollar?",
+      "a": "Es sind Kaufzusagen und Mietverträge, also verbindliche Zusagen für künftige Rechenleistung und Infrastruktur - laut Prospekt \"im Wesentlichen vollständig\" für Compute. Das Geld ist noch nicht ausgegeben, aber vertraglich zugesagt."
+    },
+    {
+      "q": "Wann geht Anthropic an die Börse?",
+      "a": "Ein offizielles Datum gibt es nicht. Berichte von Reuters und dem Wall Street Journal deuten auf einen Start noch im November hin; die Japan-Registrierung und der Roadshow-Start gelten als letzte Vorbereitungsschritte."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Amendment No. 1 to Form S-1: Anthropic, PBC",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Anthropic reports $17 billion in Q3 revenue, purchase commitments of $895.4 billion in revised S-1",
+      "publisher": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Anthropic's new IPO filing puts its computing bill near $900 billion",
+      "publisher": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/article/anthropics-new-ipo-filing-puts-its-computing-bill-near-900-billion-151830444.html",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "GPT-6 Astra edits model weights by hand, Anthropic's S-1 shows a $23.3B loss",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-03/",
+      "accessed": "2026-11-03"
+    }
+  ],
+  "related": [
+    "anthropic-s1-eingereicht-nasdaq-ant",
+    "anthropic-agenten-umgehen-trainingsdaten-monitor"
+  ],
+  "published": "2026-11-03T08:50:00+01:00",
+  "modified": "2026-11-03T08:50:00+01:00"
+}

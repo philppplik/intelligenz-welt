@@ -1,0 +1,130 @@
+{
+  "slug": "ki-training-opt-out-robots-txt-brave-klage",
+  "section": "trends",
+  "type": "article",
+  "lang": "de",
+  "author": "Philipp Paulik",
+  "title": "Ein Opt-out für alle: Google plant ein gemeinsames robots.txt-Signal gegen KI-Training",
+  "dek": "Google will ab 2027 einen anbieterübergreifenden Opt-out-Token in der robots.txt respektieren. Zeitgleich verklagen die New York Times und weitere Verlage den Browser-Hersteller Brave - der Streit über Trainingsdaten wandert zu den Zwischenhändlern.",
+  "tags": [
+    "Urheberrecht",
+    "robots.txt",
+    "Google",
+    "Brave",
+    "Trainingsdaten"
+  ],
+  "key_takeaways": [
+    "Google hat am 30. Oktober angekündigt, ein gemeinsames 'Policy-Token' in der robots.txt als Opt-out gegen KI-Training zu respektieren - anbieterübergreifend, geplant ab 2027.",
+    "Der Token __usage_ai-training stammt aus einem individuellen IETF-Entwurf, der kein Standard ist; eine Durchsetzung ist im AIPREF-Arbeitskreis ausdrücklich nicht vorgesehen.",
+    "Am Montag haben die New York Times und drei weitere Zeitungen Brave verklagt: Der Vorwurf lautet auf Scraping von über 30 Milliarden Seiten und Verkauf des Index an KI-Firmen.",
+    "Beides zusammen markiert eine Verschiebung: Der Konflikt um Trainingsdaten richtet sich zunehmend gegen die Daten-Zwischenhändler, nicht nur gegen die Modellbauer."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein kleiner Gartenzaun mit einem Tor und einer Laterne davor, dahinter ein Weg durch eine nächtliche digitale Landschaft aus leuchtenden Dokumenten, Nachtblau und Gold.",
+    "caption": "Ein Opt-out-Signal für alle Anbieter - und parallel der nächste Großprozess um Trainingsdaten. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Webseitenbetreiber, die nicht wollen, dass ihre Inhalte KI-Modelle trainieren, müssen bislang die Crawler jedes Anbieters einzeln aussperren. Google will das vereinfachen: Wie das Unternehmen am 30. Oktober im Search Central Blog ankündigte, wird es ein gemeinsames 'Policy-Token' in der robots.txt respektieren, mit dem sich Trainingspräferenzen für mehrere KI-Anbieter in einem Schritt ausdrücken lassen. Die Grundlage liefert die AIPREF-Arbeitsgruppe der Internet Engineering Task Force (IETF)."
+    },
+    {
+      "t": "h2",
+      "x": "Der Plan: ein Token statt vieler Regeln"
+    },
+    {
+      "t": "p",
+      "x": "Der Mechanismus ist denkbar einfach: eine zusätzliche Gruppe in der robots.txt, deren User-Agent-Zeile das Policy-Token trägt. Der dazugehörige IETF-Entwurf definiert den Token __usage_ai-training und zeigt das vollständige Beispiel:"
+    },
+    {
+      "t": "code",
+      "lang": "text",
+      "x": "User-Agent: __usage_ai-training\nDisallow: /\nAllow: /press-kit/"
+    },
+    {
+      "t": "p",
+      "x": "So ausgedrückt wird eine Präferenz gegen KI-Training für die ganze Website - mit Ausnahme des Pfads /press-kit/. Entscheidend ist Googles Auslegungsregel: Nutzt eine Website das Token zum Opt-out und nennt Google-Extended nicht gesondert, will Google das so behandeln, als hätte die Seite Google-Extended untersagt. Bestehende anbieterspezifische Regeln funktionieren parallel weiter; Google will das Signal gemeinsam mit anderen Anbietern ab 2027 unterstützen."
+    },
+    {
+      "t": "h2",
+      "x": "Kein Standard, keine Durchsetzung"
+    },
+    {
+      "t": "p",
+      "x": "Zwei Bremsen gehören zur ehrlichen Einordnung. Erstens ist der Entwurf draft-kelley-aipref-training-preference-signal-00 ein individueller Internet-Draft, kein Dokument der Arbeitsgruppe und schon gar kein Standard - er trägt selbst den Vermerk, nicht vom IETF-Prozess gebilligt zu sein, wie der Blog Creuto herausarbeitet. Zweitens ist der Token kein Crawling-Verbot: Er drückt eine Präferenz aus, er blockiert nichts; Wildcard-Regeln (User-Agent: *) zählen ausdrücklich nicht als Token, und die technische Durchsetzung von Präferenzen ist im AIPREF-Charter ausdrücklich ausgeschlossen. OpenAI veröffentlichte am selben Tag einen eigenen Beitrag, der Websites ebenfalls Wege zur Formulierung von Trainingspräferenzen aufzeigt."
+    },
+    {
+      "t": "h2",
+      "x": "Parallel: Verlage verklagen Brave"
+    },
+    {
+      "t": "p",
+      "x": "Während die einen einen freiwilligen Ausstieg bauen, eskalieren die anderen den Rechtsweg. Die New York Times hat am Montag vor einem Bundesgericht in Manhattan Klage gegen Brave Software eingereicht, berichtet The Verge; die Daily News, die Chicago Tribune und der Orlando Sentinel reichten am selben Tag eine ähnliche Klage ein. Der Vorwurf: Brave habe mit einem Crawler, der sich nicht zu erkennen gebe, mehr als 30 Milliarden Webseiten kopiert, einen Index gebaut und KI-Unternehmen - die Klage nennt Anthropic, Perplexity, Mistral, xAI und Cohere - bezahlten Zugriff darauf verkauft."
+    },
+    {
+      "t": "quote",
+      "x": "In this way, Brave acts both like a burglar that misappropriates the content of publishers, and an AI 'fence' that sells stolen content to third parties.",
+      "who": "Aus der Klageschrift der New York Times, zitiert nach TechCrunch"
+    },
+    {
+      "t": "p",
+      "x": "Die Klage zielt außerdem auf eine Browser-Funktion, die Paywalls umgeht, und auf Braves Praxis, Verlagswerbung zu blockieren und eigene Anzeigen zu verkaufen. Eine Stellungnahme von Brave zu den Vorwürfen enthalten die Berichte nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das zusammengehört"
+    },
+    {
+      "t": "p",
+      "x": "Die beiden Entwicklungen markieren dieselbe Verschiebung aus entgegengesetzten Richtungen: Der Datenkonflikt wandert von den Modellherstellern zu den Zwischenhändlern, die das Web für sie erschließen - und gleichzeitig entsteht erstmals ein praktikables, anbieterübergreifendes Signal für Verlage. Google verweist in seinem Beitrag auf den EU-Verhaltenskodex für KI-Modelle mit allgemeinem Verwendungszweck, der die robots.txt als primären Weg für maschinenlesbare Präferenzen anerkennt. Ob der Token 2027 wirklich branchenweit greift und ob die Klagen Index-Geschäftsmodelle treffen, entscheidet, ob aus Ankündigung und Prozess eine neue Ordnung für Trainingsdaten wird."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Muss ich als Seitenbetreiber jetzt meine robots.txt ändern?",
+      "a": "Zwingend nicht - Googles Unterstützung ist für 2027 geplant. Wer jetzt schon eine klare Präferenz setzen will, kann die Token-Gruppe ergänzen; die bestehenden Regeln für einzelne Crawler wie Google-Extended solltest du unbedingt behalten, da der Entwurf noch kein Standard ist."
+    },
+    {
+      "q": "Hat das Signal Folgen für die Google-Suche?",
+      "a": "Nein. Google-Extended und das neue Token betreffen nur das KI-Training; sie beeinflussen laut Google weder die Aufnahme in die Suche noch das Ranking. Ein Crawling-Verbot erteilst du weiterhin über die regulären User-Agent-Regeln."
+    },
+    {
+      "q": "Was genau werfen die Verlage Brave vor?",
+      "a": "Drei Dinge: das Kopieren von über 30 Milliarden Webseiten durch einen Crawler, der sich nicht zu erkennen gab; den Verkauf von Zugriff auf den Index an KI-Unternehmen wie Anthropic, Perplexity, Mistral, xAI und Cohere; sowie Browser-Funktionen zum Umgehen von Paywalls und zum Ersetzen von Verlagswerbung."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Supporting a shared AI training control for websites",
+      "publisher": "Google Search Central Blog",
+      "url": "https://developers.google.com/search/blog/2026/10/ai-training-control",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "draft-kelley-aipref-training-preference-signal-00",
+      "publisher": "IETF Datatracker",
+      "url": "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "The New York Times sues Brave web browser for AI scraping and bypassing paywalls",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "New York Times and other outlets sue web browser Brave over alleged content scraping",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
+      "accessed": "2026-11-03"
+    }
+  ],
+  "related": [
+    "grok-api-wasserzeichen-pflicht",
+    "openai-jugendschutz-gewalt-chats-eingreifen"
+  ],
+  "published": "2026-11-03T08:50:00+01:00",
+  "modified": "2026-11-03T08:50:00+01:00"
+}

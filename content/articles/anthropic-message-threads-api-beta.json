@@ -1,0 +1,118 @@
+{
+  "slug": "anthropic-message-threads-api-beta",
+  "section": "tools",
+  "type": "article",
+  "lang": "de",
+  "author": "Philipp Paulik",
+  "title": "Anthropics Message Threads: Claude-Agenten schicken nur noch die neuen Nachrichten",
+  "dek": "Die Messages API hält Unterhaltungen in einer öffentlichen Beta kurzzeitig auf dem Server. Pro Runde reisen nur noch die neuen Nachrichten - Anthropic verspricht spürbar schnellere Antwortstarts in langen Agenten-Sessions.",
+  "tags": [
+    "Anthropic",
+    "Claude API",
+    "Entwickler",
+    "Agenten",
+    "Beta"
+  ],
+  "key_takeaways": [
+    "Anthropic hat Message Threads als öffentliche Beta in der Messages API gestartet: Die Unterhaltung bleibt kurzzeitig auf dem Server, pro Runde werden nur neue Nachrichten plus die ID der letzten Antwort gesendet.",
+    "Anthropic berichtet von rund 35 Prozent schnellerem Antwortstart (time to first token) bei sehr langen Claude-Code-Sessions zwischen 500.000 und einer Million Token - Anbieterangabe ohne Fremdprüfung.",
+    "Threads sind best-effort: Sie laufen fünf Minuten nach der letzten Anfrage ab und werden spätestens eine Stunde nach der letzten Nutzung gelöscht; die eigene Anwendung bleibt die führende Kopie.",
+    "Preise und Tokenverbrauch bleiben laut Anthropic unverändert."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine Kette aus Chat-Sprechblasen, verbunden durch einen leuchtenden Faden, bei der nur die letzte, neue Blase hell aufleuchtet, Nachtblau und warmes Gold.",
+    "caption": "Message Threads: Statt der kompletten Historie reist pro Runde nur die neue Nachricht. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Wer Agenten auf der Claude API baut, kennt das Problem: Jede Runde schickt die komplette Unterhaltung erneut - bei Coding-Agenten mit Hunderten Anfragen und langem Verlauf wird das erneute Hochladen, Validieren und Tokenisieren der Historie zum eigentlichen Flaschenhals. Anthropic hat dafür am Montag eine öffentliche Beta gestartet: Message Threads, berichtet The Next Web."
+    },
+    {
+      "t": "h2",
+      "x": "So funktionieren Threads"
+    },
+    {
+      "t": "p",
+      "x": "Die erste Anfrage geht wie bisher mit voller Unterhaltung, System-Prompt und Werkzeugen an die API - ergänzt um den Parameter thread mit dem Typ create. Die API speichert die Unterhaltung samt Claudes Antwort unter der Antwort-ID. Ab der zweiten Runde schickst du nur noch die neuen Nachrichten plus die ID der vorherigen Antwort mit dem Typ continue; System-Prompt und Werkzeuge entfallen, der Thread behält die Werte der Erst-Anfrage. Die Antwort ist eine ganz normale Message."
+    },
+    {
+      "t": "code",
+      "lang": "python",
+      "x": "client = anthropic.Anthropic()\n\n# Erstellt den Helfer; sendet noch keine Anfrage\nthread = client.beta.messages.thread(\n    model=\"claude-opus-5-5\",\n    max_tokens=1024,\n    system=\"Du bist ein Support-Agent. Antworte kurz.\",\n)"
+    },
+    {
+      "t": "p",
+      "x": "Die offiziellen SDKs bringen einen Thread-Helfer mit, der Erstellung, Fortsetzung und den Beta-Header übernimmt und die volle Unterhaltung im Arbeitsspeicher hält."
+    },
+    {
+      "t": "callout",
+      "kind": "warn",
+      "x": "Threads sind ausdrücklich best-effort: Ein Thread läuft fünf Minuten nach seiner letzten Anfrage ab und wird spätestens eine Stunde nach der letzten Nutzung gelöscht. Kann die API nicht fortsetzen, antwortet sie mit einem 404-Fehler - dann schickst du die volle Unterhaltung erneut als create. Deine Anwendung bleibt die führende Kopie; keine API-Antwort sagt dir zuverlässig, ob eine Runde gespeichert wurde."
+    },
+    {
+      "t": "h2",
+      "x": "Was Anthropic verspricht"
+    },
+    {
+      "t": "p",
+      "x": "Bei sehr langen Sessions - Anthropic nennt Claude-Code-Anfragen zwischen 500.000 und einer Million Token - sinke die Zeit bis zum ersten Token im Median um etwa 35 Prozent. Das ist eine Anbieterangabe ohne unabhängige Messung. Tokenverbrauch und Preise bleiben laut Anthropic unverändert; Ratenlimits ebenfalls."
+    },
+    {
+      "t": "h2",
+      "x": "Abgrenzung und Praxistipp"
+    },
+    {
+      "t": "p",
+      "x": "Message Threads sind nicht dasselbe wie die Session-Threads in Claude Managed Agents, stellt die Dokumentation klar. Für eigene Agenten-Loops lohnt der Blick vor allem dann, wenn die Historie pro Runde groß wird: Der Flaschenhals ist oft nicht die Modellgeschwindigkeit, sondern das erneute Senden und Tokenisieren des Verlaufs. Wer Prompt Caching nutzt, kann es mit Threads kombinieren; ohne gesetzte Cache-Markierungen wird nichts zwischengespeichert."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ändern sich die Kosten durch Message Threads?",
+      "a": "Nein. Laut Anthropic bleiben Tokenverbrauch, Preise und Ratenlimits unverändert - gespart wird Wartezeit bis zum Antwortstart, nicht Geld."
+    },
+    {
+      "q": "Was passiert, wenn mein Agent länger als fünf Minuten pausiert?",
+      "a": "Der Thread läuft ab. Die nächste continue-Anfrage scheitert mit einem 404-Fehler; du sendest dann die volle Unterhaltung erneut als create und fährst mit der neuen Antwort-ID fort. Der SDK-Helfer erledigt diesen Replay automatisch."
+    },
+    {
+      "q": "Kann ich mich auf den Server als Gedächtnis verlassen?",
+      "a": "Nein. Anthropic beschreibt Threads als best-effort mit kurzer Lebensdauer. Deine Anwendung muss die komplette Unterhaltung selbst vorhalten und den Neuaufbau jederzeit können."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Message threads (API-Dokumentation)",
+      "publisher": "Anthropic (platform.claude.com)",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Message threads (Übersichtsartikel)",
+      "publisher": "Anthropic (claude.com)",
+      "url": "https://claude.com/resources/articles/message-threads",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Anthropic puts message threads in public beta so Claude agents send only new messages each turn",
+      "publisher": "The Next Web",
+      "url": "https://thenextweb.com/news/anthropic-message-threads-beta-claude-api-agents",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Anthropic Launches Message Threads Beta for Long-Running Agents",
+      "publisher": "Unite.AI",
+      "url": "https://www.unite.ai/anthropic-launches-message-threads-beta-for-long-running-agents/",
+      "accessed": "2026-11-03"
+    }
+  ],
+  "related": [
+    "deepseek-superagent-open-source-prototyp",
+    "android-studio-bring-your-own-agent"
+  ],
+  "published": "2026-11-03T08:50:00+01:00",
+  "modified": "2026-11-03T08:50:00+01:00"
+}

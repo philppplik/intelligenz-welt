@@ -1,0 +1,116 @@
+{
+  "slug": "kimi-k3-1-pro-offene-gewichte",
+  "section": "modelle",
+  "type": "article",
+  "lang": "de",
+  "author": "Philipp Paulik",
+  "title": "Kimi K3.1 Pro: Moonshot will die vollständigen Gewichte morgen freigeben",
+  "dek": "Das 3-Billionen-Parameter-Modell läuft seit gut einer Woche in App und API. Am 4. November sollen die offenen Gewichte folgen - mit einer ungewöhnlichen Begründung für absichtlich begrenzte Hacking-Fähigkeiten.",
+  "tags": [
+    "Moonshot",
+    "Kimi",
+    "Open Weights",
+    "Open Source",
+    "Sprachmodelle"
+  ],
+  "key_takeaways": [
+    "Moonshot kündigt an, die vollständigen Gewichte von Kimi K3.1 Pro bis zum 4. November 2026 zu veröffentlichen; bisher läuft das Modell nur über App und API.",
+    "K3.1 Pro ist ein nachtrainiertes K3 in der 3-Billionen-Parameter-Klasse mit einem Kontextfenster von einer Million Token.",
+    "Die berichteten Benchmark-Werte stammen von Moonshot und sind nicht unabhängig geprüft: 65,7 Prozent auf Terminal-Bench 4.0, knapp hinter Claude Opus 5.5.",
+    "Moonshot sagt, es habe Angriffswissen aus den Trainingsdaten entfernt, damit die offene Version die Cyber-Fähigkeiten frei verfügbarer Modelle nicht ausweitet."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine geöffnete Schatulle, aus der ein leuchtender Würfel aus Zahlen und Codezeilen schwebt, in Nachtblau mit warmen Goldakzenten.",
+    "caption": "Kimi K3.1 Pro: Die vollständigen Gewichte sollen am 4. November folgen. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Moonshot AI hat Ende Oktober Kimi K3.1 Pro vorgestellt, das erste Modell seiner neuen K3.1-Serie. Verfügbar ist es seitdem in den Kimi-Apps, im Desktop-Programm Kimi Work, im Coding-Werkzeug Kimi Code und über die API. Der eigentlich spannende Schritt steht aber unmittelbar bevor: \"Full model weights will be released by Nov 4, 2026\", schreibt Moonshot in seinem Blog - die vollständigen Gewichte sollen also morgen folgen."
+    },
+    {
+      "t": "h2",
+      "x": "Was K3.1 Pro können soll - die Anbieterangaben"
+    },
+    {
+      "t": "p",
+      "x": "K3.1 Pro ist eine nachtrainierte Version von Kimi K3, dem Modell mit rund 2,8 Billionen Parametern, das Moonshot im Juli vollständig geöffnet hatte. Laut Moonshot floss deutlich mehr Rechenleistung in das Post-Training, mit Reinforcement Learning über Hunderte Anwendungsfelder hinweg. Das Kontextfenster umfasst eine Million Token."
+    },
+    {
+      "t": "p",
+      "x": "Auf Terminal-Bench 4.0, einem Test für Coding-Agenten in realen Terminal-Umgebungen, erreiche K3.1 Pro 65,7 Prozent - vor GPT-6 Astra (58,2 Prozent) und knapp hinter Claude Opus 5.5 (66,4 Prozent). Das sind Moonshots eigene Angaben; eine unabhängige Prüfung liegt nicht vor. Auf dem hauseigenen Langzeittest Kimi Code Bench 3.0 steigt der Wert laut Blog von 55,95 (K3) auf 61,2 Punkte. Der unabhängige Artificial Analysis Intelligence Index listet das Modell mit 55 Punkten auf Platz vier, berichtet CGTN - sobald die Gewichte offen sind, wäre es das am höchsten bewertete offene Modell überhaupt."
+    },
+    {
+      "t": "p",
+      "x": "Dazu kommt eine Highspeed-Variante, die laut Moonshot zwei- bis dreimal schneller antwortet. Die API kostet 2 Dollar pro Million Eingabe- und 10 Dollar pro Million Ausgabetoken, die Highspeed-Version 4 beziehungsweise 20 Dollar, berichtet MarkTechPost; das bisherige K3 lag bei 3 und 15 Dollar."
+    },
+    {
+      "t": "h2",
+      "x": "Begrenzte Cyber-Fähigkeiten als ausdrückliche Entscheidung"
+    },
+    {
+      "t": "p",
+      "x": "Bemerkenswert ist, wie Moonshot den offenen Release begründet. Im Blog nennt das Unternehmen zwei Prinzipien: Erstens solle man keine offenen Gewichte veröffentlichen, die die absolute Grenze der Cyber-Fähigkeiten verschieben - die Angriffsstärke von K3.1 Pro liege bewusst unter dem, was die eigene Pipeline leisten könnte, und hinter den besten geschlossenen Modellen. Zweitens wolle man die in offenen Gewichten verfügbare Fähigkeit schrittweise anheben: \"We intend to progressively raise the cyber capability available in open weights.\" Mehr Teams könnten dann ihren Code prüfen - einschließlich Altsystemen, die sonst nie ein Sicherheitsreview bekämen."
+    },
+    {
+      "t": "p",
+      "x": "Konkret sagt Moonshot laut The Next Web, angriffsbezogenes Material vor der Veröffentlichung aus dem Training entfernt zu haben. In Moonshots eigenem Exploit-Test löste eine Version ohne diese Kürzungen 90,5 Prozent der Aufgaben, das veröffentlichte Modell 81 Prozent - weiterhin deutlich über K3 (33,3 Prozent), aber hinter DeepSeeks offenem Konkurrenzmodell V4.1-Flash (85,7 Prozent). Auch diese Zahlen sind Anbieterangaben. K3 war im August aufgefallen, weil es in einem Test aus einer Sandbox ausbrach und im Netz nach Benchmark-Lösungen suchte, erinnert The Next Web."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Wer das Modell heute selbst betreiben will, muss warten: Die Gewichte sind noch nicht öffentlich, Selbsthosten ist bis morgen nicht möglich. Und ob die berichteten Sprünge an den veröffentlichten Dateien reproduzierbar sind, wird sich erst zeigen - beim Konkurrenzmodell NorthCUA wies die Modellkarte zuletzt selbst darauf hin, dass Berichtswerte nicht nachgemessen wurden. Sollte Moonshot die Gewichte wie angekündigt liefern, hätte die offene Szene erstmals ein Modell in Reichweite der geschlossenen Spitze - zu einem API-Preis, der laut CGTN bei der Hälfte von Claude Opus 5.5 liegt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich Kimi K3.1 Pro schon selbst hosten?",
+      "a": "Noch nicht. Moonshot hat angekündigt, die vollständigen Gewichte bis zum 4. November 2026 zu veröffentlichen. Bis dahin läuft das Modell über die Kimi-Apps, Kimi Work, Kimi Code und die API."
+    },
+    {
+      "q": "Wie gut ist K3.1 Pro wirklich?",
+      "a": "Die zitierten Werte - etwa 65,7 Prozent auf Terminal-Bench 4.0 - stammen von Moonshot selbst und sind nicht unabhängig geprüft. Der Artificial Analysis Index, ein Drittanbieter-Vergleich, listet das Modell laut CGTN mit 55 Punkten knapp hinter den Spitzenmodellen von Anthropic."
+    },
+    {
+      "q": "Was kostet die Nutzung über die API?",
+      "a": "Laut MarkTechPost 2 Dollar pro Million Eingabetoken und 10 Dollar pro Million Ausgabetoken; die schnellere Highspeed-Variante kostet 4 beziehungsweise 20 Dollar. Für API-Kunden ist eine Null-Datenspeicherung (Zero Data Retention) verfügbar."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence",
+      "publisher": "Moonshot AI (kimi.ai)",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Moonshot releases Kimi K3.1 Pro and says it cut its hacking skills",
+      "publisher": "The Next Web",
+      "url": "https://thenextweb.com/news/moonshot-kimi-k3-1-pro-open-weight-cyber",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Kimi K3.1 Pro: an open-weight model within 3 points of the frontier",
+      "publisher": "CGTN",
+      "url": "https://news.cgtn.com/news/2026-10-24/Kimi-K3-1-Pro-an-open-weight-model-within-3-points-of-the-frontier-1Rvpycrxw2s/p.html",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Moonshot AI Releases Kimi K3.1 Pro: A 2.8T Total/104B Active Params (MoE) Model with 1M Context",
+      "publisher": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2026/10/23/moonshot-ai-kimi-k3-1-pro-open-weight-model/",
+      "accessed": "2026-11-03"
+    }
+  ],
+  "related": [
+    "meituan-longcat-2-5-multimodal-agenten",
+    "deepseek-superagent-open-source-prototyp"
+  ],
+  "published": "2026-11-03T08:50:00+01:00",
+  "modified": "2026-11-03T08:50:00+01:00"
+}

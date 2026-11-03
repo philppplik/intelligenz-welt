@@ -1,0 +1,127 @@
+{
+  "slug": "langflow-kritische-luecken-update",
+  "section": "praxis",
+  "type": "article",
+  "lang": "de",
+  "author": "Philipp Paulik",
+  "title": "Langflow: Zwei kritische Lücken mit Score 9,8 - so aktualisierst du auf 1.13.0",
+  "dek": "IBM warnt vor vier Schwachstellen in Langflow OSS 1.0.0 bis 1.12.8, zwei davon kritisch und ohne Login ausnutzbar. Einen Workaround gibt es nicht - nur das Update auf Version 1.13.0.",
+  "tags": [
+    "Langflow",
+    "Sicherheit",
+    "CVE",
+    "Update",
+    "Agenten"
+  ],
+  "key_takeaways": [
+    "IBM listet vier Schwachstellen in Langflow OSS; betroffen sind alle Versionen von 1.0.0 bis 1.12.8.",
+    "Zwei Lücken sind mit CVSS 9,8 kritisch: ein Login-Bypass (CVE-2026-93680) und Code-Ausführung ohne Anmeldung (CVE-2026-110186).",
+    "Die einzige Abhilfe ist das Update auf Langflow 1.13.0; IBM nennt keinen Workaround.",
+    "Vor dem Update: Datenbank, Secret Key und Uploads sichern und bei Nutzung von Auto-Login ein Konto für die Passwort-Anmeldung vorbereiten."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leuchtendes Flussdiagramm aus Knoten und Verbindungslinien, an einer Stelle mit einem Schraubenschlüssel aus Licht repariert, Nachtblau mit warnenden Amber-Akzenten.",
+    "caption": "Vier Langflow-Lücken, zwei davon kritisch: Das Update auf 1.13.0 ist die einzige Abhilfe. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Langflow ist ein beliebtes Open-Source-Werkzeug, um KI-Agenten und LLM-Workflows visuell zusammenzuklicken und etwa über MCP anzubinden. Genau solche Instanzen stehen jetzt im Fokus eines Security Bulletins von IBM: Vier Schwachstellen betreffen alle Langflow-Versionen von 1.0.0 bis einschließlich 1.12.8 - zwei davon mit dem Höchstwert 9,8 und ohne Benutzerkonto ausnutzbar."
+    },
+    {
+      "t": "h2",
+      "x": "Die vier Lücken im Überblick"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "CVE-2026-93680 (9,8): Ein entfernter Angreifer kann die Authentifizierung umgehen (improper authentication). Laut einem Beitrag des Sicherheitsunternehmens Rescana existiert bereits ein öffentliches Metasploit-Modul, das sich ohne Zugangsdaten mit einem Langflow-MCP-Endpunkt verbindet und dessen Werkzeuge auflistet.",
+        "CVE-2026-110186 (9,8): Ausführung beliebigen Codes aus der Ferne, ebenfalls ohne Anmeldung - laut IBM über eine unzureichende Kontrolle der Code-Generierung.",
+        "CVE-2026-110193 (8,8): Ein Konto mit niedrigen Rechten kann den Agentic Assistant dazu bringen, Komponenten-Code zu erzeugen, der Betriebssystembefehle auf dem Server ausführt.",
+        "CVE-2026-110192 (6,5): Ein angemeldeter Angreifer kann Zugangsdaten (API-Credentials) auslesen."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Hinzu kommen bekannte Schwachstellen in mitgelieferten Abhängigkeiten, darunter drei im Web-Framework Hono, die IBM ebenfalls im Bulletin aufführt."
+    },
+    {
+      "t": "callout",
+      "kind": "warn",
+      "x": "Verschärfend wirkt eine Standardeinstellung: In Version 1.12.8 ist die Option LANGFLOW_AUTO_LOGIN noch standardmäßig aktiv und meldet jede Besucherin als Superuser an; erst 1.13.0 schaltet das standardmäßig ab. Das berichtet Morning Tokens unter Verweis auf die Versionshinweise. Eine ins Internet offene Instanz mit Auto-Login kommt damit faktisch einer offenen Shell gleich."
+    },
+    {
+      "t": "h2",
+      "x": "So aktualisierst du auf 1.13.0"
+    },
+    {
+      "t": "ol",
+      "items": [
+        "Sichere vor dem Update die Datenbank, den Secret Key und die hochgeladenen Dateien deiner Instanz.",
+        "Nutzt du die automatische Anmeldung, bereite das vorhandene Konto für die Anmeldung mit Passwort vor - die Schritte stehen in den Installations- und Docker-Upgrade-Hinweisen von Langflow.",
+        "Aktualisiere per Python-Paket mit pip install --upgrade \"langflow==1.13.0\" oder ziehe das Docker-Image langflowai/langflow:1.13.0 und starte die Instanz mit den bestehenden Daten neu.",
+        "Installiere nicht neu, um den Zugang wiederherzustellen - der Weg über das vorbereitete Konto und die gesicherten Daten verhindert Datenverlust."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "IBM betont ausdrücklich: Einen Workaround oder eine Zwischenlösung gibt es nicht, das Update ist die einzige Abhilfe. Version 1.13.0 ist bereits verfügbar."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "In der KEV-Liste der US-Behörde CISA mit nachweislich ausgenutzten Lücken steht keine der vier Schwachstellen bislang (Stand 3. November, laut Morning Tokens). Das ist jedoch kein Grund zur Ruhe: Ein fertiges Metasploit-Modul verkürzt nach Einschätzung von Rescana die Zeit bis zu massenhaften Scans erheblich. Wer eine Langflow-Instanz betreibt, sollte das Update zeitnah einplanen und prüfen, ob die Instanz aus dem Internet erreichbar ist."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bin ich betroffen?",
+      "a": "Wenn deine Langflow-Instanz eine Version zwischen 1.0.0 und 1.12.8 läuft: ja. Besonders kritisch ist es, wenn die Instanz aus dem Internet erreichbar ist und die automatische Anmeldung (LANGFLOW_AUTO_LOGIN) aktiv ist."
+    },
+    {
+      "q": "Gibt es einen Workaround ohne Update?",
+      "a": "Nein. IBM nennt im Bulletin ausdrücklich keine Umgehungslösung. Die einzige Abhilfe ist das Upgrade auf Langflow OSS 1.13.0."
+    },
+    {
+      "q": "Werden die Lücken schon ausgenutzt?",
+      "a": "Eine bestätigte Ausnutzung ist bislang nicht bekannt; die CISA-Liste aktiv ausgenutzter Schwachstellen führt keine der vier Lücken (Stand 3. November). Allerdings existiert laut Rescana bereits ein öffentliches Metasploit-Modul für den Login-Bypass, was Angriffe deutlich erleichtert."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Security Bulletin: Langflow OSS is affected by multiple vulnerabilities",
+      "publisher": "IBM",
+      "url": "https://www.ibm.com/support/pages/node/7294467",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "CVE-2026-110186 Record",
+      "publisher": "CVE.org",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-110186",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Langflow OSS CVE-2026-93680 & CVE-2026-110186 unauthenticated critical: prepare now",
+      "publisher": "Rescana",
+      "url": "https://www.rescana.com/post/langflow-oss-cve-2026-93680-110186-unauthenticated-critical-prepare-now",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "GPT-6 Astra edits model weights by hand, Anthropic's S-1 shows a $23.3B loss",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-03/",
+      "accessed": "2026-11-03"
+    }
+  ],
+  "related": [
+    "anthropic-claude-angriffsflaeche-code",
+    "anthropic-einbruch-drittsoftware-cathedral"
+  ],
+  "published": "2026-11-03T08:50:00+01:00",
+  "modified": "2026-11-03T08:50:00+01:00"
+}

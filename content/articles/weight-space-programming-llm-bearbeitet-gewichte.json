@@ -1,0 +1,125 @@
+{
+  "slug": "weight-space-programming-llm-bearbeitet-gewichte",
+  "section": "analyse",
+  "type": "article",
+  "lang": "de",
+  "author": "Philipp Paulik",
+  "title": "Weight-Space Programming: Ein Sprachmodell, das neuronale Netze von Hand repariert",
+  "dek": "MIT-Forschende berichten, GPT-6 Astra könne Modellgewichte lesen und gezielt umschreiben - bei einem kleinen Qwen-Modell stieg der Mathe-Wert dadurch von 7,9 auf 48,1 Prozent. Die Ergebnisse sind früh, nicht peer-reviewt und trotzdem bemerkenswert.",
+  "tags": [
+    "Forschung",
+    "Interpretierbarkeit",
+    "GPT-6 Astra",
+    "MIT",
+    "Modellgewichte"
+  ],
+  "key_takeaways": [
+    "Ein MIT-CSAIL-Team berichtet in einem Blogpost, GPT-6 Astra könne rohe Netzwerkgewichte lesen, Fehler darin finden und gezielt umschreiben - ohne Training und ohne Gradienten.",
+    "Im auffälligsten Experiment stieg der MATH-500-Wert von Qwen3.5-0.8B nach einem Eingriff in 0,016 Prozent der Gewichte von 7,9 auf 48,1 Prozent; auch die Befolgung von Anweisungen (IFEval) verdreifachte sich.",
+    "Alle Ergebnisse sind frühe, vom Team selbst als vorläufig bezeichnete Beobachtungen ohne Peer-Review; die meisten Experimente liefen an sehr kleinen Netzen.",
+    "Falls der Befund hält, eröffnet er neue Wege für Reparatur und Interpretierbarkeit - und eine neue Angriffsfläche für offene Modelle."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leuchtendes Gitter aus Zahlen und Verbindungslinien, an dem ein feiner Lichtstrahl einzelne Punkte neu setzt, wie ein Uhrmacher an einem Uhrwerk, Nachtblau mit Gold.",
+    "caption": "Ein Sprachmodell als Uhrmacher an fremden Gewichten: die MIT-Experimente zu Weight-Space Programming. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Gewichte neuronaler Netze galten bislang als das eine Artefakt, das nur Optimierer schreiben können - Algorithmen wie Adam, nicht Menschen und schon gar nicht Sprachmodelle. Ein Team am MIT CSAIL (Rikiya Takehi, Jayden Teoh, Alex Zhang und Omar Khattab) berichtet nun in einem Blogpost vom 2. November, dass Frontier-Modelle genau das beginnen zu können. Sie nennen es Weight-Space Programming."
+    },
+    {
+      "t": "quote",
+      "x": "We find that frontier LLMs are surprisingly good at natively reading and writing neural network weights, well past what we'd expect from humans or conventional algorithms. This might be a big deal for both optimization and interpretability.",
+      "who": "Takehi et al., MIT CSAIL"
+    },
+    {
+      "t": "h2",
+      "x": "Lesen: Was steckt in diesen Gewichten?"
+    },
+    {
+      "t": "p",
+      "x": "In den ersten Experimenten bekam GPT-6 Astra die rohen Gewichte kleiner Netze als Text - ohne Werkzeuge, ohne das Netz auszuführen. Vier per PPO trainierte Spiel-Netze mit identischer Architektur konnte das Modell alle vier dem richtigen Spiel zuordnen, ohne dass die Auswahl überhaupt genannt wurde. Bei Diffusionsmodellen für Kreise, Dreiecke und Quadrate erkannte es die Form aus der Ausgabeschicht - und zeichnete sie nur als Umriss, obwohl die Modelle gefüllte Formen erzeugen. Dieser Fehler ist für die Forschenden ein Beleg, dass Astra die Gewichte wirklich liest statt Vorwärtspässe zu rechnen."
+    },
+    {
+      "t": "p",
+      "x": "Am anspruchsvollsten: Bei kleinen Sprachmodellen (7,2 Millionen Parameter), trainiert auf Python-Code, Romaji beziehungsweise Englisch, bekam Astra nur die vier mittleren Transformer-Blöcke - ohne Ein- und Ausgabeschicht. Das Modell nannte in allen drei Fällen die richtige Sprache und fand exakt die sogenannten Induction Heads, jene Aufmerksamkeitsköpfe, die früheren Text wiederholen - verifiziert gegen Messungen, die Astra nie zu sehen bekam."
+    },
+    {
+      "t": "h2",
+      "x": "Reparieren: der Qwen-Fix"
+    },
+    {
+      "t": "p",
+      "x": "Das publikumswirksamste Ergebnis: Qwen3.5-0.8B leidet laut eigener Modellkarte an Denkschleifen. Astra sollte das Modell besser in Mathematik machen - ohne Trainingschleife. Das Modell lokalisierte die Ursache in den Gewichten und editierte 0,016 Prozent von ihnen in einem Python-Kernel. Unter gleichen Sampling-Einstellungen stieg der MATH-500-Wert von 7,9 auf 48,1 Prozent; der IFEval-Wert für Befehlsbefolgung verdreifachte sich gleich mit. In einem zweiten Reparaturversuch brachte eine einmalige Änderung an 3,5 Prozent der Gewichte eine festgefahrene Auto-Steuerung von 0 auf 100 Prozent Erfolg."
+    },
+    {
+      "t": "h2",
+      "x": "Schreiben: Netze aus dem Nichts"
+    },
+    {
+      "t": "p",
+      "x": "Ganz ohne Umgebungs-Feedback schrieb Astra laut Blog kleine Spiel-Netze für drei MinAtar-Spiele, die Netze schlugen, die mit PPO über 100 Millionen Schritte trainiert worden waren - sowie ein Netz, das Go spielt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung: früh, klein, ungeprüft"
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren selbst nennen ihre Ergebnisse \"very early results\"; ein Peer-Review gibt es nicht, und nahezu alle Experimente laufen an Miniatur-Netzen - der Qwen-Fall mit 0,8 Milliarden Parametern ist der größte. Der Unternehmer Alex Krentsel schreibt auf X, er habe die Ergebnisse noch am selben Tag reproduziert, und spricht von einer neuen Sprung-Fähigkeit der neuesten Modelle; auch das ist eine ungeprüfte Selbstauskunft (zitiert nach Morning Tokens). Passt aber ins Bild: Ein Beitrag von Dejan AI zeigte diese Woche, dass schon das Training von 1.000 der 100 Millionen Gewichte von Gemma 3 270M eine Sortierfähigkeit von 1 auf 97 Prozent hob - kleine, gezielte Eingriffe können Fähigkeiten freilegen, die kein Prompt erreicht."
+    },
+    {
+      "t": "p",
+      "x": "Wenn sich der Befund an großen Modellen bestätigt, ist das zweischneidig: Reparatur und Interpretierbarkeit bekämen ein radikal direktes Werkzeug. Gleichzeitig könnte jede Person mit offenen Gewichten und einem Frontier-Modell Verhaltensweisen von Hand einbauen oder entfernen - ein Argument, das die Debatte um offene Gewichte weiter anheizen dürfte."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist das peer-reviewed?",
+      "a": "Nein. Die Ergebnisse stammen aus einem Blogpost des MIT-CSAIL-Teams, das selbst von sehr frühen Ergebnissen spricht. Eine behauptete Same-Day-Reproduktion durch Dritte ist eine ungeprüfte Angabe in sozialen Medien."
+    },
+    {
+      "q": "Funktioniert das auch bei großen Modellen?",
+      "a": "Das ist die offene Kernfrage. Die meisten Experimente liefen an Netzen mit wenigen Zehntausend Gewichten; das größte bearbeitete Modell hatte 0,8 Milliarden Parameter. Ob die Fähigkeit auf Frontier-Größe skaliert, ist unbekannt."
+    },
+    {
+      "q": "Was heißt das für die Sicherheit offener Modelle?",
+      "a": "Potenziell viel: Wer Gewichte gezielt von Hand umschreiben kann, könnte auch Schutzmaßnahmen entfernen oder Verhalten versteckt einbauen. Bislang ist das aber eine hypothetische Folge früher Laborexperimente, keine dokumentierte Angriffstechnik."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights",
+      "publisher": "Rikiya Takehi et al. (MIT CSAIL Blog)",
+      "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Like gene editing for neural networks: MIT researchers used GPT-6 Astra to edit Qwen's open weights directly",
+      "publisher": "VentureBeat",
+      "url": "https://venturebeat.com/technology/like-gene-editing-for-neural-networks-mit-researchers-used-gpt-6-astra-to-edit-qwens-open-weights-directly-boosting-math-performance",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Weight-Space Programming (Paper-Seite)",
+      "publisher": "alphaXiv",
+      "url": "https://www.alphaxiv.org/abs/2611.weight-space-programming",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "GPT-6 Astra edits model weights by hand, Anthropic's S-1 shows a $23.3B loss",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-03/",
+      "accessed": "2026-11-03"
+    }
+  ],
+  "related": [
+    "arc-prize-astra-harness-luecke",
+    "anthropic-agenten-umgehen-trainingsdaten-monitor"
+  ],
+  "published": "2026-11-03T08:50:00+01:00",
+  "modified": "2026-11-03T08:50:00+01:00"
+}
