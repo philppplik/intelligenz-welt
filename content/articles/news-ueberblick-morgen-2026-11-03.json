@@ -6,7 +6,7 @@
   "title": "KI am Morgen: OpenAI testet Helfer an Alltagsaufgaben",
   "dek": "OpenAIs LifeVal prüft, ob KI im Alltag wirklich hilft. Ein offenes Modell steuert Rechner per Maus, und Flower Labs gibt Kunden Denkspuren.",
   "published": "2026-11-03T06:53:00+01:00",
-  "modified": "2026-11-03T06:53:00+01:00",
+  "modified": "2026-11-03T07:20:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "KI-Überblick",
@@ -53,7 +53,7 @@
     },
     {
       "t": "p",
-      "x": "Mit NorthCUA ist eine offene Modellfamilie erschienen, die Desktop-Programme und Browser eigenständig bedient: Nano mit 9 Milliarden Parametern, Mini mit 35 Milliarden und Pro mit 397 Milliarden Parametern (davon 17 Milliarden pro Token aktiv), aufgebaut auf Qwen3.5 und unter der Apache-2.0-Lizenz veröffentlicht. Im eigenen 121-seitigen technischen Bericht meldet das Team Erfolgsquoten von 78,90 bis 88,64 Prozent auf dem Desktop-Test OSWorld-Verified und 67,16 bis 73,89 Prozent auf dem Web-Test WebArena-Verified, je nach Modellgröße."
+      "x": "Mit NorthCUA ist eine offene Modellfamilie erschienen, die Desktop-Programme und Browser eigenständig bedient: Nano mit 9 Milliarden Parametern, Mini mit 35 Milliarden und Pro mit 397 Milliarden Parametern (davon 17 Milliarden pro Token aktiv), aufgebaut auf Qwen3.5 und unter der Apache-2.0-Lizenz veröffentlicht. Laut Modellkarte meldet das Team in seinem 121-seitigen technischen Bericht Erfolgsquoten von 78,90 bis 88,64 Prozent auf dem Desktop-Test OSWorld-Verified und 67,16 bis 73,89 Prozent auf dem Web-Test WebArena-Verified, je nach Modellgröße."
     },
     {
       "t": "p",
