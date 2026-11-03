@@ -1,0 +1,131 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-03",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "title": "KI am Morgen: OpenAI testet Helfer an Alltagsaufgaben",
+  "dek": "OpenAIs LifeVal prüft, ob KI im Alltag wirklich hilft. Ein offenes Modell steuert Rechner per Maus, und Flower Labs gibt Kunden Denkspuren.",
+  "published": "2026-11-03T06:44:00+01:00",
+  "modified": "2026-11-03T06:44:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "KI-Überblick",
+    "OpenAI",
+    "Open Source",
+    "Flower Labs",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "OpenAI hat LifeVal veröffentlicht, einen Test für Alltagsaufgaben wie Betreuung, Behördengänge und Essensplanung. Die gezeigten Ergebnisse stammen von OpenAI selbst und sind nicht unabhängig geprüft.",
+    "NorthCUA ist eine offene Modellfamilie (Apache 2.0), die Computer und Browser per Maus und Tastatur bedient. Die Erfolgswerte stammen aus dem eigenen Bericht und wurden laut Modellkarte nicht an den veröffentlichten Gewichten nachgemessen.",
+    "Flower Labs verspricht mit Endeavor 1.1 Rechenleistung auf GPUs in der EU und das Recht, Antworten und Denkspuren zu behalten und für eigene Modelle zu nutzen. Auch diese Angaben stammen vom Anbieter."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik mit fünf LifeVal-Beispielaufgaben und der von OpenAI gezeigten Ergebnisquote: Kindergarten nach Umzug 93,1 Prozent, Helfer vor Hochwasser 98,0 Prozent, neues Zuhause finden 100 Prozent, Spiel mit Großmutter aus der Ferne 96,3 Prozent, Essensplan nach Diabetesdiagnose 90,4 Prozent.",
+    "caption": "Fünf Beispielaufgaben aus LifeVal und die von OpenAI gezeigte Ergebnisquote. Angaben von OpenAI, keine eigene Nachmessung - vereinfachte Darstellung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Daten: OpenAI (LifeVal)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 3. November 2026. Quellenstand: 06:37 Uhr MEZ.** Drei Meldungen zum Frühstück: OpenAI misst seine Modelle jetzt an Aufgaben aus dem Alltag, eine offene Modellfamilie steuert Computer per Maus und Tastatur, und ein europäischer Anbieter verspricht mehr Kontrolle über die eigene KI-Arbeit."
+    },
+    {
+      "t": "h2",
+      "x": "OpenAI testet ChatGPT am Alltag"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI hat am 2. November LifeVal vorgestellt, einen Test für Aufgaben, bei denen sich Menschen nach eigenen Angaben am meisten Hilfe von KI wünschen. Als Grundlage nennt das Unternehmen zwei große Zeitverwendungsstudien (die American Time Use Survey und die Multinational Time Use Study) sowie eine eigene demografisch repräsentative Umfrage unter 3.995 Teilnehmenden. Die Aufgaben decken Betreuung, Gesundheit, Bildung, Haushaltsverwaltung, persönliche Finanzen, Einkaufen und Behördengänge ab."
+    },
+    {
+      "t": "p",
+      "x": "Auf seiner Seite zeigt OpenAI fünf Beispiele mit Ergebnisquoten seiner aktuellen Modelle: den richtigen Kindergarten nach einem Umzug finden (93,1 Prozent), Helferinnen und Helfer vor einem Hochwasser koordinieren (98,0 Prozent), ein neues Zuhause für die Familie finden (100 Prozent), aus der Ferne ein Spiel mit der Großmutter schauen (96,3 Prozent) und einen Essensplan nach einer Diabetesdiagnose erstellen (90,4 Prozent). OpenAI schreibt, es nutze den Test seit einem Jahr intern, um die Modelle bei Browser-Nutzung, Computer-Nutzung und Verknüpfungen mit anderen Diensten zu verbessern - weg vom Chatfenster, hin zu einem Assistenten, der Dinge erledigt."
+    },
+    {
+      "t": "p",
+      "x": "Wichtig zur Einordnung: Alle Zahlen stammen von OpenAI selbst, eine unabhängige Prüfung gibt es nicht. Das Unternehmen zeigt nur ausgewählte Beispiele und veröffentlicht auf der Seite weder ein Gesamtergebnis noch einen Vergleich mit Modellen anderer Anbieter. Sekundärberichte (etwa von neuralbrew und unite.ai) geben dieselben Angaben wieder."
+    },
+    {
+      "t": "h2",
+      "x": "Offenes Modell steuert Rechner per Maus"
+    },
+    {
+      "t": "p",
+      "x": "Mit NorthCUA ist eine offene Modellfamilie erschienen, die Desktop-Programme und Browser eigenständig bedient: Nano mit 9 Milliarden Parametern, Mini mit 35 Milliarden und Pro mit 397 Milliarden Parametern (davon 17 Milliarden pro Token aktiv), aufgebaut auf Qwen3.5 und unter der Apache-2.0-Lizenz veröffentlicht. Im eigenen 121-seitigen technischen Bericht meldet das Team Erfolgsquoten von 78,90 bis 88,64 Prozent auf dem Desktop-Test OSWorld-Verified und 67,16 bis 73,89 Prozent auf dem Web-Test WebArena-Verified, je nach Modellgröße."
+    },
+    {
+      "t": "p",
+      "x": "Die Modellkarte auf Hugging Face weist ungewöhnlich deutlich auf die Grenzen hin: Die Werte stammen aus dem Bericht und wurden nicht an den veröffentlichten Modelldateien nachgemessen; für den neueren Test OSWorld 2.0 liegt nur ein mittlerer Teilpunktestand vor (66,80 Prozent für Pro), und beim WebTestBench stehen die NorthCUA-Ergebnisse noch aus. Eine im Umlauf befindliche Behauptung, NorthCUA schlage geschlossene Billionen-Parameter-Modelle, lässt sich an der Modellkarte nicht belegen."
+    },
+    {
+      "t": "h2",
+      "x": "Flower Labs: KI-Ausgaben behalten und prüfen"
+    },
+    {
+      "t": "p",
+      "x": "Das europäische Unternehmen Flower Labs hat heute Endeavor 1.1 vorgestellt, sein drittes Modell in diesem Jahr. Nach eigener Rechnung erreicht es mit 97,18 Punkten den höchsten Wert in einem selbst definierten Benchmark-Mix (gleich gewichtet: GPQA, AIME 2026, HumanEval und IFEval) und liegt damit vor GPT-5.6 Sol (96,25) und Claude Fable 5 (95,30). Gegenüber der Vorgängerversion steigt GPQA von 92,0 auf 94,4 und HumanEval von 98,2 auf 99,9 Punkte. Alle Werte sind Anbieterangaben ohne unabhängige Prüfung, und der Benchmark-Mix stammt vom Anbieter selbst."
+    },
+    {
+      "t": "p",
+      "x": "Sachlich neu: Die Rechenleistung lässt sich wahlweise auf GPUs in der Europäischen Union buchen, mit Dienstgütevereinbarungen und Support von Flower. Das Modell verarbeitet jetzt auch Bildeingaben, und Kunden sollen die Denkspuren des Modells einsehen sowie alle Ausgaben und Spuren behalten und zum Trainieren eigener Modelle nutzen dürfen. OpenAI zeige nur Zusammenfassungen der Denkspuren und Anthropic halte sie meist zurück, schreibt Flower - das ist die Darstellung des Anbieters. Weitere regionale Angebote für Großbritannien, den Nahen Osten, Asien und Afrika sind angekündigt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist LifeVal ein unabhängiger Test?",
+      "a": "Nein. OpenAI hat den Test selbst gebaut und berichtet die Ergebnisse selbst. Gezeigt werden nur fünf ausgewählte Beispielaufgaben; ein Gesamtergebnis, ein Vergleich mit anderen Anbietern und eine Fremdprüfung fehlen."
+    },
+    {
+      "q": "Kann ich NorthCUA selbst ausprobieren?",
+      "a": "Die Modellgewichte stehen unter der Apache-2.0-Lizenz auf Hugging Face (Organisation beipo-ai), der kleinste Ableger hat 9 Milliarden Parameter. Beachten Sie: Die berichteten Erfolgsquoten wurden laut Modellkarte nicht an diesen veröffentlichten Dateien nachgemessen."
+    },
+    {
+      "q": "Was bedeutet EU-Inferenz bei Endeavor 1.1?",
+      "a": "Die Rechenleistung für das Modell läuft auf GPUs in der Europäischen Union, mit Dienstgütevereinbarungen und Support von Flower Labs. Laut Anbieter dürfen Kunden die Ausgaben und Denkspuren behalten und damit eigene Modelle trainieren."
+    }
+  ],
+  "related": [
+    "walmart-agent-gateway-shopping-agenten-regeln",
+    "yelp-check-for-me-ki-telefoniert-restaurant"
+  ],
+  "sources": [
+    {
+      "title": "Introducing LifeVal",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/lifeval/",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "OpenAI LifeVal: Everyday tasks as a personal assistant benchmark",
+      "publisher": "neuralbrew",
+      "url": "https://neuralbrew.ai/en/articles/2026/11/openai-lifeval-everyday-tasks-personal-assistant-benchmark/",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "OpenAI's LifeVal Evaluation Tests AI on Practical Everyday Tasks",
+      "publisher": "unite.ai",
+      "url": "https://www.unite.ai/openais-lifeval-evaluation-tests-ai-on-practical-everyday-tasks/",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "NorthCUA-Pro (Modellkarte)",
+      "publisher": "Hugging Face (beipo-ai)",
+      "url": "https://huggingface.co/beipo-ai/NorthCUA-Pro",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "NorthCUA: Open 397B Computer-Use Model (Alert)",
+      "publisher": "AI Weekly",
+      "url": "https://aiweekly.co/alerts/northcua-open-397b-computer-use-model-beats-trillion-param-closed-rivals-on",
+      "accessed": "2026-11-03"
+    },
+    {
+      "title": "Introducing Endeavor 1.1",
+      "publisher": "Flower Labs",
+      "url": "https://flower.ai/blog/2026-11-03-introducing-endeavor-1.1",
+      "accessed": "2026-11-03"
+    }
+  ]
+}
