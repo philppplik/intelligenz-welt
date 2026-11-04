@@ -14,9 +14,9 @@
     "Lizenz"
   ],
   "key_takeaways": [
-    "Mistral hat die Gewichte von Mistral Large 4 ('Le Chonk') am 29. Oktober freigegeben: rund 1 Billion Parameter, 49 Milliarden aktiv, multimodal, 1 Million Token Kontext.",
+    "Mistral hat die Gewichte von Mistral Large 4 ('Le Chonk') am 29. Oktober freigegeben: rund 1 Billion Parameter, 49 Milliarden aktiv (52 Milliarden mit Einbettungs- und Ausgabeschichten), multimodal, 1 Million Token Kontext.",
     "Die Lizenz ist eine MIT-Variante mit einer Einschränkung: Wer das Modell kommerziell als Modell-Dienst anbietet, braucht eine separate Lizenz von Mistral.",
-    "Die Stärken sieht Mistral bei Coding und defensiver Cybersicherheit; sämtliche Benchmark-Werte sind Anbieterangaben ohne unabhängige Prüfung.",
+    "Mistral positioniert das Modell für Coding und defensive Cybersicherheit. Wir geben Benchmark-Werte aus Release-Unterlagen wieder, ohne eigene Nachmessung.",
     "Trainiert wurde das Modell von Grund auf in Mistral-eigenen Rechenzentren in Europa - ein zentrales Argument für 'souveräne KI'."
   ],
   "hero": {
@@ -36,7 +36,7 @@
     },
     {
       "t": "p",
-      "x": "Mistral Large 4 ist ein multimodales Mixture-of-Experts-Modell mit rund einer Billion Parametern, davon etwa 49 Milliarden pro Token aktiv, und einem Kontextfenster von einer Million Token. Die Gewichte stehen auf Hugging Face in den Varianten FP8 und NVFP4, dazu GGUF-Quantisierungen von Unsloth und dem llama.cpp-Team; Day-0-Support gibt es für transformers, vLLM und llama.cpp. Trainiert wurde das Modell laut Mistral von Grund auf auf 3.800 NVIDIA Grace Blackwell GPUs in eigenen Rechenzentren in Europa."
+      "x": "Mistral Large 4 ist ein multimodales Mixture-of-Experts-Modell mit rund einer Billion Parametern, davon etwa 49 Milliarden pro Token aktiv (52 Milliarden einschließlich Einbettungs- und Ausgabeschichten), und einem Kontextfenster von einer Million Token. Die Gewichte stehen auf Hugging Face in den Varianten FP8 und NVFP4, dazu GGUF-Quantisierungen von Unsloth und dem llama.cpp-Team; Day-0-Support gibt es für transformers, vLLM und llama.cpp. Trainiert wurde das Modell laut Mistral von Grund auf auf 3.800 NVIDIA Grace Blackwell GPUs in eigenen Rechenzentren in Europa."
     },
     {
       "t": "h2",
@@ -114,5 +114,5 @@
     "meituan-longcat-2-5-multimodal-agenten"
   ],
   "published": "2026-11-04T08:59:00+01:00",
-  "modified": "2026-11-04T08:59:00+01:00"
+  "modified": "2026-11-04T09:05:00+01:00"
 }
