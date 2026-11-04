@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-mittag-2026-11-04",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-04T09:57:00+01:00",
+  "modified": "2026-11-04T09:57:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use from Evolved Harnesses",
+      "publisher": "Microsoft (Projektseite)",
+      "url": "https://microsoft.github.io/Mage/cowork/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "microsoft/Mage-VL-Cowork (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/microsoft/Mage-VL-Cowork",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Agentic cheminformatics with Google Antigravity",
+      "publisher": "Google DeepMind",
+      "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "IndiaAI Mission Released Indigenous Foundation Models EKA-1 and Dhīr 2B & Dhīr 5B",
+      "publisher": "Press Information Bureau, Indien",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2332315&lang=1&reg=3",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Dhīr 2B and Dhīr 5B MoE",
+      "publisher": "ZenteiQ",
+      "url": "https://zenteiq.ai/dhir/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Eka (Projekt-Charter und Early Access)",
+      "publisher": "Soket AI",
+      "url": "https://eka.soket.ai/",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "title": "KI am Mittag: Microsofts kleines Modell klickt und codet",
+  "dek": "Microsofts Mage-VL-Cowork steuert Desktops mit 4 Milliarden Parametern. DeepMind bringt Chemie-Werkzeuge in Antigravity, Indien stellt eigene Modelle vor.",
+  "tags": [
+    "KI-Überblick",
+    "Microsoft",
+    "DeepMind",
+    "Computer Use",
+    "Indien"
+  ],
+  "key_takeaways": [
+    "Microsoft meldet für Mage-VL-Cowork 66,0 Prozent auf OSWorld-Verified - mit nur 4 Milliarden Parametern. Das sind Anbieterwerte; größere Frontier-Modelle liegen demnach weiter vorn, der Mensch laut Benchmark bei 72,4 Prozent.",
+    "DeepMind rüstet seinen Antigravity-Agenten mit Chemie-Werkzeugen aus: Das Sprachmodell plant, RDKit und Datenbanken rechnen. Die gezeigte Wirkstoff-Analyse ist eine Hersteller-Demo, keine unabhängige Studie.",
+    "Indien hat die Modelle EKA-1 und Dhīr vorgestellt. Als offen bezeichnet, aber nicht nachweisbar herunterladbar: Soket beschreibt eine künftige offene Freigabe, ZenteiQ Enterprise-Lizenzen (Stand: 09:52 Uhr MEZ)."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu Mage-VL-Cowork: Ein 4B-Modell wählt pro Schritt zwischen GUI-Kanal (klicken, tippen) und Terminal-Kanal (Code ausführen). Microsoft meldet 66,0 Prozent auf OSWorld-Verified bei 50 Schritten.",
+    "caption": "So beschreibt Microsoft die zwei Aktionskanäle von Mage-VL-Cowork. Benchmark-Werte sind Anbieterangaben, keine eigene Nachmessung - vereinfachte Darstellung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quelle: Microsoft"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Mittagsüberblick vom 4. November 2026. Quellenstand: 09:52 Uhr MEZ.** Drei Mal praktische KI: ein Desktop-Agent, der zwischen Maus und Kommandozeile wechselt, ein Chemie-Assistent für die Wirkstoffsuche und neue Sprachmodelle aus Indien. Die Leistungsangaben stammen jeweils von den Anbietern."
+    },
+    {
+      "t": "h2",
+      "x": "Microsoft: Ein Modell, das klickt und codet"
+    },
+    {
+      "t": "p",
+      "x": "Microsoft hat Mage-VL-Cowork veröffentlicht, einen Computer-Agenten mit nur 4 Milliarden Parametern. Das Besondere: Ein einziges Modell entscheidet bei jedem Schritt selbst, ob es per Maus und Tastatur auf dem Bildschirm arbeitet oder ob es Code und Kommandozeile nutzt - etwa um eine Tabellendatei direkt per Skript zu bearbeiten, statt dutzende Male zu klicken. Gewichte (Apache 2.0) und Code sind öffentlich."
+    },
+    {
+      "t": "p",
+      "x": "Microsoft meldet 66,0 Prozent Erfolg auf dem Benchmark OSWorld-Verified bei maximal 50 Schritten - gemessen an 361 Aufgaben, im Mittel von zwei Durchläufen. Zum Vergleich nennt die Projektseite 72,4 Prozent für Menschen und 78,7 Prozent für GPT-5.5. Trainiert wurde in fünf Stufen; die letzte, verstärkendes Lernen, brachte laut Microsoft 10 Prozentpunkte mehr Erfolg bei gleichzeitig 13 Prozent weniger Modellaufrufen. Die Trainingsaufgaben erzeugte eine eigene Pipeline: 293.806 Aufgaben für 6.915 Einzelfähigkeiten, 82,6 Prozent günstiger pro Aufgabe als zuvor. Alle Zahlen sind Anbieterangaben ohne eigene Nachmessung."
+    },
+    {
+      "t": "h2",
+      "x": "DeepMind: Chemie-Werkzeuge für den Antigravity-Agenten"
+    },
+    {
+      "t": "p",
+      "x": "Google DeepMind erweitert seine Agenten-Oberfläche Antigravity um Cheminformatics-Skills. Die Arbeitsteilung: Das Sprachmodell übernimmt Planung, Literaturrecherche und wissenschaftliches Reasoning, während deterministische Werkzeuge - die Open-Source-Bibliothek RDKit sowie die Datenbanken ChEMBL und PubChem - die Molekülberechnungen ausführen. Verfügbar sind die Fähigkeiten ab sofort über die Antigravity-App mit Science-Plugin; zudem kündigt DeepMind 10.000 Forschenden sechs Monate kostenlose Nutzung der höchsten Stufe an, Auswahl nach Eignung."
+    },
+    {
+      "t": "p",
+      "x": "In einer vorgeführten Analyse zu Lungenkrebs-Medikamenten durchsuchte der Agent laut DeepMind binnen Minuten Tausende Verbindungen, filterte Lösungsmittel heraus und kuratierte 568 Substanzen. Die in der Demo gezeigte Paaranalyse fand im untersuchten Datensatz weniger rotierbare Bindungen und meist höhere Potenz bei zyklisierten Verbindungen. Das ist keine universelle Regel für Wirkstoffe. Anschließend trainierte der Agent Vorhersagemodelle und schlug neue Makrozyklen samt Syntheserouten vor - in etwa einer Stunde statt mehrerer Tage, so DeepMind. Das ist eine Hersteller-Demonstration, keine unabhängige Studie. DeepMind selbst betont: Die Entwürfe sind prüfbare Hypothesen, keine fertigen Wirkstoffe; jeder Vorschlag muss synthetisiert und experimentell validiert werden."
+    },
+    {
+      "t": "h2",
+      "x": "Indien stellt eigene Sprachmodelle vor"
+    },
+    {
+      "t": "p",
+      "x": "Die indische IndiaAI-Mission hat zwei Modellfamilien vorgestellt. EKA-1 von Soket Labs hat 26,3 Milliarden Parameter, wurde mit rund 7,5 Billionen Token trainiert und soll die 22 in Indiens Verfassung aufgeführten Sprachen plus Englisch abdecken - ausgelegt auf Mathematik, Code, Reasoning und agentische Aufgaben. Dhīr 2B und Dhīr 5B von ZenteiQ sind deutlich kleiner und für den Offline-Einsatz gedacht: auf Laptops, Embedded-Boards und Handys, in Englisch und zehn indischen Sprachen."
+    },
+    {
+      "t": "p",
+      "x": "ZenteiQ nennt eigene Messwerte: Dhīr 2B erreiche demnach auf 13 von 15 Indic-Benchmarks den ersten Platz seiner Klasse; auf einem Raspberry Pi 4 schaffen die Modelle noch 2 bis 3 Token pro Sekunde. Solche Angaben stammen vom Hersteller. Zur Verfügbarkeit gibt es eine wichtige Einschränkung: Beide Familien werden als offen beziehungsweise quelloffen bezeichnet, doch in den geprüften Anbieterquellen war kein öffentlicher Gewichtsdownload verlinkt (Stand: 09:52 Uhr MEZ). Soket stellt eine künftige Open-Source-Freigabe in Aussicht, ZenteiQ Enterprise-Lizenzen und Pilotprojekte."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was kann ein 4B-Modell am Desktop wirklich?",
+      "a": "Microsofts Werten zufolge löst Mage-VL-Cowork 66,0 Prozent der OSWorld-Verified-Aufgaben in bis zu 50 Schritten. Das liegt über älteren offenen Modellen, aber unter Menschen (72,4 Prozent) und Frontier-Modellen. Unabhängig nachgemessen haben wir das nicht."
+    },
+    {
+      "q": "Findet der DeepMind-Agent jetzt neue Medikamente?",
+      "a": "Nein. Er beschleunigt laut DeepMind Analysen und schlägt Kandidaten vor. Die Vorschläge sind Hypothesen, die im Labor synthetisiert und getestet werden müssen. Die gezeigte Demo stammt vom Hersteller."
+    },
+    {
+      "q": "Kann ich EKA-1 oder Dhīr herunterladen?",
+      "a": "Bislang nicht nachweisbar. Beide werden als offen bezeichnet, aber Soket beschreibt eine künftige offene Freigabe und ZenteiQ Enterprise-Lizenzen. In den geprüften Anbieterquellen war kein Gewichtsdownload verlinkt (Stand: 09:52 Uhr MEZ)."
+    }
+  ],
+  "related": [
+    "gemini-4-carbon-cyber-defender-zuerst",
+    "kimi-k3-1-pro-offene-gewichte"
+  ]
+}
