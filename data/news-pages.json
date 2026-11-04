@@ -1,5 +1,65 @@
 [
   {
+    "title": "KI-Update: Nein zu Rechenzentren, Anthropic warnt, Google-Zwang, KI-Mythen",
+    "url": "https://www.heise.de/news/KI-Update-Nein-zu-Rechenzentren-Anthropic-warnt-Google-Zwang-KI-Mythen-11509052.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793800800.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-04T15:14:38.947796+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI-Boom in den USA: Auch alte Flugzeugtriebwerke sollen jetzt Strom liefern",
+    "url": "https://www.heise.de/news/KI-Boom-in-den-USA-Auch-alte-Flugzeugtriebwerke-sollen-jetzt-Strom-liefern-11511486.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793797020.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "In den USA werden mit enormer Geschwindigkeit KI-Rechenzentren aus dem Boden gestampft. Bei der Stromversorgung werden die Verantwortlichen immer kreativer.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-04T15:14:38.947935+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Smart Reports: Was Vorgesetzte über die Claude-Nutzung von Mitarbeitern erfahren",
+    "url": "https://www.heise.de/news/Smart-Reports-Was-Vorgesetzte-ueber-die-Claude-Nutzung-von-Mitarbeitern-erfahren-11511478.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793795040.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Die neue Claude-Funktion soll Unternehmen helfen, ihre KI-Kosten zu kontrollieren. Gleichzeitig ermöglicht sie, die Leistung ihrer Mitarbeiter zu bewerten.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-04T15:14:38.948022+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Linux-KI-Brille Raven Prism geht in den Verkauf – zum Luxuspreis",
+    "url": "https://www.heise.de/news/Linux-KI-Brille-Raven-Prism-geht-in-den-Verkauf-zum-Luxuspreis-11511172.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793786580.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Das US-Start-up Raven Resonance bereitet den Marktstart seiner autarken Smart Glasses Prism vor und nennt Preis und Verfügbarkeit.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-04T15:14:38.948297+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Wer spricht da? Anthropic stellt Identitätsnachweis für KI-Modelle vor",
+    "url": "https://www.heise.de/news/Wer-spricht-da-Anthropic-stellt-Identitaetsnachweis-fuer-KI-Modelle-vor-11511036.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1793784180.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "KI-Modelle haben keinen Identitätsausweis. Mit FlashProve will Anthropic ihre Identität kryptografisch überprüfbar machen, ohne Modellgewichte offenzulegen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-04T15:14:38.948371+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "itch.io löscht mehrere Terabyte KI-Slop und filtert KI-Projekte",
     "url": "https://www.heise.de/news/itch-io-loescht-mehrere-Terabyte-KI-Slop-und-filtert-KI-Projekte-11510860.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1793778900.0,
