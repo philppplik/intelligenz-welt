@@ -1,0 +1,131 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-04",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-04T06:46:00+01:00",
+  "modified": "2026-11-04T06:46:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Progress on provable inference for large language models",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/provable-inference",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "FlashProve (Open-Source-Repository)",
+      "publisher": "Anthropic / GitHub",
+      "url": "https://github.com/anthropics/FlashProve",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Transformers Model Integration Contracts",
+      "publisher": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/transformers-mic",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Tencent Hunyuan Hy4 full version released (chinesisch)",
+      "publisher": "Ithome",
+      "url": "https://www.ithome.com/1/022/035.htm",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Tencent Hunyuan veröffentlicht Hy4 (chinesisch)",
+      "publisher": "Sina Tech",
+      "url": "https://finance.sina.com.cn/tech/shenji/2026-11-04/doc-inixpvuw9459767.shtml",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Open Source Model (offizielle Modellübersicht)",
+      "publisher": "Tencent Hy",
+      "url": "https://hy.tencent.ai/model/open-source-model",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "title": "KI am Morgen: Anthropic will Modellantworten beweisbar machen",
+  "dek": "Anthropics FlashProve soll beweisen, welches Modell eine Antwort erzeugt hat. Hugging Face prüft Bibliotheken mit Mini-Modellen, Tencent meldet Hy4.",
+  "tags": [
+    "KI-Überblick",
+    "Anthropic",
+    "Hugging Face",
+    "Tencent",
+    "Offene Modelle"
+  ],
+  "key_takeaways": [
+    "Anthropic hat FlashProve als Open-Source-Prototyp veröffentlicht: Ein kryptografischer Beweis soll zeigen, dass eine Antwort vom zugesicherten Modell stammt. Tempo und Beweisgröße sind Anbietermessungen an einem 400-Milliarden-Parameter-Modell.",
+    "Hugging Face testet seine Modellbibliothek mit geschrumpften Mini-Modellen. Ein Nachspielen fand einen echten, zwei Monate alten Fehler - doch mindestens ein Bug blieb auch dem Verfahren verborgen.",
+    "Tencent hat laut chinesischen Berichten Hy4 mit erstmals Bildverstehen und Computersteuerung vorgestellt. Die Gewichte sollen erst in Kürze folgen; alle Leistungswerte sind Herstellerangaben."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu Anthropics FlashProve in drei Schritten: Commitment auf die Gewichte, Beweis pro Antwort mit rund 110 Token pro Sekunde auf einer H100, Prüfung auf einem Prozessor in etwa 17 Sekunden. Alle Werte sind Anbietermessungen.",
+    "caption": "So beschreibt Anthropic den Ablauf von FlashProve an Llama 4 Maverick. Anbietermessungen, keine eigene Nachmessung - vereinfachte Darstellung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quelle: Anthropic"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 4. November 2026. Quellenstand: 06:38 Uhr MEZ.** Zum Wochenmittwoch geht es um Vertrauen und Prüfung: einen kryptografischen Beweis für Modellantworten, ein Testverfahren mit geschrumpften Modellen und ein chinesisches Modell, das laut Hersteller neue Fähigkeiten bekommt."
+    },
+    {
+      "t": "h2",
+      "x": "Anthropic: Beweis statt Vertrauen beim Modell"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic hat am 2. November FlashProve veröffentlicht, einen quelloffenen Prototypen für \"provable inference\". Das Ziel: Ein Anbieter soll kryptografisch beweisen können, dass eine Antwort wirklich von dem zugesicherten Modell stammt - und nicht von einem heimlich ausgetauschten, günstigeren oder manipulierten. Grundlage ist ein zkSNARK, ein kompakter Nullwissenbeweis: Er verrät nichts über die Modellgewichte, lässt sich aber laut Anthropic in Sekunden auf einem gewöhnlichen Prozessor prüfen."
+    },
+    {
+      "t": "p",
+      "x": "Die Messwerte beziehen sich auf Llama 4 Maverick, ein offenes Modell von Meta mit 400 Milliarden Parametern in 4-Bit-Quantisierung: Eine einzelne H100 erzeugt demnach Beweise für rund 110 Token pro Sekunde; ein Beweis für 1.024 Token ist etwa 19 Megabyte groß. Das ist laut Anthropic etwa das 70- bis 95-Fache der GPU-Zeit, die das Modell selbst mit der Bibliothek vLLM bräuchte. Die Prüfung eines Beweises dauert etwa 17 Sekunden auf einem 24-Kern-Rechner. Alle Tempoangaben sind Anbietermessungen, keine eigene Nachmessung."
+    },
+    {
+      "t": "p",
+      "x": "Bemerkenswert ist auch, wer das System gebaut hat: Laut Blogbeitrag stammen die Verbesserungen am Beweisverfahren von Claude, Anthropics eigenem Modell. Die zentralen Sicherheitsaussagen sind zusätzlich formal in Lean geprüft. Die Grenzen nennt Anthropic selbst: Der Beweis gilt für eine Ganzzahl-Variante des Modells mit einfachster Auswahlstrategie, nur für Kontexte bis 1.024 Token und nur für eine bestimmte Modellbauart. Code und Beweise stehen unter Apache 2.0; das Repository bezeichnet sich selbst als nicht weitergepflegtes Forschungsartefakt."
+    },
+    {
+      "t": "h2",
+      "x": "Hugging Face: Mini-Modelle als Wächter"
+    },
+    {
+      "t": "p",
+      "x": "Hugging Face hat Model Integration Contracts vorgestellt, ein Testverfahren für die Transformers-Bibliothek mit ihren mehr als 750 Modelltypen. Anlass ist ein echter Fehler: Am 30. Juli 2026 aktivierte eine Änderung die SDPA-Aufmerksamkeit für T5 - als Nebeneffekt konnte das verwandte UMT5 beim Training auf zukünftige Token schauen, also gewissermaßen die Lösung spicken. Nichts stürzte ab, und der Fehler blieb fast zwei Monate im Hauptzweig."
+    },
+    {
+      "t": "p",
+      "x": "Die Idee: Statt echter Modelle testet man geschrumpfte Nachbauten mit derselben Schichtstruktur auf einfacher CPU. Ein Vertrag bündelt so ein Mini-Modell, ein ausführbares Anwendungsbeispiel und menschlich geprüfte Referenzausgaben. Beim Nachspielen von fünf Monaten Programmänderungen meldete das 66-Megabyte-UMT5-Modell den Fehler an jeder betroffenen Version. Im CI-Gegentest dauerte der ausgewählte T5-Vertrag 13,4 Sekunden auf CPU, ohne Einrichtung der Testumgebung. Doch das Verfahren hat Grenzen: Beim Modell Whisper übersahen beide Mini-Varianten einen echten Fehler, den nur das Original zeigte. In der Entwicklungs-Pipeline melden die Verträge seit 1. November Probleme, blockieren aber noch keine Änderungen."
+    },
+    {
+      "t": "h2",
+      "x": "Tencent meldet Hy4 mit Bildverstehen und Computersteuerung"
+    },
+    {
+      "t": "p",
+      "x": "Tencent hat heute die Vollversion seines Sprachmodells Hy4 vorgestellt, wie die chinesischen Portale Ithome und Sina Tech unter Berufung auf den Konzern melden. Demnach bringt Hy4 erstmals Bildverstehen - etwa für Diagrammanalysen - und erstmals Computersteuerung über Kommandozeile und grafische Oberflächen; für Programme wie Blender und CAD sei speziell trainiert worden. Die Vorabversion vom August hatte 770 Milliarden Parameter, davon 49 Milliarden aktiv, und eine Million Token Kontext."
+    },
+    {
+      "t": "p",
+      "x": "Verfügbar ist Hy4 bereits über Tencent Cloud und OpenRouter. Die angekündigte Freigabe der Modellgewichte steht dagegen noch aus: Auf Tencents offizieller Open-Source-Modellseite ist bislang nur die Vorschauversion gelistet (Stand: 06:38 Uhr MEZ). Auch die gemeldeten Werte - etwa eine in eigenen Tests gesunkene Halluzinationsrate von 12,95 auf 7,2 Prozent - stammen vom Hersteller und sind nicht unabhängig geprüft. Tencent selbst räumt ein, dass Hy4 hinter führenden geschlossenen Modellen zurückbleibe. Eine kleinere Variante namens Hy4 flash soll folgen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wozu braucht man einen Beweis für das Modell?",
+      "a": "Wer ein Modell über Dienste Dritter nutzt, kann heute nicht prüfen, ob wirklich das gebuchte Modell geantwortet hat. FlashProve soll genau das kryptografisch nachweisen, etwa für Kunden, Prüfer oder Regulierer. Der Prototyp ist laut Anthropic noch deutlich langsamer als der normale Betrieb und auf kurze Kontexte begrenzt."
+    },
+    {
+      "q": "Ersetzen die Mini-Modelle von Hugging Face richtige Tests?",
+      "a": "Nein. Sie sollen Fehler früher und günstiger finden, ersetzen aber keine Tests mit echten Modellen. Hugging Face berichtet selbst von einem echten Fehler, den nur das Original-Modell sichtbar machte."
+    },
+    {
+      "q": "Kann man Hy4 schon herunterladen?",
+      "a": "Die Freigabe der Vollversionsgewichte ist laut den Berichten noch angekündigt. Tencent hat die Freigabe der Gewichte erst angekündigt. Nutzbar ist Hy4 bereits über Tencent Cloud und OpenRouter; auf der offiziellen Open-Source-Seite ist die Vollversion bislang nicht gelistet (Stand: 06:38 Uhr MEZ)."
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-offene-gewichte",
+    "mistral-large-4-open-weights"
+  ]
+}
