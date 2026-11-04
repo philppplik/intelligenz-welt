@@ -1,0 +1,123 @@
+{
+  "slug": "weight-space-programming-laptop-kritik",
+  "section": "analyse",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Weight-Space Programming: Laptop-Test und methodische Kritik",
+  "dek": "Simon Willison erkennt mit Qwen 3.8 27B lokal drei von vier Spielen anhand roher Gewichte. Die Teilreplikation trennt eine Demo von weitergehenden Behauptungen.",
+  "tags": [
+    "Forschung",
+    "Interpretierbarkeit",
+    "Replikation",
+    "Simon Willison",
+    "Sprachmodelle"
+  ],
+  "key_takeaways": [
+    "Simon Willison hat das Gewichte-Lese-Experiment des MIT-Posts unabhängig nachgespielt: Qwen 3.8 27B auf seinem Laptop erkannte Spiele anhand roher Gewichte - bei drei von vier Spielen.",
+    "Willison und andere kritisieren, der MIT-Post vermische zwei verschiedene Behauptungen: Gewichte ohne Werkzeuge lesen versus Modelle mit Code-Ausführung verbessern.",
+    "Der Entwickler Jarrod Watts berichtet, Astra habe die 'Thinking'-Token von Qwen3.8-27B um 40 Prozent gesenkt - ohne Benchmarks, eine Selbstauskunft.",
+    "Eine eng begrenzte Teilreplikation liefert einen unabhängigen Datenpunkt, aber keinen Beleg für sämtliche Aussagen des Originals."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein aufgeklapptes Laptop, über dessen Tastatur ein holografisches Gitternetz aus Zahlen schwebt, das von einem Lichtstrahl gelesen wird, Nachtblau und Gold.",
+    "caption": "Das Gewichte-Lesen funktioniert laut Willison auch auf einem lokalen 27B-Modell. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Nach unserem Bericht vom 3. November über den MIT-CSAIL-Blogpost zu Weight-Space Programming liegen weitere Reaktionen vor: Simon Willison beschreibt eine Teilreplikation des Gewichte-Lesens, während methodische Kritik die Reichweite der ursprünglichen Experimente eingrenzt."
+    },
+    {
+      "t": "h2",
+      "x": "Die Replikation: Qwen 3.8 27B auf dem Laptop"
+    },
+    {
+      "t": "p",
+      "x": "Simon Willison hat die wohl wichtigste Frage direkt getestet: Ist das Gewichte-Lesen eine Fähigkeit, die nur Frontier-Modelle haben? Er nahm die Original-Prompts aus dem begleitenden GitHub-Repository (RikiyaT/lm_understand-logs) und ließ sie über sein llm-Werkzeug gegen Qwen 3.8 27B laufen - lokal, in LM Studio, auf seinem Laptop. Ergebnis laut seinem Blog: Pac-Man nach 46 Minuten und 43.506 Reasoning-Token mit 72 Prozent Konfidenz erkannt, Pong und Breakout ebenfalls korrekt - bei drei der vier Spiele. Auch Kimi K3.1 Pro via OpenRouter identifizierte Breakout korrekt."
+    },
+    {
+      "t": "quote",
+      "x": "I've been playing with one of the examples from the paper and I'm delighted to share that Qwen 3.8 27B running on my laptop can do this as well!",
+      "who": "Simon Willison, simonwillison.net",
+      "cite": "Simon Willison, simonwillison.net",
+      "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+    },
+    {
+      "t": "p",
+      "x": "Willisons Lesart ist dabei differenziert: Der MIT-Post vermische zwei Behauptungen, die getrennt gehören - was Modelle mit rohen Gewichten ganz ohne Werkzeuge erkennen können, und wie gut sie andere Modelle verbessern, sobald sie Code ausführen dürfen. Die erste Frage hält er für die interessantere."
+    },
+    {
+      "t": "h2",
+      "x": "Die Kritik: 'misleading' oder 'nicht übermenschlich'?"
+    },
+    {
+      "t": "p",
+      "x": "Zwei weitere Stimmen, die Willison zitiert, argumentieren ähnlich: spaCy-Autor Matthew Honnibal nannte den Post irreführend, weil er beide Behauptungen vermische. Sean Goedecke beschrieb den Qwen3.5-0.8B-Fix als eine Folge von Schritten, die auch ein menschlicher ML-Forscher gehen könnte. Diese Positionen geben wir über Willisons Beitrag wieder."
+    },
+    {
+      "t": "h2",
+      "x": "Das Leistungs-Experiment: 40 Prozent weniger Denk-Token"
+    },
+    {
+      "t": "p",
+      "x": "Der Entwickler Jarrod Watts berichtet auf X, Astra habe für rund 100 Dollar GPU-Zeit die Gewichte hinter dem 'fertig gedacht'-Signal in Qwen3.8-27B gefunden und verstärkt: Im Pelikan-auf-Fahrrad-Test sank die Zahl der Thinking-Token im Schnitt um 40 Prozent. Watts betont selbst, keine Benchmarks gelaufen zu haben und bei härteren Aufgaben Einbußen zu erwarten - eine Selbstauskunft ohne unabhängige Prüfung, zitiert nach Morning Tokens."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Willisons Versuch zeigt, dass ein lokal laufendes 27B-Modell in drei von vier Spielbeispielen die Aufgabe aus rohen Gewichten erkennen konnte. Das ist ein unabhängiger Datenpunkt für diese eng umrissene Demo, kein allgemeiner Nachweis von Modellverständnis. Die stärkeren Aussagen des Originals zum Reparieren und Neuschreiben von Modellen beruhen auf Experimenten mit Code-Ausführung. Eine systematische unabhängige Bestätigung dieser weitergehenden Aussagen haben wir für diesen Artikel nicht geprüft."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hat jemand den MIT-Blogpost unabhängig bestätigt?",
+      "a": "Teilweise: Simon Willison beschreibt die Spiel-Erkennung mit Qwen 3.8 27B auf seinem Laptop anhand der Original-Prompts. Für die weitergehenden Reparatur- und Schreib-Experimente führen die hier geprüften Quellen keine systematische unabhängige Replikation an."
+    },
+    {
+      "q": "Worum geht es in der Kritik genau?",
+      "a": "Der Post vermische zwei Aussagen: dass Modelle Gewichte ohne jedes Werkzeug lesen können, und dass sie Modelle verbessern können, wenn sie Code ausführen dürfen. Kritiker wie Matthew Honnibal und Sean Goedecke halten die erste Fähigkeit für bemerkenswert, die zweite aber für näher an normaler ML-Arbeit als der Post suggeriert."
+    },
+    {
+      "q": "Muss ich mir als Nutzer offener Modelle Sorgen machen?",
+      "a": "Das beobachtete Verhalten ist noch Labor-Demo, keine Angriffstechnik. Aber die Richtung ist klar: Wenn gezielte Gewichts-Edits mit gewöhnlichen Modellen machbar sind, wird die Herkunft offener Gewichte (Provenance) zur echten Sicherheitsfrage."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+      "publisher": "Simon Willison (simonwillison.net)",
+      "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights",
+      "publisher": "Rikiya Takehi et al. (MIT CSAIL Blog)",
+      "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "RikiyaT/lm_understand-logs (Prompts und Logs zum Nachspielen)",
+      "publisher": "GitHub",
+      "url": "https://github.com/RikiyaT/lm_understand-logs",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Binance's $6.43B theft began with a fake AI installer (Ausgabe mit den Weight-Space-Updates)",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-04/",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "related": [
+    "weight-space-programming-llm-bearbeitet-gewichte",
+    "arc-prize-astra-harness-luecke"
+  ],
+  "published": "2026-11-04T08:54:00+01:00",
+  "modified": "2026-11-04T08:54:00+01:00"
+}

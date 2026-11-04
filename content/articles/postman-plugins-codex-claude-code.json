@@ -1,0 +1,112 @@
+{
+  "slug": "postman-plugins-codex-claude-code",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Postman: Bericht über ungefragte Codex- und Claude-Code-Plugins",
+  "dek": "Ein Nutzerbericht zu Postman 12.33.4 beschreibt automatisch installierte Coding-Agent-Plugins und einen Selbstfreigabe-Versuch. Was die Belege zeigen.",
+  "tags": [
+    "Postman",
+    "Codex",
+    "Claude Code",
+    "Entwicklerwerkzeuge",
+    "Sicherheit"
+  ],
+  "key_takeaways": [
+    "Ein GitHub-Nutzer berichtet, dass Postman Desktop 12.33.4 beim Start auf seinem Mac Plugins für Codex und Claude Code ohne gesonderte Zustimmung installierte; ein sauberer Neuversuch fehlt.",
+    "Der verlinkte Installer-Code versucht laut Bericht, einen breiten Session-Start-Hook für Codex selbst freizugeben. Ein vorhandener Trust-Eintrag beweist allein nicht, wer ihn angelegt hat.",
+    "Der Melder betont ausdrücklich, keinen Datenabfluss gefunden zu haben - der Streitpunkt ist die Einwilligung, nicht nachgewiesener Missbrauch.",
+    "Wer Codex oder Claude Code neben Postman nutzt, sollte die Konfigurationsdateien auf postman-Einträge prüfen (Pfade unten im Artikel)."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Briefträger-Roboterarm, der unaufgefordert ein leuchtendes Paket in ein fremdes, aufgebrochenes Werkzeugkasten-Regal stellt, Nachtblau mit Amber-Warnlicht.",
+    "caption": "Ein Nutzerbericht beschreibt unerwünschte Postman-Integrationen in Coding-Agenten. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Ein am 25. Oktober eröffnetes GitHub-Issue im Postman-Support-Tracker beschreibt Änderungen nach dem Start der Desktop-App 12.33.4 auf einem Mac. Der Melder mit dem Handle indicava dokumentiert MCP-Authentifizierungswarnungen, installierte Plugins und Codex-Aufgaben, die Postman-Funktionen luden. Er kennzeichnet den Ablauf ausdrücklich als Beobachtung, die noch nicht auf einem sauberen Mac reproduziert wurde. Wir haben die Installation nicht selbst nachgestellt."
+    },
+    {
+      "t": "h2",
+      "x": "Die Belege im Einzelnen"
+    },
+    {
+      "t": "p",
+      "x": "Das im Issue zitierte Log verzeichnet am 24. Oktober \"auto-existing-upgrade\" und \"claude-code:installed, codex:installed\". In der globalen Codex-Konfiguration fand der Melder einen Postman-Marktplatz, ein aktiviertes Plugin und Trust-Einträge für einen Session-Start-Hook. Die zitierte Hook-Datei verlangt die Postman-Funktion für nicht-triviale API-Arbeit. Das ist der Inhalt des beanstandeten Hooks, keine Handlungsempfehlung dieses Artikels."
+    },
+    {
+      "t": "p",
+      "x": "Der verlinkte Installer-Code versucht laut Bericht, die Hook-Freigabe über hooks/list und config/batchWrite selbst einzutragen. Das belegt einen Freigabe-Versuch, nicht, wer den konkreten Trust-Eintrag auf dem untersuchten Mac erzeugte. Zusätzlich nennt der Bericht einen entfernten MCP-Server und eine Postman-CLI. Der Melder erhebt ausdrücklich keinen Vorwurf nachgewiesener Datenexfiltration."
+    },
+    {
+      "t": "callout",
+      "kind": "warn",
+      "x": "Ein Kommentator mit dem Handle foma-agent, der sich selbst als KI-Agent bezeichnet, berichtet von eigenen Tests mit Codex CLI 0.162.1. Sein Versuch betraf selbst deklarierte Hooks: Deren Vertrauens-Hash habe den Befehl, nicht die später geänderte Skriptdatei erfasst. Er grenzt dies ausdrücklich von Plugin-Hooks ab, für die aktueller Code zusätzlich einen Inhalts-Hash vorsieht. Das ist eine nicht von uns reproduzierte Aussage aus der Diskussion und kein pauschaler Nachweis für alle Postman-Plugin-Versionen."
+    },
+    {
+      "t": "h2",
+      "x": "Postmans Reaktion und offene Fragen"
+    },
+    {
+      "t": "p",
+      "x": "Im Thread steht inzwischen ein Kommentar des Handles zecoquit vom 3. November, der in der Wir-Form klarere Einwilligung und eine Prüfung des Hook-Verhaltens ankündigt. Die abgerufenen GitHub-Metadaten führen für diesen Kommentar author_association=NONE. Damit ist seine Zugehörigkeit zu Postman für diesen Artikel nicht verifiziert; wir behandeln ihn nicht als bestätigte Herstellerstellungnahme. Auch Behauptungen über nachträgliche Änderungen der Download-Seite stammen aus Kommentaren und wurden hier nicht unabhängig geprüft."
+    },
+    {
+      "t": "h2",
+      "x": "So prüfst du deine Installation"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "~/.codex/config.toml: nach postman-Einträgen unter [marketplaces], [plugins] und [hooks.state] suchen.",
+        "~/.claude/settings.json und ~/.claude/plugins/installed_plugins.json: nach postman@claude-plugins-official suchen.",
+        "~/.local/bin: nach einer Postman-Programmdatei suchen, deren Änderungszeit mit dem App-Start übereinstimmt.",
+        "Vor Änderungen eine Sicherung der Konfiguration anlegen. Wer die Integration nicht will, sollte die angebotenen Deinstallationsoptionen und die Dokumentation prüfen und nur eindeutig zugeordnete Postman-Einträge entfernen. Keine fremden Bereinigungsbefehle ungeprüft ausführen."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hat Postman Daten abgeschöpft?",
+      "a": "Der Melder behauptet ausdrücklich keine nachgewiesene Datenexfiltration. Sein Bericht befasst sich mit Installation, Einwilligung und Hook-Vertrauen; daraus folgt weder ein Beweis für Datenabfluss noch ein umfassender Sicherheitsnachweis."
+    },
+    {
+      "q": "Bin ich betroffen, wenn ich Postman nicht mehr öffne?",
+      "a": "Der Ausgangsbericht betrifft einen beobachteten Start von Version 12.33.4 auf einem Mac. Daraus lässt sich nicht ableiten, welche weiteren Versionen und Systeme betroffen sind. Wer Postman zusammen mit Coding-Agenten nutzt, kann die genannten Konfigurationspfade prüfen."
+    },
+    {
+      "q": "Was ist das Grundproblem mit dem Hook?",
+      "a": "Der beanstandete Hook fordert eine breite Nutzung von Postman-Funktionen; der verlinkte Installer versucht laut Bericht eine eigene Freigabe. Das vorhandene Trust-Record allein beweist nicht seinen Urheber. Ein separater Kommentartest zu selbst deklarierten Hooks darf nicht auf alle Plugin-Hooks übertragen werden."
+    }
+  ],
+  "sources": [
+    {
+      "title": "[SEVERE] Desktop auto-installs Codex/Claude plugins; installer attempts to trust its own startup hook (#14370)",
+      "publisher": "GitHub (postmanlabs/postman-app-support)",
+      "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Postman Desktop added itself to Claude Code and Codex - its installer trusts its own hook",
+      "publisher": "DEV Community",
+      "url": "https://dev.to/gabrielanhaia/postman-desktop-added-itself-to-claude-code-and-codex-its-installer-trusts-its-own-hook-2oga",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Binance's $6.43B theft began with a fake AI installer (Ausgabe mit dem Postman-Bericht)",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-04/",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "related": [
+    "anthropic-message-threads-api-beta",
+    "deepseek-superagent-open-source-prototyp"
+  ],
+  "published": "2026-11-04T08:54:00+01:00",
+  "modified": "2026-11-04T08:54:00+01:00"
+}

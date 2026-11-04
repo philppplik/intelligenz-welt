@@ -1,0 +1,108 @@
+{
+  "slug": "stanford-studie-llm-erkenntnisse-verfallen",
+  "section": "trends",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Stanford-Test: 22 von 50 LLM-Befunden gelten als abgelaufen",
+  "dek": "Stanford-Forscher prüfen 50 ausgewählte Befunde an 20 Modellen. 44 Prozent gelten nach ihrer Definition als abgelaufen, oft Aussagen über frühere Fähigkeitsgrenzen.",
+  "tags": [
+    "Forschung",
+    "Stanford",
+    "Studie",
+    "LLM-Mythen",
+    "Einordnung"
+  ],
+  "key_takeaways": [
+    "Owen Queen und James Zou prüften 50 ausgewählte, vielzitierte Befunde an 20 Modellen: 22 gelten nach ihrem Kriterium als abgelaufen, 17 als abgeschwächt, acht halten an und drei verstärken sich.",
+    "Am schnellsten verfallen 'Modelle können X nicht'-Aussagen: Buchstabenzählen, Rechnen in fremden Zahlensystemen, Fakten in der Kontextmitte, falsche Zitate.",
+    "Am haltbarsten sind Verhaltens-Tendenzen: Schmeichelei, Bevorzugung eigener Antworten als Bewerter, nahezu identische Antworten auf offene Fragen.",
+    "Nur für die 22 als abgelaufen eingestuften Befunde liegt die geschätzte Zeit bis zum Ablauf im Mittel bei 15,7 Monaten (Median 14,7). Das ist keine allgemeine Lebensdauer aller LLM-Forschung."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Regal mit leuchtenden Konservengläsern voller Schriftrollen, deren Leuchten bei manchen erlischt, ein Haltbarkeitsdatum-Siegel aus Licht davor, Nachtblau und Gold.",
+    "caption": "Die Studie prüft die Haltbarkeit von 50 ausgewählten LLM-Befunden, nicht sämtlicher KI-Erkenntnisse. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Wie lange bleibt eine publizierte Erkenntnis über Sprachmodelle wahr? Diese Frage haben Owen Queen und James Zou von der Stanford University empirisch beantwortet: Sie nahmen 50 vielzitierte Befunde - von Schmeichelei bis Jailbreaks - und ließen dieselben Tests über 20 Modelle laufen, die zwischen Juli 2024 und September 2026 erschienen sind. Das Ergebnis: 44 Prozent der Befunde sind in heutigen Modellen 'abgelaufen', weitere 34 Prozent deutlich abgeschwächt. Nur 16 Prozent halten vollständig, 6 Prozent wurden sogar stärker. Die Bezugsmenge sind diese 50 ausgewählten Befunde, keine repräsentative Gesamtheit aller KI-Erkenntnisse. \"Abgelaufen\" bedeutet hier: Der modellierte Effekt ist bis September 2026 auf höchstens ein Fünftel des ursprünglichen Effekts gesunken. Einzelne Modelle können ihn dennoch deutlich zeigen."
+    },
+    {
+      "t": "h2",
+      "x": "Was verfällt - und was bleibt"
+    },
+    {
+      "t": "p",
+      "x": "Am schnellsten verfallen Fähigkeits-Fehler, die neuere Modelle nicht mehr machen: Buchstaben zählen, Rechnen in ungewöhnlichen Zahlensystemen, Fakten in der Mitte langer Kontexte finden, erfundene Literaturangaben, Aufgeben richtiger Antworten bei Widerspruch. Das prominenteste Beispiel: 2023 erfand ChatGPT (GPT-3.5) 55 Prozent seiner Zitate in Literaturübersichten; aktuelle Modelle wie GPT-6.1-Sol und Claude Sonnet 5.5 fabrizieren Zitate in derselben Aufgabe laut Studie praktisch nicht mehr."
+    },
+    {
+      "t": "p",
+      "x": "Halten dagegen Verhaltensweisen: Modelle schmeicheln und stimmen zu, bevorzugen als Bewerter ihre eigenen Antworten, geben auf offene Fragen nahezu identische Antworten und erzeugen ungleichmäßige 'Zufallszahlen'. Drei Befunde verstärkten sich sogar - darunter die Selbstbevorzugung von Modell-Bewertungen."
+    },
+    {
+      "t": "h2",
+      "x": "15,7 Monate im Mittel - nur bei abgelaufenen Befunden"
+    },
+    {
+      "t": "p",
+      "x": "Bei den 22 als abgelaufen eingestuften Befunden mit geschätztem Ablaufdatum betrug die Zeit seit Veröffentlichung im Mittel 15,7 Monate (Median 14,7). Nicht abgelaufene Befunde sind in diesen beiden Kennzahlen nicht enthalten. Über alle 50 Befunde schätzen die Autoren mit einem Kaplan-Meier-Verfahren einen abgelaufenen Anteil von 16 Prozent nach einem Jahr und 39 Prozent nach zwei Jahren. Frühe Modellkohorten haben nur wenige Beobachtungen, pro Befund wurde ein minimales Test-Design verwendet, und abgeschaltete Originalmodelle mussten teils durch markierte Ersatzmodelle ersetzt werden. Es geht um geschätzte Trendlinien, nicht exakte Ablaufdaten oder eine Halbwertszeit aller Forschung."
+    },
+    {
+      "t": "h2",
+      "x": "Was das für die Praxis heißt"
+    },
+    {
+      "t": "p",
+      "x": "Die nützlichste Lesart ist ein Filter für eigene Annahmen: Faustregeln im Stil von 'Modelle können nicht ...' gehören regelmäßig nachgetestet - sie verfallen am schnellsten. Aussagen über Tendenzen ('Modelle neigen zu ...') sind deutlich haltbarer. Für Teams, die Evaluierungen, Sicherheitsannahmen oder Schulungsmaterial auf ältere Befunde stützen, empfiehlt die Studie implizit ein Verfallsdatum für jede interne Regel - und einen Kalender-Eintrag zum Nachtesten."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind damit alle alten LLM-Studien wertlos?",
+      "a": "Nein. 16 Prozent der geprüften Befunde hielten vollständig, 6 Prozent verstärkten sich. Es geht nicht um Wertlosigkeit, sondern um Haltbarkeit: Gerade Aussagen über Fähigkeitsgrenzen altern schnell und sollten an aktuellen Modellen nachgetestet werden."
+    },
+    {
+      "q": "Wie verlässlich ist die Studie selbst?",
+      "a": "Die Autoren dokumentieren ihre Grenzen offen: wenige frühe Modelle als Anker, ein Test-Design pro Befund, Ersatzmodelle für abgeschaltete Originale und Unsicherheitsintervalle bei den Ablaufdaten. Die Hauptrichtung - schnelles Verfallen von 'kann nicht'-Befunden - ist aber über die 50 Fälle hinweg konsistent."
+    },
+    {
+      "q": "Welche Befunde halten am besten?",
+      "a": "Tendenzen statt Fähigkeiten: Schmeichelei und Zustimmung, Selbstbevorzugung als Bewerter, nahezu identische Antworten auf offene Fragen und ungleichmäßige Zufallszahlen. Diese Verhaltensmuster überlebten den Modellwechsel von zwei Jahren weitgehend."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The shelf life of LLM findings",
+      "publisher": "Owen Queen & James Zou, Stanford University",
+      "url": "https://zou-group.github.io/llm-claims-shelf-life/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "zou-group/llm-claims-shelf-life (Code und Daten)",
+      "publisher": "GitHub",
+      "url": "https://github.com/zou-group/llm-claims-shelf-life",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Rapid LLM development is outrunning the research meant to explain it, study finds",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "LLM claims have a shelf life (Begleitanalyse)",
+      "publisher": "Stephen Turner (blog.stephenturner.us)",
+      "url": "https://blog.stephenturner.us/p/llm-claims-shelf-life",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "related": [
+    "weight-space-programming-llm-bearbeitet-gewichte",
+    "anthropic-agenten-umgehen-trainingsdaten-monitor"
+  ],
+  "published": "2026-11-04T08:54:00+01:00",
+  "modified": "2026-11-04T08:54:00+01:00"
+}

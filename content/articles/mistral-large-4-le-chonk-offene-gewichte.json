@@ -1,0 +1,118 @@
+{
+  "slug": "mistral-large-4-le-chonk-offene-gewichte",
+  "section": "modelle",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Mistral Large 4 'Le Chonk': Offene Gewichte mit Lizenz-Bedingung",
+  "dek": "Mistral hat die Gewichte von Le Chonk freigegeben. Die MIT-Variante der Lizenz erlaubt viel, setzt für Model-as-a-Service-Unternehmen aber eine Grenze.",
+  "tags": [
+    "Mistral",
+    "Open Weights",
+    "Europa",
+    "Sprachmodelle",
+    "Lizenz"
+  ],
+  "key_takeaways": [
+    "Mistral hat die Gewichte von Mistral Large 4 ('Le Chonk') am 29. Oktober freigegeben: rund 1 Billion Parameter, 49 Milliarden aktiv, multimodal, 1 Million Token Kontext.",
+    "Die Lizenz ist eine MIT-Variante mit einer Einschränkung: Wer das Modell kommerziell als Modell-Dienst anbietet, braucht eine separate Lizenz von Mistral.",
+    "Die Stärken sieht Mistral bei Coding und defensiver Cybersicherheit; sämtliche Benchmark-Werte sind Anbieterangaben ohne unabhängige Prüfung.",
+    "Trainiert wurde das Modell von Grund auf in Mistral-eigenen Rechenzentren in Europa - ein zentrales Argument für 'souveräne KI'."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein massiver, freundlicher Würfel aus europäisch anmutenden Steinquadern mit leuchtenden Fugen, der auf einer Waage aus Licht ruht, Nachtblau und Gold.",
+    "caption": "Mistral Large 4: Die Gewichte sind seit dem 29. Oktober verfügbar. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Mistral hat die Gewichte seines Flaggschiffs Mistral Large 4 - intern 'Le Chonk' - am 29. Oktober veröffentlicht, gut drei Wochen nach der öffentlichen Vorschau. Zeit, eine Bestandsaufnahme zu machen: Was genau ist da freigegeben worden, unter welchen Bedingungen, und wie belastbar sind die Versprechen?"
+    },
+    {
+      "t": "h2",
+      "x": "Was veröffentlicht wurde"
+    },
+    {
+      "t": "p",
+      "x": "Mistral Large 4 ist ein multimodales Mixture-of-Experts-Modell mit rund einer Billion Parametern, davon etwa 49 Milliarden pro Token aktiv, und einem Kontextfenster von einer Million Token. Die Gewichte stehen auf Hugging Face in den Varianten FP8 und NVFP4, dazu GGUF-Quantisierungen von Unsloth und dem llama.cpp-Team; Day-0-Support gibt es für transformers, vLLM und llama.cpp. Trainiert wurde das Modell laut Mistral von Grund auf auf 3.800 NVIDIA Grace Blackwell GPUs in eigenen Rechenzentren in Europa."
+    },
+    {
+      "t": "h2",
+      "x": "Die Lizenz: offen, aber mit Ausnahme"
+    },
+    {
+      "t": "p",
+      "x": "Die Mistral Ecosystem Open-Weight License ist eine abgewandelte MIT-Lizenz. Sie erlaubt Nutzung, Anpassung, Fine-Tuning und kommerziellen Einsatz, verlangt aber die Weitergabe des Copyright- und Lizenzhinweises. Betreibt der Lizenznehmer oder ein verbundenes Unternehmen ein Model-as-a-Service-Geschäft, ist vor kommerzieller Nutzung eine separate Lizenz nötig. MaaS meint hier Zugriff Dritter für Inferenz oder Nachtraining mit wesentlicher Kontrolle über Eingaben, Parameter oder Trainingsdaten. Ausgenommen sind rein interne Nutzung, Zugriff über offizielle Mistral-Produkte sowie bestimmte eingebettete Endnutzerfunktionen und reine Weiterleitung an fremde Hosts. Das ist enger als eine bedingungslose Open-Source-Freigabe."
+    },
+    {
+      "t": "h2",
+      "x": "Die Stärken - Anbieterangaben"
+    },
+    {
+      "t": "p",
+      "x": "Mistral meldet 48 Prozent auf dem Artificial Analysis Coding Agent Index und gegenüber GLM-5.3 im Schnitt 47 Prozent weniger Tokens pro Aufgabe. Für den gesamten Cyber Index nennt die Herstellerseite 51 Prozent; Hugging Faces Release-Beitrag nennt 82 Prozent für den Teiltest zum Reproduzieren und Patchen einer Schwachstelle. Das sind unterschiedliche Messgrößen. Wir geben diese Werte aus den Release-Unterlagen wieder und haben sie nicht selbst reproduziert. Hugging Face führt das Modell im allgemeinen Intelligence Index am 29. Oktober auf Platz fünf der offenen Modelle; das ist eine datierte Einordnung, kein heutiger Rang."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Für Organisationen mit Anforderungen an Kontrolle und Datenstandort sind offene Gewichte und die laut Mistral vollständig europäische Trainingsinfrastruktur interessante Optionen. Ob sie genügen, hängt vom konkreten Betrieb ab. Die MaaS-Ausnahme schützt Mistrals eigenes Hosting-Geschäft, begrenzt aber die freie Weiterverwertung. Benchmark-Ergebnisse müssen mit ihrer jeweiligen Messmethode gelesen werden. Laut Release-Seite kostet die API seit dem 29. Oktober 0,70 US-Dollar pro Million Eingabetoken und 2,10 US-Dollar pro Million Ausgabetoken."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich Mistral Large 4 kommerziell nutzen?",
+      "a": "Grundsätzlich ja, unter den Lizenzbedingungen. Betreibt der Lizenznehmer oder ein verbundenes Unternehmen ein MaaS-Geschäft, verlangt die Lizenz vor kommerzieller Nutzung eine separate Vereinbarung. Es gibt ausdrücklich Ausnahmen, etwa für rein interne Nutzung und Zugriff über Mistrals offizielle Produkte. Maßgeblich ist der verlinkte vollständige Lizenztext."
+    },
+    {
+      "q": "Wie aufwendig ist der Eigenbetrieb?",
+      "a": "Die Gewichte liegen als FP8- und NVFP4-Varianten sowie als GGUF-Quantisierungen vor, mit Unterstützung für vLLM, llama.cpp und transformers. Ein Modell dieser Größenklasse (1 Billion Parameter gesamt) braucht erhebliche Speicher- und Rechenressourcen; die konkrete Zahl der Geräte hängt von Quantisierung und Hardware ab; für die meisten Teams dürften API oder gehostete Endpunkte realistischer sein."
+    },
+    {
+      "q": "Sind die Benchmark-Werte vertrauenswürdig?",
+      "a": "Die Werte werden in Mistrals und Hugging Faces Release-Unterlagen berichtet. Wir haben keine eigene Nachmessung durchgeführt. Gesamtindex und Teiltests dürfen nicht gleichgesetzt werden; ein datierter Rang ist keine Aussage über die aktuelle Rangliste."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Mistral Large 4 (Le Chonk) is now open weight",
+      "publisher": "Mistral AI",
+      "url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/blog/mistral-large4",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Mistral AI has officially released its Large 4 (Le Chonk) model",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1022184/mistral-ai-has-officially-released-its-large-4-le-chonk-model",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Mistral Large 4 - Modellkarte",
+      "publisher": "Mistral AI / Hugging Face",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Mistral Ecosystem Open-Weight License",
+      "publisher": "Mistral AI / Hugging Face",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/LICENSE",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-offene-gewichte",
+    "meituan-longcat-2-5-multimodal-agenten"
+  ],
+  "published": "2026-11-04T08:54:00+01:00",
+  "modified": "2026-11-04T08:54:00+01:00"
+}

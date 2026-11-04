@@ -1,0 +1,110 @@
+{
+  "slug": "llmjacking-gestohlene-ki-api-schluessel",
+  "section": "praxis",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "LLMjacking: Gestohlene KI-Schlüssel treiben Rechnungen auf bis zu einer Million Dollar",
+  "dek": "Google beschreibt gekaperte LLM-Zugänge und deren Weiterverkauf: In einzelnen Fällen entstanden über 100.000 Dollar pro Tag. Was Teams dagegen prüfen sollten.",
+  "tags": [
+    "Sicherheit",
+    "API-Keys",
+    "Google",
+    "LLMjacking",
+    "Cloud"
+  ],
+  "key_takeaways": [
+    "Google GTIG und Mandiant beschreiben mehrere Fälle von LLMjacking: Gestohlene LLM-API-Schlüssel werden über sogenannte 'LLM Mixer' weiterverkauft, die Rechnungen der Opfer erreichten über 100.000 Dollar pro Tag und bis zu einer Million Dollar insgesamt.",
+    "Häufigster Einstieg sind offengelegte Cloud-Identitäten: Service-Account-Schlüssel, GitHub-Tokens, Session-Tokens - plus offen erreichbare LLM-Endpunkte.",
+    "Ein Dienst namens Jet Night verkaufte laut Google 'unbegrenzte' Token-Flatrates für 60 Dollar im Monat, betrieben mit gestohlenen Schlüsseln; ein Opfer trug fast eine Million Dollar Kosten.",
+    "Google empfiehlt unter anderem API-Quoten, Ausgabenkontrollen, Schlüssel-Rotation, Secret-Scanning und gepatchte Routing-Gateways wie LiteLLM (CVE-2026-40217)."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Bund leuchtender Schlüssel, aus dem einer entwendet wird und in einen Trichter aus Datenströmen kippt, Nachtblau mit warnenden Gold- und Amber-Tönen.",
+    "caption": "Gestohlene API-Schlüssel können unberechtigte Nutzung auf Kosten der betroffenen Organisation ermöglichen. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Googles Threat Intelligence Group und Mandiant berichten von einer Serie von Angriffen, bei denen Angreifer den LLM-Zugang von Unternehmen kapern und weiterverkaufen. In einzelnen Fällen liefen betrügerische Kosten von über 100.000 Dollar an einem einzigen Tag auf; bei manchen Organisationen summierten sie sich auf rund eine Million Dollar, bevor der Zugang gesperrt wurde. Die Angreifer trafen dem Bericht zufolge Firmen aus Finanzen, Handel, Technologie und Transport in Nordamerika, Südamerika und Asien-Pazifik."
+    },
+    {
+      "t": "h2",
+      "x": "Wie die Angreifer vorgehen"
+    },
+    {
+      "t": "p",
+      "x": "Der dominierende Einstieg sind keine LLM-Tricks, sondern klassisch entwendete Cloud-Identitäten: falsch konfigurierte Service-Account-Schlüssel, GitHub Personal Access Tokens, Session-Tokens. Ein Angreifer (Cluster UNC6993) köderte Nutzer zusätzlich mit einer gefälschten Portalseite, die zur Eingabe des aktiven Zugriffstokens aufforderte - so wurden Passwort und Mehrfaktor-Authentifizierung umgangen. Öffentlich erreichbare LLM-Endpunkte, etwa ungeschützte Ollama-Instanzen, registrieren die Angreifer ebenfalls automatisiert."
+    },
+    {
+      "t": "p",
+      "x": "Auffällig ist die Professionalisierung: Googles Team beschreibt eine Arbeitsteilung zwischen Gruppen, die Zugänge erbeuten, und Betreibern sogenannter LLM Mixer - illegaler Routing-Gateways, die gestohlene Zugänge bündeln und an Underground-Kunden weiterverkaufen. Bevor sie loslegen, prüfen manche Gruppen gestohlene Schlüssel mit Mini-Anfragen (max_tokens=1), die unterhalb der Schwelle üblicher Volumen-Alarme bleiben."
+    },
+    {
+      "t": "callout",
+      "kind": "warn",
+      "x": "Fall Jet Night: Ein Token-Routing-Dienst verkaufte laut Google 'unbegrenzte' Tarife für rund 60 Dollar im Monat mit angeblichem Zugang zu Frontier-Modellen - ein Angebot, das legitimerweise 100 bis 250 Dollar kosten würde. Hinter dem Dienst steckten nach Einschätzung von GTIG gestohlene Schlüssel; über 500.000 API-Aufrufe in unter acht Stunden luden fast eine Million Dollar Kosten bei einem einzigen Opfer ab. GTIG vermutet, dass im Telegram-Kanal gemeldete Ausfälle auf gesperrte gestohlene Schlüssel zurückgehen."
+    },
+    {
+      "t": "p",
+      "x": "Auch Routing-Software rückt ins Visier: Google beschreibt einen Fall, in dem Angreifer über eine LiteLLM-Schwachstelle (CVE-2026-40217) einfache Virtual Keys zu vollen Proxy-Admin-Zugängen hochgestuft haben."
+    },
+    {
+      "t": "h2",
+      "x": "Was du jetzt konkret tun solltest"
+    },
+    {
+      "t": "ol",
+      "items": [
+        "Prüfe, welche harten Quoten und Ausgabenstopps dein Anbieter unterstützt, und ergänze Kostenalarme. Ein Alarm allein stoppt keine Nutzung; nicht jede Budgetfunktion ist ein harter Ausgabendeckel.",
+        "Rotiere Schlüssel, die in Dotfiles, CI-Variablen oder Code-Repositories liegen, und aktiviere automatisches Secret-Scanning für deine Repos.",
+        "Schränke Schlüssel auf die tatsächlich genutzten Modelle und Umgebungen ein (dev/prod getrennt), damit ein entwendeter Basis-Schlüssel keine teuren Frontier-Modelle freischaltet.",
+        "Patche oder schotte Routing-Gateways wie LiteLLM ab - CVE-2026-40217 erlaubt die Hochstufung zum Proxy-Admin.",
+        "Beobachte Zugriffslogs auf Mini-Anfragen (max_tokens=1) und das unerwartete Aktivieren von LLM-Diensten - beides laut Google frühe Indikatoren.",
+        "Erzwinge phishing-resistente Mehrfaktor-Authentifizierung für Cloud-Konsolen und Entwicklerplattformen."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist ein LLM Mixer?",
+      "a": "Googles Begriff für illegale Routing-Gateways, die gestohlene LLM-Zugänge bündeln, die Nutzung abrechnen und an Underground-Kunden weiterverkaufen - ähnlich einem Reseller, nur mit gekaperten Konten."
+    },
+    {
+      "q": "Woran erkenne ich, dass mein Schlüssel missbraucht wird?",
+      "a": "Warnsignale laut Google: plötzliche Kosten- oder Anfragespitzen, neu aktivierte LLM-Dienste, die niemand bestellt hat, Mini-Anfragen mit max_tokens=1 in den Logs und Anfragen aus unbekannten Regionen oder Netzen."
+    },
+    {
+      "q": "Sind nur Cloud-Schlüssel betroffen?",
+      "a": "Nein. Google nennt zusätzlich LLM-API-Schlüssel, die in öffentlichen Repositories gefunden wurden, sowie aktiv gestohlene Session-Tokens über gefälschte Portalseiten. Grundsätzlich gilt: Jeder Schlüssel in Klartext-Konfigurationen ist ein Ziel."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
+      "publisher": "Google Cloud Blog (Threat Intelligence Group)",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Google: LLMjacking attacks rack up $1 million in cloud AI charges",
+      "publisher": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/google-llmjacking-attacks-rack-up-1-million-in-cloud-ai-charges/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Token thieves costing companies $100K per day in illicit LLM charges",
+      "publisher": "The Register",
+      "url": "https://www.theregister.com/security/2026/11/02/token-thieves-costing-companies-100k-per-day-in-illicit-llm-charges/5306967",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "related": [
+    "langflow-kritische-luecken-update",
+    "anthropic-claude-angriffsflaeche-code"
+  ],
+  "published": "2026-11-04T08:54:00+01:00",
+  "modified": "2026-11-04T08:54:00+01:00"
+}

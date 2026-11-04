@@ -1,0 +1,109 @@
+{
+  "slug": "binance-post-mortem-ki-installer",
+  "section": "news",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Binance: Gefälschter KI-Installer bereitete Milliarden-Diebstahl vor",
+  "dek": "Laut dem von Fachmedien zitierten Post-Mortem führten ein präparierter Installer, falsche Jobinterviews und ein internes KI-Tool zum Angriff auf Binance.",
+  "tags": [
+    "Binance",
+    "Cyberangriff",
+    "Social Engineering",
+    "Supply Chain",
+    "KI-Sicherheit"
+  ],
+  "key_takeaways": [
+    "Binance beschreibt laut The Hacker News den Diebstahl von 6,43 Milliarden Dollar als monatelange, mehrstufige Kampagne.",
+    "KI-Bezug hatten ein präparierter Installer und der spätere Missbrauch eines internen KI-Werkzeugs zur Bewegung zwischen Entwickler-Rechnern.",
+    "Der Diebstahl lief am 29. Oktober in unter drei Stunden über einen Container und den internen Wallet-Signierdienst, außerhalb des normalen Auszahlungswegs.",
+    "Binance hat Wallet-System, internes KI-Tool und Zugangskontrollen neu aufgebaut und arbeitet mit Ermittlern und Blockchain-Analysefirmen an der Einfrierung der Assets."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein gläserner Tresor, aus dem ein goldener Datenstrom durch eine Kette aus gefälschten Dokumenten und einer Maske entweicht, Nachtblau mit Goldakzenten.",
+    "caption": "Binance legt offen, wie der Rekorddiebstahl über Monate vorbereitet wurde. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Binance hat am Dienstag, 3. November, den Ablauf des Diebstahls vom 29. Oktober beschrieben. The Hacker News beziffert ihn auf 6,43 Milliarden Dollar und zitiert das Unternehmen: \"It was not a single isolated breach or a simple phishing incident\". Die geschilderte Kampagne lief über knapp fünf Monate. Die folgende Rekonstruktion stützt sich auf die von The Hacker News und The Verge wiedergegebenen Unternehmensangaben, nicht auf eine eigene forensische Untersuchung."
+    },
+    {
+      "t": "h2",
+      "x": "Der Ablauf in vier Etappen"
+    },
+    {
+      "t": "ol",
+      "items": [
+        "Juni 2026: Ein Entwickler des Wallet-DevOps-Teams (\"Engineer A\") sucht über eine Suchmaschine nach einem beliebten KI-Tool und landet bei einem präparierten Homebrew-Installer. Binance entdeckt den Vorfall und rotiert Zugangsdaten - doch Informationen über As Rolle und seine Kollegen im Wallet-Team sind da bereits an den Angreifer geflossen.",
+        "September 2026: Ein zweiter Entwickler (\"Engineer B\") wird auf einer echten Jobplattform von einem angeblichen Projektleiter kontaktiert. Nach Gesprächen mit einer vermeintlichen Personalabteilung und einem falschen CEO soll er ein 'Aufgaben'-Repository auf seinem Arbeitsrechner herunterladen. Beim Setup startet Schadsoftware, die eine legitime Entwicklerkomponente gegen eine präparierte austauscht und Kontakt zu einem externen Server aufnimmt.",
+        "20. Oktober: Von Bs Rechner aus missbraucht der Angreifer ein internes KI-Werkzeug, um die Kontrolle über die Rechner von Engineer A und eines dritten Entwicklers zu erlangen. Dabei findet er auf As Rechner ein Token für Container-Deployments.",
+        "29. Oktober: Über den Rechner des dritten Entwicklers und mit As Token deployed der Angreifer laut der zitierten Stellungnahme einen Container, dessen Skript den internen Wallet-Signierdienst für Transaktionen außerhalb des normalen Auszahlungsablaufs nutzt. Der Bericht nennt dafür ein Zeitfenster von weniger als drei Stunden, ohne die Zeitzone anzugeben."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was Binance seitdem geändert hat"
+    },
+    {
+      "t": "p",
+      "x": "Laut der von The Hacker News zitierten Stellungnahme hat das Unternehmen das betroffene Wallet-System in einer neuen Umgebung neu aufgebaut, das interne KI-Tool samt Zugangskontrollen neu gebaut, betroffene Geräte ersetzt und die Tokens der betroffenen Entwickler außer Betrieb genommen. Dazu kommen laut Stellungnahme verstärkte KI-basierte Verhaltenserkennung, schärfere Risikokontrollen am Wallet-Dienst und die Zusammenarbeit mit Strafverfolgern und Blockchain-Analysefirmen, um Assets zu verfolgen und einzufrieren. Binance teilt mit, seit Jahresbeginn 57 mutmaßlich nordkoreanisch verknüpfte Angriffsversuche abgewehrt zu haben - die Einschätzung des Unternehmens."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das über die Krypto-Branche hinaus relevant ist"
+    },
+    {
+      "t": "p",
+      "x": "Ein gefälschter Download für ein KI-Werkzeug diente als erster Zugang; ein internes KI-Tool wurde später innerhalb des Netzwerks missbraucht. Welche konkrete Schwachstelle oder Rechtevergabe dabei entscheidend war, bleibt in den hier geprüften Berichten unklar. Daraus folgt keine pauschale Aussage über autonome Agenten. Für Teams bleibt die Lehre: Bezugsquellen von Entwicklerwerkzeugen prüfen und Deployment-Berechtigungen eng begrenzen, statt dauerhafte weitreichende Tokens auf Arbeitsrechnern vorzuhalten."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie kamen die Angreifer ursprünglich rein?",
+      "a": "Über zwei Wege: einen präparierten Homebrew-Installer für ein beliebtes KI-Tool, den ein Entwickler nach einer Websuche installierte, und ein vorgetäuschtes Bewerbungsverfahren, in dem ein zweiter Entwickler ein Schadsoftware-Repository als angebliche Aufgabe herunterladen sollte."
+    },
+    {
+      "q": "Welche Rolle spielte das interne KI-Tool?",
+      "a": "Nach der von The Hacker News wiedergegebenen Binance-Erklärung wurde ein internes KI-Werkzeug genutzt, um zwei weitere Entwickler-Rechner zu kontrollieren. Die technische Ursache ist in den geprüften Berichten nicht näher erklärt."
+    },
+    {
+      "q": "Bekommen Betroffene ihr Geld zurück?",
+      "a": "The Verge zitiert Binance-CEO Richard Teng am 3. November mit der Aussage, Nutzer trügen den Verlust nicht: 98 Prozent der betroffenen Tokens seien wieder aufgefüllt und rund 2,85 Milliarden Dollar eingefroren oder abgefangen worden. Das sind zeitgebundene Unternehmensangaben, kein unabhängig bestätigter Endstand."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Binance Reveals How Fake Job Interviews and AI Tool Abuse Led to $6.43 Billion Theft",
+      "publisher": "The Hacker News",
+      "url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Binance crypto theft explained",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/news/1025576/binance-cyrpto-theft-explained",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Binance hack: DPRK employment fraud",
+      "publisher": "Chainalysis",
+      "url": "https://www.chainalysis.com/blog/binance-hack-dprk-employment-fraud/",
+      "accessed": "2026-11-04"
+    },
+    {
+      "title": "Binance's $6.43B theft began with a fake AI installer",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-04/",
+      "accessed": "2026-11-04"
+    }
+  ],
+  "related": [
+    "langflow-kritische-luecken-update",
+    "anthropic-einbruch-drittsoftware-cathedral"
+  ],
+  "published": "2026-11-04T08:54:00+01:00",
+  "modified": "2026-11-04T08:54:00+01:00"
+}
