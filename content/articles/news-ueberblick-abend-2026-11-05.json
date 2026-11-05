@@ -1,0 +1,139 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-05",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-05T16:10:00+01:00",
+  "modified": "2026-11-05T16:10:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "inclusionAI/Ling-3.1-flash (Modellkarte)",
+      "publisher": "inclusionAI / Hugging Face",
+      "url": "https://huggingface.co/inclusionAI/Ling-3.1-flash",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "webAI-Official/TwIL-8B (Modellkarte)",
+      "publisher": "webAI / Hugging Face",
+      "url": "https://huggingface.co/webAI-Official/TwIL-8B",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16 (Modellkarte)",
+      "publisher": "NVIDIA / Hugging Face",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Dory1.0-4B: A Looped Normalized-GPT (Paper, arXiv 2611.03998)",
+      "publisher": "NVIDIA / arXiv",
+      "url": "https://arxiv.org/html/2611.03998v1",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "TwIL webAI Non-Commercial License 1.0",
+      "publisher": "webAI / Hugging Face",
+      "url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/LICENSE.md",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "OpenMDW License 1.1",
+      "publisher": "OpenMDW",
+      "url": "https://openmdw.ai/license/1-1/",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "vLLM PR #60149: merged 25.10.2026",
+      "publisher": "vLLM / GitHub",
+      "url": "https://github.com/vllm-project/vllm/pull/60149",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Ling commit history (kein Release-Nachweis)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/inclusionAI/Ling-3.1-flash/commits/main",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "title": "KI am Abend: Drei offene Modelle, drei Lizenz-Modelle",
+  "dek": "Ein Blick auf Ant Groups 560B-Modell. Ein 8B-Modell glänzt bei Mathe, darf aber nicht kommerziell ran. Und NVIDIA lässt ein Modell in Schleifen denken.",
+  "tags": [
+    "KI-Überblick",
+    "Open Weights",
+    "Lizenzen",
+    "NVIDIA",
+    "Ant Group"
+  ],
+  "key_takeaways": [
+    "Ant Groups Forschungsarm hat Ling-3.1-flash veröffentlicht: ein Riesenmodell mit 560 Milliarden Parametern, von denen nur 25 Milliarden pro Schritt arbeiten. Hub-Metadaten nennen MIT, grundsätzlich auch kommerziell nutzbar; eine separate Lizenzdatei haben wir dort nicht gefunden.",
+    "TwIL-8B von webAI ist ein kleines Denkmodell für Mathe und Programmieren, das laut Anbieter lokal laufen kann. In den Anbieter-Tests schlägt es teils größere Modelle, hakt aber bei Wissensfragen. Wichtig: Die Lizenz erlaubt ausschließlich nichtkommerzielle Forschung und Bildung.",
+    "NVIDIAs Dory1.0-4B arbeitet in Denk-Schleifen: Derselbe Baustein wird mehrfach durchlaufen, je nach Aufgabe öfter oder seltener. Im Papier steigt der ungewichtete Benchmark-Mittelwert bei 1/2/4 Schleifen - ohne dass das Modell größer wird. Kommerzielle Nutzung ist erlaubt."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik: Dorys normalisierter Benchmark-Mittelwert 35,2/39,7/40,6 bei 1/2/4 Loops, Anbieterangaben.",
+    "caption": "NVIDIAs ungewichteter Mittelwert über zwölf Benchmarks bei 1/2/4 Loops; GDPval-Elo ist normalisiert. Keine allgemeine Genauigkeitsquote, keine eigene Nachmessung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quelle: NVIDIA / arXiv"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Abendüberblick vom 5. November 2026. Quellenstand: 16:05 Uhr MEZ.** Drei offene Modelle stehen im Fokus - und alle drei zeigen, dass \"offen\" nicht gleich \"frei nutzbar\" bedeutet. Alle Leistungswerte stammen von den jeweiligen Anbietern."
+    },
+    {
+      "t": "h2",
+      "x": "Ant Group: Ein Riesenmodell mit Sparflamme"
+    },
+    {
+      "t": "p",
+      "x": "Ling-3.1-flash kommt von inclusionAI, dem Open-Source-Arm der Ant Group (Alibaba-Schwester). Das Modell hat 560 Milliarden Parameter, aktiviert aber pro Rechenschritt nur 25 Milliarden - es verteilt die Arbeit intern auf Hunderte Spezialisten und ruft je nach Frage nur die passenden ab. Es ist der Nachfolger von Ling-3.0-flash und beherrscht einen ein- und ausschaltbaren Denkmodus. Der geprüfte Hub-Stand ist vom 3. November; die Historie enthält bereits Oktober-Commits, das ist kein belegter Releasetag, dazu gibt es Versionen auf ModelScope und OpenRouter."
+    },
+    {
+      "t": "p",
+      "x": "Die Hub-Metadaten nennen MIT, grundsätzlich auch kommerziell nutzbar. Eine separate Lizenzdatei enthält das geprüfte Repository nicht; wir stützen diese Einstufung ausdrücklich auf die Metadaten. Die Leistungswerte (etwa 81 Punkte im Programmier-Test Terminal-Bench 2.1) stammen aus der Firmenkarte; wir haben keine unabhängige Nachmessung geprüft. Zum Vergleich: Baidus heute vorgestelltes ERNIE-Modell schließt die EU lizenzseitig aus - für Ling nennen die Hub-Metadaten stattdessen MIT."
+    },
+    {
+      "t": "h2",
+      "x": "webAI: Ein Mathe-Ass für den heimischen Rechner - aber nicht fürs Geschäft"
+    },
+    {
+      "t": "p",
+      "x": "TwIL-8B hat 8,79 Milliarden Parameter. Die Karte nennt eine 4,98 GiB große Q4_K_M-GGUF-Datei und lokale CPU-/GPU-Inferenz. Das ist die Dateigröße, kein Gesamt-RAM- oder VRAM-Bedarf: Laufzeit, Kontext und KV-Cache kommen hinzu. Es baut auf IBMs freiem Modell Granite auf und wurde mit mathematischen Wettkampfaufgaben trainiert. In den Tests des Anbieters erreicht es im Test MATH-500 98,2 Prozent und schlägt damit teils Modelle, die etwa 3,5-mal so groß sind. Bei Wissensfragen liegt es dagegen deutlich zurück - und der Anbieter sagt das auch offen."
+    },
+    {
+      "t": "p",
+      "x": "Der Haken steht wieder im Kleingedruckten: TwIL-8B steht unter einer Nicht-kommerziellen Lizenz. Lizenzabschnitt 3.3 definiert das eng als ausschließlich nichtkommerzielle Forschungs- und Bildungszwecke, auch für Derivate. Eine pauschale Freigabe jedes privaten Einsatzes folgt daraus nicht. Weitergabe erfordert Lizenzkopie und erhaltene Hinweise. Auch bei den Zahlen ist Vorsicht geboten: Ein Teil der Werte stammt von einer Variante des Modells, die noch nicht in allen Tests gelaufen ist, und die Konkurrenzwerte hat webAI aus fremden Modellkarten übernommen statt selbst nachzumessen."
+    },
+    {
+      "t": "h2",
+      "x": "NVIDIA: Ein Modell, das in Schleifen denkt"
+    },
+    {
+      "t": "p",
+      "x": "Dory1.0-4B aus NVIDIAs Nemotron-Werkstatt funktioniert anders als übliche Modelle: Ein mittlerer Baustein wird mehrfach hintereinander durchlaufen - wie ein Gedanke, den man mehrmals durchdenkt. Der Trick: Ein einziges Modell kann so je nach Aufgabe mit weniger oder mehr Rechenarbeit pro Token arbeiten, ganz ohne Umrüstung. Laut dem jetzt vorliegenden Papier steigt der ungewichtete, teils normalisierte Benchmark-Mittelwert von 35,2 Punkten bei einer Schleife auf 40,6 bei vier Schleifen. Die Gewichte sind schon seit Mitte Oktober offen, das Papier mit den Trainingsdetails ist im November erschienen."
+    },
+    {
+      "t": "p",
+      "x": "Dory wurde laut Paper zunächst auf sechs Billionen Token trainiert, davon rund 4,5 Billionen im gemischten NVFP4-Verfahren. Weitere rund 0,3 Billionen Token dienten der Kontexterweiterung, insgesamt also etwa 6,3 Billionen Token. Ein Energieverbrauchsvorteil wurde von uns nicht geprüft. Die geprüfte OpenMDW-1.1-Lizenz erlaubt auch kommerzielle Nutzung; bei Weitergabe sind Lizenz und Herkunftshinweise zu erhalten. Fremdrechte sind separat zu prüfen. Die Zahlen stammen aus NVIDIAs eigener Testumgebung; in Wissens-Tests bleibt das Vier-Milliarden-Modell erwartbar hinter größeren Modellen zurück. Der ungewichtete Zwölf-Test-Mittelwert normalisiert GDPval-Elo als (Elo - 500) / 20. Einzeltests steigen nicht durchgehend, etwa GPQA von zwei auf vier Loops. Kürzere Ausgaben sind kein Beleg für kürzere Wartezeit oder geringeren Energieverbrauch."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welches der drei Modelle darf ich kommerziell nutzen?",
+      "a": "Ling-3.1-flash (MIT laut Hub-Metadaten, keine separate Lizenzdatei gefunden) und Dory1.0-4B (OpenMDW 1.1) erlauben die kommerzielle Nutzung. TwIL-8B ist ausschließlich für nichtkommerzielle Forschung und Bildung freigegeben. Im Zweifel gilt immer der jeweilige Lizenztext."
+    },
+    {
+      "q": "Läuft eines dieser Modelle auf einem normalen PC?",
+      "a": "TwILs Karte nennt lokale Inferenz und eine 4,98 GiB große Q4_K_M-Datei. Das belegt keinen Gesamt-RAM-Bedarf: Kontext, KV-Cache und Laufzeit kommen hinzu. Dory bietet ebenfalls Quantisierungen; vLLM-PR #60149 wurde am 25. Oktober gemergt, die installierte Version ist separat zu prüfen. Ling ist mit 560B Gesamtparametern groß; die Karte zeigt 8 H200 oder 4 GB300 als Referenz."
+    },
+    {
+      "q": "Sind die Leistungsangaben verlässlich?",
+      "a": "Alle genannten Werte stammen aus den Modellkarten und Papieren der Anbieter selbst. webAI weist selbst auf Messlücken hin; NVIDIA und inclusionAI haben ihre eigenen Testumgebungen genutzt. Wir haben keine unabhängigen Nachmessungen geprüft."
+    }
+  ],
+  "related": [
+    "ripple-65b-preview-offene-gewichte-coding",
+    "mistral-large-4-le-chonk-offene-gewichte"
+  ]
+}
