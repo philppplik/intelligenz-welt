@@ -1,0 +1,99 @@
+{
+  "slug": "xen-xsa-523-grant-copy-patch-anleitung",
+  "section": "praxis",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Xen XSA-523: Grant-Copy-Fehler erlauben Zugriff auf fremden Speicher",
+  "dek": "XSA-523 betrifft ungepatchtes Xen ab 4.6. Gäste können laut Advisory fremden Speicher lesen und schreiben. Entscheidend ist der aktive Patchstand.",
+  "tags": [
+    "Sicherheit",
+    "Xen",
+    "Virtualisierung",
+    "Patch",
+    "Advisory"
+  ],
+  "key_takeaways": [
+    "XSA-523 (CVE-2026-102703, CVE-2026-102704) erlaubt einem bösartigen Gast beliebigen Lese- und Schreibzugriff auf fremden Speicher - einschließlich Dom0.",
+    "Betroffen sind alle Xen-Versionen ab 4.6; 4.5 und älter sind nicht verwundbar. Es gibt keine bekannte Abhilfe außer den Patches.",
+    "Entdeckt wurde die Lücke von Anthropic mit Claude, validiert von Ada Logics, unabhängig gemeldet vom CodeAnt AI Security Research Team.",
+    "Das Advisory bietet Patchsätze für xen-unstable/4.19.x sowie 4.18.x bis 4.17.x. Für andere Releases und Distributionspakete ist der Sicherheitsstatus beim Anbieter zu prüfen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine gläserne Zwischenwand zwischen zwei leuchtenden Serverkammern, durch die ein feiner Lichtstrich hindurchgreift, Nachtblau mit Amber-Warnton.",
+    "caption": "Durch die virtuelle Wand: XSA-523 durchbricht die Isolation zwischen Gast und Host. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Wenn du Xen im Einsatz hast, ist diese Woche Patchwoche: Das am 3. November veröffentlichte Advisory XSA-523 beschreibt zwei zusammenhängende Fehler in der Grant-Copy-Verarbeitung des Hypervisors. Ein bösartiger Gast kann damit beliebigen Speicher anderer Domains lesen und beschreiben - ausdrücklich einschließlich der Dom0, also der privilegierten Verwaltungs-VM. Laut Advisory sind ungepatchte Xen-Versionen ab 4.6 betroffen; Version 4.5 und älter sind nicht verwundbar. Xen nennt keine bekannte Mitigation: 'There is no known mitigation', heißt es im Advisory."
+    },
+    {
+      "t": "h2",
+      "x": "Was genau kaputt ist"
+    },
+    {
+      "t": "p",
+      "x": "Grant-Copy-Operationen auf benachbarten Adressbereichen werden aus Performancegründen intern gecacht - validierte Daten werden wiederverwendet. Die Bedingungen, wann neu validiert werden muss, waren in zwei Fällen falsch: Erstens konnten Frame-Nummern und Grant-Referenzen verwechselt werden (CVE-2026-102703). Zweitens war die Prüfung verlegt, die Kopien per Frame-Nummer auf den eigenen Speicher des Aufrufers beschränken soll (CVE-2026-102704). Beides zusammen öffnet das Fenster für beliebige Lese- und Schreibzugriffe über die Gast-Grenze hinaus."
+    },
+    {
+      "t": "p",
+      "x": "Bemerkenswert ist die Entdeckergeschichte: Gefunden wurde die Lücke laut Advisory von Anthropic unter Einsatz von Claude; Stephan Lipp von Ada Logics validierte sie, und das CodeAnt AI Security Research Team meldete sie unabhängig. Die Meldung dokumentiert einen KI-gestützten Fund, beweist aber keinen allgemeinen Trend oder eine Kompromittierung konkreter Systeme."
+    },
+    {
+      "t": "h2",
+      "x": "So prüfst und patchst du"
+    },
+    {
+      "t": "ol",
+      "items": [
+        "Version und Patchstand prüfen: Die Versionsnummer allein erkennt keine Sicherheits-Backports. Vergleiche installierte Pakete und Anbieterhinweise ausdrücklich mit XSA-523 und beiden CVEs.",
+        "Passenden Patchsatz wählen: Das Advisory ordnet xsa523-1.patch und -2.patch xen-unstable/4.19.x zu; xsa523-4.18-1.patch und -2.patch gelten für 4.18.x bis 4.17.x. Es empfiehlt Downstreams, vor Anwendung auf die Spitze des Stable-Branch zu aktualisieren. Für andere Releases beim Anbieter nachfragen.",
+        "Bei Distributionspaketen dem Sicherheitsupdate des jeweiligen Anbieters folgen. Nicht aus einer unveränderten Hauptversionsnummer auf einen fehlenden Fix schließen und keine fremden Branch-Patches ungeprüft anwenden.",
+        "Aktivierung und Wartungsfenster nach Herstelleranleitung planen. Falls ein Host-Neustart erforderlich ist, Gäste vorher kontrolliert migrieren oder herunterfahren. Ob ein unterstützter Livepatch existiert, ist separat zu prüfen.",
+        "Hosts mit unvertrauenswürdigen Gästen bei der Behandlung priorisieren. Xen beschreibt beliebigen Speicherzugriff über Domaingrenzen hinweg, einschließlich Dom0. Der Artikel führt keine Eingriffe oder Tests auf Servern aus."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Die SHA256-Summen der vier Patchdateien stehen im signierten Advisory. Nach Installation prüfen, dass der Fix tatsächlich aktiv ist. Für Xen-basierte Produkte sind die jeweiligen Herstellerhinweise maßgeblich."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ich nutze KVM oder VMware - bin ich betroffen?",
+      "a": "Dieses Advisory betrifft Xen. Andere Hypervisor sind vom beschriebenen Xen-Codefehler nicht erfasst; daraus folgt keine allgemeine Sicherheitsbewertung dieser Produkte."
+    },
+    {
+      "q": "Gibt es einen Workaround, wenn ich nicht sofort patchen kann?",
+      "a": "Das Advisory nennt keine bekannte Mitigation. Organisatorische Einschränkungen beim Betrieb unvertrauenswürdiger Gäste ersetzen den Fix nicht. Mit dem Anbieter eine unterstützte Aktualisierung und deren Aktivierung klären."
+    },
+    {
+      "q": "Muss ich nach dem Patch noch etwas tun?",
+      "a": "Nach der vom Anbieter vorgeschriebenen Aktivierung den aktiven Patchstand prüfen und den Betrieb kontrolliert testen. Das Advisory allein belegt weder einen Angriff noch, dass die Lücke vor dem Veröffentlichungsdatum niemandem bekannt war."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Xen Security Advisory XSA-523 (CVE-2026-102703, CVE-2026-102704)",
+      "publisher": "Xen Project",
+      "url": "https://xenbits.xen.org/xsa/advisory-523.html",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Morning Tokens, Ausgabe 05.11.2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-05/",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "related": [
+    "openai-cyber-agenten-948-linux-lpe-exploits",
+    "llmjacking-gestohlene-ki-api-schluessel",
+    "anthropic-claude-angriffsflaeche-code"
+  ],
+  "published": "2026-11-05T08:57:00+01:00",
+  "modified": "2026-11-05T08:57:00+01:00"
+}

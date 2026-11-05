@@ -1,0 +1,109 @@
+{
+  "slug": "ripple-65b-preview-offene-gewichte-coding",
+  "section": "modelle",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Ripple-65B Preview: Offene Gewichte und Coding-Anspruch",
+  "dek": "Ricursive meldet 80,52 Punkte auf Terminal-Bench 2.1 für Ripple-65B Preview. Offene Gewichte und Apache 2.0, aber kein unabhängiger Leistungstest.",
+  "tags": [
+    "Modelle",
+    "Open Weights",
+    "Ricursive",
+    "Coding",
+    "Apache 2.0"
+  ],
+  "key_takeaways": [
+    "Ripple-65B Preview ist ein dichtes 65B-Modell (12T Token, 1M Kontext) unter Apache 2.0 - Gewichte auf Hugging Face, NVFP4-Variante inklusive.",
+    "Bei Terminal-Bench 2.1 nennt Ricursive 80,52 Punkte - vor Reflection Beam 501B (80,1) und Muse Spark Open 816B (76,4). Alle Werte stammen vom Anbieter, eine unabhängige Nachmessung steht aus.",
+    "Die gesamten Entwicklungskosten beziffert Ricursive auf 32 Millionen Dollar - Eigenangabe, etwa ein Zehntel dessen, was der bisherige Spitzenreiter laut Anbieter veranschlagt habe.",
+    "Laut Modellkarte umfasst das Entwicklungsteam bis zu fünf Personen. Für lokale Nutzung stellt Ricursive einen quantisierten NVFP4-Checkpoint bereit und nennt die DGX Spark als Zielhardware. Wir haben dies nicht selbst getestet."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein schlanker, hoher Turm aus glühenden Steinquadern neben gedrungenen, massiven Blöcken, auf einer Waagschale aus Licht, Nachtblau mit Gold-Akzenten.",
+    "caption": "Schmal und tief statt breit und riesig: Ripple-65B setzt auf ein dichtes Design. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Während die Branche auf Mixture-of-Experts-Riesen setzt, geht das Palo-Alto-Labor Ricursive Intelligence den umgekehrten Weg: Ripple-65B Preview ist ein dichtes Transformer-Modell mit 65 Milliarden Parametern, von Grund auf auf 12 Billionen Token trainiert, mit bis zu einer Million Token Kontext - und unter der Apache-2.0-Lizenz auf Hugging Face verfügbar. Laut Modellkarte umfasst die Veröffentlichung BF16- und NVFP4-Varianten sowie ein Basismodell. Im hier geprüften BF16-Instruct-Repository liegt eine Apache-2.0-Lizenzdatei; andere Varianten wurden nicht gesondert auf ihren Lizenzstand geprüft. "
+    },
+    {
+      "t": "h2",
+      "x": "Die Leistungsangaben - alles Anbieterwerte"
+    },
+    {
+      "t": "p",
+      "x": "Beim agentischen Programmieren nennt Ricursive 80,52 Punkte auf Terminal-Bench 2.1 - knapp vor Reflection Beam 501B (80,1) und vor deutlich größeren US-Modellen wie Muse Spark Open 816B (76,4), Inkling 975B (63,8) und Nemotron 3 Ultra 550B (56,4). Auf SWE-bench Pro v2.0 Hard nennt die Modellkarte 79,1 Punkte. Wichtig: Diese Werte stammen aus Ricursives eigener Tabelle, teils mit hauseigenem Eval-Flow nachgemessen, wo Fremdwerte fehlten. Die Modellkarte räumt selbst ein, dass Replikation moderner agentischer Evals schwierig sei - die Zahlen sind als Anbieterangaben zu lesen, eine unabhängige Nachmessung an den Gewichten steht aus."
+    },
+    {
+      "t": "h2",
+      "x": "32 Millionen Dollar für alles"
+    },
+    {
+      "t": "p",
+      "x": "Die zweite Behauptung betrifft das Geld: Die vollen Entwicklungskosten von der Ladder-Entwicklung über Datenmischung und Debugging bis zum finalen Trainingslauf beziffert Ricursive auf 32 Millionen Dollar - nach eigener Schätzung etwa ein Zehntel dessen, was der bisherige Open-Weight-Spitzenreiter im agentischen Coding gekostet habe. Beim Reinforcement Learning kam das Modell mit 1,4 Millionen Rollouts aus, rund 70-mal weniger als Reflection Beam. Auch das sind Selbstauskünfte, aber sie sind in Teilen prüfbar: Die Gewichte liegen offen, die Modellkarte dokumentiert Trainingsstufen, Sequenzlängen und Batchgrößen ungewöhnlich detailliert."
+    },
+    {
+      "t": "h2",
+      "x": "Dicht, tief, sparsam"
+    },
+    {
+      "t": "p",
+      "x": "Architektonisch setzt Ripple auf 'thin and deep': schmale Modellbreite (d_model 5120) bei 80 Schichten, dazu unter anderem gated attention, globale NoPE-Positionierung und value residuals. Trainiert wurde mit 40 Prozent MFU, ohne eigene Kernel und ohne Quantisierung während des Trainings. Für lokale Nutzung nennt Ricursive die NVIDIA DGX Spark und bietet einen quantisierten NVFP4-Checkpoint an. Das ist kein eigener Hardwaretest; auf zwei B200 nennt Ricursive 250 Token pro Sekunde (Batch 8, vor Quantisierung). Eine interne Variante treibt die Chip-Design-Plattform des Unternehmens an - Ricursive arbeitet an selbstverbessernden Systemen aus Hardware und Modell."
+    },
+    {
+      "t": "p",
+      "x": "Die Einordnung bleibt zwiespältig: Falls die Werte einer unabhängigen Prüfung standhalten, zeigt Ripple-65B, dass ein kleines Team ohne MoE-Riesen und mit laut Anbieter 32 Millionen Dollar Entwicklungskosten an die Spitze der US-Open-Weights heranreichen kann. Gleichzeitig liegt es bei Wissens- und Reasoning-Tests wie GPQA Diamond (85,2) hinter den großen Vergleichsmodellen, und bei SWE-bench Verified führt Reflection Beam (81,6) vor Ripple (76,5) - die Spitzenposition gilt bislang nur für den Terminal-Bench. Neben Hugging Face ist das Modell über Together AI, GMI Cloud und OpenRouter erreichbar. Der Ankündigungstext stellt Fireworks für später am Veröffentlichungstag in Aussicht; den aktuellen Providerstatus haben wir nicht geprüft."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ich Ripple-65B kommerziell nutzen?",
+      "a": "Das BF16-Instruct-Repository enthält eine Apache-2.0-Lizenzdatei. Sie erlaubt kommerzielle Nutzung unter ihren Bedingungen, etwa den Hinweis- und Lizenzpflichten bei Weitergabe. Andere Checkpoints und eingebundene Komponenten sind gesondert zu prüfen."
+    },
+    {
+      "q": "Läuft das Modell lokal?",
+      "a": "Ricursive nennt die NVIDIA DGX Spark als lokale Zielhardware und stellt dafür unter anderem einen quantisierten NVFP4-Checkpoint bereit. Speicherbedarf und erreichbarer Kontext hängen von Präzision, Laufzeit und KV-Cache ab. Einen lokalen Test haben wir nicht durchgeführt."
+    },
+    {
+      "q": "Ist Ripple-65B jetzt das beste offene Coding-Modell?",
+      "a": "Nach Anbieterangaben beim Terminal-Bench 2.1 unter US-Open-Weight-Modellen, ja - unabhängig bestätigt ist das noch nicht. Bei SWE-bench Verified liegt Reflection Beam vorn, und internationale offene Modelle sind in dieser Tabelle gar nicht erst verglichen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Ripple-65B Preview, a Frontier Open-Weight Model",
+      "publisher": "Ricursive Intelligence",
+      "url": "https://www.ricursive.com/ripple",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "ricursiveAI/Ripple-65B-Preview (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Morning Tokens, Ausgabe 05.11.2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-05/",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Ripple BF16-Instruct LICENSE (Apache 2.0)",
+      "publisher": "Ricursive / Hugging Face",
+      "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview/raw/main/LICENSE",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "related": [
+    "mistral-large-4-le-chonk-offene-gewichte",
+    "kimi-k3-1-pro-offene-gewichte",
+    "deepseek-superagent-open-source-prototyp"
+  ],
+  "published": "2026-11-05T08:57:00+01:00",
+  "modified": "2026-11-05T08:57:00+01:00"
+}

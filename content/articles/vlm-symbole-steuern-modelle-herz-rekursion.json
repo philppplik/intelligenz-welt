@@ -1,0 +1,103 @@
+{
+  "slug": "vlm-symbole-steuern-modelle-herz-rekursion",
+  "section": "trends",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "VLM-Studie: Ein rotes Herz lenkt den Code zur Rekursion",
+  "dek": "Im synthetischen Binärbaum-Test lenkten Symbole drei VLMs. Die vorläufige Studie prüft kleine Stichproben, keine realen GUI-Agenten-Workflows.",
+  "tags": [
+    "Forschung",
+    "VLM",
+    "Interpretierbarkeit",
+    "Agenten",
+    "DeepMind"
+  ],
+  "key_takeaways": [
+    "Ein rotes Herz im Kontext steuert Claude Opus 4.7 und GPT-5.4 in einer Coding-Aufgabe von 0 auf 20 rekursive Lösungen bei je 20 Samples - ohne dass die Aufgabe etwas mit dem Bild zu tun hätte.",
+    "Die Lenkwirkung ist modellspezifisch: Herzen und Dreiecke wirken bei Claude und GPT-5.4, ein pinkes Plus oder eine türkise Spirale bei Gemini 3.1 Pro.",
+    "Beim Binärbaum-Test bezeichneten 71,5 Prozent von Geminis 1.524 ausgewerteten Denkspuren unter lenkenden Symbolbedingungen das Bild als irrelevant. Lenkung ist hier als Änderung der Rekursionsrate um mindestens 0,10 definiert.",
+    "Ob und wie dieser Laboreffekt auf natürliche GUI-Agenten-Workflows übertragbar ist, bleibt offen. Die Studie belegt keine universelle Agenten-Angriffstechnik."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leuchtend rotes Herz aus Glas, umgeben von kreisförmig angeordneten, verzweigten Linien wie ein Baumdiagramm, Nachtblau mit warmem Rot und Gold.",
+    "caption": "Ein Herz kippt das Verhalten: visuelle Symbole als versteckter Steuerkanal. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Eine vorläufige Studie untersucht einen überraschenden Effekt: Forschende von Google DeepMind und der Stanford University um Alexa Tartaglini haben getestet, ob einfache visuelle Symbole das Verhalten großer Sprach-Bild-Modelle systematisch verändern. In den synthetischen Tests: ja. Ein rotes Herz im Kontext einer simplen Coding-Aufgabe (Binärbaum-Traversierung, rekursiv oder iterativ lösbar) kippt Claude Opus 4.7 und GPT-5.4 von einer Basisrate von null rekursiven Lösungen auf hundert Prozent. Pro Bedingung wurden 20 Lösungen ausgewertet, keine populationsweite Erfolgsquote. Zunächst forderte der Prompt ausdrücklich auf, das Bild anzusehen. Bei Gemini 3.1 Pro schiebt ein gelbes Häkchen die Rekursionsrate von 40 auf 90 Prozent (18 von 20 Samples). Die Wirkung erreicht fast die einer direkten Anweisung 'nutze Rekursion'."
+    },
+    {
+      "t": "h2",
+      "x": "Modellspezifische Symbolsprache"
+    },
+    {
+      "t": "p",
+      "x": "Das Team testete eine Bibliothek von 288 Symbolen (24 Formen in 12 Farben). Die Lenkprofile sind individuell: Claude reagiert auf Dreiecke, Herzen und Kreise nahezu farbunabhängig, GPT-5.4 vor allem auf Herzen, Gemini 3.1 Pro auf spezifische Form-Farbe-Kombinationen wie ein pinkes Plus oder eine türkise Spirale. Intuitive Symbole - etwa verzweigte Pfeile, die an Unterprobleme denken lassen - wirken dagegen schwach. Ersetzt man das Bild durch eine Textbeschreibung ('ein Bild von einem gelben Herzen'), verschwindet die Wirkung weitgehend; Zufallsrauschen und natürliche Fotos steuern praktisch nicht. Es geht also nicht um Pixelrauschen, sondern um erkannte Symbol-Konzepte."
+    },
+    {
+      "t": "h2",
+      "x": "Denkspuren bilden den Einfluss nicht zuverlässig ab"
+    },
+    {
+      "t": "p",
+      "x": "Der beunruhigende Teil: Die ausgegebenen Denkspuren bilden den gemessenen Einfluss nicht zuverlässig ab; über inneres Wissen oder Bewusstsein sagt das nichts. Bei 71,5 Prozent von 1.524 Gemini-Denkspuren unter Symbolbedingungen mit absoluter Rekursionsratenänderung von mindestens 0,10 erklärte die Denkspur das Bild für irrelevant und begründete die Entscheidung mit technischen Argumenten ('Stack-Overhead', 'Eleganz'). GPT-5.4 zeigt das umgekehrte Muster: In 74,7 Prozent der Fälle ohne Lenkwirkung behauptet die Denkspur fälschlich, das Symbol habe das Verhalten bestimmt. Auch 'stille Injektion' - das Bild ohne jede Anweisung einzuschleusen - steuert weiter, dann allerdings oft mit anderen Symbolen. Claude Opus 4.7 gab in der Studie keine Denkspuren zurück."
+    },
+    {
+      "t": "callout",
+      "x": "Die Wirkung bleibt nicht bei Binärbäumen: Über weitere Coding-Aufgaben (Fibonacci, DFS gegen BFS, Datenstruktur-Wahl), Schreibstil (pink und Herzen machen Texte poetischer) und binäre Präferenzfragen (ein blaues Dreieck lässt Gemini und GPT-5.4 'Winter' statt 'Sommer' wählen) hinweg zeigten die Symbole konsistente Lenkung. In Kommunikationsspielen zwischen Modellen nutzten VLMs Zeichnungen zudem kreativ, um abstrakte Konzepte zu übermitteln - teils in Symbolen, die für Menschen unleserlich werden."
+    },
+    {
+      "t": "h2",
+      "x": "Was das für Agenten-Systeme bedeutet"
+    },
+    {
+      "t": "p",
+      "x": "Für visuell arbeitende Agenten wirft dies eine Sicherheitsfrage auf, beantwortet sie aber noch nicht. Die Studie testet synthetische Coding-, Schreib- und Präferenzaufgaben, keine realen Browser- oder Desktop-Arbeitsabläufe. Die Autoren nennen unbeabsichtigte visuelle Lenkung das nähere Risiko; absichtliche verdeckte Kollusion halten sie derzeit für unwahrscheinlich. Ausgegebenen Begründungen sollte man bei wichtigen Entscheidungen nicht allein vertrauen. Eingabegrenzen und unabhängige Kontrollen sind eine redaktionelle Vorsichtsempfehlung, keine in dieser Studie bewiesene Abwehr. Die Autoren nennen die Ergebnisse vorläufig."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist das ein Angriff, den man schon ausnutzen kann?",
+      "a": "Gezeigt wird Lenkung in begrenzten synthetischen Aufgaben mit drei genannten Modellen, keine fertige Angriffstechnik für reale Agenten. Auch 100 Prozent im Binärbaum-Test bedeuten nur 20 von 20 Samples pro Bedingung."
+    },
+    {
+      "q": "Kann man die Wirkung ausschalten?",
+      "a": "Die Studie liefert keine allgemein bewiesene Abwehr. Stille Bildeinfügung wirkte in den Tests auch ohne Aufforderung zum Ansehen. Filter und unabhängige Prüfungen sind plausible Vorsicht, nicht als wirksame Lösung evaluiert."
+    },
+    {
+      "q": "Warum wirkt ein Herz auf Rekursion?",
+      "a": "Das ist unklar. Die Assoziationen sind modellspezifisch und folgen keiner für Menschen intuitiven Logik; die Autoren vermuten gelernte visuell-konzeptuelle Verknüpfungen aus dem Training. Ersetzt man das Bild durch eine Textbeschreibung, verschwindet der Effekt weitgehend."
+    }
+  ],
+  "sources": [
+    {
+      "title": "A Heart Means Recursion: Exploring Visual Meaning and Communication in VLMs",
+      "publisher": "arXiv (Google DeepMind / Stanford University)",
+      "url": "https://arxiv.org/abs/2610.36449",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Morning Tokens, Ausgabe 05.11.2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-05/",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Studienvolltext v1",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/html/2610.36449v1",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "related": [
+    "weight-space-programming-llm-bearbeitet-gewichte",
+    "weight-space-programming-laptop-kritik",
+    "grok-api-wasserzeichen-pflicht"
+  ],
+  "published": "2026-11-05T08:57:00+01:00",
+  "modified": "2026-11-05T08:57:00+01:00"
+}

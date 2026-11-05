@@ -1,0 +1,101 @@
+{
+  "slug": "menlo-enterprise-ki-ausgaben-177-milliarden",
+  "section": "analyse",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Menlo schätzt Enterprise-KI auf 177 Milliarden Dollar Jahres-Runrate",
+  "dek": "Menlo schätzt KI-Deployment auf 176,8 Milliarden Dollar Jahres-Runrate. US-Befragung und Investor-Modell sind kein globales Ausgabenregister.",
+  "tags": [
+    "Analyse",
+    "Enterprise",
+    "Menlo Ventures",
+    "Markt",
+    "Anthropic"
+  ],
+  "key_takeaways": [
+    "Menlo schätzt die annualisierte Deployment-Runrate im September 2026 auf 176,8 Mrd. Dollar (5,4x gegenüber neu klassifizierten Vorjahreszahlen). Das sind keine kumulierten Januar-bis-September-Ausgaben.",
+    "Laut Menlo entfallen auf OpenRouter 80 Prozent der Tokens auf agentisch klassifizierte API-Schlüssel. Die Gateway-Nutzer sind nicht repräsentativ für alle Unternehmen.",
+    "Anthropic führt die Enterprise-API-Ausgaben mit 55 Prozent an, OpenAI folgt mit 31, Google fällt von 21 auf 9 Prozent.",
+    "Im Menlo-Modell entfallen auf offene Modelle 19 Prozent der Tokens und 4 Prozent der Modellausgaben. 89 Prozent dieser Open-Source-Ausgaben gehen an chinesische Modelle; Kimi allein erhält 61 Prozent des offenen Segments."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine Waage aus Licht, deren eine Schale einen großen goldenen Würfel trägt, während auf der anderen viele kleine Glaswürfel liegen, Nachtblau mit Gold-Akzenten.",
+    "caption": "Symbolbild für Nutzung und Ausgaben: keine maßstäbliche Darstellung der Menlo-Schätzungen. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Menlo Ventures veröffentlichte am 3. November seinen Report 2026: The State of Enterprise AI. Die zentrale Schätzung: 176,8 Milliarden Dollar annualisierte Runrate für KI-Deployment im September 2026, gegenüber neu klassifizierten 33 Milliarden im Vorjahr (5,4x). Das ist kein bis September ausgegebenes Gesamtbudget. Für Modellentwicklung schätzt Menlo 102,5 Milliarden Dollar Jahres-Runrate. Die Relation beträgt rund 1,70 Dollar Deployment-Umsatz je Dollar Modellentwicklung; sie ist keine Renditekennzahl."
+    },
+    {
+      "t": "h2",
+      "x": "Agenten fressen die Nutzung"
+    },
+    {
+      "t": "p",
+      "x": "Menlo berichtet für OpenRouter einen Agentenanteil von 80 Prozent und nennt 130,9 Billionen Tokens pro Woche. Die Plattformdaten klassifizieren API-Schlüssel als agentisch, menschlich oder gemischt. Die ebenfalls im Original genannte Relation von rund siebenmal menschlicher Nutzung lässt sich aus 80 Prozent allein nicht ableiten; wir übernehmen sie daher nicht. OpenRouter ist ein einzelner Gateway mit stärkerem Entwickler- und Startup-Fokus als die Unternehmensstichprobe. Die Angabe ist kein Messwert für die gesamte KI-Nutzung. Laut Report wuchs agentisch klassifizierter Verkehr seit Februar 37-fach. Befragte Unternehmen meldeten im Mittel 4,7-mal die Vorjahresausgaben gegenüber geplanten 1,9-mal; der Median lag bei 2,2 gegenüber geplanten 1,8."
+    },
+    {
+      "t": "h2",
+      "x": "Anthropic baut die Führung aus"
+    },
+    {
+      "t": "p",
+      "x": "Bei den Enterprise-LLM-API-Ausgaben legt Anthropic von 40 auf 55 Prozent zu, OpenAI von 27 auf 31 - zusammen 86 Prozent des Marktes. Google fällt von 21 auf 9 Prozent; Menlo begründet das damit, dass Gemini 3 Pro seit November 2025 nicht mehr mit den Flaggschiffen der Konkurrenz mitgehalten habe und die Google-Nachfrage sich auf günstigere Flash-Modelle verlagere. Insgesamt entfallen 69 Prozent aller Deployment-Dollars (122,7 Mrd.) auf die drei Frontier-Labs - im Vorjahr waren es noch 50 Prozent."
+    },
+    {
+      "t": "callout",
+      "x": "Methodik und Interessenlage: Menlo ist unter anderem an Anthropic und OpenRouter beteiligt. Morning Consult befragte vom 8. bis 26. September 2026 knapp 400 US-Entscheider mit Verantwortung für mehr als 4 Milliarden Dollar KI-Ausgaben. Marktgrößen sind Bottom-up-Schätzungen aus Befragung, öffentlichen Finanzangaben und Drittberichten, als annualisierte Runrate. API-Ausgabenanteile beruhen auf gemeldeten Produktionsworkloads, gewichtet nach KI-Ausgaben; Tokenökonomie wird zusätzlich modelliert. Das ist keine unabhängige weltweite Vollerhebung. Vorjahreszahlen wurden an eine geänderte Taxonomie angepasst."
+    },
+    {
+      "t": "h2",
+      "x": "Open Source: viel Nutzung, wenig Geld"
+    },
+    {
+      "t": "p",
+      "x": "Die vielleicht spannendste Spannung steckt im Open-Source-Segment: 19 Prozent der Token-Nutzung, aber nur rund 4 Prozent der Ausgaben. Laut Menlos Schätzung: 89 Prozent der Open-Source-Ausgaben entfallen auf chinesische Modelle - Kimi führt mit 61 Prozent vor DeepSeek (15) und GLM (11), Qwen liegt bei 3. Metas Llama erreicht 7 Prozent der Open-Source-Ausgaben, nicht 7 Prozent der gesamten Token-Nutzung. Im selben Marktmodell dominieren bei den Anwendungen Coding (34,0 Mrd.) und Chatbots (25,0 Mrd.) mit 76 Prozent des 77,3-Milliarden-App-Marktes; Claude Code und Codex allein stehen für 24 Milliarden - 70 Prozent der Coding-Ausgaben."
+    },
+    {
+      "t": "p",
+      "x": "Menlo berichtet, 55 Prozent zusätzlicher KI-Ausgaben stammten aus neuen Budgets. Die Studie fand nur begrenzte Hinweise auf die Ablösung von Kernsystemen wie Salesforce oder Workday; das ist kein Beweis, dass solche Ablösung nicht stattfindet. Der Report ist als Investorensicht auf eine US-zentrierte Stichprobe und Modellrechnung lesenswert. Europäische Budgets oder konkrete Einsparungen lassen sich daraus nicht direkt ableiten."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind die 176,8 Milliarden verlässlich?",
+      "a": "Die Zahl ist eine annualisierte Runrate aus Menlos Bottom-up-Marktmodell im September 2026, keine geprüfte Summe aller bis dahin bezahlten Rechnungen. Grundlage sind unter anderem knapp 400 US-Entscheider und Drittquellen. Eine globale Repräsentativität folgt daraus nicht."
+    },
+    {
+      "q": "Warum fällt Google so stark?",
+      "a": "Menlo begründet den Rückgang von 21 auf 9 Prozent damit, dass Google seit Gemini 3 Pro (November 2025) bei Flaggschiff-Modellen nicht mitgezogen habe und die Nachfrage auf günstigere Flash-Modelle ausweiche. Das ist die Lesart des Reports."
+    },
+    {
+      "q": "Was bedeutet das für europäische Unternehmen?",
+      "a": "Die US-zentrierte Studie liefert Hypothesen für Budget- und Anbieterfragen, keine unmittelbar übertragbaren europäischen Marktanteile oder Budgetvorgaben. Eigene Nutzung, Datenschutzpflichten und Preise müssen separat geprüft werden."
+    }
+  ],
+  "sources": [
+    {
+      "title": "2026: The State of Enterprise AI",
+      "publisher": "Menlo Ventures",
+      "url": "https://menlovc.com/perspective/2026-the-state-of-enterprise-ai/",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Morning Tokens, Ausgabe 05.11.2026",
+      "publisher": "Morning Tokens",
+      "url": "https://morningtokens.com/issues/2026-11-05/",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "related": [
+    "anthropic-ipo-s1-nachtrag-compute-zusagen",
+    "anthropic-s1-eingereicht-nasdaq-ant",
+    "ripple-65b-preview-offene-gewichte-coding"
+  ],
+  "published": "2026-11-05T08:57:00+01:00",
+  "modified": "2026-11-05T08:57:00+01:00"
+}

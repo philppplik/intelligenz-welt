@@ -1,0 +1,99 @@
+{
+  "slug": "openai-pierre-pando-git-codex",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "OpenAI kündigt Pierre-Übernahme an und erklärt sein Git-Backend Pando",
+  "dek": "OpenAI kündigt die Pierre-Übernahme an und berichtet über sein internes Git-Backend Pando. Der Abschluss und ein externes Pando-Produkt stehen aus.",
+  "tags": [
+    "Tools",
+    "OpenAI",
+    "Git",
+    "Codex",
+    "Pando"
+  ],
+  "key_takeaways": [
+    "OpenAI kündigt die Übernahme von Pierre Computer Company an - die Firma hinter Code Storage und den Open-Source-Bibliotheken Trees und Diffs, die heute schon in der Codex-App stecken.",
+    "Laut OpenAI sank die Median-Push-Latenz im eigenen Monorepo um knapp 80 Prozent. Pando liefere fast ein Petabyte Git-Daten täglich; das ist kein allgemeiner Benchmark.",
+    "OpenAI beschreibt zehn Wochen vom Start bis Produktion: Kernentwurf durch einen Entwickler, Implementierung mit Codex-Agenten, Bereitstellung durch mehrere Ingenieure. Git-Änderungen liegen teils upstream, teils im öffentlichen OpenAI-Fork.",
+    "Pierres Open-Source-Projekte sollen offen bleiben; die Übernahme steht noch unter dem Vorbehalt der üblichen Genehmigungen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Fluss aus leuchtenden Datenpaketen, der sich in viele parallele Bäche verzweigt und in ein offenes Buch aus Licht mündet, Nachtblau mit Gold-Akzenten.",
+    "caption": "Viele parallele Ströme statt eines Flaschenhalses: OpenAIs Git-Neubau. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI kauft sich tiefer in die Entwickler-Werkzeugkiste ein: Das Unternehmen hat die Übernahme von Pierre Computer Company angekündigt, der Firma hinter dem Code-Hosting-Produkt Code Storage und den Open-Source-Bibliotheken Trees und Diffs. Wer in der Codex-App Dateien durchsucht oder Änderungen reviewt, nutzt Pierres Software bereits heute. Die gelesene Ankündigung nennt keine finanziellen Konditionen; der Abschluss hängt noch an den üblichen Genehmigungen. Pierres Open-Source-Projekte sollen offen bleiben, und Code Storage läuft für Bestandskunden weiter, bis die Funktionen in Codex aufgehen."
+    },
+    {
+      "t": "h2",
+      "x": "Pando: Das Backend dahinter"
+    },
+    {
+      "t": "p",
+      "x": "Die Übernahme kommt zwei Tage nach einem bemerkenswerten Engineering-Bericht: Mit Pando hat OpenAI sein Monorepo auf ein selbst gebautes Git-Backend umgestellt. Die Ausgangslage: Durch Codex explodierte die Zahl paralleler Branches und Pushes, die Zuverlässigkeit des alten Systems rutschte zeitweise unter 90 Prozent. Pando koordiniert Schreibzugriffe pro Branch unabhängig (kausale Konsistenz im Repository, serialisierte Änderungen je Referenz) und liefert wiederverwendbare Packfiles aus regionalen Caches aus - Trefferquote über 99 Prozent. Ergebnis laut OpenAI: fast fünfmal geringere Median-Push-Latenz, knapp ein Petabyte Git-Daten pro Tag, zuletzt 57 Terabyte Packs in einer einzigen Stunde."
+    },
+    {
+      "t": "p",
+      "x": "Bemerkenswert ist der Bau selbst: Ein einzelner Entwickler entwarf den Kern, Teams von Codex-Agenten implementierten ihn weitgehend in Rust, vom Start bis zum Produktivbetrieb vergingen zehn Wochen. Laut Bericht schrieben GPT-6-Astra-Agenten Lean- und TLA+-Formalisierungen einer 'Theorie von Pando'. Mehrere Sitzungen suchten über Hunderte Stunden Randfälle; zusätzlich liefen Red-Team-Prüfungen mit Daybreak-fähigen Modellen. Einige Protokollverbesserungen sind laut Bericht bereits in upstream Git, weitere im öffentlichen OpenAI-Fork. Der Text ordnet nicht jede Funktion eindeutig dem gleichen Veröffentlichungsstand zu; OpenAIs eigener Git-Client liegt Entwicklungsmaschinen und der ChatGPT-Desktop-App bereits bei. Ob und wann Pando für Externe öffnet, lässt OpenAI offen - man 'prüfe eine breitere Veröffentlichung'."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das über OpenAI hinaus zählt"
+    },
+    {
+      "t": "callout",
+      "x": "Einordnung: Viele gleichzeitige Pushes können zentrale Koordinationspunkte belasten. OpenAI ersetzt mit Pando nicht Git, sondern verändert Backend und Client unter Beibehaltung des Protokolls. Die eigene Monorepo-Erfahrung ist kein Beleg, dass jeder Agentenbetrieb diese Architektur braucht."
+    },
+    {
+      "t": "p",
+      "x": "Axios deutet die angekündigte Pierre-Übernahme als Konkurrenz zu GitHub. OpenAI selbst formuliert die Integration als Ziel für Codex. Bis zum Abschluss bleiben OpenAI und Pierre laut Ankündigung unabhängige Unternehmen. Eine bereits fertige, externe Plattform vom Branch bis zum Deployment ist damit nicht angekündigt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bleibt Code Storage nutzbar?",
+      "a": "Ja, zunächst. OpenAI sagt, Bestandskunden können Code Storage nach Abschluss der Übernahme weiter nutzen, während die Funktionen schrittweise in Codex integriert werden. Pierres Open-Source-Bibliotheken bleiben offen."
+    },
+    {
+      "q": "Kann ich Pando für mein eigenes Repo bekommen?",
+      "a": "OpenAI beschreibt Pando als internes System und prüft Wege, die Technik Nutzern bereitzustellen. Einige Git-Verbesserungen sind upstream, andere im öffentlichen Fork. Das bedeutet nicht, dass das Pando-Backend bereits als externes Produkt verfügbar ist."
+    },
+    {
+      "q": "Was heißt 'kausale Konsistenz pro Branch'?",
+      "a": "Änderungen jeder Referenz werden serialisiert; Leser erhalten die benötigte abhängige Historie. Mehrere Branch-Lesevorgänge garantieren dagegen keinen gemeinsamen repositoryweiten Zeitpunkt. Unabhängige Referenzen müssen nicht aufeinander warten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenAI to acquire Pierre Computer Company, Inc.",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/openai-to-acquire-pierre/",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Scaling Git at OpenAI",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/scaling-git-at-openai/",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Exclusive: OpenAI targets Microsoft's GitHub with deal for startup",
+      "publisher": "Axios",
+      "url": "https://www.axios.com/2026/11/04/openai-pierre-computer-github",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "related": [
+    "openai-cyber-agenten-948-linux-lpe-exploits",
+    "anthropic-message-threads-api-beta",
+    "deepseek-superagent-open-source-prototyp"
+  ],
+  "published": "2026-11-05T08:57:00+01:00",
+  "modified": "2026-11-05T08:57:00+01:00"
+}
