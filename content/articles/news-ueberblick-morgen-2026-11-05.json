@@ -1,0 +1,125 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-05",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-05T06:43:00+01:00",
+  "modified": "2026-11-05T06:43:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Kimi K3.1 Pro (Modellkarte)",
+      "publisher": "Moonshot AI / Hugging Face",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence",
+      "publisher": "Moonshot AI",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Kimi K3.1-Pro License (Lizenztext)",
+      "publisher": "Moonshot AI / Hugging Face",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/raw/main/LICENSE",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Introducing SWE-2 Flash",
+      "publisher": "Cognition",
+      "url": "https://cognition.com/blog/swe-2-flash",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Investigating vault particles with Claude",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "title": "KI am Morgen: Anthropic kartiert ein rätselhaftes Zellteilchen",
+  "dek": "Anthropic lässt Claude ein unerforschtes Protein-Gehäuse vermessen. Moonshot öffnet Kimi K3.1 Pro, und Cognition zeigt ein sparsames Coding-Modell.",
+  "tags": [
+    "KI-Überblick",
+    "Anthropic",
+    "Forschung",
+    "Open Weights",
+    "Coding"
+  ],
+  "key_takeaways": [
+    "Anthropic berichtet, mit Claude die erste 3D-Struktur eines Vault-Partikels aus der prokaryotischen Welt kartiert zu haben: 96 Proteinkopien, 9,5 Megadalton. Die Funktion dieser Zellbestandteile ist weiterhin unbekannt; der Fachartikel ist eingereicht, aber noch nicht öffentlich.",
+    "Moonshot hat die Gewichte von Kimi K3.1 Pro veröffentlicht: 2,8 Billionen Parameter, 104 Milliarden aktiv, eine Million Token Kontext. Die Lizenz ist weitgehend frei, setzt aber für große Modell-Dienste und Massenprodukte Schwellen.",
+    "Cognitions SWE-2 Flash soll Coding-Arbeit günstiger machen: ein Fünftel des Preises und dreifaches Tempo gegenüber SWE-2. Die Gewichte bleiben vorerst geschlossen; ein Freigabeprogramm für Partner ist angekündigt."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zum Anthropic-Bericht: Die Aufreinigung der Vault-Partikel dauerte etwa 90 Minuten statt rund drei Tage, ein erstes Strukturmodell war nach 34 Stunden statt nach Wochen fertig - Zeitangaben aus Anthropics eigener Darstellung.",
+    "caption": "Was Anthropic über die Tempo-Gewinne durch Claude im eigenen Labor berichtet. Eigendarstellung des Unternehmens, der Fachartikel ist noch nicht öffentlich - vereinfachte Darstellung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quelle: Anthropic"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Morgenüberblick vom 5. November 2026. Quellenstand: 06:38 Uhr MEZ.** Ein Blick ins Labor von Anthropic, frisch geöffnete Modellgewichte aus China und ein Spar-Coding-Modell aus den USA. Alle Werte stammen von den jeweiligen Unternehmen."
+    },
+    {
+      "t": "h2",
+      "x": "Anthropic: Claude hilft, ein 40 Jahre altes Rätsel zu vermessen"
+    },
+    {
+      "t": "p",
+      "x": "Vault-Partikel sind riesige, hohle Protein-Gehäuse, die in fast allen Körperzellen vorkommen - seit ihrer Entdeckung 1986 ist unklar, wozu sie dienen. Anthropic berichtet nun in seinem Forschungsblog, mit Claude die erste 3D-Struktur eines solchen Partikels aus der prokaryotischen Welt kartiert zu haben, in diesem Fall von einem Protein eines Bakterien-Virus namens L05. Es besteht aus 96 Kopien eines Proteins und ist mit rund 9,5 Megadalton eines der größten bekannten Protein-Gehäuse in dieser Zellwelt, sagt das Team."
+    },
+    {
+      "t": "p",
+      "x": "Nach Anthropics Darstellung wirkte Claude an jedem Schritt mit: bei der Suche in rund 15 Milliarden vorhergesagten Proteinsequenzen, beim Entwurf der DNA-Bausteine, bei der Aufreinigung und bei der Auswertung der Elektronenmikroskopie. Die Aufreinigung, die mit der üblichen Methode etwa drei Tage dauert, gelang dem Team in rund 90 Minuten; ein erstes Strukturmodell war nach 34 Stunden Auswertung fertig, wofür es Wochen veranschlagt. Das Team verschweigt die Pannen nicht: Ein von Claude vorgeschlagenes Nährmedium kostete zwei Wochen Verzögerung, und eine fehlerhafte Karte musste verworfen werden. Wichtig: Der zugehörige Fachartikel ist bei bioRxiv eingereicht, aber noch nicht öffentlich; die Funktion der Vaults bleibt offen. Alle Angaben sind eine Eigendarstellung des Unternehmens."
+    },
+    {
+      "t": "h2",
+      "x": "Moonshot: Kimi K3.1 Pro ist jetzt offen"
+    },
+    {
+      "t": "p",
+      "x": "Als Vollzug der am 3. November berichteten Ankündigung hat Moonshot AI nun die Gewichte von Kimi K3.1 Pro veröffentlicht. Das Modell hat 2,8 Billionen Parameter, aktiviert aber pro Rechenschritt nur 104 Milliarden davon - es verteilt die Arbeit auf 896 interne Experten-Module. Dazu kommen ein Kontextfenster von einer Million Token und ein eigener Seh-Baustein für Bilder. Moonshot selbst nennt es sein stärkstes offenes Modell dieser Größenklasse."
+    },
+    {
+      "t": "p",
+      "x": "Die Messwerte der Modellkarte sind ein gemischtes Bild: Im Programmier-Test Terminal-Bench 4.0 erreicht es 65,7 Punkte, knapp hinter Anthropics Claude Opus 5.5 (66,4), aber vor OpenAIs GPT-6 Astra (58,2) - Werte aus Moonshots eigener Tabelle unter dessen Testbedingungen. Im Wissens-Test HLE-Diamond liegt es mit 39,4 dagegen deutlich hinter den Spitzenmodellen. Die Lizenz erlaubt auch kommerzielle Nutzung, enthält aber genaue Bedingungen: Betreibt der Lizenznehmer oder ein verbundenes Unternehmen Model-as-a-Service und übersteigt ihr gemeinsamer Gesamtumsatz in beliebigen aufeinanderfolgenden zwölf Monaten 20 Millionen US-Dollar, ist vor kommerzieller Nutzung eine Zusatzvereinbarung nötig. Kommerzielle Produkte oder Dienste mit mehr als 100 Millionen monatlich aktiven Nutzern ODER mehr als 20 Millionen US-Dollar Monatsumsatz müssen \"Kimi K3.1-Pro\" prominent in ihrer Oberfläche zeigen. Beide Anforderungen gelten nicht für rein interne Nutzung oder Zugang über offizielle Moonshot-Produkte beziehungsweise zertifizierte Inferenzpartner. Eingebettete Endnutzerfunktionen und bloße Weiterleitung fremdgehosteter Modellanfragen zählen laut Lizenz nicht als MaaS."
+    },
+    {
+      "t": "h2",
+      "x": "Cognition: Coding-Helfer soll ein Fünftel kosten"
+    },
+    {
+      "t": "p",
+      "x": "Cognition, die Firma hinter dem Coding-Agenten Devin, hat SWE-2 Flash vorgestellt. Das Modell mit 276 Milliarden Parametern (12 Milliarden aktiv) baut auf einem Basismodell von Thinking Machines auf und wurde mit einer zusätzlichen Trainingsphase veredelt: Laut Cognition stieg der Wert im Test Terminal-Bench 4.0 nach Mid-Training und anschließendem Reinforcement Learning insgesamt von 0,9 auf 20,0 Punkte. Es ist ab sofort in Devin Desktop und der Kommandozeile verfügbar und soll ein Fünftel von SWE-2 kosten bei dreifachem Tempo."
+    },
+    {
+      "t": "p",
+      "x": "Anders als der Name \"Flash\" vermuten lässt, sind die Gewichte nicht offen: Cognition verweist auf Cyber-Risiken und kündigt stattdessen ein Programm an, das ausgewählten Industriepartnern und Forschungslaboren Zugang geben soll - Details erst in einigen Wochen. Cognitions Behauptung, das Modell übertreffe alle amerikanischen Open-Weight-Modelle, deckt sich mit der eigenen Tabelle, allerdings nur knapp; internationale offene Modelle wie GLM 5.3 Flash und DeepSeek V4.1 Flash liegen in mehreren der gezeigten Tests deutlich vorn."
+    },
+    {
+      "t": "p",
+      "x": "Anthropic hat die Partikel bislang nur in E. coli hergestellt. Ob sie sich auch in den Bakterien und Phagen bilden, aus denen die Sequenzen stammen, wurde laut Bericht noch nicht getestet. Die 90 Minuten und 34 Stunden betreffen einzelne Arbeitsschritte, nicht die gesamte Forschungsdauer; das Gesamtprojekt dauerte nach Teamangaben knapp vier Monate."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hat Claude die Vaults selbst erforscht?",
+      "a": "Nein. Nach Anthropics eigener Darstellung hat das Team die Richtung vorgegeben und Entscheidungen getroffen; Claude suchte Sequenzen, entwarf Konstrukte, optimierte Methoden und wertete Mikroskopie-Daten aus. Das Team nennt auch Gegenbeispiele, in denen Claude Fehler machte, die Zeit kosteten."
+    },
+    {
+      "q": "Ist Kimi K3.1 Pro jetzt das beste offene Modell?",
+      "a": "Das hängt vom Test ab. In Moonshots eigener Tabelle liegt es beim Programmieren vorne, bei Wissensfragen deutlich hinter proprietären Spitzenmodellen. Wir haben keine eigene Nachmessung vorgenommen; hier zitierte Werte stammen aus der Anbietertabelle."
+    },
+    {
+      "q": "Kann ich SWE-2 Flash selbst herunterladen?",
+      "a": "Nein. Es läuft nur über Devin Desktop und die Kommandozeile. Cognition hat ein Zugangsprogramm für Industriepartner und Forschungslabore angekündigt, Details sollen in einigen Wochen folgen."
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-offene-gewichte",
+    "anthropic-drug-discovery-mithril"
+  ]
+}
