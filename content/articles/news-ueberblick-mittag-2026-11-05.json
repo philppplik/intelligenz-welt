@@ -1,0 +1,135 @@
+{
+  "slug": "news-ueberblick-mittag-2026-11-05",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-05T09:58:00+01:00",
+  "modified": "2026-11-05T09:58:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "baidu/ERNIE-5.5-Flash-Base (Modellkarte)",
+      "publisher": "Baidu / Hugging Face",
+      "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "ERNIE 5.5 Flash Base Model License Agreement v1.0",
+      "publisher": "Baidu / Hugging Face",
+      "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/resolve/main/LICENSE",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Introducing Ripple-65B Preview, a Frontier Open-Weight Model",
+      "publisher": "Ricursive Intelligence",
+      "url": "https://www.ricursive.com/ripple",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "ricursiveAI/Ripple-65B-Preview (Modellkarte)",
+      "publisher": "Ricursive Intelligence / Hugging Face",
+      "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Introducing Images 2.6",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-images-2-6/",
+      "accessed": "2026-11-05"
+    },
+    {
+      "title": "Ripple BF16-Instruct LICENSE",
+      "publisher": "Ricursive / Hugging Face",
+      "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview/raw/main/LICENSE",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "title": "KI am Mittag: OpenAI lässt ChatGPT-Bilder animieren",
+  "dek": "OpenAI bringt GIF-Erzeugung und schnellere Bildmodelle. Baidu öffnet ein Riesenmodell - aber nicht für die EU. Und ein 65B-Modell setzt auf Dichte.",
+  "tags": [
+    "KI-Überblick",
+    "OpenAI",
+    "Bildgenerierung",
+    "Baidu",
+    "Open Weights"
+  ],
+  "key_takeaways": [
+    "OpenAI führt Images 2.6 ein: Bilder lassen sich jetzt als animierte GIFs ausgeben, die Erzeugung soll laut OpenAI \"50 Prozent schneller\" sein (keine Aussage über halbierte Wartezeit). Verfügbar in ChatGPT, Codex und der API - Angaben des Anbieters.",
+    "Baidu hat das Basismodell ERNIE 5.5 Flash Base mit 280 Milliarden Parametern offengelegt. Der Haken steht in der Lizenz: Sie gilt weltweit, aber ausdrücklich nicht in der EU, in Großbritannien und Südkorea - dort räumt sie keine Nutzungsrechte ein.",
+    "Ripple-65B Preview von Ricursive ist ein dichtes 65-Milliarden-Modell; die geprüfte BF16-Instruct-Lizenzdatei enthält Apache 2.0. Der Anbieter meldet einen Spitzenwert im Coding-Test Terminal-Bench 2.1 unter amerikanischen offenen Modellen - eigene Messung, keine unabhängige Prüfung."
+  ],
+  "hero": {
+    "alt": "Eigene Grafik zu Images 2.6 mit OpenAIs Angaben zu Nutzung, GIFs und \"50 Prozent schneller\", ohne Umrechnung in halbierte Wartezeit.",
+    "caption": "Was OpenAI über Nutzung und Tempo von Images 2.6 angibt. Anbieterangaben ohne eigene Nachmessung - vereinfachte Darstellung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quelle: OpenAI"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "**Mittagsüberblick vom 5. November 2026. Quellenstand: 09:52 Uhr MEZ.** Bewegte Bilder bei OpenAI, ein offenes Riesenmodell aus China mit geografischem Haken und ein amerikanisches Gegenmodell. Alle Werte stammen von den jeweiligen Anbietern."
+    },
+    {
+      "t": "h2",
+      "x": "OpenAI: Aus ChatGPT-Bildern werden GIFs"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI hat Images 2.6 vorgestellt und damit eine Neuerung, die man sofort versteht: Statt nur stiller Bilder erzeugt das Modell auf Wunsch animierte GIFs - etwa ein Maskottchen, das sich bewegt, oder ein Produktfoto als Endlosschleife. Außerdem soll die Erzeugung laut OpenAI \"50 Prozent schneller\" laufen als zuvor. Die Ankündigung legt den Messnenner nicht offen; das ist kein Beleg für halbierte Wartezeit. In der Programmierschnittstelle stehen zwei Varianten: Flare für Tempo (laut OpenAI ab sechs Sekunden bei niedriger Qualitätsstufe) und Sunburst für höhere Detailtreue über mehrere Bearbeitungsrunden."
+    },
+    {
+      "t": "p",
+      "x": "Zur Größenordnung nennt OpenAI eine eigene Zahl: Über ChatGPT, Codex und die API entstehen derzeit vier Milliarden Bilder pro Woche, mehr als eine halbe Milliarde pro Tag. Neu für Entwickler sind außerdem Markierungen direkt im Bild für gezielte Änderungen, ein Export als SVG-Grafik und ein Regler, der bestimmt, wie viel \"Planung\" das Modell in eine Szene steckt. Images 2.6 ist seit dem 4. November weltweit in allen ChatGPT- und Codex-Tarifen verfügbar. Alle Angaben stammen von OpenAI; wir haben keine unabhängige Qualitätsprüfung durchgeführt."
+    },
+    {
+      "t": "h2",
+      "x": "Baidu: Ein offenes Riesenmodell - mit Landkarten-Haken"
+    },
+    {
+      "t": "p",
+      "x": "Baidu hat die Gewichte von ERNIE 5.5 Flash Base veröffentlicht: 280 Milliarden Parameter, davon 14 Milliarden pro Rechenschritt aktiv, trainiert auf 33,5 Billionen Token. Es ist bewusst ein rohes Basismodell ohne Feinschliff - als Startpunkt für andere, die es selbst weitertrainieren wollen. In Baidus eigener Vergleichstabelle liegt es in den meisten Tests vor den offenen Basismodellen von DeepSeek und anderen, in einzelnen aber auch dahinter; wir haben keine unabhängigen Messungen geprüft."
+    },
+    {
+      "t": "p",
+      "x": "Der eigentliche Pfeil steckt in der Lizenz, die wir vollständig gelesen haben: Sie gewährt Nutzungsrechte nur in einem definierten Gebiet - und das umfasst ausdrücklich die ganze Welt außer der Europäischen Union, Großbritannien und Südkorea. Für Nutzer und Firmen in der EU heißt das: Von dieser Lizenz sind sie nicht abgedeckt. Wo die Lizenz gilt, ist die Nutzung nicht-kommerziell frei; kommerziell ist sie bis einschließlich 50 Millionen US-Dollar rollierendem Zwölfmonatsumsatz betroffener Produkte der Verbundgruppe kostenlos, allerdings nur mit einmaliger Meldung an Baidu und sichtbarem Hinweis \"Powered by ERNIE\". Darüber wird eine gesonderte schriftliche Genehmigung fällig."
+    },
+    {
+      "t": "p",
+      "x": "Die 50-Millionen-Grenze gilt einschließlich exakt 50 Millionen US-Dollar. Gezählt werden fortlaufend die vorausgehenden zwölf Monate, nicht ein Kalenderjahr: der gesamte Umsatz aller Produkte und Dienste, die das Modell oder Derivate nutzen, einschließlich unter gemeinsamer Kontrolle stehender Einheiten. Auch bei Kombination mit anderen Modellen zählt der ganze Produktumsatz. Vor der ersten kommerziellen Nutzung dieser Modellversion muss eine einmalige Meldung mit Betreiber, Modell/Version, Produkten, Zweck und gültigem Kontakt an Baidu_ERNIE@baidu.com gesendet werden; innerhalb der Schwelle braucht es danach keine Antwort oder Zustimmung. Das Branding bleibt Pflicht. Bei drohender Überschreitung ist vorher schriftliche Erlaubnis nötig; Antrag oder laufende Gespräche reichen nicht. Der Text beschränkt auch Derivate und Outputs auf das Gebiet und enthält weitere Pflichten, etwa AUP und Weitergabehinweise. Ab 50 Millionen kann Baidu eine Compliance-Erklärung und angemessene Nachweise anfordern, regulär höchstens jährlich, bei begründetem Verdacht öfter; unterhalb ist eine kurze Bestätigung der Einstufung möglich. Datierungshinweis: Der abgerufene Text nennt für Exhibit A bereits den 6. November 2026, also den Folgetag. Wir geben die aktuell abrufbaren Bedingungen wieder; diese Datumsabweichung bleibt ungeklärt."
+    },
+    {
+      "t": "h2",
+      "x": "Ricursive: Ein 65B-Modell widersetzt sich dem Experten-Trend"
+    },
+    {
+      "t": "p",
+      "x": "Anders als die hier verglichenen MoE-Modelle ist Ripple dicht aufgebaut: Ripple-65B Preview ist ein dichtes Modell mit 65 Milliarden Parametern, die bei jedem Schritt komplett arbeiten. Die geprüfte Lizenzdatei im BF16-Instruct-Repository enthält Apache 2.0. Den Betrieb auf einer einzelnen DGX Spark beschreibt der Anbieter für den quantisierten NVFP4-Checkpoint; wir haben das nicht nachgemessen. Ricursive baut eigentlich Entwurfswerkzeuge für Chips; das Modell treibt dort die hauseigene Plattform an."
+    },
+    {
+      "t": "p",
+      "x": "Ricursive meldet für das Modell 80,52 Punkte im Programmier-Test Terminal-Bench 2.1 und nennt das den Bestwert unter amerikanischen Open-Weight-Modellen - eine Firmenmessung mit eigener Testumgebung, keine unabhängige Prüfung. In anderen Tests der eigenen Tabelle liegt das Modell hinter größeren Konkurrenten. Auffällig sind die Kostenangaben: Die gesamte Entwicklung habe 32 Millionen US-Dollar gekostet, sagt das Unternehmen, etwa ein Zehntel dessen, was der bisherige Spitzenreiter nach seiner Schätzung aufgewendet hat. Beides sind Behauptungen des Anbieters ohne Beleg."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind die GIFs aus ChatGPT urheberrechtlich unbedenklich?",
+      "a": "Das hängt davon ab, was Sie erzeugen. OpenAI verweist auf eine Systemkarte mit Schutzmaßnahmen; wer Markenfiguren oder fremde Motive animiert, muss die Rechte daran haben. Die technische Möglichkeit ersetzt keine rechtliche Prüfung."
+    },
+    {
+      "q": "Kann ich ERNIE 5.5 Flash Base in Deutschland nutzen?",
+      "a": "Nach dem Lizenztext v1.0: nein, nicht über diese Lizenz. Sie gewährt Rechte nur außerhalb der EU, Großbritanniens und Südkoreas. Ob Baidu für die EU später eigene Bedingungen anbietet, ist offen."
+    },
+    {
+      "q": "Ist Ripple-65B wirklich besser als große Modelle?",
+      "a": "Ricursive meldet einen US-Open-Weight-Bestwert auf Terminal-Bench 2.1. Die Tabelle zeigt je nach Aufgabe andere Rangfolgen. Harness, Präzision und aktive statt gesamte Parameter sind wichtig; ein pauschales Besser-Urteil ist daraus nicht ableitbar."
+    },
+    {
+      "q": "Bedeutet 50 Prozent schneller halbierte Wartezeit?",
+      "a": "Nein. OpenAI schreibt \"50% faster\", ohne hier einen eindeutigen Messnenner offenzulegen. Daraus machen wir weder 50 Prozent weniger Latenz noch eine halbierte Wartezeit."
+    }
+  ],
+  "related": [
+    "ripple-65b-preview-offene-gewichte-coding",
+    "kimi-k3-1-pro-offene-gewichte"
+  ]
+}
