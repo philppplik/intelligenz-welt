@@ -44,7 +44,7 @@
     },
     {
       "t": "p",
-      "x": "Entwickler wählen in der API zwischen zwei Modellen. GPT-Image-2.6 Flare ist auf Tempo ausgelegt: Bei niedriger Qualitätsstufe soll ein Bild in im besten Fall sechs Sekunden fertig sein; außerdem verspricht OpenAI bessere Layouts für Poster und Produktbilder. GPT-Image-2.6 Sunburst setzt auf höhere Detailqualität und darauf, Figuren, Produkte und Markendetails über mehrere Bearbeitungsrunden konsistent zu halten."
+      "x": "Entwickler wählen in der API zwischen zwei Modellen. GPT-Image-2.6 Flare ist auf Tempo ausgelegt: Bei niedriger Qualitätsstufe soll ein Bild im besten Fall sechs Sekunden fertig sein; außerdem verspricht OpenAI bessere Layouts für Poster und Produktbilder. GPT-Image-2.6 Sunburst setzt auf höhere Detailqualität und darauf, Figuren, Produkte und Markendetails über mehrere Bearbeitungsrunden konsistent zu halten."
     },
     {
       "t": "p",
