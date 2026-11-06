@@ -1,0 +1,113 @@
+{
+  "slug": "metr-anthropic-beschleunigung-ki-forschung",
+  "section": "analyse",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "METR schätzt 1,9-mal schnelleren Benchmark-Fortschritt bei Anthropic",
+  "dek": "Die unabhängige Auswertungsorganisation METR schätzt, dass Anthropic seine Modellfähigkeiten seit Oktober 2025 etwa 1,9-mal schneller verbessert als zuvor. Anthropic strich die Mehrheit der Belege aus dem Bericht.",
+  "tags": [
+    "Anthropic",
+    "METR",
+    "KI-Sicherheit",
+    "Forschung",
+    "Bewertung"
+  ],
+  "key_takeaways": [
+    "METR hat Anthropic vom 12. August bis 29. Oktober 2026 mit weitreichendem Zugang zu internen Daten geprüft - laut METR ein ungewöhnlich weitreichender Einblick in die KI-Forschung eines Frontier-Labors.",
+    "Zentrales Ergebnis: Die Benchmark-Werte (AECI) von Anthropics Modellen wachsen seit Oktober 2025 geschätzt 1,9-mal schneller als in der Periode ab März 2024, mit einem 95-Prozent-Konfidenzintervall von 1,5 bis 2,8.",
+    "Die Beschleunigung lässt sich laut METR nicht durch schneller wachsende Trainings-Compute erklären. Die subjektive Schätzung der Prüfer: Rund 80 Prozent der aktuellen Beschleunigung gehen auf den KI-Einsatz in der eigenen Forschung zurück - mit erheblicher Unsicherheit.",
+    "Anthropic nutzte sein Redaktionsrecht und strich die Mehrheit der für METR informativsten Belege. METR hält fest, dass die Öffentlichkeit sich dadurch stärker auf dessen Urteil verlassen muss, als wünschenswert wäre."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine ansteigende Kurve aus Licht, die an einer Markierung plötzlich steiler wird, teilweise von dunklen Balken verdeckt, Nachtblau und Signalorange.",
+    "caption": "METR sieht eine Beschleunigung von etwa 1,9x - viele Belege bleiben geschwärzt. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Die Auswertungsorganisation METR hat am 5. November die Ergebnisse einer ungewöhnlichen Prüfung veröffentlicht: Zwischen dem 12. August und dem 29. Oktober 2026 erhielt sie nach eigenen Angaben beispiellosen Zugang zu Anthropics interner KI-Forschung - darunter Metriken zu Pretraining und Reinforcement Learning, Trainings-Compute je Bereich, Benchmark-Werte interner Modelle, interne Beschleunigungsanalysen und Mitarbeitergespräche. Die Frage: Beschleunigt KI bereits die Entwicklung besserer KI?"
+    },
+    {
+      "t": "h2",
+      "x": "Das zentrale Ergebnis"
+    },
+    {
+      "t": "p",
+      "x": "Gemessen an AECI, Anthropics Variante des Epoch Capabilities Index, wachsen die Benchmark-Werte der Modelle seit Oktober 2025 geschätzt 1,9-mal so schnell wie im Zeitraum ab März 2024. Das 95-Prozent-Konfidenzintervall liegt bei 1,5 bis 2,8; Robustheitsprüfungen mit abweichenden Annahmen ergaben Werte zwischen 1,1 und 2,9. Umgerechnet bedeutet das laut METR: Anthropic hat im vergangenen Jahr ungefähr so viel Benchmark-Fortschritt erzielt wie in den zwei Jahren zuvor. Der jährliche Anstieg habe sich von etwa 15 auf etwa 29 AECI-Punkte erhöht. Die Schätzung liegt über den 1,7x aus der Haiku-5.5-Systemkarte, vor allem weil neuere, unveröffentlichte interne Modelle einbezogen wurden."
+    },
+    {
+      "t": "h2",
+      "x": "Woher kommt die Beschleunigung?"
+    },
+    {
+      "t": "p",
+      "x": "Nicht aus einer Beschleunigung des Wachstums beim Trainings-Compute: Dafür habe METR überzeugende Gegenbeweise gesehen, deren Details allerdings geschwärzt sind. Die subjektive Gesamteinschätzung der Prüfer: Ein Großteil - sie nennen rund 80 Prozent - der aktuellen Beschleunigung geht auf den Einsatz von KI in der Forschung selbst zurück, wobei die Unsicherheit erheblich ist und die Beschleunigung Ende 2025 vermutlich auch von anderen Faktoren getragen wurde. Mitarbeitende berichteten in Interviews und Umfragen von deutlichen Produktivitätsgewinnen, die Beschleunigung laufe bislang vor allem über KI-Unterstützung statt über vollständig autonome Beiträge - mit Anzeichen, dass Letztere bald wichtiger werden. METR betont ausdrücklich, dass diese Selbstauskünfte schwer zu interpretieren sind."
+    },
+    {
+      "t": "h2",
+      "x": "Keine sichtbaren Engpässe - und was das bedeutet"
+    },
+    {
+      "t": "p",
+      "x": "Für die kommenden zwölf Monate fand METR keine klaren Engpässe bei algorithmischem Fortschritt, Trainings-Compute, Experiment-Compute oder Daten, die eine weitere Beschleunigung verhindern würden. Die Prüfer schränken selbst ein, dass sich ihre Einschätzung der Engpässe im Verlauf mehrfach geändert hat. Ihre Risikoschlussfolgerung: Da sich der Fortschritt potenziell selbst verstärkt - bessere Modelle beschleunigen die Entwicklung noch besserer Modelle -, bestehe ein signifikantes Risiko weiter zunehmender Beschleunigung."
+    },
+    {
+      "t": "h2",
+      "x": "Die Schwärzungen"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic machte von seinem vertraglichen Redaktionsrecht Gebrauch und strich nach Angaben von METR die Mehrheit der Belege, die die Prüfer für ihre Schlussfolgerungen am informativsten hielten. Anthropic begründete die Streichungen laut Bericht als \"aimed at removing confidential information that could accelerate other AI developers\" - gerichtet gegen vertrauliche Informationen, die andere KI-Entwickler beschleunigen könnten. METR durfte offenlegen, dass und in welchem Umfang redaktioniert wurde, und hält nüchtern fest: Die Öffentlichkeit müsse sich nun deutlich stärker auf METRs Urteil verlassen, als bei der Tragweite der Fragen wünschenswert wäre. Der Bericht erreiche damit keine \"Transparenz über die Belege\"."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung und Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "METR nennt das Projekt ausdrücklich keinen unbeschränkten, mitarbeiterähnlichen Zugriff. Anthropic konnte Informationsanfragen annehmen oder ablehnen. METR erhielt keinen Zugriff zum eigenen Testen nichtöffentlicher Modelle. METR nahm nach eigenen Angaben keine Bezahlung von Anthropic an, arbeitete aber auf dessen Geräten und erhielt kostenlose Tokens."
+    },
+    {
+      "t": "p",
+      "x": "METR selbst benennt beide Fehlerrichtungen: Die Beschleunigung könnte unterschätzt sein, wenn jüngste weitere Anstiege, zunehmende Automatisierung oder unterschätzte Praxiswirkung nicht ausreichend gewichtet wurden. Sie könnte überschätzt sein, wenn nicht-KI-Faktoren, der Fokus des Index auf prüfbare Aufgaben oder ein ungewöhnlich niedriges historisches Ausgangsniveau die Rechnung verzerren. Für Beobachter bleibt der Bericht eine unabhängige Einschätzung zur Beschleunigung bei einem einzelnen Labor, deren kausale Zuordnung zum KI-Einsatz unsicher bleibt - und zugleich ein Beleg dafür, wie begrenzt öffentliche Prüfbarkeit bleibt, wenn das geprüfte Unternehmen die Beleglage kontrolliert."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was hat METR genau gemessen?",
+      "a": "Das Wachstum der Benchmark-Werte interner Anthropic-Modelle auf dem AECI-Index: Seit Oktober 2025 geschätzt 1,9-mal schneller als zuvor (95-Prozent-Intervall 1,5 bis 2,8). Dazu kamen Interviews, Umfragen und interne Beschleunigungsanalysen."
+    },
+    {
+      "q": "Beweist der Bericht, dass KI sich selbst verbessert?",
+      "a": "Nein. METR berichtet, dass die Beschleunigung bislang vor allem über KI-Unterstützung menschlicher Forschender läuft, nicht über vollautonome Beiträge. Die Attribuierung von rund 80 Prozent auf KI ist eine subjektive Schätzung mit erheblicher Unsicherheit."
+    },
+    {
+      "q": "Warum sind Teile des Berichts geschwärzt?",
+      "a": "Anthropic hatte vertraglich das Recht, nicht-öffentliche Informationen zu streichen, und nutzte es laut METR für die Mehrheit der informativsten Belege - zur Begründung hieß es, die Informationen könnten andere KI-Entwickler beschleunigen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+      "publisher": "METR",
+      "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "An Anthropic risk assessment from AI safety organization METR is out",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1028046/an-anthropic-risk-assessment-from-ai-safety-organization-metr-is-out",
+      "accessed": "2026-11-06"
+    }
+  ],
+  "related": [
+    "anthropic-ipo-s1-nachtrag-compute-zusagen",
+    "anthropic-s1-eingereicht-nasdaq-ant",
+    "stanford-studie-llm-erkenntnisse-verfallen"
+  ],
+  "published": "2026-11-06T08:55:00+01:00",
+  "modified": "2026-11-06T08:55:00+01:00"
+}

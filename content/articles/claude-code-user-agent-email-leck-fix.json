@@ -1,0 +1,114 @@
+{
+  "slug": "claude-code-user-agent-email-leck-fix",
+  "section": "praxis",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Claude Code: E-Mail im User-Agent gemeldet, Schutz ab Version 2.1.317",
+  "dek": "Ein GitHub-Bericht beschreibt die Weitergabe der Account-E-Mail in HTTP-Headern. Das Changelog nennt eine neue Rückfrage ab Version 2.1.317. Warum das keine vollständige Schutzgarantie ist.",
+  "tags": [
+    "Anthropic",
+    "Claude Code",
+    "Datenschutz",
+    "Sicherheit",
+    "CLI"
+  ],
+  "key_takeaways": [
+    "Im offenen GitHub-Issue #107757 berichtet der Account taylor-edwards von der Account-E-Mail in ausgehenden User-Agent-Headern. Wir haben den Vorfall nicht selbst reproduziert.",
+    "Das offizielle Changelog von 2.1.317 bestätigt eine Rückfrage vor Web- oder Shell-Aufrufen, die die Account-E-Mail ins Netzwerk senden.",
+    "Der GitHub-Account poteat beschreibt cc-plugin-privacy als standardmäßig aktivierten Schutz. Andere Accounts berichten von fehlender Anzeige oder verbleibenden Lücken, auch unter 2.1.318. Diese Berichte haben wir nicht unabhängig geprüft.",
+    "Version und vorhandene Schutzfunktionen prüfen, sensible Daten nicht allein durch Promptregeln absichern. Ein Update ist keine Garantie gegen jede Weitergabe."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein stilisierter Terminal-Bildschirm, aus dem ein leuchtender Umschlag durch einen Filter aus Lichtstrahlen gestoppt wird, Dunkelblau und Türkis.",
+    "caption": "Gemeldete Weitergabe der Account-E-Mail und neue Schutzabfrage. Symbolbild, keine Darstellung einer garantierten Blockade; KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Im offenen GitHub-Issue #107757 berichtet der Account taylor-edwards, Claude Code habe bei gewöhnlichen Webrecherchen die Account-E-Mail in den User-Agent-Header von curl-Anfragen an Dritte eingesetzt. Als Umgebung nennt der Bericht macOS, tmux und Version 2.1.318. Wir haben den Vorfall nicht selbst reproduziert. Der GitHub-Account poteat erläutert in der Diskussion als mögliches Muster, dass das Modell eine im Kontext verfügbare Adresse für die von einer Zielseite verlangte Kontaktangabe verwendet. Diese Erklärung aus einem Kommentar ist von der unten belegten Changelog-Angabe zu trennen."
+    },
+    {
+      "t": "h2",
+      "x": "Neue Rückfrage ab Version 2.1.317"
+    },
+    {
+      "t": "p",
+      "x": "Das offizielle Changelog nennt für 2.1.317 eine Prüfung, die vor einem Web- oder Shell-Aufruf nachfragt, wenn die Account-E-Mail ans Netzwerk gesendet würde. Der GitHub-Account poteat beschreibt zusätzlich ein eingebautes, standardmäßig aktives Modul namens cc-plugin-privacy, das sich über /plugins abschalten lasse. Dies ist die Aussage dieses Kommentars, keine von uns unabhängig überprüfte Garantie für jede Installation oder jeden Ausführungspfad."
+    },
+    {
+      "t": "h2",
+      "x": "Warum die Kritik nicht verstummt"
+    },
+    {
+      "t": "p",
+      "x": "Mehrere Accounts kritisieren, dass die Adresse weiterhin im Modellkontext liegen könne. Die Accounts francescor und BigBalli berichten, den Schutz unter 2.1.318 nicht in /plugins gesehen zu haben. Ein weiterer Kommentar beschreibt einen Test, bei dem die erwartete Blockade ausblieb. Diese Nutzerberichte haben wir nicht reproduziert. Sie reichen aber aus, um das Update hier nicht als vollständige Schließung aller Weitergabepfade zu bezeichnen."
+    },
+    {
+      "t": "h2",
+      "x": "Was du jetzt tun solltest"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Prüfe die installierte Version und das offizielle Changelog. Version 2.1.317 führt die neue Rückfrage auf.",
+        "Prüfe, inwieweit vorhandene Privacy-Einstellungen in deiner Installation sichtbar und aktiv sind. Bei Unklarheiten Schutz nicht einfach voraussetzen.",
+        "Formuliere für Agentenprojekte, dass Account-Adressen nicht als öffentliche Kontaktangabe verwendet werden dürfen. Solche Promptregeln sind keine technische Sicherheitsgrenze.",
+        "Prüfe ausgehende Header bei sensiblen Workflows in einer kontrollierten Umgebung ohne Offenlegung persönlicher Daten.",
+        "Eine zusätzliche Netzwerkfilterung kann helfen, ist aber keine hier geprüfte vollständige Lösung für alle Ausführungspfade."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Die dokumentierte Changelog-Änderung und die offenen Nutzerberichte sind unterschiedliche Belege: Die neue Rückfrage ist offiziell beschrieben, die vollständige Wirksamkeit wurde von uns nicht getestet. Aus dem Issue allein folgt auch kein Beweis, dass später eingegangener Spam durch diesen Vorfall verursacht wurde."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was bestätigt das Changelog 2.1.317?",
+      "a": "Eine Prüfung, die nachfragt, bevor ein Web- oder Shell-Aufruf die Account-E-Mail an das Netzwerk sendet. Das ist keine allgemeine Garantie gegen jede Form der Weitergabe."
+    },
+    {
+      "q": "Ist die E-Mail damit vollständig geschützt?",
+      "a": "Das können wir nicht bestätigen. Im offenen Issue gibt es Berichte über verbleibende Probleme, die wir nicht reproduziert haben. Eine zusätzliche Headerfilterung ersetzt keinen vollständigen Wirksamkeitsnachweis."
+    },
+    {
+      "q": "Woher stammt die Erklärung mit Wikipedia?",
+      "a": "Aus Kommentaren im GitHub-Issue. Sie beschreiben, dass eine im Modellkontext vorhandene Adresse als Kontaktangabe im User-Agent verwendet werden kann. Wir haben diesen Ablauf nicht selbst reproduziert."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub-Issue #107757: gemeldete Privacyverletzung und Diskussion",
+      "publisher": "GitHub/Nutzerberichte",
+      "url": "https://github.com/anthropics/claude-code/issues/107757",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "Claude Code Changelog v2.1.317",
+      "publisher": "Anthropic / GitHub",
+      "url": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.317/CHANGELOG.md",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "Claude Code sent your email in User-Agent",
+      "publisher": "StartupHub.ai",
+      "url": "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/claude-code-sent-your-email-in-user-agent",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "Release v2.1.317",
+      "publisher": "Anthropic / GitHub",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
+      "accessed": "2026-11-06"
+    }
+  ],
+  "related": [
+    "anthropic-claude-angriffsflaeche-code",
+    "postman-plugins-codex-claude-code"
+  ],
+  "published": "2026-11-06T08:55:00+01:00",
+  "modified": "2026-11-06T08:55:00+01:00"
+}

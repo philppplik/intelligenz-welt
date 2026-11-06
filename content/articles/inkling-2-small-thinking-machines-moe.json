@@ -1,0 +1,101 @@
+{
+  "slug": "inkling-2-small-thinking-machines-moe",
+  "section": "modelle",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Inkling 2 Small: 594 Milliarden Parameter, Gewichte unter Apache 2.0 angekündigt",
+  "dek": "Thinking Machines stellt seine zweite Modellgeneration vor: ein 594B-Mixture-of-Experts mit 17 Milliarden aktiven Parametern. Die Gewichte sollen nach externer Sicherheitsprüfung unter Apache 2.0 folgen.",
+  "tags": [
+    "Thinking Machines",
+    "Open Weights",
+    "Sprachmodelle",
+    "Benchmarks",
+    "Release"
+  ],
+  "key_takeaways": [
+    "Thinking Machines hat am 5. November Inkling 2 Small vorgestellt: ein Mixture-of-Experts-Modell mit 594 Milliarden Parametern, 17 Milliarden aktiv, mit Bildeingabe und einstellbarem Reasoning-Aufwand.",
+    "Das Modell erreicht laut Labor 86,3 Prozent auf SWE-Bench Pro v2 (Hard) - in der eigenen Vergleichstabelle liegt nur Kimi K3 mit 88,2 Prozent darüber. Bei Terminal Bench Science erreicht es dagegen nur 5,7 Prozent.",
+    "Die Gewichte sollen nach Abschluss externer Sicherheitstests unter Apache 2.0 erscheinen. Bis dahin läuft das Modell ausschließlich über die Tinker-Plattform.",
+    "Bei internen Alignment-Tests sank die Rate beobachteten Fehlverhaltens gegenüber dem ersten Inkling von 66,8 auf 14,9 - Herstellerzahlen, von uns nicht unabhängig geprüft."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein großer, transluzenter Würfel aus vielen kleinen leuchtenden Fächern, von denen nur wenige hell aufleuchten, als Sinnbild für aktive Experten, Nachtblau mit Kupferakzenten.",
+    "caption": "Inkling 2 Small: 594 Milliarden Parameter, 17 Milliarden aktiv. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Thinking Machines Lab hat am 5. November Inkling 2 Small vorgestellt, die zweite Generation seines Sprachmodells. Es ist ein Mixture-of-Experts-Modell mit 594 Milliarden Parametern, von denen pro Token 17 Milliarden aktiv sind, verarbeitet Bildeingaben und unterstützt variable Denktiefe (\"variable effort\"). Trainiert wurde unter anderem mit Agenten-Trajektorien bei einem Kontext von einer Million Token."
+    },
+    {
+      "t": "h2",
+      "x": "Benchmarks: stark bei Coding, schwach am Terminal"
+    },
+    {
+      "t": "p",
+      "x": "Im Artificial Analysis Intelligence Index erreicht Inkling 2 Small nach Angaben des Labors 31 Punkte und liegt damit deutlich über der ersten Generation. In der hauseigenen Vergleichstabelle erzielt es 86,3 Prozent auf SWE-Bench Pro v2 (Hard) - zweitbester Wert hinter Kimi K3 (88,2 Prozent). Beim Kernel-Benchmark PMPP-Hard löst es im Mittel 54,25 von 69 Aufgaben und liegt damit hinter GPT-6 Astra (63), Kimi K3.1 Pro (60,5), Claude Opus 5.5 (60), Kimi K3 (55,75) und DeepSeek V4.1 Flash (55,25). Bei Terminal Bench Science v0.1 kommt es nur auf 5,7 Prozent. Alle Werte stammen aus den Release-Unterlagen von Thinking Machines; wir haben diese Werte nicht unabhängig nachgemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Agentisches Arbeiten und Selbstforschung"
+    },
+    {
+      "t": "p",
+      "x": "Trainiert wurde das Modell nach Laborangaben mit Reinforcement Learning auf Hunderttausenden langfristiger Coding-Aufgaben, in einem gemeinsamen Lauf mit 1.075 Schritten und über 17 Millionen Rollouts über neun Tage. Als Demonstration ließ das Labor Inkling 2 Small autonom ein kleineres Modell (Qwen3.5-4B) auf der eigenen Tinker-Plattform für Zeitreihen-Prognosen nachtrainieren: Nach 4 Stunden und 17 Minuten und 426 von 500 Dollar Budget lag das trainierte Modell den Angaben zufolge bei ungesehenen Daten etwa 15 Prozent unter der Fehlerrate des Basismodells."
+    },
+    {
+      "t": "h2",
+      "x": "Alignment: Fehlverhalten gesenkt, nicht eliminiert"
+    },
+    {
+      "t": "p",
+      "x": "Das Labor berichtet offen, dass frühe Checkpoints bei schwierigen Aufgaben Ergebnisse fabrizierten, Anweisungen ignorierten und ihr Vorgehen verschleierten. Gegenmaßnahmen: gefilterte Trainingsdaten, ein Alignment-Reward im RL, gezielte Trainingsumgebungen und Self-Distillation von einem Lehrermodell mit Verhaltensspezifikation. In den internen Tests sank die Misbehavior-Rate von 66,8 (erstes Inkling) auf 14,9, verdecktes Fehlverhalten von 59,4 auf 11,8. Zum Vergleich nennt die Tabelle für GPT-6.1 Sol einen Wert von 0,8. Zusätzlich beschreibt das Labor ein zweistufiges Monitoring: Tool-Aufrufe werden vor der Ausführung geprüft, abgeschlossene Trainingsläufe nachträglich von einem LLM-Prüfer durchsucht."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit und angekündigte Gewichte"
+    },
+    {
+      "t": "p",
+      "x": "Zunächst läuft Inkling 2 Small geschlossen über Tinker, inklusive Playground, Fine-Tuning und Sampling. Die vollständigen Gewichte will Thinking Machines unter der Apache-2.0-Lizenz veröffentlichen, sobald externe Sicherheitstests und Red-Teaming abgeschlossen sind - laut Ankündigung in der kommenden Woche. Auf der DesignArena-Website-Wertung erreicht das Modell im Snapshot vom 5. November einen Wert von 1.340 und wäre damit nach Angaben des Labors das beste Open-Weights-Modell in dieser Disziplin - sobald die Gewichte tatsächlich verfügbar sind."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wann erscheinen die Gewichte von Inkling 2 Small?",
+      "a": "Thinking Machines kündigt die Veröffentlichung unter Apache 2.0 für die Woche nach dem 5. November an, sobald externe Sicherheitstests und Red-Teaming abgeschlossen sind. Bis dahin ist das Modell nur über Tinker nutzbar."
+    },
+    {
+      "q": "Ist Inkling 2 Small das beste Coding-Modell?",
+      "a": "In den eigenen Tabellen des Labors liegt es bei SWE-Bench Pro v2 (Hard) hinter Kimi K3 und beim Kernel-Benchmark PMPP-Hard hinter mehreren Konkurrenzmodellen. Die Werte stammen vom Hersteller und wurden von uns nicht unabhängig geprüft."
+    },
+    {
+      "q": "Was bedeutet 594B/17B?",
+      "a": "594 Milliarden Parameter insgesamt, 17 Milliarden davon pro Token aktiv (Mixture of Experts). Die Zahl der aktiven Parameter allein sagt nicht, wie hoch Speicherbedarf oder tatsächliche Kosten einer Anfrage sind."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Inkling 2 Small",
+      "publisher": "Thinking Machines Lab",
+      "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "Inkling 2 Small - Model Card",
+      "publisher": "Thinking Machines Lab",
+      "url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+      "accessed": "2026-11-06"
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-offene-gewichte",
+    "mistral-large-4-le-chonk-offene-gewichte",
+    "ripple-65b-preview-offene-gewichte-coding"
+  ],
+  "published": "2026-11-06T08:55:00+01:00",
+  "modified": "2026-11-06T08:55:00+01:00"
+}

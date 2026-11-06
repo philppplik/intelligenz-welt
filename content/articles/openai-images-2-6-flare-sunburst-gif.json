@@ -1,0 +1,102 @@
+{
+  "slug": "openai-images-2-6-flare-sunburst-gif",
+  "section": "news",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "OpenAI Images 2.6: Schnellere Bilder, GIFs und zwei neue API-Modelle",
+  "dek": "OpenAI rollt Images 2.6 in ChatGPT, Codex und der API aus: 50 Prozent schnellere Generierung, GIF-Erstellung und mit Flare und Sunburst zwei neue Bildmodelle für Entwickler.",
+  "tags": [
+    "OpenAI",
+    "Bildgenerierung",
+    "API",
+    "ChatGPT",
+    "Release"
+  ],
+  "key_takeaways": [
+    "OpenAI hat Images 2.6 am 4. November in ChatGPT, Codex und der API veröffentlicht. Laut OpenAI entstehen dort inzwischen 4 Milliarden Bilder pro Woche.",
+    "Die Generierung soll 50 Prozent schneller laufen. Neu ist die GIF-Erstellung direkt aus einem Prompt, etwa für Maskottchen, Memes oder Storyboards.",
+    "In der API gibt es zwei Modelle: GPT-Image-2.6 Flare (auf Geschwindigkeit getrimmt, laut OpenAI im besten Fall sechs Sekunden bei niedriger Qualitätsstufe) und GPT-Image-2.6 Sunburst für höhere Detailqualität und Konsistenz über Bearbeitungsrunden.",
+    "Neu in der API sind außerdem Image Markup, SVG-Export und ein Complexity-Parameter. Alle Zahlen stammen von OpenAI; wir haben die Angaben nicht unabhängig nachgemessen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine Filmrolle aus leuchtenden Bildkacheln, die sich in ein fließendes GIF-Band verwandelt, daneben zwei stilisierte Lichtblitze in Violett und Amber auf dunkelblauem Grund.",
+    "caption": "Images 2.6 bringt GIF-Erstellung und zwei neue API-Modelle. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI hat am 4. November Images 2.6 veröffentlicht. Das Update läuft in ChatGPT, Codex und der API und soll Bilder nach Unternehmensangaben 50 Prozent schneller erzeugen als der Vorgänger. Als Größenordnung für die Nutzung nennt OpenAI 4 Milliarden erzeugte Bilder pro Woche über alle Oberflächen hinweg - im Schnitt mehr als eine halbe Milliarde pro Tag."
+    },
+    {
+      "t": "h2",
+      "x": "GIFs direkt aus dem Prompt"
+    },
+    {
+      "t": "p",
+      "x": "Die auffälligste Neuerung: Images 2.6 erzeugt animierte GIFs aus einer Beschreibung heraus, etwa indem es ein Sprite-Sheet mit aufeinanderfolgenden Frames plant und daraus eine Schleife baut. OpenAI nennt als Anlässe Marken-Maskottchen, Reaktions-Memes und animierte Storyboards als Vorstufe zur Videoproduktion. Auch eine einfache Skizze soll als Ausgangspunkt für eine animierte Figur genügen. Coco Mao, CEO des OpenAI-Partners OpenArt, wird in der Ankündigung mit den Worten zitiert: \"GIFs are the native language of social media, and GPT-Image-2.6 lets every OpenArt creator speak it fluently from a single prompt.\""
+    },
+    {
+      "t": "h2",
+      "x": "Flare und Sunburst in der API"
+    },
+    {
+      "t": "p",
+      "x": "Entwickler wählen in der API zwischen zwei Modellen. GPT-Image-2.6 Flare ist auf Tempo ausgelegt: Bei niedriger Qualitätsstufe soll ein Bild in im besten Fall sechs Sekunden fertig sein; außerdem verspricht OpenAI bessere Layouts für Poster und Produktbilder. GPT-Image-2.6 Sunburst setzt auf höhere Detailqualität und darauf, Figuren, Produkte und Markendetails über mehrere Bearbeitungsrunden konsistent zu halten."
+    },
+    {
+      "t": "p",
+      "x": "Dazu kommen drei Steuerungsmöglichkeiten: Image Markup, bislang nur in ChatGPT verfügbar, markiert jetzt auch in der API die Stelle, an der eine Änderung greifen soll. SVG-Exporte machen Ergebnisse für Web, Apps und Druck weiterverwendbar. Ein neuer Complexity-Parameter regelt, wie viel Planung das Modell in eine Szene steckt; OpenAI empfiehlt niedrige Werte für schnelle Edits und höhere für Szenen mit vielen Elementen."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit und Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Images 2.6 ist laut OpenAI weltweit in allen Abo-Stufen von ChatGPT und Codex verfügbar, auf Desktop, Mobilgeräten und im Web. Die API-Preise für Flare und Sunburst stehen in der Preisdokumentation; ein System Card zu Sicherheitsprüfungen ist ebenfalls verlinkt. Itay Schiff, Creative Director bei Figma Weave, kündigt in der Ankündigung an, das Modell in Figma Weave einzubinden. Wichtig: Sämtliche Tempo- und Qualitätsangaben stammen von OpenAI selbst. Wir haben das Tempo und die Konsistenz der GIF-Schleifen nicht selbst getestet."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wo kann ich Images 2.6 nutzen?",
+      "a": "Laut OpenAI seit dem 4. November weltweit in ChatGPT und Codex über alle Abo-Stufen (Desktop, mobil, Web) sowie über die API mit den Modellen GPT-Image-2.6 Flare und GPT-Image-2.6 Sunburst."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen Flare und Sunburst?",
+      "a": "Flare ist auf Geschwindigkeit optimiert - laut OpenAI im besten Fall sechs Sekunden bei niedriger Qualitätsstufe - und verbessert Layouts für Poster und Produktbilder. Sunburst liefert höhere Detailqualität und bessere Konsistenz über mehrere Bearbeitungsrunden bei mittlerer und hoher Qualitätsstufe."
+    },
+    {
+      "q": "Sind die Geschwindigkeitsangaben überprüft?",
+      "a": "Von uns nicht. Die 50-Prozent-Angabe und die Sechs-Sekunden-Marke stammen aus OpenAIs Ankündigung. Wir haben diese Angaben nicht unabhängig nachgemessen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Images 2.6",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-images-2-6/",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "ChatGPT Images 2.6 - System Card",
+      "publisher": "OpenAI",
+      "url": "https://deploymentsafety.openai.com/chatgpt-images-2-6/introduction",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "Image generation guide",
+      "publisher": "OpenAI Developers",
+      "url": "https://developers.openai.com/api/docs/guides/image-generation",
+      "accessed": "2026-11-06"
+    }
+  ],
+  "related": [
+    "grok-api-wasserzeichen-pflicht",
+    "openai-pierre-pando-git-codex"
+  ],
+  "published": "2026-11-06T08:55:00+01:00",
+  "modified": "2026-11-06T08:55:00+01:00"
+}

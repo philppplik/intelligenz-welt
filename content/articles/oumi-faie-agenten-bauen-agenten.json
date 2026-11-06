@@ -1,0 +1,102 @@
+{
+  "slug": "oumi-faie-agenten-bauen-agenten",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Oumi FAiE: Ein Agent, der KI-Agenten baut, trainiert und verbessert",
+  "dek": "Mit dem Frontier AI Engineer Agent will Oumi den Weg von der Idee zum eigenen Agenten automatisieren - von der Datensynthese über Training bis Deployment, abgesichert durch Freigabekarten.",
+  "tags": [
+    "Oumi",
+    "Agenten",
+    "MLOps",
+    "Open Source",
+    "Tools"
+  ],
+  "key_takeaways": [
+    "Oumi hat auf seinem Fall Launch den Frontier AI Engineer Agent (FAiE) vorgestellt: Du beschreibst ein Ziel, FAiE plant die Schritte und führt sie im eigenen Projekt aus.",
+    "FAiE erstellt Datensätze und Evaluatoren, lässt Evaluierungen laufen, trainiert und deployt Modelle und erklärt die Ergebnisse - inklusive Fehleranalyse und Metrik-Charts im Chat.",
+    "Kostenträchtige oder wirksame Aktionen wie Trainingsstarts, Deployments oder Löschungen laufen über Freigabekarten; ein Auto-approve-Schalter ist optional und projektbezogen.",
+    "Mit Bring Your Own Harness lassen sich bestehende Agenten-Systeme anschließen und mit den Evaluierungs- und Trainingswerkzeugen von Oumi verbessern."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein kleiner, leuchtender Roboterarm aus Lichtlinien, der selbst kleinere geometrische Agenten-Figuren auf einem Fließband zusammensetzt, Dunkelblau und Grün.",
+    "caption": "FAiE soll Agenten bauen, trainieren und aus Produktionsfeedback verbessern. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Das KI-Startup Oumi hat am 4. November auf seinem Fall Launch den Frontier AI Engineer Agent vorgestellt, kurz FAiE. Die Idee: Statt Datensätze, Trainingsläufe und Deployments per Hand zusammenzuklicken, beschreibst du dem Assistenten ein Ziel - etwa ein benötigtes Modell oder ein Problem mit einem bestehenden - und FAiE plant die Schritte und führt sie im Projekt aus."
+    },
+    {
+      "t": "h2",
+      "x": "Was FAiE übernimmt"
+    },
+    {
+      "t": "p",
+      "x": "Laut Dokumentation deckt der Agent die Kette der Modellarbeit ab: synthetische Datensätze erzeugen (\"Generiere 500 Support-Tickets, gelabelt nach Thema und Dringlichkeit\"), Evaluatoren bauen (\"Prüfe, ob die Antwort die Richtlinie zitiert\"), Modelle gegeneinander testen und Fehlerbilder zusammenfassen, kleine Modelle trainieren und Loss-Kurven plotten, deployen und mit Evaluatoren überwachen. Für Agenten-Entwicklung kann FAiE Werkzeugaufrufe aus importierten Traces erkennen und simulierte Implementierungen dafür erzeugen. Der Agent nutzt das Projekt als Kontext: Er listet Ressourcen, vergleicht Evaluierungsergebnisse, erklärt fehlgeschlagene Jobs und zeichnet Metriken direkt in der Unterhaltung."
+    },
+    {
+      "t": "h2",
+      "x": "Freigaben statt Autopilot"
+    },
+    {
+      "t": "p",
+      "x": "Auffällig an der Doku ist die Kostenbremse: Aktionen mit Kosten oder Nebenwirkungen - Trainings- oder Evaluierungsstarts, Deployments, Monitore, Löschungen, Log-Exporte, Einladungen oder Aufrufe an eigene Endpunkte - laufen über eine Freigabekarte, die zeigt, was FAiE ausführen will. Erst nach Zustimmung geht es los; lesende Zugriffe und Konfigurationsentwürfe brauchen keine Freigabe. Wer will, aktiviert Auto-approve - die Einstellung gilt pro Projekt und Browser, und die Dokumentation rät ausdrücklich davon ab, sie in der Lernphase einzuschalten, weil freigegebene Jobs sofort starten und Kosten verursachen."
+    },
+    {
+      "t": "h2",
+      "x": "Grenzen und Begleitfunktionen"
+    },
+    {
+      "t": "p",
+      "x": "Die Doku listet auch, was FAiE nicht kann: keine Datei-Uploads (der Agent verlinkt nur auf die Upload-Seite), keine Bedienung des Playgrounds, keine Verwaltung von Abrechnung, Rollen oder API-Schlüsseln - einen im Chat getippten API-Key nimmt FAiE grundsätzlich nicht entgegen - und keine Fortsetzung fehlgeschlagener Evaluierungen. Drumherum stellte Oumi Bring Your Own Harness vor, mit dem sich bestehende Agenten-Systeme anbinden und mit Oumis Evaluierungs- und Trainingswerkzeugen verbessern lassen, sowie DPO-Training, um Verhaltensweisen wie Richtlinientreue und Tonalität nach einem initialen Supervised Fine-Tuning zu verfeinern."
+    },
+    {
+      "t": "p",
+      "x": "Einordnung: Oumi tritt mit FAiE in einen Markt ein, in dem zunehmend Agenten die Arbeit anderer Agenten überwachen und verbessern sollen. Der pragmatische Ansatz - explizite Freigaben, dokumentierte Nicht-Fähigkeiten, Anschluss bestehender Infrastruktur - spricht eher Teams an, die produktive Workflows absichern wollen, als Bastler. Wie gut die automatische Fehleranalyse und das Nachtraining in der Praxis tragen, lässt sich aus der Ankündigung heraus nicht beurteilen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist Oumi FAiE?",
+      "a": "FAiE (Frontier AI Engineer Agent) ist Oumis KI-Engineering-Assistent: Du beschreibst ein Ziel, FAiE plant und führt die Schritte im Projekt aus - von Datensynthese über Training bis Deployment und Monitoring."
+    },
+    {
+      "q": "Führt FAiE Aktionen ohne Rückfrage aus?",
+      "a": "Standardmäßig fragt FAiE vor Aktionen mit Kosten oder Nebenwirkungen nach; lesende Zugriffe und Konfigurationsentwürfe brauchen keine Freigabe. Mit optionalem Auto-approve können auch wirksame Aktionen ohne Einzelrückfrage starten. Die Einstellung gilt pro Projekt und Browser."
+    },
+    {
+      "q": "Kann ich meine bestehende Agenten-Infrastruktur behalten?",
+      "a": "Ja, dafür ist Bring Your Own Harness gedacht: Bestehende Systeme lassen sich anbinden und mit Oumis Evaluierungs- und Trainingswerkzeugen verbessern, ohne die Infrastruktur zu ersetzen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Oumi Launches the Agent That Builds, Trains, and Continuously Improves AI Agents",
+      "publisher": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20261104154139/en/Oumi-Launches-the-Agent-That-Builds-Trains-and-Continuously-Improves-AI-Agents",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "Fall Launch 2026: AI to Build Agents and Models",
+      "publisher": "Oumi",
+      "url": "https://oumi.ai/product-launch/fall26",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "FAiE - Dokumentation",
+      "publisher": "Oumi",
+      "url": "https://docs.oumi.ai/guides/intro/faie",
+      "accessed": "2026-11-06"
+    }
+  ],
+  "related": [
+    "langflow-kritische-luecken-update",
+    "deepseek-superagent-open-source-prototyp"
+  ],
+  "published": "2026-11-06T08:55:00+01:00",
+  "modified": "2026-11-06T08:55:00+01:00"
+}
