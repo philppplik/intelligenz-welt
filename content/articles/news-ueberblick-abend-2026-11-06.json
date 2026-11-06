@@ -1,0 +1,112 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-06",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-06T16:16:00+01:00",
+  "modified": "2026-11-06T16:16:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "publisher": "Google Blog (Anish Nangia, Google DeepMind)",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "Introducing Personal Finance in Claude",
+      "publisher": "Anthropic / claude.com",
+      "url": "https://claude.com/de/resources/articles/introducing-personal-finance-in-claude",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "ElevenMusic and SoundCloud partner to empower artists",
+      "publisher": "SoundCloud (Playbook)",
+      "url": "https://soundcloud.com/playbook-articles/elevenmusic-and-soundcloud-partner-to-empower-artists-by-connecting-creation-and-discovery/",
+      "accessed": "2026-11-06"
+    },
+    {
+      "title": "SoundCloud erlaubt direkte Veröffentlichung KI-generierter Musik",
+      "publisher": "heise online (Mitteilung von SoundCloud)",
+      "url": "https://www.heise.de/news/SoundCloud-erlaubt-direkte-Veroeffentlichung-KI-generierter-Musik-11515523.html",
+      "accessed": "2026-11-06"
+    }
+  ],
+  "title": "KI am Abend: Von Video bis Kontoauszug",
+  "dek": "Googles Videomodell schafft jetzt 15 Sekunden am Stück, Claude liest auf Wunsch Bankkonten mit, und SoundCloud nimmt KI-Musik direkt an.",
+  "tags": [
+    "KI-Überblick",
+    "Videomodelle",
+    "Claude",
+    "SoundCloud",
+    "Google",
+    "Anthropic"
+  ],
+  "key_takeaways": [
+    "Gemini Omni 1.2 Flash erzeugt laut Google nativ 15-sekündige Clips mit Mehrschritt-Bearbeitung im Gespräch und ist allgemein verfügbar.",
+    "Claude Personal Finance verbindet Bankkonten über Plaid, bleibt rein lesend und nutzt die Finanz-Chats laut Anthropic nicht fürs Training - Beta nur in den USA.",
+    "Auf SoundCloud lässt sich KI-Musik aus ElevenMusic jetzt direkt veröffentlichen; die Stücke tragen einen Hinweis auf ihre KI-Herkunft."
+  ],
+  "hero": {
+    "alt": "Balkendiagramm: native Maximallänge von KI-Videoclips, Gemini Omni 1.1 mit 10 Sekunden gegenüber Omni 1.2 Flash mit 15 Sekunden",
+    "caption": "Die native Maximallänge steigt laut Google von 10 auf 15 Sekunden, also um 50 Prozent. Eigene Grafik, keine unabhängige Nachmessung.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quellen: Google"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Abendüberblick vom 6. November 2026. Quellenstand: 16:16 Uhr MEZ. Heute geht es um konkrete Produkte statt neuer Grundmodelle: Google legt seinen Videogenerator nach, Anthropic gibt Claude lesenden Zugriff auf Bankkonten, und SoundCloud öffnet seine Plattform für direkt hochgeladene KI-Musik."
+    },
+    {
+      "t": "h2",
+      "x": "Gemini Omni 1.2 Flash: 15 Sekunden am Stück"
+    },
+    {
+      "t": "p",
+      "x": "Google hat Gemini Omni 1.2 Flash laut Blog vom 5. November allgemein für die Gemini API und Google Cloud verfügbar gemacht. Weitere Produktintegrationen werden ausgerollt, darunter Gemini for Business, Flow und Google Vids. Die native Clip-Länge steigt von zehn auf 15 Sekunden, wählbar in Ein-Sekunden-Schritten ab drei Sekunden. Neu ist auch die Mehrschritt-Bearbeitung: Ein Clip lässt sich im Gespräch über mehrere Anweisungen hinweg verändern - etwa Hintergrund, Beleuchtung oder Seitenverhältnis tauschen - ohne von vorn beginnen zu müssen."
+    },
+    {
+      "t": "p",
+      "x": "Als Referenzen akzeptiert das Modell laut Google Charakter-, Produkt- und Stilbilder, Bewegtclips bis drei Sekunden und Audiospuren; Gesichter, Kleidung und Verpackungstypografie sollen über Kamerawinkel hinweg stabil bleiben. Sprachausgabe soll natürlicher wirken, mit klarerer Lippensynchronisation und getrennter Konditionierung mehrerer Sprecher. Wer schnell entwerfen will, arbeitet in 360p oder 720p vor und skaliert Ergebnisse auf 1080p oder 4K hoch. Alle Angaben stammen vom Anbieter; eine eigene Nachmessung haben wir nicht vorgenommen."
+    },
+    {
+      "t": "h2",
+      "x": "Claude Personal Finance: Der Chatbot liest den Kontoauszug"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic führt laut seinem Produktblog eine Funktion namens Personal Finance ein: Nutzer verbinden Bank- und Kartenkonten über den Dienst Plaid und fragen Claude dann in Alltagssprache nach Ausgaben, anstehenden Abbuchungen oder dem Monatsrest. Der Zugriff ist rein lesend - Claude kann kein Geld bewegen, verwalten oder anlegen und vergibt keine eigenen Finanzprodukte. Claude sieht das Bankpasswort nicht; Claude sieht nur die freigegebenen Konten mit Name, Typ, letzten vier Ziffern, Salden und bis zu zwei Jahren Transaktionshistorie."
+    },
+    {
+      "t": "p",
+      "x": "Die Funktion startet diese Woche als Beta in den USA für Pro-, Max- und Ultra-Abonnenten. Chats im Personal-Finance-Bereich werden laut Anthropic nicht fürs Modelltraining verwendet, Konten lassen sich jederzeit trennen, und es gibt weder Werbung noch gesponserte Empfehlungen. Anthropic weist selbst darauf hin, dass Claude Fehler machen kann und wichtige Zahlen mit der Bank gegengeprüft werden sollten; Anlageberatung soll die Funktion nicht ersetzen. Langfristig prüft das Unternehmen eine Zusammenarbeit mit lizenzierten Finanzberatern und regulierten Firmen."
+    },
+    {
+      "t": "h2",
+      "x": "SoundCloud: KI-Musik direkt aus ElevenMusic hochladen"
+    },
+    {
+      "t": "p",
+      "x": "SoundCloud erlaubt laut eigener Mitteilung die direkte Veröffentlichung von Musik, die mit ElevenMusic erzeugt wurde - der KI-Musikplattform von ElevenLabs. Stücke auf diesem Weg tragen einen Hinweis auf ElevenMusic als Ursprung, um die KI-Herkunft kenntlich zu machen. Die Originalmitteilung von SoundCloud vom 5. November liegt diesem Überblick zugrunde; heise online berichtete am 6. November darüber. Auch für diese Uploads gelten laut SoundCloud die bestehenden Inhaltsregeln einschließlich der Anforderungen an Nutzungsrechte."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind 15 Sekunden jetzt die Obergrenze bei Gemini Omni?",
+      "a": "Nativ ja: Omni 1.2 Flash erzeugt und bearbeitet Clips bis 15 Sekunden, wählbar in Ein-Sekunden-Schritten ab drei Sekunden. Google nennt außerdem die Verlängerung von Clips und die Arbeit mit Start- und End-Keyframes. Eine allgemeine Maximaldauer verlängerter Sequenzen belegen diese Angaben nicht."
+    },
+    {
+      "q": "Kann Claude mit Personal Finance Überweisungen auslösen?",
+      "a": "Nein. Der Zugriff ist rein lesend; Claude kann kein Geld bewegen, verwalten oder anlegen. Anthropic betont zudem, dass die Funktion keine Anlageberatung ersetzt und Zahlen im Zweifel mit der Bank zu prüfen sind."
+    },
+    {
+      "q": "Woran erkenne ich KI-Musik auf SoundCloud?",
+      "a": "Stücke, die direkt aus ElevenMusic veröffentlicht werden, tragen laut SoundCloud einen Hinweis auf ElevenMusic als Ursprung. Ob und wie KI-Musik aus anderen Werkzeugen gekennzeichnet wird, geht aus der Mitteilung nicht hervor."
+    }
+  ],
+  "related": [
+    "kling-4-0-30-sekunden-video-omni-reference",
+    "claude-code-user-agent-email-leck-fix"
+  ]
+}
