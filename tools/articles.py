@@ -337,10 +337,39 @@ def patch_feed(out, arts):
     x = open(p, encoding='utf-8').read(); items = ''
     for a in arts:
         u = '%s/artikel/%s/' % (BASE, a['slug'])
-        if '<guid>%s</guid>' % u in x: continue
-        items += '<item><title>%s</title><link>%s</link><guid>%s</guid><description>%s</description><pubDate>%s</pubDate><author>Philipp Paulik</author></item>' % (E(a['title']), u, u, E(a['dek']), email.utils.format_datetime(a['_pub']))
+        if '<guid>%s</guid>' % u in x:
+            def add_image(m):
+                item = m.group(0)
+                if '<guid>%s</guid>' % u in item and '<media:content' not in item:
+                    item = item.replace('</item>', '<media:content url="%s/assets/editorial/%s.jpg" medium="image"/></item>' % (BASE, a['slug']))
+                return item
+            x = re.sub(r'<item>.*?</item>', add_image, x, flags=re.S)
+            continue
+        items += '<item><title>%s</title><link>%s</link><guid>%s</guid><description>%s</description><pubDate>%s</pubDate><author>Philipp Paulik</author><media:content url="%s/assets/editorial/%s.jpg" medium="image"/></item>' % (E(a['title']), u, u, E(a['dek']), email.utils.format_datetime(a['_pub']), BASE, a['slug'])
+    if (items or '<media:content' in x) and 'xmlns:media=' not in x:
+        x = re.sub(r'<rss\b', '<rss xmlns:media="http://search.yahoo.com/mrss/"', x, count=1)
     x = x.replace('</description><language>de</language>', '</description><language>de</language>' + items, 1)
     open(p, 'w', encoding='utf-8').write(x)
+
+
+def write_llms(out, arts, sections):
+    # llms.txt: optionaler Inhaltsindex nach dem llmstxt.org-Vorschlag, kein Wirkungsversprechen.
+    L = ['# Intelligenz Welt', '',
+         '> Deutschsprachiges KI-Magazin: KI-News, Modell-Radar und Artikel zu Agenten, Modellen und Strategie. Herausgeber: Philipp Paulik (Bonn). Beiträge entstehen mit KI-Unterstützung und werden redaktionell eingeordnet.', '',
+         '## Bereiche', '',
+         '- [KI-News](%s/news/): aktuelle KI- und LLM-News auf Deutsch' % BASE,
+         '- [Modell-Radar](%s/modelle/): Trending-Modelle von Hugging Face' % BASE,
+         '- [Artikel](%s/artikel/): redaktionelle KI-Artikel mit Quellen und Einordnung' % BASE,
+         '- [Tagesausgabe](%s/berichte/): tägliche Ausgabe als PDF' % BASE,
+         '- [KI-Porträts](%s/ki-modelle/): Steckbriefe zu Modellen und Unternehmen' % BASE,
+         '- [Suche](%s/suche/): Volltextsuche über alle Inhalte' % BASE, '',
+         '## Themen', '']
+    for k in sections:
+        L.append('- [%s](%s/thema/%s/): Artikel zum Thema %s' % (SECTIONS[k], BASE, k, SECTIONS[k]))
+    L += ['', '## Artikel', '']
+    for a in arts:
+        L.append('- [%s](%s/artikel/%s/): %s' % (a['title'].replace('[', '(').replace(']', ')'), BASE, a['slug'], a.get('dek', '').replace('\n', ' ')))
+    open(os.path.join(out, 'llms.txt'), 'w', encoding='utf-8').write('\n'.join(L) + '\n')
 
 def thumb(a): return '/assets/editorial/%s-800.jpg' % a['slug'] if os.path.exists(os.path.join(ROOT, 'content/images/%s-800.jpg' % a['slug'])) else '/assets/editorial/%s.jpg' % a['slug']
 def fmt_t(a): return '<time datetime="%s">%s</time>' % (a['published'], de_date(a['_pub']))
@@ -425,7 +454,7 @@ def main():
     LEGAL[:] = legal_pages(out, head, foot)
     n = patch_sitemaps(out, arts, sections, now) if arts else 0
     export_indexnow(out, arts, now)
-    patch_feed(out, arts); patch_site(out, arts)
+    patch_feed(out, arts); write_llms(out, arts, sections); patch_site(out, arts)
     branding(out); patch_home(out, arts); og_fallback(out)
     ok = ireport.build(arts, now, out, ROOT, BASE)
     from daily_archive import sync, archive_html
