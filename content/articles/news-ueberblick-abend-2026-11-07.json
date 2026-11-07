@@ -1,0 +1,128 @@
+{
+ "slug": "news-ueberblick-abend-2026-11-07",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-07T16:00:00+01:00",
+ "modified": "2026-11-07T16:00:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "Detecting signs of hypertension using wearable sensors",
+   "publisher": "Google Research Blog",
+   "url": "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors/",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "Opportunistically Detecting Signs of Hypertension on a Consumer Smartwatch",
+   "publisher": "Nature",
+   "url": "https://www.nature.com/articles/s41586-026-11336-3",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
+   "publisher": "arXiv (Kangning Zhang, Wenxiang Jiao u. a.)",
+   "url": "https://arxiv.org/abs/2611.04277",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "DeepExperience/Harness-S (GitHub-Repository)",
+   "publisher": "GitHub",
+   "url": "https://github.com/DeepExperience/Harness-S",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "Open-HumanWAM: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models",
+   "publisher": "arXiv (Juncheng Ma, Jiaxin Li u. a.)",
+   "url": "https://arxiv.org/abs/2611.06817",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "DAGroup-PKU/HumanNet, Branch open-humanscale (GitHub-Repository)",
+   "publisher": "GitHub",
+   "url": "https://github.com/DAGroup-PKU/HumanNet/tree/open-humanscale",
+   "accessed": "2026-11-07"
+  }
+ ],
+ "title": "KI am Abend: Smartwatch als Screening-Hilfe",
+ "dek": "Google erforscht Bluthochdruck-Screening per Smartwatch. Harness-S trainiert Agenten mit Ersatzgerüsten. HumanWAM skaliert Vortraining auf 50.000 Stunden.",
+ "tags": [
+  "KI-Überblick",
+  "Google",
+  "Gesundheit",
+  "Agenten",
+  "Robotik",
+  "Open Source"
+ ],
+ "key_takeaways": [
+  "Google erforscht Bluthochdruck-Screening aus Smartwatch-Sensoren ohne Manschettenkalibrierung. Die Studie (N=196) ersetzt keine ärztliche Diagnose.",
+  "Harness-S lässt eine Agenten-Policy aus Lösungswegen unter Ersatzgerüsten lernen. Erste Codeausgabe: AppWorld, mit Abweichungen zur Paperkonfiguration.",
+  "Open-HumanWAM beschreibt Vortraining auf 50.000 Stunden Menschenvideo. Die Paperwerte sind Autorenangaben; Korpus-Upload und Release sind noch im Aufbau."
+ ],
+ "hero": {
+  "alt": "Drei Forschungsthemen: Smartwatch-Screening mit 65,8 Prozent Sensitivität und 90,0 Prozent Spezifität im Erstscreening; Harness-S mit begrenzter erster AppWorld-Codeausgabe; Open-HumanWAM mit 84,60 Prozent RoboTwin-Clean2Random-Erfolg laut Autoren und noch laufendem Release.",
+  "caption": "Drei Forschungsthemen im Abendüberblick mit je eigenem Quellenscope: Google Research Blog (Screening), arXiv-Paper (Harness-S), arXiv-Paper (Open-HumanWAM). Eigene Grafik.",
+  "ai_generated": false,
+  "credit": "Eigene Grafik (Redaktion), Quellen: Google Research, arXiv"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Abendüberblick vom 7. November 2026. Quellenstand: 16:07 Uhr MEZ. Drei Themen: Eine Google-Studie liest Bluthochdruck-Anzeichen aus der Smartwatch, eine neue Trainingsmethode gibt Agenten Ersatzgerüste für schwere Fälle, und eine als offen angekündigte Rezeptur skaliert Roboter-Vortraining auf 50.000 Stunden Menschenvideo."
+  },
+  {
+   "t": "h2",
+   "x": "Google: Bluthochdruck-Signale aus der Smartwatch"
+  },
+  {
+   "t": "p",
+   "x": "Google Research stellt in einem Blogbeitrag vom 5. November ein KI-System vor, das Anzeichen für Bluthochdruck passiv aus den Standardsensoren einer Consumer-Smartwatch erkennt - ohne Kalibrierung per Armmanschette. Das System namens AI-PPG-ACC-HTN nutzt dem Beitrag zufolge den optischen Pulssensor (PPG) und den Bewegungssensor, dessen Daten die feinen mechanischen Herzschwingungen (Ballistokardiogramm) enthalten. Zugrunde liegt eine Studie in Nature, begleitet von der Klinik Beth Israel Deaconess und der Harvard Medical School."
+  },
+  {
+   "t": "p",
+   "x": "Trainiert wurde dem Beitrag zufolge zweistufig: selbstüberwachtes Vortraining auf 492.347 Stunden Sensordaten von 2.109 Teilnehmenden, danach Aggregation der Merkmale über mehrere Trage-Tage plus Körpergröße in einem Klassifikator. Geprüft wurde in einer prospektiven Studie an fünf US-Standorten mit 196 Teilnehmenden ohne bekannte kardiovaskuläre Erkrankung und ohne blutdrucksenkende Medikamente gegen den klinischen Goldstandard der 24-Stunden-Langzeitmessung. Beim Erstscreening erreichte die Uhr laut Google eine Sensitivität von 65,8 Prozent und eine Spezifität von 90,0 Prozent (Praxis-Erstmessung: 55,3 Prozent Sensitivität und 90,0 Prozent Spezifität); bei der Bestätigung zuvor auffälliger Werte (48 Fälle) kam sie auf 78,4 Prozent Sensitivität und 90,9 Prozent Spezifität und lag bei beiden Punktschätzungen über einer erneuten Praxismessung. Google ordnet das Verfahren ausdrücklich als frühe Machbarkeitsforschung ein, nicht als Ersatz für Manschettenmessung oder ärztliche Diagnose. Die Ergebnisse gelten für das untersuchte Kollektiv, nicht als Leistungsversprechen für beliebige Smartwatches."
+  },
+  {
+   "t": "h2",
+   "x": "Harness-S: Agenten lernen von Geschwister-Gerüsten"
+  },
+  {
+   "t": "p",
+   "x": "Wie gut ein KI-Agent arbeitet, hängt auch am Ausführungsgerüst - dem Harness aus Prompts, Werkzeugen und Ablauflogik. Statt ein einziges bestes Gerüst zu suchen, setzt ein Team um Kangning Zhang und Wenxiang Jiao in einem Paper auf arXiv (eingereicht am 3. November) auf einen Pool spezialisierter Geschwister-Gerüste. Die Methode Harness-S ruft diesen Pool dem Abstract zufolge nur dann ab, wenn alle Versuche im Basisgerüst scheitern: Dieselbe Policy erzeugt dann Lösungswege unter einem passenden Ersatzgerüst, und diese Trajektorien ersetzen die Fehlschlaggruppe im Verstärkungslernen. Ein Router wählt die Kandidaten anhand von Verhaltensprofilen und einem Voting mehrerer Sprachmodelle."
+  },
+  {
+   "t": "p",
+   "x": "Das Ergebnis laut Paper: Auf den Benchmarks AppWorld, SWE-Gym und DBBench schlägt die so trainierte Policy (Basis: Qwen3.5-4B und -9B) reines Policy-Training, obwohl sie wieder im ursprünglichen Gerüst läuft - das aus den Ersatzgerüsten Gelernte überträgt sich demnach auf das Modell selbst. Zusätzliche Gewinne bringe der Router bei unveränderter Zahl von Ausführungsversuchen. Die Angaben stammen aus dem Paper und sind nicht unabhängig geprüft; die erste GitHub-Ausgabe (DeepExperience/Harness-S) deckt AppWorld ab. Sie verwendet standardmäßig regelbasierte Auswahl statt Profil-Voting; der portable GPU-Launcher hat laut README noch keinen vollständigen Trainingslauf bestanden. Der Code bestätigt daher nicht automatisch die Paperwerte."
+  },
+  {
+   "t": "h2",
+   "x": "Open-HumanWAM: 50.000 Stunden Menschenvideo für Roboter"
+  },
+  {
+   "t": "p",
+   "x": "Ein Team um Juncheng Ma (Universität Peking) hat mit Open-HumanWAM eine als offen angekündigte Rezeptur vorgestellt, die Roboter-Vortraining auf 50.000 Stunden egozentrischen Menschenvideos skaliert (arXiv, Version 2 vom 5. November). Der Korpus Open-HumanWAM-50K ist dicht mit Handbewegungen und Sprache annotiert; die Autoren beschreiben ein empirisches log-lineares Skalierungsgesetz zwischen Vortrainingsstunden und späterer Roboter-Erfolgsrate."
+  },
+  {
+   "t": "p",
+   "x": "Die gemeldeten Werte: Das nur auf Menschenvideo vortrainierte Modell HumanWAM-Vanilla erreicht nach Roboternachtraining dem Paper zufolge 92,08 Prozent Erfolg auf RoboTwin 2.0 (Clean2Clean) und 68,88 Prozent auf Clean2Random. Die Variante HumanWAM-Goal mit gemeinsamem Mensch-Roboter-Vortraining kommt auf 92,70 beziehungsweise 84,60 Prozent und passt ihr Verhalten auf physischen Robotern an ungesehene visuelle Ziele an, ohne Parameterupdate. Alle Zahlen sind Autorenangaben. Der Release ist allerdings noch nicht vollständig: Das GitHub-README nennt einen laufenden Korpus-Upload, ausstehende Gewichte und Anleitungen im Aufbau. Für Vanilla verwendet die öffentliche Evaluation zudem 50 statt der 100 Episoden pro Aufgabe im Bericht. Ein vollständiger, unverändert reproduzierbarer Release ist damit nicht belegt."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ersetzt die Smartwatch künftig die Blutdruckmanschette?",
+   "a": "Nein. Google beschreibt das Verfahren als frühe Machbarkeitsforschung und ausdrücklich nicht als Ersatz für Manschettenmessung oder ärztliche Diagnose. Es soll als passiver Screening-Hinweis dienen, der Betroffene zur Abklärung in die Praxis schickt."
+  },
+  {
+   "q": "Was ist an Harness-S neu?",
+   "a": "Statt ein einziges optimales Ausführungsgerüst zu suchen, hält Harness-S einen Pool spezialisierter Geschwister-Gerüste vor. Scheitert der Agent im Basisgerüst, liefern Ersatzgerüste Lösungswege, aus denen das Modell per Verstärkungslernen lernt - danach läuft es wieder im Originalgerüst, laut Paper mit besseren Ergebnissen."
+  },
+  {
+   "q": "Was genau ist bei Open-HumanWAM offen?",
+   "a": "Das Paper kündigt Korpus, Pipelines, Modellgewichte und Evaluation als offen an. Das aktuelle README meldet aber laufende Uploads und ausstehende Teile. Der Release ist daher nicht als vollständig verifiziert."
+  }
+ ],
+ "related": [
+  "oumi-faie-agenten-bauen-agenten",
+  "anthropic-agenten-gedaechtnis-dreaming"
+ ]
+}
