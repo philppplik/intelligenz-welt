@@ -1,0 +1,103 @@
+{
+  "slug": "anthropic-agenten-gedaechtnis-dreaming",
+  "section": "analyse",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Wie Claude träumt: Anthropic erklärt das Gedächtnis seiner Agenten",
+  "dek": "Ein neuer Engineering-Post beschreibt, wie Claude zwischen den Sitzungen sein Gedächtnis sortiert, Fehler korrigiert und Wissen in Wikis organisiert - mit bemerkenswert offenen Zahlen aus eigenen Tests.",
+  "tags": [
+    "Anthropic",
+    "Claude",
+    "Agenten",
+    "Gedächtnis",
+    "Engineering"
+  ],
+  "key_takeaways": [
+    "Anthropic beschreibt Agenten-Gedächtnis als Hierarchie: Transkripte, Notizen, Wissens-Repräsentationen wie Wikis und eine kleine injizierte Kontextschicht - dazwischen arbeitet ein Offline-Prozess namens Dreaming.",
+    "In jeweils einem Pokémon-Lauf schrieb Sonnet 3.7 insgesamt 413 Gedächtnisdateien und holte eine Medaille; Fable 5 schrieb neun Dateien plus global.md, also zehn, und holte vier. Das ist ein beschreibender Vergleich, kein isolierter Kausalnachweis.",
+    "Dreaming korrigiert Notizen gegen die Original-Transkripte: Eine falsche Wegnotiz ließ Claude dreimal denselben Abhang hinunterfallen - nach der Korrektur fand er direkt den Höhleneingang.",
+    "Auf einem Firmenkorpus von rund 350.000 Dateien stieg der Anteil erfüllter Bewertungskriterien mit Dreaming von 13 auf 48 Prozent; Wiki plus Suche schlug Suche allein (61 zu 53 Prozent). Alle Zahlen stammen aus Anthropics eigenen Tests."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein schlafender, mondbeschienener Schreibtisch aus Lichtlinien, über dem sich lose Zettel zu einer geordneten, leuchtenden Karteikasten-Struktur neu sortieren, Nachtblau und Silber.",
+    "caption": "Dreaming: Zwischen den Sitzungen sortiert Claude sein Gedächtnis. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Bei persistenten Agenten stellt sich neben der Kontextgröße die Frage, was sie zwischen Sitzungen behalten und wiederfinden. In einem Engineering-Post vom 6. November legt Anthropic offen, wie das Gedächtnis von Claude aufgebaut ist: In der Sitzung markiert das Modell Wichtiges und schreibt Notizen; zwischen den Sitzungen läuft ein Offline-Prozess, den das Team Dreaming nennt - eine Anspielung auf die Schlafphasen, in denen das menschliche Gehirn Erlebnisse ins Langzeitgedächtnis überführt. Das Konzept des sleep-time compute stammt ursprünglich von Forschenden bei Letta und UC Berkeley."
+    },
+    {
+      "t": "h2",
+      "x": "Salience: Zwei einzelne Pokémon-Läufe im Vergleich"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic vergleicht in Pokémon Red jeweils einen Lauf pro Modell, keine breite Wiederholungsstudie: Claude Sonnet 3.7 schrieb nach rund 10.000 Spielschritten 413 Gedächtnisdateien in 225 Ordnern - und hatte eine Medaille. Fable 5 schrieb neun Dateien in zwei Ordnern plus eine zentrale global.md - und hatte vier. Das Archiv wurde Sonnet 3.7 selbst zum Problem: Es verbrachte zunehmend Zeit damit, seine eigenen Notizen zu pflegen statt zu spielen. Fable 5 notierte dagegen nur, was sich nicht ohnehin auf dem Bildschirm ablesen ließ - Strategien, Pläne, getestete Regeln. Etwa nach sieben fehlgeschlagenen Fängen in Folge: \"If 3+ balls fail in a row, VARY the timing (insert extra 'wait' presses between menu steps) - the catch landed right after doing this.\" Interessant auch: Feste Regeln wie \"notiere nur Fehlschläge\" verschlechterten in den Tests die Leistung stärkerer Modelle - Freiheit im Salience-Urteil schlug Vorgaben."
+    },
+    {
+      "t": "h2",
+      "x": "Dreaming als Korrekturinstanz"
+    },
+    {
+      "t": "p",
+      "x": "Weil Claude in der Sitzung nur sieht, was gerade passiert, landen auch falsche Notizen im Gedächtnis - und werden in späteren Sitzungen als vertrauenswürdig gelesen. Anthropic dokumentiert einen Fall: Claude notierte irrtümlich, ein Orientierungspunkt liege östlich eines Bergsystems, fiel dreimal denselben Einweg-Abhang hinunter und gab zeitweise auf (\"I'm going to stop rather than keep looping\"). Ein Dreaming-Lauf prüfte die Notiz gegen das Original-Transkript, korrigierte sie - und Claude fand direkt den Höhleneingang und erreichte die nächste Stadt. Der Lauf mit der unkorrigierten Notiz kam nie dorthin."
+    },
+    {
+      "t": "h2",
+      "x": "Wikis als Wissenslandkarte"
+    },
+    {
+      "t": "p",
+      "x": "Die zweite Dreaming-Aufgabe ist der Aufbau von Repräsentationen: Claude pflegt Wiki-ähnliche Seiten mit Verlinkungen, die als Landkarte durchs eigene Wissen dienen. Auf einem Korpus interner Dokumente des Software-Unternehmens Stainless (rund 350.000 Dateien, etwa 420 Millionen Token) stieg der Anteil bewerteter Kriterien bei 25 Testfragen von 13 Prozent nach zwei Dreaming-Sitzungen auf 48 Prozent nach 128. Am stärksten half das Wiki zusammen mit einem Suchwerkzeug: 61 Prozent gegenüber 53 Prozent mit Suche allein, bei rund 20.000 gesparten Tokens pro Frage. Die Grenzen benennt der Post ehrlich: Bei Aufgaben, deren Antworten in einem einzigen Dokument stehen, brachte das Wiki keinen messbaren Gewinn - und einmal wuchs das Wiki auf das 1,77-Fache des Ausgangskorpus, eine Karte so groß wie das Land."
+    },
+    {
+      "t": "h2",
+      "x": "Zielgerichtetes Träumen und die dünne Kopfschicht"
+    },
+    {
+      "t": "p",
+      "x": "Dreaming lässt sich auf ein Ziel ausrichten. In einem Vertrags-Benchmark (Harvey LAB) überlebten zunächst nur 41 von 57 bewerteten Vertragsfakten im Wiki, weil mehrere Agenten sich auf einer gemeinsamen Seite gegenseitig überschrieben. Nach einer Schleife, in der Claude die eigenen Fehler reflektierte und die Bauanleitung umschrieb - ein Agent pro Vertrag, Bedingungen wörtlich zitiert statt summarisiert -, waren es 57 von 57. Die oberste Gedächtnisschicht, die in jede Sitzung injiziert wird, muss dagegen klein bleiben: Claude Code lädt nur die ersten 200 Zeilen beziehungsweise 25 KB der MEMORY.md als Index, weil längere Anweisungsdateien die Befolgung verwässern."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic zeigt neben internen Erfolgswerten auch fehlerhafte Notizen, erfolglose Läufe und Fälle ohne Wiki-Vorteil. Der Beitrag gibt damit konkrete Ansatzpunkte für Gedächtnissysteme: wann schreiben, wie gegen Originale prüfen und wie wenig Kontext dauerhaft laden. Die Zahlen stammen aus den beschriebenen eigenen Versuchen, nicht aus einer unabhängigen Prüfung. Die Pokémon-Beispiele isolieren den Effekt der Dateimenge nicht von den Unterschieden zwischen den Modellen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist Dreaming bei Claude?",
+      "a": "Ein Offline-Prozess zwischen den Sitzungen: Claude arbeitet Transkripte durch, korrigiert Notizen gegen die Originale, baut Wiki-Strukturen und bestimmt, welche wenigen Erinnerungen in die nächste Sitzung injiziert werden."
+    },
+    {
+      "q": "Was unterscheidet Dreaming von mehr Kontext?",
+      "a": "Ein größeres Kontextfenster löst nicht, was behalten, korrigiert und wiedergefunden wird. Anthropics Tests zeigen: Das Urteil darüber, was wichtig ist (Salience), und die Reparatur falscher Notizen entscheiden über die Leistung - nicht die Menge gespeicherter Dateien."
+    },
+    {
+      "q": "Sind die genannten Zahlen unabhängig geprüft?",
+      "a": "Die hier genannten Werte stammen aus Anthropics eigenem Engineering-Post und dessen internen Evaluationen. Wir haben nicht nachgemessen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The components of agent memory",
+      "publisher": "Anthropic (Engineering)",
+      "url": "https://www.anthropic.com/research/components-of-agent-memory",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "related": [
+    "meta-muse-active-memory-focus-modelle",
+    "metr-anthropic-beschleunigung-ki-forschung",
+    "anthropic-claude-angriffsflaeche-code"
+  ],
+  "published": "2026-11-07T08:51:00+01:00",
+  "modified": "2026-11-07T08:51:00+01:00"
+}

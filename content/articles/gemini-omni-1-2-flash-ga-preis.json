@@ -1,0 +1,102 @@
+{
+  "slug": "gemini-omni-1-2-flash-ga-preis",
+  "section": "praxis",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Gemini Omni 1.2 Flash: Was GA und 7 Cent je Videosekunde ändern",
+  "dek": "Googles Video-Modell Omni 1.2 Flash ist allgemein verfügbar: längere Clips, Nachbearbeitung per Konversation statt Neugenerierung und ein Preis von 7 Cent pro Sekunde in 720p.",
+  "tags": [
+    "Google",
+    "Gemini",
+    "Videogenerierung",
+    "API",
+    "Preise"
+  ],
+  "key_takeaways": [
+    "Seit dem 5. November allgemein verfügbar in Gemini API und Google Cloud. Weitere Integrationen werden produktabhängig ausgerollt; die Gemini-App nennt Google für AI-Ultra-Abonnenten.",
+    "Neu: native Clips von 3 bis 15 Sekunden (bisher maximal 10), Multi-Turn-Editing im Dialog und bessere Referenztreue für Figuren, Produkte und Markenfarben.",
+    "Der Preis liegt bei 0,07 Dollar pro Sekunde in 720p - 30 Prozent unter Omni 1.1. Ein 15-Sekunden-Clip kostet damit 1,05 Dollar.",
+    "Google selbst nennt Schwächen: schnelle Sport-Action, rasche Skriptwechsel und komplexe Physik. Ausgaben tragen ein SynthID-Wasserzeichen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine Filmklappe aus Licht, aus der eine 15-teilige Kette leuchtender Frames wächst, daneben ein Regler, der auf einen niedrigeren Preispunkt zeigt, Dunkelblau und Gelb.",
+    "caption": "Omni 1.2 Flash: 15 Sekunden, Multi-Turn-Edits, 30 Prozent günstiger. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google machte Gemini Omni 1.2 Flash am 5. November für die Gemini API und Google Cloud allgemein verfügbar. Nach der Kurzmeldung im gestrigen Überblick betrachten wir hier die Preis- und Einsatzbedingungen genauer. Laut Google kostet 720p-Video 0,07 US-Dollar pro Sekunde, 30 Prozent weniger als bei Omni 1.1 Flash. Native Clips reichen von drei bis 15 Sekunden, fünf Sekunden beziehungsweise 50 Prozent mehr als zuvor."
+    },
+    {
+      "t": "h2",
+      "x": "Der Workflow, den Google im Sinn hat"
+    },
+    {
+      "t": "p",
+      "x": "Das Kostenargument steckt im Ablauf: Entwirf schnell und billig in 360p oder 720p, korrigiere einzelne Details per Folge-Prompt - Produkt tauschen, Hintergrund ändern, Licht oder Wetter anpassen, Seitenverhältnis wechseln - statt den ganzen Clip neu zu rendern, und skaliere erst die gelungenen Ergebnisse auf 1080p oder 4K hoch. Bei 0,07 Dollar pro Sekunde kostet ein 15-Sekunden-Entwurf in 720p rechnerisch 1,05 Dollar. Vier solche 15-Sekunden-Generierungen ergeben rechnerisch 4,20 Dollar, ohne zusätzliche Bearbeitungs- oder Upscalingkosten. Deren Tarife haben wir hier nicht geprüft."
+    },
+    {
+      "t": "h2",
+      "x": "Referenztreue und Konsistenz"
+    },
+    {
+      "t": "p",
+      "x": "Omni 1.2 Flash akzeptiert als Steuerung Figuren-, Produkt- oder Stilbilder, kurze Bewegungsclips von bis zu drei Sekunden und Audio-Hinweise. Laut Google Cloud sind Audio-Referenzen allerdings nur nach Freischaltung über eine Allowlist nutzbar. Laut Google bleiben Gesichter, Kleidung, Verpackungstypografie und Markenfarben über Kamerawinkel hinweg konsistent - etwa für virtuelle Anproben aus einem Model-Foto plus Vorder- und Rückansichten der Kleidungsstücke. Auch über mehrere Bearbeitungsrunden hinweg sollen Figuren und Szenen nicht mehr verwaschen. Dazu kommen flüssigere Dialoge mit klarerer Lippensynchronisation und die Zuordnung mehrerer Sprecher."
+    },
+    {
+      "t": "h2",
+      "x": "Wo du es bekommst - und wo die Grenzen sind"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Entwickler: Gemini API und Google AI Studio, inklusive Starter-Apps; Provisioned Throughput ist verfügbar.",
+        "Unternehmen: Google Cloud Console mit Enterprise-Infrastruktur; Ausgaben tragen ein nicht wahrnehmbares SynthID-Wasserzeichen.",
+        "Alle anderen: Flow für Szenen-Regie und Multi-Turn-Edits, Google Vids (15 Sekunden ohne Aufpreis mit Google-Konto oder Workspace), die Gemini-App (Rollout für AI-Ultra-Abonnenten) und Google Ads.",
+        "Einschränkungen laut Google: schnelle Sport-Action, rasche Skriptwechsel und komplexe Physik sind weiterhin Baustellen."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Einordnung: Mit 15 Sekunden, Dialog-Editing und dem gesenkten Sekundenpreis zielt Google klar auf produktive Werbe- und Commerce-Workflows - Katalog-Spins, Try-ons, Erklärclips. Ob die beworbenen Konsistenz-Verbesserungen im Alltag tragen, haben wir nicht selbst getestet; die Angaben stammen aus Googles Ankündigung. Für Teams, die bisher mit 10-Sekunden-Stückelung und Komplett-Rerenders arbeiteten, ist der neue Ablauf allein rechnerisch einen Test wert."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was kostet Gemini Omni 1.2 Flash?",
+      "a": "0,07 Dollar pro Sekunde in 720p, laut Google 30 Prozent unter Omni 1.1. Ein 15-Sekunden-Clip liegt damit bei 1,05 Dollar. Entwürfe in niedriger Auflösung und gezielte Nachbearbeitung statt Neurendern drücken die Kosten weiter."
+    },
+    {
+      "q": "Kann ich bestehende Clips nachträglich ändern?",
+      "a": "Ja, das ist eine der zentralen Neuerungen: Multi-Turn-Editing erlaubt Änderungen wie Produktwechsel, neuen Hintergrund oder anderes Seitenverhältnis per Folge-Prompt über den gesamten 15-Sekunden-Clip, ohne von vorn zu starten."
+    },
+    {
+      "q": "Sind die Ausgaben als KI-generiert gekennzeichnet?",
+      "a": "Ja, laut Google tragen alle Ausgaben ein nicht wahrnehmbares SynthID-Wasserzeichen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini Omni 1.2 Flash: 15-second video and lower pricing",
+      "publisher": "Google (Blog)",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "title": "Gemini Omni 1.2 Flash generally available",
+      "publisher": "Google Cloud",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "related": [
+    "news-ueberblick-abend-2026-11-06",
+    "openai-images-2-6-flare-sunburst-gif",
+    "grok-api-wasserzeichen-pflicht"
+  ],
+  "published": "2026-11-07T08:51:00+01:00",
+  "modified": "2026-11-07T08:51:00+01:00"
+}

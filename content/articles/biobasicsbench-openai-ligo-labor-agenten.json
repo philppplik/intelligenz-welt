@@ -1,0 +1,90 @@
+{
+  "slug": "biobasicsbench-openai-ligo-labor-agenten",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "BioBasicsBench: OpenAI und Ligo testen Labor-Agenten mit echtem Experiment-Chaos",
+  "dek": "100 Routinen aus dem nassen Labor - Gele, Platten, Mikroskopie, rohe Sequenzdaten: Ein neuer Benchmark misst, ob KI-Agenten experimentelle Belege richtig lesen und wackelige Schlüsse verweigern.",
+  "tags": [
+    "OpenAI",
+    "Benchmark",
+    "Biotech",
+    "Agenten",
+    "Wissenschaft"
+  ],
+  "key_takeaways": [
+    "OpenAI hat am 6. November zusammen mit dem Enzymdesign-Unternehmen Ligo BioBasicsBench vorgestellt: 100 Aufgaben aus fünf Bereichen alltäglicher Laborarbeit, gebaut aus echten experimentellen Rohdaten.",
+    "Die Aufgaben prüfen, ob Agenten Rohdaten richtig interpretieren, fehlerhafte Kontrollen erkennen und unbelegte Schlüsse verweigern - nicht, ob sie Paper-Figuren beschreiben können.",
+    "Bestes Ergebnis: GPT-6 Astra mit 66,7 Prozent der erreichbaren Punktzahl (95%-Intervall 60,3-73,1) bei xhigh, der höchsten für alle sieben Modelle gemeinsam berichteten Stufe; GPT-5.6 Sol kommt auf 43,8 Prozent. Sieben Modelle, 37 Einstellungen, 18.500 bewertete Läufe.",
+    "Alle Zahlen stammen aus OpenAIs Veröffentlichung; die Beispiele zeigen, dass selbst Astra Kontrollen und Mehrdeutigkeiten noch regelmäßig verfehlt."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein stilisiertes Labor-Gel mit leuchtenden Banden, daneben eine Petrischale und ein Mikroskop-Okular aus Lichtlinien, auf einem dunklen Analysebildschirm, Blau und Violett.",
+    "caption": "BioBasicsBench prüft Labor-Alltag statt Paper-Figuren. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI kritisiert, dass bestehende Benchmarks mit ausgewählten Paper-Abbildungen die Mehrdeutigkeit alltäglicher Laborarbeit verfehlen können. Der Alltag im nassen Labor sieht anders aus: gescheiterte Experimente, mehrdeutige Bilder, widersprüchliche Beobachtungen. Genau dorthin zielt BioBasicsBench, den OpenAI am 6. November zusammen mit Ligo, einem Biotech-Unternehmen für Enzymdesign, vorgestellt hat: 100 Routineaufgaben, gebaut aus echten experimentellen Rohdaten der beteiligten Forschenden."
+    },
+    {
+      "t": "h2",
+      "x": "Was der Benchmark prüft"
+    },
+    {
+      "t": "p",
+      "x": "Die 100 Aufgaben decken fünf Bereiche ab: Proteinmethoden, Bildgebung und Zytometrie, Quantifizierung und Assays, Nukleinsäuremethoden und molekulares Klonieren. Als Eingabe dienen Gele und Blots (31 Aufgaben), Protokolle und handschriftliche Notizen (27), Instrumenten-Exporte inklusive roher FCS-Dateien (20), Fotos von Werkbank und Geräten (18), Mikroskopie-Stacks (14), Sequenzdateien (12), Protokoll-Videos (7) und Platten mit Kolonien (7). Die genannten Eingabe-Kategorien überschneiden sich und sind keine Aufteilung der 100 Aufgaben. Jede Aufgabe kommt mit einer von Experten geschriebenen Bewertungsrubrik und durchlief eine dreistufige Prüfung: intern bei Ligo, extern durch eine promovierte Laborwissenschaftlerin oder einen -wissenschaftler, final wieder intern. Bewertet wird, ob der Agent die richtige Schlussfolgerung zieht - oder erkennt, dass die Belege keine zulassen."
+    },
+    {
+      "t": "h2",
+      "x": "Ergebnisse: Fortschritt mit deutlicher Restlücke"
+    },
+    {
+      "t": "p",
+      "x": "Getestet wurden sieben OpenAI-Modelle in 37 Kombinationen aus Modell und Reasoning-Stufe, jeweils fünf Versuche pro Aufgabe - 18.500 bewertete Läufe. Bei xhigh, der höchsten für alle sieben Modelle gemeinsam berichteten Reasoning-Stufe, erreichte GPT-6 Astra im Mittel 66,7 Prozent der verfügbaren Punktzahl (95-Prozent-Intervall 60,3 bis 73,1), GPT-6.1 Sol 62,0 Prozent und GPT-5.6 Sol 43,8 Prozent. Astra brauchte dafür mit rund 4.700 Ausgabetokens pro Aufgabe deutlich weniger Text als GPT-5.6 Sol mit rund 9.100. OpenAIs Deutung: Stärkere native multimodale Fähigkeiten seien der Hebel für Laboranalyse."
+    },
+    {
+      "t": "h2",
+      "x": "Die Beispiele sind der eigentliche Nachrichtenwert"
+    },
+    {
+      "t": "p",
+      "x": "Drei dokumentierte Fälle zeigen, woran es hängt. Bei einem Zelltoxizitäts-Assay überlagern sich die Detektionsfenster zweier Farbstoffe - GPT-5.6 Sol erklärte Zellen für tot, Astra erkannte die Mehrdeutigkeit und forderte bessere Kontrollen. Auf einer Negativkontroll-Platte las Astra das handschriftliche Randetikett (\"LB Kan50\" - Kanamycin statt des verwendeten Ampicillins) und verwarf die Kontrolle als unzuverlässig, während GPT-5.6 Sol auf ihr aufbaute. Und in einer Bildserie, die Zellen scheinbar verschwinden lässt, erkannte Astra einen Z-Stack unterschiedlicher Fokusebenen statt eines biologischen Phänomens. Umgekehrt betont OpenAI, dass auch Astra bei Kontrollen und Bildinterpretation regelmäßig scheitert."
+    },
+    {
+      "t": "p",
+      "x": "Einordnung: BioBasicsBench ist ein Versuch, Labor-Agenten an der Mehrdeutigkeit zu messen, in der Wissenschaftler täglich arbeiten. OpenAI rahmt das explizit dual-use-bewusst: Bessere Labor-Copiloten beschleunigen Biologie und brauchen Biosafety-Monitoring. Zu beachten ist, dass alle Ergebnisse aus OpenAIs eigener Veröffentlichung stammen und bislang nur OpenAI-Modelle getestet wurden - wir haben nicht nachgemessen, und Vergleiche mit Modellen anderer Anbieter fehlen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist BioBasicsBench?",
+      "a": "Ein Benchmark von OpenAI und dem Biotech-Unternehmen Ligo mit 100 Routineaufgaben aus dem nassen Labor. Er misst, ob KI-Agenten rohe experimentelle Daten richtig lesen, fehlerhafte Kontrollen erkennen und unbelegte Schlüsse verweigern."
+    },
+    {
+      "q": "Welches Modell schneidet am besten ab?",
+      "a": "In OpenAIs eigener Auswertung GPT-6 Astra mit 66,7 Prozent der erreichbaren Punktzahl bei xhigh, vor GPT-6.1 Sol (62,0). Modelle anderer Anbieter wurden nicht getestet; wir haben nicht nachgemessen."
+    },
+    {
+      "q": "Kann ich meine Modelle damit testen?",
+      "a": "OpenAI stellt den Benchmark als Messinstrument für die Branche vor; Details zur Verfügbarkeit der Aufgaben und Daten findest du in der Originalveröffentlichung."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Measuring how AI agents handle everyday wet-lab science",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "related": [
+    "gemini-omni-1-2-flash-ga-preis",
+    "vlm-symbole-steuern-modelle-herz-rekursion"
+  ],
+  "published": "2026-11-07T08:51:00+01:00",
+  "modified": "2026-11-07T08:51:00+01:00"
+}

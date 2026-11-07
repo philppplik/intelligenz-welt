@@ -1,0 +1,93 @@
+{
+  "slug": "visa-agentic-commerce-benchmark-57-prozent",
+  "section": "trends",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Visa-Benchmark: 43 Prozent der simulierten Shopping-Läufe scheitern",
+  "dek": "22 Modelle in 15 simulierten Szenarien: Im Visa-Test bestanden 57,2 Prozent der Läufe. Mehr als die Hälfte der Fehlschläge enthielt trotzdem eine Kaufentscheidung, nicht zwingend eine echte Transaktion.",
+  "tags": [
+    "Visa",
+    "Agenten",
+    "E-Commerce",
+    "Benchmark",
+    "Vertrauen"
+  ],
+  "key_takeaways": [
+    "Visa hat am 5. November den Agentic Commerce Benchmark veröffentlicht: 22 Modelle aus 12 Labors müssen in 15 Szenarien durch Nachfragen versteckte Anforderungen aufdecken und dann eine korrekte Kaufentscheidung treffen - oder den Kauf verweigern.",
+    "Gesamtquote: 57,2 Prozent bestandene Läufe. Die besten Modelle kommen auf 82,2 Prozent, die schwächsten auf 28,9 Prozent.",
+    "Kritisch: 54 Prozent der Fehlschläge enden trotzdem mit einer Kaufentscheidung - das Modell entscheidet dann am Bedarf vorbei, statt zu verweigern. Und nur in 34,2 Prozent der Fälle besteht ein Modell alle drei Versuche desselben Szenarios.",
+    "Neugier zahlt sich aus: Die fünf Modelle, die die meisten versteckten Anforderungen aufdeckten, bestanden 70,2 Prozent der Läufe; die fünf fragfaulsten nur 44,4 Prozent."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Einkaufskorb aus Lichtlinien auf einer Waagschale, gegenüber ein Fragezeichen aus leuchtenden Punkten, dazwischen ein abgehackter Pfad, Dunkelblau und Rot-Akzent.",
+    "caption": "Visa-Test: 42,8 Prozent der simulierten Shopping-Läufe scheitern. Symbolbild, KI-generiert; keine Quote realer Einkäufe.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Wer einem KI-Agenten den Geldbeutel anvertrauen will, braucht vor allem eines: Verlässlichkeit. Aspekte davon untersucht Visas am 5. November veröffentlichter Agentic Commerce Benchmark. 22 Modelle aus 12 Labors mussten in 15 Einkaufsszenarien - Fernseher, Laptop, Pflegegerät - im Dialog mit einem simulierten Kunden dessen Anforderungen aufdecken. Denn Kunden sagen selten alles: Wer einen Fernseher will, erwähnt vielleicht eine Markenempfehlung des Verwandten und eine Mitgliedschaft bei einem Händler, verschweigt aber Budget, HDR10+-Pflicht für Familienvideos und Gaming-Ansprüche. Bestanden hat, wer die versteckten Anforderungen aufdeckt und dann korrekt einen Kauf empfiehlt - oder den Kauf verweigert, wenn nichts passt. Glückstreffer zählen nicht: Ohne aufgedeckte Informationen ist die Entscheidung nicht gerechtfertigt. Die aktuelle Auswertung betrifft simulierte Kunden und Entscheidungen. Visa will Checkout, Zahlung und Bestellaufgabe erst später ergänzen. Die Ergebnisse sind daher keine gemessene Fehlkaufquote im echten Handel."
+    },
+    {
+      "t": "h2",
+      "x": "Die Ergebnisse im Detail"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Gesamt: 57,2 Prozent bestandene Läufe - 42,8 Prozent scheitern.",
+        "Spreizung: Die besten Modelle bestehen 82,2 Prozent, die schwächsten 28,9 Prozent.",
+        "Neugier korreliert mit Erfolg: Die fünf Modelle, die die meisten versteckten Anforderungen aufdeckten, kamen im Schnitt auf 70,2 Prozent; die fünf mit den wenigsten auf 44,4 Prozent.",
+        "Preis hilft, garantiert nicht: Die fünf teuersten Modelle pro Lauf bestanden 67,1 Prozent, die fünf günstigsten 50,2 Prozent.",
+        "Konsistenzproblem: Jedes Modell hatte drei Versuche pro Szenario - alle drei bestanden nur 34,2 Prozent der Fälle.",
+        "Der eigentliche Vertrauenskiller: 54 Prozent der Fehlschläge endeten trotzdem mit einer Kaufentscheidung - am Bedarf vorbei oder ohne alle Anforderungen aufgedeckt zu haben."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Warum die 54 Prozent das wichtigste Ergebnis sind"
+    },
+    {
+      "t": "p",
+      "x": "Im Test endeten 54 Prozent der nicht bestandenen Läufe dennoch mit einer Kaufentscheidung: Entweder passte die Empfehlung nicht zu erkannten Anforderungen, oder das Modell hatte nicht alle Anforderungen aufgedeckt. Das ist ein Warnsignal in diesen Szenarien, keine belastbare Aussage über alle Agenten oder echte Zahlungen. Visa nennt außerdem aus seinem eigenen US-Trust-Index vom September 2026: 72 Prozent hätten bereits einen KI-Assistenten genutzt, 23 Prozent vertrauten KI bei Zahlungsabwicklungen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Visa hat ein Eigeninteresse: Mit Visa Intelligent Commerce verkauft das Unternehmen selbst Infrastruktur für agentischen Handel, und der Benchmark liefert die Begründung dafür. Rubail Birwadker, Global Head of Growth bei Visa, wird in der Pressemitteilung zitiert: \"AI agents have the potential to power the next era of commerce, but trust is key to making it work.\" Trotzdem ist das Design ungewöhnlich praxisnah - Nachfragen statt Ein-Schuss-Prompt, Verweigerung als korrekte Antwort, Wiederholbarkeit als Kriterium. Visa will weitere Szenarien bis hin zu Checkout, Zahlung und Bestellung ergänzen; die Tests können Verbraucher selbst ausprobieren. Für den Einsatz folgt daraus keine feste Anzahl nötiger Tests. Sinnvoll sind wiederholte Prüfungen von Anforderungsklärung und Verweigerung, statt sich auf eine einzelne gelungene Demo zu verlassen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was misst Visas Agentic Commerce Benchmark?",
+      "a": "Ob KI-Modelle in realistischen Einkaufsszenarien die versteckten Anforderungen eines Kunden im Dialog aufdecken und dann korrekt handeln - einen Kauf empfehlen, wenn etwas passt, verweigern, wenn nicht. 22 Modelle aus 12 Labors, 15 Szenarien, drei Versuche pro Szenario. Echte Checkouts und Zahlungen sind nicht Gegenstand der aktuellen Auswertung."
+    },
+    {
+      "q": "Welches Modell ist am besten?",
+      "a": "Visa nennt in der Pressemitteilung keine Einzelmodelle, nur Spannen: Die besten bestehen 82,2 Prozent der Läufe, die schwächsten 28,9 Prozent, im Mittel 57,2 Prozent."
+    },
+    {
+      "q": "Warum ist die Konsistenz so schlecht?",
+      "a": "Nur 34,2 Prozent der Modell-Szenario-Kombinationen wurden in allen drei Versuchen bestanden - selbst Modelle, die ein Szenario einmal lösen, scheitern beim Wiederholen oft. Visa wertet das als Kernproblem für Vertrauen im agentischen Handel."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Visa Releases First-of-Its-Kind Industry Benchmark for AI Shopping; Almost Half of Test Runs Fail",
+      "publisher": "Visa (Pressemitteilung)",
+      "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22936.html",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "related": [
+    "menlo-enterprise-ki-ausgaben-177-milliarden",
+    "biobasicsbench-openai-ligo-labor-agenten"
+  ],
+  "published": "2026-11-07T08:51:00+01:00",
+  "modified": "2026-11-07T08:51:00+01:00"
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "xai-api-wasserzeichen-standard-ab-heute",
+  "section": "news",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Grok-Wasserzeichen: Der angekündigte API-Stichtag ist erreicht",
+  "dek": "Die Dokumentation auf docs.x.ai nennt den 7. November als Start für Text-Wasserzeichen bei sieben Grok-Modellen. Was Entwickler am Header und in den Team-Einstellungen prüfen können.",
+  "tags": [
+    "xAI",
+    "Grok",
+    "Wasserzeichen",
+    "API",
+    "EU AI Act"
+  ],
+  "key_takeaways": [
+    "Laut docs.x.ai versehen ab dem 7. November 2026 die Grok-Modelle grok-4.7, 4.6, 4.5, 4.3 und die drei grok-4.20-Varianten in der API ihre Textausgaben standardmäßig mit einem unsichtbaren Wasserzeichen - einschließlich strukturierter Ausgaben und Tool-Call-Argumenten.",
+    "Das Wasserzeichen verändert laut Doku weder Qualität noch Geschwindigkeit und erfordert keine Code-Änderung; der Response-Header x-watermark zeigt, ob eine Antwort markiert wurde.",
+    "Team-Admins können die Markierung pro Modell in der Console abschalten; die Einstellung gilt für alle API-Keys des Teams, greift innerhalb von etwa fünf Minuten und wird im Audit-Log festgehalten. Einzelne Modelle können gesperrt sein.",
+    "Als Grund nennt der Anbieter die EU-AI-Act-Compliance. Die rechtliche Einordnung stammt vom Anbieter; ob und wann eine Ausnahme für den eigenen Fall gilt, muss jeder Nutzer selbst prüfen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Fluss aus leuchtenden Textzeichen, durch den eine feine, wellige Signaturlinie in Kontrastfarbe läuft, dunkelblauer Grund, dezent.",
+    "caption": "Der in der Dokumentation angekündigte Stichtag ist erreicht. Symbolbild, KI-generiert; kein Nachweis eines Testaufrufs.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Die Dokumentation auf docs.x.ai nennt den 7. November 2026 als Startdatum für standardmäßig markierte Textausgaben. Betroffen sind grok-4.7, grok-4.6, grok-4.5, grok-4.3 und die drei grok-4.20-Varianten. Wir hatten die Ankündigung bereits am 2. November beschrieben; heute ist der angekündigte Stichtag erreicht. Das ist ein Praxisupdate zur Dokumentation, kein eigener Nachweis eines aktivierten API-Rollouts. Einen bezahlten Testaufruf haben wir nicht ausgeführt."
+    },
+    {
+      "t": "p",
+      "x": "Der aktuelle Abruf zeigt auf x.ai und docs.x.ai die Beschriftung SpaceXSI. Daraus leiten wir hier keine Änderung der rechtlichen Unternehmensidentität ab. Die technischen Angaben dieses Beitrags sind Aussagen der unter docs.x.ai abgerufenen Dokumentation; API-Adresse und Modellnamen bleiben darin x.ai beziehungsweise Grok."
+    },
+    {
+      "t": "h2",
+      "x": "Wie die Markierung funktioniert"
+    },
+    {
+      "t": "p",
+      "x": "Das Wasserzeichen fügt keine Zeichen hinzu: Es steuert während der Generierung minimal, welche Tokens das Modell wählt. Die Erkennung ist statistisch - der Anbieter bewertet einen Text als markiert, nicht markiert oder unklar, wobei längere Texte ein stärkeres Signal liefern. Zugang zur Erkennungs-API gibt es nur auf Antrag. Laut Dokumentation beeinflusst die Markierung weder Qualität noch Geschwindigkeit der Antworten; eine Anpassung des eigenen Codes ist nicht nötig. Ob eine konkrete Antwort markiert wurde, zeigt der Response-Header x-watermark: true."
+    },
+    {
+      "t": "h2",
+      "x": "Opt-out: möglich, aber dokumentiert"
+    },
+    {
+      "t": "p",
+      "x": "Abmelden können nur Team-Admins, pro Modell, in der Console. Die Einstellung gilt für sämtliche API-Keys des Teams und greift laut Doku innerhalb von fünf Minuten für neue Anfragen. Wer ein Modell abmeldet, muss bestätigen, dass eine Ausnahme nach geltendem Recht auf den eigenen Fall zutrifft, und trägt die Verantwortung für Markierungs- und Offenlegungspflichten selbst. Jeder Opt-in und Opt-out landet im Audit-Log des Teams. Einzelne Modelle können für ein Team gesperrt sein - dann fehlt die Checkbox."
+    },
+    {
+      "t": "h2",
+      "x": "Was das für Pipelines bedeutet"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Prüfe heute mit einem Testaufruf, ob deine Antworten den Header x-watermark: true tragen - besonders bei EU-bezogenem Traffic.",
+        "Wenn du Grok-Ausgaben in Trainingsdaten, Provenance-Tools oder Compliance-Prozesse einspeist, entscheide pro Modell, ob die Markierung bleibt.",
+        "Dokumentiere die Opt-out-Entscheidung intern: Sie ist teamweit, auditiert und mit einer Rechtsbestätigung verknüpft.",
+        "Rechne laut Dokumentation nicht mit sichtbaren Artefakten; ob eine statistische Erkennung im konkreten Fall gelingt, haben wir nicht getestet."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Einordnung: Die standardmäßig angekündigte Markierung ist ein Schritt, den der Anbieter mit dem EU AI Act begründet - diese rechtliche Einordnung stammt vom Anbieter selbst. Praktisch ändert sich für die meisten Integrationen wenig, solange sie nicht auf unmarkierten Text angewiesen sind. Für alle, die Grok-Ausgaben weiterverarbeiten, ist heute trotzdem der richtige Tag, Header und Team-Einstellungen zu kontrollieren."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Muss ich meinen Code ändern?",
+      "a": "Nein. Laut Doku gibt es keinen Request-Parameter, und das Antwortformat bleibt bis auf den Header x-watermark unverändert."
+    },
+    {
+      "q": "Kann ich das Wasserzeichen abschalten?",
+      "a": "Team-Admins können es pro Modell in der Console deaktivieren; das gilt dann für alle API-Keys des Teams und wird im Audit-Log festgehalten. Dabei musst du bestätigen, dass eine rechtliche Ausnahme für deinen Fall gilt. Einzelne Modelle können gesperrt sein."
+    },
+    {
+      "q": "Verschlechtert das Wasserzeichen die Antworten?",
+      "a": "Der Anbieter sagt nein - weder Qualität noch Geschwindigkeit änderten sich. Das ist eine Herstellerangabe, die wir nicht nachgemessen haben."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Output Watermarking",
+      "publisher": "docs.x.ai, aktueller Seitenabruf",
+      "url": "https://docs.x.ai/developers/advanced-api-usage/watermarking",
+      "accessed": "2026-11-07"
+    },
+    {
+      "title": "Aktueller Seitentitel und Beschriftung",
+      "publisher": "x.ai",
+      "url": "https://x.ai/",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "related": [
+    "grok-api-wasserzeichen-pflicht",
+    "openai-images-2-6-flare-sunburst-gif"
+  ],
+  "published": "2026-11-07T08:51:00+01:00",
+  "modified": "2026-11-07T08:51:00+01:00"
+}

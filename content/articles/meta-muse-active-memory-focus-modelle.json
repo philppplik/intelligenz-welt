@@ -1,0 +1,86 @@
+{
+  "slug": "meta-muse-active-memory-focus-modelle",
+  "section": "modelle",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Meta bringt Muse-Wonder-Technik in die Alltagsmodelle: Active Memory und Active Focus",
+  "dek": "Meta rüstet die Modelle hinter Muse und Meta AI mit Technik aus der Wonder-Serie auf: besseres Gedächtnis für frühere Gespräche und mehr Durchhaltevermögen bei unerwarteten Problemen.",
+  "tags": [
+    "Meta",
+    "Muse",
+    "Sprachmodelle",
+    "Gedächtnis",
+    "Release"
+  ],
+  "key_takeaways": [
+    "Meta hat am 6. November spezialisierte Versionen seiner bestehenden Muse- und Meta-AI-Modelle vorgestellt, die mit Muse Wonder trainiert wurden.",
+    "Auf Metas eigenem Personal Superintelligence Index erreicht das aktuelle Muse-Modell 47 Prozent gegenüber 38 Prozent beim Vorgänger - Herstellerangaben.",
+    "Active Memory soll Wichtiges aus früheren Gesprächen behalten: In Metas eigener Evaluierung nutzen die Modelle kritischen Kontext in 90 statt 76 Prozent der Fälle, Meta nennt außerdem einen separaten Rückgang kritischen Vergessens um den Faktor 2,4.",
+    "Active Focus soll Aufgaben trotz unerwarteter Probleme zu Ende bringen; Meta meldet 67 Prozent Verbesserung bei solchen Alltagsaufgaben. Alle Werte stammen von Meta, wir haben nicht nachgemessen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Zwei stilisierte Gedächtnisknoten aus Licht, die über eine leuchtende Brücke dauerhaft verbunden bleiben, um sie herum kleinere verblassende Funken, Dunkelblau und Grün.",
+    "caption": "Active Memory und Active Focus kommen in die Muse-Alltagsmodelle. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Meta hat am 6. November spezialisierte Versionen seiner bestehenden Modelle für Muse und Meta AI vorgestellt. Sie wurden mit Technik aus der vor wenigen Wochen präsentierten Muse-Wonder-Serie trainiert und sollen zwei deren Fähigkeiten in die Alltagsprodukte bringen: Active Memory und Active Focus. Die Modelle rollen ab sofort an Nutzer von Muse und Meta AI aus."
+    },
+    {
+      "t": "h2",
+      "x": "Active Memory: Wichtiges behalten, Veraltetes fallen lassen"
+    },
+    {
+      "t": "p",
+      "x": "Active Memory soll erkennen, welche Informationen aus früheren Gesprächen noch relevant sind - und welche nicht mehr. Nach Unternehmensangaben wurden die Modelle darauf trainiert, temporäre von dauerhaften Informationen zu unterscheiden und über Zeiträume hinweg zu schließen. In Metas eigener Active-Memory-Evaluierung nutzen die aktuellen Modelle kritischen Kontext in 90 Prozent der Aufgaben korrekt, gegenüber 76 Prozent beim Vorgänger; kritisches Vergessen von Informationen für das Nutzerziel sei um den Faktor 2,4 gesunken."
+    },
+    {
+      "t": "h2",
+      "x": "Active Focus: Aufgaben trotz Störungen zu Ende bringen"
+    },
+    {
+      "t": "p",
+      "x": "Active Focus zielt auf Durchhaltevermögen: Die Modelle wurden laut Meta mit typischen realen Blockern trainiert, damit sie bei unerwarteten Problemen hartnäckiger bleiben, sich erholen oder Alternativen finden. Für Muse meldet Meta 67 Prozent Verbesserung beim Abschluss von Alltagsaufgaben mit unerwarteten Störungen. Außerdem sollen die Modelle besser multitasken und auf Kurskorrekturen mitten in einer laufenden Aufgabe reagieren, ohne den Faden zu verlieren."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Auf Metas eigenem Personal Superintelligence Index steigt das aktuelle Muse-Modell von 38 auf 47 Prozent. Alle Werte stammen aus Metas Mitteilung, nicht aus einer unabhängigen Nachmessung. Der gelesene Kurzbeitrag erklärt Methode und Zusammensetzung des Index nicht näher. Die Zahlen belegen daher keinen allgemeinen Vorsprung vor anderen Anbietern. Parallel beschreibt Anthropic Gedächtnisarbeit bei Agenten; das ist ein anderer Ansatz mit anderen Tests. Ob die Meta-Verbesserungen im eigenen Alltag auffallen, bleibt zu prüfen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was sind Active Memory und Active Focus?",
+      "a": "Active Memory soll relevante Informationen aus früheren Gesprächen behalten und Veraltetes erkennen. Active Focus soll ein Modell trotz unerwarteter Probleme an einem Ziel dranbleiben lassen. Beides stammt aus der Muse-Wonder-Serie und steckt jetzt in den Standardmodellen von Muse und Meta AI."
+    },
+    {
+      "q": "Sind die Verbesserungen unabhängig geprüft?",
+      "a": "Die hier genannten Werte - 47 Prozent Index, 90 Prozent Active-Memory-Eval, 2,4-mal weniger Vergessen, 67 Prozent besserer Abschluss - stammen alle aus Metas eigener Mitteilung. Wir haben nicht nachgemessen."
+    },
+    {
+      "q": "Wann bekomme ich die neuen Modelle?",
+      "a": "Laut Meta rollen die spezialisierten Modelle ab dem 6. November an Nutzer von Muse und Meta AI aus."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Bringing Specialized Models to Muse and Meta AI",
+      "publisher": "Meta AI Research",
+      "url": "https://research.meta.ai/blog/specialized-models-for-muse-and-metaai",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "related": [
+    "anthropic-agenten-gedaechtnis-dreaming",
+    "menlo-enterprise-ki-ausgaben-177-milliarden"
+  ],
+  "published": "2026-11-07T08:51:00+01:00",
+  "modified": "2026-11-07T08:51:00+01:00"
+}
