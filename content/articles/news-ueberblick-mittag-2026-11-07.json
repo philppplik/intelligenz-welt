@@ -1,0 +1,122 @@
+{
+ "slug": "news-ueberblick-mittag-2026-11-07",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-07T10:00:00+01:00",
+ "modified": "2026-11-07T10:00:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "NVKE: Nvidia bringt eigene Kubernetes Engine als Preview",
+   "publisher": "heise online (iX, Kornelius Kindermann)",
+   "url": "https://www.heise.de/news/NVKE-Nvidia-bringt-eigene-Kubernetes-Engine-als-Preview-11515947.html",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "NVKE: Preview status and known limitations",
+   "publisher": "NVIDIA-Dokumentation",
+   "url": "https://docs.nvidia.com/nvke/documentation/overview/preview-status-and-known-limitations",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "Sichere Architektur für KI-Agenten im Backoffice",
+   "publisher": "heise online (Developer, Mahbouba Gharbi, Sönke J. Magnussen)",
+   "url": "https://www.heise.de/hintergrund/Sichere-Architektur-fuer-KI-Agenten-im-Backoffice-11514414.html",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+   "publisher": "arXiv (Fuhao Li, Wenxuan Song u. a.)",
+   "url": "https://arxiv.org/abs/2611.08373",
+   "accessed": "2026-11-07"
+  },
+  {
+   "title": "NVKE: What is NVKE",
+   "publisher": "NVIDIA, dsx-ai-factory (GitHub)",
+   "url": "https://github.com/dsx-ai-factory/nvke/blob/main/docs/overview/what-is-nvke.md",
+   "accessed": "2026-11-07"
+  }
+ ],
+ "title": "KI am Mittag: Nvidias Cluster-Baukasten",
+ "dek": "Nvidia öffnet eine Kubernetes-Engine für GPU-Rechenzentren, Sicherheitsexperten rücken Agenten-Architektur in den Blick, und ein Robotermodell lernt Räume besser verstehen.",
+ "tags": [
+  "KI-Überblick",
+  "Nvidia",
+  "Agenten",
+  "Sicherheit",
+  "Robotik",
+  "Open Source"
+ ],
+ "key_takeaways": [
+  "Nvidia stellt mit NVKE eine Kubernetes-Engine für GPU-Rechenzentren als Preview auf GitHub bereit - Apache-2.0-lizenziert, aber laut heise noch nicht für den Produktivbetrieb empfohlen.",
+  "Ein heise-Fachbeitrag zweier iSAQB-Architektur-Experten empfiehlt, kritische Agenten-Handlungen technisch unmöglich zu machen - statt nur Guardrails zu verschärfen.",
+  "Das Robotik-Modell SLA soll laut Paper räumliches Verständnis schon im Vortraining lernen; in acht realen Testszenarien melden die Autoren 24 Prozentpunkte höhere Erfolgsraten als das Ausgangsmodell."
+ ],
+ "hero": {
+  "alt": "Tabelle mit drei Updates: Nvidia NVKE als Kubernetes-Engine für GPU-Rechenzentren (Preview, Apache-2.0), heise-Fachbeitrag zu sicherer Agenten-Architektur mit drei Bausteinen, Robotik-Modell SLA mit räumlichem Vortraining (Paper auf arXiv, nicht unabhängig nachgemessene Autorenangaben)",
+  "caption": "Drei Updates vom Vormittag mit je eigenem Quellenscope: heise-Meldung (NVKE), heise-Fachbeitrag (Architektur), arXiv-Paper (SLA). Eigene Grafik.",
+  "ai_generated": false,
+  "credit": "Eigene Grafik (Redaktion), Quellen: heise online, arXiv"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Mittagsüberblick vom 7. November 2026. Quellenstand: 09:52 Uhr MEZ. Heute: Nvidia legt einen Open-Source-Baukasten für GPU-Cluster vor, zwei Architektur-Experten erklären, warum Leitplanken allein KI-Agenten nicht zähmen, und ein neues Robotik-Modell will räumliches Verständnis von Anfang an mitlernen."
+  },
+  {
+   "t": "h2",
+   "x": "NVKE: Nvidias Kubernetes-Engine als Preview"
+  },
+  {
+   "t": "p",
+   "x": "Nvidia hat seine Kubernetes Engine NVKE als Preview auf GitHub vorgestellt, berichtet heise online. Betreiber eigener GPU-Rechenzentren können ihren Kunden damit Kubernetes als Managed Service anbieten - ähnlich wie AWS mit EKS. Ein zentraler Management-Cluster legt dem Bericht zufolge auf Anfrage isolierte Cluster auf Bare-Metal-Servern an, jeder mit eigener Control Plane, eigenem etcd und eigenen Node-Pools; Skalierung und Kubernetes-Upgrades laufen über die NVKE-API oder das Werkzeug nvkectl. Der Code steht unter Apache-2.0, doch Nvidia empfiehlt NVKE laut heise noch nicht für den Produktivbetrieb."
+  },
+  {
+   "t": "p",
+   "x": "Der Bericht listet auch die offenen Baustellen: Laut NVIDIA-Dokumentation ist die API nach der Installation unverschlüsselt per HTTP erreichbar, und die Authentifizierung ist zunächst ausgeschaltet. Betreiber müssen den Zugriff absichern, etwa über einen eigenen TLS-Endpunkt und aktivierte JWT-Authentifizierung. Auch nach aktivierter Authentifizierung fehlt eine Autorisierung: Jeder zugelassene Aufrufer darf alle Workload-Cluster anlegen und löschen. Auch ein Upgrade-Verfahren für NVKE selbst und Backup- und Restore-Funktionen fehlen in der Preview noch. GPU-Treiber und zugehörige Software installiert separat Nvidias GPU Operator."
+  },
+  {
+   "t": "h2",
+   "x": "Agenten im Backoffice: Architektur statt nur Leitplanken"
+  },
+  {
+   "t": "p",
+   "x": "Wie lassen sich KI-Agenten sicher in Buchhaltung, Einkauf und Lieferantenmanagement einbinden? Ein Fachbeitrag auf heise online von Mahbouba Gharbi und Sönke Magnussen - beide kuratieren iSAQB-Module zu KI-Softwarearchitektur - gibt eine klare Antwort: nicht über strengere Guardrails allein. Mit Guardrails meinen sie hier kontextbasierte Verhaltensregeln; programmierte Kontrollen ordnen sie der algorithmischen Ausführung zu. Solche Regeln im Prompt würden vom Modell nur interpretiert und ließen sich durch widersprüchliche oder manipulierte Eingaben aushöhlen, schreiben die Autoren. Als besonders relevant für Backoffice-Szenarien nennen sie vier OWASP-Risiken: Prompt Injection, überzogene Handlungsvollmachten (Excessive Agency), das Umlenken übergeordneter Ziele (Agent Goal Hijack) und das Vergiften des Langzeitgedächtnisses (Memory Poisoning)."
+  },
+  {
+   "t": "p",
+   "x": "Der Beitrag empfiehlt stattdessen ein Designprinzip: Informationen, die ein Agent verarbeiten darf, strikt von seinen Handlungsmöglichkeiten trennen. Daraus leiten die Autoren drei Bausteine ab: erstens algorithmische Ausführung - das Sprachmodell interpretiert nur, ein deterministischer Planungsalgorithmus entscheidet und handelt; zweitens Human-in-the-Loop mit Freigabe-Gates und änderbaren, noch ausstehenden Kommandos; drittens Risikobeherrschung durch kontrollierten Kontext, Prüfung über unabhängige Kanäle und minimale Rechte. Kritische Fehler lägen ihrer Analyse zufolge selten an schlechten Guardrails, sondern am Systemdesign selbst."
+  },
+  {
+   "t": "h2",
+   "x": "SLA: Robotermodell lernt Räume schon im Vortraining"
+  },
+  {
+   "t": "p",
+   "x": "Ein Forschungsteam um Fuhao Li und Wenxuan Song stellt auf arXiv SLA vor, ein Spatial-Language-Action Model für Roboter. Übliche Vision-Language-Action-Modelle (VLA) erben ihre Bildrepräsentationen dem Paper zufolge aus 2D-Vortraining; räumliches Verständnis kommt oft erst beim Nachtraining dazu. SLA richtet die Ausrichtung auf räumliche Merkmale dagegen schon im kontinuierlichen Vortraining ein: Ausgehend von einer vortrainierten pi0.5-Policy gleicht das Modell seine visuellen Zwischenrepräsentationen an die eines eingefrorenen 3D-Wahrnehmungsmodells an. Die Zusatzbausteine kommen dem Paper zufolge nur im Training zum Einsatz. SLA startet aus den vortrainierten Gewichten; diese werden weitertrainiert, die ursprüngliche Inferenzarchitektur bleibt erhalten."
+  },
+  {
+   "t": "p",
+   "x": "Die gemeldeten Ergebnisse: 87,4 Prozent Erfolgsrate auf LIBERO-Plus unter verschiedenen Störungen, 72,3 Prozent auf RoboTwin 2.0 (Clean2Random) und in acht realen Einsatzszenarien durchschnittlich 24,0 Prozentpunkte mehr Erfolg als die pi0.5-Ausgangsbasis. Alle Zahlen stammen von den Autoren und sind nicht unabhängig geprüft."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist NVKE schon produktiv einsetzbar?",
+   "a": "NVIDIA empfiehlt die Preview nicht für den Produktivbetrieb. Nach Installation fehlen TLS und aktivierte Authentifizierung; Betreiber müssen den Zugriff absichern. Auch nach aktivierter Authentifizierung fehlt die Autorisierung. Hinzu kommen fehlende Upgrade- und Backup-Verfahren für die Management-Ebene."
+  },
+  {
+   "q": "Warum reichen Guardrails laut dem heise-Beitrag nicht aus?",
+   "a": "Der heise-Beitrag definiert Guardrails hier als kontextbasierte Regeln im Kontext des Sprachmodells - das Modell interpretiert sie nur, erzwingen kann es sie nicht. Die Autoren empfehlen deshalb eine Architektur, bei der kritische Handlungen technisch gar nicht ausführbar sind, etwa über deterministische Abläufe oder menschliche Freigaben."
+  },
+  {
+   "q": "Was ist an SLA neu?",
+   "a": "Laut Paper lernt SLA räumliche Ausrichtung bereits im kontinuierlichen Vortraining statt erst beim Nachtraining. Die Zusatzkomponenten fallen für die Inferenz weg. Vortrainierte Gewichte dienen als Startpunkt und werden weitertrainiert; die Inferenzarchitektur bleibt erhalten. Die gemeldeten Verbesserungen sind Autorenangaben ohne unabhängige Prüfung."
+  }
+ ],
+ "related": [
+  "anthropic-agenten-umgehen-trainingsdaten-monitor",
+  "eigener-llm-proxy-kontrolle-kosten-logs"
+ ]
+}
