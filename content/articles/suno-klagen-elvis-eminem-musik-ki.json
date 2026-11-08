@@ -1,0 +1,91 @@
+{
+  "slug": "suno-klagen-elvis-eminem-musik-ki",
+  "section": "news",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Suno verklagt: Elvis-Rechteinhaber und Eminems Verlag reichen getrennte Klagen ein",
+  "dek": "Zwei neue Bundesklagen gegen den KI-Musikgenerator: Die Presley-Rechteinhaber berufen sich auf Urheberrecht und Tennessees ELVIS Act, Eight Mile Style auf Urheberrecht an Texten und Aufnahmen.",
+  "tags": [
+    "Suno",
+    "Musik-KI",
+    "Urheberrecht",
+    "ELVIS Act",
+    "Klage"
+  ],
+  "key_takeaways": [
+    "Wie Variety am 7. November berichtet, haben Elvis-Presley-Rechteinhaber (unter anderem Authentic Brands Group und Raleigh Music Publishing) und Eminems Verlag Eight Mile Style getrennte Bundesklagen gegen Suno eingereicht. Die Presley-Klage liegt dem Bericht zufolge beim Northern District of California.",
+    "Die 51-seitige Presley-Klage wirft Suno Urheberrechtsverletzung vor und beruft sich zudem auf Tennessees ELVIS Act von 2024: Nutzer könnten ohne Genehmigung Tracks erzeugen, die Presleys \"reichhaltiges Stimmtimbre\" spiegeln, heißt es laut Variety in der Klage.",
+    "Eight Mile Style, Verwalter von Aufnahmen wie \"Lose Yourself\", \"Without Me\" und \"The Real Slim Shady\", wirft Suno gespiegelte Songs und Songtexte vor. Eminem ist nicht selbst Kläger.",
+    "Suno weist die Vorwürfe zurück: Prompts mit Künstlernamen und Songtiteln seien blockiert, Drittanbieter prüften hochgeladene Audiodateien und Texte."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Vintage-Mikrofon aus Lichtlinien, daneben eine stilisierte Welle, die in Pixel zerfällt, davor ein kleines Richterhammer-Symbol, Dunkelblau mit Bernstein-Akzent.",
+    "caption": "Elvis-Rechteinhaber und Eminems Verlag klagen getrennt gegen Suno. Symbolbild, KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Der KI-Musikgenerator Suno steht vor zwei weiteren Klagen. Wie Variety am 7. November berichtet, haben Rechteinhaber von Elvis Presley und der Verlag Eight Mile Style, der zahlreiche Eminem-Aufnahmen kontrolliert, getrennte Bundesklagen eingereicht. Die Presley-Klage liegt dem Bericht zufolge beim Northern District of California. Beide Parteien werden von denselben Anwälten vertreten: Richard Busch, Mark Block, David Niemierzycki und Andrew Davis."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Presley-Klage vorbringt"
+    },
+    {
+      "t": "p",
+      "x": "Die 51-seitige Klageschrift einer Gruppe um Authentic Brands Group und Raleigh Music Publishing wirft Suno Urheberrechtsverletzung vor. Zusätzlich beruft sie sich auf Tennessees Ensuring Likeness Voice and Image Security Act, kurz ELVIS Act, ein Stimmenschutzgesetz von 2024. Nach Darstellung der Kläger verstößt die nicht genehmigte Nachbildung von Presleys Stimme gegen dieses Gesetz. Suno erlaube es Nutzern, Tracks zu erzeugen, die Presleys \"rich vocal timbre\" spiegeln, heißt es in der Klage laut Variety. In der Schrift warnen die Anwälte: \"The next Elvis won't pick up a guitar\" - der nächste Elvis werde keine Gitarre mehr in die Hand nehmen, wenn KI in Sekunden lizenzenlos nachbilde, was Jahre zu lernen koste."
+    },
+    {
+      "t": "h2",
+      "x": "Was Eight Mile Style vorbringt"
+    },
+    {
+      "t": "p",
+      "x": "Eight Mile Style, eine LLC, die Hunderte Eminem-Aufnahmen verwaltet, darunter \"Lose Yourself\", \"Without Me\" und \"The Real Slim Shady\", wirft Suno vor, Urheberrecht an Songs und Texten verletzt zu haben, indem Nutzer Stücke erzeugen konnten, die die Werke des Rappers spiegeln. Eminem selbst ist nicht als Kläger beteiligt; ein Sprecher reagierte laut Variety nicht auf eine Anfrage. Beide Klageschriften enthalten dem Bericht zufolge Beispiele erzeugter Songs, die angeblich wie Presley klingen oder Eminems Texte reproduzieren."
+    },
+    {
+      "t": "h2",
+      "x": "Wie Suno antwortet"
+    },
+    {
+      "t": "p",
+      "x": "Ein Suno-Sprecher erklärte gegenüber Variety: \"Suno exists to help people create new, original music, not to trade on anyone's name or likeness, and we prohibit any unauthorized use of an artist's work.\" Prompts mit konkreten Künstlernamen und Songtiteln seien nicht erlaubt, und Drittanbieter prüften hochgeladene Audiodateien und Texte auf möglichen Missbrauch. Man arbeite fortlaufend an stärkeren Schutzvorkehrungen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die Klagen reihen sich in eine wachsende Liste ein: Eine von Musiker Jason Isbell angeführte Identitätsklage gegen Suno läuft bereits, Verfahren von Universal Music Group und Sony Music sind anhängig, Warner Music Group hatte sich im vergangenen Jahr geeinigt. Dieselben Klägerseiten sind zudem anderswo aktiv: Authentic Brands Group verklagte im vergangenen Monat zusammen mit weiteren Presley-Verlagen Anthropic, weil Claude angeblich unrechtmäßig mit 274 Presley-Songs trainiert wurde; gefordert werden 48,6 Millionen Dollar, Anthropic bestreitet die Vorwürfe. Eight Mile Style verklagte Meta im Juni auf rund 110 Millionen Dollar wegen 243 Aufnahmen in Facebook-, WhatsApp- und Instagram-Bibliotheken; ein Bundesrichter in Michigan ließ das Verfahren in die Beweisaufnahme gehen. Variety nennt außerdem eine Finanzierungsrunde: Im Juni nahm das Unternehmen 400 Millionen Dollar bei einer Bewertung von 5,4 Milliarden Dollar auf, im September kam das von Deals mit Warner, BMG und Believe getragene Modell \"v6\" heraus. Bemerkenswert ist die Doppelstrategie der Presley-Seite: Neben klassischem Urheberrecht wird prominent ein Stimmenschutzgesetz gegen einen KI-Musikdienst geltend gemacht. Ob ein Bundesgericht Tennessees ELVIS Act auf den Dienst anwendet, dürfte wegweisend für weitere Nachlassverwertungen sein."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wer klagt gegen Suno?",
+      "a": "Zwei Parteien in getrennten Verfahren: eine Gruppe von Elvis-Presley-Rechteinhabern um Authentic Brands Group und Raleigh Music Publishing sowie Eight Mile Style, der Verlag vieler Eminem-Aufnahmen. Eminem selbst ist nicht Kläger. Beide Seiten werden von denselben Anwälten vertreten."
+    },
+    {
+      "q": "Was ist der ELVIS Act?",
+      "a": "Ein Stimmenschutzgesetz des US-Bundesstaats Tennessee von 2024 (Ensuring Likeness Voice and Image Security Act). Die Presley-Rechteinhaber werfen Suno laut Variety vor, es durch die nicht genehmigte Nachbildung von Presleys Stimme zu verletzen. Ob der Vorwurf vor Gericht trägt, ist damit nicht entschieden."
+    },
+    {
+      "q": "Wie reagiert Suno?",
+      "a": "Suno weist die Vorwürfe zurück: Prompts mit Künstlernamen und Songtiteln seien blockiert, Drittanbieter prüften Uploads, und man arbeite an weiteren Schutzmaßnahmen. In der laufenden Isbell-Klage argumentierte Suno, es sei \"nichts Unrechtmäßiges\" daran, nach einem Song im Stil eines Künstlers zu fragen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Elvis Estate, Eminem Publisher File Lawsuits Against AI Startup Suno",
+      "publisher": "Variety",
+      "url": "https://variety.com/2026/music/news/elvis-eminem-sue-suno-ai-music-generator-1236941798/",
+      "accessed": "2026-11-08"
+    }
+  ],
+  "related": [],
+  "published": "2026-11-08T14:31:00+01:00",
+  "modified": "2026-11-08T14:31:00+01:00"
+}

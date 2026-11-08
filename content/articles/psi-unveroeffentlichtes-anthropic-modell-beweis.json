@@ -1,0 +1,105 @@
+{
+  "slug": "psi-unveroeffentlichtes-anthropic-modell-beweis",
+  "section": "modelle",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Nicht öffentliches Anthropic-Modell beweist laut PSI die Aaronson-Ambainis-Vermutung",
+  "dek": "Ein internes Forschungssystem von Physical Superintelligence hat nach Firmenangaben einen Beweis der Quantenkomplexitäts-Vermutung von 2008 gefunden. Lean akzeptierte die Formalisierung, ein Journal-Review steht aus.",
+  "tags": [
+    "Anthropic",
+    "Quantencomputing",
+    "Lean",
+    "Beweis",
+    "PSI"
+  ],
+  "key_takeaways": [
+    "Physical Superintelligence (PSI) meldet am 6. November: Ein internes Forschungssystem, in dem Instanzen eines nicht öffentlichen Anthropic-Modells liefen, hat einen Beweis der Aaronson-Ambainis-Vermutung von 2008 gefunden. Lean, ein maschineller Beweisprüfer, akzeptierte laut PSI die Formalisierung.",
+    "Die Vermutung betrifft die Zahl von Eingabeabfragen: Aus ihr folgt nach PSI, dass ein klassischer Algorithmus die Ausgabe eines Quantenalgorithmus auf fast allen zufälligen Booleschen Eingaben mit nur polynomiell mehr Abfragen nachbilden kann. Das ist keine allgemeine Laufzeitschranke für alle Quantencomputer.",
+    "Das System hatte laut PSI am dritten Tag des Durchlaufs einen vollständigen Beweis und verbesserte das Ergebnis danach zweimal. Der Ablauf ist eine Firmenangabe; das Modell ist nicht benannt.",
+    "Die Lean-4-Entwicklung ist öffentlich, ohne Platzhalter und ohne zusätzliche Axiome, nach PSI-Angaben von zwei unabhängigen Implementierungen des Lean-Kernels geprüft. Ein Journal-Peer-Review liegt noch nicht vor."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Würfel aus Lichtlinien, dessen Ecken unterschiedlich hell leuchten, eine Ecke strahlt besonders stark, daneben ein Häkchen-Symbol aus Linien, Dunkelblau mit Türkis-Akzent.",
+    "caption": "Aaronson-Ambainis-Vermutung: Ein beschränktes Polynom niedrigen Grades hat eine einflussreiche Variable. Symbolbild, KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Eine der zentralen offenen Fragen der Quantenkomplexitätstheorie ist nach Angaben des Unternehmens Physical Superintelligence (PSI) beantwortet: Ein intern entwickeltes Forschungssystem, in dem Instanzen eines nicht öffentlichen Anthropic-Modells liefen, habe die 2008 von Scott Aaronson und Andris Ambainis gestellte Vermutung bewiesen. PSI veröffentlichte am 6. November das Manuskript und eine vollständige Formalisierung im Beweisassistenten Lean 4 auf GitHub. Ob die Arbeit ein Journal-Review durchläuft und Bestand hat, muss sich zeigen; der maschinell geprüfte Formalbeweis ist jedoch bereits öffentlich einsehbar."
+    },
+    {
+      "t": "h2",
+      "x": "Worum es bei der Vermutung geht"
+    },
+    {
+      "t": "p",
+      "x": "Bekannte Quantenvorteile wie Shors Faktorisierungsalgorithmus leben von versteckter Struktur im Problem. Offen war, ob Quantencomputer auch bei zufälligen Ja/Nein-Fragen ohne solche Struktur exponentiell weniger Anfragen (Queries) brauchen als klassische Rechner. Aaronson und Ambainis zeigten: Diese Frage lässt sich auf eine Aussage reiner Mathematik zurückführen. Sie vermuteten, dass jedes beschränkte Polynom niedrigen Grades auf dem Booleschen Würfel eine einflussreiche Variable hat - eine Koordinate, deren Umklappen den Wert im Mittel spürbar ändert. PSI meldet nun einen Beweis für eine solche Schranke: Der Einfluss einer Variablen ist mindestens eine Konstante mal Varianz hoch 5/2 geteilt durch Grad hoch 6, mit einer Konstanten von etwa 0,0025. Daraus folgt: Ein klassischer Algorithmus kann die Ja-Wahrscheinlichkeit eines Quantenalgorithmus auf fast allen zufälligen Eingaben mit nur polynomiell mehr Queries nachbilden. Die Aussage betrifft das Query-Modell und fast alle Eingaben, nicht jede Aufgabe und nicht die gesamte Rechenzeit."
+    },
+    {
+      "t": "h2",
+      "x": "Wie das System vorging"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Nach PSI-Angaben hatte das System am dritten Tag des Durchlaufs einen vollständigen Beweis; Lean akzeptierte ihn. Anschließend verbesserte das System das Ergebnis zweimal, Lean akzeptierte auch die finale Version.",
+        "Der Beweis folgt einem Plan von Shachar Lovett und Jiapeng Zhang und ersetzt eine von ihnen als Vermutung stehengelassene Ungleichung; weitere Bausteine stammen unter anderem von David Reimer (Butterfly-Lemma) sowie Agarwal und Ben-David.",
+        "Die Lean-Entwicklung (Lean 4.33.0, Mathlib v4.33.0, Apache-2.0-Lizenz) ist laut README vollständig: keine Platzhalter, keine zusätzlichen Axiome, nachgeprüft von zwei unabhängigen Implementierungen des Lean-Kernels.",
+        "Die mathematischen Aussagen, der erste Entwurf des Papiers und die Formalisierung stammen laut Repository von KI-Modellen in einem Forschungsharnisch, den David Turturean bei PSI entwickelte. Turturean prüfte das Papier und zeichnet für seine Korrektheit verantwortlich; Jim Halverson auditierte den Beweis, Phiala Shanahan kommentierte die Formalisierung."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Reaktion der Fachwelt"
+    },
+    {
+      "t": "p",
+      "x": "Im August 2026 hatten Guy Blanc, Jordan Docter, Carmen Strassle und Li-Yang Tan von der Stanford University einen Spezialfall bewiesen: keinen exponentiellen Speedup für Quantenalgorithmen, die ihre Eingabe in einer festen Zahl paralleler Runden lesen (arXiv:2608.19158). Nach PSIs Darstellung lesen die vier den vollständigen Beweis, schickten Kommentare und arbeiten an einer kürzeren Darstellung für Fachleute. In einer von PSI zitierten Mitteilung schreiben sie: \"This is a huge result. It resolves a decades-old conjecture with important implications for the nature of problems that admit quantum speedups.\""
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Drei Präzisierungen gehören dazu. Erstens: Der Ablauf - vollständiger Beweis am dritten Tag, zwei Verbesserungen danach - ist eine Angabe von PSI über den eigenen Durchlauf; öffentlich sind die Artefakte, nicht die Protokolle der Modellläufe. Zweitens: Das verwendete Anthropic-Modell ist nicht benannt und nicht öffentlich; Aussagen über seine Fähigkeiten jenseits dieses Ergebnisses wären Spekulation. Drittens: Ein Lean-akzeptierter Beweis ist maschinell bis auf die Vertrauensgrenze des Kernels geprüft, das ersetzt aber weder ein Journal-Review noch unsere eigene Prüfung der Formalisierung. Außerdem die Aussage, dass die formalisierte Aussage genau der ursprünglichen Vermutung entspricht, muss ein Mensch am Klartext von Conjecture.lean gegenlesen. Genau dafür hat PSI die Aussage in einer Datei isoliert, die nur Mathlib importiert. Falls die Formalisierung Bestand hat, wäre dies eines der prominentesten Beispiele dafür, dass ein KI-Forschungsloop eine jahrelang offene mathematische Frage abschließend klärt - nicht nur ein Ergebnis reproduziert."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was besagt die Aaronson-Ambainis-Vermutung?",
+      "a": "Jedes beschränkte Polynom niedrigen Grades auf dem Booleschen Würfel hat eine einflussreiche Variable. Nach PSI folgt daraus eine polynomielle klassische Simulation auf fast allen zufälligen Eingaben im Query-Modell. Das ist keine pauschale Aussage über die gesamte Laufzeit aller Quantencomputer."
+    },
+    {
+      "q": "Ist der Beweis gesichert?",
+      "a": "Die Lean-4-Formalisierung ist öffentlich und nach PSI-Angaben vollständig, ohne Platzhalter und Zusatzaxiome, von zwei unabhängigen Kernel-Implementierungen geprüft. Ein Journal-Peer-Review liegt noch nicht vor; laut PSI prüfen vier Stanford-Forscher, die zuvor einen Spezialfall bewiesen den Beweis derzeit und arbeiten an einer kürzeren Darstellung."
+    },
+    {
+      "q": "Welches Anthropic-Modell war beteiligt?",
+      "a": "PSI nennt nur \"ein nicht öffentliches Anthropic-Modell\" und schreibt, dass Instanzen davon im Durchlauf liefen. Der zeitliche Ablauf stammt aus PSI-Eigenangabe. Das Modell ist weder benannt noch öffentlich verfügbar."
+    }
+  ],
+  "sources": [
+    {
+      "title": "A proof of the Aaronson-Ambainis conjecture",
+      "publisher": "Physical Superintelligence (PSI)",
+      "url": "https://psi.inc/research/aaronson-ambainis/",
+      "accessed": "2026-11-08"
+    },
+    {
+      "title": "physical-superintelligence/aaronson-ambainis: Repository, Paper und Lean-4-Formalisierung",
+      "publisher": "PSI / GitHub",
+      "url": "https://github.com/physical-superintelligence/aaronson-ambainis",
+      "accessed": "2026-11-08"
+    }
+  ],
+  "related": [
+    "metr-anthropic-beschleunigung-ki-forschung",
+    "anthropic-s1-eingereicht-nasdaq-ant"
+  ],
+  "published": "2026-11-08T14:31:00+01:00",
+  "modified": "2026-11-08T14:31:00+01:00"
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "microchip-ki-kunden-verdraengen-standardchips",
+  "section": "trends",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "Microchip-Chef: KI-Kunden \"haben die ganze Fabrik übernommen\" - Lieferzeiten bis 32 Wochen",
+  "dek": "KI-Nachfrage verdrängt laut Microchip-CEO Steve Sanghi andere Kunden aus gemeinsam genutzten Assembly- und Testwerken. Lieferzeiten für Standardprodukte steigen von historisch 4 bis 8 auf 6 bis 32 Wochen.",
+  "tags": [
+    "Microchip",
+    "Halbleiter",
+    "KI-Infrastruktur",
+    "Lieferketten",
+    "OSAT"
+  ],
+  "key_takeaways": [
+    "Microchip-CEO Steve Sanghi im Quartalscall am 5. November: KI-Unternehmen hätten Kapazitäten bei großen OSAT-Dienstleistern (Outsourced Assembly and Test) verdrängt - \"came in and took over the whole factory, and they pushed everybody out\".",
+    "Die Lieferzeiten der meisten Standardprodukte steigen von historisch 4 bis 8 Wochen auf jetzt 6 bis 32 Wochen; viele Aufträge innerhalb der Lieferzeit bleiben im Quartal unversorgt.",
+    "Die Verdrängung trifft auch Microchips eigene Wafer, weil diese zur Gehäusefertigung und zum Test ebenfalls durch OSAT-Werke laufen. Verlagerungen in eigene Werke dauern laut Sanghi rund sechs Monate.",
+    "Sanghi würde eine Abkühlung der KI-Nachfrage kurzfristig begrüßen: \"Some deceleration of the AI demand actually would be quite positive early on.\" "
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein Förderband aus Lichtlinien mit Chip-Symbolen, eine große leuchtende Ladung schiebt kleinere Pakete vom Band, Dunkelblau mit Orange-Akzent.",
+    "caption": "KI-Nachfrage verdrängt laut Microchip Standardkunden aus geteilten Assembly- und Testwerken. Symbolbild, KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Der KI-Boom trifft inzwischen auch Kunden, die nichts mit KI zu tun haben. Im Quartalscall zum zweiten Fiskalquartal 2027 am 5. November beschrieb Microchip-CEO Steve Sanghi, wie KI-Unternehmen Kapazitäten bei den großen externen Assembly- und Test-Dienstleistern (OSAT) belegt hätten, die weite Teile der Halbleiterindustrie gemeinsam nutzen. Sanghis Wortlaut: \"AI companies, you know which ones, came in and took over the whole factory, and they pushed everybody out.\""
+    },
+    {
+      "t": "h2",
+      "x": "Was das konkret bedeutet"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Die Lieferzeiten der meisten Standardprodukte lagen historisch bei 4 bis 8 Wochen. Mit weitgehend abgebautem Die-Lagerbestand und Engpässen bei Foundries und OSATs liegen sie laut Sanghi jetzt je nach Produktlinie bei 6 bis 32 Wochen.",
+        "Viele Bestellungen kommen innerhalb der Lieferzeit herein und bleiben im Quartal unversorgt. Microchip bittet Kunden um längerfristige Backlogs, um die stark variierenden Lieferzeiten abzubilden.",
+        "Die Verdrängung betrifft auch intern gefertigte Wafer, weil diese für Gehäuse und Test teilweise durch dieselben OSAT-Werke laufen. Sanghi spricht ausdrücklich vom \"crowding out of AI\".",
+        "Verlagerungen in eigene Werke oder zu anderen OSATs laufen, dauern aber rund sechs Monate; ein Teil der Verdrängung habe erst vor ein paar Monaten begonnen.",
+        "Zusätzlich kündigte das Management eine weitere Runde von Preiserhöhungen der Foundry- und OSAT-Zulieferer ab Januar 2027 an."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen des Quartals"
+    },
+    {
+      "t": "p",
+      "x": "Microchip meldete für das Septemberquartal einen Nettoumsatz von 1,622 Milliarden Dollar, plus 9,2 Prozent gegenüber dem Vorquartal und plus 42,2 Prozent gegenüber dem Vorjahr, das Book-to-Bill-Verhältnis liegt weiter deutlich über eins. Für das Dezemberquartal erwartet das Unternehmen ein Umsatzminus von 3 Prozent bis plus 1 Prozent (Mitte minus 1 Prozent) und eine bereinigte Bruttomarge (Non-GAAP) von 64 bis 65 Prozent - belastet unter anderem durch ein hohes Volumen nicht lieferbarer, margenstarker Aufträge. "
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Sanghis Aussage ist bemerkenswert offen: \"Some deceleration of the AI demand actually would be quite positive early on\" - ein Halbleiter-CEO, der sich weniger KI-Nachfrage wünscht, weil sie seine übrigen Kunden verdrängt. Wichtig ist die Präzision: Die Verdrängung spielt sich in geteilten Assembly- und Testwerken externer Dienstleister ab, nicht in Microchips eigenen Fablinien, und sie betrifft Standardprodukte wie Mikrocontroller und Analogbauteile - keine KI-Beschleuniger. Genau das macht den Vorgang relevant: Die KI-Infrastruktur konkurriert über die Packungs- und Teststufe mit der gesamten restlichen Halbleiternachfrage. Steigen die Lieferzeiten für Standardchips Richtung 32 Wochen, kann das auch Industriesteuerungen und Autozulieferer belasten. Das ist der Mechanismus, über den ein Engpass bei KI-Hardware zu einem Engpass für alle anderen wird - unabhängig davon, ob die KI-Nachfrage selbst weiter wächst."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wer verdrängt hier wen?",
+      "a": "Laut Microchip-CEO Steve Sanghi belegen KI-Unternehmen Kapazitäten bei großen externen Assembly- und Test-Dienstleistern (OSAT), die viele Halbleiterfirmen gemeinsam nutzen. Dadurch steigen die Lieferzeiten für Standardprodukte wie Mikrocontroller - auch für Kunden, die keine KI-Produkte bauen."
+    },
+    {
+      "q": "Wie stark steigen die Lieferzeiten?",
+      "a": "Historisch lagen sie für die meisten Standardprodukte bei 4 bis 8 Wochen. Sanghi nennt jetzt 6 bis 32 Wochen, je nach Produktlinie. Viele Bestellungen innerhalb der Lieferzeit bleiben im laufenden Quartal unversorgt."
+    },
+    {
+      "q": "Warum trifft das auch Microchips eigene Chips?",
+      "a": "Weil intern gefertigte Wafer für Gehäusebau und Test teilweise durch dieselben externen OSAT-Werke laufen. Microchip verlagert Fertigung zurück in eigene Werke und zu anderen Dienstleistern, was laut Sanghi rund sechs Monate dauert."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Microchip (MCHP) Q2 2027 Earnings Call Transcript",
+      "publisher": "The Motley Fool",
+      "url": "https://www.fool.com/earnings/call-transcripts/2026/11/06/microchip-mchp-q2-2027-earnings-call-transcript/",
+      "accessed": "2026-11-08"
+    }
+  ],
+  "related": [
+    "joules-to-gdp-energie-pro-dollar-ki",
+    "google-tpu-orbit-erste-antwort-weltraum"
+  ],
+  "published": "2026-11-08T14:31:00+01:00",
+  "modified": "2026-11-08T14:31:00+01:00"
+}

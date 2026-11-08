@@ -1,0 +1,84 @@
+{
+  "slug": "reprobridge-artefakte-agenten-reproduktion",
+  "section": "tools",
+  "type": "news",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "ReproBridge: Im Benchmark steigt Agentenerfolg auf 92,6 Prozent",
+  "dek": "Ein Google-Preprint zeigt: Verpackt man Code, Umgebung, Launcher und Anleitung einer erfolgreichen Reproduktion standardisiert, steigt die Erfolgsquote von 76,4 auf 92,6 Prozent - bei 19,7 Prozent weniger API-Kosten.",
+  "tags": [
+    "Reproduzierbarkeit",
+    "Coding-Agenten",
+    "Benchmark",
+    "Google",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "Der Preprint ReproBridge (arXiv:2611.08452) untersucht, ob das Konservieren der bei einer erfolgreichen Reproduktion gewonnenen Prozeduren und Entscheidungen späteren Agenten hilft.",
+    "Das standardisierte Artefakt besteht aus vier Teilen: verfeinerte Codebasis, Umgebungssetup, Experiment-Launcher und Reproduktionsanleitung.",
+    "ReproBridge-Bench umfasst 1.029 Aufgaben aus 387 Experimenten in 36 Papieren, jeweils mit fünf menschenverifizierten Referenzwerten; ein separater Auditor prüft die Ausführungsnachweise der Agenten.",
+    "Im untersuchten Benchmark über Sonnet 4.6, Sonnet 5, Opus 5 und Gemini 3.8 Flash steigt laut Preprint die mittlere Erfolgsquote von 76,4 auf 92,6 Prozent. Die nachgelagerten API-Ausgaben sinken im Schnitt um 19,7 Prozent, die Streuung von 21,6 auf 3,9 Prozentpunkte. Die Erstellungskosten der Artefakte sind davon zu unterscheiden."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Zwei durch eine leuchtende Brücke verbundene Ordner-Symbole aus Linien, darüber ein Kreislaufpfeil, Dunkelblau mit Grün-Akzent.",
+    "caption": "ReproBridge: Aufbereitete Artefakte helfen Agenten, ML-Experimente zuverlässiger zu reproduzieren. Symbolbild, KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Wer ein Machine-Learning-Experiment reproduzieren will, muss Details rekonstruieren, die Paper und Code verschweigen: inkompatible Abhängigkeiten auflösen, die richtige Konfiguration finden, einen Data-Loader reparieren. Selbst wer das schafft, hinterlässt die gewonnenen Entscheidungen meist in Shell-Historien - der nächste beginnt von vorn. Ein aktueller Preprint von Yubo Wang (University of Waterloo und Google) sowie Rui Meng, Jaehyun Nam, Tomas Pfister und Jinsung Yoon (Google) fragt: Was passiert, wenn man diese Prozeduren konserviert und dem nächsten Agenten standardisiert übergibt?"
+    },
+    {
+      "t": "h2",
+      "x": "Aufbau und Ergebnisse"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Das standardisierte Artefakt: eine verfeinerte Codebasis, ein Umgebungssetup, Experiment-Launcher und eine Reproduktionsanleitung, die auch Begründungen für Einstellungen und Reparaturen festhält.",
+        "ReproBridge-Bench: 1.029 Aufgaben aus 387 Experimenten in 36 Papieren, jede Aufgabe mit fünf menschenverifizierten Referenzwerten verankert. Agenten arbeiten in frischen Sitzungen entweder mit dem rohen Code oder mit dem aufbereiteten Artefakt; ein separater Auditor prüft die Ausführungsnachweise.",
+        "Über vier evaluierte Modelle: Die mittlere Reproduktions-Erfolgsquote steigt von 76,4 auf 92,6 Prozent, die nachgelagerten API-Ausgaben sinken im Mittel um 19,7 Prozent.",
+        "Die Streuung zwischen den Modellen verengt sich von 21,6 auf 3,9 Prozentpunkte; alle vier Modelle liegen mit den Artefakten über 90 Prozent.",
+        "In Ablationen sinkt der Erfolg, sobald eine Komponente fehlt - am stärksten beim Entfernen des verfeinerten Codes oder der Umgebung."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die zentrale Botschaft: Der Engpass bei der Reproduktion durch Agenten ist oft nicht die rohe Modellfähigkeit, sondern das fehlende Artefakt. Dass die Streuung zwischen vier Modellen von 21,6 auf 3,9 Punkte fällt, spricht dafür, dass ein guter Handover schwächere Modelle auf das Niveau stärkerer hebt. Drei Einschränkungen gehören dazu: Es handelt sich um einen Preprint ohne Peer-Review; die vier evaluierten Modelle sind Sonnet 4.6, Sonnet 5, Opus 5 und Gemini 3.8 Flash, nicht alle verfügbaren Coding-Agenten; und die Ergebnisse stammen aus der Benchmark-Umgebung der Autoren selbst - wir haben sie nicht nachgemessen. Wer selbst Papers reproduziert, kann die Erkenntnis trotzdem direkt nutzen: Dokumentiere Abhängigkeiten, Launcher und getroffene Entscheidungen so, dass eine frische Sitzung ohne Vorwissen starten kann."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist ReproBridge?",
+      "a": "Ein Agenten-Workflow aus einem Google-Preprint, der aus einer erfolgreichen Reproduktion ein standardisiertes Artefakt baut: verfeinerte Codebasis, Umgebungssetup, Experiment-Launcher und Reproduktionsanleitung. Dazu gehört der Benchmark ReproBridge-Bench mit 1.029 Aufgaben."
+    },
+    {
+      "q": "Wie groß ist der Effekt?",
+      "a": "Im untersuchten Benchmark über Sonnet 4.6, Sonnet 5, Opus 5 und Gemini 3.8 Flash steigt die mittlere Erfolgsquote von 76,4 auf 92,6 Prozent, die API-Kosten sinken im Schnitt um 19,7 Prozent, und die Streuung zwischen den Modellen sinkt von 21,6 auf 3,9 Prozentpunkte. Alle vier Modelle liegen mit Artefakt über 90 Prozent."
+    },
+    {
+      "q": "Sind die Ergebnisse unabhängig bestätigt?",
+      "a": "Wir haben keine unabhängige Bestätigung geprüft. Es ist ein Preprint ohne Peer-Review aus der Benchmark-Umgebung der Autoren; wir haben die Messungen nicht nachgemessen. Das Papier nennt Sonnet 4.6, Sonnet 5, Opus 5 und Gemini 3.8 Flash."
+    }
+  ],
+  "sources": [
+    {
+      "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+      "publisher": "arXiv (Preprint 2611.08452)",
+      "url": "https://arxiv.org/abs/2611.08452",
+      "accessed": "2026-11-08"
+    }
+  ],
+  "related": [
+    "biobasicsbench-openai-ligo-labor-agenten",
+    "psi-unveroeffentlichtes-anthropic-modell-beweis"
+  ],
+  "published": "2026-11-08T14:31:00+01:00",
+  "modified": "2026-11-08T14:31:00+01:00"
+}

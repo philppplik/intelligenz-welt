@@ -1,0 +1,91 @@
+{
+  "slug": "microsoft-ai-frontiers-ende-langford",
+  "section": "analyse",
+  "type": "analysis",
+  "lang": "de",
+  "author": "philipp-paulik",
+  "title": "John Langford: Microsofts KI-Forschungsgruppe AI Frontiers ist am Ende",
+  "dek": "Der Mitgründer der rund 50-köpfigen MSR-Gruppe hinter AutoGen und Fara ist gegangen. Sein Vorwurf an die Ex-Inflection-Führung von Microsoft AI: \"Scaling, and aggressively not research\".",
+  "tags": [
+    "Microsoft",
+    "Microsoft Research",
+    "AutoGen",
+    "John Langford",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "John Langford hat am 6. November erklärt, dass die von ihm 2023 mitgegründete Gruppe AI Frontiers innerhalb von Microsoft Research beendet ist. Er selbst hat Microsoft verlassen.",
+    "AI Frontiers, rund 50 Personen, war für das Multi-Agenten-Framework AutoGen und den Computer-Use-Agenten Fara bekannt; in New York entstanden Grundlagenprojekte wie Next Latent, Dion3 und der Full Bandwidth Transformer.",
+    "Anfang September wurde die Gruppe in Microsoft AI (MAI) umorganisiert. Langford nennt die Philosophie der dortigen Ex-Inflection-Führung: \"scaling, and aggressively not research\".",
+    "Microsoft kommt in Langfords Beitrag nicht zu Wort; die Darstellung ist die Sicht eines Beteiligten. Laut Langford sind auch andere Gründungsmitglieder der AIF-Führung zu ähnlichen Schlüssen gekommen."
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leeres Forschungslabor aus Lichtlinien, ein Schreibtisch mit erloschenem Monitor, an der Wand ein halb gelöschtes Diagramm, Dunkelblau mit Graublau-Akzent.",
+    "caption": "John Langford erklärt Microsofts Gruppe AI Frontiers für beendet. Symbolbild, KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Eine der sichtbarsten Trennungen zwischen Skalierungs- und Forschungslager in der KI-Branche ist jetzt öffentlich dokumentiert - aus erster Hand. John Langford, langjähriger Microsoft-Research-Forscher, hat am 6. November (aktualisiert am 7. November) in seinem Blog erklärt, dass AI Frontiers, die von ihm mitgegründete Unterorganisation innerhalb von Microsoft Research, am Ende ist. Er selbst hat das Unternehmen verlassen."
+    },
+    {
+      "t": "h2",
+      "x": "Was AI Frontiers war"
+    },
+    {
+      "t": "p",
+      "x": "Gegründet 2023 nach dem ChatGPT-Release, sollte die rund 50 Personen kleine Gruppe Forschung schneller und koordinierter machen, als es in Microsoft Research üblich war. Bekannt wurde sie vor allem durch das Multi-Agenten-Orchestrierungsframework AutoGen und den Computer-Use-Agenten Fara. In New York arbeiteten Langford zufolge mehrere Mitglieder an neuen Grundfähigkeiten: dem Next-Latent-Objective für Extrapolation, Dion3 als verbessertem Muon-Optimierer und dem Full Bandwidth Transformer, der Modelle über Rekursion leistungsfähiger machen soll. Die Gruppe teilte ihr Monorepo mit dem Rest von Microsoft Research - darunter eine in der Praxis erprobte Pretraining-Codebasis."
+    },
+    {
+      "t": "h2",
+      "x": "Die Umorganisation und Langfords Vorwurf"
+    },
+    {
+      "t": "p",
+      "x": "Anfang September wurde AI Frontiers in Microsoft AI (MAI) eingegliedert. Oberflächlich sinnvoll, schreibt Langford, doch die Philosophie der MAI-Führung - viele kamen von Inflection - sei unvereinbar gewesen: \"scaling, and aggressively not research\". Skalierung liefere aus Unternehmenssicht planbarere Renditen als Forschung; in einer Scaling-only-Umgebung gehe es primär um Daten, nicht um neue Methoden. Seine Projekte wie Next Latent oder den Full Bandwidth Transformer habe er nicht einmal ernsthaft geprüft bekommen. Dabei deuteten ByteDance-Experimente an, dass eine FBT-Variante einem Modell doppelter Größe entsprechen könnte. Seine Rechnung: Bei Brancheninvestitionen in Richtung einer Billion Dollar sei die Halbierung von Trainings- und Inferenzkosten viel wert."
+    },
+    {
+      "t": "h2",
+      "x": "Warum er nicht zu MSR zurückging"
+    },
+    {
+      "t": "p",
+      "x": "\"I situated my folks as best I could and left\" - Langford platzierte seine Leute so gut es ging und ging. Auch die anderen Gründungsmitglieder der AIF-Führung seien zu ähnlichen Schlüssen gekommen. Eine Rückkehr zu Microsoft Research lehnte er aus zwei Gründen ab: Er wolle nicht forschen, wo die Ergebnisse keinen Weg in die Anwendung haben - in MAI habe er nicht einmal ernsthafte Prüfung seiner Ideen erreicht. Und er sehe den Grunddeal von MSR gebrochen: \"do good work and good things happen\" - seine Gruppe habe gute Arbeit geleistet und sei ohne ihr Einverständnis wegreorganisiert worden. Praktische Konsequenz: Im kommenden Jahr wird es keine AIF-Praktikumsplätze geben."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Langfords Beitrag ist die Sicht eines Beteiligten, Microsoft kommt darin nicht zu Wort. Seine Beschreibung legt einen Konflikt zwischen kurzfristiger Skalierung und längerfristiger Grundlagenforschung nahe. Ob Microsoft die Umorganisation ebenso bewertet, ist mit dieser Quelle nicht geklärt. Aus dem Einzelfall lässt sich auch keine allgemeine Abwanderung der Agentenforschung aus großen Unternehmen ableiten."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was war AI Frontiers?",
+      "a": "Eine 2023 gegründete Unterorganisation innerhalb von Microsoft Research mit rund 50 Personen. Bekannt wurde sie durch das Multi-Agenten-Framework AutoGen und den Computer-Use-Agenten Fara; dazu kamen Grundlagenprojekte wie Next Latent, Dion3 und der Full Bandwidth Transformer."
+    },
+    {
+      "q": "Warum ist Langford gegangen?",
+      "a": "Nach seiner Darstellung wurde die Gruppe Anfang September in Microsoft AI umorganisiert, dessen Führung er als \"scaling, and aggressively not research\" beschreibt. Seine Grundlagenprojekte seien dort nicht ernsthaft geprüft worden. Eine Rückkehr zu MSR lehnte er ab, weil er Forschung ohne Weg in die Anwendung und einen gebrochenen Grunddeal sieht."
+    },
+    {
+      "q": "Was sagt Microsoft dazu?",
+      "a": "In Langfords Beitrag kommt Microsoft nicht zu Wort, und eine separate Stellungnahme des Unternehmens liegt uns nicht vor. Die Darstellung ist die Sicht des Mitgründers und sollte als solche gelesen werden."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The End of AI Frontiers",
+      "publisher": "John Langford (hunch.net)",
+      "url": "https://hunch.net/?cat=29",
+      "accessed": "2026-11-08"
+    }
+  ],
+  "related": [],
+  "published": "2026-11-08T14:31:00+01:00",
+  "modified": "2026-11-08T14:31:00+01:00"
+}

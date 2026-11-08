@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-mittag-2026-11-08",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-08T14:31:00+01:00",
+  "modified": "2026-11-08T14:31:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Shizuku-Duplex: Japanese Full-Duplex Model for Natural Conversation",
+      "publisher": "Shizuku AI",
+      "url": "https://shizuku.ai/en/blog/1/",
+      "accessed": "2026-11-08"
+    },
+    {
+      "title": "Introducing the Planet AI App: Search. Explore. Act.",
+      "publisher": "Planet",
+      "url": "https://www.planet.com/pulse/introducing-the-planet-ai-app-search-explore-act/",
+      "accessed": "2026-11-08"
+    },
+    {
+      "title": "Buoyant Announces Kinference: An Open Source Inference Serving Platform for Kubernetes",
+      "publisher": "Buoyant",
+      "url": "https://www.buoyant.io/newsroom/buoyant-announces-kinference-an-open-source-inference-serving-platform-for-kubernetes",
+      "accessed": "2026-11-08"
+    },
+    {
+      "title": "Introducing Kinference: An Open Source Inference Control Plane for vLLM and Kubernetes",
+      "publisher": "vLLM Blog / Buoyant",
+      "url": "https://vllm.ai/blog/2026-11-04-introducing-kinference",
+      "accessed": "2026-11-08"
+    },
+    {
+      "title": "Kinference-AI/kinference: README und Known limitations",
+      "publisher": "GitHub / Kinference-AI",
+      "url": "https://github.com/Kinference-AI/kinference",
+      "accessed": "2026-11-08"
+    },
+    {
+      "title": "Kinference: Produktbeschreibung und Policies",
+      "publisher": "Kinference",
+      "url": "https://kinference.ai/",
+      "accessed": "2026-11-08"
+    }
+  ],
+  "title": "KI am Mittag: Zuhören, suchen, verteilen",
+  "dek": "Shizuku stellt ein japanisches Full-Duplex-Modell vor. Planet erschließt Satellitenbilder per Chat. Bei Kinference klaffen Ankündigung und README auseinander.",
+  "tags": [
+    "KI-Überblick",
+    "Sprachmodelle",
+    "Satellitenbilder",
+    "vLLM",
+    "Inferenz"
+  ],
+  "key_takeaways": [
+    "Shizuku-Duplex soll gleichzeitig sprechen und zuhören. 80 ms sind der interne Verarbeitungstakt, nicht die Antwortlatenz. Die veröffentlichten Gesprächswerte stammen vom Entwickler.",
+    "Planet beschreibt eine Chat-Suche in mehr als zehn Jahren Satellitenbildern. Die Suche arbeitet mit monatlichen Mosaiken und soll Hinweise für die weitere Analyse liefern.",
+    "Buoyant bewirbt Kinference als Inferenzplattform für vLLM. Die aktuelle README nennt den Code jedoch Alpha und listet unter anderem Rate Limiting und semantische Klassifikatoren als noch fehlend."
+  ],
+  "hero": {
+    "alt": "Drei Themen mit Grenzen: Shizuku-Duplex verarbeitet Sprache in 80-ms-Schritten, ohne damit eine 80-ms-Antwortlatenz zu belegen; Planet AI durchsucht Satellitenmosaike, Ergebnisse müssen geprüft werden; Kinference-Launch und Alpha-README widersprechen sich beim Funktionsumfang.",
+    "caption": "Drei Themen aus Originalquellen vom 4., 5. und 8. November. Messwerte, Produktbeschreibung und dokumentierter Codezustand getrennt betrachtet. Eigene Grafik.",
+    "credit": "Eigene Grafik (Redaktion), Quellen: Shizuku AI, Planet, Buoyant / Kinference-AI",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Mittagsüberblick vom 8. November 2026. Quellenstand: 09:50 Uhr MEZ. Shizuku AI zeigt ein japanisches Sprachmodell für überlappende Gespräche. Zwei weitere noch nicht behandelte Themen aus den vergangenen Tagen: Planet verbindet Satellitenbilder mit einer Chat-Suche, und Kinference will Anfragen zwischen Inferenzservern verteilen. Bei Kinference ist der Abstand zwischen Ankündigung und dokumentiertem Codezustand besonders wichtig."
+    },
+    {
+      "t": "h2",
+      "x": "Shizuku-Duplex: Sprechen und Zuhören im selben Takt"
+    },
+    {
+      "t": "p",
+      "x": "Shizuku AI stellt im Originalbeitrag vom 8. November Shizuku-Duplex vor, ein japanisches Full-Duplex-Dialogmodell. Es hört auch während der eigenen Ausgabe weiter zu, kann zustimmende Kurzsignale geben und bei einer Unterbrechung stoppen. Ein Gesprächsmodell führt die Unterhaltung; ein asynchron arbeitendes Hintergrundmodell übernimmt schwierige Anfragen und Werkzeuge wie Websuche. Die Verarbeitung erfolgt laut Entwickler in 80-Millisekunden-Schritten. Das bezeichnet den internen Takt, nicht eine garantierte Antwortzeit."
+    },
+    {
+      "t": "p",
+      "x": "In einer selbst zusammengestellten japanischen Evaluation meldet das Team 0,57 Sekunden mediane Zeit vom Sprechende bis zur Antwort und 89 Prozent rechtzeitige Stopps innerhalb von zwei Sekunden bei Unterbrechungen. Die Latenz stammt aus serverseitigen Aufnahmen ohne Netzwerkrundlauf. Gegenübergestellte Werte von GPT-Realtime und Gemini Live schließen dagegen Netzwerkzeit ein und sind daher nicht direkt gleichartig. Schwächen bleiben sichtbar: Bei Hintergrundsprache antwortete Shizuku im Test in 75 Prozent der Fälle, obwohl Nicht-Reagieren erwünscht war. Es handelt sich um Entwicklerergebnisse, nicht um eine unabhängige Prüfung. Der Beitrag zeigt Beispiele und Architektur, belegt aber keinen veröffentlichten Gewichte-Download."
+    },
+    {
+      "t": "h2",
+      "x": "Planet: Satellitenarchive mit Alltagssprache erkunden"
+    },
+    {
+      "t": "p",
+      "x": "Planet beschreibt im Launchbeitrag vom 5. November eine kartenbasierte KI-App, die mehr als zehn Jahre eigener Satellitenbilder erschließt. Nutzer können Orte anhand sprachlicher Beschreibungen suchen, Veränderungen im Zeitverlauf verfolgen und Bilder nebeneinander oder als Zeitraffer betrachten. Für die großräumige Suche übersetzt ein Sprachmodell die Anfrage in Abfragen einer Vektorkarte, die auf der KI-Auswertung monatlicher Bildmosaike beruht. Das ist keine Livekamera der Erde."
+    },
+    {
+      "t": "p",
+      "x": "Laut Planet können Nutzer auch Bilder oder CSV-Dateien ergänzen und Agenten mit vertiefter Analyse beziehungsweise regelmäßigen Berichten beauftragen. Die Firma ordnet die Suche vor allem am Anfang einer Untersuchung ein: Sie soll relevante Orte und Veränderungen auffindbar machen. Das Bildmaterial bleibt zur Kontrolle einsehbar. Ob ein Suchtreffer tatsächlich etwa eine neue Baustelle oder einen Schaden zeigt, muss weiterhin geprüft werden. Der Beitrag liefert Produkt- und Anwenderbeschreibungen, keinen unabhängigen Genauigkeitsbenchmark; ein eigener Funktionstest der App liegt diesem Überblick nicht zugrunde."
+    },
+    {
+      "t": "h2",
+      "x": "Kinference: Launchversprechen treffen auf Alpha-Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Buoyant kündigte Kinference am 4. November als allgemein verfügbare Steuerungsschicht für Kubernetes und vLLM an. Die Idee: Anfragen anhand von Richtlinien, Warteschlangen und bereits vorhandenen KV-Cache-Inhalten zu einem passenden Inferenzserver leiten. Der Cache enthält Zwischenergebnisse des Modells; ihre Wiederverwendung kann unnötige Rechenarbeit vermeiden. Produktseite und begleitender vLLM-Blog bewerben darüber hinaus Tokenlimits, semantische Anfrageklassifikation und Anthropic-kompatiblen Verkehr."
+    },
+    {
+      "t": "p",
+      "x": "Die aktuell gelesene README des öffentlichen Repositorys setzt deutlich engere Grenzen. Sie nennt Kinference Alpha-Software ohne längere Produktionserfahrung und führt Unterstützung für /v1/messages, Rate Limiting, semantische Klassifikatoren und mehrere Replikate ausdrücklich als noch fehlend auf. Dokumentiert sind eine gRPC-Schnittstelle zur Endpunktauswahl, KV-Cache-Ereignisse, Engine-Metriken und die Kopplung mit einem Proxy. Damit bleibt offen, welcher beworbene Umfang in welcher Auslieferung tatsächlich verfügbar ist. Für eine Einführung reicht die Launchbeschreibung allein nicht; die gewünschten Funktionen müssen am konkret eingesetzten Stand geprüft werden."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Antwortet Shizuku-Duplex in 80 Millisekunden?",
+      "a": "Das behaupten die verwendeten Zahlen nicht. 80 ms bezeichnen einen Verarbeitungsschritt. Die vom Entwickler gemessene mediane Antwortzeit beträgt 0,57 Sekunden, serverseitig und ohne Netzwerkrundlauf."
+    },
+    {
+      "q": "Sind Planet-Suchergebnisse bereits gesicherte Befunde?",
+      "a": "Nein. Die App soll geeignete Orte und Veränderungen für eine Analyse auffindbar machen. Die Originalbilder dienen zur Kontrolle; ein unabhängiger Genauigkeitsnachweis ist im verwendeten Launchbeitrag nicht enthalten."
+    },
+    {
+      "q": "Ist der gesamte beworbene Kinference-Umfang bestätigt?",
+      "a": "Nein. Launch und Produktseite nennen Funktionen, die die aktuelle öffentliche README noch als fehlend listet. Der Artikel trennt diese widersprüchlichen Dokumentationsstände und behauptet keinen vollständigen Produktivbetrieb."
+    }
+  ],
+  "related": [
+    "mistral-voxtral-3-voice-agents",
+    "eigener-llm-proxy-kontrolle-kosten-logs"
+  ]
+}
