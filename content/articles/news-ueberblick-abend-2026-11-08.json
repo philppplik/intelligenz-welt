@@ -1,0 +1,109 @@
+{
+ "slug": "news-ueberblick-abend-2026-11-08",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-08T16:07:00+01:00",
+ "modified": "2026-11-08T16:07:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "Formally verifying agent-written full-stack web apps with PDD Kit",
+   "publisher": "Microsoft Research",
+   "url": "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/",
+   "accessed": "2026-11-08"
+  },
+  {
+   "title": "Inside GitHub's new Git storage architecture",
+   "publisher": "GitHub Engineering",
+   "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/",
+   "accessed": "2026-11-08"
+  },
+  {
+   "title": "Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO",
+   "publisher": "Salesforce AI Research / arXiv",
+   "url": "https://arxiv.org/abs/2611.08453",
+   "accessed": "2026-11-08"
+  }
+ ],
+ "title": "KI am Abend: Code beweisen, Agenten skalieren",
+ "dek": "Microsoft zeigt formale Login-Prüfung, GitHub erklärt Speicher für viele Agenten, und Salesforce untersucht die Rechenbilanz von Modelldestillation.",
+ "tags": [
+  "KI-Überblick",
+  "Coding-Agenten",
+  "Formale Verifikation",
+  "GitHub",
+  "Modelltraining"
+ ],
+ "key_takeaways": [
+  "Microsoft demonstriert PDD Kit an Rust-Loginlogik. Verus prüft den Code gegen eine freigegebene Spezifikation; Datenbank, Passwortbibliothek und Tokensignierung bleiben auf Vertrauen und Tests angewiesen.",
+  "GitHub meldet interne Tests mit 5.000 gleichzeitigen Agenten und 7.200 Pushes pro Sekunde auf ein Repository. Rubicon ist nur in begrenzter privater Preview, kein allgemeines Leistungsversprechen.",
+  "Salesforce meldet beim Zusammenführen zweier selbst trainierter RL-Spezialisten 42,0 Prozent weniger gesamte Trainings-FLOPs als bei einer gemeinsamen GRPO-Baseline. Das ist keine pauschale Destillationsersparnis."
+ ],
+ "hero": {
+  "alt": "Drei Entwicklerthemen aus Originalen vom 5. November: PDD Kit beweist nur spezifizierte Rust-Loginlogik unter Annahmen, GitHub Rubicon ist private Preview trotz interner Skalierungstests, Salesforce meldet 42 Prozent weniger Gesamttrainings-FLOPs nur im Zwei-Domänen-Vergleich.",
+  "caption": "Drei bisher nicht behandelte Entwicklerberichte vom 5. November. Beweisumfang, Previewstatus und Versuchsaufbau begrenzen die Aussagen. Eigene Grafik.",
+  "credit": "Eigene Grafik (Redaktion), Quellen: Microsoft Research, GitHub, Salesforce AI Research",
+  "ai_generated": false
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Abendüberblick vom 8. November 2026. Quellenstand: 16:02 Uhr MEZ. Drei bisher nicht behandelte Entwicklerberichte vom 5. November: Microsoft verbindet Coding-Agenten mit formalen Beweisen, GitHub baut Speicher für parallele Agentenarbeit um, und Salesforce prüft, wann Modelldestillation tatsächlich Rechenarbeit spart. Die Grenzen der Aussagen gehören jeweils zum Ergebnis."
+  },
+  {
+   "t": "h2",
+   "x": "PDD Kit: Ein Beweis ist nur so gut wie die Spezifikation"
+  },
+  {
+   "t": "p",
+   "x": "Microsoft Research zeigt PDD Kit an der Loginlogik einer Rust-Web-App namens Pet Store. Der Forschungsprototyp klärt Anforderungen zunächst mit dem Entwickler und übersetzt sie in eine formale Spezifikation. Anschließend schreibt ein Agent Implementierung und Beweise; Verus prüft, ob die spezifizierten Eigenschaften für alle vom Modell erfassten Eingaben gelten. Menschen müssen weiterhin beurteilen, ob die Spezifikation den tatsächlichen Wunsch trifft."
+  },
+  {
+   "t": "p",
+   "x": "Im Beispiel reicht \"ein Token gibt es nur mit richtigem Passwort\" nicht aus: Auch ein Login, das jeden Nutzer ablehnt, erfüllte diesen Satz. Deshalb wurde zusätzlich festgelegt, wann ein richtiges Passwort Zugang ermöglichen muss. Mutationsprüfungen sollen entdecken, wenn eine Beweisklausel einen absichtlich eingebauten Fehler nicht abweist. Die Garantie bleibt dennoch begrenzt. Datenbankabfragen, bcrypt-Prüfung, Uhr und Tokensignierung werden über angenommene Verträge eingebunden und getestet, nicht selbst bewiesen. Auch dass der Login überhaupt oder schnell antwortet, ist nicht zugesichert. PDD Kit verifiziert derzeit Rust; der Bericht belegt keine fehlerfreie gesamte Web-App."
+  },
+  {
+   "t": "h2",
+   "x": "GitHub Rubicon: Objektablage und Abstimmung entkoppeln"
+  },
+  {
+   "t": "p",
+   "x": "GitHub erläutert in seinem Technikbericht Rubicon, eine neue Git-Speicherarchitektur für stark parallele Agentenarbeit. Unveränderliche Git-Objekte liegen als Packdateien in Azure Blob Storage. Referenzen, also Verweise etwa auf Branch-Stände, und das Packverzeichnis verwaltet der separate replizierte Dienst Ref-CAS. Damit muss nicht die gesamte Datenspeicherung zwischen Schreibern abgestimmt werden, sondern vor allem die kleine Referenzänderung."
+  },
+  {
+   "t": "p",
+   "x": "Virtuelle Replikate bedienen Anfragen mit wiederaufbaubaren lokalen Caches. Die rechenintensive Zusammenführung von Packdateien läuft auf getrennten Hintergrundknoten. GitHub meldet interne Tests mit 5.000 gleichzeitig arbeitenden Agenten und 7.200 Pushes pro Sekunde auf ein Repository bei parallel laufenden Leseanfragen. Diese Anbieterwerte sind kein unabhängiger Benchmark und keine garantierte Leistung für Kunden. Zudem nennt der Bericht ausdrücklich eine begrenzte private Preview und einen breiteren Rollout erst Anfang 2027. Änderungen an Git selbst und weitere APIs stehen teilweise noch im Ausblick."
+  },
+  {
+   "t": "h2",
+   "x": "Salesforce: Erst spezialisieren, dann zusammenführen"
+  },
+  {
+   "t": "p",
+   "x": "Ein Salesforce-Preprint vergleicht zwei Nachtrainingswege: GRPO belohnt richtige Ergebnisse, während On-Policy Distillation (OPD) die vom Lernmodell selbst erzeugten Ausgaben anhand eines eingefrorenen Lehrmodells tokenweise bewertet. Solch dichtes Feedback ist nicht gratis: Das Lehrmodell benötigt für jedes trainierte Token einen zusätzlichen Vorwärtsdurchlauf. Mit externen nachtrainierten Lehrmodellen lag die untersuchte Standard-OPD deshalb meist hinter GRPO, gemessen an Genauigkeit je Trainings-FLOP. Eine wichtige Ausnahme: Mit nur einem Rollout pro Aufgabe (G=1) übertraf externe OPD im einzelnen Mathematikversuch GRPO bei gleichen FLOPs. Dieser Vorteil übertrug sich nicht auf Code oder den Mehrdomänenmix."
+  },
+  {
+   "t": "p",
+   "x": "Anders fiel das Zusammenführen von Spezialisten aus, die aus demselben Ausgangsmodell entstanden waren. Mit Qwen3-4B-Base trainierten die Autoren getrennte GRPO-Experten für Mathematik und Code und übertrugen beide Fähigkeiten per OPD in einen gemeinsamen Schüler. Einschließlich Expertentraining und Destillation erreichte die Pipeline das Vergleichsniveau der gemeinsamen GRPO-Variante mit gemischten Aufgaben laut Autoren mit 42,0 Prozent weniger FLOPs. Die Zahl betrifft diesen Zwei-Domänen-Versuch, weder Geldkosten noch jeden Destillationsansatz. Auf einer einzelnen Domäne ist das bereits trainierte RL-Modell selbst das Ziel; dessen erneute Destillation fügt Rechenarbeit hinzu. Das Preprint-Ergebnis wurde hier nicht unabhängig nachgemessen."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Beweist PDD Kit, dass eine App sicher ist?",
+   "a": "Nein. Der Beweis betrifft die festgelegten Eigenschaften des erfassten Codes unter ausdrücklich akzeptierten Annahmen. Bibliotheken, Datenbank und nicht spezifizierte Anforderungen können außerhalb liegen; Tests ergänzen dort nur empirische Belege."
+  },
+  {
+   "q": "Ist GitHub Rubicon schon für alle verfügbar?",
+   "a": "Der verwendete GitHub-Bericht vom 5. November nennt eine begrenzte private Preview und einen breiteren Rollout Anfang 2027. Die internen Lasttestwerte sind kein allgemeines Kundenversprechen."
+  },
+  {
+   "q": "Spart Destillation immer 42 Prozent Rechenarbeit?",
+   "a": "Nein. Der Wert gilt für die gesamte Zwei-Domänen-Pipeline mit selbst trainierten Qwen3-4B-Spezialisten gegenüber einer konkreten gemeinsamen GRPO-Baseline. Externe Lehrer und einzelne Domänen ergeben in der Studie ein anderes Bild."
+  }
+ ],
+ "related": [
+  "oumi-faie-agenten-bauen-agenten",
+  "github-octoverse-2026-agenten-pull-requests"
+ ]
+}
