@@ -1,0 +1,122 @@
+{
+ "slug": "news-ueberblick-morgen-2026-11-08",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-08T06:41:00+01:00",
+ "modified": "2026-11-08T06:41:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "ADK Python v2.14.0: Release Notes",
+   "publisher": "Google / GitHub",
+   "url": "https://github.com/google/adk-python/releases/tag/v2.14.0",
+   "accessed": "2026-11-08"
+  },
+  {
+   "title": "Chat SDK agents can now stream generative UI with json-render",
+   "publisher": "Vercel",
+   "url": "https://vercel.com/changelog/json-render-and-chat-sdk-agents",
+   "accessed": "2026-11-08"
+  },
+  {
+   "title": "@json-render/chat: API-Dokumentation",
+   "publisher": "json-render",
+   "url": "https://json-render.dev/docs/api/chat",
+   "accessed": "2026-11-08"
+  },
+  {
+   "title": "ZYFA: Fast and Accurate FP8 Attention on AMD MI355X",
+   "publisher": "Zyphra",
+   "url": "https://www.zyphra.com/our-work/zyfa",
+   "accessed": "2026-11-08"
+  },
+  {
+   "title": "Zyphra/zyfa: README und Implementierung",
+   "publisher": "Zyphra / GitHub",
+   "url": "https://github.com/Zyphra/zyfa",
+   "accessed": "2026-11-08"
+  }
+ ],
+ "title": "KI am Morgen: Agenten testen, Karten streamen",
+ "dek": "Google erweitert sein Agenten-Kit, Vercel bringt gestreamte Chat-Karten, und Zyphra meldet schnellere FP8-Prefill-Kernels für AMDs MI355X.",
+ "tags": [
+  "KI-Überblick",
+  "Google",
+  "Vercel",
+  "Agenten",
+  "AMD",
+  "Inferenz"
+ ],
+ "key_takeaways": [
+  "Google ADK Python 2.14.0 stabilisiert ausgewählte Module und ergänzt wiederholte Tests. Beim Update ändern sich unter anderem Enum-Argumente und die Ausführung von Skill-Skripten.",
+  "Vercels json-render erzeugt Chat-SDK-Karten aus JSON und aktualisiert sie während der Ausgabe. Die abschließende Schema-Prüfung kann erst nach einer bereits sichtbaren Teilnachricht scheitern.",
+  "Zyphra meldet für ZYFA 1,16- bis 1,76-fachen FP8-Kerneldurchsatz gegenüber AITER auf erfassten Modellaktivierungen. Das ist kein Speedup eines vollständigen Sprachmodells."
+ ],
+ "hero": {
+  "alt": "Drei Updates: Google ADK Python 2.14.0 mit Mehrfachtests und Migrationshinweisen, Vercel json-render mit gestreamten Karten und Schema-Prüfung, Zyphra ZYFA mit herstellergemessenen Prefill-Kernels ausschließlich für MI355X.",
+  "caption": "Drei Entwickler-Updates aus Originalquellen vom 4. bis 7. November. Releaseumfang und Grenzen getrennt betrachtet. Eigene Grafik.",
+  "ai_generated": false,
+  "credit": "Eigene Grafik (Redaktion), Quellen: Google, Vercel, Zyphra"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Morgenüberblick vom 8. November 2026. Quellenstand: 06:36 Uhr MEZ. Drei Entwickler-Updates aus den vergangenen Tagen: Google ergänzt Tests und Integrationen für Agenten, Vercel lässt strukturierte Chat-Karten während der Generierung wachsen, und Zyphra untersucht schnellere Attention-Kernels auf AMD-Hardware."
+  },
+  {
+   "t": "h2",
+   "x": "Google ADK: Mehrfachtests und Änderungen beim Umstieg"
+  },
+  {
+   "t": "p",
+   "x": "Google hat ADK Python 2.14.0 als GitHub-Release bereitgestellt. Die Releaseveröffentlichung trägt den 7. November, der zugehörige Changelog den 4. November. Laut diesen Notizen verlassen ausgewählte Ausführungsumgebungen, die A2A-Integration sowie App-, Evaluations- und Simulationsmodule den experimentellen Status. Das betrifft benannte Teile des Python-Frameworks, nicht pauschal sämtliche ADK-Komponenten oder den A2A-Standard."
+  },
+  {
+   "t": "p",
+   "x": "Mit MultiRunConfig und Parallelitätssteuerung können Entwickler jeden Testfall mehrfach ausführen und Ergebnisse zusammenfassen. ToolArgsMatcher vergleicht Werkzeugargumente exakt, ohne Beachtung der Großschreibung, mit numerischer Toleranz oder per semantischem Modellurteil. TeamsRunner bindet Microsoft-Teams-Chats und -Kanäle an; ein OpenAIDecisionsClassifier ergänzt Entscheidungen über Workflows und Werkzeugfreigaben. Beim Umstieg sind aber Anpassungen nötig: Enum-Argumente kommen nun als Enum-Mitglieder statt als rohe Zeichenketten an. Im Umgebungsmodus nimmt RunSkillScriptTool keine freie command-Zeichenkette mehr an, sondern strukturierte Argumente und validierte Skriptpfade. Das ist eine konkrete Schnittstellenänderung, keine allgemeine Sicherheitsgarantie."
+  },
+  {
+   "t": "h2",
+   "x": "Vercel: Chat-Karten wachsen während der Generierung"
+  },
+  {
+   "t": "p",
+   "x": "Vercel beschreibt in seinem Changelog vom 6. November eine Verbindung von Chat SDK und json-render. Der Agent schreibt eine JSON-Spezifikation aus einem typisierten Komponentenkatalog; daraus entsteht eine Karte, die Adapter in das native Format der jeweiligen Plattform übertragen, etwa Slack Block Kit oder Teams Adaptive Cards. Zum Katalog gehören unter anderem Tabellen, Diagramme und Schaltflächen."
+  },
+  {
+   "t": "p",
+   "x": "streamCard veröffentlicht eine erste Karte, sobald deren Wurzelelement Inhalt hat, und bearbeitet die Nachricht mit eintreffenden Elementen weiter. Standardmäßig geschieht das höchstens einmal je 500 Millisekunden. Die Dokumentation nennt eine wichtige Grenze: Scheitert die abschließende Validierung, kann bereits eine Teilnachricht sichtbar sein. toCard prüft Schema und Struktur, aber nicht den Wahrheitsgehalt der Inhalte. Plattformgrenzen bleiben ebenfalls bestehen: Slack wandelt laut Vercel beispielsweise eine zweite Tabelle in einen Codeblock um; mit expliziten limits lässt sich eine solche Spezifikation stattdessen ablehnen."
+  },
+  {
+   "t": "h2",
+   "x": "Zyphra meldet schnellere Prefill-Kernels auf MI355X"
+  },
+  {
+   "t": "p",
+   "x": "Zyphra stellt im Originalbeitrag vom 5. November ZYFA vor: FP8- und BF16-Attention-Kernels für AMD Instinct MI355X. Sie bearbeiten den kausalen Vorwärtsdurchlauf beim Prefill, also die Verarbeitung des Eingabetextes vor der Generierung. Für FP8 meldet Zyphra auf Aktivierungen aus jeweils einer Schicht von Mistral-7B, Qwen3-8B und DeepSeek-V2-Lite bei 16K Tokens den 1,16-, 1,17- und 1,76-fachen Durchsatz gegenüber den jeweiligen AITER-Standardkernels. Gemessen wurde unter anhaltender Last nach dem Aufwärmen."
+  },
+  {
+   "t": "p",
+   "x": "Die Zahlen sind Herstellermessungen, keine unabhängige Bestätigung und kein vollständiger Modellvergleich. Der Blog nennt einen einzelnen Knoten mit acht MI355X, ROCm 7.2.3 und AITER 0.1.19 als Versuchsumgebung. Zufallsdaten liefern andere Verhältnisse als reale Aktivierungen, weil der GPU-Takt von den Operanden abhängt. Laut README fehlen unter anderem Decoding, paged KV-Caches, unterschiedlich lange Sequenzen im selben Batch und der Rückwärtsdurchlauf. Der öffentlich lesbare Code ist damit ein spezialisierter Prefill-Baustein, kein universeller Ersatz für jede Attention-Implementierung."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist mit ADK 2.14.0 das gesamte Framework stabil?",
+   "a": "Die Release Notes erklären bestimmte Module und Integrationen für stabil. Daraus folgt weder ein stabiler Status für jedes ADK-Feature noch eine Aussage über die Entwicklung des A2A-Standards insgesamt. Zudem enthält das Update inkompatible Änderungen."
+  },
+  {
+   "q": "Verhindert die Kartenvalidierung falsche KI-Aussagen?",
+   "a": "Nein. toCard prüft Komponenten-Props und Struktur gegen ein Schema. Ob die Inhalte stimmen, ist eine andere Frage. Bei gestreamten Karten kann ein Fehler erst nach Veröffentlichung einer Teilnachricht auffallen."
+  },
+  {
+   "q": "Beschleunigt ZYFA ein komplettes Modell um den Faktor 1,76?",
+   "a": "Das ist nicht belegt. Der Höchstwert stammt aus Zyphras FP8-Kernelmessung auf einer erfassten DeepSeek-V2-Lite-Schicht bei 16K Tokens auf MI355X. Decoding und weitere Ausführungsformen sind nicht abgedeckt."
+  }
+ ],
+ "related": [
+  "oumi-faie-agenten-bauen-agenten",
+  "anthropic-agenten-gedaechtnis-dreaming"
+ ]
+}
