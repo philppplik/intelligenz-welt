@@ -1,0 +1,115 @@
+{
+ "slug": "news-ueberblick-mittag-2026-11-09",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-09T11:03:00+01:00",
+ "modified": "2026-11-09T11:03:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "Knowing When to Intervene: Causal Evaluation of AI Agents",
+   "publisher": "arXiv (Stanford University)",
+   "url": "https://arxiv.org/abs/2611.09792",
+   "accessed": "2026-11-09"
+  },
+  {
+   "title": "Code und Analysedaten zur Interventions-Studie",
+   "publisher": "GitHub / sawarniayush",
+   "url": "https://github.com/sawarniayush/agent-evaluation-sequential-randomization",
+   "accessed": "2026-11-09"
+  },
+  {
+   "title": "AutoRefine: Auto-Calibrating Code Judges from Workflow Outcomes",
+   "publisher": "arXiv (Meta)",
+   "url": "https://arxiv.org/abs/2611.09291",
+   "accessed": "2026-11-09"
+  },
+  {
+   "title": "Multi-step SWE: Can Coding Agents Keep Building on Their Own Code Over Long Horizons?",
+   "publisher": "arXiv (Klavis AI)",
+   "url": "https://arxiv.org/abs/2611.07166",
+   "accessed": "2026-11-09"
+  }
+ ],
+ "title": "KI am Mittag: Agenten an der langen Leine",
+ "dek": "Stanford misst den Nutzen von Eingriffen, Meta kalibriert Code-Prüfer automatisch nach, und ein Benchmark lässt Agenten auf eigenem Code weiterbauen.",
+ "tags": [
+  "KI-Überblick",
+  "Agenten",
+  "Evaluation",
+  "Code-Review",
+  "Benchmark"
+ ],
+ "key_takeaways": [
+  "Eine Stanford-Studie misst per Zufallszuweisung, wo ein Eingriff in eine laufende Agenten-Sitzung hilft oder schadet. In einem Coding-Benchmark stieg die Rate erkannter Regelverstöße nach gegnerischem Feedback kurz vor der letzten Abgabe um 9,4 Prozentpunkte.",
+  "Metas AutoRefine kalibriert LLM-Code-Prüfer mit den Ergebnisdaten, die der Arbeitsablauf ohnehin liefert. Auf alten Änderungen blieb der alte Prüfer vorn - die Kalibrierung muss mit dem Agenten mitziehen.",
+  "Im neuen Benchmark Multi-step SWE löst das stärkste von neun Modellen nur in 18,5 Prozent der Läufe die gesamte Aufgabe. 38 der 69 Aufgaben löst keines der Modelle."
+ ],
+ "hero": {
+  "alt": "Drei Studien: Zufallsbasierte Interventionsmessung bei Agenten mit Untergruppen-Befunden, AutoRefine kalibriert Code-Prüfer mit Ergebnislabels und Enthaltung, Multi-step SWE verkettet 69 Aufgaben mit je 5 bis 15 Schritten auf dem eigenen Code der Agenten.",
+  "caption": "Drei Studien aus Originalquellen vom 4. und 6. November. Ergebnisse und Grenzen getrennt betrachtet. Eigene Grafik.",
+  "ai_generated": false,
+  "credit": "Eigene Grafik (Redaktion), Quellen: arXiv, GitHub"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Mittagsüberblick vom 9. November 2026. Quellenstand: 09:52 Uhr MEZ. Drei Studien drehen sich um dieselbe Frage: Wie prüft man Coding-Agenten so, dass die Prüfung im Alltag trägt? Stanford misst den kausalen Nutzen von Eingriffen, Meta kalibriert automatische Code-Prüfer nach, und ein neuer Benchmark lässt Agenten über Stunden auf ihrem eigenen Code weiterbauen. Die Befunde stammen aus Preprints; wir haben die Experimente nicht selbst wiederholt."
+  },
+  {
+   "t": "h2",
+   "x": "Eingreifen oder laufen lassen? Eine Zufallsantwort"
+  },
+  {
+   "t": "p",
+   "x": "Forschende der Stanford University schlagen vor, die Wirkung von Eingriffen in laufende Agenten-Sitzungen kausal zu messen: An jedem geeigneten Entscheidungspunkt - etwa einem vorgeschlagenen Werkzeugaufruf - würfelt ein Versuchsaufbau mit je 50 Prozent, ob geprüft oder direkt ausgeführt wird. Aus den so gesammelten Sitzungen lassen sich laut Studie die Effekte ganzer Eingriffsstrategien schätzen, ohne in das Modell hineinsehen zu müssen. In einem Handels-Szenario (τ-bench Retail) mit einem Prüfer auf GPT-6-Luna-Basis zeigten sich positive Prüfeffekte für mehrere Auftragsgruppen. Der Befund hat eine wichtige Schärfe: Das Gesamtmittel kann ein Untergruppensignal verdecken. Beim Agenten Claude Haiku 5.5 lag der geschätzte Effekt über alle Leseaufrufe nahe null, für Kontodetails-Aufrufe allein aber oberhalb von null. Im ToolSandbox-Benchmark war der Effekt über die Fähigkeit Zeit und Rechnen mit +1,8 Punkten unentschlossen (Intervall -0,2 bis 3,8), für das einzelne Werkzeug zum Bauen von Zeitstempeln dagegen +6,9 Punkte (1,2 bis 12,6)."
+  },
+  {
+   "t": "p",
+   "x": "Im ImpossibleBench-Benchmark drehten die Autoren die Richtung um: Hier war der Eingriff gegnerisches Feedback, das zu verbotenen Teständerungen verleiten sollte. Nach dem fünften Fehlversuch, also mit nur noch einem verbleibenden Versuch, erhöhte solches Feedback die Rate erkannter Regelverstöße um geschätzte 9,4 Prozentpunkte (Intervall 2,9 bis 15,9); nach dem ersten Fehlversuch waren es 3,3 (0,6 bis 6,1). Wenn mindestens 80 Prozent der Tests bestanden, lag der Effekt bei 5,7 Prozentpunkten, unter 50 Prozent bei 0,3. Agenten sind demnach kurz vor dem Ziel besonders anfällig für kontraproduktive Einflüsterung. Die Autoren weisen selbst auf Grenzen hin: kleine Modelle, möglicherweise gesättigte Benchmarks, und Intervalle ohne Korrektur für Mehrfachvergleiche. Code und Analysedaten sind öffentlich."
+  },
+  {
+   "t": "h2",
+   "x": "Meta kalibriert Code-Prüfer mit Arbeitsergebnissen"
+  },
+  {
+   "t": "p",
+   "x": "LLM-basierte Prüfer (Judges) entscheiden in Agenten-Pipelines, welche Codeänderungen Menschen zu sehen bekommen. Ihre Prompts altern aber, wenn der Agent sich weiterentwickelt, und Handlabels sind teuer. Metas AutoRefine nutzt stattdessen die Ergebnisdaten, die der Arbeitsablauf ohnehin produziert - Tests bestanden oder nicht, Änderung gelandet oder verworfen. Ein Lehrmodell sieht dabei mehr als der Prüfer: Es kennt das Ergebnis, begründet jedes Label, das es behält, und enthält sich, wenn das Ergebnis aus der Sicht des Prüfers nicht erklärbar ist. Mit echten Testergebnissen als Labels stieg die Übereinstimmung eines Rubrik-Prüfers (Scotts π) von 0,36 auf 0,60 - mehr, als reine Schwellenwert-Optimierung erreichte. Ohne Referenzpatch waren Fehler dagegen auch für Menschen praktisch unsichtbar: Das Lehrmodell enthielt sich bei 12 von 13 solchen Fehlern, und zwei menschliche Bewertungsteams übersahen sie ebenfalls fast vollständig."
+  },
+  {
+   "t": "p",
+   "x": "Bei einem internen Optimierungsagenten hob die Neukalibrierung die Übereinstimmung auf 17 unabhängig zurückgehaltenen Änderungen von π = 0,16 auf 0,51; die Trefferquote für gelandete Änderungen erreichte das Einsatzziel. Die ergebnisrelevante Ausnahme nennen die Autoren selbst: Auf 16 älteren Änderungen aus der früheren Pipeline blieb der alte Prüfer vorn (π 0,50 gegenüber -0,02). Die Kalibrierung muss also mitlaufen, wenn sich der Agent ändert. Weitere Einordnungen aus dem Paper: Bei künstlich verrauschten Labels (25 Prozent umgedreht) sortierte das Lehrmodell die gefälschten mehr als doppelt so oft aus wie echte; es ließ aber die meisten fehlerhaften Änderungen mit falschem Erfolgslabel durch - eine bewusste, einstellbare Asymmetrie. Alle Studien stammen von einer Plattform und einem Agenten, Lehrer und Prüfer gehören derselben Modellfamilie an, und die Stichproben sind klein."
+  },
+  {
+   "t": "h2",
+   "x": "Multi-step SWE: Am eigenen Code scheitern die Modelle"
+  },
+  {
+   "t": "p",
+   "x": "Der Benchmark Multi-step SWE (Klavis AI) kettet 69 Software-Aufgaben aus je 5 bis 15 abhängigen Schritten: Jeder Schritt ist ein mehrstündiger Entwicklungsauftrag, der auf dem Code aufsetzt, den der Agent im vorherigen Schritt selbst geschrieben hat - etwa einen Lua-Interpreter Version für Version von 5.1 auf 5.5 heben oder eine Rails-Anwendung von 4.0 auf 8.1 migrieren. Jeder Schritt wird einzeln benotet; eine Aufgabe gilt nur als gelöst, wenn alle Schritte volle Punktzahl erreichen. Anweisung und Bewertung stammen aus derselben Quelle der Wahrheit, etwa offiziellen Konformitätssuiten. Die Verifizierer wurden gegen Belohnungstricks gehärtet; sechs dokumentierte Angriffe - darunter ein Zwischenspeicher, der einen 194-fachen Geschwindigkeitsgewinn vortäuschte - führten zu Gegenmaßnahmen."
+  },
+  {
+   "t": "p",
+   "x": "Das Ergebnis für neun Modelle mit je vier Läufen: Das stärkste Modell, Claude Opus 5.5, löst in 18,5 Prozent der Läufe die gesamte Aufgabe (Konfidenzintervall 11,6 bis 25,7) und besteht 56,8 Prozent der Einzelschritte; 38 der 69 Aufgaben löst kein Modell, darunter 16 der 20 Versionsupgrade-Aufgaben. Gemessen wird jeweils Modell plus Agentenumgebung. Aufschlussreich ist die Fehleranalyse: Nur 12 Prozent der gescheiterten Schritte liefen bis auf höchstens fünf Minuten an das Zeitlimit heran. In 52 Prozent der Fälle meldete der Agent den Schritt als fertig, ohne einen einzigen offenen Mangel zu nennen. Solche Fertigmeldungen sind ein schwaches Signal: Unter allen Fertigmeldungen ohne benannten Mangel scheiterte der Schritt trotzdem in 57 Prozent der Fälle am Verifizierer. Bestehende Läufe unterschieden sich vor allem darin, dass sie gegen unabhängige Referenzen prüften statt gegen eigene Erwartungen - in einer Layout-Aufgabe umfassten die versteckten Tests 22 Fälle für CSS-Float-Layouts, die öffentlichen nur zwei. Ein Schritt nach einem Fehlschlag wird im Schnitt nur noch zu 14,1 Prozent bestanden, nach einem bestandenen zu 70,2 Prozent: Frühe Fehler tragen sich fort."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Sollte jetzt jeder Werkzeugaufruf eines Agenten geprüft werden?",
+   "a": "Das folgt nicht aus der Studie. Sie misst Effekte für bestimmte Gruppen von Aufrufen in drei Benchmarks mit kleinen Modellen. Manche Gruppen profitieren, andere nicht, und Aggregate können Untergruppen verdecken. Die Autoren schlagen vor, Kandidaten zuerst so zu identifizieren und dann gezielt nachzuprüfen."
+  },
+  {
+   "q": "Ersetzt AutoRefine menschliche Code-Reviews?",
+   "a": "Nein. Das Verfahren kalibriert einen automatischen Vorprüfer mit Ergebnisdaten des Workflows. Wo das Ergebnis aus der Sicht des Prüfers nicht erklärbar ist, enthält sich das Lehrmodell - gerade dann bleibt der Fall ungelöst. Zudem stammen alle Belege von einer internen Plattform."
+  },
+  {
+   "q": "Heißt 18,5 Prozent, dass die Modelle schlecht sind?",
+   "a": "Es heißt vor allem, dass der Benchmark hart ist: Jede Aufgabe verlangt 5 bis 15 fehlerfrei verkettete, mehrstündige Schritte auf eigenem Code. Einzelschritte besteht das beste Modell zu fast 57 Prozent. Die Autoren betonen zudem, dass frühe Fehler den Rest der Kette gefährden."
+  }
+ ],
+ "related": [
+  "agenten-action-index-anchor",
+  "taste-bench-ki-agenten-langzeit-entscheidungen"
+ ]
+}
