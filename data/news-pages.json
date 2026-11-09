@@ -1,5 +1,41 @@
 [
   {
+    "title": "Gehirndaten von Neurotech-Nutzern werden heimlich für KI-Training genutzt",
+    "url": "https://www.heise.de/news/Gehirndaten-von-Neurotech-Nutzern-werden-heimlich-fuer-KI-Training-genutzt-11513876.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794232800.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Eine Recherche zeigt: Gehirnaktivitäten von Neurotech-Nutzern werden ohne deren Wissen für das Training von KIs verwendet.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-09T16:01:12.652046+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI-Update kompakt: Rechenzentren, Propaganda, Siri AI, Minecraft",
+    "url": "https://www.heise.de/news/KI-Update-kompakt-Rechenzentren-Propaganda-Siri-AI-Minecraft-11515563.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794232800.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-09T16:01:12.651985+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI-Coding-Agenten verfrachten Zugangsdaten in öffentliche Repositories",
+    "url": "https://www.heise.de/news/KI-Coding-Agenten-verfrachten-Zugangsdaten-in-oeffentliche-Repositories-11517278.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794226980.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Wer mit KI-Coding-Agenten arbeitet, kann Zugangsdaten in öffentliche Repositories ausleiten. Schuld ist eine Komfortfunktion.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-09T16:01:12.652256+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "Fall um Nvidia-Chef: China weist Spionagevorwurf zurück",
     "url": "https://www.heise.de/news/Fall-um-Nvidia-Chef-China-weist-Spionagevorwurf-zurueck-11517104.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1794218640.0,
