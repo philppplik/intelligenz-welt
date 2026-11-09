@@ -1,0 +1,100 @@
+{
+ "slug": "selbstevolvierende-agenten-faehigkeitsverlust-studie",
+ "section": "analyse",
+ "type": "analysis",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "Preprint: Alle 16 untersuchten evolvierten Agenten verloren auch zuvor gelöste Aufgaben",
+ "dek": "Ein Preprint untersucht vier Evolutionsmethoden für Agenten-Harnesses: Alle 16 evolvierten Agenten lösten neue Aufgaben und verloren gleichzeitig zuvor beherrschte. Höhere Benchmark-Scores bedeuten nicht zwingend bessere Agenten.",
+ "tags": [
+  "Agenten",
+  "Selbstverbesserung",
+  "Benchmarks",
+  "Evaluation",
+  "Forschung"
+ ],
+ "key_takeaways": [
+  "Der Preprint (arXiv:2611.07624) untersucht, ob Agenten-Harness-Evolution - rekursive Selbstverbesserung ohne neue Modellgewichte - verlässliche Verbesserungen liefert. Antwort: nur bedingt.",
+  "Alle 16 evolvierten Agenten gewannen zuvor ungelöste Aufgaben und verloren gleichzeitig zuvor beherrschte. In einem Fall stieg die Zuverlässigkeit um 5,2 Punkte, obwohl zehn früher abgedeckte Aufgaben verloren gingen.",
+  "Die meisten Zuverlässigkeitsgewinne erhöhten die Einsatzkosten; der höchstbewertete Agent lieferte in keinem der vier Pools die größte weitere Verbesserung.",
+  "Transfer auf neue Umgebungen erhält Gewinne nur selektiv: Auf allgemeinen Aufgaben fiel die Abdeckung meist, auf Coding-Aufgaben stieg sie mit einem bestimmten Harness-Typ."
+ ],
+ "hero": {
+  "alt": "Symbolbild: Ein abstrakter Baum aus Lichtlinien, dessen neue Zweige hell leuchten, während ältere Äste verblassen und Blätter verlieren, Dunkelblau mit Grün- und Grau-Akzenten.",
+  "caption": "Symbol für den im Preprint untersuchten Gewinn und Verlust von Aufgabenabdeckung. KI-generiert.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Agenten, die sich selbst verbessern, gelten als nächster großer Hebel - nicht durch neue Modellgewichte, sondern durch Evolution des sogenannten Harness: Prompts, Werkzeugschnittstellen, Orchestrierung und Code um das Modell herum. Ein Preprint von Forschenden der USTC, UC Berkeley, des Simple Agent Lab, BIGAI und der Shanghai Jiaotong University (arXiv:2611.07624, 5. November) legt nun nahe, dass die Benchmark-Gewinne solcher Methoden systematisch schmeicheln: Sie messen das Mittel, nicht die Verluste."
+  },
+  {
+   "t": "h2",
+   "x": "Was die Studie untersucht hat"
+  },
+  {
+   "t": "p",
+   "x": "Das Team ließ vier Evolutionsmethoden (AHE, HyperAgents, A-Evolve und GEPA) auf zwei Harness-Typen (MiniSWE und Codex) und zwei Aufgabenfelder los: tau3-Banking für allgemeine Aufgaben und Terminal-Bench 2 für Coding. Statt nur Endscores zu vergleichen, wertete es wiederholte Läufe, kontrollierte Erweiterungen, gezielte Eingriffe in einzelne Änderungen und Wiederholungen der Auswahlentscheidungen aus."
+  },
+  {
+   "t": "h2",
+   "x": "Die zentralen Befunde"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Alle 16 evolvierten Agenten gewannen Aufgaben, die sie vorher nicht lösten - und verloren gleichzeitig Aufgaben, die sie vorher beherrschten. In einem Fall stieg die Zuverlässigkeit um 5,2 Punkte, obwohl zehn zuvor abgedeckte Aufgaben verloren gingen.",
+    "Die meisten Zuverlässigkeitsgewinne verteuerten den Einsatz des Agenten.",
+    "Konkrete Änderungen schlugen generische Erinnerungen meist - aber in Kombination konnten sich ihre Effekte verändern.",
+    "Der am höchsten bewertete Agent brachte in keinem der vier untersuchten Pools die größte weitere Verbesserung hervor, und strengere Auswahlregeln verwarfen teils nützliche Alternativen.",
+    "Beim Transfer auf neue Umgebungen fiel die Abdeckung bei allgemeinen Aufgaben über beide Harness-Typen meist ab; bei Coding-Aufgaben stieg sie dagegen mit dem Harness-Typ, der nur die äußere Schicht verändert."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Was die Autoren daraus bauen"
+  },
+  {
+   "t": "p",
+   "x": "Aus den Diagnosen leitet das Team überarbeitete Regeln für Auswahl, Analyse, Mutation und Zulassung neuer Varianten ab - gebündelt als Audit-Guided Evolution (AGE). Damit erreicht es nach eigenen Angaben die beste Leistung im Vergleich zur Referenzmethode, über beide Benchmarks und Harness-Typen hinweg. Der Code liegt als RSIHub auf GitHub."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Die Pointe der Studie ist methodisch: Wer Agenten-Evolution nur am Endscore misst, kann einen Wechsel der gelösten Aufgaben übersehen. Ein höherer Durchschnitt kann neue Erfolge und zugleich Verluste auf anderen Aufgaben enthalten. Ob die Variante im Einsatz besser ist, hängt deshalb auch davon ab, welche Aufgaben betroffen sind. Konsequenz der Autoren: Evaluation muss Erhalt mitbewerten (welche Fähigkeiten überleben die Evolution), Kosten gegenrechnen und Gewinne auf Aufgaben prüfen, die nicht die Evolution gesteuert haben. Zwei Grenzen gehören dazu: Es ist ein Preprint ohne Peer-Review, und die Ergebnisse stammen aus der Versuchsumgebung der Autoren - wir haben sie nicht nachgemessen. Für die Praxis reicht die Warnung trotzdem: Ein besserer Selbstverbesserungs-Score ist kein Beleg für einen besseren Agenten, solange niemand die Verlustliste geprüft hat."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist Agenten-Harness-Evolution?",
+   "a": "Rekursive Selbstverbesserung ohne neue Modellgewichte: Der Agent verändert über Generationen das System um das Modell herum - Prompts, Skills, Werkzeugschnittstellen, Orchestrierung oder Code - und wird dabei an Benchmarks gemessen."
+  },
+  {
+   "q": "Was ist der wichtigste Befund?",
+   "a": "Nach Angaben des Preprints gewannen alle 16 untersuchten evolvierten Agenten zuvor ungelöste Aufgaben und verloren zugleich zuvor gelöste. Ein Durchschnittsscore allein zeigt diesen Wechsel nicht. Das ist ein Befund der konkreten Versuchsumgebung, keine Aussage über alle Agentensysteme."
+  },
+  {
+   "q": "Sind die Ergebnisse bestätigt?",
+   "a": "Nein. Es ist ein Preprint vom 5. November ohne Peer-Review aus der Versuchsumgebung der Autoren; wir haben die Läufe nicht nachgemessen. Der Code der Gegenmaßnahme (AGE) ist als RSIHub auf GitHub verfügbar."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
+   "publisher": "arXiv (Preprint 2611.07624)",
+   "url": "https://arxiv.org/abs/2611.07624",
+   "accessed": "2026-11-09"
+  }
+ ],
+ "related": [
+  "oumi-faie-agenten-bauen-agenten",
+  "metr-anthropic-beschleunigung-ki-forschung"
+ ],
+ "published": "2026-11-09T08:54:00+01:00",
+ "modified": "2026-11-09T08:54:00+01:00"
+}

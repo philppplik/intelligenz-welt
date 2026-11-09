@@ -1,0 +1,78 @@
+{
+ "slug": "google-crusoe-wyoming-rechenzentrum-17-milliarden",
+ "section": "trends",
+ "type": "analysis",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "Google übernimmt Crusoes Wyoming-Baustelle - und will dort 17 Milliarden Dollar investieren",
+ "dek": "Laut TechCrunch bestätigt Crusoe den Verkauf des unfertigen Wyoming-Projekts an Google. Die 17 MilliardenDollar betreffen den geplanten Ausbau, nicht den unveröffentlichten Kaufpreis.",
+ "tags": [
+  "Google",
+  "Crusoe",
+  "Rechenzentren",
+  "Wyoming",
+  "Konsolidierung"
+ ],
+ "key_takeaways": [
+  "TechCrunch berichtet, Crusoe habe am 6.November den Verkauf seines unfertigen Rechenzentrumsprojekts im Südosten Wyomings an Google bestätigt. Der Kaufpreis wird nicht genannt.",
+  "Google kündigt an, 17 Milliarden Dollar in den Ausbau des Campus zu investieren - das ist die geplante Bausumme, nicht der Kaufpreis.",
+  "Das Projekt war mit Tallgrass für langfristig bis zu 10 Gigawatt angekündigt. Google habe laut den von TechCrunch aufgegriffenen Berichten Bedenken zu Kosten und Zeitplan geäußert.",
+  "Trotz des Verkaufs baut Crusoe weiter einen anderen Google-Campus nahe Amarillo, Texas - und stemmte im September noch eine 3,9-Milliarden-Finanzierungsrunde."
+ ],
+ "hero": {
+  "alt": "Symbolbild: Ein halbfertiges Gebäude-Gerüst aus Lichtlinien in einer Prärielandschaft, ein Kran übergibt einen leuchtenden Baustein an eine größere Struktur, Dunkelblau mit Blau-Akzent.",
+  "caption": "Google übernimmt Crusoes unfertigen Wyoming-Campus. Symbolbild, KI-generiert.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Google übernimmt ein unfertiges Rechenzentrumsprojekt von Crusoe im Südosten Wyomings. Nach dem TechCrunch-Bericht vom 6.November bestätigte Crusoe den Verkauf am selben Tag. Die Quelle nennt 17 MilliardenDollar als Googles angekündigte Investition in den Ausbau des Campus, nicht als Kaufpreis. Der Kaufpreis selbst wird nicht genannt."
+  },
+  {
+   "t": "h2",
+   "x": "Was hinter dem Verkauf steckt"
+  },
+  {
+   "t": "p",
+   "x": "Die Ironie liegt im Verlauf: Crusoe hatte Google ursprünglich als Kunden für das Projekt gewinnen wollen - und scheiterte. Stattdessen hatte der Konzern laut TechCrunch Bedenken zu Kosten und Bauzeitplan unter Crusoes Regie geäußert. Angekündigt worden war der Campus im vergangenen Jahr gemeinsam mit Tallgrass, einem Blackstone-gestützten Infrastrukturunternehmen, mit dem Ziel, langfristig auf 10 Gigawatt Leistung zu skalieren. Bloomberg hatte den Verkauf bereits im Juni berichtet. Crusoe bleibt trotzdem im Google-Geschäft: Nahe Amarillo in Texas baut das Unternehmen einen weiteren Campus für den Konzern. Und TechCrunch nennt auch weitere Finanzierungsangaben: im September kam eine Finanzierungsrunde über 3,9 Milliarden Dollar zustande, zuletzt wurde das Unternehmen mit 30,9 Milliarden Dollar bewertet."
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Der Fall zeigt ein Projektrisiko: Eigentum und Ausbauverantwortung können schon während der Bauphase wechseln. Zugleich nennt TechCrunch ein anderes Google-Projekt nahe Amarillo, das Crusoe weiterentwickelt. Der Verkauf ist deshalb kein Beleg dafür, dass die gesamte Zusammenarbeit endet. Aus einem einzelnen Projektwechsel lässt sich auch keine allgemeine Konzentration des Rechenzentrumsmarkts messen."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was hat Google genau gekauft?",
+   "a": "Den unfertigen Rechenzentrums-Campus von Crusoe im Südosten Wyomings. Der Kaufpreis ist nicht öffentlich; die genannten 17 Milliarden Dollar sind Googles geplante Investition in den Ausbau, nicht der Kaufpreis."
+  },
+  {
+   "q": "Warum verkauft Crusoe ein Prestigeprojekt?",
+   "a": "TechCrunch berichtet, Crusoe habe Google ursprünglich als Kunden gewinnen wollen; Google habe Bedenken zu Kosten und Bauzeitplan geäußert. Diese Erklärung stammt aus dem Bericht. Ein weiterer Google-Campus nahe Amarillo bleibe in Entwicklung durch Crusoe."
+  },
+  {
+   "q": "Was bedeutet das für den Rechenzentrums-Markt?",
+   "a": "Der Fall zeigt einen Eigentümerwechsel in der Bauphase. Er allein belegt weder eine allgemeine Marktbereinigung noch, dass unabhängige Entwickler große Projekte grundsätzlich nicht liefern können."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Crusoe sells troubled Wyoming data center project to Google",
+   "publisher": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+   "accessed": "2026-11-09"
+  }
+ ],
+ "related": [
+  "joules-to-gdp-energie-pro-dollar-ki",
+  "google-tpu-orbit-erste-antwort-weltraum"
+ ],
+ "published": "2026-11-09T08:52:00+01:00",
+ "modified": "2026-11-09T08:52:00+01:00"
+}

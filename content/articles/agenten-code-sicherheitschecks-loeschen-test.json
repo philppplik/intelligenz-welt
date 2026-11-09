@@ -1,0 +1,84 @@
+{
+ "slug": "agenten-code-sicherheitschecks-loeschen-test",
+ "section": "praxis",
+ "type": "explainer",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "Mutationstests für Agenten-Code: 1.410 Checks absichtlich löschen und zählen, was die Testsuite übersieht",
+ "dek": "Ein dokumentierter Praxisversuch: Agenten entfernten 1.410 Sicherheitschecks einzeln aus dem Code - 113 Mal schlug die Testsuite nicht an, 91 echte Lücken sind jetzt mit Tests gepinnt.",
+ "tags": [
+  "Coding-Agenten",
+  "Testen",
+  "Mutationstesting",
+  "Qualitätssicherung",
+  "Claude Code"
+ ],
+ "key_takeaways": [
+  "Ein in Morning Tokens dokumentierter Workflow lässt Agenten Sicherheitschecks aus eigenem Code löschen - einen nach dem anderen - und prüft, ob die Testsuite den Eingriff bemerkt.",
+  "Ergebnis des Berichts: Von 1.410 entfernten Checks fielen 1.297 in den Tests auf, 113 rutschten durch; 91 davon waren echte Lücken und haben jetzt jeweils einen pinnenden Test.",
+  "Derselbe Ansatz auf KI-geschriebene Marktberichte: 28 absichtlich eingebaute Fehler, alle 28 von einem Reviewer-Agenten gefunden.",
+  "Die Methode ist klassisches Mutationstesting, auf Agenten-Arbeit übertragen: Vertraue der Suite nicht, bis bewiesen ist, dass sie bei Sabotage anschlägt."
+ ],
+ "hero": {
+  "alt": "Symbolbild: Eine Liste aus leuchtenden Häkchen, von denen einzelne rot aufleuchten und verschwinden, daneben ein Detektivglas-Symbol, Dunkelblau mit Grün- und Rot-Akzenten.",
+  "caption": "Mutationstest: Welche Checks bemerkt die Testsuite, wenn sie verschwinden? Symbolbild, KI-generiert.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Wer Agenten Code schreiben und testen lässt, steht vor einer unangenehmen Frage: Würde die wachsende Testsuite einen echten Fehler überhaupt bemerken - oder ist sie nur Dekoration? Ein aktuell in Morning Tokens dokumentierter Praxisbericht beantwortet sie auf die direkte Art: Agenten löschten 1.410 Sicherheitschecks aus dem Code, einen nach dem anderen, und nach jedem Eingriff lief die Suite. Das Prinzip ist klassisches Mutationstesting, übertragen auf agentengeschriebenen Code."
+  },
+  {
+   "t": "h2",
+   "x": "Die Zahlen des Versuchs"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "1.297 der 1.410 gelöschten Checks fielen in der Testsuite auf.",
+    "113 Löschungen rutschten durch. 91 davon erwiesen sich als echte Lücken - jede hat inzwischen einen eigenen Test, der sie pinnt.",
+    "Der Aufbau: Ein Supervisor-Agent verteilt Arbeit zwischen Claude Code und Codex; so entstanden dem Bericht zufolge zwölf Pakete in vier Tagen, die Suite liegt bei 6.329 Tests.",
+    "Übertragen auf Inhalte: In KI-geschriebene Marktberichte baute das Team 28 Fehler ein (falsche Preise, Rechenfehler, erfundene Zahlen); ein Reviewer-Agent fand alle 28.",
+    "Ehrlichkeitsdetail: Der Bericht nennt auch das Geschäftsergebnis - von drei angepeilten Beratungsaufträgen kam keiner zustande."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Was du daraus mitnehmen kannst"
+  },
+  {
+   "t": "p",
+   "x": "Mutationstests prüfen durch gezielte Änderungen, ob eine Testsuite Fehler bemerkt. Solche Versuche gehören in eine isolierte Testumgebung oder einen wegwerfbaren Arbeitszweig, nicht in den Produktivbetrieb; die veränderten Checks dürfen nicht als Produktänderung übernommen werden. Eine grüne Suite nach einer Mutation kann eine Testlücke anzeigen, aber auch eine gleichwertige, wirkungslose Mutation. Der genannte Ablauf ist ein Selbstbericht eines Einzelprojekts, keine unabhängige Messung. Die Zahlen lassen sich nicht auf andere Projekte übertragen; wir haben diese Versuche nicht selbst ausgeführt."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist Mutationstesting bei Agenten-Code?",
+   "a": "Man verändert Code gezielt in einer isolierten Testumgebung und prüft, ob die Testsuite den Eingriff bemerkt. Bleibt sie grün, kann ein Test fehlen oder die Mutation gleichwertig sein. Die 91 gemeldeten Lücken stammen aus dem verlinkten Selbstbericht."
+  },
+  {
+   "q": "Wie zuverlässig sind die genannten Zahlen?",
+   "a": "Es sind Angaben aus einem Selbstbericht eines Einzelprojekts, dokumentiert in Morning Tokens - keine unabhängige Messung. Übertragbar ist die Methode, nicht die Quote."
+  },
+  {
+   "q": "Funktioniert das auch für Nicht-Code, etwa Reports?",
+   "a": "Im selben Bericht ja: 28 absichtlich eingebaute Fehler in KI-geschriebenen Marktberichten wurden von einem Reviewer-Agenten allesamt gefunden. Auch das ist ein Selbstversuch, aber das Muster - Fehler einbauen, Fänger messen - lässt sich auf jeden generierten Output anwenden."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Deleting 1,410 safety checks on purpose to see which ones the tests miss (AI Workflows)",
+   "publisher": "Morning Tokens",
+   "url": "https://morningtokens.com/issues/2026-11-09/",
+   "accessed": "2026-11-09"
+  }
+ ],
+ "related": [
+  "claude-code-settings-secrets-github-leak",
+  "oumi-faie-agenten-bauen-agenten"
+ ],
+ "published": "2026-11-09T08:52:00+01:00",
+ "modified": "2026-11-09T08:52:00+01:00"
+}

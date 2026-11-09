@@ -1,0 +1,83 @@
+{
+ "slug": "kimi-k3-cpu-optane-homelab",
+ "section": "modelle",
+ "type": "news",
+ "lang": "de",
+ "author": "philipp-paulik",
+ "title": "Homelab-Projekt: Kimi K3 mit 2,8 Billionen Parametern läuft komplett ohne GPU",
+ "dek": "Ein Reddit-Bastler betreibt Moonshots Riesenmodell auf einem 40-Kern-Xeon mit Optane-Hauptspeicher - bei 0,85 Token pro Sekunde und einer deutlichen Hitzewarnung.",
+ "tags": [
+  "Kimi K3",
+  "Moonshot AI",
+  "Open Weights",
+  "Homelab",
+  "Optane"
+ ],
+ "key_takeaways": [
+  "Laut einem von Tom's Hardware aufgegriffenen Reddit-Baubericht lief Kimi K3 mit 2,8 Billionen Parametern auf einem 40-Kern-Xeon der dritten Generation mit Intel Optane PMem 200 ohne GPU-Inferenz.",
+  "Der Baubericht nennt 0,85 Token pro Sekunde mit 1-Bit-Quantisierung und 0,75 Token pro Sekunde mit 3-Bit. Wir haben diese Werte nicht nachgemessen.",
+  "Der Bastler warnt: Optane-Module werden so heiß, dass sie benachbarte DRAM-Riegel beschädigen können. Aktive DIMM-Kühlung mit zwei 12-Watt-Lüftern hält er für Pflicht.",
+  "Tom's Hardware zufolge benötigt selbst die kleinste dort erwähnte Community-Quantisierung mindestens 610 GB RAM. Das ist keine allgemeine Speichergrenze aller zukünftigen Quantisierungen."
+ ],
+ "hero": {
+  "alt": "Symbolbild: Ein Mainboard mit langen Speicherriegeln, über denen kleine Lüfter rotieren, Temperaturwellen steigen auf, Dunkelblau mit Cyan- und Rot-Akzenten.",
+  "caption": "Optane-Speicher und Kühlung als Symbol für den berichteten CPU-Aufbau. KI-generiert.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Wie groß kann ein offenes Modell zu Hause sein? Ein Homelab-Bastler auf Reddit (u/IndividualSurvival) hat nach einem Bericht von Tom's Hardware vom 8. November Moonshot AIs Kimi K3 mit 2,8 Billionen Parametern komplett ohne GPU ausgeführt - auf einem 40-Kern-Xeon der dritten Generation mit Intel Optane PMem 200, Intels längst eingestelltem Persistent-Memory. Das Ergebnis: Es läuft, es ist laut, und es ist langsam."
+  },
+  {
+   "t": "h2",
+   "x": "Die wichtigsten Eckwerte des Builds"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Tempo: 0,85 Token pro Sekunde bei 1-Bit-Quantisierung, 0,75 Token pro Sekunde bei 3-Bit. Ein Kommentator rechnet vor: Eine Aufgabe mit 50.000 Token dauert bei etwa einem Token pro Sekunde rund 13 Stunden - für Chat untauglich, für nächtliche Batch-Läufe egal.",
+    "Kühlung als Pflicht: Optane-Module werden so heiß, dass sie nach Angaben des Bastlers benachbarte DRAM-Riegel \"ausbrennen\" lassen können. Seine Empfehlung wörtlich: aktive DIMM-Kühlung als verbindlich behandeln; sein Aufbau nutzt zwei 12-Watt-Gebläse direkt über den Modulen.",
+    "Warum Optane: Die kleinste Community-Quantisierung von Kimi K3 benötigt mindestens 610 Gigabyte RAM. DRAM ist zuletzt deutlich teurer geworden; gebrauchtes Optane kostet laut Baubericht nur einen Bruchteil der entsprechenden DRAM-Kapazität.",
+    "Technik: Intel brachte Optane PMem 200 im Jahr 2020 für Xeon-Scalable-CPUs der dritten Generation in 128-, 256- und 512-Gigabyte-Modulen; auf Zweisockel-Systemen liefert es bis zu 32 Prozent mehr Speicherbandbreite als die erste Generation. Der Nachteil: geringere Leistung als DRAM und eben die Hitze."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Einordnung"
+  },
+  {
+   "t": "p",
+   "x": "Der Build ist ein Einzelprojekt, kein Kaufratgeber - alle Tempowerte stammen aus dem Baubericht, wir haben sie nicht nachgemessen. Interessant ist die Richtung: Es ist der zweite Optane-Umbau dieser Art in diesem Jahr; der erste lief mit dem Vorgängermodell K2.5 (1 Billion Parameter), 2-Bit-Quantisierung und einer RTX 3060 für einen Teil des Modells auf etwa 4 Token pro Sekunde. Die Botschaft beider Projekte: Bei offenen Modellen in Frontier-Größe ist zu Hause weniger die GPU das Limit als die schiere Speicherkapazität. Moonshot AI selbst empfiehlt für Kimi K3 Rechenzentrums-Inferenz-Engines - dass es anders geht, zeigt dieser Basteltisch, praktikabel ist es nur für geduldige Batch-Arbeit."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Kann man Kimi K3 wirklich ohne GPU betreiben?",
+   "a": "Laut dem von Tom's Hardware aufgegriffenen Reddit-Baubericht ja: mit 40-Kern-Xeon und Optane PMem 200, bei gemeldeten 0,75 bis 0,85 Token pro Sekunde. Wir haben den Aufbau nicht nachgemessen."
+  },
+  {
+   "q": "Was ist der Flaschenhals bei so großen offenen Modellen?",
+   "a": "Die Speicherkapazität. Schon die kleinste Community-Quantisierung von Kimi K3 braucht mindestens 610 Gigabyte RAM. Gebrauchtes Optane ist trotz Hitze- und Tempoproblemen eine der wenigen bezahlbaren Wege dorthin, weil DRAM-Preise zuletzt stark gestiegen sind."
+  },
+  {
+   "q": "Ist der Nachbau gefahrlos möglich?",
+   "a": "Der Erbauer warnt laut Tom's Hardware vor Hitzeentwicklung und möglichen Schäden an benachbarten DRAM-Riegeln. Das ist eine Warnung aus dem Einzelprojekt, kein von uns geprüfter Nachbauplan."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Homelabber uses second-gen Optane memory sticks to run a 2.8-trillion-parameter AI model on CPU alone",
+   "publisher": "Tom's Hardware",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/homelabber-uses-second-gen-optane-memory-sticks-to-run-a-2-8-trillion-parameter-ai-model-on-cpu-alone-warns-that-optanes-extreme-heat-can-burn-out-nearby-memory-dram-used-blower-fans-to-prevent-melting-ram",
+   "accessed": "2026-11-09"
+  }
+ ],
+ "related": [
+  "kimi-k3-1-pro-offene-gewichte",
+  "mistral-large-4-le-chonk-offene-gewichte"
+ ],
+ "published": "2026-11-09T08:52:00+01:00",
+ "modified": "2026-11-09T08:52:00+01:00"
+}
