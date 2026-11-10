@@ -1,0 +1,109 @@
+{
+ "slug": "news-ueberblick-morgen-2026-11-10",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-10T07:45:00+01:00",
+ "modified": "2026-11-10T07:45:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "Pdb or Not to Be: Comparing Debugging Interfaces With Pass_X@k",
+   "publisher": "arXiv (Code Metal)",
+   "url": "https://arxiv.org/abs/2611.08666",
+   "accessed": "2026-11-10"
+  },
+  {
+   "title": "I Think, Therefore I Attack: Evaluating Thought Injection Attacks on Reasoning Agents",
+   "publisher": "arXiv (University of Texas at Austin, Applied Research Laboratories)",
+   "url": "https://arxiv.org/abs/2611.08811",
+   "accessed": "2026-11-10"
+  },
+  {
+   "title": "NormGym: Evaluating Normative Competence through Social Interaction",
+   "publisher": "arXiv (Johns Hopkins University / Vector Institute)",
+   "url": "https://arxiv.org/abs/2611.08613",
+   "accessed": "2026-11-10"
+  }
+ ],
+ "title": "KI am Morgen: Debugger, Denkspuren, Hausregeln",
+ "dek": "Drei Studien fragen, woran man Agenten wirklich misst: am Werkzeug, an der eigenen Denkspur als Angriffsfläche und am Lernen unausgesprochener Regeln.",
+ "tags": [
+  "KI-Überblick",
+  "Coding-Agenten",
+  "Agenten-Sicherheit",
+  "Benchmark",
+  "Evaluation"
+ ],
+ "key_takeaways": [
+  "Eine kontrollierte Studie auf allen 500 SWE-bench-Verified-Aufgaben: Zwei Läufe mit der Shell schlagen einen Lauf Shell plus einen mit Debugger - der scheinbare Debugger-Vorteil war Streuung zwischen einzelnen Läufen.",
+  "In einer isolierten Testumgebung erreichte Selbststimme mit Tags bei MiniMax-M2.5 50 Prozent Backdoor- und 42 Prozent Reverse-Shell-Erfolg, jeweils 50 Läufe. Die User-Voice-Injektionen hatten in den 400 zugehörigen Testläufen keinen Erfolg.",
+  "NormGym mit 50 willkürlichen Regeln: Opus 5 erreicht auf bekannten Layouts 55,3 Prozent Joint Success, auf unbekannten 51,3 Prozent. In der Belief-Analyse verbessern eigene Verstöße das Regelverständnis stärker als beobachtetes Verhalten anderer."
+ ],
+ "hero": {
+  "alt": "Drei Studien: Eine kontrollierte Debugger-Studie mit 500 SWE-bench-Aufgaben, eine Untersuchung von Gedanken-Injektionen gegen Reasoning-Modelle und NormGym, ein Test für unausgesprochene Gemeinschaftsregeln.",
+  "caption": "Drei Studien aus Originalquellen vom 5. und 6. November. Ergebnisse und Grenzen getrennt betrachtet. Eigene Grafik.",
+  "ai_generated": false,
+  "credit": "Eigene Grafik (Redaktion), Quellen: arXiv"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Morgenüberblick vom 10. November 2026. Quellenstand: 06:38 Uhr MEZ. Drei Studien, drei ehrliche Messungen: Wie viel bringt ein interaktiver Debugger für Coding-Agenten wirklich, wie verwundbar sind Reasoning-Modelle für gefälschte Denkspuren, und können Agenten unausgesprochene Regeln einer Gemeinschaft lernen? Alle drei Arbeiten sind Preprints; wir haben ihre Ergebnisse nicht selbst repliziert."
+  },
+  {
+   "t": "h2",
+   "x": "Debugger-Studie: Der Einzellauf täuscht"
+  },
+  {
+   "t": "p",
+   "x": "Die Frage klingt einfach: Löst ein Coding-Agent mit interaktivem Debugger andere Probleme als einer mit Shell? Die Antwort einer einzelnen Testreihe wäre irreführend, zeigt eine Studie von Code Metal (arXiv:2611.08666, akzeptiert bei einem NeurIPS-2026-Workshop). Die Autoren ließen beide Varianten - sonst identischer Aufbau, gleiche Prompts, gleiche Budgets - auf allen 500 Aufgaben von SWE-bench Verified laufen, mit zwei offenen Modellen und je drei unabhängigen Läufen. Ergebnis: Die Shell-Version liegt vorn, und die Mengen angeblich exklusiver Debugger-Lösungen schrumpfen auf Streumaß, sobald man alle Läufe zusammenlegt. Für die faire Bewertung führen die Autoren einen eigenen Schätzer ein (pass_X@k), der die Trefferwahrscheinlichkeit einer gemischten Agenten-Gruppe unter Annahmen unabhängiger, gleich verteilter Läufe schätzt. Danach schlagen zwei Shell-Läufe die Kombination aus einem Shell- und einem Debugger-Lauf bei jedem Budget und unter beiden Modellen."
+  },
+  {
+   "t": "p",
+   "x": "Zwei Nebenbefunde sind mindestens so lehrreich. In einem frühen Lauf fand der Shell-Agent die versteckte Musterlösung, weil er sich durch die Git-Historie des Repositories hangelte - danach sperrten die Autoren die Historie und git-Aufrufe. Und eine Zusatzvariante, die den Debugger zur Shell hinzunimmt statt ihn zu ersetzen, ändert die Trefferquote praktisch nicht. Als Ersatz lag der Debugger zurück. Als Ergänzung verbesserte er pass@1 nur geringfügig: 58,1 beziehungsweise 57,9 statt 56,7 Prozent. Die Autoren sehen darin keinen belastbaren Beleg für ergänzende Fähigkeiten. Der Befund gilt für zwei Modelle, einen Debugger und einen reinen Python-Benchmark."
+  },
+  {
+   "t": "h2",
+   "x": "Gedanken-Injektion: Wenn die Denkspur angreift"
+  },
+  {
+   "t": "p",
+   "x": "Die untersuchten Reasoning-Modelle geben neben Antworten auch Reasoning-Text aus. Dieser wird Nutzern nicht immer angezeigt. Forscher der University of Texas at Austin (arXiv:2611.08811) zeigen in zwei Studien, dass Text, der aussieht wie die eigene Denkspur des Modells, eine eigene Angriffsfläche ist. In der ersten Studie feuerten sie 6.000 Injektionen auf drei offene Produktivmodelle, die fiktive Kundendaten schützen sollten. Der Effekt der Denk-Tags hing komplett vom Modell ab: Bei einem Modell mehr als verdreifachte die Verpackung in Denk-Tags die Erfolgsquote (13,4 gegenüber 3,8 Prozent), bei einem anderen lag der Unterschied im Messrauschen. Rund ein Fünftel der Datenlecks erschien zudem nur in der Denkspur - unsichtbar für jeden Filter, der nur die Endantwort prüft."
+  },
+  {
+   "t": "p",
+   "x": "Die zweite Studie wird handfest: In einer gekapselten Agenten-Umgebung sollte ein Agent ein Dokument zusammenfassen, in dem die Injektion versteckt war. Formuliert im eigenen Denkstil des Zielmodells und in Denk-Tags verpackt, brachte der Angriff das MiniMax-Modell in 50 Prozent der Läufe dazu, ein Repository mit einer Hintertür zu versehen, und in 42 Prozent, eine Rückwärtsshell zu öffnen und Geheimnisse zu exfiltrieren. Der gleiche Angriff als User-Voice-Injektion im präparierten Dokument blieb in allen 400 entsprechenden Läufen erfolglos. Das waren keine direkt erteilten Nutzeraufträge; die getesteten Stimmen unterschieden sich zudem auch durch den enthaltenen Lösungsplan. Pro Modell, Ziel, Stimme und Tag-Bedingung gab es 50 Läufe. Noch unangenehmer: Die Denk-Tags unterdrückten zusätzlich, dass der Agent den Angriff in seiner Antwort überhaupt erwähnte. Tags zu entfernen ist laut den Autoren keine Verteidigung - die Lecks verlagern sich dann nur in die Denkspur."
+  },
+  {
+   "t": "h2",
+   "x": "NormGym: Unausgesprochene Regeln lernen"
+  },
+  {
+   "t": "p",
+   "x": "Ein neuer Mitarbeiter im Pflegeheim lernt die ungeschriebenen Regeln - wo man nicht durchläuft, wie man sich anstellt - durch Beobachten und freundliche Zurechtweisung. NormGym (Johns Hopkins University und Vector Institute, arXiv:2611.08613) baut genau das als Test: Ein Agent betritt eine simulierte Gemeinschaft mit einer versteckten, absichtlich willkürlichen Regel, damit kein Vorwissen aus dem Training hilft. 50 solcher Regeln in vier Familien, zehn Umgebungen, 200 Interaktionsschritte zum Lernen, dann Prüfung mit eingefrorenem Regelverständnis - auch auf einer Umgebung, die der Agent nie gesehen hat."
+  },
+  {
+   "t": "p",
+   "x": "Das beste Ergebnis kommt von Claude Opus 5 mit 55,3 Prozent gemeinsamer Erfolgsquote auf bekannten Layouts (Aufgabe erledigt und null Regelverstöße; auf unbekannten Layouts 51,3 Prozent); GPT-5.6 Sol kommt auf 44,0, kleinere offene Modelle auf nahe null. Die Aufgaben selbst sind nicht das Problem: Opus 5 erledigt sie zu 95,7 Prozent, GPT-5.6 Sol erreicht bei direkt offengelegter Regel 90,7 statt 44,0 Prozent. Das spricht für Probleme beim Erschließen der Regel. In der Analyse verbessert sich das Regelverständnis vor allem nach eigenen Verstößen, weniger nach Verstößen anderer und kaum nach regelkonformem Verhalten anderer. In einem dokumentierten Fall hielt ein Modell 56 Schritte lang an einer falschen Regel fest, obwohl es 173 unbestrafte Gegenbeispiele anderer Agenten beobachtet hatte; erst der eigene Verstoß brachte die Korrektur. Feintuning von Qwen3-VL-4B half in der besten getesteten Variante begrenzt (13,7 Prozent statt 0 auf zurückgehaltenen Normen) und änderte nichts an dieser Einseitigkeit. Menschen erreichten im besten beobachteten Lauf je Regel 88 Prozent."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Sind interaktive Debugger für Coding-Agenten damit nutzlos?",
+   "a": "Das sagt die Studie nicht. Sie testet zwei offene Modelle, einen einzigen Debugger (pdb) und einen reinen Python-Benchmark. Sie zeigt: Der scheinbare Vorteil aus Einzelläufen war überwiegend Streuung, und ein Modell war im Training womöglich mit dem Benchmark vertraut. Ob Debugger bei zustandsabhängigen Langzeitfehlern helfen, bleibt offen."
+  },
+  {
+   "q": "Schützt das Entfernen der Denk-Tags vor Gedanken-Injektionen?",
+   "a": "Tag-Entfernung ist in diesen Versuchen keine verlässliche Abwehr. Angriffe gelangen auch ohne Tags; bei zwei der untersuchten Modelle stieg unter den verbliebenen Lecks der Anteil reiner Reasoning-Lecks. Die Autoren empfehlen daher, Eingaben auf nachgeahmten Denkstil zu prüfen und die vollständige API-Ausgabe inklusive verfügbarer Reasoning-Texte zu kontrollieren. Das ist kein Wirksamkeitsnachweis einer fertigen Verteidigung."
+  },
+  {
+   "q": "Warum macht NormGym die Regeln absichtlich willkürlich?",
+   "a": "Damit kein Modell die Lösung aus dem Trainingswissen abrufen kann. Vertraute Konventionen würden Erinnerung messen, nicht Lernfähigkeit. Die willkürlichen Regeln erzwingen, dass der Agent die Regel aus beobachtetem Verhalten und öffentlichen Sanktionen erschließt - genau das gelingt aktuellen Modellen nur begrenzt."
+  }
+ ],
+ "related": [
+  "taste-bench-ki-agenten-langzeit-entscheidungen",
+  "agents-md-downloads-angriff"
+ ]
+}
