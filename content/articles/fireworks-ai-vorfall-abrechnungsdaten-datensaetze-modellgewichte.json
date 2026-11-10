@@ -5,8 +5,8 @@
   "type": "news",
   "author": "philipp-paulik",
   "lang": "de",
-  "published": "2026-11-10T08:57:00+01:00",
-  "modified": "2026-11-10T08:57:00+01:00",
+  "published": "2026-11-10T09:12:00+01:00",
+  "modified": "2026-11-10T09:12:00+01:00",
   "dek": "Ein Update zum Sicherheitsvorfall vom Oktober: Nach Angaben von Fireworks AI erreichten Angreifer auch Konto- und Abrechnungsinformationen, bei einer begrenzten Zahl von Konten zudem Secrets, Datensätze und unvollständige Modellgewichte.",
   "tags": [
     "Sicherheit",

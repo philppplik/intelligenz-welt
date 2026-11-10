@@ -5,8 +5,8 @@
   "type": "analysis",
   "author": "philipp-paulik",
   "lang": "de",
-  "published": "2026-11-10T08:57:00+01:00",
-  "modified": "2026-11-10T08:57:00+01:00",
+  "published": "2026-11-10T09:12:00+01:00",
+  "modified": "2026-11-10T09:12:00+01:00",
   "dek": "OpenAI beschreibt einen zentralen Stopp für Modell-Ausgaben in seiner Forschungsinfrastruktur. Als Obergrenze nach Eingang der Stopp-Anweisung nennt das Unternehmen 35 Sekunden. Der Job-Prozess selbst kann weiterlaufen.",
   "tags": [
     "OpenAI",
