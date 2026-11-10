@@ -1,5 +1,29 @@
 [
   {
+    "title": "Australien verschärft KI-Regularien nach OpenAI-Angriffen",
+    "url": "https://www.heise.de/news/Australien-verschaerft-KI-Regularien-nach-OpenAI-Angriffen-11518320.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794301380.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Nach einem Vorfall mit einem OpenAI-Agenten verschärft Australien die Sicherheitsvorschriften für KI-Entwickler. Melden von Vorfällen wird Pflicht.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-10T10:09:45.879678+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Alexa+: Amazons KI-Assistentin läuft jetzt auch in Deutschland im Browser",
+    "url": "https://www.heise.de/news/Alexa-Amazons-KI-Assistentin-laeuft-jetzt-auch-in-Deutschland-im-Browser-11518366.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794300240.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Amazons KI-Assistentin Alexa+ lässt sich in Deutschland nun über Alexa.com im Browser nutzen. Zugriff haben vorerst nur Teilnehmer des Early Access.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-10T10:09:45.879739+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "Dienstag: Klage wegen EU-Grenzkontrollsystem, Anthropic kauft Gasgeneratoren",
     "url": "https://www.heise.de/news/Dienstag-Klage-wegen-EU-Grenzkontrollsystem-Anthropic-kauft-Gasgeneratoren-11518084.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1794287700.0,
