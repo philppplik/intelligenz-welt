@@ -1,5 +1,65 @@
 [
   {
+    "title": "Anthropic-Börsengang: Was Anleger zum KI-Giganten wissen müssen",
+    "url": "https://www.heise.de/news/KI-Unternehmen-Anthropic-plant-Boersengang-an-der-Nasdaq-11519526.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794321420.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Das KI-Unternehmen Anthropic bereitet seinen Börsengang an der Nasdaq vor. Trotz hoher Bewertung und prominenter Investoren bleibt die Macht bei den Gründern.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-10T14:58:52.879165+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "ITU-Vollversammlung: Länder des Südens fordern Teilhabe bei KI",
+    "url": "https://www.heise.de/news/ITU-Vollversammlung-Satelliten-Teilhabe-und-immer-wieder-KI-11519470.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794319440.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "In Doha kommt in dieser Woche die Vollversammlung der Internationalen Fernmeldeunion zusammen. Dabei stehen Themen wie KI und Satellitendienste auf der Agenda.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-10T14:58:52.879254+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Apple-CEO Ternus drängt auf mehr Tempo bei KI-Entwicklung",
+    "url": "https://www.heise.de/news/Apple-CEO-Ternus-draengt-auf-mehr-Tempo-bei-KI-Entwicklung-11519012.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794312960.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Apples neuer CEO John Ternus drängt laut einem Bericht auf schnellere Fortschritte bei der künstlichen Intelligenz.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-10T14:58:52.879534+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI-Regulierung: Macron drängt auf internationale Sicherheitsstandards",
+    "url": "https://www.heise.de/news/KI-Regulierung-Macron-draengt-auf-internationale-Sicherheitsstandards-11518762.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794306420.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Frankreichs Präsident Emmanuel Macron hat internationale Akteure zu einer Initiative für mehr Sicherheit und Transparenz bei KI-Modellen zusammengerufen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-10T14:58:52.879667+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Meta Muse Ember: Neues KI-Modell soll Agenten günstiger machen",
+    "url": "https://www.heise.de/news/Meta-Muse-Ember-Neues-KI-Modell-soll-Agenten-guenstiger-machen-11518746.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794306300.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Metas kleinstes KI-Modell Muse Ember erreicht im Intelligence Index das Niveau von Claude Haiku 5.5, kostet pro Benchmark-Aufgabe aber nur etwa ein Drittel.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-10T14:58:52.879701+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "Australien verschärft KI-Regularien nach OpenAI-Angriffen",
     "url": "https://www.heise.de/news/Australien-verschaerft-KI-Regularien-nach-OpenAI-Angriffen-11518320.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1794301380.0,
