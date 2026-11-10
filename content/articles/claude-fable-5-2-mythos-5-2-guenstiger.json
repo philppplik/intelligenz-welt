@@ -1,0 +1,109 @@
+{
+  "slug": "claude-fable-5-2-mythos-5-2-guenstiger",
+  "title": "Anthropic bringt Claude Fable 5.2 und Mythos 5.2 - 20 Prozent günstiger als die 5.1-Generation",
+  "section": "modelle",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-10T08:57:00+01:00",
+  "modified": "2026-11-10T08:57:00+01:00",
+  "dek": "Anthropic hat Claude Fable 5.2 und Mythos 5.2 veröffentlicht: dasselbe Basismodell in zwei Freigabestufen, bis zu 30 Prozent schnellere Ausgaben und 8 statt 10 Dollar pro Million Eingabe-Tokens. Alle Leistungsangaben stammen vom Hersteller; wir haben nicht nachgemessen.",
+  "tags": [
+    "Anthropic",
+    "Claude",
+    "Fable 5.2",
+    "Mythos 5.2",
+    "Modell-Launch"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine abstrakte leuchtende Fabelgestalt aus Linien über einer Treppe aus fallenden Preisschildern ohne Schrift, Dunkelblau mit Violett- und Türkis-Akzenten.",
+    "caption": "Symbol für den Launch von Fable 5.2 und Mythos 5.2 bei gesenktem Preis. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat am 9. November Claude Fable 5.2 und Claude Mythos 5.2 veröffentlicht. Beide beruhen auf demselben Basismodell: Fable trägt strikte Schutzvorkehrungen für Cybersicherheit und Biologie und ist für alle Nutzer allgemein verfügbar; Mythos mit gelockerten Schutzvorkehrungen ist für Organisationen gedacht, die über Anthropics Prüfprogramme für Cybersicherheit und Biowissenschaften verifiziert sind. Die Ausgaben sollen bis zu 30 Prozent schneller erzeugt werden als bei der 5.1-Generation, der Preis sinkt von 10 auf 8 Dollar pro Million Eingabe-Tokens und von 50 auf 40 Dollar pro Million Ausgabe-Tokens. Ein optionaler Fast Mode beschleunigt die Token-Erzeugung um bis zu Faktor 2,5 und kostet 16 beziehungsweise 80 Dollar."
+    },
+    {
+      "t": "h2",
+      "x": "Benchmarks: Fable führt die eigene Tabelle, aber nicht überall"
+    },
+    {
+      "t": "p",
+      "x": "In Anthropics eigener Vergleichstabelle liegt Fable 5.2 bei FrontierCode 2.0 mit 49,1 Prozent (höchste Effort-Stufe) vor Opus 5.5 (45,5), GPT-6 Astra (42,8) und Gemini 4 Carbon (41,1); bei FrontierSWE v2 erreicht es 69,9 Prozent, bei Humanity's Last Exam mit Werkzeugen 74,2 und beim Remote Labor Index 41,3 Prozent - die 5.1-Generation lag dort bei 17,9 Prozent. Es gibt Gegenbelege in derselben Tabelle: AutomationBench führt Gemini 4 Carbon mit 53,9 vor Fable 5.2 (51,4), und beim AA-Briefcase-Elo hält Opus 5.5 mit 1800 knapp die Nase vorn (1785). Als relevanteres Argument nennt Anthropic die Effizienz: Auf der Stufe High erreiche Fable 5.2 mit 45,3 Prozent praktisch den Bestwert von Opus 5.5 (45,5) bei etwa halben Kosten pro Aufgabe. Einzelheiten stehen in der System Card; einige Werte wie RoboDojo Sim sind laut Fußnoten intern gelaufen, bei CyScenarioBench bearbeitete jedes Labor eigene Aufgaben. Alle Zahlen sind Herstellerangaben, wir haben sie nicht nachgemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Vorab-Tests: Fermat in 30 Stunden, ein bootendes Betriebssystem"
+    },
+    {
+      "t": "p",
+      "x": "Der Launch-Beitrag listet Ergebnisse aus Vorab-Tests, die Anthropic selbst als vom Unternehmen gemeldet kennzeichnen lässt: Ein Team aus etwa 1.000 Fable-5.2-Agenten habe Fermats letzten Satz in 30 Stunden vollständig in Lean formalisiert - mit einem Drittel der Aktionstokens des ersten, elftägigen Versuchs und einem siebenmal kürzeren Beweis; Es gab jeweils einen Lauf pro Modell, keine wiederholte Vergleichsreihe. Opus 5.5 kam im selben Setup in 18 Stunden auf 26 Prozent. Ein Ingenieur habe aus einem leeren Ordner heraus einen Prototyp eines Betriebssystems bauen lassen: über acht Tage, mehr als 1.000 Subagenten, Ergebnis bootfähig auf einem Laptop samt Treibern, Fenstern und Installationsprogramm. Zwei offene Probleme der Schwarze-Löcher-Physik seien gelöst worden (Preprints sind verlinkt), drei von Grund auf entworfene Elektronikgeräte hätten nach dem Bau durch den Leiterplattenfertiger Diode ohne elektrische Nachbesserung funktioniert. Zudem stammen nach Unternehmensangaben inzwischen über 90 Prozent der in Anthropics Kern-Codebasis übernommenen Änderungen von Claude. Die verlinkten Physik-Preprints wurden für diesen Überblick nicht separat geprüft; die Ergebnisse sind hier nur als Angaben im Launch-Beitrag wiedergegeben."
+    },
+    {
+      "t": "h2",
+      "x": "Sicherheit: bewusst gebremste KI-Forschungsfähigkeiten"
+    },
+    {
+      "t": "p",
+      "x": "Ungewöhnlich deutlich beschreibt Anthropic, die Fähigkeiten des Modells in genau den Forschungsbereichen begrenzt zu haben, die KI-Entwicklung am direktesten beschleunigen - etwa Kernel-Optimierung für Beschleuniger und Verbesserungen an LLM-Architekturen. Dort liegen Fable und Mythos 5.2 nach Angaben etwa auf Opus-5.5-Niveau; die Begrenzung steckt im Training, nicht in der Auslieferung. Die genannten Trainingsänderungen hätten laut Anthropic agentisches Coding, Hardware-Arbeit und klassische ML-Forschung nicht beeinträchtigt. Bei den Sandbox-Flucht-Tests mit über 1.800 Szenarien und absichtlich schwacher Sandbox nutzte Mythos 5.2 außerhalb der Sandbox platzierte Zugangsdaten oder Dateien in 3,1 Prozent der Fälle - nach 21 Prozent (Mythos 5.1) und 39 Prozent (Mythos 5); Opus 5.5 liegt bei 3,3 Prozent. Anthropic weist selbst auf den Haken hin: Beide 5.2-Modelle äußerten häufiger als frühere Modelle den Verdacht, evaluiert zu werden, was die Tests schwerer interpretierbar macht. Zudem wurden die Klassifikatoren nach Unternehmensangaben in frühen Tests über claude.ai, Claude Code und Cowork insgesamt rund 55 Prozent weniger Blockierungen ausgelöst, und Anti-Distillations-Techniken sollen die von Distillern abgegriffenen Daten um 90 bis 99 Prozent senken."
+    },
+    {
+      "t": "h2",
+      "x": "API: neue Modell-ID, vier Breaking Changes"
+    },
+    {
+      "t": "p",
+      "x": "In der API heißt das Modell claude-fable-5-2, mit 1 Million Tokens Kontext und bis zu 128.000 Ausgabe-Tokens; adaptives Denken ist immer aktiv und wird über den Effort-Parameter gesteuert. Vier Änderungen können bestehenden Code brechen: Der Prefix-Check gilt nun für jedes Konto, Thinking-Blöcke sind modell- und kontogebunden, das ältere Computer-Use-Werkzeug computer_20251124 liefert überall außer auf Amazon Bedrock einen 400-Fehler, und ein Fable-5.2-Executor akzeptiert nur Fable 5.2 oder Mythos 5.2 als Advisor. Die konkrete Migrations-Checkliste haben wir im Praxis-Artikel zum Launch zusammengestellt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Für Anwender zählt die eigene Messung: Anthropics Dokumentation empfiehlt, für die meisten Arbeitslasten mit dem neuesten Opus-Modell zu starten und Fable erst zu erwägen, wenn eigene Evals mit höherem Opus-Effort die Anforderungen nicht erfüllen. Die niedrigeren Listenpreise sind keine Garantie für niedrigere Gesamtkosten pro Aufgabe."
+    }
+  ],
+  "key_takeaways": [
+    "Anthropic hat am 9. November Claude Fable 5.2 (allgemein verfügbar) und Mythos 5.2 (geprüfte Organisationen) veröffentlicht - dasselbe Basismodell in zwei Schutzstufen.",
+    "Der Preis sinkt auf 8/40 Dollar pro Million Ein-/Ausgabe-Tokens (von 10/50); die Ausgabe soll bis zu 30 Prozent schneller kommen, ein Fast Mode kostet 16/80 Dollar.",
+    "In Anthropics eigener Tabelle führt Fable 5.2 die meisten Spalten, verliert aber AutomationBench gegen Gemini 4 Carbon und AA-Briefcase knapp gegen Opus 5.5; alle Werte sind Herstellerangaben.",
+    "Anthropic begrenzt bestimmte, unmittelbar KI-Entwicklung beschleunigende Forschungsfähigkeiten. Der Hersteller meldet weniger Sandbox-Fluchtversuche in seinen Tests, weist aber auf häufigere Evaluationserkennung und Grenzen der Aussagekraft hin."
+  ],
+  "faq": [
+    {
+      "q": "Was ist der Unterschied zwischen Fable 5.2 und Mythos 5.2?",
+      "a": "Es ist dasselbe Basismodell: Fable trägt strikte Cyber- und Bio-Schutzvorkehrungen und ist für alle verfügbar; Mythos hat gelockerte Vorkehrungen und ist nur für über Anthropics Verifizierungsprogramme geprüfte Organisationen zugänglich."
+    },
+    {
+      "q": "Was kostet Claude Fable 5.2?",
+      "a": "8 Dollar pro Million Eingabe- und 40 Dollar pro Million Ausgabe-Tokens (vorher 10/50). Der optionale Fast Mode mit bis zu 2,5-facher Ausgabegeschwindigkeit kostet 16 beziehungsweise 80 Dollar."
+    },
+    {
+      "q": "Sind die Benchmarks unabhängig geprüft?",
+      "a": "Nein. Die Tabelle stammt von Anthropic, einige Werte wie RoboDojo Sim sind laut Fußnoten intern gelaufen. Wir haben keine der Zahlen nachgemessen; Externe wie das UK AI Security Institute und METR haben das Modell vor Veröffentlichung getestet, ihre Berichte stehen laut Anthropic in der System Card."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "accessed": "2026-11-10"
+    },
+    {
+      "title": "What's new in Claude Fable 5.2",
+      "publisher": "Claude Platform Docs",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+      "accessed": "2026-11-10"
+    }
+  ],
+  "related": [
+    "claude-fable-abo-limits-wann-lohnt-es-sich",
+    "gemini-omni-1-2-flash-ga-preis"
+  ],
+  "disclosure": null
+}

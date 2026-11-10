@@ -1,0 +1,101 @@
+{
+  "slug": "meta-muse-ember-guenstiges-agenten-modell",
+  "title": "Metas Muse Ember: niedriger API-Preis für wiederholte Agentenaufgaben",
+  "section": "tools",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-10T08:57:00+01:00",
+  "modified": "2026-11-10T08:57:00+01:00",
+  "dek": "Meta stellt Muse Ember als kleines Ausführungsmodell für wiederholte Agentenschritte vor. Der API-Listenpreis beginnt bei 0,10 Dollar pro Million Eingabe-Tokens. Leistung und Kosten pro Aufgabe stammen aus Anbieterangaben, nicht aus eigenen Tests.",
+  "tags": [
+    "Meta",
+    "Muse Ember",
+    "Modelle",
+    "Agenten",
+    "Preise"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine kleine, helle Glut zwischen großen dunklen Zahnrädern und Datenströmen, die ein feines Netz aus Funken speist, Dunkelblau mit Orange- und Blau-Akzenten.",
+    "caption": "Symbol für ein kleines Modell, das viele Agenten-Schritte versorgt. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Meta hat am 9. November Muse Ember vorgestellt, nach eigenen Angaben sein kleinstes und effizientestes Modell. Zielgruppe ist kein Chatten, sondern die Arbeit, die Agenten den ganzen Tag wiederholen: Werkzeugaufrufe, Coding-Unteraufgaben, Routing, Extraktion und das Lesen langer Dokumente. Alle Kennzahlen in diesem Artikel stammen von Meta beziehungsweise aus den dort zitierten Auswertungen von Artificial Analysis; wir haben sie nicht nachgemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Preis und Rahmendaten"
+    },
+    {
+      "t": "p",
+      "x": "Muse Ember kostet auf der Meta Model API 0,10 Dollar pro Million Eingabe-Tokens (0,004 Dollar im Cache) und 0,50 Dollar pro Million Ausgabe-Tokens - für Prompts bis 200.000 Tokens. Darüber liegen die Preise bei 0,30 beziehungsweise 0,012 und 1,50 Dollar. Das Kontextfenster fasst 1.048.576 Tokens, die Ausgabe bis zu 524.288 Tokens; die Responses API wird unterstützt. Verfügbar ist das Modell als muse-ember-1.0 über Muse Code und die Meta Model API; Muse Ember, Muse Spark und Muse Wonder sind inzwischen auch auf Google Cloud und Oracle Cloud verfügbar."
+    },
+    {
+      "t": "h2",
+      "x": "Der zentrale Anspruch: Niveau von Haiku 5.5, ein Drittel der Kosten"
+    },
+    {
+      "t": "p",
+      "x": "Meta wirbt damit, dass Muse Ember den besten Wert von Claude Haiku 5.5 im Artificial-Analysis-Index bei etwa einem Drittel der Kosten pro Aufgabe erreiche. Der Vergleich bezieht sich auf die höchste gezeigte Reasoning-Stufe und Kosten pro Benchmark-Aufgabe, nicht auf jeden Einsatz oder bloße Tokenpreise. Die eigene Tabelle zeigt allerdings ungerundet 35,8 Punkte für Muse Ember gegenüber 36,2 für Haiku 5.5 - auf ganze Zahlen gerundet beide 36. Bei den Kosten liegen die Werte bei 0,136 gegenüber 0,411 Dollar pro Aufgabe. Auf der AutomationBench-AA (striktes pass@1, laut Tabelle von Artificial Analysis) kommt Muse Ember auf 37,8 Prozent, GPT-6 Luna auf 20,2 und Haiku 5.5 auf 13,9 Prozent; auf der Terminal-Bench 4.0 führt es mit 40,9 vor 39,2 (Haiku) und 16,4 Prozent (Luna). Bei FrontierCode 2.0-AA liegt dagegen Haiku 5.5 mit 34,9 vor Muse Ember mit 27,2 Punkten. Zwei der gezeigten Werte - Agents' Last Exam und der Personal Superintelligence Index - sind laut Meta eigene interne Auswertungen."
+    },
+    {
+      "t": "h2",
+      "x": "Was frühe Tester berichten"
+    },
+    {
+      "t": "p",
+      "x": "Meta zitiert mehrere Partner aus frühen Tests. Cloudflare-CTO Dane Knecht hebt die Geschwindigkeit hervor: Bis zu 30 Prozent schneller am Tail als das getestete Vergleichsmodell und gut bei Untersuchungen über mehrere Repositories hinweg. You.com berichtet in Metas Mitteilung von einem p95 von 2,2 Sekunden in eigenen Coding-Tests mit 36 bis 48 Prozent weniger Ausgabe-Tokens als führende Modelle mit offenen Gewichten. Es sind ausgewählte Stimmen von Partnern, keine unabhängigen Messungen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Metas Positionierung zielt auf viele kleine, strukturierte Agentenschritte. Ob das Modell die Gesamtkosten einer konkreten Anwendung senkt, hängt von Genauigkeit, Wiederholungen, Tokenbedarf und Latenz ab. Die gezeigten Benchmarks mischen Fremd- und Eigenmessungen; die FrontierCode-Lücke zu Haiku zeigt aufgabenabhängige Stärken."
+    }
+  ],
+  "key_takeaways": [
+    "Meta stellte Muse Ember am 9. November als sein kleinstes und effizientestes Modell für wiederholte Agentenschritte wie Werkzeugaufrufe, Routing und Extraktion vor.",
+    "Preis laut Meta: 0,10 Dollar pro Million Eingabe- und 0,50 Dollar pro Million Ausgabe-Tokens bis 200.000 Prompt-Tokens, 1.048.576 Tokens Kontext und bis zu 524.288 Ausgabe-Tokens.",
+    "Metas Kernversprechen - Haiku-5.5-Niveau bei etwa einem Drittel der Kosten - beruht auf gerundeten Werten; ungerundet liegt Muse Ember minimal unter Haiku 5.5 (35,8 zu 36,2). Gemeint ist die höchste gezeigte Reasoning-Stufe und die Benchmark-Aufgabenmetrik, kein pauschales Kostenverhältnis.",
+    "Alle Kennzahlen stammen aus Metas Veröffentlichung oder den dort zitierten Auswertungen. Wir haben nicht nachgemessen; mehrere Werte sind Meta-intern und Terminal-Bench nutzt unterschiedliche Harnesses."
+  ],
+  "faq": [
+    {
+      "q": "Wo kann ich Muse Ember nutzen?",
+      "a": "Als muse-ember-1.0 über Muse Code und die Meta Model API; Meta nennt außerdem Google Cloud und Oracle Cloud für die Muse-Familie."
+    },
+    {
+      "q": "Was kostet Muse Ember?",
+      "a": "Laut Meta 0,10 Dollar pro Million Eingabe-Tokens (0,004 im Cache) und 0,50 pro Million Ausgabe-Tokens für Prompts bis 200.000 Tokens; darüber 0,30 beziehungsweise 0,012 und 1,50 Dollar."
+    },
+    {
+      "q": "Sind die Benchmarks unabhängig?",
+      "a": "Wir haben keine der Zahlen nachgemessen. Metas Veröffentlichung enthält entsprechend markierte Artificial-Analysis-Werte, aber auch interne Auswertungen wie Agents' Last Exam, PSI, OSWorld 2.1 und PerceptionBench. Die Quellenlage und Testbedingungen sind daher je Metrik zu beachten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Our Smallest, Most Efficient Model: Muse Ember",
+      "publisher": "Meta AI Research",
+      "url": "https://research.meta.ai/blog/muse-ember",
+      "accessed": "2026-11-10"
+    },
+    {
+      "title": "Muse Ember: technische Spezifikation",
+      "publisher": "Meta Model API Docs",
+      "url": "https://dev.meta.ai/docs/muse-ember",
+      "accessed": "2026-11-10"
+    }
+  ],
+  "related": [
+    "meta-muse-active-memory-focus-modelle",
+    "kimi-k3-1-pro-offene-gewichte"
+  ],
+  "disclosure": null
+}

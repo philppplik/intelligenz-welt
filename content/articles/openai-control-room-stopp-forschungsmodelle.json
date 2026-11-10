@@ -1,0 +1,95 @@
+{
+  "slug": "openai-control-room-stopp-forschungsmodelle",
+  "title": "OpenAIs Control Room: Modell-Ausgaben laut Anbieter binnen 35 Sekunden stoppen",
+  "section": "analyse",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-10T08:57:00+01:00",
+  "modified": "2026-11-10T08:57:00+01:00",
+  "dek": "OpenAI beschreibt einen zentralen Stopp für Modell-Ausgaben in seiner Forschungsinfrastruktur. Als Obergrenze nach Eingang der Stopp-Anweisung nennt das Unternehmen 35 Sekunden. Der Job-Prozess selbst kann weiterlaufen.",
+  "tags": [
+    "OpenAI",
+    "Sicherheit",
+    "Agenten",
+    "Infrastruktur",
+    "Alignment"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein abstrakter Kontrollraum aus Lichtlinien mit einem großen leuchtenden Haltepunkt, von dem Datenströme zu Maschinensilhouetten laufen, Dunkelblau mit Rot- und Blau-Akzenten.",
+    "caption": "Symbol für den zentralen Stopp von Modell-Arbeitslasten. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI beschreibt mit Control Room ein internes Sicherheitssystem für seine Forschungsinfrastruktur. Laut Anbieter stoppt es weitere Modell-Ausgaben spätestens 35 Sekunden nachdem Control Room eine Stopp-Anweisung erhalten hat. Das ist eine beschriebene technische Obergrenze, kein unabhängig nachgemessenes Ergebnis und keine allgemeine Garantie, dass bereits laufende Aktionen oder Nebenwirkungen beendet werden."
+    },
+    {
+      "t": "h2",
+      "x": "Wie Control Room arbeitet"
+    },
+    {
+      "t": "p",
+      "x": "Jede Forschungs-Arbeitslast, die agentische Inferenz ausführt - RL-Experimente, Evaluierungen, große Sampling- oder Datenverarbeitungsjobs -, muss bei OpenAI an einen genehmigten Safety Case gebunden sein und registriert sich zu Beginn bei Control Room, das eine job_id vergibt. Fordert der Job Token an, reicht die Inferenz-Engine die Anfrage zusammen mit der job_id weiter - und fragt vor jeder Erfüllung bei Control Room nach, ob der Job noch autorisiert ist. Nach einem Stopp verweigert die Engine die Anfrage: Statt Token gibt es eine Refusal. Der Job-Prozess darf dabei weiterlaufen; OpenAI verlässt sich ausdrücklich nicht darauf, dass der Workload-Code den Stopp selbst korrekt verarbeitet."
+    },
+    {
+      "t": "h2",
+      "x": "Auslöser: Menschen und Monitore"
+    },
+    {
+      "t": "p",
+      "x": "Gestoppt wird auf zwei Wegen: durch Personen oder durch das Überwachungssystem. Alle Frontier-RL-Jobs laufen laut OpenAI mit einem Monitor - einem weiteren Modell, das das Verhalten des trainierten Modells inspiziert und bei Problemen Alarm schlägt; je nach Lage kann der Monitor den Stopp direkt auslösen. Als Beispiel nennt OpenAI seinen jüngsten DNS-bezogenen Vorfall, der auf diese Weise entdeckt worden sei. Control Room arbeite zudem mit den Systemen zur Erkennung von Fehlausrichtung zusammen."
+    },
+    {
+      "t": "h2",
+      "x": "Warum 35 Sekunden - und warum fail-closed"
+    },
+    {
+      "t": "p",
+      "x": "Die 35 Sekunden kommen aus einer Caching-Schicht für Inferenz-Autorisierungen, die den nötigen Durchsatz erst ermöglicht; OpenAI gibt an, die Zahl Richtung null drücken zu wollen. Zwei Designentscheidungen sind mindestens so wichtig: Erstens sitzt der Abbruchmechanismus in der Inferenz-Schicht, nicht im Job-Code - Workload-Code ändert sich ständig und ist dezentral, die wenigen Inferenz-Pfade dagegen zentral und einheitlich, was sie zum zuverlässigen Flaschenhals macht. Zweitens versagt das System geschlossen: Fällt Control Room aus oder wird manipuliert, verweigern die Engines alle Anfragen, bis der Dienst wieder normal läuft. Zusätzlich durchsucht OpenAI die Infrastruktur kontinuierlich nach abweichenden Engine-Implementierungen ohne aktive Control-Room-Anbindung. Der fail-closed-Modus gilt bereits für alle Frontier-Forschungslasten und soll binnen Tagen auf alle übrigen Forschungslasten ausgeweitet werden."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Das Besondere ist weniger die Existenz eines Notaus als seine Platzierung: Wer unbeaufsichtigte Agenten betreibt, kann das Muster kopieren - die Autorisierung nicht im Agenten, sondern am Punkt der Modellausgabe prüfen, weil dort weitere Modell-Inferenz kontrolliert werden kann. Die Grenzen sind ebenso klar: 35 Sekunden sind ein Fenster, in dem ein gestoppter Job theoretisch noch Ausgaben erhalten könnte; das System gilt nur für die Forschungsinfrastruktur (das externe Serving sei laut OpenAI ohnehin zentralisiert genug für schnelle Abschaltungen); und die Registrierungspflicht per job_id steht und fällt damit, dass keine Engine unangemeldet läuft - genau das adressieren die Sweeps, ein Angriffspunkt bleibt sie dennoch. Alle Angaben stammen aus OpenAIs eigener Beschreibung; wir haben das interne System nicht unabhängig geprüft. Trotzdem ist das Papier als Blaupause lesenswert: Es zeigt, wie ein Frontier-Labor die Frage beantwortet, wer eigentlich die Agenten abschaltet."
+    }
+  ],
+  "key_takeaways": [
+    "Control Room verbindet laut OpenAI Forschungs-Inferenz-Arbeitslasten und beendet weitere Modell-Ausgaben binnen maximal 35 Sekunden nach Eingang einer Stopp-Anweisung.",
+    "Der Abbruch sitzt in der Inferenz-Schicht: Die Engine fragt vor jeder Anfrage bei Control Room nach, ein gestoppter Job erhält Refusals statt Tokens.",
+    "Laut OpenAI verweigert die Anbindung bei Ausfall weitere Inferenz-Anfragen. Fail-closed ist für Frontier-Forschungslasten ausgerollt; weitere Forschungslasten sollen laut Beitrag folgen. Sweeps suchen nach nicht angebundenen Engines.",
+    "Es gilt nur für die Forschungsinfrastruktur; alle Angaben sind OpenAIs Selbstbeschreibung ohne unabhängige Prüfung."
+  ],
+  "faq": [
+    {
+      "q": "Warum dauert der Stopp bis zu 35 Sekunden?",
+      "a": "Wegen einer Caching-Schicht für Inferenz-Autorisierungen, die den nötigen Durchsatz ermöglicht. OpenAI gibt an, die Verzögerung Richtung null senken zu wollen."
+    },
+    {
+      "q": "Wer löst den Stopp aus?",
+      "a": "Menschen oder das Überwachungssystem: Frontier-RL-Jobs laufen laut OpenAI mit einem Monitor-Modell, das das Verhalten inspiziert und je nach Schwere den Stopp auslösen kann."
+    },
+    {
+      "q": "Gilt das auch für die öffentliche API?",
+      "a": "Nein. Control Room ist auf der Forschungsinfrastruktur im Einsatz; das externe Modell-Serving sei laut OpenAI von Natur aus zentralisiert genug, um Deployments schnell abzuschalten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-control-room/",
+      "accessed": "2026-11-10"
+    }
+  ],
+  "related": [
+    "openai-cyber-agenten-948-linux-lpe-exploits",
+    "palo-alto-networks-clutch-agenten-identitaeten"
+  ],
+  "disclosure": null
+}

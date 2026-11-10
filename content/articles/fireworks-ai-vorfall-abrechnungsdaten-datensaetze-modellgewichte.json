@@ -1,0 +1,109 @@
+{
+  "slug": "fireworks-ai-vorfall-abrechnungsdaten-datensaetze-modellgewichte",
+  "title": "Fireworks AI meldet erweitertes Ausmaß des Oktober-Angriffs",
+  "section": "news",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-10T08:57:00+01:00",
+  "modified": "2026-11-10T08:57:00+01:00",
+  "dek": "Ein Update zum Sicherheitsvorfall vom Oktober: Nach Angaben von Fireworks AI erreichten Angreifer auch Konto- und Abrechnungsinformationen, bei einer begrenzten Zahl von Konten zudem Secrets, Datensätze und unvollständige Modellgewichte.",
+  "tags": [
+    "Sicherheit",
+    "LLMjacking",
+    "Fireworks AI",
+    "Datenleck",
+    "Inference"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein abstraktes Schloss aus leuchtenden Linien über gestapelten Datenspeichern, eine Seite mit feinen Rissen, Dunkelblau mit Rot- und Grau-Akzenten.",
+    "caption": "Symbol für das Datenleck bei Fireworks AI. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Fireworks AI hat am 9. November ein Update zum Sicherheitsvorfall vom Oktober veröffentlicht. Danach war der Angriff größer als im ersten Bulletin vom 9. Oktober bekannt: Neben gespeicherten Zugangsdaten aus Evaluierungsjobs erreichten die Angreifer auch Konto- und Abrechnungsinformationen. Bei einer begrenzten Zahl von Konten kamen nach Unternehmensangaben zusätzlich Secrets, Datensätze und unvollständige Modellgewichte hinzu."
+    },
+    {
+      "t": "h2",
+      "x": "Was betroffen ist"
+    },
+    {
+      "t": "p",
+      "x": "Das Bulletin nennt drei Kategorien: Ressourcen-Metadaten wie Kennungen, Anzeigenamen und Erstellungszeitpunkte; Abrechnungsinformationen wie Rechnungs- und Lieferadressen, Rechnungs- und Zahlungshistorie, Kontostand und Credit-Nutzung; sowie für bestimmte Kunden Teilmengen unvollständiger Modellgewichte und Datensätze. Zahlungskartennummern speichere Fireworks nicht, sie seien daher nicht betroffen. Die Dienste Inference, Training SDK und Nexus - alle standardmäßig ohne dauerhafte Datenspeicherung (Zero Data Retention) - seien nach aktuellem Untersuchungsstand nicht als betroffen festgestellt worden."
+    },
+    {
+      "t": "h2",
+      "x": "Der Weg der Angreifer"
+    },
+    {
+      "t": "p",
+      "x": "Ein externer Cloud-Anbieter, der F&E-Maschinen von Fireworks hostete, hatte am 23. Oktober einen eigenen Sicherheitsvorfall. Am 24. Oktober nutzten die Angreifer diesen Zugang, erreichten Entwicklungsmaschinen von Fireworks und ließen eine unbefugte Rechenlast laufen, was zur zusätzlichen Betroffenheit von Kundendaten führte. Fireworks gibt an, die Aktivität noch am selben Tag entdeckt und sofort Gegenmaßnahmen ergriffen zu haben; seit dem 25. Oktober habe das Unternehmen keine weiteren Belege für erfolgreiche unbefugte Zugriffe auf der Kundenplattform festgestellt."
+    },
+    {
+      "t": "h2",
+      "x": "Hintergrund: LLMJacking"
+    },
+    {
+      "t": "p",
+      "x": "Fireworks berichtet von Hinweisen auf Verbindungen zu einer finanziell motivierten Gruppe, die Zugänge zu Sprachmodellen stiehlt und die Rechenleistung über illegale Routing-Gateways weiterverkauft - ein Muster, das als LLMJacking bekannt ist. Das Bulletin verweist auf einen Bericht der Google Threat Intelligence Group und Mandiant vom 2. November zu Motiven, Methoden und Gegenmaßnahmen dieser Gruppen."
+    },
+    {
+      "t": "h2",
+      "x": "Was Fireworks unternommen hat"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Zugänge und Dienstkonten gesperrt und ersetzt, unnötige erhöhte Rechte entfernt.",
+        "Netzwerkwege eingeschränkt und betroffene Systeme isoliert.",
+        "Zugriffe auf Datenspeicher und Analysesysteme überprüft und verschärft.",
+        "Protokollierung und Überwachung gesichert und ausgebaut, unterstützt von Palo Alto Networks Unit 42.",
+        "Self-Service-Up- und -Downloads von Datensätzen für Batch Inference und datensatzbasiertes Training vorübergehend deaktiviert."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Der Fall verschiebt den Angriffspunkt: Nicht nur verlorene API-Schlüssel von Nutzern, sondern die Inference-Anbieter selbst geraten ins Visier. Was bei einem Anbieter lagert - Evaluierungs-Secrets, Feintuning-Daten, Zwischenstände von Modellen -, gehört damit zur eigenen Angriffsfläche. Alle Angaben zum Ausmaß stammen aus der laufenden Untersuchung von Fireworks; das Unternehmen weist selbst darauf hin, dass diese weitergeht und zusätzliche Erkenntnisse bringen kann. Betroffene Kunden sollten die persönliche Incident-Benachrichtigung und die darin genannten Maßnahmen prüfen. Das Bulletin nennt keine pauschale Austausch-Anweisung für sämtliche Evaluierungsnutzer."
+    }
+  ],
+  "key_takeaways": [
+    "Fireworks AI hat am 9. November sein Oktober-Bulletin aktualisiert: Betroffen sind auch Konto- und Abrechnungsinformationen sowie bei einigen Konten Secrets, Datensätze und unvollständige Modellgewichte.",
+    "Der erweiterte Zugriff lief über einen externen Cloud-Anbieter, der F&E-Maschinen von Fireworks hostete; die unbefugte Rechenlast wurde am 24. Oktober entdeckt.",
+    "Zahlungskartennummern werden laut Fireworks nicht gespeichert und waren nicht betroffen; Inference, Training SDK und Nexus wurden nach Angaben des Unternehmens bislang nicht als betroffen festgestellt.",
+    "Fireworks berichtet von Hinweisen auf Verbindungen zu einer finanziell motivierten LLMJacking-Gruppe; alle Angaben stammen aus der noch laufenden Untersuchung des Unternehmens."
+  ],
+  "faq": [
+    {
+      "q": "Sind Zahlungsdaten betroffen?",
+      "a": "Nach Angaben von Fireworks speichert das Unternehmen keine Zahlungskartennummern, sie seien daher nicht betroffen. Abgerufen wurden demnach Rechnungs- und Lieferadressen, Rechnungs- und Zahlungshistorie, Kontostand und Credit-Nutzung."
+    },
+    {
+      "q": "Was ist LLMJacking?",
+      "a": "Der Diebstahl von Zugängen zu KI-Modellen, um deren Rechenleistung gewinnbringend weiterzuverkaufen, etwa über illegale Routing-Gateways. Fireworks berichtet von Hinweisen auf Verbindungen zu einer entsprechenden finanziell motivierten Gruppe."
+    },
+    {
+      "q": "Was sollten Fireworks-Kunden jetzt tun?",
+      "a": "Betroffene Kunden werden laut Bulletin direkt informiert und erhalten Angaben zum Umfang und empfohlenen Maßnahmen. Sie sollten diese Incident-Benachrichtigung und die darin genannten Schritte prüfen. Eine pauschale Austausch-Anweisung für sämtliche Evaluierungsnutzer nennt das Bulletin nicht."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Update on October 2026 security incident",
+      "publisher": "Fireworks AI",
+      "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+      "accessed": "2026-11-10"
+    }
+  ],
+  "related": [
+    "claude-code-settings-secrets-github-leak",
+    "palo-alto-networks-clutch-agenten-identitaeten"
+  ],
+  "disclosure": null
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "co-design-bench-coding-agenten-echte-anfragen",
+  "title": "Co-Design Bench: Bester Coding-Agent erfüllt echte Nutzeraufträge nur zu 26,4 Prozent vollständig",
+  "section": "trends",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-10T08:57:00+01:00",
+  "modified": "2026-11-10T08:57:00+01:00",
+  "dek": "Ein Preprint von Alibaba und Partneruniversitäten baut einen Benchmark aus 273 echten Änderungswünschen an Web-Apps. Das beste von zehn Modellen erfüllt im Schnitt 69,9 Prozent der Einzelkriterien - löst aber nur gut jede vierte Aufgabe komplett. Kein Peer-Review; wir haben nicht nachgemessen.",
+  "tags": [
+    "Benchmark",
+    "Coding-Agenten",
+    "Evaluation",
+    "Forschung",
+    "Web-Apps"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein abstraktes Mosaik aus vielen fast vollständigen leuchtenden Kacheln, bei denen jeweils ein Eckstück fehlt, Dunkelblau mit Türkis- und Bernstein-Akzenten.",
+    "caption": "Symbol für fast gelöste Aufgaben mit fehlendem letztem Kriterium. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Ein Preprint von Alibabas Token Hub gemeinsam mit Forschenden der Fudan-Universität, der Zhejiang-Universität, der Chinese University of Hong Kong, der Shanghai Jiao Tong University und der Nanyang Technological University (arXiv:2610.35138, 26. Oktober) liefert den nüchternen Kontrast: einen Benchmark aus Änderungswünschen, die echten Nutzern in der Praxis Schwierigkeiten bereiteten. Ergebnis: Das beste von zehn getesteten Modellen erfüllt im Mittel 69,9 Prozent der Anforderungen pro Aufgabe - bringt aber nur 26,4 Prozent der Aufgaben vollständig zu Ende."
+    },
+    {
+      "t": "h2",
+      "x": "Wie der Benchmark gebaut ist"
+    },
+    {
+      "t": "p",
+      "x": "Co-Design Bench destilliert 273 Aufgaben aus 37.463 deduplizierten Anfragen in 26.314 echten Coding-Sitzungen: Zwei Spuren decken lokalisierte Edits mit optionalen Bild-, Audio-, Video- oder Dokumentanhängen (Multimodal Editing, 100 Aufgaben) und koordinierte Änderungen über Komponenten, Routen und Zustände eines Repositories hinweg ab (Repository Editing, 173 Aufgaben). Jede Aufgabe trägt versteckte, von Expertinnen und Experten geschriebene Abnahmekriterien - insgesamt 2.331. Bewertet wird ohne Referenzlösung: Ein erstes LLM prüft die Kriterien anhand von Quellcode und Browser-Ausführung, ein zweites, unabhängiges LLM ficht positive Urteile an und sucht nach Attrappen, hart codierten Ergebnissen und unerreichbaren Funktionen. Alle Modelle liefen im selben Claude-Code-Harness mit drei Stunden beziehungsweise 120 Turns als Obergrenze."
+    },
+    {
+      "t": "h2",
+      "x": "Die Ergebnisse im Detail"
+    },
+    {
+      "t": "p",
+      "x": "Laut Abstract, Abschnitt 5.2 und Fazit erreicht GPT-6 Astra im Mittel 0,699 Strict Completion und 26,4 Prozent Full-Pass. Der höhere Wert 0,753 in der kombinierten Tabelle bezeichnet Graded Completion, das auch teilweise erfüllte Kriterien anrechnet. Auf lokalen Edits werden 41,0 Prozent der Aufgaben vollständig gelöst, auf Repository-Überarbeitungen 17,9 Prozent. Alle zehn getesteten Endpunkte erzielen bei Repository-Aufträgen mit drei oder vier Änderungstypen niedrigere Kriterienerfüllung als bei ein oder zwei Typen."
+    },
+    {
+      "t": "h2",
+      "x": "Mehr Aufwand heißt nicht mehr Erfolg"
+    },
+    {
+      "t": "p",
+      "x": "Die Token-Bilanz entzieht einer verbreiteten Hoffnung den Boden: Auf den lokalen Edits erreicht GPT-6 Astra seinen Wert mit median 32 Turns und 1,24 Millionen Tokens pro Fall; GLM-5.2 verbrennt 69 Turns und 7,29 Millionen Tokens - für eine Strict-Completion von nur 0,572. Mehr Rechenzeit und mehr Tokens garantieren in dieser Umgebung also keine vollständigere Lieferung."
+    },
+    {
+      "t": "h2",
+      "x": "Methodische Beilagen"
+    },
+    {
+      "t": "p",
+      "x": "Drei Nebenexperimente machen das Papier zusätzlich lesenswert. In einer paarweisen Kontrolle auf 150 WebCompass-Aufgaben steigert allein der Wechsel von Einzelschuss auf agentische Ausführung die mittlere Erfüllung von 73,6 auf 95,1 Prozent - Messbedingungen prägen die Werte massiv. Beim Tausch des Judge-Modells blieben Rangfolge und Verteilung laut Autoren robust. Und identische Solver in drei verschiedenen Harnesses zeigten starke Wechselwirkungen zwischen Modell und Gerüst - Benchmark-Ergebnisse sind immer auch Harness-Ergebnisse."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Der Preprint zeigt in dieser Versuchsumgebung eine Lücke zwischen erfüllten Einzelkriterien und vollständig gelösten Aufträgen. Die Aufgaben wurden gezielt nach Schwierigkeit und historischen Fehlersignalen ausgewählt, nicht als repräsentative Zufallsstichprobe aller Entwickleraufträge. Weitere Grenzen sind Web-App-Revisionen, ein gemeinsamer Harness und LLM-basierte Beurteilung mit möglichen Restfehlern. Kein Peer-Review und keine eigene Reproduktion."
+    }
+  ],
+  "key_takeaways": [
+    "Co-Design Bench (arXiv:2610.35138) baut 273 Aufgaben aus 26.314 echten Coding-Sitzungen mit 2.331 versteckten Abnahmekriterien.",
+    "Bester von zehn Endpunkten: GPT-6 Astra mit 69,9 Prozent erfüllten Einzelkriterien, aber nur 26,4 Prozent vollständig gelösten Aufgaben.",
+    "In der untersuchten Stichprobe erreicht der Spitzenreiter auf Repository-Überarbeitungen 17,9 Prozent vollständige Aufgabenerfüllung. Das ist keine allgemeine Erfolgsquote aller Coding-Agenten.",
+    "Mehr Aufwand hilft nicht zuverlässig: GLM-5.2 verbrauchte rund sechsmal so viele Tokens wie GPT-6 Astra und erzielte schlechtere Werte. Preprint ohne Peer-Review; wir haben nicht nachgemessen."
+  ],
+  "faq": [
+    {
+      "q": "Was misst Co-Design Bench?",
+      "a": "Ob Coding-Agenten echte Änderungswünsche an bestehenden Web-Apps vollständig umsetzen - bewertet über versteckte Expertenkriterien mit Browser-Ausführung, ohne Referenzlösung."
+    },
+    {
+      "q": "Warum unterscheiden sich Strict Completion und Full-Pass-Rate?",
+      "a": "Strict Completion mittelt den Anteil erfüllter Einzelkriterien pro Aufgabe; die Full-Pass-Rate zählt nur Aufgaben, bei denen jedes Kriterium erfüllt ist. Ein hoher Mittelwert kann also viele unvollendete Aufgaben verbergen."
+    },
+    {
+      "q": "Wie belastbar sind die Ergebnisse?",
+      "a": "Es ist ein Preprint ohne Peer-Review aus der Versuchsumgebung der Autoren: Web-App-Revisionen, ein gemeinsamer Claude-Code-Harness, LLM-Judges mit Gegenprüfung. Die Autoren weisen selbst auf Harness-Abhängigkeit und Restfehler der Beurteilung hin."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
+      "publisher": "arXiv (Preprint 2610.35138)",
+      "url": "https://arxiv.org/html/2610.35138",
+      "accessed": "2026-11-10"
+    }
+  ],
+  "related": [
+    "reprobridge-artefakte-agenten-reproduktion",
+    "agenten-code-sicherheitschecks-loeschen-test"
+  ],
+  "disclosure": null
+}
