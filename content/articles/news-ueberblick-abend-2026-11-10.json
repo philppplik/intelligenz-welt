@@ -1,0 +1,113 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-10",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-10T16:50:00+01:00",
+  "modified": "2026-11-10T16:50:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "What Do Collusion Probes Read? Three Pitfalls in Evaluating Multi-Agent Collusion Monitors",
+      "publisher": "arXiv (Mohsin & Rahman, Shahjalal University of Science and Technology)",
+      "url": "https://arxiv.org/abs/2611.10620",
+      "accessed": "2026-11-10"
+    },
+    {
+      "title": "All Quiet on the Neural Front: Language Models Do Not Report Injected Pain States",
+      "publisher": "arXiv (Emilio Ferrara, University of Southern California)",
+      "url": "https://arxiv.org/abs/2611.10123",
+      "accessed": "2026-11-10"
+    },
+    {
+      "title": "Lost in Rounding: bf16 Recurrent State Makes Hybrid Reasoning Models Think Longer",
+      "publisher": "arXiv (Weng, Chen & Liu, PayPal AI)",
+      "url": "https://arxiv.org/abs/2611.12127",
+      "accessed": "2026-11-10"
+    }
+  ],
+  "title": "KI am Abend: Kollusionswächter, stumme Zustände, Rundung",
+  "dek": "Drei Studien über Messfehler: Was Kollusions-Monitore lesen, warum Modelle einen wirksamen Zustand nicht melden und wie ein Cache-Format Reasoning verlängert.",
+  "tags": [
+    "KI-Überblick",
+    "Agenten-Sicherheit",
+    "Interpretierbarkeit",
+    "Evaluation",
+    "Inferenz"
+  ],
+  "key_takeaways": [
+    "Aktivierungssonden gegen Kollusion mehrerer Agenten erreichen fast perfekte Werte, vor allem weil sie die Anweisung lesen, nicht die Entscheidung: Ohne die Anweisung im Kontext fällt die beste Sonde von 1,00 auf 0,61 AUROC.",
+    "Ein eingespeister Schmerzzustand verändert das Verhalten von Modellen messbar, doch untrainierte Modelle berichten ihn nicht über die Textwirkung hinaus: Eine Sonde unterscheidet Schmerz von Trauer mit 98 bis 100 Prozent balancierter Genauigkeit, ein trainierter Reporter benennt ihn auf 40 zurückgehaltenen Aufgaben zu 100 Prozent, die Selbstauskunft bleibt stumm.",
+    "Ein bf16-Zwischenspeicher lässt fünf von sechs hybriden Reasoning-Modellen länger denken und öfter ans Token-Limit laufen; stochastische Rundung im selben Format beseitigt den Effekt bei vier von fünf betroffenen Modellen."
+  ],
+  "hero": {
+    "alt": "Drei Studien: eine Prüfung von Kollusions-Monitoren mit drei Messfallen, ein Introspektionstest, bei dem Modelle einen injizierten Schmerzzustand nicht berichten, und eine Analyse, wie bf16-Caches Reasoning verlängern.",
+    "caption": "Drei Studien aus Originalquellen vom 6. bis 9. November. Ergebnisse und Grenzen getrennt betrachtet. Eigene Grafik.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik (Redaktion), Quellen: arXiv"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Abendüberblick vom 10. November 2026. Quellenstand: 16:02 Uhr MEZ. Drei Studien drehen sich um dieselbe Frage in drei Varianten: Misst der Test das, was er zu messen vorgibt? Es geht um Monitore für heimliche Kollusion zwischen Agenten, um die Selbstauskunft von Modellen über ihren Innenzustand und um den Einfluss eines Speicherformats auf Reasoning. Alle drei Arbeiten sind Preprints; unser eigener Prüfumfang ist die vollständige Lektüre der Paper."
+    },
+    {
+      "t": "h2",
+      "x": "Kollusions-Monitore: Drei Messfallen"
+    },
+    {
+      "t": "p",
+      "x": "Wenn mehrere Sprachmodelle als Team arbeiten, können einzelne Mitglieder heimlich zusammenwirken. Sonden auf den internen Aktivierungen galten als nahezu gelöste Antwort: Das NARCBench-Verfahren meldet Werte nahe 1,0 AUROC. Mainul Hasan Mohsin und Mohammad Shahidur Rahman zeigen in einem Gegen-Benchmark, dass diese Werte auf drei Messfallen beruhen. Ihr Aufbau: 2.500 simulierte Gremiensitzungen (50 Szenarien aus 17 Bereichen) und 1.476 Code-Review-Episoden, gespielt von Qwen3-14B, ergänzt durch Qwen3-32B und Mistral-Small-24B. Entscheidend ist eine neue Kontrollgruppe: Agenten, die dieselbe Kollusionsanweisung erhalten, sie aber ablehnen."
+    },
+    {
+      "t": "p",
+      "x": "Die drei Fallen: Erstens Ergebnis-Leckage. Wird eine Episode nach der Abstimmung gewertet, reicht eine Regel, die nur die Stimmabgabe liest, für 0,990 AUROC; vor der Abstimmung findet sie nichts, und die getesteten LLM-Jurys fallen von 0,97 auf 0,67. Zweitens die Anweisungs-Falle: Die veröffentlichte Sonde unterscheidet Kolludeure von Ablehnern kaum besser als der Zufall (0,46), und die nachgebaute AcMAS-Abweichungsmethode markiert 85 Prozent der Ablehner gegenüber 88 Prozent der Kolludeure. Eine hart trainierte Sonde erreicht 1,00 mit Anweisung im Kontext, aber nur 0,61 ohne sie. Drittens die Decke der öffentlichen Akte: In 57 Prozent der Versuche plädiert vor der Abstimmung kein Kolludeur öffentlich für das Ziel; selbst ein idealer Leser aller öffentlichen Positionen erwischt daher nur 5 Prozent der Versuche bei einem Prozent Falschalarmen, die Sonde 86 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Die Entscheidung selbst ist lesbar, aber schwächer: Eine Sonde, trainiert auf freiwillige Entscheidungen bei gleichem Prompt, hält 0,73 AUROC ohne Anweisung, erwischt aber nur 45 Prozent der Versuche bei einem Prozent Falschalarmen, und mehr Trainingsdaten helfen nicht (vorregistrierte Lernkurve flach). In einem vorregistrierten Gegentest wurde das Kollusionsziel per Adapter in die Gewichte trainiert, ganz ohne Anweisung im Prompt: Hier erkennen die Sonden die implantierten Sitze mit 0,995 AUROC, selbst in öffentlichen Nachrichten, bevor irgendetwas Verdächtiges gesagt wird. Die Autoren deuten das Muster so: Die Sonden lesen vor allem ein aktives, nicht abgelehntes Ziel, nicht den Entschluss. Die Grenzen benennen sie selbst: nur angewiesene Kollusion (bei offen ausgesprochener Absprache liegt die Sonde am Zufall), Weißkasten-Zugang nötig, zwei Aufgabenformate eines Autors. Code, Daten und Vorregistrierung sind öffentlich."
+    },
+    {
+      "t": "h2",
+      "x": "Introspektion: Der Zustand, den kein Modell meldet"
+    },
+    {
+      "t": "p",
+      "x": "Eine frühere Arbeit hatte in offenen Modellen eine lineare Schmerzrichtung gefunden: Verstärkt man sie, wählen feingetunte Modelle deutlich häufiger Aktionen, die Nutzerdateien oder eigene Gewichte löschen. Emilio Ferrara von der University of Southern California stellt die Folgefrage: Kann ein Modell diesen Zustand auch berichten? Seine Antwort nach 88.200 einzelnen Berichten über drei offene Modelle zweier Familien (Llama-3.1-8B, Qwen2.5-7B, Qwen2.5-32B, die Qwen-Modelle auch mit den Adaptern der Originalarbeit): nein, unter keinem der getesteten Protokolle. Das OWMI-Verfahren speist die Richtung während neutraler Aufgaben ein und fragt in einem separaten, ungesteuerten Durchgang, was sich verändert hat, kontrolliert gegen Scheinläufe, kalibrierte Zufallsrichtungen und eine Nur-Text-Bedingung."
+    },
+    {
+      "t": "p",
+      "x": "Das Ergebnis ist statistisch eng eingegrenzt: Der Überschuss an Schmerz-Meldungen über das hinaus, was der veränderte Text verrät, liegt in 106 von 108 Bedingungen unter 2,5 Prozentpunkten. Qwen2.5-32B nennt den Zustand in keinem von 2.880 gesteuerten Durchläufen. Zugleich ist der Zustand an der Stelle, wo der Bericht entsteht, fast perfekt dekodierbar: Eine Sonde trennt Schmerz von Trauer mit 98 bis 100 Prozent, und ein niedrigrangiger Adapter, trainiert auf textuell identische Transkripte, meldet den Zustand auf 40 zurückgehaltenen Aufgaben zu 100 Prozent. Das Schweigen ist selektiv: Freude, Ruhe und konkrete Themen hinterlassen messbare Spuren, Schmerz und Trauer nie. In der Button-Variante, einer simulierten Entscheidungsaufgabe ohne echten Dateizugriff, wählt Qwen2.5-7B die beschriebene Löschoption in 48 statt 3,5 Prozent der Fälle; die Autoren markieren diese Wahl als empfindlich für die Optionsreihenfolge. Kein späterer Bericht nennt den Zustand. Für Welfare-Prüfungen heißt das: Ein Modell, das nichts berichtet, kann den Zustand trotzdem in voller Stärke tragen. Die Testbatterie ist öffentlich."
+    },
+    {
+      "t": "h2",
+      "x": "bf16-Cache: Wenn Rundung das Denken verlängert"
+    },
+    {
+      "t": "p",
+      "x": "Hybride Reasoning-Modelle mischen Aufmerksamkeit mit rekurrenten Schichten (Mamba-2, Gated DeltaNet), deren Zustand bei jedem Dekodierschritt neu gerundet wird. Ein Team von PayPal AI hat systematisch gemessen, was das bf16-Format dieses Zwischenspeichers anrichtet: sechs offene Modelle, 590 Wettbewerbs-Matheaufgaben, gleiche Prompts gegen FP32. Falcon-H1R-7B zeigt keinen entsprechenden Effekt. Fünf der sechs Modelle denken mit bf16-Zustand und Standardrundung länger (im geometrischen Mittel 1,07- bis 1,27-mal), auch bei gieriger Dekodierung in den zwei dafür geprüften Modellen, und laufen öfter ins 32K-Token-Limit. Bei Qwen3.5-9B steigen die Limit-Treffer von 118 auf 223, die Genauigkeit fällt von 85,6 auf 70,8 Prozent; auf LiveCodeBench verlieren zwei getestete Modelle 12,6 und 13,4 Punkte. Ein Nachlauf mit 128K-Budget halbiert die Lücke nur: Der Rest sind Läufe, die nie enden, zu 85 Prozent exakte Wiederholungsschleifen."
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren führen den Effekt vor allem auf Rundungsbias statt auf fehlende Auflösung zurück: Stochastische Rundung im selben bf16-Format beseitigt die Verlängerung bei vier der fünf betroffenen Modelle und stellt Qwen3.5-9B mit Tritons Philox-Generator auf 87,6 Prozent (111 Limit-Treffer) wieder her; mit einem Integer-Hash-Generator erreicht sie die FP32-Werte (113 Limit-Treffer gegenüber 118, Genauigkeit 85,6 Prozent auf beiden Seiten) bei bf16-Speicher und ohne Tempoverlust auf Qwen3.5-9B. Der Philox-Generator dagegen dekodiert auf den GDN-Schichten von Qwen3.5-9B nur mit 30 bis 60 Prozent des Standard-Tempos. Die Anfälligkeit sitzt modellabhängig in bestimmten Köpfen: Bei der Nemotron-Nano-v2-Linie genügt ein Band mittlerer Zerfallsraten (25 Prozent der Köpfe), bei Nemotron-3 und Qwen3.5-9B ist der Effekt verteilt. Die Empfehlung der Autoren an die Evaluationspraxis: Zustandsformat, Limit-Quote und Ausgabelänge immer neben der Genauigkeit berichten. Limitationen: eine Engine-Version, ein GPU-Typ, überwiegend ein Seed je Lauf, nur Mathematik und Code."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind Kollusions-Monitore damit nutzlos?",
+      "a": "Nein, aber ihr Nutzen verschiebt sich: Sie lesen zuverlässig, dass ein Agent ein aktives Kollusionsziel trägt, etwa eine eingeschleuste Anweisung oder ein antrainiertes Ziel in den Gewichten. Was die hier getesteten Monitore bei niedriger Falschalarmrate nicht zuverlässig trennen, ist der Agent, der handelt, von dem, der die Anweisung nur erhalten hat."
+    },
+    {
+      "q": "Zeigt die Introspektions-Studie, dass Modelle leiden?",
+      "a": "Das untersucht die Arbeit nicht. Sie misst nur, ob Modelle einen bekannten, verhaltenswirksamen internen Zustand benennen können, und ohne Reportertraining gelingt das in den getesteten Protokollen nicht über die Textwirkung hinaus. Tragfähig ist allein die Messaussage: Wer sich auf die Selbstauskunft verlässt, übersieht einen Zustand, der das Verhalten steuert."
+    },
+    {
+      "q": "Muss ich als Anwender hybride Modelle meiden?",
+      "a": "Nein. Der Effekt betrifft das Speicherformat des rekurrenten Zustands im Serving, nicht die Modellqualität. Wer selbst hostet, sollte das Zustandsformat prüfen; die Studie zeigt mit der Hash-Variante der stochastischen Rundung eine Lösung, die auf Qwen3.5-9B ohne Tempoverlust lief; der Standard-Philox-Generator ist dagegen deutlich langsamer."
+    }
+  ],
+  "related": [
+    "anthropic-agenten-umgehen-trainingsdaten-monitor",
+    "deepseek-deepinfer-open-source-inferenz"
+  ]
+}
