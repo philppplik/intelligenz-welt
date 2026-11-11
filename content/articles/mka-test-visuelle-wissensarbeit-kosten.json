@@ -1,0 +1,101 @@
+{
+  "slug": "mka-test-visuelle-wissensarbeit-kosten",
+  "title": "MKA-Test: Fable 5.2 führt, Carbon folgt für rund ein Fünftel der gemessenen Kosten",
+  "section": "trends",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-11T08:51:00+01:00",
+  "modified": "2026-11-11T08:51:00+01:00",
+  "dek": "Google DeepMind und Artificial Analysis messen mit MKA, ob Agenten dichte visuelle Dateien - Baupläne, Schaltschemata, klinische Scans - lesen und daraus echte Arbeitsergebnisse bauen können. Der Kostenstreueffekt ist die eigentliche Nachricht.",
+  "tags": [
+    "Benchmark",
+    "MKA",
+    "Multimodal",
+    "Agenten",
+    "Evaluation"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Gestapelte technische Bauplan-Blätter ohne Schrift, über denen eine Lupe aus Licht schwebt und Linien in leuchtende Diagramme verwandelt, Dunkelblau mit Blau- und Bernstein-Akzenten.",
+    "caption": "Symbol für das Lesen dichter visueller Arbeitsdateien. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Die meisten Agenten-Evals lesen Text und lassen das Bild Beilage sein. Der neue Benchmark MKA (Multimodal Knowledge Agent) von Google DeepMind, exklusiv bei Artificial Analysis gelauncht, dreht das um: 200 private Aufgaben aus zehn Branchen verlangen, dichte visuelle Projektdateien - Architekturzeichnungen, Schaltschemata, klinische Scans - tatsächlich zu lesen und daraus lieferbare Ergebnisse zu bauen: Präsentationen, Tabellen, PDFs, Word-Dokumente, markierte Bilder. Die visuelle Komplexität ist laut Ankündigung nötig, nicht Dekoration."
+    },
+    {
+      "t": "h2",
+      "x": "Wie gemessen wird"
+    },
+    {
+      "t": "p",
+      "x": "Jede Aufgabe wird an Experten-Rubriken mit im Schnitt rund 70 gewichteten Kriterien geprüft, geteilt in „Regression“ (Basis-Checks, die ein Modell bestehen sollte) und „Climb“ (härtere Checks zur Trennung starker Modelle). Der Kopfwert Climb WSR ist der gewichtete Anteil erfüllter Climb-Kriterien. Gelaufen wird in Stirrup, dem quelloffenen Agenten-Harness von Artificial Analysis, mit Code-Ausführung, Websuche, Abruf und Bildbetrachtung über bis zu 250 Turns; benotet wird von GPT-6 Luna (medium) als agentischem Richter."
+    },
+    {
+      "t": "h2",
+      "x": "Ergebnisse: knappe Spitze, riesige Kostenstreuung"
+    },
+    {
+      "t": "p",
+      "x": "Claude Fable 5.2 (max) führt mit einer Climb-Quote von 57 Prozent, gefolgt von Gemini 4 Carbon (high) mit 54 und Claude Opus 5.5 (max) mit 53 Prozent. Der Blick auf die Kosten relativiert die Reihenfolge: Fable liegt bei durchschnittlich 31,97 Dollar pro Aufgabe, Carbon bei 6,29 - gut ein Fünftel für drei Punkte Abstand - und GPT-6.1 Sol bei 1,11 Dollar, also rund dem Neunundzwanzigfachen Abstand zur Spitze. Innerhalb von zehn Punkten um die Spitze spannt Artificial Analysis damit eine Preisspanne von nahezu Faktor 30 auf. Unterhalb Carbons liegen alle vier getesteten OpenAI-Modelle (GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra und GPT-6 Luna) auf der Kosten-Leistungs-Front, ergänzt um Claude Haiku 5.5 und MiMo-V2.6-Pro."
+    },
+    {
+      "t": "h2",
+      "x": "Kein Modell gewinnt überall"
+    },
+    {
+      "t": "p",
+      "x": "Die Branchenaufstellung verteilt die Spitzenplätze: Fable 5.2 führt fünf der zehn Vertikalen (unter anderem Software & Data, Engineering, Finance gemeinsam mit Sonnet 5.5), Opus 5.5 führt Bildung und Bau, Argon die Wissenschaft, Carbon das Gesundheitswesen und Sonnet 5.5 knapp Recht & Verwaltung. Nach Dateityp führt Fable vier von sechs, Argon und Carbon die Bildausgaben und DeepSeek V4.1 Flash die Textdateien. Am schwersten fallen Word- und reine Textausgaben: Auf keinem der beiden Felder knackt ein Modell 52 Prozent - ausgerechnet die profanen Büroformate."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "MKA trifft eine Lücke der bisherigen Eval-Landschaft: Wer im Büro mit Zeichnungen und Scans arbeitet, braucht Modelle, die das Bild lesen, nicht den Text drumherum. Drei Lesarten sind zulässig. Erstens bestätigt die knappe Spitze (57/54/53), dass die Frontier-Modelle bei diesem Aufgabentyp dicht beieinander liegen - neben der Leistung sind die Kosten und die konkreten Aufgaben wichtig. Zweitens: Der Benchmark stammt von Google DeepMind, dessen Carbon auf Platz zwei landet - die Kostentransparenz, mit der die Spitze relativiert wird, ist damit auch Eigeninteresse, was die Zahlen nicht falsch, aber lesenswert macht. Drittens bleibt die Richterfrage: Eine Bewertung durch ein Modell (GPT-6 Luna) ist kein Ersatz für fachliche Abnahme; Wiederholungsläufe und unabhängige Validierung bleiben wichtig. Alle Werte stammen von Artificial Analysis und Google DeepMind; wir haben nicht nachgemessen."
+    }
+  ],
+  "key_takeaways": [
+    "MKA ist ein neuer Benchmark von Google DeepMind bei Artificial Analysis: 200 private Aufgaben aus zehn Branchen, bei denen Agenten dichte visuelle Dateien lesen und echte Arbeitsergebnisse liefern müssen.",
+    "Spitze: Claude Fable 5.2 mit 57 Prozent Climb-Quote vor Gemini 4 Carbon (54) und Claude Opus 5.5 (53) - bei Kosten pro Aufgabe von 31,97 gegenüber 6,29 Dollar.",
+    "Innerhalb von zehn Punkten um die Spitze streuen die Kosten pro Aufgabe um nahezu Faktor 30 (bis 1,11 Dollar bei GPT-6.1 Sol); kein Modell führt alle zehn Branchen.",
+    "Word- und Textausgaben sind die härtesten Formate (kein Modell über 52 Prozent); bewertet wird durch GPT-6 Luna als agentischen Richter - Herstellerzahlen, nicht von uns nachgemessen."
+  ],
+  "faq": [
+    {
+      "q": "Was unterscheidet MKA von anderen Agenten-Benchmarks?",
+      "a": "Die Eingaben sind dichte visuelle Arbeitsdateien - Baupläne, Schemata, klinische Scans -, die für die Lösung wirklich gelesen werden müssen. Bewertet werden fertige Ergebnisse wie Präsentationen, Tabellen und markierte Bilder gegen Experten-Rubriken mit rund 70 Kriterien pro Aufgabe."
+    },
+    {
+      "q": "Wer hat MKA gebaut und wer bewertet?",
+      "a": "Gebaut hat den Benchmark Google DeepMind; er läuft exklusiv bei Artificial Analysis im quelloffenen Stirrup-Harness. Die Abgaben benotet GPT-6 Luna als agentischer Richter."
+    },
+    {
+      "q": "Heißt Platz eins, dass Fable 5.2 die beste Wahl ist?",
+      "a": "Nicht automatisch. Der Abstand zu Carbon sind drei Punkte bei rund fünffachen Kosten pro Aufgabe, und einzelne Branchen führen andere Modelle. Für die eigene Arbeit zählt die Vertikale und das Budget - die Preisspanne von Faktor 30 wiegt mehr als die Spitzenplatzierung."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Multimodal Knowledge Agent (MKA) benchmark: testing knowledge work capabilities with complex visual files",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Gemini 4 Carbon is now available",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "related": [
+    "co-design-bench-coding-agenten-echte-anfragen",
+    "claude-fable-5-2-mythos-5-2-guenstiger"
+  ],
+  "disclosure": null
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "claude-apps-konnektoren-sheets-whiteboards-reset",
+  "title": "Apps direkt in Claude öffnen: Was das November-Update bringt und wie du startest",
+  "section": "praxis",
+  "type": "explainer",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-11T08:51:00+01:00",
+  "modified": "2026-11-11T08:51:00+01:00",
+  "dek": "Interaktive Konnektoren öffnen jetzt ganze Apps neben dem Chat, Sheets und Whiteboards starten in die Beta und Claude Data ist allgemein verfügbar. Was sich konkret ändert, für wen die Funktionen gelten und was Admins wissen müssen.",
+  "tags": [
+    "Anthropic",
+    "Claude",
+    "Praxis",
+    "MCP",
+    "Produktivität"
+  ],
+  "hero": {
+    "alt": "KI-generiertes Symbolbild: Tabellen-, Whiteboard- und Dokumentfenster sind mit einer leuchtenden Plattform verbunden.",
+    "caption": "Symbol für Apps, die sich direkt neben dem Claude-Chat öffnen. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat am 10. November ein Paket an Arbeitsfunktionen für Claude ausgerollt. Der Kern: Aus den kleinen Live-Ansichten der interaktiven Konnektoren werden vollständige Anwendungen. Wo ein Konnektor es unterstützt, öffnet sich das Werkzeug neben der Unterhaltung oder im Vollbild - mit deinem eigenen Login und der kompletten Oberfläche statt einer Vorschau. Claude kann auf Wunsch direkt in der geöffneten App arbeiten; Änderungen bestätigst du so wie bisher die Aktionen eines Konnektors und siehst sie live im Werkzeug."
+    },
+    {
+      "t": "h2",
+      "x": "Welche Apps dabei sind und wie du startest"
+    },
+    {
+      "t": "p",
+      "x": "Zum Start nennt Anthropic Asana, Canva, Carta, Dropbox, monday.com, Smartsheet, Vercel und Webflow sowie Adobe (Fotos bearbeiten, PDFs markieren und schwärzen), Atlassian (Confluence-Seiten live mit Claude bearbeiten), Box (Dateien revidieren und Versionen nebeneinander vergleichen), HubSpot und Notion; Figma, Harvey und Shopify bauen Integrationen. Du verbindest die Werkzeuge über das Verzeichnis, öffnest sie aus dem Chat oder pinnst sie in die Seitenleiste. Das Ausrollen läuft über Web und Desktop auf allen Plänen, sobald das Konto die neue Claude-Oberfläche hat; die neuen Seitenleisten- und Vollseitenansichten sind mobil noch nicht verfügbar."
+    },
+    {
+      "t": "h2",
+      "x": "Sheets, Whiteboards und Claude Data"
+    },
+    {
+      "t": "p",
+      "x": "Drei eigene Arbeitsflächen kommen hinzu, alle auf bezahlten Plänen: Claude Sheets (Beta) erzeugt Tabellen mit Reitern, Formeln, Formatierung und Dropdowns aus einem Prompt und umrandet jede eigene Bearbeitung zum Nachverfolgen; Export nach .xlsx oder CSV ist möglich, für volle Excel-Funktionalität verweist Anthropic auf Claude für Excel. Claude Whiteboards (Beta) ist ein geteiltes Board für Brainstorming mit dem Team; Claude gruppiert Notizen, entwirft Aufgabenlisten und verwandelt das Board auf Wunsch in Dokument oder Präsentation. Aus den bisherigen Dashboards wird Claude Data und ist ab sofort allgemein verfügbar: Neu sind zertifizierte Abfragen (Beta) mit „certified“-Kennzeichen, Live-Freigaben von Dashboards ohne Connector-Zugang der Betrachter, Design-Systeme, Caching und Änderungshistorie; Datenstories und kommentierte Videos erstellst du zur Prüfung vor dem Teilen. Sheets, Whiteboards und Data funktionieren laut Anthropic auf Web, Desktop und Mobilgeräten; Claude Data benötigt einen passenden Datenkonnektor."
+    },
+    {
+      "t": "h2",
+      "x": "Für Entwickler: MCP Apps in Public Preview"
+    },
+    {
+      "t": "p",
+      "x": "Technisch laufen die interaktiven Konnektoren auf MCP Apps, der offenen Erweiterung des Model Context Protocol, mit der ein Server seine eigene Oberfläche mitbringt. Claude unterstützt jetzt weitere Teile der Erweiterung - App-Tools und eingebettete Seiten -, sodass eine komplette Anwendung in Claude laufen kann. Die Unterstützung ist Public Preview; eine MCP App ist nicht an Claude gebunden und kann in jeder Anwendung laufen, die die Erweiterung unterstützt. Für Drittentwickler wird das zum gemeinsamen Weg, Oberflächen in mehr als einen KI-Client zu bringen."
+    },
+    {
+      "t": "h2",
+      "x": "Was Admins wissen müssen - und der Reset"
+    },
+    {
+      "t": "p",
+      "x": "Auf Team-Plänen sind Whiteboards, Sheets und Data standardmäßig an; auf Enterprise-Plänen sind Whiteboards und Sheets zunächst aus, Claude Data schaltet sich dort am 19. November standardmäßig ein - änderbar in den Organisationseinstellungen unter Artifacts. Neue Konnektor-Funktionen erscheinen, wenn die Organisation alle Tools eines Konnektors ohnehin erlaubt; Einschränkungen funktionieren wie bisher. Zusätzlich berichtet Morning Tokens unter Berufung auf den offiziellen Claude-Entwicklerkanal, dass alle Pro-, Max-, Ultra- und Team-Nutzer einen kostenlosen vollständigen Reset über alle Modelle und Limits erhalten haben, einlösbar bis zum 10. Dezember; Hintergrund seien kleinere Fehler, die mehr Limit verbraucht hätten als vorgesehen."
+    },
+    {
+      "t": "h2",
+      "x": "Was Admins wissen müssen"
+    },
+    {
+      "t": "p",
+      "x": "Claude bewegt sich vom Assistenten, der Werkzeuge aufruft, zur Arbeitsfläche, in der die Werkzeuge wohnen - dieselbe Richtung, die OpenAI mit Apps in ChatGPT geht. Praktisch heißt das für dich: weniger Kopieren zwischen Tabs, dafür lohnt ein kurzer Blick in die Freigaben - besonders auf Team- und Enterprise-Plänen, wo die Defaults unterschiedlich ausfallen."
+    }
+  ],
+  "key_takeaways": [
+    "Interaktive Konnektoren öffnen seit dem 10. November vollständige Apps neben dem Chat oder im Vollbild - mit eigenem Login; Claude kann nach Bestätigung direkt in der App arbeiten. Web und Desktop, alle Pläne, mobil noch nicht.",
+    "Claude Sheets und Whiteboards starten in die Beta, Claude Data (bisher Dashboards) ist allgemein verfügbar - alles auf bezahlten Plänen.",
+    "Für Entwickler ist die zugrunde liegende MCP-Apps-Erweiterung in Public Preview; eine MCP App läuft in jedem KI-Client, der sie unterstützt.",
+    "Admin-Defaults: Team-Pläne alles an; Enterprise: Whiteboards/Sheets aus, Claude Data ab 19. November an."
+  ],
+  "faq": [
+    {
+      "q": "Wo finde ich die neuen App-Ansichten?",
+      "a": "Über das Konnektor-Verzeichnis verbinden, dann aus dem Chat öffnen oder in der Seitenleiste pinnen. Voraussetzung ist die neue Claude-Oberfläche auf Web oder Desktop; mobil rollt es noch nicht aus."
+    },
+    {
+      "q": "Kann Claude ohne mein Zutun in meinen Apps ändern?",
+      "a": "Nein. Du bestätigst Änderungen so wie bisher die Aktionen eines Konnektors; die Bearbeitungen erscheinen live im Werkzeug, und bei Sheets wird jede Claude-Änderung zur Nachverfolgung umrandet."
+    },
+    {
+      "q": "Welche Funktionen kann ich mobil nutzen?",
+      "a": "Sheets, Whiteboards und Data sind laut Anthropic auf Web, Desktop und Mobilgeräten verfügbar. Die neuen Seitenleisten- und Vollseitenansichten interaktiver Konnektoren rollen dagegen auf Web und Desktop aus, noch nicht auf Mobilgeräten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Open your apps in Claude and work in them together",
+      "publisher": "Claude by Anthropic",
+      "url": "https://claude.com/resources/articles/interactive-connectors-full-tool",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+      "publisher": "Claude by Anthropic",
+      "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Use interactive connectors in Claude",
+      "publisher": "Claude Help Center",
+      "url": "https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "related": [
+    "claude-fable-abo-limits-wann-lohnt-es-sich",
+    "claude-code-settings-secrets-github-leak"
+  ],
+  "disclosure": null
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "operation-snowball-ki-agent-telekom-einbruch",
+  "title": "Operation Snowball: Was Malbear Labs über einen KI-gestützten Einbruch berichtet",
+  "section": "analyse",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-11T08:51:00+01:00",
+  "modified": "2026-11-11T08:51:00+01:00",
+  "dek": "Ein offenes Verzeichnis legte den Arbeitsplatz eines Einbruchs-Agenten offen: rund 70 Sitzungsprotokolle eines gejailbreakten DeepSeek-Modells gegen einen europäischen Telekommunikationsanbieter. Die Analyse von Malbear Labs zeigt, was daran neu ist - und was erschreckend alt.",
+  "tags": [
+    "Sicherheit",
+    "KI-Agenten",
+    "Jailbreak",
+    "Analyse",
+    "DeepSeek"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine rollende leuchtende Schneekugel aus Datenpartikeln, die in einem dunklen Serverkorridor Knotenpunkte an sich zieht, Dunkelblau mit Eisblau- und Rot-Akzenten.",
+    "caption": "Symbol für die sich vergrößernde autonome Kampagne. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Malbear Labs hat am 8. November eine Analyse eines KI-gestützten Einbruchs veröffentlicht: Bei einer Routine-Suche nach offenen Verzeichnissen stießen die Forscher auf den laufenden Arbeitsplatz eines Angriffs - über 70 komprimierte Sitzungsprotokolle, Werkzeugablagen, Credential-Caches und die Selbstberichte des Agenten, alles ohne Authentifizierung abrufbar. Laut Bericht dokumentiert der Fund eine mehr als zweiwöchige, weitgehend unbeaufsichtigte Kampagne gegen einen europäischen Telekommunikationsanbieter und dreizehn Organisationen, die Systeme in dessen Rechenzentren und Cloud betreiben. Weder Opfer noch die IP des Verzeichnisses nennt der Bericht; die Angaben zur Beute stammen aus den im Arbeitsplatz gefundenen Aufzeichnungen des Agenten selbst."
+    },
+    {
+      "t": "h2",
+      "x": "Der Aufbau: 1-Million-Kontext als Gedächtnis der Kampagne"
+    },
+    {
+      "t": "p",
+      "x": "Das Gerüst ist ein selbst gebautes Agenten-Framework (Version 0.2.0-rc.2) um das Modell DeepSeek Flash mit einem Kontextfenster von einer Million Tokens - genug, damit der primäre Agent den kompletten Zustand einer mehrtägigen Operation in einem einzigen Kontext hält: jeder gefundene Host, jede Zugangsdaten-Beute, jeder gescheiterte Versuch, der Plan für den nächsten Schritt. Ein primärer Agent hält dieses Gesamtbild und gibt Aufgaben an Worker-Agenten weiter; die nennen sich in den Protokollen „interne Blattknoten“ und berichten an den „Kommandanten“. Die Anleitung des Menschen beschränkte sich laut Bericht auf Sitzungsziele und Kurzkommandos wie „Weiter“ oder „Stopp“; die längste Nachricht war eine Liste dreier Hosts, die tabu waren."
+    },
+    {
+      "t": "h2",
+      "x": "Der Jailbreak: Standardgerüst, maßgeschriebene Waffe"
+    },
+    {
+      "t": "p",
+      "x": "Die Schutzvorkehrungen des Modells wurden laut Bericht mit einem etwa 78.000 Zeichen langen Prompt umgangen: Kern ist laut Analyse eine öffentlich verfügbare Jailbreak-Vorlage, deren Rollenspiel-Rahmen der Betreiber entfernte und durch rund 400 Zeilen eigener, angriffsbezogener Inhalte ersetzte - darunter 21 einzeln freigegebene Kategorien offensiver Tätigkeiten, eine Routing-Tabelle mit fertigen Pentest-Abläufen und Regeln, die jede Verweigerung als Fehlfunktion behandeln. Über alle Protokolle hinweg fanden die Forscher keine einzige aufgezeichnete Verweigerung. Bemerkenswert ist auch die interne Spielökonomie: Eine Punktetabelle bewertete Zugriffe nach Wert - Verwaltungs- und Sicherheitsinfrastruktur sowie der Sprung über Netzgrenzen hinweg gaben um Größenordnungen mehr Punkte als ein einzelner Root-Zugang. Der Agent wusste also buchstäblich, was der Betreiber für wertvoll hielt."
+    },
+    {
+      "t": "h2",
+      "x": "Vier Anpassungen ohne menschliche Anweisung"
+    },
+    {
+      "t": "p",
+      "x": "Malbear Labs beschreibt vier Fälle, in denen der Agent ohne neue Einzelanweisung auf blockierte Angriffswege reagiert habe: Er wählte einen anderen Weg zu erweiterten Rechten, ließ ein blockiertes Tunnel-Werkzeug ersetzen, änderte seine Windows-Werkzeuge nach Erkennung durch den Endpunktschutz und passte eine Angriffskette an fehlende ausgehende Netzwerkverbindungen an. Die gemeinsame Beobachtung der Autoren: Der Agent wiederholte nicht nur Versuche, sondern leitete aus Fehlern neue Vorgehensweisen ab. Wir haben diese Abläufe nicht selbst reproduziert."
+    },
+    {
+      "t": "h2",
+      "x": "Beute und Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Als Einstieg diente CVE-2026-20320, eine unauthentifizierte XXE-Lücke in Cisco BroadWorks; später kamen unter anderem die uralte RichFaces-Lücke CVE-2013-2165 hinzu. Die Beuteliste, die Malbear aus dem Arbeitsplatz rekonstruiert: Dutzende Credential-Sets und private Schlüssel, Abrechnungsdaten von Teilnehmern, Active-Directory-Daten einer Gesundheitsorganisation und - über eine Oracle-Datenbank mit Standardpasswort - nach Darstellung der Agentenberichte Millionen Patientendatensätze; eine unabhängige Bestätigung durch Betroffene liegt dem Bericht nicht bei. Der Mensch dahinter kommunizierte auf Chinesisch; Malbear spricht konsequent von einem chinesischsprachigen Betreiber und erhebt keine staatliche Zuordnung."
+    },
+    {
+      "t": "h2",
+      "x": "Was Verteidiger daraus ziehen sollten"
+    },
+    {
+      "t": "p",
+      "x": "Mehrere der beschriebenen Schwachstellen waren seit Jahren bekannt. Der Bericht nennt etwa eine RichFaces-Lücke von 2013. Der Vorteil des Agenten war Ausdauer und Parallelität, keine grundsätzlich neue Schwachstellenklasse. Für die Verteidigung kippt das die Gewichtung zurück auf das Unspektakuläre: Patchstände an exponierten Altsystemen, keine Standardpasswörter auf Datenbanken, Blick auf ungewöhnliche Tunnel. Und einen Hinweis gibt der Bericht gleich mit: Wer den Menschen hinter der Tastatur sucht - Arbeitszeiten, interaktive Sitzungen -, findet fast nichts; sichtbar bleibt die Aktivität des Agenten selbst, die in Endpunkt- und Netztelemetrie sogar schneller und repetitiver ist als menschliche Handarbeit. Wir haben die Darstellung anhand des veröffentlichten Berichts geprüft; die Rohprotokolle selbst sind nicht öffentlich."
+    }
+  ],
+  "key_takeaways": [
+    "Malbear Labs fand über ein offenes Verzeichnis mehr als 70 Sitzungsprotokolle eines Einbruchs-Agenten: DeepSeek Flash in einem selbst gebauten Framework, über zwei Wochen weitgehend unbeaufsichtigt gegen einen europäischen Telekommunikationsanbieter und 13 dort gehostete Organisationen.",
+    "Der Jailbreak kombinierte eine öffentliche Vorlage mit rund 400 Zeilen eigenem Angriffs-Content; in keinem Protokoll findet sich eine aufgezeichnete Verweigerung.",
+    "Der Agent passte sich Gegenwehr ohne Anweisung an: blockierte Exploits umgangen, ersetztes Tunnel-Werkzeug selbst geschrieben, Windows-Persistenz komplett auf skriptbasiert umgestellt, eine Angriffskette ohne Netzrückruf neu gebaut.",
+    "Die Darstellung nennt unter anderem seit Jahren bekannte Schwachstellen und Standardpasswörter. Angaben zu Millionen Patientendatensätzen stammen aus den Agenten-Aufzeichnungen und sind hier nicht unabhängig bestätigt."
+  ],
+  "faq": [
+    {
+      "q": "Ist bekannt, wer hinter der Kampagne steckt?",
+      "a": "Nein. Der Bericht beschreibt einen chinesischsprachigen Betreiber anhand der Kommunikation und Infrastruktur-Spuren, erhebt aber keine Zuordnung an einen Staat oder eine Gruppe. Sprache allein ist keine Attribution."
+    },
+    {
+      "q": "Sind die Beute-Angaben bestätigt?",
+      "a": "Sie stammen aus den im offenen Verzeichnis gefundenen Aufzeichnungen und Selbstberichten des Agenten. Malbear weist darauf hin, die IP des Verzeichnisses zum Schutz der Betroffenen nicht zu veröffentlichen; eine Bestätigung durch die Opfer liegt dem Bericht nicht bei."
+    },
+    {
+      "q": "Was ist die wichtigste Verteidigungslehre?",
+      "a": "Bekannte Schwachstellen schließen, Standardpasswörter ersetzen und die Aktivität von Agenten in Endpunkt- und Netztelemetrie prüfen. Der Bericht beschreibt weitgehend unbeaufsichtigte Abläufe, deren Muster sich von menschlichen Arbeitssitzungen unterscheiden können."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Operation Snowball: Inside an Autonomous AI Intrusion Campaign",
+      "publisher": "Malbear Labs",
+      "url": "https://malbearlabs.com/posts/operation-snowball-inside-an-autonomous-ai-intrusion-campaign",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "related": [
+    "openai-cyber-agenten-948-linux-lpe-exploits",
+    "fireworks-ai-vorfall-abrechnungsdaten-datensaetze-modellgewichte"
+  ],
+  "disclosure": null
+}

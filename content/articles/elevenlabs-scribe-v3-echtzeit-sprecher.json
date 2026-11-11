@@ -1,0 +1,95 @@
+{
+  "slug": "elevenlabs-scribe-v3-echtzeit-sprecher",
+  "title": "ElevenLabs Scribe v3: Anbieter meldet 27 Prozent weniger Wortfehler und Live-Sprecherlabels",
+  "section": "tools",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-11T08:51:00+01:00",
+  "modified": "2026-11-11T08:51:00+01:00",
+  "dek": "ElevenLabs hat Scribe v3 für Aufzeichnungen und Scribe v3 Live für Echtzeit-Transkription veröffentlicht. Alle Genauigkeitswerte stammen aus den eigenen Tests des Anbieters nach dessen Methodik; wir haben nicht nachgemessen.",
+  "tags": [
+    "ElevenLabs",
+    "Spracherkennung",
+    "Speech-to-Text",
+    "Voice Agents",
+    "Transkription"
+  ],
+  "hero": {
+    "alt": "KI-generiertes Symbolbild: Eine Schallwelle führt zu einem Mikrofon und verzweigt sich in vier farbige Wellen mit Lautsprechersymbolen.",
+    "caption": "Symbol für Echtzeit-Transkription mit Sprechertrennung. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "ElevenLabs hat am 10. November zwei neue Spracherkennungsmodelle veröffentlicht: Scribe v3 für aufgezeichnetes Audio und Scribe v3 Live für Echtzeit. Beide sind ab sofort in der ElevenAPI verfügbar - der Wechsel von v2 ist laut Anbieter eine Änderung der Modell-ID auf scribe_v3 beziehungsweise scribe_v3_live; Scribe v3 Live läuft außerdem in ElevenAgents, dort zusätzlich in einer für medizinische Gespräche optimierten Variante. Alle folgenden Messwerte stammen aus ElevenLabs' eigenen Tests."
+    },
+    {
+      "t": "h2",
+      "x": "Die angegebenen Genauigkeitswerte"
+    },
+    {
+      "t": "p",
+      "x": "Scribe v3 soll über 102 Sprachen hinweg 27 Prozent weniger Wortfehler machen als Scribe v2, gemessen auf einer internen Version des FLEURS-Benchmarks. Nach Sprachen: Deutsch verbessert sich um 42 Prozent, Spanisch um 35, Englisch um 23 Prozent. Scribe v3 Live senkt die semantische Fehlerrate (nur sinnverändernde Fehler zählen) um 43 Prozent gegenüber Scribe v2 Realtime; die größten Sprünge nennt der Anbieter für Griechisch (77 Prozent), Dänisch (54), Kroatisch (45) und Hindi (36). Methodischer Hinweis von ElevenLabs selbst: Jede Sprache wurde einzeln gewertet und dann gleich gewichtet gemittelt - Werte aus anderen Veröffentlichungen mit gepoolter Messung sind damit nicht direkt vergleichbar."
+    },
+    {
+      "t": "h2",
+      "x": "Sprecherlabels jetzt auch live"
+    },
+    {
+      "t": "p",
+      "x": "Die Neuerung mit dem größten Praxiswert: Diarization - die Zuordnung, wer was gesagt hat - kommt erstmals in die Echtzeit-Variante. Auf dem englischsprachigen Teil eines selbst gebauten Datensatzes aus 16 Sprachen nennt ElevenLabs eine Sprecherfehlerrate von 3,1 Prozent gegenüber 5,9 bis 7,3 Prozent bei den anderen getesteten Echtzeit-Modellen. Scribe v3 liegt demnach bei Aufzeichnungen mit drei oder mehr Sprechern 17 Prozent unter Scribe v2. Dazu kommt eine Turn-Erkennung, die den Gesprächskontext mit einbezieht statt nur Pausen zu messen - dadurch sollen Anrufer seltener unterbrochen werden, wenn sie mitten in einer Nummer pausieren."
+    },
+    {
+      "t": "h2",
+      "x": "Steuerung und Praxisbeleg"
+    },
+    {
+      "t": "p",
+      "x": "Neu sind bis zu 1.000 Schlüsselbegriffe pro Anfrage (Markennamen, Akronyme, Fachjargon), eine Keyterm-Bibliothek für größere Wortschätze, Formatierungsregeln in Klartext („jedes Datum als JJJJ-MM-TT schreiben“), wählbare Zahlenschreibweise und ein mehrsprachiger Modus für Sprachwechsel mitten im Satz. Als Praxisbeleg nennt ElevenLabs den niederländischen Energieversorger Eneco: In echten Kundengesprächen habe der dortige Voice Agent Postleitzahlen 40 Prozent und Hausnummern 15 Prozent häufiger beim ersten Versuch richtig erkannt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Sprecherlabels können Live-Transkripte für Meeting-Assistenten und Voice Agents besser strukturieren. Die vorgestellten Werte sind allerdings durchgehend Herstellermessungen auf teils internen Datensätzen; ElevenLabs kündigt an, den 16-sprachigen Realwelt-Testdatensatz als Open Source zu veröffentlichen, was eine unabhängige Prüfung ermöglichen würde. Für Unternehmen mit Residenzanforderungen: Die Modelle laufen standardmäßig in den USA, für Enterprise-Kunden in isolierten EU-, Indien- und Singapur-Umgebungen, ein Zero-Retention-Modus löscht Audio und Text nach Abschluss der Anfrage."
+    }
+  ],
+  "key_takeaways": [
+    "ElevenLabs hat Scribe v3 (Aufzeichnungen) und Scribe v3 Live (Echtzeit) veröffentlicht; beide sind über die ElevenAPI mit den Modell-IDs scribe_v3 und scribe_v3_live erreichbar.",
+    "Herstellerangaben: 27 Prozent weniger Wortfehler über 102 Sprachen (Deutsch 42 Prozent weniger Wortfehler), Live-Variante mit 43 Prozent weniger semantischen Fehlern und erstmals Sprecherzuordnung in Echtzeit (3,1 Prozent Fehlerrate auf dem englischen Testdatensatz).",
+    "Neu: bis zu 1.000 Schlüsselbegriffe pro Anfrage, Klartext-Formatierungsregeln, kontextbasierte Turn-Erkennung und ein Modus für Sprachwechsel mitten im Satz.",
+    "Alle Werte stammen aus ElevenLabs' eigenen Tests; der Anbieter will seinen 16-sprachigen Testdatensatz als Open Source freigeben. Wir haben nicht nachgemessen."
+  ],
+  "faq": [
+    {
+      "q": "Wie steige ich von Scribe v2 um?",
+      "a": "Laut ElevenLabs genügt in der ElevenAPI der Wechsel der Modell-ID auf scribe_v3 oder scribe_v3_live. Scribe v3 Live läuft zusätzlich in ElevenAgents, dort auch als Variante für medizinische Gespräche."
+    },
+    {
+      "q": "Was ist neu an der Sprechererkennung?",
+      "a": "Diarization gibt es erstmals in Echtzeit: Scribe v3 Live ordnet während des Gesprächs zu, wer spricht. ElevenLabs nennt auf seinem englischen Testdatensatz 3,1 Prozent Sprecherfehlerrate gegenüber 5,9 bis 7,3 Prozent bei anderen getesteten Echtzeit-Modellen - eigene Messung des Anbieters."
+    },
+    {
+      "q": "Gibt es Optionen für Datenschutz und Residenz?",
+      "a": "Standard ist Verarbeitung in den USA; Enterprise-Kunden erhalten isolierte Umgebungen in der EU, Indien und Singapur sowie einen Zero-Retention-Modus, der Audio und Text nach Abschluss der Anfrage löscht."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Scribe v3 and v3 Live, our most accurate speech to text models",
+      "publisher": "ElevenLabs",
+      "url": "https://elevenlabs.io/blog/scribe-v3",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "related": [
+    "anthropic-agenten-gedaechtnis-dreaming",
+    "oumi-faie-agenten-bauen-agenten"
+  ],
+  "disclosure": null
+}

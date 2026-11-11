@@ -1,0 +1,95 @@
+{
+  "slug": "openai-unternehmensprofile-chatgpt-business-hub",
+  "title": "OpenAI: Unternehmen können jetzt ihr Profil in ChatGPT beanspruchen",
+  "section": "news",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-11T08:51:00+01:00",
+  "modified": "2026-11-11T08:51:00+01:00",
+  "dek": "Mit Businesses in ChatGPT startet OpenAI eine Unternehmens-Ebene: Profile beanspruchen und verifizieren, Produktfeeds pflegen, Erwähnungen und Klicks sehen - und für berechtigte US-Firmen einen eigenen Business Agent im Chat. Die Beta läuft seit dem 10. November.",
+  "tags": [
+    "OpenAI",
+    "ChatGPT",
+    "Business",
+    "Agenten",
+    "Commerce"
+  ],
+  "hero": {
+    "alt": "KI-generiertes Symbolbild: Dunkelblaues Hochhaus mit leuchtenden, verbundenen Netzwerkknoten.",
+    "caption": "Symbol für verifizierte Unternehmensprofile in ChatGPT. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI hat am 10. November Businesses in ChatGPT in der Beta gestartet. Über einen neuen Business Hub können Unternehmen ihren Eintrag in ChatGPT beanspruchen und verifizieren, zentrale Angaben aktualisieren und Produktfeeds mit Preisen und Verfügbarkeit hinterlegen. OpenAI beziffert die Reichweite der Plattform in der Ankündigung mit 1,2 Milliarden Nutzern pro Woche."
+    },
+    {
+      "t": "h2",
+      "x": "Was der Business Hub bietet"
+    },
+    {
+      "t": "p",
+      "x": "Beanspruchen kann sich jedes berechtigte Unternehmen in einem Land, in dem ChatGPT verfügbar ist; Bestandskunden aus Enterprise und Werbung können das über ihre OpenAI-Kontaktperson tun. Shopify-Händler verbinden ihren Shop direkt aus dem Hub oder dem Shopify-Admin - berechtigte Produkte sind über den Shopify Catalog bereits in ChatGPT integriert. Nach der Verifizierung lassen sich Firmendaten pflegen und Selbstbedienungs-Produktfeeds einspielen."
+    },
+    {
+      "t": "h2",
+      "x": "Erstmals offizielle Einblicke in Erwähnungen"
+    },
+    {
+      "t": "p",
+      "x": "Der Hub zeigt aggregierte Zahlen: wie oft ein Unternehmen in ChatGPT erwähnt wird, wie viele Klicks auf die eigene Website entstehen, und sogenannte Discovery Topics - die wiederkehrenden Themen in Unterhaltungen, in denen die Website des Unternehmens zitiert wird. OpenAI betont die Privatsphäre-Leitplanken: Nutzerkonversationen und Chats mit Business Agents werden nicht geteilt, und Insights erscheinen nur oberhalb von Mindestmengen."
+    },
+    {
+      "t": "h2",
+      "x": "Business Agents: der eigene Agent im Chat"
+    },
+    {
+      "t": "p",
+      "x": "Für berechtigte E-Commerce- und Online-Dienstleister in den USA kommt eine zweite Stufe hinzu: ein Business Agent, mit dem Kunden direkt in ChatGPT sprechen können. Erscheint ein Unternehmen in einer Antwort, können Nutzer dessen Profil öffnen und - falls vorhanden - eine separat gekennzeichnete Unterhaltung mit dessen Agenten starten. Unternehmen können diesen Agenten zudem sponsern und als Ziel für ChatGPT Ads nutzen; OpenAI weist darauf hin, dass gesponserte Platzierungen gekennzeichnet und von den eigenen Antworten des Modells getrennt sind. Die Kennzeichnung dürfte schnell zur Vertrauensfrage werden: Nutzer müssen jederzeit erkennen, ob das Modell antwortet oder ein bezahlter Agent des Unternehmens."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI baut ChatGPT damit auch als Schaufenster- und Transaktionsplattform aus - nach den Shopping-Integrationen der vergangenen Monate der nächste logische Schritt. Für Unternehmen ändert sich die Praxis jetzt: Wer nicht beansprucht, überlässt die Darstellung dem Modell und den Daten, die es findet. OpenAI kündigt an, die Angebote schrittweise auf weitere Märkte und Branchen auszuweiten. Für Unternehmen lohnt es sich, die Voraussetzungen im Business Hub und die Informationen im eigenen Profil zu prüfen."
+    }
+  ],
+  "key_takeaways": [
+    "Businesses in ChatGPT ist seit dem 10. November in Beta: Unternehmen beanspruchen und verifizieren ihr Profil über den Business Hub und können Produktfeeds mit Preisen und Verfügbarkeit pflegen.",
+    "Der Hub zeigt aggregierte Erwähnungen, Website-Klicks und Discovery Topics; OpenAI teilt nach eigenen Angaben keine Nutzerkonversationen und blendet Insights erst oberhalb von Mindestmengen ein.",
+    "Berechtigte US-E-Commerce- und Online-Dienstleister können zusätzlich einen Business Agent betreiben - separat gekennzeichnet, sponserbar und als Ziel für ChatGPT Ads.",
+    "OpenAI beziffert ChatGPT auf 1,2 Milliarden Wochennutzer; Erweiterungen auf weitere Märkte und Kategorien sind angekündigt."
+  ],
+  "faq": [
+    {
+      "q": "Wer kann ein Profil beanspruchen?",
+      "a": "Laut OpenAI jedes berechtigte Unternehmen in einem Land mit ChatGPT-Verfügbarkeit über den Business Hub. Shopify-Händler verbinden den Shop direkt; Enterprise-Kunden und Werbekunden gehen über ihre OpenAI-Kontaktperson."
+    },
+    {
+      "q": "Sehen Unternehmen, was Nutzer fragen?",
+      "a": "Nach eigener Darstellung nicht. OpenAI stellt nach eigener Darstellung nur aggregierte Zahlen (Erwähnungen, Klicks, Themen) und teilt weder Nutzerkonversationen noch Chats mit Business Agents; Insights gibt es erst ab Mindestmengen."
+    },
+    {
+      "q": "Sind Business Agents in Deutschland verfügbar?",
+      "a": "Zum Start nur für berechtigte E-Commerce- und Online-Dienstleister in den USA. Das Profil-Claiming selbst steht Unternehmen überall offen, wo ChatGPT verfügbar ist; eine Ausweitung ist angekündigt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Businesses in ChatGPT",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-businesses-chatgpt/",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "related": [
+    "visa-agentic-commerce-benchmark-57-prozent",
+    "menlo-enterprise-ki-ausgaben-177-milliarden"
+  ],
+  "disclosure": null
+}

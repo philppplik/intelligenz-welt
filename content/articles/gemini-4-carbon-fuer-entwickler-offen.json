@@ -1,0 +1,109 @@
+{
+  "slug": "gemini-4-carbon-fuer-entwickler-offen",
+  "title": "Gemini 4 Carbon ist verfügbar: Google öffnet sein Spitzenmodell für zahlende Entwickler",
+  "section": "modelle",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-11T08:51:00+01:00",
+  "modified": "2026-11-11T08:51:00+01:00",
+  "dek": "Zwei Wochen nach dem Cyber-First-Start über das Fairwind-Programm öffnet Google Gemini 4 Carbon für alle zahlenden Entwickler - zum Einstiegspreis von Argon bis 30. November. Alle Leistungsangaben stammen von Google; wir haben nicht nachgemessen.",
+  "tags": [
+    "Google",
+    "Gemini",
+    "Gemini 4 Carbon",
+    "Modelle",
+    "Agenten"
+  ],
+  "hero": {
+    "alt": "KI-generiertes Symbolbild: Leuchtendes räumliches Gitter über einer Plattform, umgeben von dunklen App-Fenstern.",
+    "caption": "Symbol für die Öffnung von Gemini 4 Carbon. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google hat Gemini 4 Carbon am 10. November allgemein freigegeben: über die Gemini API (Bezahlstufe) in AI Studio und Android Studio, über Gemini for business für Unternehmen und für Google-AI-Ultra-Abonnenten zusätzlich in Antigravity, der Gemini-App und dem AI Mode in der Suche. Damit endet die zweiwöchige Phase, in der das Modell nur Cybersecurity-Verteidigern über das Fairwind-Programm offenstand. Googles Positionierung bleibt gestuft: Argon sei für die Mehrheit der Software- und Wissensarbeit die richtige Wahl, Carbon für Aufgaben an der Leistungsgrenze - komplexes mehrstufiges Debugging, offene wissenschaftliche Fragen - und verbrauche dafür bewusst mehr Tokens für ausführlichere Prüfschleifen."
+    },
+    {
+      "t": "h2",
+      "x": "Preis: Einstieg auf Argon-Niveau bis 30. November"
+    },
+    {
+      "t": "p",
+      "x": "Zum Start gilt laut Google derselbe Einführungspreis wie für Gemini 4 Argon: 2 Dollar pro Million Eingabe-Tokens und 10 Dollar pro Million Ausgabe-Tokens. Nach Angabe im Kleingedruckten des Launch-Beitrags endet diese Phase am 30. November 2026; danach kostet Carbon 4 beziehungsweise 20 Dollar. Wer Argon heute nutzt, hat damit knapp drei Wochen Zeit, die härtesten eigenen Testfälle zum halben Endpreis gegen Carbon laufen zu lassen."
+    },
+    {
+      "t": "h2",
+      "x": "Benchmarks: Herstellerangaben mit Kostenargument"
+    },
+    {
+      "t": "p",
+      "x": "Google nennt drei unabhängige Benchmarks, auf denen Carbon auf Platz eins liege: CursorBench 4.0, Perplexitys WANDR und Zapiers AutomationBench - jeweils bei nach Angabe mehr als doppelt so niedrigen Kosten pro Aufgabe wie das nächste externe Modell. Beim neuen MKA-Benchmark für visuelle Wissensarbeit (mit Artificial Analysis) liegt Carbon demnach auf Platz zwei - bei mehr als sechsmal niedrigeren durchschnittlichen Kosten pro Aufgabe als der Spitzenreiter; Details dazu stehen in unserem Trend-Artikel zum MKA-Test. Alle Werte sind Angaben aus Googles Launch-Beitrag, wir haben sie nicht nachgemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Sicherheit: weniger Durchbrüche, mehr Ehrlichkeit"
+    },
+    {
+      "t": "p",
+      "x": "Die Sicherheitsseite quantifiziert Google ebenfalls: In simulierten Angriffsumgebungen (ExploitBench und CyScenarioBench) habe Carbon 99 Prozent der Angriffspfade eines adaptiven Red-Teaming-Agenten blockiert, die Durchbruchsrate pro Versuch liege bei 0,8 Prozent (Argon: 3,1); in Gray-Swan-Tests sank die Erfolgsquote automatisierter Angriffsanfragen demnach auf 2,17 Prozent (Argon: 9,86). Trajectory Labs habe in 132 Stunden und über 13.000 Anfragen keinen neuen universellen Jailbreak gefunden. Auf Googles internem Ehrlichkeitstest mit 375 agentischen Aufgaben bestehe Carbon 92 Prozent (Argon: 70 Prozent) - inklusive der Weigerung, fehlende Versuchsdaten zu erfinden. Beim Gray-Swan-Benchmark für indirekte Prompt-Injection meldet Google eine Angriffserfolgsrate von null Prozent, räumt aber zugleich ein, dass eigene weitergehende Red-Team-Läufe noch Verbesserungsbedarf in einigen Verteilungen zeigen."
+    },
+    {
+      "t": "h2",
+      "x": "Swarm und Wissenschaft"
+    },
+    {
+      "t": "p",
+      "x": "Parallel startet in Google Antigravity die Vorschau auf /swarm: Ein Prompt wird dabei zu einem koordinierten Team aus Agenten mit parallel isolierten Arbeitsbereichen und gegnerischen Prüfern; Googles Empfehlung ist die Rollenverteilung Carbon als Planer und Prüfer mit schnelleren Modellen als Ausführende. Aus der Forschung berichtet Google zwei Vorab-Ergebnisse: Mit dem neuen Framework AlphaProof Code hätten Forscher mit Carbon Sicherheitseigenschaften des Signal-Protokolls formal in Lean bewiesen, und bei sieben Protein-Familien mit wenig bekannten Verwandten aus dem CASP17-Blindtest habe Carbon im Multi-Agenten-Setup im Schnitt 40-mal mehr entfernte Homologe gefunden - beides Herstellerberichte vor unabhängiger Prüfung."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Nach Fable 5.2 am Montag ist Carbon die zweite Frontier-Freigabe dieser Woche - und beide Labs argumentieren nicht mehr nur mit Spitzenwerten, sondern mit Kosten pro Aufgabe. Für Entscheider zählt die eigene Messung: Die Einführungsphase bis 30. November bietet einen angekündigten Preisnachlass, um Carbon gegen die bisherige Standardkonfiguration laufen zu lassen."
+    }
+  ],
+  "key_takeaways": [
+    "Gemini 4 Carbon ist seit dem 10. November für alle zahlenden Entwickler über die Gemini API und Gemini for business offen, für AI-Ultra-Abonnenten auch in Antigravity, App und AI Mode.",
+    "Einführungspreis wie Argon: 2/10 Dollar pro Million Ein-/Ausgabe-Tokens; laut Fußnote des Beitrags steigt der Preis ab 1. Dezember auf 4/20 Dollar.",
+    "Google meldet Platz eins auf CursorBench 4.0, WANDR und AutomationBench sowie deutlich verbesserte Sicherheitswerte (0,8 Prozent Durchbruchsrate pro Versuch, 92 Prozent im internen Ehrlichkeitstest) - alles Herstellerangaben.",
+    "In Antigravity startet die /swarm-Vorschau für Multi-Agenten-Teams; Googles Muster: Carbon plant und prüft, günstigere Modelle führen aus."
+  ],
+  "faq": [
+    {
+      "q": "Was kostet Gemini 4 Carbon?",
+      "a": "Bis 30. November 2026 gilt laut Google der Argon-Einführungspreis von 2 Dollar pro Million Eingabe- und 10 Dollar pro Million Ausgabe-Tokens; danach 4 beziehungsweise 20 Dollar (Fußnote des Launch-Beitrags, für die öffentlich zugängliche Variante)."
+    },
+    {
+      "q": "Wann Carbon statt Argon?",
+      "a": "Googles eigene Empfehlung: Argon für die Mehrheit der Software- und Wissensarbeit, Carbon für Aufgaben an der Leistungsgrenze wie komplexes mehrstufiges Debugging und offene Forschungsfragen. Carbon verbraucht dabei bewusst mehr Tokens für tiefere Prüfschleifen."
+    },
+    {
+      "q": "Sind die Sicherheitswerte unabhängig geprüft?",
+      "a": "Teilweise: Neben Googles eigenen Tests nennt der Beitrag Gray Swan und Trajectory Labs als externe Tester. Alle genannten Zahlen stammen aus Googles Veröffentlichung; wir haben sie nicht nachgemessen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini 4 Carbon is now available",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "accessed": "2026-11-11"
+    },
+    {
+      "title": "Gemini 4 Carbon: New model for developer agents",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "related": [
+    "gemini-omni-1-2-flash-ga-preis",
+    "meta-muse-ember-guenstiges-agenten-modell"
+  ],
+  "disclosure": null
+}
