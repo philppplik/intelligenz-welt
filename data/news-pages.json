@@ -1,5 +1,77 @@
 [
   {
+    "title": "ChatGPT: Unternehmen können dort nun eigene Profile anlegen",
+    "url": "https://www.heise.de/news/ChatGPT-Unternehmen-koennen-dort-nun-eigene-Profile-anlegen-11521000.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794407160.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "OpenAI hat eine neue Funktion für Unternehmen in ChatGPT hinzugefügt. Ähnlich wie bei Google Maps können sie dort nun eigene Informationen hinterlegen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-11T16:05:53.507234+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI-Update kompakt: Nvidia-Affäre, Coding-Agenten, Gemini 4 Carbon, Muse Ember",
+    "url": "https://www.heise.de/news/KI-Update-kompakt-Nvidia-Affaere-Coding-Agenten-Gemini-4-Carbon-Muse-Ember-11520732.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794405600.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Das „KI-Update“ liefert dreimal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-11T16:05:53.507305+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI-Stimmen mit Emotionen: DeepL stellt neues Modell Aure vor",
+    "url": "https://www.heise.de/news/KI-Stimmen-mit-Emotionen-DeepL-stellt-neues-Modell-Aure-vor-11521062.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794405120.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Mit einem neuen KI-Modell will DeepL menschenähnliche Übersetzungen mit ausdrucksstarken, generierten Stimmen ermöglichen. Welche Techniken Aure dabei nutzt.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-11T16:05:53.507351+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Grok Build: KI-Apps geben Geschäftsgeheimnisse und persönliche Daten preis",
+    "url": "https://www.heise.de/news/Grok-Build-KI-Apps-geben-Geschaeftsgeheimnisse-und-persoenliche-Daten-preis-11520974.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794402120.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Tausende KI-generierte Grok-Apps waren für Fremde erreichbar. Darunter fanden Sicherheitsforscher vertrauliche Daten von SpaceXSI und anderen Unternehmen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-11T16:05:53.507429+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Gemini Robotics 2.5 sortiert Metallteile bei Mercedes-Benz mit 96 Prozent Erfolg",
+    "url": "https://www.heise.de/news/Gemini-Robotics-2-5-sortiert-Metallteile-bei-Mercedes-Benz-mit-96-Prozent-Erfolg-11520722.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794400920.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Google zeigt Gemini Robotics 2.5 – ein KI-Modell, das Roboter geschickter machen soll. Ein Experiment bei Mercedes-Benz erreichte 96 Prozent Erfolgsrate.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-11T16:05:53.507494+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Auto SR: Microsofts KI-Upscaler läuft auf der Xbox Ally X jetzt auch mobil",
+    "url": "https://www.heise.de/news/Auto-SR-Microsofts-KI-Upscaler-laeuft-auf-der-Xbox-Ally-X-jetzt-auch-mobil-11520596.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794394800.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Microsofts KI-Upscaler Auto SR ist auf der ROG Xbox Ally X offiziell verfügbar und läuft nun auch im Handheld-Modus. Neu ist ein Modus für bis zu 120 fps.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-11T16:05:53.507666+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "Nahles: „800.000 Jobs werden aufgrund von KI wegfallen“",
     "url": "https://www.heise.de/news/Nahles-800-000-Jobs-werden-aufgrund-von-KI-wegfallen-11520276.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1794386880.0,
