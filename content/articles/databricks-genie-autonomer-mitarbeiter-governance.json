@@ -5,8 +5,8 @@
   "type": "analysis",
   "author": "philipp-paulik",
   "lang": "de",
-  "published": "2026-11-12T08:51:00+01:00",
-  "modified": "2026-11-12T08:51:00+01:00",
+  "published": "2026-11-12T09:03:00+01:00",
+  "modified": "2026-11-12T09:03:00+01:00",
   "dek": "Databricks baut Genie vom Analyse-Assistenten zum dauerhaft laufenden KI-Mitarbeiter um. Spannender als die Autonomie ist das Gerüst drumherum: eine von Agenten gebaute, von Menschen kuratierte Unternehmens-Ontologie und eine Kontrollebene mit Budgets und Auditspur.",
   "tags": [
     "Databricks",
@@ -72,7 +72,7 @@
     },
     {
       "q": "Wie verhindert Genie, dass Mitarbeitende Daten sehen, die sie nicht sehen dürfen?",
-      "a": "Laut Databricks genie handelt mit der Identität der anfragenden Person und deren Berechtigungen. Die Suche indiziert die Zugriffsrechte der Quellsysteme mit und erzwingt sie vor jeder Antwort; fehlende Rechte muss die Person selbst beantragen. Das ist eine Anbieterbeschreibung, keine von uns geprüfte Sicherheitsgarantie."
+      "a": "Laut Databricks handelt Genie mit der Identität der anfragenden Person und deren Berechtigungen. Die Suche indiziert die Zugriffsrechte der Quellsysteme mit und erzwingt sie vor jeder Antwort; fehlende Rechte muss die Person selbst beantragen. Das ist eine Anbieterbeschreibung, keine von uns geprüfte Sicherheitsgarantie."
     },
     {
       "q": "Was ist Genie Ontology?",

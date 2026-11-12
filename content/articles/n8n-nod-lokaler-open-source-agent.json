@@ -5,8 +5,8 @@
   "type": "explainer",
   "author": "philipp-paulik",
   "lang": "de",
-  "published": "2026-11-12T08:51:00+01:00",
-  "modified": "2026-11-12T08:51:00+01:00",
+  "published": "2026-11-12T09:03:00+01:00",
+  "modified": "2026-11-12T09:03:00+01:00",
   "dek": "n8n Labs veröffentlicht Nod: einen persönlichen Agenten für Mac und Windows, der in eigener Sandbox arbeitet, den KI-Anbieter frei wählen lässt und vor folgenreichen Aktionen eine separate Rechteprüfung vorsieht. Ein Blick auf Konzept, Sicherheitsmodell und Grenzen.",
   "tags": [
     "n8n",

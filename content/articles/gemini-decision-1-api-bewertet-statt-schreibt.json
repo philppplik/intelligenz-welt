@@ -5,8 +5,8 @@
   "type": "news",
   "author": "philipp-paulik",
   "lang": "de",
-  "published": "2026-11-12T08:51:00+01:00",
-  "modified": "2026-11-12T08:51:00+01:00",
+  "published": "2026-11-12T09:03:00+01:00",
+  "modified": "2026-11-12T09:03:00+01:00",
   "dek": "Mit der Decisions API stellt Google ein Modell vor, das bis zu 1.000 Ja/Nein-, Auswahl- oder Rubrikfragen zu einem multimodalen Input in einem Durchlauf bewertet - mit Wahrscheinlichkeiten statt generiertem Text und ohne berechnete Ausgabetokens.",
   "tags": [
     "Google",
