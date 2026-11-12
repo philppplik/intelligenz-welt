@@ -1,0 +1,95 @@
+{
+  "slug": "gemini-decision-1-api-bewertet-statt-schreibt",
+  "title": "Gemini Decision 1: Googles Modell bewertet Antwortoptionen, statt Text zu schreiben",
+  "section": "news",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-12T08:51:00+01:00",
+  "modified": "2026-11-12T08:51:00+01:00",
+  "dek": "Mit der Decisions API stellt Google ein Modell vor, das bis zu 1.000 Ja/Nein-, Auswahl- oder Rubrikfragen zu einem multimodalen Input in einem Durchlauf bewertet - mit Wahrscheinlichkeiten statt generiertem Text und ohne berechnete Ausgabetokens.",
+  "tags": [
+    "Google",
+    "Gemini",
+    "API",
+    "Agenten",
+    "Entscheidungsmodelle"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine Waagschale aus Licht, die leuchtende Optionen-Chips gegeneinander wiegt, darunter ein dunkler Schaltkreis-Hintergrund in Dunkelblau mit Blau- und Bernstein-Akzenten.",
+    "caption": "Symbol für das Abwägen von Antwortoptionen statt Textgenerierung. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google hat am 11. November die Gemini Decisions API vorgestellt, dahinter steckt das neue Modell Gemini Decision 1 (gemini-decision-1). Die Schnittstelle ist für abgeschlossene Entscheidungen gebaut: Werkzeugauswahl, Policy-Prüfungen, Modell-Routing, Kontextbewertung. Statt eine Antwort Token für Token zu generieren, bewertet das Modell vorgegebene Optionen in einem einzigen Vorwärtsdurchlauf und gibt Wahrscheinlichkeiten und Konfidenzwerte zurück."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Fragetypen, ein geteilter Input"
+    },
+    {
+      "t": "p",
+      "x": "Pro Anfrage akzeptiert die API einen multimodalen Input - Text, Bilder, Audio, Video und PDFs, zusammen bis zu 256.000 Tokens - und bis zu 1.000 unabhängige Fragen dazu. Drei Typen stehen zur Verfügung: „noul“ für Ja/Nein-Prüfungen mit optionalen Kriterien, „choice“ für Auswahl zwischen 2 und 255 Optionen mit normalisierten Wahrscheinlichkeiten und „score“ für geordnete Rubriken mit Wahrscheinlichkeiten je Stufe. Jede Antwort enthält einen Konfidenzwert zwischen 0 und 1, über den Code unklare Fälle an einen Fallback oder einen Menschen weiterreichen kann. Abgerechnet wird der geteilte Input einmal pro Anfrage, egal wie viele Fragen dazu gestellt werden; jede Frage fügt nur ihre eigenen Instruktions- und Kriterien-Tokens hinzu."
+    },
+    {
+      "t": "h2",
+      "x": "Latenz und Preis"
+    },
+    {
+      "t": "p",
+      "x": "Google gibt 150 bis 250 Millisekunden Ende-zu-Ende-Latenz an, davon 50 bis 100 Millisekunden mediane Modellberechnung, bei Kontexten bis 16.000 Tokens nahezu flach von 1 bis 100 Fragen pro Anfrage. Der Preis liegt bei 0,10 Dollar pro Million Eingabetokens; Ausgabetokens werden nicht berechnet. Nach Googles eigenem Benchmark-Vergleich ist Decision 1 über die getestete Suite damit knapp fünfmal günstiger als Gemini 3.5 Flash-Lite über die Interactions API - Herstellerangabe, die wir nicht nachgemessen haben. In Googles Benchmarks zu Agenten-Routing, Reasoning, Ranking und multimodalem Verständnis führt das Modell laut Ankündigung die Suite an, mit dem niedrigsten Kalibrierungsfehler."
+    },
+    {
+      "t": "h2",
+      "x": "Wo Google es selbst einsetzt"
+    },
+    {
+      "t": "p",
+      "x": "Als Referenznutzer nennt der Beitrag eigene Produkte: Gemini Notebook nutzt die API als Echtzeit-Router, der Anfragen der passenden Modellstufe zuweist - laut Google mit bis zu 40 Prozent geringerer Latenz bei Alltagsanfragen. Die Rapid-Canvas-Funktion in Stitch erzeugt damit in Sekunden klickbare Wireframes, die Labs-App CC wählt damit Emoji-Reaktionen aus über 200 Optionen, und die Google-Suche nutzt die API als Sicherheitsschicht für MCP-Werkzeuge."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit"
+    },
+    {
+      "t": "p",
+      "x": "Gemini Decision 1 läuft über die Gemini API (v1beta) in Google AI Studio, inklusive eines kostenlosen Kontingents zum Prototyping; SDKs gibt es für Python, JavaScript und REST. Integrationen für OpenRouter, LangChain, Vercel, LiteLLM, Pydantic AI, Pipecat, LiveKit und OpenCode werden laut Google ausgerollt, Unterstützung in Google Cloud soll folgen. Für Agenten-Architekturen liegt der Reiz auf der Hand: Wer heute Freitext generiert und ihn per Parser wieder in eine Entscheidung zurückverwandelt, bekommt hier kalibrierte Wahrscheinlichkeiten, auf die Code direkt verzweigen kann. Wir haben weder den API-Zugang noch Preise oder Latenzen durch einen eigenen API-Aufruf getestet; Verfügbarkeit und Konditionen sind die Angaben der Google-Ankündigung vom 11. November."
+    }
+  ],
+  "key_takeaways": [
+    "Gemini Decision 1 bewertet bis zu 1.000 Ja/Nein-, Auswahl- oder Rubrikfragen zu einem multimodalen Input (Text, Bild, Audio, Video, PDF, bis 256K Tokens) in einem Durchlauf - mit Wahrscheinlichkeiten und Konfidenzwerten statt generiertem Text.",
+    "Preis: 0,10 Dollar pro Million Eingabetokens, keine Ausgabetoken-Kosten; der geteilte Input wird einmal pro Anfrage berechnet, egal wie viele Fragen folgen.",
+    "Google nennt 150-250 ms Ende-zu-Ende-Latenz und knapp fünfmal niedrigere Kosten gegenüber Gemini 3.5 Flash-Lite im eigenen Benchmark - Herstellerangaben ohne unsere Nachmessung.",
+    "Verfügbar über die Gemini API in AI Studio mit kostenlosem Kontingent; Integrationen für OpenRouter, LangChain, Vercel und weitere Frameworks werden ausgerollt."
+  ],
+  "faq": [
+    {
+      "q": "Wofür ist ein Entscheidungsmodell gedacht?",
+      "a": "Für abgeschlossene Entscheidungen in Software: Welches Werkzeug aufrufen, welche Route nehmen, ob eine Policy erfüllt ist, wie ein Ergebnis zu benoten ist. Statt Text zu erzeugen, liefert das Modell typisierte Wahrscheinlichkeiten, auf die Code direkt reagieren kann."
+    },
+    {
+      "q": "Was kostet Gemini Decision 1?",
+      "a": "Laut Googles Ankündigung vom 11. November: 0,10 Dollar pro Million Eingabetokens, Ausgabetokens werden nicht berechnet. Der geteilte Input wird einmal pro Anfrage abgerechnet, unabhängig von der Zahl der Fragen; ein kostenloses Kontingent in AI Studio erlaubt erste Tests."
+    },
+    {
+      "q": "Ersetzt das Modell ein generatives Modell?",
+      "a": "Nein. Es beantwortet nur vorgegebene, geschlossene Fragen und schreibt keinen Freitext. In einer Agenten-Architektur ergänzt es generative Modelle, etwa als Routing- oder Prüfschicht vor dem teuren Aufruf."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "related": [
+    "gemini-4-carbon-fuer-entwickler-offen",
+    "mka-test-visuelle-wissensarbeit-kosten"
+  ],
+  "disclosure": null
+}

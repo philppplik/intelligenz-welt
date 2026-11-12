@@ -1,0 +1,103 @@
+{
+  "slug": "n8n-nod-lokaler-open-source-agent",
+  "title": "Nod von n8n: Ein lokaler Open-Source-Agent mit getrennter Rechteprüfung",
+  "section": "praxis",
+  "type": "explainer",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-12T08:51:00+01:00",
+  "modified": "2026-11-12T08:51:00+01:00",
+  "dek": "n8n Labs veröffentlicht Nod: einen persönlichen Agenten für Mac und Windows, der in eigener Sandbox arbeitet, den KI-Anbieter frei wählen lässt und vor folgenreichen Aktionen eine separate Rechteprüfung vorsieht. Ein Blick auf Konzept, Sicherheitsmodell und Grenzen.",
+  "tags": [
+    "n8n",
+    "Nod",
+    "Agenten",
+    "Open Source",
+    "Praxis"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein kleiner leuchtender Würfel-Computer in einer transparenten Sandkasten-Kuppel auf einem Schreibtisch, verbunden mit schwebenden App-Kacheln, Dunkelblau mit Blau- und Grün-Akzenten.",
+    "caption": "Symbol für den lokalen Agenten in eigener Sandbox. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "n8n, bekannt für seine Automatisierungsplattform, hat am 10. November mit Nod ein Experiment aus dem neuen n8n Labs veröffentlicht: einen persönlichen Agenten als eigenständige App, die lokal auf deinem Mac oder Windows-Rechner läuft - ohne n8n-Konto, ohne Server-Setup. Nod bekommt einen eigenen Computer im Computer: eine private virtuelle Maschine mit eigenem Browser, in der es arbeitet, bis eine Aufgabe erledigt ist. Laut n8n steht der Code unter Apache-2.0-Lizenz auf GitHub, der KI-Anbieter ist frei wählbar - per API-Schlüssel, über den eigenen ChatGPT-Tarif oder über ein lokales Open-Source-Modell."
+    },
+    {
+      "t": "h2",
+      "x": "Wofür Nod gedacht ist"
+    },
+    {
+      "t": "p",
+      "x": "Nod richtet sich an Einzelpersonen: Es verbindet sich mit deinen Konten - n8n nennt Gmail, Kalender, Drive und Slack - und arbeitet außerdem auf Websites, für die es gar keine Integration gibt. Die Beispieljobs aus dem Ankündigungsbeitrag: Abos kündigen und Rückhalteangebote ablehnen, Preise beobachten, ein Hotel nach deinem Okay buchen, monatlich Rechnungen aus Lieferantenportalen laden oder Zahlen aus Dashboards ohne Exportfunktion ziehen. Nod arbeitet auch vorausschauend: Es liest die verbundenen Apps und schlägt Aufgaben vor, die es übernehmen könnte. Mehrere Jobs laufen parallel im Hintergrund, Wiederkehrendes - etwa ein Morgenbriefing oder ein Preischeck - lässt sich per Zeitplan automatisieren. Du sprichst mit Nod in der App oder über Telegram und WhatsApp."
+    },
+    {
+      "t": "h2",
+      "x": "Gedächtnis und Stil"
+    },
+    {
+      "t": "p",
+      "x": "Nod soll sich über Monate an Unterhaltungen erinnern; im öffentlichen Langzeitgedächtnis-Benchmark LongMemEval erreichte es laut n8n 93,2 Prozent - Herstellerangabe, die wir nicht nachgemessen haben. Ist Gmail verbunden, lernt der Agent deinen Schreibstil, damit Entwürfe nach dir klingen. Außerdem notiert Nod, wie es eine Aufgabe gelöst hat, und nutzt diese Notizen beim nächsten Mal; ändert sich eine Website, korrigiert es sie. Alles Gespeicherte lässt sich laut n8n einsehen, bearbeiten und löschen."
+    },
+    {
+      "t": "h2",
+      "x": "Das Sicherheitsmodell"
+    },
+    {
+      "t": "p",
+      "x": "Der interessanteste Teil ist die Rechtefrage. Bevor Nod etwas versendet, bezahlt, postet oder löscht, das du nicht angefragt hast, prüft eine separate Instanz, ob deine Worte die Aktion wirklich decken - laut n8n kann eine Webseite oder E-Mail Nod keine Befehle erteilen. Gespeicherte Logins und Karten sind lokal verschlüsselt und werden über Formulare eingegeben, die das Modell nicht lesen kann. Jede Anmeldung, Kartennutzung und Aktion wird mit Kosten geloggt. Wichtig, und n8n sagt es selbst: Die Rechteprüfung ist ebenfalls ein Modell und kann Fehler machen - deshalb fragt Nod nach, wenn deine Anweisung eine Aktion nicht eindeutig abdeckt."
+    },
+    {
+      "t": "h2",
+      "x": "Kostenkontrolle und Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Nod selbst ist kostenlos; du zahlst nur deinen KI-Anbieter. Weil frühe Tester überrascht waren, was Aufgaben kosten können, hat n8n Leitplanken eingebaut: Jede Aufgabe endet mit einem Kostenbeleg, es gibt ein monatliches Limit, ab fünf Dollar pro Aufgabe (anpassbar) meldet sich Nod vor Weitermachen, und jeder Zeitplan zeigt seine geschätzten Monatskosten. Die Grenzen sind ehrlich benannt: Schläft der Laptop, stoppt Nod (eine gehostete Version steht auf der Roadmap), jede Installation hat genau eine Besitzerin oder einen Besitzer, und telefonieren kann es nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Nod ist die selbst gehostete, modell-offene Antwort auf die wachsende Zahl gehosteter Agenten-Plattformen. Der Ansatz - eigene Sandbox, getrennte Rechteprüfung, Geheimnisse, die das Modell nie sieht, Aktions- und Kostenbelege - ist als Referenzdesign lesenswert, auch für alle, die eigene Agenten bauen. Wer es ausprobieren will: Download für Mac und Windows über nod.n8n.io, Quellcode und Doku auf GitHub. Als Research Preview ist es genau das: eine Vorschau, kein fertiges Produkt. Wir haben die App nicht installiert und die Sicherheitsversprechen nicht durch eigene Tests überprüft. Lokal bedeutet zudem nicht, dass alle Aufgabendaten lokal bleiben: Laut n8n erhält der gewählte KI-Anbieter die für den jeweiligen Auftrag nötigen Daten."
+    }
+  ],
+  "key_takeaways": [
+    "Nod ist ein Open-Source-Agent (Apache 2.0) von n8n Labs für Mac und Windows: eigene lokale Sandbox mit eigenem Browser, frei wählbarer KI-Anbieter, kein n8n-Konto nötig.",
+    "Der Agent arbeitet in verbundenen Apps (Gmail, Kalender, Drive, Slack) und auf beliebigen Websites; Beispiele: Abos kündigen, Preise beobachten, Rechnungen aus Portalen ziehen - auch parallel und per Zeitplan.",
+    "Sicherheitsmodell: separate Rechteprüfung vor Senden/Zahlen/Löschen, lokal verschlüsselte Zugangsdaten, die das Modell nie sieht, vollständiges Aktions- und Kostenprotokoll. n8n räumt selbst ein, dass die Prüfung als Modell Fehler machen kann.",
+    "Grenzen: stoppt beim Laptop-Schlafmodus, nur eine Person pro Installation, keine Telefonate; gehostete Version auf der Roadmap."
+  ],
+  "faq": [
+    {
+      "q": "Brauche ich n8n, um Nod zu nutzen?",
+      "a": "Nein. Nod ist eine eigenständige App ohne n8n-Konto und ohne Server. Wer bereits n8n nutzt, kann seine Instanz verbinden, damit Nod mit den eigenen Workflows arbeitet."
+    },
+    {
+      "q": "Welche Kosten entstehen?",
+      "a": "Nod ist kostenlos und quelloffen; du zahlst nur deinen KI-Anbieter - per API-Schlüssel, über einen bestehenden ChatGPT-Tarif oder ohne externe Modellgebühr bei einem lokal betriebenen Open-Source-Modell; eigene Hardware und Strom können dennoch kosten. Eingebaut sind Kostenbelege, ein Monatslimit und eine Rückfrage ab fünf Dollar pro Aufgabe."
+    },
+    {
+      "q": "Wie sicher ist ein Agent mit Zugriff auf meine Konten?",
+      "a": "Nods Antwort: lokale Sandbox, eine getrennte Prüfinstanz vor jeder folgenschweren Aktion, verschlüsselte Zugangsdaten in für das Modell unlesbaren Formularen und ein vollständiges Protokoll. Ganz fehlerfrei ist das nicht - n8n weist selbst darauf hin, dass die Prüfinstanz ein Modell ist und Fehler machen kann."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Meet Nod: a standalone personal agent from n8n Labs that runs on your computer",
+      "publisher": "n8n Blog",
+      "url": "https://blog.n8n.io/meet-nod/",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "related": [
+    "claude-apps-konnektoren-sheets-whiteboards-reset",
+    "oumi-faie-agenten-bauen-agenten"
+  ],
+  "disclosure": null
+}

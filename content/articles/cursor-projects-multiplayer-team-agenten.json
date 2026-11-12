@@ -1,0 +1,95 @@
+{
+  "slug": "cursor-projects-multiplayer-team-agenten",
+  "title": "Cursor Projects wird Multiplayer: Ein geteilter Arbeitsraum für Teams und ihre Agenten",
+  "section": "tools",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-12T08:51:00+01:00",
+  "modified": "2026-11-12T08:51:00+01:00",
+  "dek": "Cursor öffnet seine Agenten-Workspaces für ganze Teams: geteiltes Aufgabenboard, gemeinsamer Kontextspeicher und Agenten, die sich über Teamgrenzen hinweg abstimmen. Die Beta rollt ab sofort für alle Nutzer aus.",
+  "tags": [
+    "Cursor",
+    "Coding-Agenten",
+    "Tools",
+    "Teamarbeit",
+    "Beta"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Mehrere leuchtende Schreibtisch-Module, die über Lichtbahnen mit einem gemeinsamen zentralen Aufgabenboard verbunden sind, Dunkelblau mit Blau- und Grün-Akzenten.",
+    "caption": "Symbol für Menschen und Agenten in einem geteilten Arbeitsraum. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Cursor hat seine im September eingeführten Projects am 10. November für Teams geöffnet. Bisher dirigierte eine Person eine Flotte von Coding-Agenten über einen Koordinator; jetzt lassen sich Teammitglieder in ein Project einladen. Nach Cursors Darstellung ist es der erste Arbeitsraum, in dem ein Software-Team Seite an Seite mit allen seinen Agenten arbeitet - diese Erstmaligkeit ist eine Herstellerangabe, keine von uns unabhängig geprüfte Erstmaligkeit."
+    },
+    {
+      "t": "h2",
+      "x": "Geteiltes Board, geteilter Kontext"
+    },
+    {
+      "t": "p",
+      "x": "Jedes Teammitglied behält seinen eigenen Eins-zu-eins-Chat mit seinem Koordinator und seinen Worker-Agenten, samt lokalem Kontext. Darüber liegt ein gemeinsamer Kontextspeicher für Anforderungsdokumente, Diagramme, Spezifikationen und Mockups. Ein geteiltes Aufgabenboard zeigt, wer woran arbeitet, welche Agenten gerade laufen und welcher Pull Request hinter jeder Aufgabe steckt. Entscheidungen aus einem Chat sind laut Cursor für jeden Agenten im Project sichtbar - und neue Teammitglieder starten mit vorkonfiguriertem, aktuellem Kontext statt mit leerem Setup."
+    },
+    {
+      "t": "h2",
+      "x": "Agenten stimmen sich untereinander ab"
+    },
+    {
+      "t": "p",
+      "x": "Das eigentliche Neuland: Agenten verschiedener Teammitglieder können sich gegenseitig abstimmen. Cursor beschreibt zwei Szenarien: Baut ein Entwickler Reviews in die Produktseite, während eine Designerin dieselbe Seite neu gestaltet, erkennen ihre Koordinatoren die Überschneidung früh und synchronisieren sich, sodass die Reviews direkt ins neue Design gebaut werden. Liest ein Feature aus einer Datenbank, deren Schema ein Teammitglied gerade ändert, einigen sich die Agenten vorab auf die Reihenfolge der Arbeit - statt am Ende in einen Merge-Konflikt zu laufen."
+    },
+    {
+      "t": "h2",
+      "x": "Praxisbeleg aus dem eigenen Haus"
+    },
+    {
+      "t": "p",
+      "x": "Als härtesten internen Test nennt Cursor die eigene Bereitschaftsrotation: Mehrere Teams führen ihren On-Call-Dienst inzwischen in einem geteilten Project. Bei der Übergabe übernimmt der Koordinator des Nachfolgers den Stand - welche Arbeit in der Luft hängt, welche Vorfälle offen sind, welche Kanäle und Boards zu beobachten sind. Laufende Arbeit kann direkt an den Agenten der nächsten Person übergeben werden."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit und Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Multiplayer Projects rollt ab sofort als Beta für alle Nutzer aus; starten lässt es sich über die linke Navigation in Cursor. Der Schritt verschiebt die Multi-Agenten-Frage von „eine Person, viele Agenten“ zu „viele Personen, viele Agenten“ - und damit tauchen neue Governance-Fragen auf: Welcher Agent darf was in Produktion ändern, und wer haftet für eine Absprache, die zwei Agenten ohne Mensch getroffen haben? Der Beitrag beschreibt dazu keine detaillierten Freigabe- oder Produktionsrechte. Teams sollten diese vor dem Einsatz klären. Wir haben die Beta nicht selbst getestet."
+    }
+  ],
+  "key_takeaways": [
+    "Cursor Projects ist ab sofort im Multiplayer: Teammitglieder teilen sich einen Workspace mit geteiltem Aufgabenboard und gemeinsamem Kontextspeicher für Doku, Diagramme und Spezifikationen.",
+    "Jede Person behält ihren eigenen Koordinator-Chat; Entscheidungen aus einem Chat sind für alle Agenten im Project sichtbar, neue Mitglieder starten mit vorbereitetem Kontext.",
+    "Agenten verschiedener Teammitglieder stimmen sich laut Cursor untereinander ab - etwa um Reihenfolgekonflikte bei Schemaänderungen vorab zu klären.",
+    "Die Beta rollt für alle Nutzer aus; offene Governance-Fragen (welcher Agent darf in Produktion?) beantwortet die Ankündigung nicht."
+  ],
+  "faq": [
+    {
+      "q": "Was ist der Unterschied zu den bisherigen Projects?",
+      "a": "Bisher steuerte eine Person ihre Agenten-Flotte allein. Jetzt arbeitet ein ganzes Team im selben Project, mit geteiltem Aufgabenboard und Kontext - und die Agenten verschiedener Personen können sich abstimmen."
+    },
+    {
+      "q": "Sehen meine Teammitglieder meine Agenten-Chats?",
+      "a": "Cursor beschreibt je Person einen eigenen Eins-zu-eins-Chat und zusätzlich ein geteiltes Aufgabenboard sowie einen gemeinsamen Kontextspeicher. Entscheidungen aus einem Chat seien für alle Agenten im Project zugänglich. Der Beitrag belegt damit keine allgemeine Zusage, dass sämtliche Chat-Inhalte gegenüber anderen Personen privat bleiben; Freigaben und Zugriffsrechte sollten Teams gesondert prüfen."
+    },
+    {
+      "q": "Wie bekomme ich Zugang?",
+      "a": "Multiplayer Projects rollt als Beta für alle Cursor-Nutzer aus. Zum Starten legst du ein Project über die linke Navigation an und lädst dein Team ein."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cursor Projects is now multiplayer",
+      "publisher": "Cursor",
+      "url": "https://cursor.com/blog/projects-multiplayer",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "related": [
+    "oumi-faie-agenten-bauen-agenten",
+    "claude-code-settings-secrets-github-leak"
+  ],
+  "disclosure": null
+}

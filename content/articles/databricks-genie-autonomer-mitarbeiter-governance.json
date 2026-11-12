@@ -1,0 +1,95 @@
+{
+  "slug": "databricks-genie-autonomer-mitarbeiter-governance",
+  "title": "Databricks Genie wird Dauerjob-Agent: Autonomie nur mit Ontologie, Budgets und Auditspur",
+  "section": "analyse",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-12T08:51:00+01:00",
+  "modified": "2026-11-12T08:51:00+01:00",
+  "dek": "Databricks baut Genie vom Analyse-Assistenten zum dauerhaft laufenden KI-Mitarbeiter um. Spannender als die Autonomie ist das Gerüst drumherum: eine von Agenten gebaute, von Menschen kuratierte Unternehmens-Ontologie und eine Kontrollebene mit Budgets und Auditspur.",
+  "tags": [
+    "Databricks",
+    "Genie",
+    "Enterprise-KI",
+    "Agenten",
+    "Governance"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leuchtendes Flaschengeist-Symbol in einem Kontrollraum aus Glas, umgeben von Messinstrumenten und einem Regelwerk-Buch aus Licht, Dunkelblau mit Blau- und Violett-Akzenten.",
+    "caption": "Symbol für gebändigte Autonomie mit Kontrollebene. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Databricks hat am 11. November den Umbau von Genie angekündigt: Weg vom Assistenten, der einmal antwortet, hin zu einem Agenten, der Daueraufgaben übernimmt - etwa Schadensmuster in Versicherungsfällen beobachten und Fallakten an Underwriter routen, oder Marketing-Kampagnen rund um die Uhr betreuen und Budgetänderungen wöchentlich zur Freigabe vorlegen. Erreichbar ist Genie über die eigene Oberfläche Genie One, E-Mail, Slack und Microsoft Teams; Jobs laufen auf Zeitplan oder auf Auslöser, etwa wenn eine Kennzahl kippt. Databricks nennt Zillow, Unilever, adidas, Atlassian und AstraZeneca als produktive Nutzer der bisherigen Generation."
+    },
+    {
+      "t": "h2",
+      "x": "Die Ontologie als Gedächtnis des Unternehmens"
+    },
+    {
+      "t": "p",
+      "x": "Damit ein Dauerjob-Agent nicht am falschen Begriff scheitert, bekommt er mit Genie Ontology eine Landkarte des Unternehmens: Definitionen, Kennzahlen, Beziehungen, Organisationswissen. Den Aufbau übernehmen weitgehend Agenten, die aus vorhandenen Dashboards, Abfragen und Notebooks lernen; die Hoheit bleibt bei Menschen. Teams legen verbindliche Definitionen im Unity Catalog fest, und ein Algorithmus namens OntoRank gibt diesen Vorrang vor automatisch gelerntem Wissen. Organisationsverzeichnisse - beginnend mit Workday - liefern Personen, Teams und Berichtslinien dazu. In einem mit dem KI-Dienstleister Turing gebauten Benchmark beantwortete Genie mit dieser Ontologie 91 Prozent der Aufgabenläufe korrekt, 1,6-mal so oft wie der stärkere von zwei getesteten Frontier-Agenten, bei weniger als halb so vielen Tokens - Angaben aus dem Databricks-Blog, die wir nicht nachgemessen haben; dass der Benchmark mit einem Partner des Anbieters entstand, gehört zur Einordnung dazu."
+    },
+    {
+      "t": "h2",
+      "x": "Suche, die Berechtigungen mitbringt"
+    },
+    {
+      "t": "p",
+      "x": "Neu ist außerdem Genie Search, eine hybride Suche: ein Index über Geschäftsanwendungen wie Google Drive, Jira, Confluence, Workday und SharePoint, ergänzt um Live-Abfragen über MCP und SQL. Der entscheidende Punkt steht fast beiläufig im Text: Die Berechtigungen der Quellsysteme werden mit indiziert und vor jeder Antwort erzwungen - niemand soll in Genie ein Dokument sehen, das er in der Originalanwendung nicht öffnen könnte. Bei der Einführung ist zu prüfen, ob diese Rechteübernahme in den eigenen Quellen und Konnektoren wie erwartet funktioniert."
+    },
+    {
+      "t": "h2",
+      "x": "Unity Gateway als Kontrollebene"
+    },
+    {
+      "t": "p",
+      "x": "Das eigentliche Steuerungsstück ist Unity Gateway: Admins regeln dort Konnektoren, MCP-Werkzeuge und Freigabepflichten, setzen Budgets und Ausgabendeckel pro Arbeitsbereich und Nutzer und bekommen jede Aktion als prüfbare Spur. Genie handelt grundsätzlich mit der Identität der anfragenden Person und sieht nur, was diese sehen darf; braucht es mehr Zugriff, erstellt es einen Antrag, den die Person selbst absendet. Dieselben Regeln gelten, wenn externe Agenten wie Claude Genie über MCP aufrufen. Über OpenSharing lassen sich kuratierte Genie-Agenten sogar mit Partnern und Kunden teilen; Clean Rooms beantworten Fragen, ohne die zugrunde liegenden Daten offenzulegen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die Ankündigung rückt neben der Modellqualität vor allem Kontext und Kontrolle in den Vordergrund. Databricks' These - dass eine kuratierte Ontologie und harte Budget- und Rechtegrenzen die Voraussetzung für dauerhaft laufende Agenten sind - ist plausibel, aber noch kein Nachweis für die Zuverlässigkeit eines konkreten Einsatzes. Zwei Lesarten bleiben: Erstens ist der Vergleichswert von 91 Prozent ein Hersteller-Benchmark mit Partnertests, kein unabhängiger Beleg. Zweitens verlagert das Modell Macht: Wer die Ontologie kuratiert und die Gateway-Regeln setzt, bestimmt faktisch, was im Unternehmen als richtige Definition gilt. Das ist Governance-Frage, nicht Technikfrage - und gehört in jede Einführung eines solchen Systems. Die beschriebenen Funktionen und Rechtegarantien sind Anbieterangaben; wir haben keinen eigenen Produkt- oder Sicherheitstest durchgeführt."
+    }
+  ],
+  "key_takeaways": [
+    "Databricks macht Genie zum dauerhaft laufenden KI-Mitarbeiter: Daueraufgaben auf Zeitplan oder Auslöser, erreichbar über Genie One, E-Mail, Slack und Teams, mit Freigabepunkten statt Blindflug.",
+    "Genie Ontology liefert den Geschäftskontext - von Agenten aus Dashboards und Abfragen aufgebaut, von Menschen über Unity Catalog kuratiert; OntoRank gibt verbindlichen Definitionen Vorrang.",
+    "Laut Databricks erzwingt Genie Search die Berechtigungen der Quellsysteme vor jeder Antwort; Unity Gateway bietet Werkzeugfreigaben, Budgets, Ausgabendeckel und eine Auditspur. Kein eigener Sicherheitstest.",
+    "Der zitierte 91%-Vergleichswert stammt aus einem Benchmark mit dem Databricks-Partner Turing - Herstellerangabe ohne unabhängige Prüfung, entsprechend einzuordnen."
+  ],
+  "faq": [
+    {
+      "q": "Was unterscheidet den neuen Genie vom bisherigen?",
+      "a": "Der bisherige Genie beantwortete Datenfragen auf Anfrage. Die neue Version übernimmt fortlaufende Aufgaben: Sie beobachtet Kennzahlen, holt fehlende Eingaben nach, schlägt Budgetänderungen vor und arbeitet, bis der Job erledigt ist - mit Freigabepunkten, die Menschen setzen."
+    },
+    {
+      "q": "Wie verhindert Genie, dass Mitarbeitende Daten sehen, die sie nicht sehen dürfen?",
+      "a": "Laut Databricks genie handelt mit der Identität der anfragenden Person und deren Berechtigungen. Die Suche indiziert die Zugriffsrechte der Quellsysteme mit und erzwingt sie vor jeder Antwort; fehlende Rechte muss die Person selbst beantragen. Das ist eine Anbieterbeschreibung, keine von uns geprüfte Sicherheitsgarantie."
+    },
+    {
+      "q": "Was ist Genie Ontology?",
+      "a": "Eine maschinell aufgebaute, menschlich kuratierte Landkarte des Unternehmens: Definitionen, Kennzahlen und Beziehungen, aus denen alle Agenten arbeiten. Verbindliche Definitionen aus dem Unity Catalog haben dabei Vorrang vor automatisch gelerntem Wissen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "The new Genie: autonomous AI for complex enterprise work",
+      "publisher": "Databricks Blog",
+      "url": "https://www.databricks.com/blog/new-genie-autonomous-ai-complex-enterprise-work",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "related": [
+    "openai-unternehmensprofile-chatgpt-business-hub",
+    "anthropic-agenten-gedaechtnis-dreaming"
+  ],
+  "disclosure": null
+}

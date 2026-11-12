@@ -1,0 +1,107 @@
+{
+  "slug": "anthropic-ipo-preisspanne-70-78-dollar",
+  "title": "Anthropic-IPO: Preisspanne 70 bis 78 Dollar, bis zu 1,4 Billionen Dollar Bewertung",
+  "section": "trends",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-12T08:51:00+01:00",
+  "modified": "2026-11-12T08:51:00+01:00",
+  "dek": "Anthropic hat die Roadshow für seinen Börsengang gestartet: 825 Millionen Aktien zu voraussichtlich 70 bis 78 Dollar, Ticker-Symbol ANT an der Nasdaq. Die Zahlen aus der Einreichung zeigen, wie schnell das KI-Geschäft wächst - und wie teuer es ist.",
+  "tags": [
+    "Anthropic",
+    "IPO",
+    "Markt",
+    "Claude",
+    "Analyse"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine steigende leuchtende Treppe aus Balken, die in ein Börsenticker-Band aus Licht mündet, dunkelblauer Hintergrund mit Blau- und Gold-Akzenten.",
+    "caption": "Symbol für den Gang an die Börse. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat am 10. November offiziell die Roadshow für seinen geplanten Börsengang gestartet. Laut Mitteilung umfasst das Angebot 825 Millionen Class-A-Aktien, davon rund 801,4 Millionen von Anthropic selbst und etwa 23,6 Millionen von bestehenden Anteilseignern; dazu kommt eine 30-tägige Mehrzuteilungsoption der Banken über bis zu 123,75 Millionen weitere Aktien. Die erwartete Preisspanne liegt bei 70 bis 78 Dollar je Aktie, gelistet werden soll an der Nasdaq unter dem Kürzel ANT. Die Registrierung bei der US-Börsenaufsicht ist eingereicht, aber noch nicht wirksam - verkauft werden darf erst danach."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Spanne bedeutet"
+    },
+    {
+      "t": "p",
+      "x": "Am oberen Ende der Spanne würde das gesamte Basisangebot nach CNBC bis zu 64,35 Milliarden Dollar umfassen und das Unternehmen voll verwässert mit bis zu rund 1,405 Billionen Dollar bewerten - nach 965 Milliarden Dollar bei der Finanzierungsrunde im Mai. CNBC berichtet unter Berufung auf mit den Plänen vertraute Personen, die Preisfestsetzung sei für den 18. November geplant, der Handelsstart für den 19. November; das Orderbuch sei in der Spanne bereits gedeckt. Auffällig: Rund 20 Prozent der Aktien sollen demnach an Privatanleger gehen - üblich sind bei Börsengängen dieser Größe eher 5 bis 10 Prozent. Die 64,35 Milliarden Dollar sind 825 Millionen Aktien mal 78 Dollar, also das Bruttovolumen des Basisangebots einschließlich der Altaktionärsaktien, nicht allein der Zufluss an Anthropic und nicht einschließlich der Mehrzuteilungsoption. Laut offizieller Mitteilung erhält Anthropic aus dem Verkauf der Altaktionärsaktien keinen Erlös."
+    },
+    {
+      "t": "h2",
+      "x": "26 Milliarden aus der eigenen Lieferkette"
+    },
+    {
+      "t": "p",
+      "x": "Ein ungewöhnliches Detail steht in der aktualisierten Einreichung: AMD, Broadcom, Google, Micron, Microsoft, Nvidia und TSMC haben sich laut Deckblatt der SEC-Einreichung verpflichtet, Class-N-Aktien für insgesamt 26 Milliarden Dollar zum IPO-Preis in einer Privatplatzierung zu zeichnen - ohne Registrierung im Angebot und ohne Lock-up-Vereinbarung mit den Konsortialbanken. Die SEC-Einreichung bezeichnet die Papiere dennoch als rechtlich eingeschränkt weiterverkäufliche Wertpapiere: Ein Weiterverkauf benötigt eine wirksame Registrierung oder eine Ausnahme. Die Privatplatzierung ist an den Abschluss des Börsengangs und weitere Bedingungen geknüpft. Die Liste liest sich wie die Lieferkette des Unternehmens: Chiphersteller, Cloud-Partner, Foundry. Die Vereinbarungen betreffen damit auch Geschäftspartner des Unternehmens; sie sind kein Beleg für bereits abgeschlossene Käufe oder sichere spätere Erträge."
+    },
+    {
+      "t": "h2",
+      "x": "Wachstum und Verlust in denselben Zahlen"
+    },
+    {
+      "t": "p",
+      "x": "CNBC berichtet auf Basis der Einreichung: In den neun Monaten bis Ende September erzielte Anthropic laut CNBC 33,24 Milliarden Dollar Umsatz, rund 1.200 Prozent mehr als im Vorjahreszeitraum; der annualisierte Umsatz (Run-Rate) habe Ende Oktober bei etwa 81 Milliarden Dollar gelegen, zehn Milliarden mehr als einen Monat zuvor. Dem steht ein Nettoverlust von 104 Milliarden Dollar gegenüber, der allerdings größtenteils auf Neubewertungen wandelbarer Schuldverschreibungen und derivativer Verbindlichkeiten zurückgeht; im Vorjahreszeitraum waren es 25,1 Milliarden Dollar Verlust. Der zeitliche Kontext: Der Börsengang käme rund fünf Monate nach dem Rekord-IPO von SpaceX, das 85,7 Milliarden Dollar eingesammelt hatte. Die Geschäftszahlen in diesem Absatz wurden mit dem CNBC-Bericht abgeglichen, nicht mit den vollständigen Finanztabellen der SEC-Einreichung. Run-Rate ist eine annualisierte Momentaufnahme und kein bereits erzielter Jahresumsatz."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Drei Dinge machen diesen Börsengang zum Stimmungstest für den gesamten KI-Markt. Erstens die Größe: Die veröffentlichten Zahlen bieten einen Bezugspunkt für die Bewertung des Unternehmens. Zweitens die Struktur: Ein geplanter hoher Privatanleger-Anteil und die Platzierung bei Geschäftspartnern verändern die Anlegerstruktur, sind aber kein Beleg für geringeres Anlagerisiko. Drittens das Timing: Der Markt schaut derzeit genauer hin, wann aus Umsatzwachstum Gewinn wird; ein Verlust von 104 Milliarden Dollar, auch wenn er größtenteils buchhalterisch ist, wird die Roadshow-Gespräche prägen. Der von CNBC genannte Zeitplan ist keine bestätigte Preisfestsetzung oder Handelsfreigabe. Dieser Artikel ist keine Anlageberatung und keine Kauf- oder Verkaufsempfehlung."
+    }
+  ],
+  "key_takeaways": [
+    "Anthropic hat die IPO-Roadshow gestartet: 825 Millionen Class-A-Aktien zu voraussichtlich 70-78 Dollar, Nasdaq-Kürzel ANT; laut CNBC sind Pricing am 18. und Handelsstart am 19. November geplant.",
+    "Am oberen Ende: 64,35 Milliarden Dollar Bruttovolumen des Basisangebots einschließlich Altaktionärsaktien und rund 1,4 Billionen Dollar Bewertung (voll verwässert), nach 965 Milliarden bei der Mai-Runde - Berechnungen von CNBC auf Basis der Einreichung.",
+    "AMD, Broadcom, Google, Micron, Microsoft, Nvidia und TSMC zeichnen laut Bericht parallel 26 Milliarden Dollar in einer Privatplatzierung zum IPO-Preis.",
+    "Neun Monate bis September: 33,24 Milliarden Dollar Umsatz (+1.200% zum Vorjahr) bei 104 Milliarden Dollar Nettoverlust, der überwiegend aus Neubewertungen von Wandelpapieren stammt; Run-Rate Ende Oktober rund 81 Milliarden Dollar."
+  ],
+  "faq": [
+    {
+      "q": "Wann geht Anthropic an die Börse?",
+      "a": "Offiziell läuft die Roadshow; der Termin steht noch nicht fest. CNBC berichtet unter Berufung auf informierte Personen von Preisfestsetzung am 18. November und Handelsstart am 19. November an der Nasdaq unter dem Kürzel ANT."
+    },
+    {
+      "q": "Können Privatanleger Aktien bekommen?",
+      "a": "Laut CNBC-Bericht zielt Anthropic auf eine Privatanleger-Quote von rund 20 Prozent - deutlich mehr als die bei großen Börsengängen üblichen 5 bis 10 Prozent. Details zur Zeichnung hängen vom jeweiligen Broker und Land ab."
+    },
+    {
+      "q": "Warum ist der Verlust so hoch?",
+      "a": "Laut CNBC entfällt von den 104 Milliarden Dollar Nettoverlust in neun Monaten der überwiegende Teil auf buchhalterische Neubewertungen wandelbarer Schuldverschreibungen und derivativer Verbindlichkeiten, nicht auf den laufenden Betrieb. Im Vorjahreszeitraum lag der Verlust bei 25,1 Milliarden Dollar."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Anthropic launches roadshow for proposed initial public offering",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/news/roadshow-launch",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Anthropic sets price range of $70 to $78 in upcoming IPO",
+      "publisher": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+      "accessed": "2026-11-12"
+    },
+    {
+      "title": "Form S-1/A, Amendment No. 2, Deckblatt und Angebotsbedingungen",
+      "publisher": "SEC / Anthropic",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "related": [
+    "claude-fable-5-2-mythos-5-2-guenstiger",
+    "menlo-enterprise-ki-ausgaben-177-milliarden"
+  ],
+  "disclosure": null
+}

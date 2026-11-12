@@ -1,0 +1,95 @@
+{
+  "slug": "alphagenome-2-zelltypen-varianten-vorhersage",
+  "title": "AlphaGenome 2: DeepMinds DNA-Modell sagt Varianteneffekte jetzt pro Zelltyp vorher",
+  "section": "modelle",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-12T08:51:00+01:00",
+  "modified": "2026-11-12T08:51:00+01:00",
+  "dek": "DeepMinds neues DNA-Sequenzmodell sagt vorher, wie genetische Varianten in einzelnen Zelltypen und Zellzuständen wirken - trainiert auf über 107 Millionen Einzelzellprofilen und nach Herstellerangaben deutlich treffsicherer als der Vorgänger.",
+  "tags": [
+    "DeepMind",
+    "AlphaGenome",
+    "Wissenschaft",
+    "Genomik",
+    "Modell"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leuchtender DNA-Doppelstrang, der in ein Mosaik aus verschiedenfarbigen Zellwürfeln übergeht, dunkelblauer Hintergrund mit Blau- und Korallen-Akzenten.",
+    "caption": "Symbol für die Auflösung von DNA-Effekten bis auf einzelne Zelltypen. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google DeepMind hat am 11. November AlphaGenome 2 angekündigt, die nächste Generation seines DNA-Sequenzmodells. Während das erste AlphaGenome aus einer DNA-Sequenz von einer Million Buchstaben molekulare Aktivität über viele Gewebe parallel vorhersagte, arbeitet der Nachfolger konditional: Neben der Sequenz bekommt das Modell die biologische Zielbedingung - Gewebe, Zelltyp oder Zellzustand - in jeder Stufe seiner Architektur als Eingabe und sagt die Effekte für genau diese Bedingung vorher."
+    },
+    {
+      "t": "h2",
+      "x": "Was sich ändert"
+    },
+    {
+      "t": "p",
+      "x": "Trainiert wurde auf Bulk- und Einzelzelldaten von Mensch und Maus, darunter über 107 Millionen Einzelzellprofile aus 68 Geweben. Damit löst das Modell laut DeepMind Aktivität in spezialisierten Zellen auf - etwa einzelne Herzmuskel- oder Immunzelltypen - und findet Varianten, die nur in bestimmten Zellen wirken. Neu ist zudem DNA-Methylierung als Ausgabegröße, außerdem kann das Modell fehlende Messdaten hochrechnen: Wer nur die Genaktivität einer Zelle kennt, kann sich etwa die Chromatin-Zugänglichkeit vorhersagen lassen. Auf dem TenK10K-Datensatz (28 Immunzelltypen) identifizierte AlphaGenome 2 nach DeepMinds Angaben fast doppelt so viele ursächliche Varianten (30 gegenüber 16 Prozent) und Richtungseffekte bei Genen (43 gegenüber 23 Prozent) wie das auf Einzelzelldaten feinabgestimmte Original und spezialisierte Werkzeuge. Insgesamt finde das Modell fast doppelt so viele expressionsverändernde Varianten wie der bisher beste eigene Ansatz. Alle Zahlen stammen von DeepMind; wir haben nicht nachgemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Neue Zellzustände ohne Neutraining"
+    },
+    {
+      "t": "p",
+      "x": "Forschende können eigene Einzelzell-RNA-Daten einspeisen - laut DeepMind genügt eine Momentaufnahme aus wenigen Dutzend Zellen -, ohne das Modell nachtrainieren zu müssen. In einem beschriebenen Beispiel unterschied das Modell auf unbekannten Daten aus einer COVID-19-mRNA-Impfstoffstudie impfaktivierte von ruhenden T-Zellen und zeigte, dass eine mit schwerem Verlauf verknüpfte Variante die Genaktivität im aktivierten Zustand stärker stört. Außerdem reproduzierte es rechnerisch einen bekannten IBD-Befund: Eine entfernte regulatorische Variante aktiviert das Gen ETS2 gezielt in Darm-Makrophagen, andere Zelltypen und Gene blieben weitgehend unberührt."
+    },
+    {
+      "t": "h2",
+      "x": "Brücke zwischen GWAS und Zellbiologie"
+    },
+    {
+      "t": "p",
+      "x": "DeepMind hat Varianten-Scores für krankheitsassoziierte Varianten über Hunderte Zell- und Gewebebedingungen vorberechnet, damit Forschende die Verbindung ohne eigene Großrechenläufe herstellen können. Das soll zwei klassische Lücken schließen: Enhancer-Gen-Verknüpfungen in echten menschlichen Zelltypen (etwa Astrozyten im Gehirn) statt nur in Laborzelllinien, und das Eingrenzen ursächlicher Varianten aus den breiten Trefferregionen genomweiter Assoziationsstudien - inklusive Vorhersage, ob eine Variante ein Gen hoch- oder herunterreguliert."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit und Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "AlphaGenome 2 ist ab sofort für nicht-kommerzielle Forschung über die AlphaGenome API verfügbar, inklusive interaktiver Colab-Tutorials; für kommerzielle Forschung gibt es eine private Vorschau. Geplant sind außerdem AlphaGenome-2-Skills in Googles Entwicklungsplattform Antigravity. Die Einschränkung bleibt wichtig: Das Modell ist nur für die Forschung bestimmt und weder für klinische noch für diagnostische Zwecke validiert oder zugelassen."
+    }
+  ],
+  "key_takeaways": [
+    "AlphaGenome 2 sagt die Effekte von DNA-Varianten konditional pro Zelltyp oder Zellzustand vorher; trainiert wurde auf über 107 Millionen Einzelzellprofilen aus 68 Geweben (Mensch und Maus).",
+    "Auf TenK10K findet das Modell laut DeepMind fast doppelt so viele ursächliche Varianten (30% vs. 16%) und Richtungseffekte (43% vs. 23%) wie Vorgänger und Spezialwerkzeuge - Herstellerangaben, nicht von uns nachgemessen.",
+    "Neu: DNA-Methylierung als Ausgabe, Hochrechnung fehlender Messdaten und Vorhersagen für nie gesehene Zellzustände aus eigenen Einzelzelldaten - ohne Neutraining.",
+    "Verfügbar für nicht-kommerzielle Forschung über die API (private Vorschau für kommerzielle Nutzung); ausdrücklich nicht für Klinik oder Diagnostik validiert."
+  ],
+  "faq": [
+    {
+      "q": "Was ist der Unterschied zum ersten AlphaGenome?",
+      "a": "Das Original sagte viele Gewebe parallel voraus, was die Modellkapazität verteilte. AlphaGenome 2 bekommt die Zielbedingung (Gewebe, Zelltyp, Zellzustand) als Eingabe und sagt pro Bedingung vorher - dadurch werden feine Unterschiede zwischen nahen Zelltypen sichtbar."
+    },
+    {
+      "q": "Können Forschende eigene Zelltypen untersuchen?",
+      "a": "Ja. Eigene Einzelzell-RNA-Daten lassen sich ohne Neutraining als Bedingung einspeisen; laut DeepMind genügen wenige Dutzend Zellen, und das Modell hält dabei mit speziell trainierten Modellen mit oder schlägt sie."
+    },
+    {
+      "q": "Ist AlphaGenome 2 für Diagnosen zugelassen?",
+      "a": "Nein. DeepMind weist ausdrücklich darauf hin, dass beide AlphaGenome-Modelle nur für die Forschung bestimmt und nicht für klinische oder diagnostische Zwecke validiert sind."
+    }
+  ],
+  "sources": [
+    {
+      "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+      "publisher": "Google DeepMind",
+      "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "related": [
+    "gemini-4-carbon-fuer-entwickler-offen",
+    "mka-test-visuelle-wissensarbeit-kosten"
+  ],
+  "disclosure": null
+}
