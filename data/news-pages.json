@@ -1,5 +1,41 @@
 [
   {
+    "title": "KubeCon 2026: Die CNCF will KI-Agenten sicherer und effizienter machen",
+    "url": "https://www.heise.de/news/KubeCon-2026-Die-CNCF-will-KI-Agenten-sicherer-und-effizienter-machen-11521965.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794481980.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Die CNCF hat auf der KubeCon + CloudNativeCon NA mehrere Projekte unter ihre Schirmherrschaft gestellt, um einen sicheren Betrieb von KI-Agenten voranzutreiben.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-12T11:25:45.420791+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "AlphaGenome 2: Googles KI berücksichtigt Zellzustände bei DNA-Prognosen",
+    "url": "https://www.heise.de/news/AlphaGenome-2-Googles-KI-beruecksichtigt-Zellzustaende-bei-DNA-Prognosen-11522049.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794481740.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Googles neues DNA-Modell sagt voraus, wie genetische Veränderungen in verschiedenen Zelltypen wirken. Das könnte die Suche nach Krankheitsursachen erleichtern.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-12T11:25:45.420852+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "KI in der Justiz: Hilfe für Richter oder Risiko für den Rechtsstaat?",
+    "url": "https://www.heise.de/news/KI-in-der-Justiz-Hilfe-fuer-Richter-oder-Risiko-fuer-den-Rechtsstaat-11519732.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1794476160.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Darf KI urteilen? Georg Borges zieht Grenzen für die Justiz, Silja Vöneky fordert Regeln für riskante Modelle. Die Verantwortung bleibt beim Menschen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-12T11:25:45.420960+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "„The Witcher 3“: KI bearbeitet Geralts polnische Stimme nach Schlaganfall",
     "url": "https://www.heise.de/news/The-Witcher-3-KI-bearbeitet-Geralts-polnische-Stimme-nach-Schlaganfall-11521741.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1794472320.0,
