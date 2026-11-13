@@ -1,0 +1,101 @@
+{
+  "slug": "ui-sdk-agenten-komponenten-bedienen",
+  "title": "UI SDK: Agenten bedienen Komponenten über eine eigene Brücke",
+  "section": "tools",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-13T08:54:00+01:00",
+  "modified": "2026-11-13T08:54:00+01:00",
+  "dek": "UI SDK bietet strukturierte Zustände und Aktionen statt bloßer Bildschirmklicks. Der kleine Projektbenchmark ist ein Hinweis, kein genereller Sieg.",
+  "tags": [
+    "UI SDK",
+    "Agenten",
+    "Frontend",
+    "Open Source",
+    "Tools"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Abstrakte UI-Komponenten-Kacheln, über die eine Lichtbrücke zu einem schwebenden Cursor-Knoten führt, Dunkelblau mit Blau- und Violett-Akzenten.",
+    "caption": "Symbol für die Agenten-Brücke zu UI-Komponenten. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Hinter dem Kürzel UI SDK steckt ein zweiteiliges Angebot: Headless-Bausteine, aus denen Agenten Komponenten bauen, und eine Laufzeit-Brücke, über die Agenten fertige Komponenten direkt bedienen. Beides ist quelloffen auf GitHub verfügbar. Der Ansatz zielt auf eine bekannte Schwachstelle: Agenten, die Webseiten wie Menschen per Screenshot und Klick bedienen, können zusätzliche Laufzeit und Fehlerquellen mitbringen."
+    },
+    {
+      "t": "h2",
+      "x": "Agenten bauen Komponenten"
+    },
+    {
+      "t": "p",
+      "x": "Das Kernpaket @ui-sdk/core liefert getestete Verhaltensbausteine - Fokus, Tastaturnavigation, Auswahl, Popups, Drag & Drop. Über definePrimitive entsteht daraus eine Komponente mit Zustand, Aktionen und Slots; dieselbe Primitive rendert in React, Vue, Svelte, Solid und als Web Component. Jedes Paket enthält Markdown-Dokumentation passend zur installierten Version und ein Testkit für Tastatur, Fokus und ARIA - gedacht als direkt verwendbarer Kontext für Coding-Agenten."
+    },
+    {
+      "t": "h2",
+      "x": "Agenten bedienen Komponenten"
+    },
+    {
+      "t": "p",
+      "x": "Der zweite Teil ist die Agenten-Brücke: createAgent() vor dem Rendern aufgerufen, liefert agent.snapshot() eine Liste der Komponenten mit Zustand und verfügbaren Aktionen - etwa ein Eingabefeld mit Label, aktuellem Wert und den Aktionen setValue und clear. Mit agent.act() ruft der Agent diese Aktionen direkt auf. Die Änderung läuft durch die API und Change-Callbacks der Komponente; eine App kann über einen allow-Callback Aktionen genehmigen oder ablehnen, und Change-Callbacks erkennen an source: \"agent\", woher die Eingabe kommt. Registrierung im Browser ist über WebMCP möglich."
+    },
+    {
+      "t": "h2",
+      "x": "Der eigene Benchmark"
+    },
+    {
+      "t": "p",
+      "x": "In einem Projekt-Einstellungen-Test (Projekt umbenennen, Mitglieder und Benachrichtigungen aktualisieren, speichern) vergleicht das Team Browser-Werkzeuge auf einer fremden Komponentenbibliothek mit der eigenen Brücke: 5 statt 16 Werkzeugaufrufe, 6.800 statt 39.800 gelesene Zeichen, 16 statt 41 Sekunden, 3,2 statt 7,3 Cent - Mediane aus je drei Läufen mit Claude Sonnet über Claude Code, alle Läufe erfolgreich. Das ist ein Hersteller-Benchmark mit kleiner Stichprobe, kein unabhängiger Beleg; wir haben nicht nachgemessen. Die Versuchsseiten nutzen unterschiedliche Komponentenbibliotheken; der Test isoliert deshalb nicht nur die Wirkung einer einzigen Schnittstelle. Aus drei Läufen lässt sich kein allgemeiner Kosten- oder Zuverlässigkeitsvorteil ableiten."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Das SDK lädt Agenten in eine eigens dafür vorbereitete Oberfläche ein. Das ist ein anderer Ansatz als die Nutzung beliebiger vorhandener Websites und kein Weg, deren Regeln zu umgehen. Der allow-Callback ist eine technische Kontrollstelle, aber kein Ersatz für eine sauber definierte Nutzerberechtigung. Entwickler müssen weiterhin prüfen, welche Aktionen sie anbieten, welche Daten sie im Zustand offenlegen und ob ein Agent eine Änderung tatsächlich ausführen darf."
+    }
+  ],
+  "key_takeaways": [
+    "UI SDK ist ein quelloffenes, zweiteiliges Framework: Headless-Verhaltensbausteine, aus denen Agenten Komponenten bauen, plus eine Laufzeit-Brücke, über die Agenten Komponenten direkt lesen und bedienen.",
+    "Komponenten rendern aus derselben Primitive in React, Vue, Svelte, Solid und Web Components; versionierte Markdown-Doku und ein Tastatur/Fokus/ARIA-Testkit sind eingebaut.",
+    "Über agent.snapshot() und agent.act() lesen und steuern Agenten Komponenten; Apps können Aktionen per allow-Callback genehmigen oder ablehnen, Browser-Anbindung via WebMCP.",
+    "Hersteller-Benchmark: 5 statt 16 Tool-Aufrufe, 16 statt 41 Sekunden, 3,2 statt 7,3 Cent pro Aufgabe - Mediane aus nur drei Läufen, nicht unabhängig geprüft."
+  ],
+  "faq": [
+    {
+      "q": "Was ist der Unterschied zu Browser-Agenten-Tools?",
+      "a": "Browser-Tools lassen den Agenten die Seite wie ein Mensch bedienen - Screenshot, Klick, Scrollen. UI SDK gibt dem Agenten stattdessen strukturierten Zugriff: Er liest Zustand und Aktionen der Komponenten und ruft sie direkt auf."
+    },
+    {
+      "q": "Wie behalte ich die Kontrolle über Agenten-Aktionen?",
+      "a": "Über den allow-Callback genehmigt oder verweigert die App jede angefragte Aktion. Change-Callbacks erhalten zudem source: 'agent' und können Änderungen abbrechen."
+    },
+    {
+      "q": "Für welche Frameworks funktioniert es?",
+      "a": "Komponenten aus @ui-sdk/core rendern in React, Vue, Svelte, Solid und als Web Components. Der Quellcode liegt auf GitHub."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Built for Agents - UI SDK Docs",
+      "publisher": "UI SDK",
+      "url": "https://ui-sdk.dev/docs/agents",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "UI SDK Quellcode und Projektbeschreibung",
+      "publisher": "Vercel Labs / GitHub",
+      "url": "https://github.com/vercel-labs/ui",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "related": [
+    "cursor-projects-multiplayer-team-agenten",
+    "claude-apps-konnektoren-sheets-whiteboards-reset"
+  ],
+  "disclosure": null
+}

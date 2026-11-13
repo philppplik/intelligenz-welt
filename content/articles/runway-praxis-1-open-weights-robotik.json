@@ -1,0 +1,139 @@
+{
+  "slug": "runway-praxis-1-open-weights-robotik",
+  "title": "Praxis-1: Warum Platz 5 bei RoboLab trotzdem ein WAM-Spitzenwert ist",
+  "section": "modelle",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-13T08:54:00+01:00",
+  "modified": "2026-11-13T08:54:00+01:00",
+  "dek": "Runways Robotikmodell führt die WAM-Kategorie, nicht die ganze RoboLab-Liste. Was 46,2 Prozent Erfolg und offene Gewichte praktisch aussagen.",
+  "tags": [
+    "Runway",
+    "Robotik",
+    "Open Weights",
+    "Weltmodelle",
+    "Apache 2.0"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein abstrakter Roboterarm aus Licht, der einen leuchtenden Würfel greift, dahinter ein Filmstreifen aus Videoframes, Dunkelblau mit Blau- und Orange-Akzenten.",
+    "caption": "Symbol für ein Modell, das aus Videos Handlungen lernt. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Runway hat Praxis-1 bereits am 11. November veröffentlicht. Die neue Frage für Robotik-Teams lautet deshalb nicht nur, ob Gewichte offen sind, sondern wie das Leistungsversprechen einzuordnen ist: Auf NVIDIAs RoboLab-120 liegt Praxis-1 mit 46,2 Prozent auf Platz 5 der Gesamtliste, führt aber die dort als WAM geführten Welt-Aktions-Modelle an. Das ist ein Kategoriesieg, kein Gesamtsieg."
+    },
+    {
+      "t": "h2",
+      "x": "Eine Rangliste, verschiedene Modelltypen"
+    },
+    {
+      "t": "p",
+      "x": "Die am 13. November geöffnete Betreiberliste weist 555 erfolgreiche von 1.200 Episoden aus. Höher stehen AMP1 mit 86,0 Prozent, SenseNova-Robo RSI mit 57,1, Lakeside mit 51,0 und das als VLA geführte BiMindv 0.5 mit 49,2 Prozent. Runways Vergleichsauswahl nennt dagegen FLUX3 Action mit 42,9, Cosmos 3-Nano-Policy mit 36,8 und pi 0.5 mit 28,0 Prozent. Die Auswahl erklärt den positiven Vergleich, bildet aber nicht die Gesamtspitze ab."
+    },
+    {
+      "t": "p",
+      "x": "Auch die Testbudgets unterscheiden sich: Praxis-1 und BiMind wurden mit zehn Episoden pro Aufgabe bewertet, AMP1 und Lakeside mit 25. Erfolg in dieser Simulation ist zudem kein Nachweis für sichere, robuste Arbeit in einer beliebigen Fabrik. Runways Aussage, Praxis-1 übertreffe jedes offene VLA, übernehmen wir nicht als eigene Feststellung: Die gelesene Tabelle klärt den Gewichtsstatus des höher platzierten BiMind-Eintrags nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Offene Gewichte sind noch keine fertige Robotersteuerung"
+    },
+    {
+      "t": "p",
+      "x": "Die Base-Modellkarte nennt 27,2 Milliarden Parameter und einen 0,3 Milliarden-Parameter-Aktionsexperten. Der bf 16-Checkpoint belegt 54,4 GB und enthält noch keine roboterspezifischen Aktionsköpfe: Diese müssen für einen eigenen Aufbau ergänzt und trainiert werden. Die YAM-Modellkarte beschreibt dagegen eine fertig angepasste Policy für zwei YAM-Arme und drei Kameras; sie nennt eine 80-GB-GPU für Inferenz. Das GitHub-Repository dokumentiert Lo RA-Anpassung auf einer 80-GB-GPU."
+    },
+    {
+      "t": "p",
+      "x": "Runway listet außerdem kleinere NVIDIA-Karten bis hin zum Jetson Thor als unterstützt; das Repository bietet inzwischen auch NVFP4-Varianten. Daraus folgt keine pauschale Zusage, jeder Checkpoint laufe auf jeder genannten Karte. Wir haben weder Modell noch Hardware selbst getestet."
+    },
+    {
+      "t": "h2",
+      "x": "Apache 2.0 mit separat verteilten Abhängigkeiten"
+    },
+    {
+      "t": "p",
+      "x": "Gewichte und Code sind laut Modellkarten beziehungsweise gelesenem Repository-Lizenztext unter Apache 2.0 verfügbar. Die Lizenz erlaubt auch kommerzielle Verwendung, verlangt bei Weitergabe aber unter anderem Lizenzkopie, Erhalt einschlägiger Hinweise und Kennzeichnung geänderter Dateien. Die eingefrorenen Abhängigkeiten Wan2.2-VAE und Qwen3.5-2 B werden getrennt unter eigenen Lizenzen verteilt. Eine pauschale Freigabe jedes denkbaren Robotereinsatzes ist damit nicht verbunden."
+    },
+    {
+      "t": "h2",
+      "x": "Worauf kleine Teams achten sollten"
+    },
+    {
+      "t": "p",
+      "x": "Für einen ersten Vergleich sind der passende Checkpoint, Kameras und Aktionsraum, Speicherbedarf sowie der eigene Aufgabensatz wichtiger als ein Spitzenplatz im Werbetext. Runways 80,0 Prozent auf SimplerEnv nach Anpassung an RT-1 gegenüber 52,4 Prozent der ursprünglichen RT-1-Policy bleiben Herstellerangaben, keine von uns reproduzierten Tests. Die ausführlichere technische [KIFB-Analyse vom 12. November](https://kifachblatt.de/runway-praxis-1-analyse) trennt Architektur, Messbudgets und Betrieb im Detail."
+    }
+  ],
+  "key_takeaways": [
+    "NVIDIAs geöffnete RoboLab-120-Liste führt Praxis-1 mit 46,2 Prozent auf Platz 5 gesamt und an der Spitze der WAM-Kategorie. Kein Gesamtsieg.",
+    "Praxis-1:555/1.200 erfolgreiche Episoden. AMP1 und Lakeside haben andere Testbudgets; Kategorien und Messumfang gehören zum Vergleich.",
+    "Base-Gewichte sind kein sofort einsatzfähiger Roboter: Aktionsköpfe und eigenes Training fehlen dort. YAM-Inferenz nennt eine 80-GB-GPU.",
+    "Apache 2.0 für Praxis-Gewichte und Code; separat verteilte Abhängigkeiten haben eigene Lizenzen. Keine eigenen Hardware- oder Modelltests."
+  ],
+  "faq": [
+    {
+      "q": "Ist Praxis-1 die Nummer 1 von RoboLab?",
+      "a": "Nicht insgesamt. Die am 13. November geöffnete Liste führt es auf Platz 5 mit 46,2 Prozent. Unter den dort als WAM markierten Modellen liegt es vorn."
+    },
+    {
+      "q": "Reicht der Base-Download für meinen Roboter?",
+      "a": "Nein. Laut Modellkarte fehlen roboterspezifische Aktionsköpfe; diese müssen ergänzt und trainiert werden. Passende Kameras, Aktionsräume und ausreichender GPU-Speicher sind ebenfalls nötig."
+    },
+    {
+      "q": "Was erlaubt Apache 2.0?",
+      "a": "Auch kommerzielle Nutzung, unter den Lizenzbedingungen. Bei Weitergabe sind unter anderem Lizenzkopie und einschlägige Hinweise zu erhalten; Änderungen müssen gekennzeichnet werden. Separat verteilte Abhängigkeiten haben eigene Lizenzen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Runway Praxis-1 Is Now Available",
+      "publisher": "Runway",
+      "url": "https://runway.com/news/company-news/praxis-1-is-now-available",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Introducing Praxis-1: Runway's Open-Weight World Action Model",
+      "publisher": "Runway Research",
+      "url": "https://runway.com/research/introducing-praxis-1",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "RoboLab-120: aktuelle Gesamt- und Kategoriewerte",
+      "publisher": "NVIDIA Research",
+      "url": "https://research.nvidia.com/labs/srl/projects/robolab/leaderboard.html",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Praxis-1 Base: Gewichte, Köpfe und Abhängigkeiten",
+      "publisher": "Runway / Hugging Face",
+      "url": "https://huggingface.co/runwayml/praxis-1-base",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Praxis-1 YAM: Aufbau und Inferenz",
+      "publisher": "Runway / Hugging Face",
+      "url": "https://huggingface.co/runwayml/praxis-1-yam",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Inference und Fine-Tuning README",
+      "publisher": "Runway / GitHub",
+      "url": "https://github.com/runwayml/praxis-1-oss",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Apache2.0-Lizenztext",
+      "publisher": "Runway / GitHub",
+      "url": "https://github.com/runwayml/praxis-1-oss/blob/main/LICENSE",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "related": [
+    "n8n-nod-lokaler-open-source-agent",
+    "oumi-faie-agenten-bauen-agenten"
+  ],
+  "disclosure": null
+}

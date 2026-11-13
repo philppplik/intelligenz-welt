@@ -1,0 +1,100 @@
+{
+  "slug": "spacex-74-milliarden-ki-campus-texas-arizona",
+  "title": "SpaceX plant 74 Milliarden-Dollar-Campusse: Energie bleibt die Hürde",
+  "section": "trends",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-13T08:54:00+01:00",
+  "modified": "2026-11-13T08:54:00+01:00",
+  "dek": "SpaceX nennt über 74 Milliarden Dollar für Supercomputing in Texas und Arizona. Entscheidend ist der Unterschied zwischen Absicht und Betrieb.",
+  "tags": [
+    "SpaceX",
+    "Rechenzentren",
+    "Infrastruktur",
+    "Compute",
+    "Markt"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine weitläufige Rechenzentrums-Landschaft unter Nachthimmel mit einer startenden Rakete am Horizont, Dunkelblau mit Blau- und Gold-Akzenten.",
+    "caption": "Symbol für Rechenzentrums-Ausbau im Hyperscaler-Maßstab. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "SpaceX hat am 12. November zwei geplante Supercompute-Standorte angekündigt: In der eigenen Mitteilung nennt das Unternehmen zusammen mehr als 74 Milliarden US-Dollar, davon mehr als 24 Milliarden für Starbase in Texas und rund 50 Milliarden für Cochise County in Arizona. Reuters berichtet über dieselben Pläne. Das sind Investitionsabsichten, keine bereits vollständig ausgegebenen Beträge und keine Bestätigung, dass beide Campusse fertig genehmigt oder in Betrieb sind."
+    },
+    {
+      "t": "h2",
+      "x": "Texas: eigener Strom statt Netzbezug"
+    },
+    {
+      "t": "p",
+      "x": "Nach Unternehmensangaben soll der neue Starbase-Komplex seinen Strom selbst erzeugen, ohne ihn aus dem öffentlichen Netz zu beziehen. SpaceX nennt mehr als 3.000 bereits entstandene Bauarbeitsplätze und mehr als 500 erwartete Dauerstellen im Betrieb. Reuters berichtet ergänzend unter Verweis auf eine Stadtmitteilung von einem vorgesehenen Gaskraftwerk und einer Fläche von rund 444 Acres. Das ist eine Projektbeschreibung, kein Nachweis für bereits verfügbare Rechenleistung."
+    },
+    {
+      "t": "h2",
+      "x": "Arizona: Trockenkühlung als Plan"
+    },
+    {
+      "t": "p",
+      "x": "Für Arizona nennt SpaceX rund 5.500 Bauarbeitsplätze und 1.000 erwartete Dauerstellen. Geplant seien Trockenkühlung ohne industrielle Grundwassernutzung sowie Zusammenarbeit mit lokalen Stromgenossenschaften. Die genannte mögliche Stromkostenentlastung von bis zu 20 Prozent ist ein Ziel des Unternehmens, keine zugesicherte Ersparnis. Reuters weist darauf hin, dass das Projekt noch die Genehmigung des Countys benötigt."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Zahlen noch nicht verraten"
+    },
+    {
+      "t": "p",
+      "x": "Die ursprüngliche SpaceX-Mitteilung verwendet für Texas selbst zwei Formulierungen: zunächst mehr als 24 Milliarden, später bis zu 24 Milliarden Dollar. Wir behandeln das deshalb als angekündigte Größenordnung und nicht als geprüften endgültigen Kostenplan. Die gelesenen Quellen nennen keine durchgehend belegte Lieferliste von Beschleunigern, keinen verbindlichen Inbetriebnahmeplan für beide Standorte und keine einheitlich bezifferte nutzbare IT-Leistung. Dollarvolumen ist nicht dasselbe wie sofort verfügbare Rechenkapazität."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Für den KI-Markt ist die Meldung vor allem ein Infrastrukturplan. Eigene Stromerzeugung und Kühlkonzept stehen bereits in der Ankündigung neben den Computern. Ob daraus die erwartete Kapazität entsteht, hängt unter anderem von Genehmigungen, Energieanlagen, Baufortschritt und dem tatsächlichen IT-Ausbau ab."
+    }
+  ],
+  "key_takeaways": [
+    "SpaceX kündigt zwei Supercompute-Standorte in Texas und Arizona mit zusammen mehr als 74 Milliarden US-Dollar geplanter Investition an. Keine bereits vollständig gebaute Kapazität.",
+    "Texas soll laut SpaceX eigenen Strom erzeugen; Reuters nennt ein vorgesehenes Gaskraftwerk. Für Arizona sind Trockenkühlung und keine industrielle Grundwassernutzung geplant.",
+    "Arbeitsplätze und mögliche Stromkostensenkung sind Unternehmensangaben beziehungsweise Ziele. Arizona benötigt laut Reuters noch eine Genehmigung.",
+    "Die SpaceX-Mitteilung nennt für Texas sowohl mehr als als auch bis zu 24 Milliarden Dollar. Das ist kein geprüfter endgültiger Kostenplan."
+  ],
+  "faq": [
+    {
+      "q": "Sind 74 Milliarden Dollar schon ausgegeben?",
+      "a": "Nein. SpaceX beschreibt geplante Investitionen. Daraus folgt weder ein bereits ausgegebener Betrag noch ein fertig gebauter oder vollständig genehmigter Campus."
+    },
+    {
+      "q": "Welche Energieversorgung ist geplant?",
+      "a": "Texas soll nach SpaceX-Angaben eigenen Strom erzeugen; Reuters berichtet von einem vorgesehenen Gaskraftwerk. Für Arizona nennt SpaceX lokale Strompartnerschaften und Trockenkühlung."
+    },
+    {
+      "q": "Wie viel Rechenleistung entsteht?",
+      "a": "Die hier gelesenen Quellen beziffern nicht durchgehend die nutzbare IT-Leistung und nennen keinen verbindlichen Inbetriebnahmeplan für beide Standorte. Investitionsvolumen ist kein Ersatz für diese Angaben."
+    }
+  ],
+  "sources": [
+    {
+      "title": "SpaceX plans over $74 billion investment in Texas, Arizona AI campuses",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/spacex-to-invest-over-74-billion-in-supercompute-facilities-in-texas-arizona-5022690",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Building the future: Originalmitteilung vom 12. November",
+      "publisher": "SpaceX",
+      "url": "https://www.spacex.com/updates/building-the-future",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "related": [
+    "menlo-enterprise-ki-ausgaben-177-milliarden"
+  ],
+  "disclosure": null
+}

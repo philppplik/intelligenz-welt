@@ -1,0 +1,107 @@
+{
+  "slug": "united-muse-agenten-sperren-telefonate",
+  "title": "United sperrt unautorisierte Agenten, Muse telefoniert mit Firmen",
+  "section": "analyse",
+  "type": "analysis",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-13T08:54:00+01:00",
+  "modified": "2026-11-13T08:54:00+01:00",
+  "dek": "United begrenzt Agenten-Zugriff auf Buchung und Check-in. Muse startet Firmenanrufe für zahlende US-Nutzer: zwei verschiedene Zugangsprobleme.",
+  "tags": [
+    "AI-Agenten",
+    "United Airlines",
+    "Meta",
+    "Muse",
+    "Plattformpolitik"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Eine leuchtende Tür mit Schloss, auf der einen Seite wartende Bot-Kacheln, auf der anderen ein Telefonhörer aus Licht, Dunkelblau mit Blau- und Rot-Akzenten.",
+    "caption": "Symbol für die Aushandlung von Agenten-Zugang. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "United Airlines hat eine neue Richtlinie veröffentlicht, die nicht autorisierte KI-Agenten von ihren Plattformen fernhält - direkt auf united.com und in der App, aber auch indirekt über Reisebüros und Aggregatoren, die ihre KI-Werkzeuge nur mit Uniteds Erlaubnis einsetzen dürfen. Am 12. November berichtete TechCrunch außerdem, Meta habe für zahlende US-Nutzer seiner Muse-Plattform eine Anruffunktion freigeschaltet: Der Agent telefoniert im Auftrag seiner Nutzer mit Unternehmen - Kabelanbieter, Behördenhotlines, Versicherungen, Restaurants ohne Online-Buchung."
+    },
+    {
+      "t": "h2",
+      "x": "Was United begründet - und was offenbleibt"
+    },
+    {
+      "t": "p",
+      "x": "Uniteds Begründung auf der eigenen Richtlinienseite: Wer einem Drittanbieter-Agenten Zugang zum Mileage Plus-Konto gibt, überträgt weitreichende Kontrolle; das könne persönliche Daten gefährden oder zu nicht beabsichtigten Käufen, Kontoänderungen oder Meilenverwendungen führen. Der regulatorische Punkt betrifft den Check-in: Er erfordere die menschliche Bestätigung, dass das Gepäck keine verbotenen Gegenstände enthält - automatisierte Check-ins könnten nach Uniteds Darstellung FAA- und DOT-Regeln verletzen. Bereits vor dem 11. November 2026 von Agenten vorgenommene Buchungen werden nicht storniert; United empfiehlt Kunden aber, jüngere Buchungen zu prüfen und nach geteilten Zugangsdaten das Passwort zu ändern. Technik für Menschen mit Behinderungen ist ausgenommen. Autorisierte Agenten-Partner hat die Airline derzeit nicht, hält sich die Option aber offen - man wolle erst standardisierte, abgesicherte Integrationen mit Schutz für Privatsphäre, Autorisierung und Verantwortlichkeit etablieren. Wie die Sperrung technisch durchgesetzt wird, ließ United auf Nachfrage von The Register offen."
+    },
+    {
+      "t": "h2",
+      "x": "United ist nicht allein"
+    },
+    {
+      "t": "p",
+      "x": "The Register ordnet den Schritt in eine Reihe ein: US-Großbanken sperrten im vergangenen Monat Drittanbieter-Agenten in Kundenkonten, britische Banken seien diesem Monat gefolgt; Amazon hat Metas Muse bereits im September blockiert. United selbst verweist in seiner Stellungnahme auf Banken und Einzelhandel und ermutigt weitere Branchen zu ähnlichen Maßnahmen."
+    },
+    {
+      "t": "h2",
+      "x": "Muse telefoniert derweil"
+    },
+    {
+      "t": "p",
+      "x": "Laut TechCrunch ist Muses Anruffunktion nach einem frühen Test seit September nun für zahlende US-Abonnenten verfügbar. Der Bericht nennt Anrufe bei Unternehmen, etwa Kabelanbietern und Restaurants ohne Online-Reservierung. Die dort genannten Abo- und Nutzerzahlen übernehmen wir hier nicht als unabhängig überprüfte Produktdaten. TechCrunch berichtet außerdem, dass manche Empfänger auflegen, sobald sie einen KI-Anruf erkennen. Eine allgemeine Erfolgsquote ist damit nicht belegt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung: Wer darf für dich handeln?"
+    },
+    {
+      "t": "p",
+      "x": "Die beiden Meldungen betreffen unterschiedliche Kanäle: United regelt den Zugriff auf eigene digitale Systeme; Muses Firmenanrufe laufen über Telefonleitungen. Die zweite Funktion hebt Uniteds Regeln nicht auf. Die gemeinsame Frage lautet, wie ein Dienst die Zustimmung des Nutzers, die Berechtigung des Agenten und die Annahme durch die Gegenseite zusammenbringt. Die Entscheidung eines Nutzers ist nicht automatisch die Erlaubnis der Plattform. Welche Integrationen sich durchsetzen, bleibt offen."
+    }
+  ],
+  "key_takeaways": [
+    "United Airlines sperrt nicht autorisierte Drittanbieter-KI-Agenten aus Buchung, Kontoverwaltung und Check-in - direkt und über Reisebüros/Aggregatoren; Altbuchungen vor dem 11.11.2026 bleiben gültig, Assistenztechnik ist ausgenommen.",
+    "Begründung: Schutz von Kontodaten und Meilen sowie menschliche Sicherheitsbestätigungen beim Check-in (nach Uniteds Darstellung FAA-/DOT-relevant); autorisierte Agenten-Partner gibt es noch nicht.",
+    "Laut TechCrunch kann Muse jetzt für zahlende US-Nutzer Firmen anrufen. Das ist ein anderer Kanal als der Zugriff auf Uniteds Website und ändert dessen Regeln nicht.",
+    "The Register berichtet ergänzend über Zugangsbegrenzungen bei Banken und Amazon. Diese Beispiele sind Medienberichte, keine von uns vollständig geprüfte Branchenübersicht."
+  ],
+  "faq": [
+    {
+      "q": "Was passiert mit Buchungen, die ein Agent bereits für mich gemacht hat?",
+      "a": "Buchungen von Drittanbieter-Agenten vor dem 11. November 2026 werden laut United nicht storniert. Die Airline empfiehlt, jüngere Reisepläne zu prüfen und nach geteilten Zugangsdaten das Passwort zu ändern."
+    },
+    {
+      "q": "Darf ich KI überhaupt noch für die Reiseplanung nutzen?",
+      "a": "Ja - für allgemeine Recherche und Inspiration, solange das Werkzeug nicht auf united.com oder die App zugreift und keine sensiblen Daten (Kontonummern, Passwörter, Bestätigungscodes) bekommt. Uniteds eigene KI-Tools bleiben ebenfalls nutzbar."
+    },
+    {
+      "q": "Sind KI-Firmenanrufe damit allgemein erlaubt?",
+      "a": "Nein, die Meldung über eine angebotene Funktion ist keine allgemeine rechtliche Freigabe. Länder, Zweck, Einwilligungen und Empfängerregeln können sich unterscheiden. Technisch bleibt zudem offen, ob die Gegenseite den Anruf annimmt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Unauthorized third-party AI agents or assistants",
+      "publisher": "United Airlines",
+      "url": "https://www.united.com/en/us/fly/help-center/digital-trust-center/artificial-intelligence/third-party-ai-agents.html",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Muse can now place calls to US businesses - if you pay",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "United Airlines wants you to check in, not your chatbot",
+      "publisher": "The Register",
+      "url": "https://www.theregister.com/ai-and-ml/2026/11/12/united-airlines-wants-you-to-check-in-not-your-chatbot/5309373",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "related": [
+    "meta-muse-ember-guenstiges-agenten-modell",
+    "n8n-nod-lokaler-open-source-agent"
+  ],
+  "disclosure": null
+}

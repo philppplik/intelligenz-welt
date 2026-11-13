@@ -1,0 +1,95 @@
+{
+  "slug": "claude-managed-agents-self-hosted-beta",
+  "title": "Claude Managed Agents: Was die Self-hosted-Beta wirklich verlagert",
+  "section": "praxis",
+  "type": "explainer",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-13T08:54:00+01:00",
+  "modified": "2026-11-13T08:54:00+01:00",
+  "dek": "Anthropics private Beta verlegt die Agenten-Kontrollebene in die eigene Umgebung. Modellanfragen gehen trotzdem an den gewählten Anbieter.",
+  "tags": [
+    "Anthropic",
+    "Claude",
+    "Managed Agents",
+    "Self-hosting",
+    "Enterprise"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leuchtendes Schloss-Symbol in einem Glas-Serverrack, durch das nur versiegelte Datenpakete nach außen wandern, Dunkelblau mit Blau- und Grün-Akzenten.",
+    "caption": "Symbol für die Agenten-Plattform hinter der eigenen Sicherheitsgrenze. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat am 12. November Self-hosted Claude Managed Agents in privater Beta geöffnet. Bisher lief der Dienst gehostet auf der Claude-Plattform; zuletzt konnten Teams schon die Sandboxen in die eigene Umgebung verlegen. Jetzt wandert der komplette Dienst hinter die eigene Sicherheitsgrenze: der Agenten-Server, seine Datenbank, die Worker, die Sandboxen, die Zugangsdaten und die Sitzungshistorie laufen in der eigenen Cloud oder on-premise. Die Modellanfragen gehen wohin du wählst - direkt an Anthropic, an Amazon Bedrock, Googles Agent Platform, Microsoft Foundry oder ein eigenes Gateway. Entwickler bauen weiter gegen dieselben Kern-APIs wie beim gehosteten Dienst."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das gefragt war"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic begründet den Schritt mit unbeaufsichtigten Agenten, die interne Systeme nutzen und etwa Builds reparieren oder Alerts vorsortieren. Wer dafür die ganze Kontrollebene selbst betreiben will, musste die Plattform bisher nach Darstellung des Anbieters selbst bauen. Das ist die Produktbegründung, keine Garantie für eine bestimmte Branche oder deren regulatorische Anforderungen."
+    },
+    {
+      "t": "h2",
+      "x": "Vier Sicherheitsprinzipien"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic beschreibt die Architektur über vier Prinzipien. Erstens: Gehirn und Hände sind getrennt - das Harness (der Agenten-Loop) ruft Claude, der Code läuft in der Sandbox; Sitzungshistorie und Tresor-Geheimnisse bleiben außerhalb, Sandboxen starten nur, wenn ein Werkzeug sie braucht. Zweitens: Zugangsdaten sollen außerhalb der Sandbox bleiben - ein Proxy außerhalb fügt sie für MCP-Werkzeuge und unterstützte API-Aufrufe hinzu; in der Self-hosted-Variante kannst du deinen eigenen Secrets-Manager anbinden. Drittens: Netzwerkzugriff pro Umgebung auf eine Host-Allowlist begrenzbar, alles andere wird blockiert - etwa nur Git-Host und Paket-Registry für einen Build-Agenten. Viertens: Nach Herstellerbeschreibung hinterlässt jede Sitzung eine vollständige Aufzeichnung aller Schritte und Werkzeugaufrufe, exportierbar über OpenTelemetry ins bestehende Monitoring."
+    },
+    {
+      "t": "h2",
+      "x": "Was drinnen bleibt - und was rausgeht"
+    },
+    {
+      "t": "p",
+      "x": "In deiner Umgebung bleiben Sitzungshistorie, Zugangsdaten und die Ausführung. Hinaus gehen weiterhin die Modellanfragen selbst: Die Prompts wandern zum gewählten Modellanbieter; hat deine Organisation eine Zero-Data-Retention-Vereinbarung mit Anthropic, gilt sie für diese Anfragen wie bei jedem anderen Messages-API-Aufruf. Wer die Anfragen über Bedrock, Googles Agent Platform oder Foundry routet, lagert die Verarbeitung an den jeweiligen Cloud-Anbieter aus - die Datenwege bleiben also eine bewusste Architekturentscheidung, keine Nebensache."
+    },
+    {
+      "t": "h2",
+      "x": "Zugang und Betrieb"
+    },
+    {
+      "t": "p",
+      "x": "Der Zugang zur privaten Beta läuft laut Anthropic über das Account-Team. Wer Server, Datenbank und Worker selbst betreibt, muss auch Updates, Backups und die Absicherung der eigenen Umgebung einplanen. Aus der gehosteten Kontrollebene wird kein lokal ausgeführtes Claude-Modell. Die Herstellerbeschreibung der Isolation und der Protokollierung ist zudem keine von uns geprüfte Sicherheitszertifizierung; für einen konkreten Einsatz bleiben Datenwege, Verträge und technische Schutzmaßnahmen einzeln zu prüfen."
+    }
+  ],
+  "key_takeaways": [
+    "Self-hosted Claude Managed Agents (private Beta): Der komplette Agenten-Dienst - Server, Datenbank, Worker, Sandboxen, Zugangsdaten, Sitzungshistorie - läuft in der eigenen Cloud oder on-premise.",
+    "Modellanfragen gehen wahlweise an Anthropic, Amazon Bedrock, Googles Agent Platform, Microsoft Foundry oder ein eigenes Gateway; Prompts verlassen die eigene Umgebung weiterhin (ZDR-Vereinbarungen gelten wie bei der Messages API).",
+    "Laut Hersteller: Harness und Sandbox getrennt, Zugangsdaten für MCP und unterstützte API-Aufrufe über externen Proxy, begrenzbare Hostlisten und Aktionsprotokolle via OpenTelemetry. Kein eigener Sicherheitsaudit.",
+    "Private Beta über das Account-Team. Server-, Datenbank- und Workerbetrieb liegen beim Kunden; Self-hosted bedeutet nicht, dass Claude lokal läuft."
+  ],
+  "faq": [
+    {
+      "q": "Bleiben bei der Self-hosted-Variante alle Daten bei mir?",
+      "a": "Laut Anthropic liegen Sitzungshistorie, Zugangsdaten und Ausführung in der eigenen Umgebung. Modellanfragen werden weiterhin an das gewählte Ziel gesendet. Eine bestehende ZDR-Vereinbarung mit Anthropic gilt laut Anbieter für Anfragen an Claude wie bei der Messages API; für andere Anbieter sind deren Bedingungen getrennt zu prüfen."
+    },
+    {
+      "q": "Was ist der Unterschied zu selbst gehosteten Sandboxen?",
+      "a": "Bisher konnte nur die Ausführungsumgebung (Sandbox) in die eigene Infrastruktur. Jetzt laufen zusätzlich Server, Datenbank, Worker, Zugangsdaten und Sitzungshistorie komplett bei dir - die gesamte Kontrollebene."
+    },
+    {
+      "q": "Wie bekomme ich Zugang zur Beta?",
+      "a": "Über das Anthropic-Account-Team; es ist eine private Beta. In der von uns gelesenen Ankündigung sind weder öffentlicher Preis noch allgemeiner Verfügbarkeitstermin genannt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Operate Claude Managed Agents inside your security perimeter",
+      "publisher": "Claude by Anthropic",
+      "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "related": [
+    "claude-apps-konnektoren-sheets-whiteboards-reset",
+    "operation-snowball-ki-agent-telekom-einbruch"
+  ],
+  "disclosure": null
+}

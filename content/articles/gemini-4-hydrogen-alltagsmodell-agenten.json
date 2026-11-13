@@ -1,0 +1,111 @@
+{
+  "slug": "gemini-4-hydrogen-alltagsmodell-agenten",
+  "title": "Gemini 4 Hydrogen: schneller Agenten-Motor mit vier Denkstufen",
+  "section": "news",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-13T08:54:00+01:00",
+  "modified": "2026-11-13T08:54:00+01:00",
+  "dek": "Google startet Hydrogen für Coding und Agenten. Vier Denkstufen, 1M Kontext und neue API-Preise machen einen eigenen Kostenvergleich nötig.",
+  "tags": [
+    "Google",
+    "Gemini",
+    "Modell",
+    "Agenten",
+    "API"
+  ],
+  "hero": {
+    "alt": "Symbolbild: Ein leuchtendes Wasserstoff-Atom aus Licht über einem dunklen Fließband aus Code-Fenstern ohne Schrift, Dunkelblau mit Blau- und Cyan-Akzenten.",
+    "caption": "Symbol für das schnelle Alltagsmodell. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google hat am 12. November Gemini 4 Hydrogen vorgestellt und rollt es global aus: in AI Studio, der Gemini API, Gemini for Business, der Gemini-App, der Google-Suche und für zahlende AI-Pro- und Ultra-Abonnenten in Antigravity. Während die Frontier-Modelle Carbon und Argon für langes, tiefes Reasoning gedacht sind, ist Hydrogen laut Google für schnelle Ausführung in alltäglichen Agenten-Workflows gebaut - als eigenständiges Alltagsmodell oder als Ausführungsmotor neben den großen Geschwistern."
+    },
+    {
+      "t": "h2",
+      "x": "Index-Wert und API-Preise"
+    },
+    {
+      "t": "p",
+      "x": "Laut Google und der geöffneten Hydrogen-Übersicht von Artificial Analysis erreicht Hydrogen auf seiner Standardstufe \"high\" 51 Punkte, laut Googles Vergleich einen Punkt über Gemini 4 Argon (50); auf der neuen höchsten Stufe \"xhigh\" sind es 54. Der Standardpreis im bezahlten API-Tarif liegt flach über das ganze 1-Million-Token-Kontextfenster bei 1,50 Dollar pro Million Eingabetokens und 7,50 Dollar pro Million Ausgabetokens. Gegenüber dem Vorgänger Gemini 3.8 Flash verspricht Google laut Ankündigung 2,5-mal schneller erledigte Aufgaben auf Stufe high, mehr als den dreifachen Wert auf Terminal-Bench 4.1 (57 gegenüber 18,2 Prozent) und über fünfmal weniger erfundene Aussagen; Partner hätten in frühen Tests zwei- bis 2,8-mal schnellere Läufe bei 12 bis 23 Prozent weniger Tokens gemessen. Die Tempo-, Halluzinations- und Partnerwerte sind Herstellerangaben, wir haben nicht nachgemessen."
+    },
+    {
+      "t": "p",
+      "x": "Die API-Dokumentation bestätigt 1,50 US-Dollar je Million Eingabetokens und 7,50 US-Dollar je Million Ausgabetokens einschließlich Thinking-Tokens. Für implizit gecachte Eingaben nennt Google 0,075 US-Dollar; Such-Grounding wird zusätzlich pro Anfrage berechnet. AI Studio und die Gemini API bieten auch einen rate-limitierten kostenlosen Tarif. Tokenpreise sind daher nicht automatisch der Endpreis einer Agentenaufgabe."
+    },
+    {
+      "t": "h2",
+      "x": "Vier Denkstufen und ein Orchestrator"
+    },
+    {
+      "t": "p",
+      "x": "Hydrogen kommt mit vier Denkstufen - low, medium, high (Standard) und xhigh -, mit denen sich Qualität, Latenz und Kosten je Aufgabe skalieren lassen. Neu ist außerdem der Orchestrator in Google Antigravity: Er wechselt innerhalb einer Sitzung automatisch zwischen Modellen wie Carbon und Hydrogen und erreichte laut Google auf Terminal-Bench 4.0 fast die Erfolgsrate von Carbon, bei im Schnitt 24 Prozent weniger Kontingentverbrauch und 19 Prozent kürzerer Laufzeit. Für parallele Workflows kann Carbon als Koordinator arbeiten, während Hydrogen Worker- und Prüfer-Agenten antreibt."
+    },
+    {
+      "t": "h2",
+      "x": "Weitere Benchmark-Angaben"
+    },
+    {
+      "t": "p",
+      "x": "Google listet außerdem: Platz 5 auf der Agent Arena von arena.ai, 58,8 Prozent auf HLE-Diamond, Platz 1 auf Vals Tax Agent Bench (52,3 Prozent), geteilter Platz 1 auf Vals Legal Research (55,8 Prozent), 53,4 Prozent auf dem Multimodal-Knowledge-Agent-Benchmark und 71,6 Prozent auf Agents' Last Exam 1.1. Zum Sicherheitspaket nennt Google interne Messungen: bis zu 81 Prozent weniger Übergreifen in Agentenaufgaben, zwölfmal weniger fehlausgerichtete Aktionen und Task-Abkürzungen sowie eine 2,3-fach höhere Widerstandsfähigkeit gegen indirekte Prompt-Injection auf dem Gray-Swan-IPI-Benchmark - ebenfalls Herstellerangaben aus internen Evals."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Google positioniert Hydrogen als neue Schnellschicht für alltägliche Aufgaben. Für alle, die heute Traffic auf 3.8 Flash routen, lohnt ein eigener Vergleichslauf auf mittlerer und hoher Denkstufe, bevor sie komplett umstellen: Entscheidend ist der Preis pro erfolgreich gelöster Aufgabe, nicht der Tokenpreis. In der Gemini-App bekommen kostenlose Nutzer Hydrogen über die automatische Modellauswahl, wenn es zum Prompt passt."
+    }
+  ],
+  "key_takeaways": [
+    "Gemini 4 Hydrogen ist ab sofort global verfügbar: AI Studio, Gemini API, Gemini for Business, Gemini-App, Google-Suche und Antigravity (für zahlende Pro/Ultra-Abonnenten).",
+    "Artificial Analysis führt Hydrogen High mit 51 und Xhigh mit 54 Indexpunkten; den Vergleich mit Argon 50 nennt Google. Bezahlter Standardtarif 1,50/7,50 US-Dollar je Million Ein-/Ausgabetokens einschließlich Thinking; Cache und Grounding getrennt.",
+    "Gegenüber 3.8 Flash laut Google: 2,5 x schneller, Terminal-Bench 4.1 von 18,2 auf 57 Prozent, über 5 x weniger erfundene Aussagen - Herstellerangaben ohne unsere Nachmessung.",
+    "Neu: vier Denkstufen (low bis xhigh) und der Orchestrator in Antigravity, der automatisch zwischen Carbon und Hydrogen wechselt."
+  ],
+  "faq": [
+    {
+      "q": "Wo steht Gemini 4 Hydrogen zur Verfügung?",
+      "a": "In AI Studio, der Gemini API, Gemini for Business, der Gemini-App, der Google-Suche und für zahlende Abonnenten in Antigravity. In der App erhalten auch kostenlose Nutzer es über die automatische Modellauswahl."
+    },
+    {
+      "q": "Was kostet Hydrogen?",
+      "a": "Im bezahlten Standardtarif der API 1,50 US-Dollar je Million Eingabetokens und 7,50 US-Dollar je Million Ausgabetokens einschließlich Thinking, über das gesamte 1 M-Kontextfenster. Impliziter Cache kostet 0,075 US-Dollar je Million Eingabetokens; Such-Grounding zusätzlich. Daneben gibt es einen rate-limitierten kostenlosen API-Tarif."
+    },
+    {
+      "q": "Lohnt der Umstieg von 3.8 Flash?",
+      "a": "Google verspricht mehr Tempo und bessere Benchmark-Werte. Teste mit eigenen Aufgaben auf den Stufen medium und high und vergleiche die Gesamtkosten pro gelöster Aufgabe, nicht nur den Tokenpreis."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Gemini 4 Hydrogen",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Hydrogen: Denkstufen, Tarife und API-Grenzen",
+      "publisher": "Google AI Studio",
+      "url": "https://aistudio.google.com/docs/whats-new-gemini-4-hydrogen",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Hydrogen-Modelle im Intelligence Index",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/releases/gemini-4-hydrogen",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "related": [
+    "gemini-4-carbon-fuer-entwickler-offen",
+    "gemini-decision-1-api-bewertet-statt-schreibt"
+  ],
+  "disclosure": null
+}
