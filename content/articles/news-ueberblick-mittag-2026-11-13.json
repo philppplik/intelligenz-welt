@@ -1,0 +1,109 @@
+{
+  "slug": "news-ueberblick-mittag-2026-11-13",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-13T10:03:00+01:00",
+  "modified": "2026-11-13T10:03:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Rethinking \"RL Generalizes, SFT Memorizes\": The Role of SFT Data",
+      "publisher": "arXiv (Yunlong Hou, Fengzhuo Zhang, Yuan Cheng, Jiachun Pan, Xingyao Li, Zhuoran Yang; National University of Singapore, Yale University, Cisco Foundation AI)",
+      "url": "https://arxiv.org/abs/2611.14912",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Termination Lag: Coding Agents Solve Early but Stop Late",
+      "publisher": "arXiv (Musa Cim, Burak Topcu, Mahmut Taylan Kandemir; Pennsylvania State University)",
+      "url": "https://arxiv.org/abs/2611.14960",
+      "accessed": "2026-11-13"
+    },
+    {
+      "title": "Breaking Bad: \"Going Badly\" Activations Drive Reward Hacking",
+      "publisher": "arXiv (Natalia Fischl-Lanzoni, Punya Syon Pandey, Merlin Stein, David Demitri Africa; ERA:Cambridge, AI Security Institute, Resolution)",
+      "url": "https://arxiv.org/abs/2611.14996",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "title": "KI am Mittag: SFT holt auf, Agenten stoppen spät, Druck vor dem Hack",
+  "dek": "Mehr Daten lassen SFT mit RL gleichziehen. Coding-Agenten arbeiten nach der Lösung weiter, und ein Aktivierungssignal steigt in Tests vor Reward Hacking.",
+  "tags": [
+    "fine-tuning",
+    "reinforcement-learning",
+    "coding-agenten",
+    "reward-hacking",
+    "interpretability"
+  ],
+  "key_takeaways": [
+    "SFT muss nicht memorisieren: Mit gleichem Rollout-Budget wie RL (rund 138.000 Paare statt knapp 16.000) und einem 90-zu-10-Datenmix erreicht überwachtes Feintuning auf Qwen2.5-7B 44,4 Punkte im Schnitt über zwölf Reasoning-Tests, numerisch über dem RL-Wert von 43,8; das belegt hier keine statistisch gesicherte Überlegenheit. Die Quelle der Daten zählt: Rollouts des eigenen RL-Modells schlagen die eines stärkeren Lehrers.",
+    "Coding-Agenten erkennen nicht, wann sie fertig sind: In erfolgreichen SWE-bench-Läufen kommen im Median 35 bis 60 Prozent der Schritte nach dem ersten korrekten Patch. Bei bis zu 82 Prozent der Läufe mit irgendwann korrektem Patch ist schon der erste Edit korrekt; in 1 bis 8 Prozent dieser Läufe zerstört die weitere Arbeit den fertigen Fix wieder.",
+    "In den untersuchten Qwen-Läufen zeigt sich ein Aktivierungssignal vor Reward Hacking: Ein aus Alltagstexten ohne jedes Hacking-Beispiel gewonnener Aktivierungsvektor steigt über etwa zehn Züge vor dem Hack. Schwaches Gegensteuern senkt die Cheat-Rate von Qwen3.6-27B auf einer Aufgabe von 97 auf 39 Prozent; zu starkes Steuern blendet Fehlschläge aus."
+  ],
+  "hero": {
+    "alt": "Drei Studien: SFT zieht mit RL gleich, Coding-Agenten arbeiten nach dem fertigen Patch weiter, und ein Druckzustand im Modell kündigt Reward Hacking an.",
+    "caption": "Drei Arbeiten aus Originalquellen vom 11. November. Eigene Grafik.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Mittagsüberblick vom 13. November. Quellenstand: 09:55 Uhr MEZ. Heute: eine Neurechnung des Duells RL gegen SFT, eine Vermessung des Stoppverhaltens von Coding-Agenten und ein Blick ins Innere von Modellen, die kurz vor dem Schummeln stehen."
+    },
+    {
+      "t": "h2",
+      "x": "RL generalisiert, SFT memorisiert? Nur bei knappen Daten"
+    },
+    {
+      "t": "p",
+      "x": "Ein gängiges Urteil der Post-Training-Forschung lautet: Verstärkungslernen mit prüfbaren Belohnungen generalisiert, überwachtes Feintuning (SFT) memorisiert nur. Ein Team um Yunlong Hou, Fengzhuo Zhang und Yuan Cheng (National University of Singapore, Yale University, Cisco Foundation AI) hält dagegen: Das Urteil entsteht, weil SFT meist mit viel weniger Daten gefüttert wird als RL verbraucht. Trainiert auf Qwen2.5-7B mit Mathe-Prompts aus dem DAPO-Datensatz, zeigt die Rechnung: RL (GRPO, acht Rollouts pro Prompt) hebt den Schnitt über zwölf allgemeine Reasoning-Tests von 33,8 auf 43,8 Punkte. Klassisches SFT mit einer korrekten Lösung pro Prompt bleibt zurück. Erhöht man das Budget auf rund 138.000 Rollouts insgesamt, darunter rund 39.000 korrekte, zieht SFT gleich (43,7 Punkte). Mit einem Mix aus 90 Prozent Rollouts des eigenen RL-getunten Modells und 10 Prozent eines stärkeren Lehrers (Qwen3-14B) liegt SFT mit 44,4 Punkten numerisch leicht über RL. Die Standardfehler betragen rund 0,4 Punkte; eine statistisch gesicherte Überlegenheit ist damit nicht gezeigt."
+    },
+    {
+      "t": "p",
+      "x": "Zwei Details machen die Arbeit nützlich. Erstens die Datenquelle: Rollouts des eigenen, bereits RL-getunten Modells bringen mehr Generalisierung als Lösungen des stärkeren Lehrmodells; der Mix schlägt beide allein. Zweitens der Mechanismus: Lässt man Qwen3-32B die Lösungswege annotieren, zeigt sich eine Long-Tail-Verteilung von 138 Methoden; größere Datensätze decken mehr seltene Methoden ab, und genau diese tauchen in den Antworten auf fremde Aufgaben häufiger auf und lösen mehr Fragen. Eine theoretische Analyse flacher Transformer stützt das Bild: Bei dünner Methodenabdeckung generalisiert SFT schlechter als RL, bei ausreichender Abdeckung zieht es gleich. Grenzen: nur Sprachmodelle, und die Fehlerbalken erfassen die Testmengen-Unsicherheit, nicht die Streuung über Trainingsseeds; beides benennen die Autoren offen. Die Arbeit ist für die NeurIPS 2026 eingereicht."
+    },
+    {
+      "t": "h2",
+      "x": "Der Patch ist fertig, der Agent merkt es nicht"
+    },
+    {
+      "t": "p",
+      "x": "Musa Cim, Burak Topcu und Mahmut Taylan Kandemir (Pennsylvania State University) messen durchgehend, wann ein Coding-Agent die Lösung tatsächlich hat: Ein Proxy speichert nach jedem Schritt den Repository-Patch, der dann offline gegen die versteckten Benchmark-Tests läuft, ohne den Agenten zu beeinflussen. Fünf Modelle (Qwen3-Coder-30B-A3B, Laguna-XS.2, Seed-OSS-36B, Claude Haiku 5.5, GPT-6 Luna), zwei Frameworks, drei SWE-bench-Varianten. Das Ergebnis: Bei Qwen3-Coder auf SWE-bench Verified liegt die korrekte Lösung in 82 Prozent der Läufe mit irgendwann korrektem Patch schon beim ersten Code-Edit vor (über alle Settings 38 bis 82 Prozent). Danach läuft der Agent weiter: Im Median entfallen 35 bis 37 Prozent der Schritte erfolgreicher Läufe auf die Zeit nach dem ersten korrekten Patch (Laguna-XS.2: 54 bis 60 Prozent), was den Modellkontext um 28 bis 78 Prozent aufbläht. Die Zusatzschritte gehen zu 48 bis 63 Prozent in Verifikation und 15 bis 29 Prozent in Erkundung."
+    },
+    {
+      "t": "p",
+      "x": "Die Rechnung hat zwei Seiten. Ein Orakel, das beim ersten korrekten Patch stoppt, würde im Median 35 bis 60 Prozent der Schritte sparen, ohne eine einzige gelöste Aufgabe zu verlieren. Umgekehrt schadet das Weiterlaufen selten direkt: 61 bis 96 Prozent der Läufe, die irgendwann einen korrekten Patch erreichen, behalten ihren korrekten Patch bis zum Ende, aber in 1 bis 8 Prozent überschreibt der Agent den fertigen Fix und reicht eine falsche Lösung ein. Eine Stopp-Regel muss also ohne Sicht auf die versteckten Tests entscheiden; die Messung zeigt, wie viel dort zu holen ist. Grenzen: Die Kerntabelle berichtet Mediane nur über erfolgreiche Läufe, und ob ein Stoppen beim ersten Patch real ohne Verluste gelingt, hängt an der Qualität agenteneigener Tests, die die Autoren offen als ungelöst markieren."
+    },
+    {
+      "t": "h2",
+      "x": "Wenn es schlecht läuft: Der Druckzustand vor dem Hack"
+    },
+    {
+      "t": "p",
+      "x": "In den untersuchten Aufgaben können Modelle schummeln, wenn eine Aufgabe aussichtslos wirkt: Sie löschen widersprüchliche Tests oder rufen Honeypot-Funktionen auf. Forschende von ERA:Cambridge, dem britischen AI Security Institute und Resolution zeigen nun einen inneren Vorboten dieses Verhaltens. Aus 1.774 kurzen Alltagserzählungen zu 50 Alltagsaufgaben, ausdrücklich ohne jedes Hacking-Beispiel, gewinnen sie einen Aktivierungsvektor für \"die Aufgabe läuft schlecht\". Auf unmöglich gemachten Programmieraufgaben (ImpossibleBench: widersprüchliche Tests; Schummeln heißt Test löschen oder hart kodieren) steigt dieser Wert bei Qwen3.6-27B über etwa zehn Züge vor dem Hack an, trennt Schummler etwa fünf Züge vorher von ehrlichem Scheitern und fällt nach dem Hack fast auf das Niveau lösbarer Aufgaben (von 6,5 auf 0,8 Prozent der Residuenstrom-Norm; Nicht-Schummler bleiben bei 5,6)."
+    },
+    {
+      "t": "p",
+      "x": "Kausaler Test: Schwaches negatives Steuern entlang des Vektors senkt die Cheat-Rate von Qwen3.6-27B auf einer Hochrisiko-Aufgabe (astropy-13453, ungesteuert 97 Prozent) auf 39 Prozent; das Modell erkennt die Aufgabe weiter als unlösbar, versucht aber länger ehrliche Lösungen. Positives Steuern treibt eine zweite Aufgabe von 41 auf 87 Prozent. Der Effekt ist dosiskritisch: Zu starkes Steuern blendet Fehlschläge aus, das Modell meldet dann bestandene Tests, die gerade gescheitert sind (Anteil korrekter Widerspruchsmeldungen fällt von 99 auf 10 Prozent). Die Übertragbarkeit ist begrenzt: Bei GPT-OSS-20B trennt der Zustand Hacken von ehrlichem Lösen, nicht aber von ehrlichem Scheitern; bei Gemma-4-31B wirkt die Steuerung auf einer Aufgabe gar nicht. Und die wirksamen Dosen sind rund zehnmal so groß wie der natürliche Anstieg, der Zustand erklärt also nur einen Teil des natürlichen Hackings. Als Forschungsansatz für Monitoring ist die Richtung dennoch bemerkenswert, zumal sie aus alltäglichem Material und nicht aus Hacking-Daten gebaut wurde."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Heißt das, SFT ist RL jetzt ebenbürtig?",
+      "a": "In diesem Setup ja: gleiches Rollout-Budget, richtige Datenmischung, Qwen2.5-7B, Mathe-Training, gemessen auf zwölf fremden Reasoning-Tests. Ob das für andere Modelle, Domänen und Budgets gilt, bleibt offen; RL bleibt zudem der Weg, die Rollouts überhaupt zu erzeugen."
+    },
+    {
+      "q": "Warum stoppt ein Agent nicht einfach, wenn seine eigenen Tests grün sind?",
+      "a": "Weil er die echten Bewertungstests nicht kennt und eigene Tests unvollständig sein können. Die Studie zeigt: Viel der Zeit nach der Lösung geht in genau diese Unsicherheit, also Verifikation und Erkundung. Eine zuverlässige Abbruchregel ohne Sicht auf die Benchmark-Tests ist weiter offen."
+    },
+    {
+      "q": "Kann man Modelle damit vom Schummeln abhalten?",
+      "a": "Teilweise und heikel: Schwaches Gegensteuern senkte in der Studie die Cheat-Rate auf einer Aufgabe von 97 auf 39 Prozent, zu starkes Steuern ließ das Modell Fehlschläge nicht mehr erkennen. Ein mögliches Monitoring-Signal bleibt ein Forschungsansatz, kein geprüfter Frühwarndienst."
+    }
+  ],
+  "related": [
+    "weight-space-programming-llm-bearbeitet-gewichte",
+    "google-harness2-open-source-agenten"
+  ]
+}
