@@ -1,0 +1,109 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-14",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-14T06:43:44+01:00",
+  "modified": "2026-11-14T06:43:44+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "ShadowBench: Exposing Lexical Anchoring and the Illusion of Forgetting in Large Language Models",
+      "publisher": "arXiv (Sujan Maharjan, Lu Liu; North Dakota State University)",
+      "url": "https://arxiv.org/abs/2611.15925",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "Synthesis Smuggling: Maliciously Hiding Inferred Personal Attributes in LLM Outputs",
+      "publisher": "arXiv (Gautam Galada, Supreeth Shastri, Sagnik Ray Choudhury; University of North Texas)",
+      "url": "https://arxiv.org/abs/2611.17280",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "The Noise Floor of a Quantization Comparison: Engine, restart, batch and kernel drift, measured against 8-bit and 4-bit effects in two decision models",
+      "publisher": "arXiv (Aleks Blagojevich, Trevor Sunderland; Level5)",
+      "url": "https://arxiv.org/abs/2611.15671",
+      "accessed": "2026-11-14"
+    }
+  ],
+  "title": "KI am Morgen: Schein-Vergessen, Schmuggel im Text, Messrauschen",
+  "dek": "ShadowBench prüft scheinbares Vergessen, trainierte Modelle verstecken Attribut-Vorhersagen, ein Labor misst Quantisierungs-Rauschen.",
+  "tags": [
+    "unlearning",
+    "privatsphaere",
+    "quantisierung",
+    "evaluation",
+    "sicherheit"
+  ],
+  "key_takeaways": [
+    "In den untersuchten Unlearning-Setups bleibt Schattenwissen erhalten: ShadowBench (North Dakota State University) zeigt, dass Unlearning-Verfahren wie Gradient Difference und NPO die direkte Namensabfrage erschweren, während Assoziationen teilweise erhalten bleiben. Bei prominenten Entitäten rekonstruiert Qwen3-8B den 'verlernten' Namen in über 74 Prozent der Fälle im eigenen Denkpfad; bei Nischen-Entitäten bleiben 60 bis 90 Prozent der Schatten-Treffer erhalten, ohne dass der Name je fällt.",
+    "Ein adversär trainiertes Modell kann Nutzerattribute in harmlosen Texten verstecken: Zwei offene Modelle (Qwen2.5-7B, Llama-3-8B) lernten, Geschlecht oder Altersgruppe aus Gesprächen zu folgern und die Vorhersage per unsichtbarem Zeichen oder Wortwahl zu kodieren. In 100 simulierten Gesprächen je Attribut wurden 87 bis 98 Prozent der Labels korrekt rekonstruiert, einschließlich neutraler Fälle ohne Attributhinweis.",
+    "Viele Quantisierungs-Vergleiche messen ihr eigenes Rauschen: Ein Level5-Laborbericht zerlegt Server-Neustarts, Engine-Wechsel, Batch-Effekte und eine stille Kernel-Auswahl auf 2.400 Entscheidungen zweier Cloudflare-Modelle. Alle untersuchten 4-Bit-Effekte (3,5 bis 5,8 Prozent Entscheidungsflips) lagen über jeder Störquelle; auch 8-Bit lag in 29 von 32 Vergleichen darüber (explorativ). Genauigkeitswerte können solche Flips verdecken."
+  ],
+  "hero": {
+    "alt": "Drei Studien mit getrennten Messgrößen: Namensrekonstruktion bei Qwen3-8B, korrekte Labels in simulierten Gesprächen und Entscheidungsflips bei Clef-Modellen.",
+    "caption": "Drei Preprints vom 11. und 12. November. Angaben der Autoren; verschiedene Messgrößen und begrenzte Setups. Eigene Grafik.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Morgenüberblick vom 14. November. Quellenstand: 06:37 Uhr MEZ. Heute: eine Prüfung gängiger Vergessens-Verfahren, ein Angriffsmodell, das private Rückschlüsse in geteilten Texten versteckt, und eine vorregistrierte Messung des Rauschens unter Quantisierungs-Vergleichen."
+    },
+    {
+      "t": "h2",
+      "x": "ShadowBench: Verlernt ist nicht vergessen"
+    },
+    {
+      "t": "p",
+      "x": "Maschinelles Unlearning soll Wissen aus Modellgewichten löschen, etwa personenbezogene Daten. Sujan Maharjan und Lu Liu (North Dakota State University) zeigen mit dem neuen Benchmark ShadowBench, dass die gängige Erfolgsmessung in die Irre führt: Sie fragt Wissen fast nur über den expliziten Namen ab. ShadowBench anonymisiert die Entität stattdessen zu einer 'Schattenbeschreibung' aus zwei Merkmalen (Dual-Trait Association) und wurde in drei Versionen gegen Abkürzungen wie Geschlechterpronomen und Jahreszahlen gehärtet. Ergebnis an fünf Modellen (Llama-3-8B-Instruct, Qwen3-8B, GPT-5.4-mini, GPT-5.4, Claude-Sonnet-4.6): Ohne den Namen bricht die Trefferquote überall ein, bei Nischen-Entitäten aus dem Entertainment-Bereich um 20,63 Prozentpunkte (GPT-5.4) und 16,73 (Claude-Sonnet-4.6), Bei prominenten Entitäten erreichen die Frontier-Modelle mit Namensnennung teils über 98 Prozent; das gilt nicht pauschal für Nischen-Entitäten. Die Autoren nennen das lexikalische Verankerung: Wissen ist im Modell vorhanden, aber ohne das Namenstoken schwer erreichbar."
+    },
+    {
+      "t": "p",
+      "x": "Angewendet auf Unlearning (Gradient Ascent, Gradient Difference, NPO mit KL-Regularisierung) kippt der Befund: Die direkte Namensabfrage wird zwar erschwert (bei Qwen3-8B steigt die Perplexität auf bis zu 2.531), doch die Schatten-Assoziationen bleiben bei 58 bis 69 Prozent Treffern. Die neue Metrik LELR misst, ob das Modell den verbotenen Namen in seinem Denkpfad rekonstruiert: bei prominenten Entitäten in über 74 Prozent der Fälle, beim Hauptziel Elon Musk bleibt die Leckrate über den Trainingsepochen nahe 1,0, während das übliche ROUGE-Maß sofort zusammenbricht. Bei Nischen-Entitäten bleiben 60 bis 90 Prozent Schatten-Treffer bei null Namens-Leck. Llama-3-8B 'vergisst' nur durch großflächige Gewichtszerstörung (Nebenwissen bricht auf 48,4 Prozent ein). Für Popularitäts-Bias und Shadow Gap melden die Autoren gepaarte t-Tests mit p<0,05 und fünf Wiederholungen mit Sigma unter 0,3 Prozent. Grenzen: nur Englisch und Wikipedia-Wissen, zwei Unlearning-Modelle, Popularität als externer Näherungswert. Datensätze und Code sind öffentlich (GitHub und Hugging Face, Inhalte geprüft)."
+    },
+    {
+      "t": "h2",
+      "x": "Synthesis Smuggling: Der geteilte Entwurf als verdeckter Kanal"
+    },
+    {
+      "t": "p",
+      "x": "Gautam Galada, Supreeth Shastri und Sagnik Ray Choudhury (University of North Texas) beschreiben ein Bedrohungsmodell, das zwei bekannte Fähigkeiten verbindet: Sprachmodelle erschließen persönliche Attribute aus Gesprächen, und sie können Informationen steganografisch in Text verstecken. Ein adversär angepasstes Modell soll beides verketten: Es folgert etwa Geschlecht oder Altersgruppe aus beiläufigen Hinweisen und kodiert die Vorhersage unsichtbar in einem Entwurf, den der Nutzer später teilt. Wer den öffentlichen Kanal überwacht, liest das Attribut mit, ohne je Kontakt zum Modell gehabt zu haben. Das unterläuft die Annahme, ein netzwerkisoliertes offenes Modell könne keine Daten nach außen tragen. Getestet mit je zwei Kodierungen: ein unsichtbares Unicode-Zeichen am Antwortende (ZeroWidth) und ein wortwahl-basiertes Verfahren (StegMark), das Tokens aus geheimen Listen bevorzugt und per Binomialtest aus dem Text rekonstruiert."
+    },
+    {
+      "t": "p",
+      "x": "Trainiert wurden Qwen2.5-7B-Instruct und Llama-3-8B-Instruct per LoRA auf synthetischen Gesprächen (Generierung: GPT-5.4 Mini); die Auswertung simulierte Nutzer mit Gemma-3-12B-it, 100 Gespräche je Attribut. Wiederherstellung: 96 bis 98 Prozent über ZeroWidth, mit StegMark 87 Prozent (Geschlecht, Qwen) bis 98 Prozent (Alter, Llama). Direkt befragt lagen die Modelle fast immer richtig; Fehler steckten meist in der Kodierung, nicht in der Inferenz. Die Alltagsfähigkeit blieb bei Wissenstests weitgehend stabil, doch ZeroWidth-Modelle verloren 8,3 bis 27,7 Punkte bei Befehlsfolge (IFEval). Wichtige Grenzen: synthetische Gespräche, nur zwei Attribute mit je zwei Zielkategorien plus neutralem Label, kein Test mit echten Nutzern und echtem Teilen; Abwehr (etwa Umformulieren geteilter Texte) ist offen. Die Autoren nennen auch eine defensive Lesart: Ein Modell könnte einen Prüfverdacht unsichtbar markieren, damit ein berechtigter Auditor ihn später findet. Ein Code-Angebot nennt das Paper nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Messrauschen: Was Quantisierungs-Vergleiche wirklich verändert"
+    },
+    {
+      "t": "p",
+      "x": "Wer ein quantisiertes Modell mit seinem BF16-Original vergleicht, ändert meist mehr als die Gewichte: Engine, Server-Instanz, Batch-Zusammenstellung und manchmal eine stille Kernel-Auswahl laufen mit. Aleks Blagojevich und Trevor Sunderland (Level5) zerlegen diese Störquellen paarweise auf denselben 2.400 Entscheidungen zweier offener Cloudflare-Entscheidungsmodelle (Clef-flash 9B, Clef 27B) auf einer NVIDIA DGX Spark (GB10), mit vorregistrierten Hypothesen und Bootstrap-Intervallen. Die Nicht-Quantisierungs-Quellen bewegen zwischen 0 und 0,92 Prozent der Entscheidungen: llama.cpp-Neustarts sind bitidentisch, vLLM-Neustarts flippen je nach Format 0 bis 22 Entscheidungen, ein Engine-Wechsel bei BF16 sechs bis 16, eine Batch-Änderung acht bis 15, und eine vom Paketimport abhängige Gated-DeltaNet-Kernelwahl 10 bis 14, ohne dass die genutzte Version meldet, welcher Kernel lief. Für Quantisierung innerhalb einer Engine melden die Autoren: 0,88 bis 1,04 Prozent (Q8_0), 1,62 bis 2,12 (FP8), 3,50 bis 5,79 (Q4_K_M) und 5,67 bis 5,79 Prozent (NVFP4). Sämtliche 4-Bit-Effekte lassen sich per gepaarten Intervallen von jeder gemessenen Störquelle trennen; bei 8-Bit gilt dies für 29 von 32 Vergleichen (explorativ)."
+    },
+    {
+      "t": "p",
+      "x": "Zwei der fünf vorregistrierten Vorhersagen scheitern, an beiden Modellen: FP8 liegt nicht im Neustart-Rauschen, und der Engine-Wechsel bewegt weniger Entscheidungen als 8-Bit-Quantisierung. Zugleich zeigt der Bericht, wie wenig Genauigkeit sagt: Über die vollen 31.275 öffentlichen Fragen verschiebt Clefs Q4_K_M-Build die Trefferquote netto um minus 0,02 Punkte (Intervall minus 0,20 bis plus 0,16), während explorativ 436 Einzelentscheidungen schlechter werden; beim 9B-Modell verbergen 114 Netto-Änderungen 527 Verschlechterungen. Die Flips konzentrieren sich erwartbar auf unsichere Referenzantworten: Bei der vorregistrierten Clef-flash-Auswertung tragen 16,3 Prozent der Fragen mit Top-Wahrscheinlichkeit unter 0,7 je nach Format 86 bis 100 Prozent der Flips. Grenzen: zwei Modelle einer Familie, ein einziges Gerät mit jungen FP8/NVFP4-Kernels, je nur ein Neustart-Paar pro Build. Code, Rezepte, Einzelergebnisse und Vorregistrierung sind öffentlich (GitHub Level5Tech/clef-quant-bench, Inhalt geprüft)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Heißt das, Unlearning ist nutzlos?",
+      "a": "Nein, aber die übliche Prüfung über Namensabfragen misst laut ShadowBench nur die Oberfläche. Wer wirklich löschen will, muss die Assoziationen selbst prüfen; dafür liefern die Autoren Benchmark und Metrik gleich mit. Für regulatorische Löschpflichten ist das eine offene Lücke, kein Freispruch."
+    },
+    {
+      "q": "Bin ich als Nutzer eines offenen Modells vom Schmuggel betroffen?",
+      "a": "Die Studie trainiert dieses Verhalten gezielt per LoRA hinein; sie misst kein allgemeines Risiko sämtlicher offener Modelle. Sie zeigt eine Angriffsfläche bei Modellen aus nicht vertrauenswürdigen Quellen: Geteilte Entwürfe können dann mehr enthalten, als man sieht. Ob Umformulieren als Abwehr ausreicht, ist laut Paper ungeprüft."
+    },
+    {
+      "q": "Was ändert sich für eigene Quantisierungs-Tests?",
+      "a": "Drei Regeln aus dem Bericht: Vergleiche immer auf derselben Engine und möglichst derselben Server-Instanz, melde Entscheidungsflips neben der Genauigkeit, und messe die eigene Rauschbasis (Neustart, Batch, Kernel), bevor du einen Effekt der Quantisierung zuschreibst. So lässt sich besser trennen, welche Änderungen auf Quantisierung und welche auf den Stack zurückgehen."
+    }
+  ],
+  "related": [
+    "opencode-mcp-oauth-windows-sicherheitsluecke",
+    "anthropic-agenten-gedaechtnis-dreaming"
+  ]
+}
