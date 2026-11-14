@@ -1,0 +1,116 @@
+{
+  "slug": "cursor-vorfall-post-mortem-lieferkette-traces",
+  "title": "Cursor-Post-Mortem: Wie ein Herstellerschlüssel zur gefälschten Extension führte",
+  "dek": "Cursor hat den Oktober-Vorfall aufgearbeitet: Ein bei Fireworks offengelegter Schlüssel führte über Trainings-Traces mit Zugangsdaten bis zu einer gefälschten Claude-Code-Extension.",
+  "type": "explainer",
+  "section": "praxis",
+  "tags": [
+    "cursor",
+    "sicherheit",
+    "supply-chain",
+    "ki-agenten",
+    "vscode"
+  ],
+  "author": "philipp-paulik",
+  "published": "2026-11-14T08:56:00+01:00",
+  "modified": "2026-11-14T08:56:00+01:00",
+  "hero": {
+    "alt": "Abstraktes Hero zum Cursor-Vorfall: Eine Kette aus Gliedern, an deren Ende ein manipuliertes Paket hängt",
+    "caption": "KI-generierte Symbolgrafik, keine dokumentarische Aufnahme.",
+    "credit": "KI-generiert",
+    "ai_generated": true
+  },
+  "related": [
+    "operation-snowball-ki-agent-telekom-einbruch",
+    "cursor-projects-multiplayer-team-agenten"
+  ],
+  "body": [
+    {
+      "t": "p",
+      "x": "Cursor hat die Untersuchung seines Oktober-Sicherheitsvorfalls veröffentlicht. Die Kette begann nicht bei Cursor selbst, sondern beim Inferenz-Anbieter Fireworks AI - und sie endete mit einer manipulierten Kopie von Anthropics Claude-Code-Extension im Cursor-Marktplatz. Alle Angaben stammen aus Cursors offiziellem Post-Mortem vom 13. November."
+    },
+    {
+      "t": "h2",
+      "x": "Die Angriffskette im Überblick"
+    },
+    {
+      "t": "ol",
+      "items": [
+        "Ein Angreifer erlangte einen Zugangsschlüssel, den Cursor an Fireworks ausgegeben hatte und der bei Fireworks offengelegt wurde.",
+        "Damit kopierte er Daten aus einem schreibgeschützten Speicher, den Cursor zum Datenaustausch mit Fireworks nutzte: Agenten-Traces, überwiegend aus 2025, aus Sitzungen ohne Privacy Mode, die Cursor fürs Training verwenden durfte.",
+        "Eine kleine Zahl dieser Traces enthielt nicht geschwärzte Zugangsdaten - nach Cursors Angaben waren weniger als 0,01 Prozent der Kunden mit API-Zugangsdaten betroffen, Traces aus Sitzungen ohne Privacy Mode wurden laut Cursor bei weniger als 0,05 Prozent der Nutzer offengelegt.",
+        "Über diese Zugangsdaten erreichte der Angreifer einzelne SaaS-Werkzeuge von Cursor: archivierte, nicht produktive Code-Repositories, begrenzte Supportdaten und E-Mails, Nutzungsmetriken, Zusammenfassungen einiger Agenten-Gespräche sowie Zugangsdaten, die Nutzer an den Cursor-Support geschickt hatten.",
+        "Am 29. Oktober platzierte der Angreifer mit einem gestohlenen Credential manipulierte Kopien der Claude-Code-Extension (Versionen 2.1.312 und 2.1.313) direkt im Cache hinter Cursors VS-Code-Marktplatz. Sie waren rund elf Stunden erreichbar; bis zu 5.000 Nutzer könnten eine manipulierte Version erhalten haben."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Wichtig: Anthropic hat die Kopie nicht veröffentlicht, und es lag keine Schwachstelle in Anthropics Produkt vor. Die Quelle des Marktplatzes, Open VSX, war nie betroffen. Die letzte Angreiferaktivität datiert Cursor auf den 1. November; sie wurde blockiert."
+    },
+    {
+      "t": "h2",
+      "x": "Was nicht betroffen war"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Prompts und Code von Nutzern im Privacy Mode.",
+        "Live-Daten und aktueller Datenverkehr zu Cursor - die Traces lagen in einem Speicher für historische Offline-Auswertung.",
+        "Die Produktionssysteme und der ausgelieferte Cursor-Code; Release-Signierschlüssel waren nicht exponiert.",
+        "Alle anderen Extensions im Marktplatz - Cursor hat sie validiert und den Store neu aufgebaut.",
+        "Code-Repositories der Kunden."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Cursors Gegenmaßnahmen"
+    },
+    {
+      "t": "p",
+      "x": "Cursor hat den gesamten Inferenz-Verkehr von Fireworks weggezogen, den Schlüssel deaktiviert, alle gefundenen und vorsorglich alle internen Zugangsdaten rotiert, Netzwerkzugriffe bei Dienstleistern enger gefasst, Secret-Scanning über alle Code-Repositories gelegt und externe Forensik hinzugezogen. Betroffene Kunden wurden direkt kontaktiert, inklusive Listen der zu rotierenden Schlüssel."
+    },
+    {
+      "t": "p",
+      "x": "Falls du die Extension hattest: Wer am 29. Oktober die Versionen 2.1.312 oder 2.1.313 von Anthropic.claude-code aus dem Cursor-Marktplatz installiert oder aktualisiert hat, sollte den Schritten in [Cursors Sicherheitshinweis](https://cursor.com/blog/claude-code-extension-security-notice) folgen. Deinstallieren allein reicht laut Cursor möglicherweise nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Was du daraus mitnimmst"
+    },
+    {
+      "t": "p",
+      "x": "Drei Punkte für eigene Setups: Agenten-Traces, die ein Anbieter fürs Training speichern darf, sind Angriffsfläche - Privacy Mode oder Zero Data Retention sind kein Luxus. Zugangsdaten gehören nie in Agenten-Chats oder Support-Tickets, weil genau solche Ablagen hier der Weg hinein waren. Und Schlüssel, die einmal in einem Chat oder Trace gelandet sein könnten, rotierst du besser einmal zu viel als einmal zu spät."
+    }
+  ],
+  "lang": "de",
+  "key_takeaways": [
+    "Cursors Post-Mortem vom 13. November beschreibt eine Kette über Fireworks, alte Traces und gestohlene Zugangsdaten.",
+    "Bis zu 5.000 Nutzer könnten eine manipulierte Claude-Code-Extension aus Cursors Cache erhalten haben.",
+    "Anthropic und Open VSX veröffentlichten die Manipulation laut Cursor nicht. Betroffene sollten den verlinkten Herstellerhinweis beachten."
+  ],
+  "sources": [
+    {
+      "title": "An update on our recent security incident (13. November)",
+      "publisher": "Cursor",
+      "url": "https://cursor.com/blog/security-incident-update",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "Security notice: manipulierte Extension 2.1.312/2.1.313",
+      "publisher": "Cursor",
+      "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+      "accessed": "2026-11-14"
+    }
+  ],
+  "method": "Quellenabgleich am 14. November 2026. Die unten genannten Originalseiten wurden gelesen. Keine eigenen Modell-, Produkt- oder Sicherheitstests.",
+  "faq": [
+    {
+      "q": "Was ist die wichtigste Einschränkung?",
+      "a": "Anthropic und Open VSX veröffentlichten die Manipulation laut Cursor nicht. Betroffene sollten den verlinkten Herstellerhinweis beachten."
+    },
+    {
+      "q": "Wurde das von der Redaktion selbst getestet?",
+      "a": "Nein. Der Artikel gleicht die verlinkten Quellen ab. Leistungs-, Sicherheits- und Verfügbarkeitsaussagen stammen aus den genannten Quellen, nicht aus einem eigenen Produkttest."
+    }
+  ]
+}

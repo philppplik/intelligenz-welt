@@ -1,0 +1,115 @@
+{
+  "slug": "world-labs-atlas-offen-foto-zu-welt-api",
+  "title": "World Labs öffnet Atlas: Aus Fotos werden begehbare 3D-Welten - per API",
+  "dek": "World Labs verlinkt Webwerkzeuge und eine API für Atlas. Fotos werden zu räumlichen Szenen, mit Rekonstruktion und Export. Anmeldung und API-Schlüssel bleiben nötig.",
+  "type": "analysis",
+  "section": "trends",
+  "tags": [
+    "world-labs",
+    "atlas",
+    "weltmodelle",
+    "3d",
+    "api"
+  ],
+  "author": "philipp-paulik",
+  "published": "2026-11-14T08:56:00+01:00",
+  "modified": "2026-11-14T08:56:00+01:00",
+  "hero": {
+    "alt": "Abstraktes Hero für World Labs Atlas: Fotos falten sich zu einer begehbaren 3D-Welt auf",
+    "caption": "KI-generierte Symbolgrafik, keine dokumentarische Aufnahme.",
+    "credit": "KI-generiert",
+    "ai_generated": true
+  },
+  "related": [
+    "runway-praxis-1-open-weights-robotik"
+  ],
+  "body": [
+    {
+      "t": "p",
+      "x": "World Labs hat sein Weltmodell Atlas mit Webwerkzeugen und API zugänglich gemacht: Die Werkzeuge rund um das Modell sind jetzt über Web-Apps und eine Entwickler-API direkt nutzbar. Atlas ist ein Omni-Modell - es verarbeitet Text, Bilder, Video und 3D in einem gemeinsamen räumlichen Kontext. Technisch steckt dahinter laut World Labs ein multimodaler autoregressiver Diffusions-Transformer."
+    },
+    {
+      "t": "p",
+      "x": "Zugang und Grundlagen sind verschiedene Nachrichten: Die verlinkte technische Vorstellung datiert vom 1. September 2026. Ihre Leistungsangaben werden hier nicht als neu gemessene Resultate vom November dargestellt. Öffentliche Web- und API-Zugänge sind außerdem keine Veröffentlichung von Modellgewichten oder pauschalen Nutzungsrechten."
+    },
+    {
+      "t": "h2",
+      "x": "Das Werkzeugset im Überblick"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Viewfinder: rekonstruiert eine Szene aus Fotos oder generierten Bildern und macht daraus eine Welt, in der du die Kamera frei bewegst.",
+        "Chisel: eine Szene grob blocken (Grayboxing) - jede Kameraansicht aktualisiert sich mit.",
+        "Splats to Mesh: wandelt Gaussian Splats in echte Mesh-Geometrie um, exportierbar für Spiele, Simulationen und 3D-Werkzeuge.",
+        "Relight: Beleuchtung von Splats nachträglich verändern.",
+        "Developer API samt Blender-Integration, um Atlas in eigene Anwendungen und Workflows zu holen."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Auf der von uns geöffneten Produktseite waren keine Preise angegeben. Die API-Dokumentation verlangt Anmeldung, ein Projekt und einen projektbezogenen API-Schlüssel. Kosten und Kontolimits müssen vor Nutzung im eigenen Konto geprüft werden."
+    },
+    {
+      "t": "h2",
+      "x": "Was das Modell kann"
+    },
+    {
+      "t": "p",
+      "x": "Atlas generiert aus einem oder mehreren Referenzbildern neue Ansichten mit präziser Kamerakontrolle - bis zu einer Minute Video in 1440p, mit vom Nutzer geplanten Kamerapfaden. Bei der räumlichen Rekonstruktion erzeugt es aus wenigen Bildern neue Blickwinkel und explizite 3D-Ausgaben wie Punktwolken oder Gaussian Splats; laut World Labs übertrifft es dabei spezialisierte Open-Source-Modelle auf mehreren Benchmarks - eine Herstellerangabe, die wir nicht nachgeprüft haben."
+    },
+    {
+      "t": "p",
+      "x": "Bei der kameragesteuerten Generierung verweist World Labs auf einen eigenen Test mit unabhängigen menschlichen Bewertern: Atlas folgt dem vorgegebenen Kamerapfad demnach besser als aktuelle Videomodelle, und der Vorsprung wächst mit komplexeren Trajektorien. Der faire Hinweis steht im Kleingedruckten des Tests: Die Vergleichsmodelle bekamen die Kamerabewegung als Textbeschreibung, weil sie Kamera-Posen nicht nativ entgegennehmen - ein struktureller Vorteil für Atlas."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das ein Trend ist"
+    },
+    {
+      "t": "p",
+      "x": "Die Werkzeuge bündeln mehrere Arbeitsschritte: Fotos rein, editierbare 3D-Welt raus, mit modellbasierter Rekonstruktion. World Labs selbst nennt als Felder die Simulation für Robotik (Real-to-Sim) und kreative Produktion; naheliegend sind auch Architektur-Visualisierung und Produktfotografie. Dass so ein Modell jetzt hinter einer öffentlichen API steht, kann Teams die Einbindung erleichtern."
+    },
+    {
+      "t": "p",
+      "x": "Für dich: Wenn du mit 3D, Visualisierung oder Robotik-Simulation arbeitest, kannst du den Einstieg über die öffentlich verlinkten Werkzeuge prüfen - direkt im Browser oder über die API, inklusive Blender-Anbindung."
+    }
+  ],
+  "lang": "de",
+  "key_takeaways": [
+    "Atlas bietet Webwerkzeuge und eine API für räumliche Generierung und Rekonstruktion.",
+    "Die API braucht Anmeldung, ein Projekt und einen API-Schlüssel. Zugang bedeutet keine offenen Gewichte.",
+    "Technische Leistungsangaben der Vorstellung vom 1. September stammen vom Hersteller, ohne eigenen Test."
+  ],
+  "sources": [
+    {
+      "title": "Atlas product tools",
+      "publisher": "World Labs",
+      "url": "https://worldlabs.ai/atlas",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "Atlas original technical presentation (1. September 2026)",
+      "publisher": "World Labs",
+      "url": "https://worldlabs.ai/blog/atlas",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "Atlas API quickstart",
+      "publisher": "World Labs",
+      "url": "https://docs.atlas.worldlabs.ai/quickstart",
+      "accessed": "2026-11-14"
+    }
+  ],
+  "method": "Quellenabgleich am 14. November 2026. Die unten genannten Originalseiten wurden gelesen. Keine eigenen Modell-, Produkt- oder Sicherheitstests.",
+  "faq": [
+    {
+      "q": "Was ist die wichtigste Einschränkung?",
+      "a": "Technische Leistungsangaben der Vorstellung vom 1. September stammen vom Hersteller, ohne eigenen Test."
+    },
+    {
+      "q": "Wurde das von der Redaktion selbst getestet?",
+      "a": "Nein. Der Artikel gleicht die verlinkten Quellen ab. Leistungs-, Sicherheits- und Verfügbarkeitsaussagen stammen aus den genannten Quellen, nicht aus einem eigenen Produkttest."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "llama-cpp-1-0-stabile-api-semantische-versionen",
+  "title": "llama.cpp erreicht Version 1.0 - mit stabiler API und klarer Versionierung",
+  "dek": "llama.cpp und ggml erreichen Version 1.0. Öffentliche C-Schnittstellen werden semantisch versioniert. Der Übergang entfernt aber auch veraltete Funktionen.",
+  "type": "news",
+  "section": "tools",
+  "tags": [
+    "llama-cpp",
+    "ggml",
+    "lokale-ki",
+    "open-source",
+    "release"
+  ],
+  "author": "philipp-paulik",
+  "published": "2026-11-14T08:56:00+01:00",
+  "modified": "2026-11-14T08:56:00+01:00",
+  "hero": {
+    "alt": "Abstraktes Hero zum llama.cpp-1.0-Release: Ein stabiles Fundament aus Schichten mit einer Versionsmarke",
+    "caption": "KI-generierte Symbolgrafik, keine dokumentarische Aufnahme.",
+    "credit": "KI-generiert",
+    "ai_generated": true
+  },
+  "related": [
+    "n8n-nod-lokaler-open-source-agent",
+    "runway-praxis-1-open-weights-robotik"
+  ],
+  "body": [
+    {
+      "t": "p",
+      "x": "Rund dreieinhalb Jahre nach dem Start hat llama.cpp die Version 1.0.0 erreicht - zusammen mit der zugrundeliegenden Tensor-Bibliothek ggml, ebenfalls als v1.0.0. Das gab das Team am 13. November im Hugging-Face-Blog bekannt. llama.cpp ist eine Bibliothek, um KI-Modelle lokal laufen zu lassen - vom eigenen Rechner bis zum Server."
+    },
+    {
+      "t": "h2",
+      "x": "Was die 1.0 konkret bedeutet"
+    },
+    {
+      "t": "p",
+      "x": "Der Kern des Releases ist ein Versprechen an Entwickler: Die öffentliche C-API wird stabil versioniert. Für Projekte der ggml-Organisation, die semantische Versionierung verwenden, gilt semantische Versionierung mit klaren Regeln:"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "MAJOR: inkompatible Änderung an der öffentlichen C-API im include-Verzeichnis.",
+        "MINOR: rückwärtskompatible Funktionen, Backend-Updates, neue Modell-Unterstützung oder API-Erweiterungen.",
+        "PATCH: Fehlerkorrekturen ohne API-Änderung."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Für alle, die auf llama.cpp bauen - etwa Wrapper, On-Device-Apps oder eigene Werkzeuge - heißt das: Du kannst eine Major-Version festpinnen, statt einem ständig wandernden master-Branch hinterherzulaufen."
+    },
+    {
+      "t": "p",
+      "x": "Wichtig für den Wechsel: Die 1.0-Release-Notes entfernen selbst 35 veraltete Funktionen sowie weitere alte Schnittstellen und benennen Teile der API um. Das Stabilitätsversprechen für künftige Versionen ist kein Versprechen, dass bestehender Code ohne Anpassung auf 1.0 wechselt. [2]"
+    },
+    {
+      "t": "h2",
+      "x": "Distribution und Abdeckung"
+    },
+    {
+      "t": "p",
+      "x": "Die Verbreitungswege sind inzwischen breit: Pre-Release-Artefakte für Linux, macOS, Windows, Android und iOS, dazu Docker, Debian-Pakete, Homebrew, conda-forge, MacPorts, Winget und ein XCFramework für iOS und macOS. Laut dem Team unterstützt llama.cpp mehr als 150 Architekturvarianten und alle gängigen Speculative-Decoding-Verfahren."
+    },
+    {
+      "t": "p",
+      "x": "Hinter der Qualitätssicherung steckt eine gewachsene CI-Infrastruktur: Sie läuft auf HF Buckets und HF Jobs, mit selbst gehosteten Runnern von NVIDIA, AMD, Qualcomm, Arm, IBM und Intel über alle großen Hardware-Plattformen."
+    },
+    {
+      "t": "p",
+      "x": "Warum das zählt: Lokale KI gewinnt an Bedeutung, und immer mehr Produkte setzen auf llama.cpp. Eine stabile API macht die Bibliothek bei der Planung von Versionswechseln transparenter - inklusive klarer Grenzen, wann sich etwas Brechendes ändert."
+    },
+    {
+      "t": "p",
+      "x": "Das Team betont im Blogpost zudem, dass es LLMs zwar in den eigenen Entwicklungszyklus integriert, aber weiter Wert auf Kontrolle über die Architektur und das Verständnis der Implementierungsdetails legt."
+    }
+  ],
+  "lang": "de",
+  "key_takeaways": [
+    "llama.cpp und ggml wurden am 13. November als v1.0.0 veröffentlicht.",
+    "API- und ABI-Inkompatibilitäten sollen künftig Major-Versionssprünge erhalten.",
+    "Version 1.0 entfernt selbst veraltete Funktionen. Migration ist deshalb nicht automatisch bruchfrei."
+  ],
+  "sources": [
+    {
+      "title": "llama.cpp v1.0.0: A stronger foundation",
+      "publisher": "ggml-org / Hugging Face",
+      "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "v1.0.0 release notes",
+      "publisher": "ggml-org / GitHub",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
+      "accessed": "2026-11-14"
+    }
+  ],
+  "method": "Quellenabgleich am 14. November 2026. Die unten genannten Originalseiten wurden gelesen. Keine eigenen Modell-, Produkt- oder Sicherheitstests.",
+  "faq": [
+    {
+      "q": "Was ist die wichtigste Einschränkung?",
+      "a": "Version 1.0 entfernt selbst veraltete Funktionen. Migration ist deshalb nicht automatisch bruchfrei."
+    },
+    {
+      "q": "Wurde das von der Redaktion selbst getestet?",
+      "a": "Nein. Der Artikel gleicht die verlinkten Quellen ab. Leistungs-, Sicherheits- und Verfügbarkeitsaussagen stammen aus den genannten Quellen, nicht aus einem eigenen Produkttest."
+    }
+  ]
+}

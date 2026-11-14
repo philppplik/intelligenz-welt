@@ -1,0 +1,103 @@
+{
+  "slug": "chatgpt-wallet-agenten-zahlen-biometrische-freigabe",
+  "title": "ChatGPT Wallet: Agenten zahlen, du gibst jeden Kauf frei",
+  "dek": "OpenAI startet ein Wallet mit Zahlungstoken statt echter Kartendaten. Vor jedem Kauf ist eine Sicherheitsprüfung nötig, etwa per Face ID oder Fingerabdruck.",
+  "type": "news",
+  "section": "news",
+  "tags": [
+    "openai",
+    "chatgpt",
+    "agentic-commerce",
+    "zahlungen",
+    "agenten"
+  ],
+  "author": "philipp-paulik",
+  "published": "2026-11-14T08:56:00+01:00",
+  "modified": "2026-11-14T08:56:00+01:00",
+  "hero": {
+    "alt": "Abstraktes Hero: Ein Agenten-Symbol reicht ein Zahlungstoken durch eine biometrische Freigabe-Schleuse",
+    "caption": "KI-generierte Symbolgrafik, keine dokumentarische Aufnahme.",
+    "credit": "KI-generiert",
+    "ai_generated": true
+  },
+  "related": [
+    "united-muse-agenten-sperren-telefonate",
+    "openai-unternehmensprofile-chatgpt-business-hub"
+  ],
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI hat am 13. November ChatGPT Wallet vorgestellt: Agenten in ChatGPT können damit einen Kauf abschließen, ohne je deine echten Kartendaten zu sehen. Entwickelt wurde das Wallet mit American Express, Mastercard und Visa. Zum Start läuft es über dots für ChatGPT-Pro-Abonnenten in den USA, ab 18 Jahren und mit einer berechtigten US-Karte."
+    },
+    {
+      "t": "h2",
+      "x": "So läuft ein Kauf ab"
+    },
+    {
+      "t": "p",
+      "x": "Du hinterlegst eine Karte einmalig. Vor jedem Einkauf zeigt dir ChatGPT die Artikel, die Summe und die gewählte Karte - freigegeben wird durch eine Sicherheitsprüfung, beispielsweise Face ID oder Fingerabdruck. Jede Freigabe erzeugt laut OpenAI einen klaren Nachweis darüber, welchen Kauf du dem Agenten erlaubt hast."
+    },
+    {
+      "t": "p",
+      "x": "Nach der Freigabe stellt das Kartennetz ein Zahlungstoken aus: eine Ersatznummer mit eigenem Sicherheitscode und Ablaufdatum. Abgebucht wird von deiner Karte, aber weder der Händler noch der Agent bekommen deine echten Kartendaten. Kartenprämien und der Schutz bei berechtigten Reklamationen bleiben laut OpenAI erhalten."
+    },
+    {
+      "t": "p",
+      "x": "OpenAIs Anspruch: OpenAI nennt ChatGPT Wallet das erste Wallet, bei dem Agenten ohne Zugriff auf die echten Kartendaten zahlen und jeder Kauf eine Sicherheitsprüfung braucht. Das ist eine Herstellerangabe, die wir nicht unabhängig geprüft haben."
+    },
+    {
+      "t": "h2",
+      "x": "Was Händler ändern müssen"
+    },
+    {
+      "t": "p",
+      "x": "Parallel veröffentlicht OpenAI ein Commerce Partner Playbook. Kern: Viele Websites und Risikosysteme blockieren Agenten-Käufe derzeit ungewollt. OpenAI empfiehlt Händlern vier Schritte:"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Geschäft in ChatGPT beanspruchen und nach Verifizierung einen Produktfeed mit aktuellen Preisen und Verfügbarkeiten hochladen.",
+        "CDN oder Firewall so konfigurieren, dass signierte Anfragen per Web Bot Auth erkannt werden und ChatGPT-Agenten nicht blockiert werden.",
+        "Mit Zahlungs- und Risikoanbietern klären, wie legitime Agenten-Käufe erkannt werden - OpenAI nennt Forter, Riskified, Sardine und Signifyd sowie die Zahlungsdienstleister Adyen, Checkout.com und Stripe als Partner.",
+        "Optional Plugins oder WebMCP-Werkzeuge anbieten, damit Agenten etwa Verfügbarkeiten prüfen oder Warenkörbe verwalten können."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was als Nächstes kommen soll"
+    },
+    {
+      "t": "p",
+      "x": "Perspektivisch will OpenAI vollständig delegierte Einkäufe ermöglichen: Du legst Ausgabenlimits, Kategorien oder Zeitfenster fest und genehmigst diese Rahmenbedingungen vorab - weiterhin abgesichert durch biometrische Prüfungen und Freigabe-Nachweise."
+    },
+    {
+      "t": "p",
+      "x": "Für dich in Deutschland heißt das vorerst: abwarten. Das Wallet startet nur in den USA und nur für Pro-Nutzende. Relevant ist es trotzdem als Blaupause: Token statt Kartendaten, Sicherheitsprüfung pro Kauf, dokumentierte Erlaubnis - dieses Muster dürfte auch bei anderen Anbietern ankommen."
+    }
+  ],
+  "lang": "de",
+  "key_takeaways": [
+    "Start zunächst in dots für Pro-Abonnenten ab 18 Jahren in den USA mit berechtigten US-Karten.",
+    "Jeder Kauf braucht eine Sicherheitsprüfung. Face ID und Fingerabdruck sind Beispiele.",
+    "Ausgabenrahmen und vollständig vorab genehmigte Käufe sind Zukunftspläne, kein heutiger Standard."
+  ],
+  "sources": [
+    {
+      "title": "OpenAI: Introducing ChatGPT Wallet",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-chatgpt-wallet",
+      "accessed": "2026-11-14"
+    }
+  ],
+  "method": "Quellenabgleich am 14. November 2026. Die unten genannten Originalseiten wurden gelesen. Keine eigenen Modell-, Produkt- oder Sicherheitstests.",
+  "faq": [
+    {
+      "q": "Was ist die wichtigste Einschränkung?",
+      "a": "Ausgabenrahmen und vollständig vorab genehmigte Käufe sind Zukunftspläne, kein heutiger Standard."
+    },
+    {
+      "q": "Wurde das von der Redaktion selbst getestet?",
+      "a": "Nein. Der Artikel gleicht die verlinkten Quellen ab. Leistungs-, Sicherheits- und Verfügbarkeitsaussagen stammen aus den genannten Quellen, nicht aus einem eigenen Produkttest."
+    }
+  ]
+}

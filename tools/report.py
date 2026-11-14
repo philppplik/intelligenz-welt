@@ -38,7 +38,7 @@ def build(arts, now, out, root, base):
 <div class="imp"><div><h3>Anbieter nach § 5 DDG</h3><p>Philipp Paulik<br>Mozartstraße 1<br>53819 Neunkirchen-Seelscheid<br>Nordrhein-Westfalen</p><h3>Kontakt</h3><p>E-Mail: philipp.l.paulik@gmail.com<br>Web: intelligenz-welt.de</p></div>
 <div><h3>Verantwortlich nach § 18 Abs. 2 MStV</h3><p>Philipp Paulik, Anschrift wie links</p><h3>Redaktion</h3><p>Intelligenz Welt, Redaktion Philipp Paulik</p></div></div>
 <h3>Redaktionsschluss</h3><p>Diese Ausgabe wurde am %s automatisch erstellt. Später veröffentlichte Beiträge und Meldungen sind nicht berücksichtigt.</p>
-<h3>Hinweis zu KI</h3><p>Redaktionelle Beiträge von Intelligenz Welt werden mit Unterstützung von KI erstellt und vor Veröffentlichung redaktionell geprüft (siehe intelligenz-welt.de/transparenz/). Titelbilder sind KI-generiert und gekennzeichnet. Die Schlagzeilen im KI-Pulse werden automatisch aus öffentlichen Feeds aggregiert. Trotz Prüfung können Fehler nicht ausgeschlossen werden.</p>
+<h3>Hinweis zu KI</h3><p>Redaktionelle Beiträge von Intelligenz Welt entstehen mit KI-Unterstützung und Quellenabgleich (siehe intelligenz-welt.de/transparenz/). Titelbilder sind KI-generiert und gekennzeichnet. Die Schlagzeilen im KI-Pulse werden automatisch aus öffentlichen Feeds aggregiert. Trotz Prüfung können Fehler nicht ausgeschlossen werden.</p>
 <h3>Datenquellen</h3><p>Eigene Artikel von Intelligenz Welt mit Quellenangaben im jeweiligen Beitrag. Schlagzeilen: öffentliche RSS-Feeds und APIs der genannten Medien (nur Überschriften mit Quellenangabe).</p>
 <p class="foot">© %d Intelligenz Welt · Philipp Paulik · Stand %s</p>''' % (esc(stamp), now.year, esc(stamp))
     logo = logo_inline(os.path.join(root, 'content', 'branding', 'logo.svg'), '0 0 637 641')

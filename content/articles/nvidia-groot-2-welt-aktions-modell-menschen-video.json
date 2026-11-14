@@ -1,0 +1,99 @@
+{
+  "slug": "nvidia-groot-2-welt-aktions-modell-menschen-video",
+  "title": "NVIDIA GR00T 2: Robotermodell lernt Fähigkeiten aus Menschen-Videos",
+  "dek": "GR00T 2 sagt Video und Aktionen gemeinsam voraus. Nach fünf Vorführungen und Nachtraining meldet NVIDIA 95 Prozent Erfolg im untersuchten 50-Aufgaben-Setup.",
+  "type": "news",
+  "section": "modelle",
+  "tags": [
+    "nvidia",
+    "groot-2",
+    "robotik",
+    "foundation-model",
+    "open-data"
+  ],
+  "author": "philipp-paulik",
+  "published": "2026-11-14T08:56:00+01:00",
+  "modified": "2026-11-14T08:56:00+01:00",
+  "hero": {
+    "alt": "Abstraktes Hero für NVIDIA GR00T 2: Videoframes münden in Roboter-Aktionsbahnen",
+    "caption": "KI-generierte Symbolgrafik, keine dokumentarische Aufnahme.",
+    "credit": "KI-generiert",
+    "ai_generated": true
+  },
+  "related": [
+    "runway-praxis-1-open-weights-robotik"
+  ],
+  "body": [
+    {
+      "t": "p",
+      "x": "NVIDIA Research hat GR00T 2 vorgestellt, eine neue Generation seiner Welt-Aktions-Modelle für Roboter. Das Modell sagt künftiges Video und Roboteraktionen gemeinsam voraus: Es lernt, wie physische Interaktionen ablaufen - und welche Aktionen sie auslösen. Alle folgenden Zahlen sind Herstellerangaben von der Projektseite; wir haben nicht nachgemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Fähigkeiten im Überblick"
+    },
+    {
+      "t": "p",
+      "x": "Erstens Übertragung ohne Roboter-Vorführung: Fähigkeiten, die nur Menschen oder Handgeräte zeigen, trägt GR00T 2 auf Roboter über, die sie nie geübt haben. Ein Roboter mit zwei Fünf-Finger-Händen legt etwa einen Labortrichter mit Filterpapier aus und benetzt ihn - nur gezeigt von Menschen - in 65 Prozent der Versuche. Ein YAM-Arm baut einen Spielzeug-LKW komplett zusammen, gezeigt nur mit einem handgeführten UMI-Greifer: 60 Prozent Erfolg bei einer bis zu vier Minuten langen Aufgabe."
+    },
+    {
+      "t": "p",
+      "x": "Zweitens schnelle Anpassung: Bei 50 Aufgaben, die der Zielroboter nie gesehen hat, liegt GR00T 2 zero-shot bei 40 Prozent. Fünf Vorführungen pro Aufgabe - unter drei Minuten Roboterdaten - heben das laut NVIDIA nach einer 30-minütigen Feinabstimmung auf einer einzelnen RTX 5090 auf 95 Prozent. Mit minimalem Nachtraining setzen zwei 22-DoF-Sharpa-Hände GB300-Speichermodule in 85 Prozent der Fälle ein."
+    },
+    {
+      "t": "p",
+      "x": "Drittens agentische Steuerung: Ein Reasoning-Modell ruft GR00T 2 über die WAM-API und schafft mit YAM 98, 97 und 97 erfolgreiche Zusammenbauten in jeweils 100 Versuchen mit drei unterschiedlichen Spielzeugen - inklusive Erholung von Fehlern. Markiert das Planungsmodell Greif- und Ablagepunkte im Kamerabild, folgt der Arm Was-und-Wo-Anweisungen in 92 Prozent der Fälle, gegenüber 40 Prozent mit reiner Textanweisung."
+    },
+    {
+      "t": "h2",
+      "x": "Datenbasis und offene Teile"
+    },
+    {
+      "t": "p",
+      "x": "Vortrainiert wurde GR00T 2 laut NVIDIA auf 402.730 Stunden egozentrischer Videos arbeitender Menschen, 10.184 Stunden UMI-Handgriff-Vorführungen über 2.897 Aufgaben und 23.500 Stunden Teleoperation. Die Roboterdaten decken Parallelgreifer-Arme (YAM, Franka), geschickte Hände (Sharpa, Wuji) und den Humanoiden Unitree G1 ab. 100.000 Stunden der Menschen-Videos stehen als Datensatz Human-1M-100K offen auf Hugging Face."
+    },
+    {
+      "t": "h2",
+      "x": "GR00T 2 Turbo läuft direkt auf dem Roboter"
+    },
+    {
+      "t": "p",
+      "x": "Die Variante Turbo ist für Geschwindigkeit gebaut: ein kleinerer Transformer und eine kompaktere Video-Repräsentation, leicht genug für den Jetson Thor im Unitree G1 - die mediane Vorhersagezeit beträgt dort 124 Millisekunden. Über den Ganzkörper-Controller SONIC schöpft und serviert der Roboter Popcorn in allen 48 Versuchen und räumt einen Tisch mit verschiedenen Objekten in 93 Prozent der Versuche ab."
+    },
+    {
+      "t": "p",
+      "x": "Einordnung: Die Erfolgsraten stammen aus NVIDIAs eigenen Versuchen. Zum Vergleichsstand gegenüber anderen Robotermodellen macht die Projektseite an dieser Stelle keine Angaben; einen unabhängigen Vergleich haben wir nicht geprüft."
+    }
+  ],
+  "lang": "de",
+  "key_takeaways": [
+    "NVIDIAs Projektseite beschreibt die gemeinsame Vorhersage von Video und Roboteraktionen.",
+    "95 Prozent gelten für 50 geprüfte Aufgaben nach je fünf Vorführungen und 30 Minuten Anpassung, nicht für alle Aufgaben.",
+    "Turbo erreicht laut Hersteller 124 ms mediane Vorhersagezeit auf Jetson Thor, nicht komplette Aufgabendauer."
+  ],
+  "sources": [
+    {
+      "title": "GR00T 2: Projektseite und eigene Versuchsergebnisse",
+      "publisher": "NVIDIA Research",
+      "url": "https://research.nvidia.com/labs/gear/gr00t-2/",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "PhysicalAI Human-1M-100K dataset",
+      "publisher": "NVIDIA / Hugging Face",
+      "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K",
+      "accessed": "2026-11-14"
+    }
+  ],
+  "method": "Quellenabgleich am 14. November 2026. Die unten genannten Originalseiten wurden gelesen. Keine eigenen Modell-, Produkt- oder Sicherheitstests.",
+  "faq": [
+    {
+      "q": "Was ist die wichtigste Einschränkung?",
+      "a": "Turbo erreicht laut Hersteller 124 ms mediane Vorhersagezeit auf Jetson Thor, nicht komplette Aufgabendauer."
+    },
+    {
+      "q": "Wurde das von der Redaktion selbst getestet?",
+      "a": "Nein. Der Artikel gleicht die verlinkten Quellen ab. Leistungs-, Sicherheits- und Verfügbarkeitsaussagen stammen aus den genannten Quellen, nicht aus einem eigenen Produkttest."
+    }
+  ]
+}
