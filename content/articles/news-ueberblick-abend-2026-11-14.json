@@ -3,8 +3,8 @@
   "lang": "de",
   "section": "ueberblick",
   "type": "news",
-  "published": "2026-11-14T16:12:00+01:00",
-  "modified": "2026-11-14T16:12:00+01:00",
+  "published": "2026-11-14T16:24:00+01:00",
+  "modified": "2026-11-14T16:24:00+01:00",
   "author": "philipp-paulik",
   "sources": [
     {
@@ -103,7 +103,7 @@
   "faq": [
     {
       "q": "Soll ein Agent bei Risikowarnungen lieber stoppen?",
-      "a": "Nur wenn das Risiko belegt ist. Die Studie zeigt: Warnungen aus Quellen ohne Vertrauensnachweis allein sind ein Angriffskanal. Der getestete Ausweg ist Verify-Before-Abstain, also die Warnung gegen autoritative Datensätze oder den Inhalt prüfen, bevor die Arbeit ruht; pauschales Vorsichtigsein verschärft den Angriff statt ihn zu entschärfen."
+      "a": "In dieser Studie begründet eine ungeprüfte Warnung aus einer Quelle mit niedriger Vertrauensstufe allein keine pauschale Enthaltung. Die getestete Gegenmaßnahme Verify-Before-Abstain prüft Warnungen gegen autoritative Datensätze oder den Inhalt. Ungeklärte Risiken können dennoch eine gezielte Prüfung oder Pause erfordern; die Arbeit liefert keine allgemeine Regel, nur bei bereits bewiesenem Risiko zu stoppen."
     },
     {
       "q": "Kann man Releases auf ein LLM-Judge-Ergebnis stützen?",
