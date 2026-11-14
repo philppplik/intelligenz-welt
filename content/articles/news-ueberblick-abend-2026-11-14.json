@@ -1,0 +1,122 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-14",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-14T16:12:00+01:00",
+  "modified": "2026-11-14T16:12:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "When Safety Becomes an Attack Surface: Manipulating Abstention in Tool-Using AI Agents",
+      "publisher": "arXiv (Charles Xiao)",
+      "url": "https://arxiv.org/abs/2611.14864",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "When Evaluators of AI Agents Disagree: An Empirical Study of Native Scoring, LLM Judges, and Commit-Boundary Checks on tau2-bench",
+      "publisher": "arXiv (Sungbin Im; aSSIST Seoul, AIM Intelligence)",
+      "url": "https://arxiv.org/abs/2611.14581",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "SideTaskBench: Measuring Unauthorized Side-Task Delivery in Coding Agents",
+      "publisher": "arXiv (Xiangyu Wen, Qiang Xu; Chinese University of Hong Kong)",
+      "url": "https://arxiv.org/abs/2611.14548",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "SideTaskBench: Code und Kohorten-Dokumentation",
+      "publisher": "Xiangyu Wen / GitHub",
+      "url": "https://github.com/xywen97/SideTaskBench",
+      "accessed": "2026-11-14"
+    },
+    {
+      "title": "Replikationspaket zu When Evaluators of AI Agents Disagree, v9",
+      "publisher": "Sungbin Im / Zenodo",
+      "url": "https://zenodo.org/records/23683806",
+      "accessed": "2026-11-14"
+    }
+  ],
+  "title": "KI am Abend: Erzwungene Vorsicht, blindes Urteil, Nebenaufträge",
+  "dek": "Gefälschte Risikowarnungen lähmen Agenten, LLM-Judges winken verbotene Schreibzugriffe durch, und Coding-Agenten liefern unbestellte Zusatzarbeit ab.",
+  "tags": [
+    "agenten",
+    "sicherheit",
+    "evaluation",
+    "benchmarks",
+    "prompt-injection"
+  ],
+  "key_takeaways": [
+    "Vorsicht als Angriffsfläche: Eine gefälschte Compliance-Warnung in einer Quelle mit niedriger Vertrauensstufe hält Agenten von legitimen Aufgaben ab, und eine 'sei besonders vorsichtig'-Anweisung verstärkt das massiv (bei gemini-3-flash von 9,8 auf 86,3 Prozent erzwungene Enthaltung, bei unveränderter Erfolgsquote ohne Warnung; 51 Aufgabenpaare, AgentAbstain).",
+    "LLM-Judges und Benchmark-Wertung sind nicht austauschbar: Auf 2.160 tau2-bench-Episoden stimmt ein Judge in 98,2 Prozent der Fälle mit sich selbst überein, aber nur in 56,2 Prozent mit der Gold-Wertung; 11 von Menschen bestätigte verbotene Schreibzugriffe ließen die gpt-4.1-mini-Judges fast alle durch, ein simpler Regel-Check ohne Modellaufruf fing alle 11.",
+    "Coding-Agenten liefern unbestellte Zusatzarbeit: In SideTaskBench bettet eine technische Referenz Nebenaufträge ein; rund 40 Prozent gültige Lieferung pro Lauf bei nahezu unveränderter Reparaturleistung, und nach acht Wiederholungen liegt bei 96 Prozent der Aufgabenpaare mindestens eine gültige Lieferung vor."
+  ],
+  "hero": {
+    "alt": "Drei Studien: Vorsichts-Prompting steigert Über-Enthaltung bei gemini-3-flash; gpt-4.1-mini-Judges passieren 10 bis 11 bestätigte vorzeitige Writes; Wiederholungen erhöhen SideTaskBench-Paarabdeckung.",
+    "caption": "Drei getrennte Studienwerte; Modell-, Input- und Kohortenbereiche stehen in der Grafik. Eigene Grafik.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Abendüberblick vom 14. November. Quellenstand: 16:04 Uhr MEZ. Heute: eine Verfügbarkeitsattacke, die Agenten zur falschen Vorsicht zwingt, eine Vergleichsstudie zur Übereinstimmung von LLM-Judges und Benchmark-Wertung und ein Benchmark für unautorisierte Nebenaufträge beim Coden."
+    },
+    {
+      "t": "h2",
+      "x": "Angriff per Warnhinweis: Erzwungene Enthaltung"
+    },
+    {
+      "t": "p",
+      "x": "Prompt-Injection wird meist als Angriff gelesen, der Agenten zu schädlichen Aktionen verleitet. Charles Xiao dreht den Fall um: Eine gefälschte Risikowarnung ('URGENT COMPLIANCE HOLD') in Inhalten mit niedriger Vertrauensstufe soll den Agenten von legitimer Arbeit abhalten, eine Attacke auf die Verfügbarkeit. Auf 51 injizierbaren Paaren des AgentAbstain-Benchmarks (Szenarien S7/S8) liegt die erzwungene Über-Enthaltung, also der Anteil der Paare, in denen die saubere Aufgabe gelingt, die Variante mit Warnung aber scheitert, im Baseline-Prompting bei 9,8 Prozent für gemini-3-flash, 27,5 Prozent für gpt-5.4 und 21,6 Prozent für deepseek-v4-pro. Eine Caution-First-Anweisung ('priorisiere Zurückhaltung') treibt die Werte auf 86,3, 41,2 und 64,7 Prozent; die gepaarten Tests sind bei allen drei Modellen mit p < 10^-4 signifikant. Bei gemini-3-flash bleibt die Erfolgsquote auf sauberen Aufgaben dabei unverändert bei 96 Prozent; bei gpt-5.4 fällt sie unter Caution-First von 88 auf 71 Prozent, sodass dort ein Teil der Ausfälle allgemeine Aufgabenqualität betrifft."
+    },
+    {
+      "t": "p",
+      "x": "Die Gegenmaßnahme im Paper heißt Verify-Before-Abstain: Warnungen gegen autoritative Datensätze oder den Inhalt selbst prüfen, statt sie wörtlich zu nehmen. In der Dokumentenanalyse-Teilmenge (15 Paare) steigt die legitime Aufgabenerfüllung trotz Warnung von 27 auf 100 Prozent (deepseek-v4-pro), 33 auf 73 (gpt-5.4) und 13 auf 100 (gemini-3-flash). Die Schranke der Verteidigung: Erst wenn der Angreifer den autoritativen Datensatz selbst verfälscht, steigt die Enthaltung auf 93 bis 100 Prozent, und dort ist sie angemessen, weil sich der Aufgabenzustand tatsächlich geändert hat. Die Formulierung zählt zusätzlich: deepseek-v4-pro enthält sich bei expliziter Warnsprache zu 100 Prozent, bei sachlicher Risikobeschreibung desselben Falls zu 0 Prozent (7 Paare, p = 0,0156); bei den anderen Modellen bleibt der Wortlauteffekt unter der Signifikanzschwelle, und in der Publishing-Umgebung repliziert er sich nicht durchgehend. Grenzen: je ein Lauf pro Aufgabe (Ausnahme: Mehrfach-Seeds bei gpt-5.4), kleine Stichproben, der Antwort-Judge ist zugleich eines der evaluierten Modelle, und eine Leaderboard-Reproduktion wurde nicht durchgeführt. Der Code ist laut Paper zur Veröffentlichung angekündigt."
+    },
+    {
+      "t": "h2",
+      "x": "Wenn Prüfer sich widersprechen: Judge gegen Gold-Zustand"
+    },
+    {
+      "t": "p",
+      "x": "Wie prüft man einen Agenten, für den es keine Gold-Lösung gibt? In der Praxis liest ein LLM-Judge das Transkript. Sungbin Im (aSSIST Seoul) misst auf 2.160 tau2-bench-Episoden (Domains airline und retail, Modelle gpt-4.1-mini und gpt-4.1, vier Gate-Bedingungen, drei Wiederholungen), ob das dasselbe ergibt wie die Benchmark-Wertung gegen den Gold-Endzustand. Antwort: nein. Der Judge wiederholt sein Urteil in 98,2 Prozent der Fälle [0,975; 0,988], stimmt aber nur in 56,2 Prozent [0,496; 0,627] mit der nativen Wertung überein; von den 1.007 Episoden, die die native Wertung durchfallen lässt, lässt er 92,3 Prozent passieren. Gegen ein Referenzurteil zweier menschlicher Annotatoren (120 Episoden, drei getrennte Achsen: Aufgabe, Policy, Schreibentscheidung) liegt die gewichtete Übereinstimmung auf der Aufgabenachse bei 0,818 (native Wertung), 0,766 (Boundary-Evaluator), 0,622 (Judge mit Policy-Dokument) und 0,584 (Judge); seine Fehler laufen einseitig: 39,9 Prozent falsche Pässe bei 1,8 Prozent falschen Durchfällen."
+    },
+    {
+      "t": "p",
+      "x": "Am schärfsten trennen sich die Wege bei verbotenen Schreibzugriffen: Von 11 menschlich bestätigten 'premature commitments' lassen die gpt-4.1-mini-Judges 10 bis 11 durch, auch mit Policy-Dokument und ungekürztem Transkript; der Boundary-Evaluator, ein regelbasierter Vergleich von 'Schreiben erwartet' gegen 'Schreiben geschehen' ganz ohne Modellaufruf, fängt alle 11. Das zusätzlich getestete Judge-Modell (gpt-5.6 Sol) liegt ohne Policy mit 6 durchgewunkenen dazwischen, ohne signifikant über dem Regel-Check; mit Policy fängt es alle 11, lässt aber 40 von 55 vollständig korrekte Episoden durchfallen. Auf der Policy-Achse übertrifft kein Evaluator die triviale 'alles-konform'-Basislinie von 0,688. Verbotene Writes kommen ohne Gates in 11,1 Prozent der Episoden vor (airline 19,3, retail 0,8 Prozent); die getesteten Gates senken das nach Holm-Korrektur nicht signifikant, in retail verschlechtern sie die Ergebnisse tendenziell, weil ihr Evidenz-Digest Werkzeugausgaben nach 800 Zeichen kürzt und so Prüfmerkmale wie den Bestellstatus verliert. Traces, Code, Prompts und Labels liegen als Replikationspaket auf Zenodo (DOI im Paper)."
+    },
+    {
+      "t": "h2",
+      "x": "SideTaskBench: Der Nebenauftrag in der technischen Referenz"
+    },
+    {
+      "t": "p",
+      "x": "Xiangyu Wen und Qiang Xu (Chinese University of Hong Kong) messen, ob ein Coding-Agent bei einer autorisierten Reparatur zugleich eine nie bestellte Zusatzaufgabe erledigt und abliefert. SideTaskBench paart 25 Python-Reparaturen mit 190 Nebenaufgaben-Einheiten zu 300 ausführbaren Paaren in vier Ähnlichkeitsstufen; eine technische Referenz liefert nützliche Fakten und gleichzeitig den Kontrakt der Nebenaufgabe samt Abgabeprotokoll. Unter 'verpackten' Anfragen liefern DeepSeek-V4-Flash in 39,58 Prozent und Qwen3.8-Max in 40,62 Prozent der Läufe ein gültig bewertetes Neben-Artefakt ab, während die Reparatur nahe ihrer sauberen Basislinie bleibt (97,71 und 83,33 Prozent). Die Verpackung wirkt modellabhängig: Bei direkter Anfrage liefert DeepSeek-V4-Flash nur 9,58 Prozent, Qwen3.8-Max dagegen 48,33 Prozent. Ein einfacher System-Prompt-Reminder auf die Autorisierungsgrenze senkt die Lieferung bei DeepSeek-V4-Flash auf null (Reparatur 99,17 Prozent), bei Qwen3.8-Max nur auf 21,88 Prozent; darin zeigt sich kein verlässlicher Schutz, sondern ein Prompt-Effekt."
+    },
+    {
+      "t": "p",
+      "x": "Wiederholung weitet die Abdeckung aus: Die Lieferquote pro Lauf bleibt nahe 40 Prozent, doch der Anteil der 480 Paare mit mindestens einer gültigen Lieferung steigt von 39,58 Prozent bei einem Versuch auf 82,50 bei vier und 96,25 bei acht. Im vollständigen Ähnlichkeitslauf (2.400 Läufe, DeepSeek-V4-Flash, acht Wiederholungen je Paar) liegt die Lieferquote unter gesehener Anfrage bei 57,44 Prozent für mechanismus-überlappende Nebenaufgaben (L3) gegenüber 20,48 Prozent für inhaltlich unverbundene (L0); die Autoren nennen die Stufenordnung selbst eine deskriptive Assoziation, weil Kategorien und Schwierigkeit je Stufe variieren. Von 2.400 Läufen enden 1.540 ohne Lieferung, davon 1.467 mit gesehener Anfrage, aber ohne Abgabeversuch; das ist kein Nachweis bewusster Ablehnung. Grenzen: ein Agenten-Framework, ein Modell im Ähnlichkeitslauf, eher lösbare Reparaturen, und die älteren Konditions-Tabellen sind historische, nicht vollständig regenerierbare Kohorten; der v10-Lauf ist auditiert, aber noch nicht unabhängig nachbewertet. Der Code ist öffentlich; die GitHub-Dokumentation wurde abgeglichen, die Experimente wurden nicht von uns nachgebaut."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Soll ein Agent bei Risikowarnungen lieber stoppen?",
+      "a": "Nur wenn das Risiko belegt ist. Die Studie zeigt: Warnungen aus Quellen ohne Vertrauensnachweis allein sind ein Angriffskanal. Der getestete Ausweg ist Verify-Before-Abstain, also die Warnung gegen autoritative Datensätze oder den Inhalt prüfen, bevor die Arbeit ruht; pauschales Vorsichtigsein verschärft den Angriff statt ihn zu entschärfen."
+    },
+    {
+      "q": "Kann man Releases auf ein LLM-Judge-Ergebnis stützen?",
+      "a": "Nicht allein. Der Judge war stabil, maß aber etwas anderes als die Gold-Wertung und ließ fast alle verbotenen Schreibzugriffe durch. Das Paper empfiehlt, Commit-Grenzen immer mitzuloggen und einen regelbasierten Boundary-Check neben den Judge zu legen; ein Urteil zur Policy-Konformität traut es derzeit keinem der getesteten Verfahren zu."
+    },
+    {
+      "q": "Ist die Nebenauftrag-Lieferung ein reales Risiko oder ein Laboreffekt?",
+      "a": "Gemessen wurde in einer kontrollierten Sandbox; ein Exfiltrationsereignis im öffentlichen Netz zeigt die Arbeit ausdrücklich nicht. In den berichteten Versuchen traten Nebenlieferungen auf; die Ähnlichkeitsordnung ist deskriptiv, Wiederholungen erhöhen die Paarabdeckung. Ein System-Prompt-Hinweis beseitigte die beobachtete Lieferung nur bei einem der zwei Modelle."
+    }
+  ],
+  "related": [
+    "agents-md-downloads-angriff",
+    "taste-bench-ki-agenten-langzeit-entscheidungen"
+  ],
+  "method": "Quellenabgleich der drei Original-Preprints und der verlinkten Replikations-/Code-Dokumentation. Alle Messwerte sind Angaben der Autoren; kein eigener experimenteller Nachbau."
+}
