@@ -5,8 +5,8 @@
   "type": "news",
   "title": "Cloudflare öffnet Kitesurf: ein Browser für Agenten ohne Chromium-Container",
   "dek": "Kitesurf läuft komplett auf Cloudflare Workers, spricht das Chrome DevTools Protocol und steht jetzt unter Apache 2.0 auf GitHub - inklusive Anleitung zum Selberhosten.",
-  "published": "2026-11-15T08:56:00+01:00",
-  "modified": "2026-11-15T08:56:00+01:00",
+  "published": "2026-11-15T08:55:00+01:00",
+  "modified": "2026-11-15T08:55:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "cloudflare",
