@@ -1,0 +1,98 @@
+{
+  "slug": "claude-always-on-agenten-blaupause",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Anthropics Blaupause für Dauer-Agenten: Inbox, Timer, Gedächtnis, Rechte, Outbox",
+  "dek": "Ein neuer Claude-Guide beschreibt, wie Agenten dauerhaft laufen, ohne dauerhaft wach zu sein. Fünf Bausteine machen den Unterschied - hier ist die Architektur im Detail.",
+  "published": "2026-11-15T08:56:00+01:00",
+  "modified": "2026-11-15T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "anthropic",
+    "claude",
+    "agenten",
+    "architektur",
+    "entwicklung"
+  ],
+  "key_takeaways": [
+    "Ein Always-on-Agent ist nicht dauerhaft an: Er schläft meistens und wacht nur für kurze Runs auf.",
+    "Fünf Bausteine tragen die Architektur: Event-Inbox, Timer, Memory, Permissions und Outbox.",
+    "Ein Credential-Proxy außerhalb der Agenten-Umgebung fügt Geheimnisse erst beim abschickenden Request hinzu - der Agent sieht sie nie.",
+    "Anthropics Rat für die Outbox: start quiet. Der Agent soll leise beginnen und sich Aufmerksamkeit verdienen.",
+    "Anthropic nennt als Kostentreiber besseres Modellurteil und sinkende Preise: Opus 5.5 kostete auf einem Langzeit-Benchmark 78 Prozent weniger pro gelöster Aufgabe als Opus 5 (Herstellerangabe)."
+  ],
+  "hero": {
+    "alt": "Abstraktes Hero: Ein schlafender Agentenkern, der über Inbox und Timer periodisch aufwacht",
+    "caption": "Ein schlafender Agentenkern zwischen Inbox, Timer und Outbox: die Blaupause für Dauer-Agenten. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Wie baut man einen Agenten, der dauerhaft läuft, Aufgaben über Wochen verfolgt und sich meldet, wenn es nötig ist? Anthropics neuer Claude-Platform-Guide 'Building always-on agents' (Autor: William Hu, 13. November) gibt darauf eine konkrete Architektur-Antwort: nicht ein größerer Loop, sondern fünf Bausteine um den bekannten Agenten-Loop herum."
+    },
+    {
+      "t": "h2",
+      "x": "Der Kern: meistens schläft der Agent"
+    },
+    {
+      "t": "p",
+      "x": "Die wichtigste Idee zuerst: Ein Always-on-Agent ist gar nicht dauerhaft an. Er verbringt die meiste Zeit schlafend, wacht für einen Run auf, erledigt ein Ereignis, speichert seinen Stand und legt sich wieder schlafen. Jeder Run läuft in einer Session - dem Protokoll aus Nachrichten und Werkzeugaufrufen. Was die Architektur teuer macht, ist nicht das Wachsein, sondern das saubere Einschlafen und Wiederaufwecken."
+    },
+    {
+      "t": "h2",
+      "x": "Die fünf Bausteine"
+    },
+    {
+      "t": "ol",
+      "items": [
+        "Event-Inbox: Webhooks, Zeitpläne und Hintergrundjobs rufen den Agenten nicht direkt, sondern schreiben in eine dauerhafte Tabelle - dedupliziert über Quell-IDs. Genau ein Worker pro Inbox arbeitet die anstehenden Ereignisse gebündelt ab. Die Inbox bleibt die Wahrheitsquelle: Stürzt ein Run ab, kann er wiederholt werden.",
+        "Timer: Folgetermine (Deadlines, die sich der Agent selbst setzt) und Zeitpläne (feste Kadenz) liegen in einem eigenen Speicher. Ein Scheduler prüft ihn regelmäßig und legt Fälliges als Ereignis in die Inbox - Timer starten niemals direkt einen Run.",
+        "Memory: Ein Verzeichnis aus Dateien auf dauerhaftem Speicher: Nutzeranweisungen, Notizen über den Nutzer, bereits Gesagtes (damit nichts doppelt kommt) und eine Fortschrittsdatei pro Aufgabe. Faustregel: Nur speichern, was der Agent nicht nachschlagen kann - für alles andere reicht ein Verweis. Optional kuratiert ein 'Dreaming'-Schritt das Gedächtnis zwischen den Sitzungen.",
+        "Permissions: Ein Credential-Proxy außerhalb der Agenten-Umgebung fügt Geheimnisse erst beim abschickenden Request hinzu - der Agent selbst sieht sie nie. Ein Auto-Modus mit Klassifikatoren prüft riskante Aktionen. Und deferred tool calls beenden den Run mitten im Aufruf, zeigen dem Nutzer eine Karte zur Entscheidung und setzen die gespeicherte Session fort, sobald die Antwort als Inbox-Ereignis zurückkommt.",
+        "Outbox: Jeder Run endet auf eine von drei Arten - senden, schweigen oder fragen. Anthropics Rat: start quiet. Ein Agent soll leise beginnen und sich die Aufmerksamkeit des Nutzers erst verdienen; wer zu viel schickt, wird laut, wer zu wenig schickt, verpasst Wichtiges - dafür empfiehlt der Guide eigene Evals."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Warum jetzt"
+    },
+    {
+      "t": "p",
+      "x": "Anthropic begründet den Zeitpunkt mit zwei Modellfortschritten: besseres Urteilsvermögen (die Modelle erkennen verlässlicher, wann sie nachfragen müssen) und sinkende Kosten. Ein Beispiel aus dem Guide: Auf einem Langzeit-Coding-Benchmark kostete Opus 5.5 pro gelöster Aufgabe 78 Prozent weniger als Opus 5 - bei typischen Arbeitslasten waren es 40 Prozent weniger. Angaben von Anthropic."
+    },
+    {
+      "t": "callout",
+      "x": "Der Guide liest sich wie eine Checkliste für eigene Dauer-Agenten: Hast du Deduplizierung? Genau einen Worker pro Inbox? Einen ruhigen Standard im Outbox-Verhalten? Wer schon Bots mit Routinen und Freigabe-Karten betreibt, findet hier die Referenz-Architektur dazu - vom Modellanbieter selbst.",
+      "title": "Für deine Praxis"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Building always-on agents (William Hu)",
+      "publisher": "Claude (Anthropic)",
+      "url": "https://claude.com/resources/articles/building-always-on-agents",
+      "accessed": "2026-11-15"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Läuft ein Always-on-Agent dauerhaft?",
+      "a": "Nein. Er verbringt die meiste Zeit schlafend, wacht für einen Run auf, erledigt ein Ereignis, speichert seinen Stand und legt sich wieder schlafen."
+    },
+    {
+      "q": "Aus welchen Bausteinen besteht die Architektur?",
+      "a": "Aus fünf: Event-Inbox, Timer, Memory, Permissions und Outbox. Der bekannte Agenten-Loop bleibt der Kern, die Bausteine regeln Aufwachen, Gedächtnis und Auslieferung."
+    },
+    {
+      "q": "Warum empfiehlt der Guide ein leises Outbox-Verhalten?",
+      "a": "Ein Agent, der zu viel schickt, wird laut; wer zu wenig schickt, verpasst Wichtiges. Anthropic rät deshalb zu \"start quiet\" und zu eigenen Evals für die richtige Balance."
+    }
+  ],
+  "related": [
+    "claude-managed-agents-self-hosted-beta",
+    "ui-sdk-agenten-komponenten-bedienen"
+  ]
+}

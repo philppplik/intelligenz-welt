@@ -1,0 +1,112 @@
+{
+  "slug": "deepseek-app-werkzeuge-api-chat-demo",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "DeepSeek stellt die Werkzeuge seiner App über die API - und den Client dazu",
+  "dek": "Suche, Dateien, Links, Sicherheit und Sprache der DeepSeek App lassen sich jetzt per API aufrufen. Dazu kommt ein quelloffener Chat-Client, der die App nachbauen kann.",
+  "published": "2026-11-15T08:56:00+01:00",
+  "modified": "2026-11-15T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "deepseek",
+    "api",
+    "entwickler",
+    "open-source",
+    "ki-tools"
+  ],
+  "key_takeaways": [
+    "Suche, Dateien, Links, Sicherheitsprüfungen und Sprache der DeepSeek App sind seit dem 13. November über die DeepSeek API aufrufbar.",
+    "Die Werkzeuge laufen auf dem Modell V4.1-Flash (deepseek-flash); Werkzeugaufrufe und Kontextzusammenstellung übernimmt DeepSeek serverseitig.",
+    "Die Nutzung der Werkzeuge kostet Gebühren zusätzlich zu den normalen Tokenpreisen.",
+    "Öffentlich zugängliche Anwendungen müssen die Sicherheitsprüfungen aktivieren; Moderation, Modell-Registrierung und KI-Kennzeichnung bleiben Aufgabe der Entwickler.",
+    "Der quelloffene Client chat-demo kommt ohne eigenes Backend aus: API-Schlüssel im localStorage, Unterhaltungen in IndexedDB."
+  ],
+  "hero": {
+    "alt": "Abstraktes Hero: App-Bausteine wie Suche und Dateien docken an eine API-Schnittstelle an",
+    "caption": "App-Bausteine wie Suche und Dateien docken an eine API an: DeepSeek öffnet die Werkzeuge seiner App. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "DeepSeek hat die Fähigkeiten hinter seiner App für Entwickler geöffnet: Seit dem 13. November sind Websuche, Dateiverarbeitung, Link-Abruf, Sicherheitsprüfungen und Sprachfunktionen über die DeepSeek API aufrufbar. Dazu hat das Unternehmen mit chat-demo einen statischen Web-Client quelloffen gemacht, der die App mit dem eigenen API-Schlüssel nachbauen kann."
+    },
+    {
+      "t": "h2",
+      "x": "Was die API jetzt eingebaut hat"
+    },
+    {
+      "t": "p",
+      "x": "Die Werkzeuge laufen auf dem Modell V4.1-Flash (deepseek-flash) in den Messages-, Responses- und Chat-Completions-Endpunkten; Werkzeugaufrufe und Kontextzusammenstellung übernimmt DeepSeek serverseitig. Aktivierbar sind:"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Web Search: Web- oder Bildersuche mit Quellenangaben im Non-Thinking-Modus.",
+        "Deep Thinking Search: Suchen und Lesen von Seiten während mehrstufigen Reasonings.",
+        "File Input: PDFs, Office-Dateien und Bilder in den Gesprächskontext einlesen.",
+        "URL Reading: Links in Nutzernachrichten automatisch abrufen.",
+        "Safety Checks: Ein- und Ausgaben prüfen, mit Ablehnungs-Signalen bei Risiken."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Aktiviert wird die Suche über den Parameter deepseek_web_search, der Link-Abruf über deepseek_read_url. Suche, Fetch, OCR, Spracherkennung (ASR) und Sprachsynthese (TTS) gibt es zusätzlich als eigenständige APIs. Wichtig für den Geldbeutel: Die Nutzung der Werkzeuge wird auf die normalen Tokenpreise draufgeschlagen."
+    },
+    {
+      "t": "h2",
+      "x": "Regeln für öffentliche Anwendungen"
+    },
+    {
+      "t": "p",
+      "x": "Wer eine öffentlich zugängliche App baut, muss die Sicherheitsprüfungen aktivieren. Verantwortlich bleiben die Entwickler selbst: für Moderation, für die geltende Modell-Registrierung und für die Kennzeichnung KI-generierter Inhalte."
+    },
+    {
+      "t": "h2",
+      "x": "chat-demo: Die App zum Selberhosten"
+    },
+    {
+      "t": "p",
+      "x": "Der quelloffene Client chat-demo kommt ohne eigenes Backend aus: Der API-Schlüssel liegt im localStorage des Browsers, Unterhaltungen in IndexedDB, und die bisherige DeepSeek-Gesprächshistorie lässt sich importieren. Wer will, baut damit faktisch eine eigene DeepSeek App."
+    },
+    {
+      "t": "callout",
+      "x": "Suche, Dateien und Sprache mussten Teams bisher selbst um ein Modell herumbauen. Stellt das Labor dieses Gerüst selbst, wird aus einem günstigen Modell ein fertiger Produktstack - mit einer Kehrseite: Dein Agenten-Loop hängt dann an DeepSeeks Servern, nicht nur an seinen Gewichten.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "The full DeepSeek App experience, now via API",
+      "publisher": "DeepSeek API Docs",
+      "url": "https://api-docs.deepseek.com/news/news261113/",
+      "accessed": "2026-11-15"
+    },
+    {
+      "title": "deepseek-ai/chat-demo (README)",
+      "publisher": "GitHub (deepseek-ai)",
+      "url": "https://github.com/deepseek-ai/chat-demo",
+      "accessed": "2026-11-15"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was kosten die neuen DeepSeek-Werkzeuge?",
+      "a": "Die Nutzung der Werkzeuge wird laut DeepSeek als Gebühr auf die normalen Tokenpreise aufgeschlagen. Eine Aufschlüsselung je Werkzeug steht in der Preisübersicht der API-Dokumentation."
+    },
+    {
+      "q": "Muss ich die Sicherheitsprüfungen aktivieren?",
+      "a": "Ja, wenn du eine öffentlich zugängliche Anwendung baust. DeepSeek verlangt das ausdrücklich; die Verantwortung für Moderation, geltende Modell-Registrierung und die Kennzeichnung KI-generierter Inhalte bleibt bei den Entwicklern."
+    },
+    {
+      "q": "Wo liegen meine Daten beim quelloffenen chat-demo?",
+      "a": "Lokal in deinem Browser: Der API-Schlüssel liegt im localStorage, Unterhaltungen und Anhänge in IndexedDB. Erst beim Senden von Nachrichten, Uploads oder Sprachfunktionen gehen Inhalte an den konfigurierten API-Dienst."
+    }
+  ],
+  "related": [
+    "ui-sdk-agenten-komponenten-bedienen",
+    "llama-cpp-1-0-stabile-api-semantische-versionen"
+  ]
+}

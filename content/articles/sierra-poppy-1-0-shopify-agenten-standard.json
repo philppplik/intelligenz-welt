@@ -1,0 +1,100 @@
+{
+  "slug": "sierra-poppy-1-0-shopify-agenten-standard",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Poppy 1.0 ist da: Ein Handschlag-Standard für persönliche Agenten im Handel",
+  "dek": "Sierras Personal Agent Protocol erreicht Version 1.0 - und Shopify veröffentlicht ab sofort für jeden Händler automatisch eine Poppy-Datei. Auch Metas Muse sucht jetzt zuerst danach.",
+  "published": "2026-11-15T08:56:00+01:00",
+  "modified": "2026-11-15T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "sierra",
+    "poppy",
+    "agentic-commerce",
+    "shopify",
+    "standards"
+  ],
+  "key_takeaways": [
+    "Sierra hat Version 1.0 des Personal Agent Protocol (Poppy) veröffentlicht.",
+    "Jeder Shopify-Shop veröffentlicht ab sofort automatisch eine Poppy-Datei, ohne dass Händler etwas einrichten müssen.",
+    "Metas Agent Muse sucht auf jeder besuchten Seite jetzt zuerst nach Poppy.",
+    "Mercury und Turkish Airlines sind live, Synchrony ist in Vorbereitung.",
+    "60 neue Designpartner kommen hinzu, auf insgesamt über 100."
+  ],
+  "hero": {
+    "alt": "Abstraktes Hero zu Poppy 1.0: Ein persönlicher Agent meldet sich an einem Laden-Tor mit einem Ausweis an",
+    "caption": "Ein persönlicher Agent meldet sich mit Ausweis am Laden-Tor: der Poppy-Handschlag. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Sierra hat Version 1.0 des Personal Agent Protocol - kurz Poppy - veröffentlicht. Das Protokoll legt fest, wie persönliche Agenten mit Unternehmen sprechen: über deren Geschäftsagenten, Websites und APIs. Der Start im Oktober hatte Designpartner wie Meta, Shopify, Stripe und Walmart; jetzt kommen 60 weitere hinzu, auf insgesamt über 100 - darunter Delta, Hyatt, Intuit, Checkout.com, Cisco und GoodRx."
+    },
+    {
+      "t": "h2",
+      "x": "Die drei praktischen Neuerungen"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Shopify aktiviert Poppy für jeden Händler auf der Plattform: Jeder Shop veröffentlicht automatisch eine Poppy-Datei, ohne dass Händler etwas einrichten müssen.",
+        "Metas Agent Muse sucht auf jeder besuchten Seite jetzt zuerst nach Poppy.",
+        "Erste Partner sind live: Mercury (Banking-Funktionen für persönliche Agenten), Synchrony (Finanzierung im Agenten-Shopping, in Vorbereitung) und Turkish Airlines (Tarife, Buchungen, Business-Class-Upgrades)."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was in Version 1.0 steckt"
+    },
+    {
+      "t": "p",
+      "x": "Poppy baut auf bestehenden Standards auf: MCP, OpenAPI und UCP, dazu OAuth, damit Kunden steuern, was ein Agent darf - und den Zugriff später wieder entziehen können. Gegenüber dem Entwurf kamen laut Sierra eine gestufte Einführung für Unternehmen, Möglichkeiten für Händler, Agenten zu führen und Feedback einzusammeln, sowie Erweiterungen. Die erste ist eine Commerce-Erweiterung, die Shopify mitgeschrieben hat."
+    },
+    {
+      "t": "p",
+      "x": "Die Aufgabenteilung: UCP übernimmt das Einkaufen selbst - Produkte finden, Warenkorb, Checkout. Poppy regelt die Ankunft: Wer ist dieser Agent, und was darf er? Die Commerce-Erweiterung lässt einen Agenten als Gast oder mit Kundenkonto einkaufen und verpflichtet ihn, vor sensiblen Schritten beim Kunden nachzufragen. Bei Mercury etwa darf ein Agent Salden prüfen und Überweisungen anstoßen - ausgeführt wird nur, was die Freigabe-Richtlinie des Kontos passiert."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung: Vom Scraping zum Handschlag"
+    },
+    {
+      "t": "p",
+      "x": "Bisher mussten persönliche Agenten Websites wie Menschen bedienen - mit all den Reibungen und Blockaden, die wir diese Woche auch im United-Fall beschrieben haben. Poppy dreht die Richtung um: Die Seite erklärt sich dem Agenten maschinenlesbar. Wer einen Shop oder ein Angebot betreibt, sollte den Begriff kennen: Eine Poppy-Datei könnte bald so selbstverständlich sein wie heute eine Sitemap."
+    },
+    {
+      "t": "callout",
+      "x": "Für Händler auf Shopify läuft Poppy automatisch mit. Alle anderen finden bei Sierra ein Implementierungskit samt Validator, mit dem sich die eigene Poppy-Datei prüfen lässt.",
+      "title": "Zum Mitnehmen"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Releasing Personal Agent Protocol 1.0 (Bret Taylor, Clay Bavor)",
+      "publisher": "Sierra Blog",
+      "url": "https://sierra.ai/blog/releasing-poppy",
+      "accessed": "2026-11-15"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist Poppy?",
+      "a": "Das Personal Agent Protocol von Sierra. Es legt fest, wie persönliche Agenten mit Unternehmen sprechen - über deren Geschäftsagenten, Websites und APIs."
+    },
+    {
+      "q": "Müssen Shopify-Händler etwas einrichten?",
+      "a": "Nein. Shopify hat Poppy für jeden Händler auf der Plattform aktiviert; jeder Shop veröffentlicht automatisch eine Poppy-Datei."
+    },
+    {
+      "q": "Welche Unternehmen sind schon live?",
+      "a": "Mercury (Banking-Funktionen für persönliche Agenten) und Turkish Airlines (Tarife, Buchungen, Upgrades) sind laut Sierra live, Synchrony ist in Vorbereitung. Metas Agent Muse sucht ab sofort auf jeder Seite zuerst nach Poppy."
+    }
+  ],
+  "related": [
+    "chatgpt-wallet-agenten-zahlen-biometrische-freigabe",
+    "united-muse-agenten-sperren-telefonate"
+  ]
+}

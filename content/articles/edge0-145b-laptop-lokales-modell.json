@@ -1,0 +1,100 @@
+{
+  "slug": "edge0-145b-laptop-lokales-modell",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Edge0-145B: Ein 145-Milliarden-Parameter-Modell fürs eigene Notebook",
+  "dek": "Edge0 verspricht Frontier-Niveau auf dem eigenen Rechner: 145 Milliarden Parameter, 29 GB Spitzenspeicher, über 80 Token pro Sekunde. Die Zahlen stammen vom Hersteller selbst.",
+  "published": "2026-11-15T08:56:00+01:00",
+  "modified": "2026-11-15T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "edge0",
+    "lokale-ki",
+    "open-weights",
+    "on-device",
+    "moe"
+  ],
+  "key_takeaways": [
+    "Edge0 hat am 12. November die Modelle Edge0-145B und Edge0-120B samt Inferenz-Framework quelloffen veröffentlicht.",
+    "Der Hersteller nennt 29 GB Spitzenspeicher, über 80 Token pro Sekunde und rund 120 Watt - alle Zahlen stammen aus Edge0s eigenen Veröffentlichungen.",
+    "Von den 145 Milliarden Parametern rechnen pro Schritt nur etwa 10 Milliarden; 64 Experten teilen sich je zwei große Matrizen.",
+    "Die Benchmarks von Edge0 und den Vergleichsmodellen stammen aus Edge0s internen Auswertungen; Speicherwerte der Vergleichsmodelle sind Schätzungen.",
+    "Den Anspruch, das erste quelloffene On-Device-Modell dieser Größe zu sein, hat bislang nur der Hersteller geprüft."
+  ],
+  "hero": {
+    "alt": "Abstraktes Hero für Edge0-145B: Ein grosses Modell als Lichtkugel über einem stilisierten Notebook",
+    "caption": "Ein 145-Milliarden-Parameter-Modell als Lichtkugel über einem Notebook: Edge0s Versprechen in einem Bild. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Das Unternehmen Edge0 hat am 12. November zwei Modelle quelloffen veröffentlicht: Edge0-145B und Edge0-120B, zusammen mit dem eigenen Inferenz-Framework und Deployment-Werkzeugen. Edge0 nennt das 145B-Modell das erste quelloffene On-Device-Modell dieser Größe - eine Herstellerangabe, die wir nicht unabhängig geprüft haben. Alle folgenden Leistungszahlen stammen aus Edge0s eigenen Veröffentlichungen; wir haben nicht nachgemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Die versprochenen Werte"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "29 GB Spitzenspeicher - lauffähig auf einem kompatiblen Notebook wie einem MacBook Pro.",
+        "Über 1.100 Token pro Sekunde beim Einlesen (Prefill), über 80 Token pro Sekunde bei der Generierung.",
+        "Rund 120 Watt typische Leistungsaufnahme im gemessenen Setup.",
+        "128K bis 256K Kontext bei laut Edge0 nahezu gleicher Geschwindigkeit."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Wie das technisch gehen soll"
+    },
+    {
+      "t": "p",
+      "x": "Vier Hebel nennt Edge0. Erstens die Architektur: Je 64 Experten des Mixture-of-Experts-Modells teilen sich zwei große Matrizen, jeder Experte behält nur kleine eigene Parameter - von den 145 Milliarden Parametern rechnen pro Schritt nur etwa 10 Milliarden. Zweitens das Training: Das Modell wird von Anfang an in seiner On-Device-Architektur trainiert statt nachträglich komprimiert. Drittens das Laden über drei Speicherstufen: häufig genutzte Experten bleiben im GPU-Speicher, eine rund 40 GB große Expertenbibliothek liegt im Arbeitsspeicher, etwa 48 GB Vokabulardaten auf der SSD. Viertens das Scheduling: GPU und CPU arbeiten parallel, Speculative Decoding prüft mehrere Kandidaten-Tokens gleichzeitig."
+    },
+    {
+      "t": "h2",
+      "x": "Die Benchmarks - und ihre Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Edge0 meldet 64,6 auf DeepSWE 1.1, 86,52 auf Terminal-Bench 2.1, 90,4 auf GPQA-Diamond und 80,6 auf IFBench; im Mittel über sechs Benchmarks kommt das Modell auf 72,8 Punkte. Zwei Einschränkungen stehen im Kleingedruckten: Die Werte für Edge0 und die Vergleichsmodelle Qwen, DeepSeek und Claude stammen aus Edge0s internen Auswertungen, und die Speicherfußabdrücke der Vergleichsmodelle sind Schätzungen für eine Standard-4-Bit-Installation, keine Messungen. Zudem ist der benannte Claude-Vergleich (Opus 4.6) nicht mehr das jüngste Modell."
+    },
+    {
+      "t": "callout",
+      "x": "Die Kernaussage - ein 100B+-Modell lokal statt in der Cloud - ist stark, aber bislang nur mit Herstellerzahlen belegt. Edge0 kündigt an, den vollständigen Evaluationsaufbau samt Reproduktionsanleitung zu veröffentlichen. Bis unabhängige Läufe vorliegen, solltest du die Benchmarks als Anspruch lesen, nicht als Befund.",
+      "title": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Relevant ist die Richtung unabhängig von den Zahlen: Lokale Modelle wachsen von der 30-Milliarden- in die 100-Milliarden-Liga. Wer sensible Daten nicht in die Cloud geben will oder wiederkehrende Tokenkosten vermeiden möchte, bekommt damit eine neue Option - sobald die Versprechen unabhängig bestätigt sind."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Edge0-145B: Frontier AI Capabilities on Your Own Computer",
+      "publisher": "Edge0 Blog",
+      "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+      "accessed": "2026-11-15"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind die Leistungswerte unabhängig geprüft?",
+      "a": "Nein. Alle genannten Werte - Speicher, Geschwindigkeit, Benchmarks - stammen aus Edge0s eigenen Veröffentlichungen und internen Auswertungen. Eine Reproduktionsanleitung hat der Hersteller angekündigt."
+    },
+    {
+      "q": "Was brauche ich, um Edge0-145B lokal zu nutzen?",
+      "a": "Laut Hersteller ein kompatibles Notebook: Edge0 nennt 29 GB Spitzenspeicher und verweist auf Laptops wie ein MacBook Pro mit 48 GB. Das sind Herstellerangaben, keine von uns nachgemessenen Werte."
+    },
+    {
+      "q": "Ist Edge0-145B wirklich das erste Modell dieser Größe für eigene Geräte?",
+      "a": "Das ist eine Herstellerangabe, die wir nicht unabhängig geprüft haben. Edge0 selbst formuliert den Anspruch so in seinem Blogpost."
+    }
+  ],
+  "related": [
+    "llama-cpp-1-0-stabile-api-semantische-versionen"
+  ]
+}

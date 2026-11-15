@@ -1,0 +1,102 @@
+{
+  "slug": "cloudflare-kitesurf-open-source-browser-agenten",
+  "lang": "de",
+  "section": "tools",
+  "type": "news",
+  "title": "Cloudflare öffnet Kitesurf: ein Browser für Agenten ohne Chromium-Container",
+  "dek": "Kitesurf läuft komplett auf Cloudflare Workers, spricht das Chrome DevTools Protocol und steht jetzt unter Apache 2.0 auf GitHub - inklusive Anleitung zum Selberhosten.",
+  "published": "2026-11-15T08:56:00+01:00",
+  "modified": "2026-11-15T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "cloudflare",
+    "kitesurf",
+    "open-source",
+    "browser",
+    "agenten"
+  ],
+  "key_takeaways": [
+    "Cloudflare hat Kitesurf am 13. November unter der Apache-2.0-Lizenz quelloffen gemacht.",
+    "Die Browser-Engine rendert Seiten ohne Chromium, läuft auf Cloudflare Workers und spricht das Chrome DevTools Protocol.",
+    "Sie baut auf Open-Source-Rust-Paketen wie Blitz, Stylo und Boa, kompiliert nach WebAssembly.",
+    "Selberhosten geht lokal mit pnpm; das Deploy ins eigene Cloudflare-Konto erfordert einen Workers-Paid-Plan.",
+    "Cloudflare warnt selbst vor rauen Kanten: Kitesurf ist in intensiver Entwicklung, der Fokus liegt auf Kompatibilität."
+  ],
+  "hero": {
+    "alt": "Abstraktes Hero zu Kitesurf: Ein leichter Browser-Drachen aus Glas schwebt über einem Netz aus Workers",
+    "caption": "Ein leichter Browser-Drachen aus Glas über einem Worker-Netz: Kitesurf ohne Chromium-Container. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Cloudflare hat Kitesurf quelloffen gemacht: Der Browser für KI-Agenten steht seit dem 13. November unter der Apache-2.0-Lizenz auf GitHub. Kitesurf war im August vorgestellt worden und läuft vollständig auf Cloudflare Workers - ohne Browser-Container."
+    },
+    {
+      "t": "h2",
+      "x": "Was Kitesurf kann"
+    },
+    {
+      "t": "p",
+      "x": "Die Engine parst HTML, wendet CSS an, führt das JavaScript der Seite aus und rendert Screenshots - alles ohne Chromium. Sie spricht das Chrome DevTools Protocol (CDP), sodass sich Clients wie Puppeteer direkt verbinden; WebMCP-Unterstützung kam im September dazu. Das Ziel laut Cloudflare: ein leichter, sparsamer Browser für Agenten, der weniger CPU und Speicher braucht als ein Vollbrowser und über das Workers-Netz skaliert."
+    },
+    {
+      "t": "h2",
+      "x": "Woran es gebaut ist"
+    },
+    {
+      "t": "p",
+      "x": "Kitesurf setzt auf Open-Source-Rust-Pakete, die nach WebAssembly kompiliert werden: Blitz für HTML-Parsing, DOM, Layout und Painting, Stylo für CSS, Boa als JavaScript-Engine in WASM - als letzte Option, wenn JavaScript nicht in Dynamic Workers laufen kann - sowie Linebender-Bibliotheken für Text und 2D-Grafik und Krilla für PDF-Ausgabe. Die Engine selbst hat drei Teile: Engine (Sitzungen und Clients), PageScript (die Seite und ihr JavaScript) und PageRenderer."
+    },
+    {
+      "t": "h2",
+      "x": "Selber laufen lassen"
+    },
+    {
+      "t": "p",
+      "x": "Lokal startet die Engine nach dem Klonen mit pnpm install und pnpm run dev; der erste Build kompiliert den Rust-Kern und dauert entsprechend. Danach lässt sich etwa Puppeteer auf den lokalen CDP-Endpunkt zeigen - oder direkt ein Agenten-Harness. Wer die Engine im eigenen Cloudflare-Konto betreiben will, deployed per pnpm run deploy; wegen der Dynamic Workers ist dafür ein Workers-Paid-Plan nötig."
+    },
+    {
+      "t": "callout",
+      "x": "Cloudflare warnt selbst: Kitesurf ist in intensiver Entwicklung, der Fokus liegt auf Kompatibilität. Wer einsteigt, sollte mit rauen Kanten rechnen - Beiträge wie reproduzierbare Rendering-Bugs sind ausdrücklich willkommen.",
+      "title": "Stand der Dinge"
+    },
+    {
+      "t": "p",
+      "x": "Für Agenten-Projekte ist das relevant, weil Headless-Chrome oft der schwerste und teuerste Teil des Stacks ist. Eine CDP-kompatible Engine zum Selberhosten senkt die Kosten pro Seite - etwa für Recherche- und Scraping-Agenten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Kitesurf is now open source",
+      "publisher": "The Cloudflare Blog",
+      "url": "https://blog.cloudflare.com/kitesurf-open-source/",
+      "accessed": "2026-11-15"
+    },
+    {
+      "title": "cloudflare/kitesurf",
+      "publisher": "GitHub (Cloudflare)",
+      "url": "https://github.com/cloudflare/kitesurf",
+      "accessed": "2026-11-15"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist Kitesurf kostenlos nutzbar?",
+      "a": "Der Code steht unter Apache 2.0 und ist frei nutzbar. Für den Betrieb im eigenen Cloudflare-Konto ist wegen der Dynamic Workers ein Workers-Paid-Plan nötig; lokal läuft die Engine ohne Cloudflare-Konto."
+    },
+    {
+      "q": "Ersetzt Kitesurf Headless-Chrome?",
+      "a": "Das ist das Ziel: ein leichter Browser für Agenten ohne Chromium-Container. Cloudflare warnt aber selbst, Kitesurf sei in intensiver Entwicklung und der Fokus liege auf Kompatibilität - rechne mit rauen Kanten."
+    },
+    {
+      "q": "Wie spreche ich Kitesurf an?",
+      "a": "Über das Chrome DevTools Protocol. Clients wie Puppeteer verbinden sich direkt mit dem lokalen Endpunkt, nachdem du das Repo geklont und mit pnpm install und pnpm run dev gestartet hast."
+    }
+  ],
+  "related": [
+    "llama-cpp-1-0-stabile-api-semantische-versionen",
+    "ui-sdk-agenten-komponenten-bedienen"
+  ]
+}

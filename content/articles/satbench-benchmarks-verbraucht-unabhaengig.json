@@ -1,0 +1,107 @@
+{
+  "slug": "satbench-benchmarks-verbraucht-unabhaengig",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "SatBench: 63 Prozent der Benchmarks sind gelöst - unabhängig nur 24",
+  "dek": "Ein neuer Benchmark der Benchmarks zählt, wie schnell die Tests der KI-Labore verbraucht sind. Die Kluft zwischen Herstellerzahlen und unabhängigen Läufen ist der eigentliche Befund.",
+  "published": "2026-11-15T08:56:00+01:00",
+  "modified": "2026-11-15T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "benchmarks",
+    "satbench",
+    "evaluation",
+    "transparenz",
+    "modelle"
+  ],
+  "key_takeaways": [
+    "SatBench zählt 109 von 173 von Laboren zitierte Benchmarks als gelöst - 63 Prozent bei einer 85-Prozent-Schwelle.",
+    "Zählt man nur unabhängige Läufe, steht der Index bei 24 statt 63 Prozent.",
+    "Drei von vier Erstüberquerungen der 85-Prozent-Marke stammen aus dem eigenen Launch-Post des Labors.",
+    "Neue Benchmarks fallen immer schneller: 17 Prozent des Jahrgangs 2023 waren binnen eines Jahres gelöst, 2025 waren es 43 Prozent.",
+    "Die Werte für 2028 und 2030 sind ausdrücklich Extrapolationen bei konstantem Tempo, keine Prognosen."
+  ],
+  "hero": {
+    "alt": "Abstraktes Hero zu SatBench: Eine Prüfungsplatte, deren Aufgabenfelder nacheinander als gelöst markiert werden",
+    "caption": "Zwei Prüfungsplatten, unterschiedlich weit gelöst: die Kluft zwischen Hersteller- und unabhängigen Werten. (Symbolbild, KI-generiert)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Wie viele der Benchmarks, mit denen KI-Labore ihre Modelle bewerben, sind eigentlich noch aussagekräftig? Ethan Mollick hat mit SatBench einen 'Benchmark der Benchmarks' veröffentlicht (14. November), aufgebaut auf Brian Zhous Benchmark Almanac. Ein Benchmark gilt darin als gelöst, sobald der beste gemeldete KI-Score 85 Prozent erreicht."
+    },
+    {
+      "t": "h2",
+      "x": "Die Kernzahlen"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "109 der 173 von Laboren zitierten Benchmarks sind nach dieser Definition gelöst - 63 Prozent. Der Index lag von 2023 bis Anfang 2025 nahe 30 Prozent und kletterte dann binnen zwölf Monaten um 20 Punkte.",
+        "Neue Benchmarks fallen immer schneller: Der Anteil, der binnen eines Jahres nach Veröffentlichung gelöst wird, stieg von 17 Prozent (Jahrgang 2023) über 30 Prozent (2024) auf 43 Prozent (2025).",
+        "Die mediane Zeit bis zur 85-Prozent-Marke sank von etwa 20 auf etwa 14 Monate.",
+        "Der Kanon von 2023 ist am Frontier-Rand verschwunden: 2026 nannten nur noch 2 von 134 Launch-Posts Klassiker wie MMLU, HumanEval oder GSM8K."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Der eigentliche Befund: die Unabhängigkeitslücke"
+    },
+    {
+      "t": "p",
+      "x": "Zählt man nur unabhängige Läufe, steht SatBench nicht bei 63, sondern bei 24 Prozent. Drei von vier Erstüberquerungen der 85-Prozent-Marke stammen aus dem eigenen Launch-Post des Labors - und nur 10 dieser 75 wurden später von unabhängiger Seite erreicht. Die Bestwerte mischen zudem verschiedene Testumgebungen, Werkzeugnutzung und Best-of-n-Verfahren."
+    },
+    {
+      "t": "p",
+      "x": "Wer zuerst über 85 Prozent kommt: OpenAI liegt mit 20 Benchmarks insgesamt vorn, Anthropic führt den Jahrgang 2026 mit 11 an. Gezählt werden dabei nur die 71 Benchmarks, die mehrere Frontier-Labore berichten - damit kein Labor mit Nischentests die Liste dominiert."
+    },
+    {
+      "t": "h2",
+      "x": "Die Grenzen der Zählung"
+    },
+    {
+      "t": "p",
+      "x": "Mollick benennt die Schwächen selbst: Vor 2025 ist die Datenlage dünn (43 Launch-Posts aus 2023/24 gegenüber rund 230 pro Jahr seither), die Score-Matrix ist nur zu 40 Prozent gefüllt, und junge Benchmarks sind unterzählt, weil ein Test erst nach zehn Launch-Erwähnungen in den Index kommt. Die Projektion - der heutige Bestand wäre um 2028 zu 85 Prozent gelöst, der Live-Index um 2030 - ist ausdrücklich eine Extrapolation, keine Prognose."
+    },
+    {
+      "t": "callout",
+      "x": "Launch-Post-Werte taugen immer weniger, um Frontier-Modelle zu unterscheiden. Aussagekräftiger sind ungelöste Benchmarks (der Almanach nennt etwa HLE, SciCode, IFBench) und vor allem eigene Evals auf der eigenen Arbeitslast. Genau deshalb markieren wir Herstellerzahlen in unseren Artikeln konsequent als solche.",
+      "title": "Was das für dich heißt"
+    }
+  ],
+  "sources": [
+    {
+      "title": "SatBench: a benchmark of AI benchmarks (README und summary.md)",
+      "publisher": "GitHub (Ethan Mollick)",
+      "url": "https://github.com/emollick/satbench",
+      "accessed": "2026-11-15"
+    },
+    {
+      "title": "Benchmark Almanac",
+      "publisher": "Brian Zhou",
+      "url": "https://benchmarkalmanac.com",
+      "accessed": "2026-11-15"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wann gilt ein Benchmark bei SatBench als gelöst?",
+      "a": "Sobald der beste gemeldete KI-Score 85 Prozent erreicht - egal ob aus einem offiziellen Leaderboard, von Epoch AI oder aus dem Launch-Post eines Labors."
+    },
+    {
+      "q": "Warum steht SatBench bei 63 und zugleich bei 24 Prozent?",
+      "a": "63 Prozent zählt alle gemeldeten Bestwerte, inklusive Selbstauskünften der Labore. Nur unabhängige Läufe gezählt, bleiben 24 Prozent."
+    },
+    {
+      "q": "Sind die Werte für 2028 und 2030 Prognosen?",
+      "a": "Nein. Es sind Extrapolationen, falls das Tempo der letzten zwölf Monate anhält. Mollick selbst warnt: Das ist keine Vorhersage."
+    }
+  ],
+  "related": [
+    "mka-test-visuelle-wissensarbeit-kosten",
+    "gemini-4-hydrogen-alltagsmodell-agenten"
+  ]
+}
