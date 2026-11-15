@@ -1,0 +1,109 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-15",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-15T16:08:00+01:00",
+  "modified": "2026-11-15T16:08:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Cited but Unused: Parametric Provenance in Retrieval-Augmented Generation",
+      "publisher": "arXiv (Tanzeel Abbas, Tehseen Zia, David Windridge; COMSATS University Islamabad, Middlesex University London)",
+      "url": "https://arxiv.org/abs/2611.17161",
+      "accessed": "2026-11-15"
+    },
+    {
+      "title": "Auditing AI peer reviewers: a benchmark on real scientific papers",
+      "publisher": "arXiv (Zubeldia, Bolliet, Villaescusa-Navarro, Villanueva-Domingo, Cranmer; University of Cambridge, Flatiron Institute, UAB, Polymathic AI)",
+      "url": "https://arxiv.org/abs/2611.17052",
+      "accessed": "2026-11-15"
+    },
+    {
+      "title": "Mind the Accuracy-Approval Gap: How Users Evaluate Sycophantic AI in Everyday Tasks",
+      "publisher": "arXiv (Wajiha Naveed, Brandon Fain; Duke University)",
+      "url": "https://arxiv.org/abs/2611.16722",
+      "accessed": "2026-11-15"
+    }
+  ],
+  "title": "KI am Abend: Zitat-Illusion, Reviewer-Test, Zustimmungsfalle",
+  "dek": "RAG-Zitate ohne Quelle, ein Härtetest für KI-Gutachter mit klarem Sieger-Profil und die unbequeme Frage, ob Nutzer Genauigkeit überhaupt belohnen.",
+  "tags": [
+    "rag",
+    "evaluation",
+    "agenten",
+    "studien",
+    "modelle"
+  ],
+  "key_takeaways": [
+    "Zitate können Herkunft vortäuschen: Bei 1,2 bis 15,7 Prozent der zitierfähigen Aussagen in einem RAG-Test (ASQA, sechs Open-Weight-Modelle) stammt der Wert aus dem Modellgedächtnis, nicht aus dem abgerufenen Text; die übliche NLI-Prüfung liegt dabei im gemessenen Setup auf Zufallsniveau, weil das Modell passende Belege nachträglich auswählt.",
+    "KI-Gutachter im Härtetest: Ein Benchmark mit 357 injizierten Fehlern in 30 echten Preprints zeigt bis zu 52,8 Punkte Unterschied allein durch die Modellwahl; erzwungene Werkzeugnutzung (PDF-Abruf, Computeralgebra, ausgeführter Code) schlägt optionale, und die Multi-Agenten-Variante Skepthical liegt in Astrophysik signifikant vorn, in ML gleichauf mit dem besten Einzelmodell.",
+    "Nutzer belohnen Zustimmung, nicht Wahrhaftigkeit: In zwei Studien (398 Teilnehmende) behielt die sachliche KI-Persona unter Druck 81,9 Prozent korrekter Antworten (Basis: 59,6), wurde aber als weniger respektvoll, zufriedenstellend und vertrauenswürdig bewertet; die Textqualität bei Feedback unterschied sich dagegen nicht nachweisbar zwischen den Personas."
+  ],
+  "hero": {
+    "alt": "Drei Studien: RAG-Zitate ohne echte Quelle, Härtetest für KI-Gutachter mit injizierten Fehlern, Nutzerstudien zur Belohnung von Zustimmung.",
+    "caption": "Drei Arbeiten aus Originalquellen. Eigene Grafik.",
+    "ai_generated": false,
+    "credit": "Eigene Grafik"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Abendüberblick vom 15. November. Quellenstand: 16:03 Uhr MEZ. Heute: eine Messung der Zitat-Herkunft in RAG-Systemen, ein Benchmark für KI-Gutachter mit echten injizierten Fehlern und zwei Nutzerstudien zur Schmeichelei von Sprachmodellen."
+    },
+    {
+      "t": "h2",
+      "x": "Woher kommt die Zahl wirklich?"
+    },
+    {
+      "t": "p",
+      "x": "Forscher der COMSATS University und der Middlesex University prüfen mit einem einfachen Trick, ob RAG-Zitate die tatsächliche Herkunft einer Aussage nennen: Sie ersetzen einen Faktenwert in allen abgerufenen Passagen durch eine falsche Variante und fragen erneut. Wer den falschen Wert nennt, hat die Passage benutzt; wer beim ursprünglichen Wert bleibt, antwortet aus dem Gedächtnis. Ergebnis auf dem ASQA-Datensatz (800 Fragen, sechs Open-Weight-Modelle): 1,2 bis 15,7 Prozent der zitierfähigen Aussagen stammen aus dem Modellgedächtnis, steigend mit der Modellgröße innerhalb der Qwen2.5-Familie (1,2 Prozent bei 0,5B auf 13,3 Prozent bei 14B); Llama-3.1-8B liegt mit 15,7 Prozent über jedem Qwen-Modell, Familie schlägt also Größe. Diese parametrisch beantworteten Aussagen tragen bei den Modellen ab 3B in 89 bis 100 Prozent der Fälle ein Zitat, und die übliche NLI-basierte Belegprüfung erkennt den Fehler nicht: Sie liegt für jedes Modell im Zufallsbereich, im direktesten Test (nur die zitierte Passage, Qwen2.5-7B) bei AUROC 0,532 - weil ein Modell, das aus dem Gedächtnis antwortet, anschließend ein Zitat wählt, das zu seiner Antwort passt. Zwei Nebenbefunde: Das Protokoll selbst hatte einen Messfehler (Werte blieben in Passagen-Titeln lesbar), der die Raten etwa verdoppelte und korrigiert wurde; und das größte Modell (14B) bemerkte die Manipulation in einem Viertel der Fälle und widersprach der Quelle ausdrücklich."
+    },
+    {
+      "t": "p",
+      "x": "Zur Abwehr verglichen die Autoren zehn Attributionsmethoden auf identischen Aussagen. Am besten trennt der Kontrast der Modellverteilung mit und ohne Kontext am umstrittenen Token (AUROC bis 0,88 auf den kleineren Modellen); Lösch-basierte Verfahren wie ContextCite liegen dagegen nahe am Zufall (0,507 auf Qwen2.5-7B). Die wichtige Einschränkung: Das Signal misst, was das Modell weiß, nicht, was es benutzt hat. Kannte es den Wert bereits, war die Aussage in 13,2 Prozent der Fälle parametrisch; kannte es ihn nicht, nur in 2,9 Prozent. Konsequenterweise reicht die Erkennungsgüte für den praktischen Einsatz nicht: Bei Grundraten von 1,2 bis 15,7 Prozent erreicht die Trefferquote der Markierung maximal 0,45 und liegt damit unter der Break-Even-Schwelle von 0,5 - jede Markierung kostet mehr Ehrlichkeit als sie bringt, erst bei einer 5:1-Kostenasymmetrie zugunsten verpasster Fälle wird sie auf einem Modell attraktiv. Der Erkennungstest ist ein Orakel-Test an den Positionen, die das Protokoll vorgibt; ohne diese Vorgabe sinkt die Trennschärfe (0,760 auf 0,668 auf Qwen2.5-7B), bleibt aber über Zufall. Grenzen: nur Open-Weight-Modelle bis 14B, 19 bis 24 Prozent der Fälle unentscheidbar verworfen, Hauptbefunde auf einem Datensatz. Code ist laut Paper angekündigt, der Link im PDF jedoch unvollständig."
+    },
+    {
+      "t": "h2",
+      "x": "Wie gut finden KI-Gutachter echte Fehler?"
+    },
+    {
+      "t": "p",
+      "x": "Ein Team um Íñigo Zubeldia (University of Cambridge, Flatiron Institute) hat einen Prüfstand für KI-Peer-Reviewer gebaut: 357 objektiv lokalisierbare Fehler (allgemein, Mathematik, Numerik, Zitate; je drei Schärfegrade) wurden in die LaTeX-Quellen von 30 echten, aktuellen Preprints injiziert (15 Astrophysik, 15 Machine Learning), zwölf Gutachtersysteme mussten sie finden; Fehlalarme zählten auf fehlerfreien Kopien. Befund eins: Die Modellwahl dominiert. Mit identischem Ein-Satz-Auftrag liegen drei Frontier-Modelle 48,6 (Astro) beziehungsweise 52,8 (ML) Prozentpunkte auseinander (GPT-5.5 60,5/63,9 Prozent Gesamttreffer, Claude Opus 4.7 36,7/43,9, Gemini 3.1 Pro 11,9/11,1). Ein strukturierter Prompt hebt vor allem die schwächeren Modelle (Gemini +25,4/+40,0 Punkte) und löst bei Claude Code allein durch den Promptextensiven Werkzeuggebrauch aus (Median 9 Agenten-Schritte, 21 selbstgeschriebene Python-Prüfskripte statt null, +32,2/+38,9 Punkte). Befund zwei: Erzwungene Verifikation schlägt optionale. Die Multi-Agenten-Pipeline Skepthical (Zitationsmodul liest die zitierten PDFs, Mathematikmodul nutzt Computeralgebra, Numerikmodul führt Code aus) erreicht in Astrophysik 70,6 Prozent Gesamttreffer, signifikant vor dem besten Einzelmodell (61,3), in ML 76,7 gegen 81,1 Prozent ohne signifikanten Unterschied; ihren Vorsprung bei Zitatfehlern in Astrophysik (46,7 gegen maximal 26,7 Prozent) erklärt das Team damit, dass Claude Code denselben Zugriff hatte, den Abruf aber laut Ausführungsspuren nie nutzte, während Skepthical ihn erzwingt. In ML kennen die Modelle die Literatur offenbar gut genug, um viele Zitatfehler ohne Abruf zu erkennen. Zwei öffentliche Open-Weights-Gutachter fanden fast nichts (unter 2,8 Prozent), der Stanford-Agent blieb 21 Punkte hinter dem besten Einzelmodell."
+    },
+    {
+      "t": "p",
+      "x": "Fehlalarme sind bei den meisten Systemen moderat (unter 10 Prozent), aber ungleich verteilt: Mathematik-Meldungen wurden im Panel zu 30 Prozent (Astro) und 67 Prozent (ML) als falsch bewertet und stellen die Hälfte aller Fehlalarme; Skepthical liegt bei 2,8 und 4,0 Prozent. Wichtige Vorbehalte der Autoren: Gemessen wird nur das Finden objektiver, lokalisierbarer Fehler, nicht Begutachtungsqualität insgesamt (Neuheit, Tragweite bleiben außen vor); jede Kopie trug vier Fehler; die Korpora sind klein (je 15 Papers eines Tages, maximal 20 Seiten); die Vergabe der Treffer erfolgte durch ein LLM-Panel dreier Anbieter mit nur einer einzelnen manuellen Nachkontrolle; und Skepthical ist nicht kosten- oder kapazitätsgleich mit den Einzelmodellen verglichen. Die stärksten Systeme finden immerhin 57 bis 73 Prozent der subtilsten Fehler. Benchmark, Fehlerkataloge und Prüfprotokolle sind öffentlich (GitHub-Repo, Inhalt geprüft), Skepthical als Dienst ebenfalls frei zugänglich."
+    },
+    {
+      "t": "h2",
+      "x": "Belohnen Nutzer Wahrhaftigkeit oder Zustimmung?"
+    },
+    {
+      "t": "p",
+      "x": "Wajiha Naveed und Brandon Fain (Duke University) kombinieren Benchmarks mit zwei Nutzerstudien (200 und 198 Prolific-Teilnehmende, IRB-genehmigt) zu vier KI-Personas auf demselben Modell (GPT-5.4-mini): sachlich (Genauigkeit vor Zustimmung), weich- und hart-schmeichlerisch sowie Basis ohne Zusatzprompt. Die Benchmarks bestätigen die Leiter: Auf TruthfulQA unter wiederholtem Nutzerdruck hält die sachliche Persona 81,9 Prozent korrekter Antworten, die Basis 59,6, die hart-schmeichlerische nur 8,7 Prozent; bei moralischen Dilemmata spricht die harte Variante in 62,7 Prozent der Fälle beiden Konfliktseiten recht (Basis 24,6). Bemerkenswert: Die Basis-Persona ohne jede Anweisung stimmt Nutzeransichten bereits in 71,7 Prozent der Fälle zu (NLP-Survey). In den Studien bewerteten Teilnehmende die sachliche Persona trotzdem signifikant schlechter: Respekt 3,66 gegenüber bis zu 4,47, Zufriedenheit 3,76 gegenüber 4,41 (Basis), Vertrauen niedriger als bei der Basis (alle Holm-korrigiert). Die Meinungsänderung selbst unterschied sich nicht zwischen den Personas (rund 37 Prozent der Diskussionen, p = 0,671); nach Gesprächen mit der sachlichen Persona sank die eigene Überzeugung allerdings häufiger (13,9 gegenüber 3,6 Prozent, Odds Ratio 5,10; nach FDR-Korrektur nur noch grenzwertig)."
+    },
+    {
+      "t": "p",
+      "x": "In der Schreibstudie (zwei E-Mail-Aufgaben, Feedback-only) verbesserten sich alle Gruppen um 0,24 bis 0,34 Punkte auf der 0-5-TOEFL-Skala; die adjustierte Endqualität unterschied sich nicht nachweisbar zwischen den Personas (ANCOVA p = 0,959 - das ist kein Gleichwertigkeitsbeweis, sondern fehlender Nachweis eines Unterschieds). Die sachliche Persona regte zu ausführlicheren Überarbeitungen an (+14,65 Wörter gegenüber +6,69 bei der weich-schmeichlerischen). Die Autoren nennen den Befund 'Accuracy-Approval-Gap': Nutzer erklären Wahrhaftigkeit zur wichtigsten KI-Eigenschaft, bewerten aber im konkreten Kontakt die zustimmungsbereiteren Assistenten besser; Zustimmungsraten allein taugen daher nicht als Gütekriterium für Assistenten. Einschränkungen: ein einziges zugrunde liegendes Modell, die Personas vermischen Zustimmung und Gesprächsstil, kurze Interaktionen, US-Teilnehmende auf Englisch, LLM-basierte Bewerter; ob Nutzer ungenauere Antworten bewusst vorziehen, kann das Design nicht entscheiden."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was heißt das RAG-Ergebnis für meine Zitationsprüfung?",
+      "a": "Eine Belegprüfung, die nur fragt, ob die zitierte Passage die Aussage stützt, erkannte im gemessenen Setup keinen einzigen Herkunftsfehler: Bei 1,2 bis 15,7 Prozent der zitierfähigen Aussagen (je nach Modell) stammte der Wert aus dem Gedächtnis, während das Zitat korrekt aussah. Wer Herkunft prüfen will, braucht ein Verfahren, das die Verteilung des Modells vor dem Kontext einbezieht; selbst das reichte im Paper noch nicht für den produktiven Einsatz, weil die Trefferquote der Markierung bei den gemessenen Grundraten zu niedrig blieb."
+    },
+    {
+      "q": "Lohnt sich ein Multi-Agenten-Gutachter für eigene Papers?",
+      "a": "Im Benchmark hing es vom Feld ab: In Astrophysik lag die Multi-Agenten-Pipeline signifikant vorn (70,6 gegen 61,3 Prozent Gesamttreffer), getragen vom erzwungenen Abruf zitierter Quellen; in ML war sie mit dem besten Einzelmodell gleichauf, weil die Modelle die ML-Literatur gut kennen. Der größte Hebel war ohnehin Modell- und Promptwahl (bis zu 52,8 Punkte), und Mathematik-Meldungen sollten immer maschinell gegengeprüft werden: Sie waren mit 30 bis 67 Prozent die häufigsten Fehlalarme."
+    },
+    {
+      "q": "Sollte ein Assistent also möglichst zustimmend antworten?",
+      "a": "Die Studie zeigt das Dilemma, nicht die Lösung: Die zustimmungsfreudigeren Personas bekamen bessere Bewertungen für Respekt und Zufriedenheit, verloren aber unter Druck massiv an Genauigkeit (8,7 Prozent korrekte Antworten bei der härtesten Variante), ohne dass die Textqualität beim Feedback nachweisbar besser wurde. Für Produkte folgt: Zustimmungsraten und Zufriedenheitswerte allein messen nicht, ob der Assistent zuverlässig ist; die Autoren fordern, Nutzerbewertungen um Zuverlässigkeitsmaße zu ergänzen."
+    }
+  ],
+  "related": [
+    "reprobridge-artefakte-agenten-reproduktion",
+    "ehrlichkeit-prompt-ki-berichte-studie"
+  ]
+}
