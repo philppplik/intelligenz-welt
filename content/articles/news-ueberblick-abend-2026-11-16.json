@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-16",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-16T17:15:00+01:00",
+  "modified": "2026-11-16T17:15:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "NER-D: A cross-domain benchmark for German NER",
+      "publisher": "arXiv; Marc Brinner u. a., Universität Bielefeld",
+      "url": "https://arxiv.org/abs/2611.18257",
+      "accessed": "2026-11-16"
+    },
+    {
+      "title": "VEPO: Mitigating Multilingual Hallucinations in LVLMs via Visual Evidence-guided Preference Optimization",
+      "publisher": "arXiv; Chengpeng Fu u. a., Harbin Institute of Technology, Peng Cheng Laboratory, Zhongguancun Academy",
+      "url": "https://arxiv.org/abs/2611.18096",
+      "accessed": "2026-11-16"
+    },
+    {
+      "title": "PerfArena: Ranking LLMs by Code Performance",
+      "publisher": "arXiv; Rui Rua, Hailemariam Mersha, João Paulo Fernandes, Karim Ali",
+      "url": "https://arxiv.org/abs/2611.18030",
+      "accessed": "2026-11-16"
+    },
+    {
+      "title": "PerfArena: Quellcode und Messinfrastruktur",
+      "publisher": "GitHub; perfarena/perfarena",
+      "url": "https://github.com/perfarena/perfarena",
+      "accessed": "2026-11-16"
+    }
+  ],
+  "tags": [
+    "evaluation",
+    "modelle",
+    "code",
+    "multimodal",
+    "forschung"
+  ],
+  "title": "KI am Abend: Deutsche NER, Bildbelege und schnellerer Code",
+  "dek": "NER-D prüft deutsche Entitätserkennung, VEPO trainiert Bildbelege über Sprachgrenzen hinweg, PerfArena misst die Effizienz korrekten KI-Codes.",
+  "key_takeaways": [
+    "NER-D bündelt 13 deutsche Datensätze. Mit zusätzlichem LoRA-Training erreichen drei kleine offene Modelle höhere F1-Werte als die nur ohne Beispiele geprüfte GPT-Baseline.",
+    "VEPO verbessert im Test mit LLaVA-1.5-7B die visuelle Objekterkennung auf Hindi. Der große Gewinn setzt eine Mischung aus Hindi- und englischen Trainingspaaren voraus.",
+    "PerfArena trennt funktionierende Programme von effizienten Programmen. In der untersuchten LeetCode-Auswahl liefen korrekte Lösungen je nach Modell im Mittel bis zu 1,61-mal so lange wie die von GPT-6-Astra."
+  ],
+  "hero": {
+    "alt": "Drei Studien zu deutscher Entitätserkennung, mehrsprachiger Bildbegründung und der Laufzeit korrekten KI-Codes.",
+    "caption": "Drei Forschungsbefunde mit ihren jeweiligen Testbedingungen. Eigene Grafik.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Abendüberblick vom 16. November. Quellenstand: 16:00 Uhr MEZ. Drei neue Preprints zeigen, warum die passende Messung wichtiger ist als ein einzelner Spitzenwert: Bei deutscher Entitätserkennung zählt die gelernte Annotationsregel, beim Bildverständnis die Sprache der Frage und bei generiertem Code mehr als ein bestandener Test."
+    },
+    {
+      "t": "h2",
+      "x": "NER-D: Kleine Modelle lernen deutsche Annotationsregeln"
+    },
+    {
+      "t": "p",
+      "x": "Welche Personen, Orte, Medikamente oder Fachbegriffe stehen in einem deutschen Text? NER-D untersucht diese Entitätserkennung anhand von 13 Datensätzen aus neun Domänen. Das Bielefelder Team um Marc Brinner vergleicht Ministral 8B, Qwen3.5-9B und Gemma 4 12B mit GPT-5.4 mini. Die Aufgabe ist überall ähnlich aufgebaut: Aus einem Satz soll ein JSON-Objekt mit den gefundenen Entitäten entstehen. Bewertet werden sowohl exakt passende Zeichenfolgen als auch eine tolerantere Variante für leicht abweichende Textgrenzen."
+    },
+    {
+      "t": "p",
+      "x": "Ohne Beispiele im Prompt liegen Gemma und GPT im gemittelten exakten F1 numerisch nah beieinander: 0,507 und 0,504. Das belegt keine Gleichwertigkeit, und GPT führt auf sechs der 13 einzelnen Datensätze. Der deutlichere Unterschied entsteht durch zusätzliches Training: Qwen steigt mit LoRA von 0,481 auf 0,747, Ministral von 0,430 auf 0,732 und Gemma von 0,507 auf 0,731. Diese Mittelwerte schließen SwissNER aus, weil der kleine Datensatz nur ohne Beispiele geprüft wurde. Wichtig für den Vergleich: GPT wurde ausschließlich ohne Beispiele getestet, nicht ebenfalls auf den Aufgaben nachtrainiert."
+    },
+    {
+      "t": "p",
+      "x": "Fünf Beispiele im Prompt helfen bereits, vor allem bei exakten Textgrenzen. Das spricht laut Autoren dafür, dass Modelle auch Annotationskonventionen lernen müssen: Gehört etwa ein Artikel oder eine Anrede zum gesuchten Namen? Eine spezialisierte Domäne allein erklärt schwache Ergebnisse nicht. Bei GerPS entfernte die Zerlegung in einzelne Sätze wichtigen Dokumentkontext; selbst Feintuning reparierte diesen Verlust nur begrenzt. Das ist eine Grenze des Testaufbaus, kein allgemeines Urteil über Verwaltungsdokumente. Code, aufbereitete Daten und Modelle kündigt das Paper erst für den Zeitpunkt einer Annahme zur Veröffentlichung an."
+    },
+    {
+      "t": "h2",
+      "x": "VEPO: Bildbelege statt sprachlicher Vermutungen"
+    },
+    {
+      "t": "p",
+      "x": "Ein Bild bleibt dasselbe, doch die Frage auf Hindi kann eine andere Antwort auslösen als die englische Fassung. VEPO setzt bei diesem Sprachgefälle an. Das Team um Chengpeng Fu nutzt die Aufmerksamkeit eines Bild-Sprach-Modells bei englischen Fragen, um wichtige Bildbereiche zu finden. Im Training sieht das Modell dann zwei Fassungen: das vollständige Bild und eines mit gezielt verdeckten Bereichen. Die richtige Antwort bleibt in beiden Trainingspaaren gleich. Das Lernsignal soll diese Antwort stärker an vorhandene Bildbelege binden, statt nur eine sprachlich plausible Antwort zu bevorzugen."
+    },
+    {
+      "t": "p",
+      "x": "Auf LLaVA-1.5-7B steigt der mittlere POPE-F1 für Hindi von 0,302 auf 0,644, für Französisch von 0,742 auf 0,794 und für Chinesisch von 0,731 auf 0,766. POPE prüft mit Ja-Nein-Fragen, ob Objekte auf einem Bild vorhanden sind. Die Zahlen messen also diese Benchmarkleistung, nicht den Anteil halluzinationsfreier Antworten in beliebigen Gesprächen. Der Hindi-Gewinn enthält eine wichtige Zusatzbedingung: Für diese Sprache mischen die Autoren Hindi- und englische Präferenzpaare im Verhältnis 1:1. Nach vorherigem überwachten Training verschlechtert Hindi-only-VEPO im COCO-POPE-Test den F1 sogar leicht von 0,709 auf 0,700; die gemischte Fassung erreicht 0,769."
+    },
+    {
+      "t": "p",
+      "x": "Eine Kontrolle spricht für gezielte statt zufällige Bildmasken: Im chinesischen POPE-Test erreicht zufälliges Verdecken 0,745, die gezielte Variante 0,766, gegenüber 0,731 beim Ausgangsmodell. Zugleich sind die Befunde eng begrenzt: ein Modell-Backbone, drei geprüfte Sprachen und in der Regel ein Lauf je Einstellung. Beim zweiten Benchmark MME steigen die Gesamtwerte, aber einzelne Denkaufgaben in Chinesisch und Französisch fallen zurück. VEPO ist damit ein Befund über bessere visuelle Verankerung in diesem Setup, kein allgemeiner Beleg für besseres Schlussfolgern."
+    },
+    {
+      "t": "h2",
+      "x": "PerfArena: Richtiger Code kann trotzdem langsam sein"
+    },
+    {
+      "t": "p",
+      "x": "PerfArena bewertet Code erst auf Korrektheit und misst danach Laufzeit, Spitzenspeicher und Energieverbrauch. Rui Rua und Kollegen vergleichen 13 Modelle in sieben Programmiersprachen: auf 99 ausgewählten LeetCode-Aufgaben und zehn rechenintensiven Programmen aus dem Computer Language Benchmarks Game. Das Paper berichtet 9.455 korrekte und gemessene Lösungen. Jedes Duell hält Aufgabe und Sprache konstant. Fehlerhafte Lösungen zählen bei der Erfolgsquote, erhalten aber keinen künstlichen Laufzeitwert und gehen nicht in Effizienzduelle ein."
+    },
+    {
+      "t": "p",
+      "x": "Auf der LeetCode-Auswahl lösen zwölf der 13 Modelle mehr als 90 Prozent der Aufgabe-Sprache-Kombinationen. Die korrekten Lösungen der anderen Modelle laufen auf den jeweils gemeinsam gelösten Kombinationen dennoch im geometrischen Mittel 1,14- bis 1,61-mal so lange wie die von GPT-6-Astra. Im schwereren CLBG-Teil reicht die Spanne bis 3,61. Die Autoren können GPT-6-Astra und Claude Opus 5.5 im LeetCode-Laufzeitvergleich statistisch nicht trennen. Das heißt nicht, dass ihr Code gleich schnell ist; bei nur zehn CLBG-Aufgaben ist die Trennschärfe noch geringer. Ein geteilter Spitzenplatz kann dort auch durch wenige gelöste Aufgaben entstehen."
+    },
+    {
+      "t": "p",
+      "x": "Für den Alltag ist die Methodik interessanter als eine universelle Rangliste: Ein Modell, eine Aufgabe und eine Sprache ergeben zunächst nur eine Stichprobe. Alle Messungen stammen von einem einzigen Intel-Linux-Rechner, pro Kombination wurde nur eine Lösung erzeugt, und die öffentlichen Aufgaben samt bekannten Lösungen könnten in Trainingsdaten vorkommen. Auch wiederholte Aufrufe können Zwischenspeicher-Effekte begünstigen. Der Quellcode ist auf GitHub tatsächlich vorhanden, einschließlich Mess-, Client- und Webapp-Verzeichnissen. Die Rangangaben hier beziehen sich auf die Studie, nicht auf eine separat bestätigte aktuelle Live-Rangliste."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind kleine offene Modelle damit besser für deutsche Texte?",
+      "a": "Für die getestete deutsche Entitätserkennung profitieren die drei offenen Modelle deutlich von zusätzlichem aufgabenspezifischem LoRA-Training. Die GPT-5.4-mini-Baseline erhielt dieses Training nicht und wurde nur ohne Beispiele geprüft. Daraus folgt kein allgemeiner Größen- oder Qualitätsvergleich für deutsche Texte."
+    },
+    {
+      "q": "Beseitigt VEPO visuelle Halluzinationen?",
+      "a": "Nein, das zeigen die Daten nicht. Im LLaVA-1.5-7B-Test verbessert VEPO die POPE-F1-Werte in drei Sprachen. Der größte Gewinn auf Hindi setzt gemischte Hindi-/Englisch-Trainingspaare voraus. Freie Bildbeschreibungen oder andere Modellarchitekturen sind damit nicht pauschal abgesichert."
+    },
+    {
+      "q": "Kann ich aus PerfArena das schnellste Coding-Modell auswählen?",
+      "a": "Die Studie gibt Hinweise für die geprüften Aufgaben, Sprachen und die verwendete Hardware. Ihre Rangliste misst die Ausführung korrekten erzeugten Codes, nicht die Antwortgeschwindigkeit des KI-Dienstes. Für eine konkrete Anwendung bleiben eigene repräsentative Lasttests nötig."
+    }
+  ],
+  "related": [
+    "satbench-benchmarks-verbraucht-unabhaengig",
+    "anthropic-claude-angriffsflaeche-code"
+  ]
+}
