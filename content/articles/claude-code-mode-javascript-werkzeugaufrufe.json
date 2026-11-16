@@ -1,0 +1,44 @@
+{
+  "slug": "claude-code-mode-javascript-werkzeugaufrufe",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Code Mode in Claude Code: Werkzeugaufrufe als JavaScript statt Einzelschritte",
+  "dek": "Claude Code bekommt mit dem experimentellen Code Mode eine neue Arbeitsweise: Statt jedes Werkzeug einzeln aufzurufen, schreibt Claude JavaScript, das mehrere Aufrufe in einem Schritt bündelt. Aktiviert wird er über eine Umgebungsvariable.",
+  "published": "2026-11-16T09:20:00+01:00",
+  "modified": "2026-11-16T09:20:00+01:00",
+  "author": "philipp-paulik",
+  "tags": ["Claude Code", "Anthropic", "Entwicklerwerkzeug", "Agenten", "Experimentell"],
+  "key_takeaways": [
+    "Code Mode ist ein experimenteller Modus in Claude Code: Claude schreibt JavaScript, das mehrere Werkzeugaufrufe in einem Schritt ausführt, statt jeden Aufruf einzeln abzuwarten.",
+    "Aktiviert wird er über die Umgebungsvariable CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1; nötig ist mindestens Version 2.1.323.",
+    "Der Modus lohnt sich laut Doku für Aufgaben mit vielen zusammenhängenden Aufrufen: wiederholte Änderungen über viele Dateien, gefilterte Suchen, parallele Kommandos.",
+    "Es gibt enge Grenzen: kein Resume außerhalb des Terminals, keine Hintergrund-Sessions, kein Remote Control, und lang laufender Code stoppt nach zehn Minuten."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Mehrere leuchtende Konsolenfenster, aus denen parallele Lichtströme in einen gemeinsamen Strang münden.",
+    "caption": "Im Code Mode bündelt ein Stück JavaScript viele Werkzeugaufrufe zu einem Schritt.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {"t": "p", "x": "Anthropic dokumentiert mit dem Code Mode eine neue, noch experimentelle Arbeitsweise für Claude Code. Normalerweise ruft Claude Werkzeuge wie Bash, Read oder Edit einzeln auf, liest jedes Ergebnis und entscheidet dann weiter. Im Code Mode schreibt Claude stattdessen JavaScript, das mehrere Werkzeugaufrufe in einem Schritt ausführt: Kommandos parallel starten, ein Ergebnis im nächsten Aufruf verwenden und am Ende nur den Teil der Ausgabe zurückgeben, den das Modell lesen muss. Der Modus ist standardmäßig aus und kann laut Doku in jedem Release geändert oder entfernt werden."},
+    {"t": "h2", "x": "Wie sich das in der Praxis anfühlt"},
+    {"t": "p", "x": "Die Dokumentation zeigt ein Beispiel: Auf die Bitte, ein Retry-Limit zu erhöhen, schreibt Claude ein kurzes Skript, das per rg die passende Datei findet, den Wert ändert und die Tests laufen lässt. In der Konversation sieht man weiterhin die Werkzeugaufrufe, etwa den Diff der Änderung, nicht den Code. Wer das JavaScript lesen will, öffnet mit Strg+O die Transkriptansicht; dort erscheint jedes Codestück als eingeklappte Zeile."},
+    {"t": "h2", "x": "Aktivierung und Voraussetzungen"},
+    {"t": "p", "x": "Aktiviert wird Code Mode über die Umgebungsvariable CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1, entweder beim Start im Terminal oder dauerhaft in den Benutzereinstellungen. Projektdateien ignoriert Claude Code dabei bewusst: Ein geklontes Repository kann den Modus nicht einschalten. Voraussetzungen sind Version 2.1.323 oder neuer auf dem nativen Build, ein Claude-Abo- oder Console-Konto sowie ein interaktiver claude-Terminalprozess. Über Gateways, Amazon Bedrock, die Agent-Plattformen von AWS, Google Cloud oder Microsoft Foundry sowie mit Agent SDK, VS-Code-Panel, Desktop-App oder Cloud-Sessions funktioniert er nicht. Ebenfalls ausgeschlossen sind Organisationen mit HIPAA-Konfiguration oder Zero Data Retention; unterstützt werden die Modelle Opus 5.5, Sonnet 5.5, Haiku 5.5 und Fable 5.2. Beim ersten Start fragt Claude Code ausdrücklich nach, ob man Code Mode einschalten will."},
+    {"t": "h2", "x": "Grenzen, die man kennen sollte"},
+    {"t": "p", "x": "Die Liste der Einschränkungen ist lang: Eine Code-Mode-Sitzung lässt sich nur im Terminal und nur mit aktivem Modus fortsetzen. Lang laufender Code stoppt nach zehn Minuten, wenn er nicht im Hintergrund laufen kann. Remote Control, Claude in Chrome und Computer Use stehen nicht zur Verfügung; die Sitzung kann weder in die Desktop-App noch in den Hintergrund wandern, und /fork startet keine Hintergrundkopie. Für Sicherheitsbewusste besonders relevant: Im Auto-Modus prüft der Klassifikator den geschriebenen Code als Ganzes, nicht jeden einzelnen Werkzeugaufruf. Und bei Hooks kann es vorkommen, dass Aufrufe verweigert werden, weil ein PreToolUse-Hook nicht laufen kann."},
+    {"t": "callout", "x": "Wer Auto-Modus mit Code Mode kombiniert, gibt die Freigabe für Codeblöcke ab, nicht für Einzelaufrufe. Für sensible Repositories ist das ein echter Unterschied im Risiko.", "title": "Achtung"},
+    {"t": "p", "x": "Konzeptionell erinnert der Ansatz an das, was viele Agenten-Frameworks längst versuchen: Werkzeugketten als Programm statt als Abfolge einzelner Modellrunden. Das spart Schritte und Kontext, verlagert aber Verantwortung in den erzeugten Code. Wer es ausprobieren will, sollte laut Doku mit Aufgaben starten, die viele zusammenhängende Aufrufe brauchen, etwa eine Änderung über viele Dateien oder eine Suche, deren Ergebnisse erst gefiltert werden müssen."}
+  ],
+  "sources": [
+    {"title": "Run tool calls from code with Code Mode", "publisher": "Claude Code Docs", "url": "https://code.claude.com/docs/en/code-mode", "accessed": "2026-11-16"}
+  ],
+  "faq": [
+    {"q": "Wie aktiviert man den Code Mode in Claude Code?", "a": "Mit der Umgebungsvariable CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1, beim Start im Terminal oder dauerhaft in den Benutzereinstellungen. Nötig ist mindestens Version 2.1.323, und der Modus muss beim ersten Start bestätigt werden."},
+    {"q": "Wofür lohnt sich Code Mode?", "a": "Laut Dokumentation für Aufgaben mit vielen zusammenhängenden Werkzeugaufrufen: Änderungen, die sich über viele Dateien wiederholen, Suchen mit anschließender Filterung und unabhängige Kommandos, die parallel laufen können."},
+    {"q": "Welche Grenzen hat Code Mode?", "a": "Nur interaktive Terminal-Sitzungen, kein Fortsetzen außerhalb des Terminals, keine Hintergrund-Sessions, kein Remote Control oder Computer Use. Lang laufender Code stoppt nach zehn Minuten, und im Auto-Modus wird der Code als Ganzes geprüft, nicht jeder einzelne Werkzeugaufruf."}
+  ],
+  "related": ["claude-always-on-agenten-blaupause", "claude-managed-agents-self-hosted-beta"]
+}

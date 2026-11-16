@@ -1,0 +1,44 @@
+{
+  "slug": "meituan-longcat-2-5-open-weights-agenten",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "LongCat-2.5: Meituan legt 1,6-Billionen-Parameter-Modell offen",
+  "dek": "Das chinesische Technologieunternehmen Meituan hat LongCat-2.5 unter MIT-Lizenz veröffentlicht: ein multimodales MoE-Modell mit 1,6 Billionen Parametern, von denen pro Token rund 48 Milliarden aktiv sind, ausgelegt auf lang andauernde Agentenaufgaben.",
+  "published": "2026-11-16T09:05:00+01:00",
+  "modified": "2026-11-16T09:05:00+01:00",
+  "author": "philipp-paulik",
+  "tags": ["Meituan", "LongCat", "Open Weights", "MoE", "Agenten", "MIT-Lizenz"],
+  "key_takeaways": [
+    "LongCat-2.5 von Meituan steht unter der MIT-Lizenz: 1,6 Billionen Parameter insgesamt, rund 48 Milliarden aktiv pro Token, mit nativer Bildverarbeitung.",
+    "Das Modell ist für lang andauernde Agentenaufgaben trainiert, etwa komplette Projektbuilds und Arbeit an großen Codebasen.",
+    "Eine 4-Bit-Quantisierung der Experten soll den Durchsatz gegenüber 8-Bit deutlich erhöhen, bei laut Meituan vergleichbarer Genauigkeit.",
+    "Alle Benchmarkwerte in der Modellkarte stammen von Meituan selbst oder aus fremden Berichten; unabhängige Nachmessungen fehlen bisher."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine offene Metalltür gibt den Blick auf gestapelte, türkis leuchtende Kristallplatten frei, die wie Modellgewichte aussehen.",
+    "caption": "LongCat-2.5 steht unter der MIT-Lizenz und darf frei genutzt und angepasst werden.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {"t": "p", "x": "Meituan, in China vor allem als Plattform für Lieferdienste und lokale Services bekannt, hat sein Sprachmodell LongCat-2.5 mit offenen Gewichten auf Hugging Face veröffentlicht. Die Modellkarte bestätigt ausdrücklich die MIT-Lizenz, eine der freizügigsten Open-Source-Lizenzen überhaupt. LongCat-2.5 ist ein nativ multimodales Mixture-of-Experts-Modell mit 1,6 Billionen Parametern, von denen pro Token rund 48 Milliarden aktiv sind. Es baut auf LongCat-2.0 auf und kombiniert Bildverständnis mit agentischem Programmieren: Entwicklung an komplexen Codebasen, komplette Projektbuilds, Gestaltungsaufgaben und 3D-Aufgaben."},
+    {"t": "h2", "x": "Trainiert auf lange Agentenläufe"},
+    {"t": "p", "x": "Für das Training nennt die Modellkarte vier Stellschrauben: Erstens Long-Horizon-Agenten-RL, also Verstärkungslernen auf realen Ingenieursaufgaben inklusive reproduzierbarer Agentenfehler, mit Schutzmechanismen gegen Reward Hacking. Zweitens Multi-Teacher-Learning, bei dem spezialisierte Lehrermodelle für Agenten, Schlussfolgern und Interaktion das Modell anleiten. Drittens effizientes Training langer Sequenzen, mit dem Meituan eigenen Angaben zufolge 86 Prozent mehr Durchsatz pro Gerät als die DDP-Baseline erreicht habe. Viertens eine RL-Infrastruktur, die Token-Wahrscheinlichkeiten zwischen Training, Prefill und Decoding bitgenau gleich hält."},
+    {"t": "h2", "x": "4-Bit statt 8-Bit"},
+    {"t": "p", "x": "Auffällig ist die Quantisierung: LongCat-2.5 setzt auf W4A4, also 4 Bit für Gewichte und Aktivierungen der Experten, mit nativer INT4-Berechnung auf NPU-Beschleunigern. Gegenüber einer 8-Bit-Basis (W8A8) meldet Meituan in Online-Stresstests 43,3 Prozent mehr Durchsatz beim Prefill und 42,77 Prozent mehr beim Decoding, dazu 15,91 Prozent kürzere Zeit bis zum ersten Token. Die Genauigkeit sei auf den ausgewerteten Benchmarks vergleichbar mit dem unquantisierten Modell. Der Betrieb ist laut Modellkarte über SGLang-FluentLLM auf NPU-Plattformen vorgesehen."},
+    {"t": "h2", "x": "Was die Benchmarks hergeben und was nicht"},
+    {"t": "p", "x": "Die Modellkarte listet rund 30 Benchmarks, darunter Terminal Bench 2.1 mit 88,4 Punkten, BrowseComp mit 91,9 und HLE mit Werkzeugen mit 63,1. Zum Vergleich nennt Meituan aktuelle Konkurrenzmodelle von OpenAI, Anthropic, Zhipu, Moonshot und DeepSeek. Je nach Aufgabe liegt LongCat-2.5 vorn, im Mittelfeld oder klar dahinter: Bei Terminal Bench 4.0 etwa erreicht es 38,5 Punkte, Claude Opus 5 dagegen 53,9. Wichtig ist der eigenwillige Umgang mit den Zahlen: Werte mit Sternchen stammen laut Fußnote aus fremden technischen Berichten oder offiziellen Ranglisten, alle unmarkierten Werte hat Meituan im eigenen Haus gemessen und bezeichnet sie selbst als lediglich indikativ. Unabhängig geprüft ist davon bislang nichts."},
+    {"t": "callout", "x": "Sämtliche Leistungs- und Effizienzzahlen zu LongCat-2.5 kommen aus Meituans eigener Modellkarte. Wir haben das Modell nicht selbst getestet.", "title": "Einordnung"},
+    {"t": "p", "x": "Für Teams, die ein offenes Modell für Agentenaufgaben suchen, ist LongCat-2.5 wegen der MIT-Lizenz interessant: Sie erlaubt kommerzielle Nutzung, Änderungen und Weitergabe ohne nennenswerte Auflagen. Praktisch bleibt die Frage, welche Hardware man für ein 1,6-Billionen-MoE braucht. Auch in 4-Bit dürfte der Eigenbetrieb außerhalb großer Cluster ambitioniert bleiben; nähere Deployment-Hinweise verweist die Karte an das SGLang-FluentLLM-Projekt."}
+  ],
+  "sources": [
+    {"title": "meituan-longcat/LongCat-2.5 (Modellkarte)", "publisher": "Hugging Face", "url": "https://huggingface.co/meituan-longcat/LongCat-2.5", "accessed": "2026-11-16"}
+  ],
+  "faq": [
+    {"q": "Unter welcher Lizenz steht LongCat-2.5?", "a": "Unter der MIT-Lizenz. Die Modellkarte bestätigt das ausdrücklich: Nutzung, Änderung und kommerzielle Weitergabe sind damit weitgehend frei möglich."},
+    {"q": "Wie groß ist LongCat-2.5?", "a": "Das Modell hat 1,6 Billionen Parameter insgesamt. Als Mixture-of-Experts-Architektur aktiviert es pro Token nur rund 48 Milliarden davon."},
+    {"q": "Sind die Benchmarkwerte von LongCat-2.5 unabhängig geprüft?", "a": "Nein. Meituan kennzeichnet Werte aus fremden Berichten mit einem Sternchen und bezeichnet die selbst gemessenen Werte ausdrücklich als indikativ. Unabhängige Tests gibt es bisher nicht."}
+  ],
+  "related": ["edge0-145b-laptop-lokales-modell", "llama-cpp-1-0-stabile-api-semantische-versionen"]
+}

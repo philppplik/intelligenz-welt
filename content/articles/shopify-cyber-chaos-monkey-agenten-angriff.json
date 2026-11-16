@@ -1,0 +1,46 @@
+{
+  "slug": "shopify-cyber-chaos-monkey-agenten-angriff",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Cyber Chaos Monkey: Shopify lässt Agenten die eigene Produktion angreifen",
+  "dek": "Shopify beschreibt, wie ein Agentensystem mit echten Zugangsdaten die Produktivinfrastruktur angreift, um Schwachstellen vor fremden Angreifern zu finden. Zehntausende Angriffsläufe, Dutzende verwertbare Funde, kein einziger Ausfall.",
+  "published": "2026-11-16T09:10:00+01:00",
+  "modified": "2026-11-16T09:10:00+01:00",
+  "author": "philipp-paulik",
+  "tags": ["Shopify", "Sicherheit", "Agenten", "Chaos Engineering", "Sandbox", "Red Teaming"],
+  "key_takeaways": [
+    "Shopify betreibt mit dem Cyber Chaos Monkey ein Agentensystem, das die eigene Produktivumgebung angreift, um Schwachstellen vor externen Angreifern zu finden.",
+    "Nach Shopifys Angaben liefen bisher zehntausende Angriffsengagements mit Dutzenden substanziellen Funden, ohne einen einzigen Ausfall oder Vorfall.",
+    "Die Sicherheit beruht auf Schichten: Container ohne erhöhte Rechte, kurzlebige Zugangsdaten, strenge Ausgangsfilter und ein zweites, anders ausgerichtetes Modell als Kontrollinstanz.",
+    "Fällt die Kontrollinstanz aus, endet der Lauf automatisch. Das System ist auf explizite positive Kontrolle ausgelegt, nicht auf Vertrauen in den Agenten."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Servergehäuse hinter einer transparenten Glaswand, im Inneren ein kontrolliertes Funkenleuchten, außen ein Schutzschild-Ring.",
+    "caption": "Der Cyber Chaos Monkey greift Shopifys Produktion an, aber nur innerhalb enger technischer und verfahrenstechnischer Grenzen.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {"t": "p", "x": "Im Shopify-Bug-Bounty-Programm ist die Zahl der Meldungen seit 2024 um fast 300 Prozent gestiegen. Der Grund, so die Einschätzung des Sicherheitsteams: Frontier-Modelle treiben die Kosten für das Finden von Schwachstellen gegen null. Shopifys Antwort heißt Cyber Chaos Monkey, kurz CCM, und dreht die Asymmetrie um: Wer die eigenen Systeme am besten kennt, sollte ihre Lücken auch am schnellsten finden können. In einem Beitrag im Engineering-Blog beschreibt Sicherheitsingenieur Dan Scofield, wie das System funktioniert."},
+    {"t": "h2", "x": "Ein Bug-Bounty-Jäger als Agentengraph"},
+    {"t": "p", "x": "CCM ist konzeptionell ein graphengesteuerter Bug-Bounty-Forscher mit Zugriff auf Quellcode, Bedrohungsinformationen, frühere Meldungen und Infrastrukturdaten. Wie ein menschlicher Forscher kann er live gegen Shopifys Produktionsinfrastruktur arbeiten, allerdings mit eigens angelegten Testshops und Testorganisationen. Der Name ist eine Hommage an Netflix' Chaos Monkey aus dem Jahr 2011, der zufällig Produktionsinstanzen abschaltete, um Ausfallsicherheit zu beweisen. Shopify überträgt die Idee des Chaos Engineering auf Sicherheit. Bisher, so der Beitrag, habe CCM zehntausende Angriffsengagements ausgeführt und Dutzende substanzielle Funde identifiziert, ohne einen Ausfall oder Sicherheitsvorfall zu verursachen."},
+    {"t": "h2", "x": "Discovery und Sandbox"},
+    {"t": "p", "x": "Das System besteht aus zwei Teilen. Discovery nimmt Ideen entgegen, die von Menschen, anderen Sicherheitsagenten oder eigenen Rückkopplungsschleifen stammen, konkret wie \"suche ähnliche Risiken wie in dieser Bug-Meldung\" oder abstrakt wie \"erreiche Codeausführung im Admin\". Ein aktuelles Cybermodell verfeinert die Idee und sucht verdächtige Stellen in Code und Konfiguration. Vielversprechende Leads gehen als strukturierte Daten an die Sandbox, wo Agenten versuchen, den Fehler tatsächlich auszunutzen: Pakete installieren, Fuzzer bauen, echte Anfragen an die Produktion stellen, die Produktionslogs lesen, mit dem Quellcode abgleichen und iterieren. Befunde fließen als Bericht zurück und können neue Engagements auslösen."},
+    {"t": "h2", "x": "Warum der Agent die Produktion nicht gefährdet"},
+    {"t": "p", "x": "Jedes Engagement läuft als eigener Kubernetes-Job. Der offensive Agent sitzt in einem Container ohne erhöhte Rechte. Die einzigen voreingestellten Daten sind kurzlebige Zugangsdaten, die er lesen, aber nicht ändern kann. Anfragen an interne Dienste oder Modellanbieter laufen über einen Credential-Proxy: Der Agent schickt einen Platzhalter, der Proxy setzt das echte, regelmäßig rotierte Geheimnis ein. Nach außen lässt ein nginx-basierter Ausgangsfilter nur Shopify-Domains, die Wissensdienste, Modellanbieter und ausgewählte Paketquellen durch."},
+    {"t": "h2", "x": "Das Vier-Augen-Prinzip mit zwei Modellen"},
+    {"t": "p", "x": "Spannender als die Technik ist der Umgang mit dem Ausrichtungsrisiko. Shopify vertraut nicht darauf, dass ein Agent seine Verhaltensregeln über einen langen Lauf einhält. Stattdessen prüft ein zweiter Agent mit einem anderen, anders ausgerichteten Modell in Echtzeit die kompletten Sitzungslogs des ersten, inklusive Antworten, Denkschritten und Werkzeugaufrufen. Erkennt der Prüfer ein Verhalten, das gegen die Einsatzregeln verstößt, beendet er den ausführenden Agenten sofort per Werkzeugaufruf. Entscheidend ist die Ausfallsrichtung: Wenn der Prüfer abstürzt, in einen Timeout läuft oder nicht mehr bewertet, endet der Lauf automatisch. Der Orchestrator hält Herzschläge zu beiden Seiten; fällt eine aus, räumt Kubernetes den gesamten Pod ab, ein Neustart ist ausgeschlossen."},
+    {"t": "callout", "x": "Shopifys Muster lässt sich übertragen: Wer Agenten auf sensible Systeme loslässt, sollte die Kontrolle so bauen, dass ihr Ausfall den Lauf stoppt, nicht den Angriff freigibt.", "title": "Praxis"},
+    {"t": "p", "x": "Die gemeldeten Zahlen, zehntausende Engagements, Dutzende Funde, null Vorfälle, stammen aus Shopifys eigener Darstellung; eine externe Prüfung gibt es nicht. Trotzdem ist der Beitrag einer der detailliertesten öffentlichen Baupläne dafür, wie offensive Agenten gegen Produktion laufen können, ohne die Verfügbarkeit oder Kundendaten zu gefährden."}
+  ],
+  "sources": [
+    {"title": "Cyber Chaos Monkey: Staying ahead of security threats with AI agents", "publisher": "Shopify Engineering", "url": "https://shopify.engineering/cyber-chaos-monkey", "accessed": "2026-11-16"}
+  ],
+  "faq": [
+    {"q": "Was ist der Cyber Chaos Monkey von Shopify?", "a": "Ein Agentensystem, das Shopifys Produktivinfrastruktur gezielt angreift, um Schwachstellen zu finden, bevor externe Angreifer es tun. Es arbeitet mit kurzlebigen Zugangsdaten und Testshops."},
+    {"q": "Wie verhindert Shopify, dass der Angriffsagent Schaden anrichtet?", "a": "Durch Schichten: Container ohne erhöhte Rechte, lesbare, aber nicht änderbare Kurzzeit-Zugangsdaten, einen Credential-Proxy, strenge Ausgangsfilter und ein zweites, anders ausgerichtetes Modell, das den Agenten in Echtzeit überwacht und stoppen kann."},
+    {"q": "Was passiert, wenn der Kontroll-Agent ausfällt?", "a": "Dann endet der Lauf automatisch. Das System ist auf positive Kontrolle ausgelegt: Ohne laufende Bewertung durch die Kontrollinstanz wird der gesamte Kubernetes-Job abgebaut."}
+  ],
+  "related": ["cursor-vorfall-post-mortem-lieferkette-traces", "operation-snowball-ki-agent-telekom-einbruch"]
+}
