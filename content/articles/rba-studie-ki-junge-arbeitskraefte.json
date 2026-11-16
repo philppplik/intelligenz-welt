@@ -5,10 +5,16 @@
   "type": "analysis",
   "title": "RBA-Analyse: Erste zarte KI-Spuren am Arbeitsmarkt treffen vor allem junge Beschäftigte",
   "dek": "Eine Analyse der australischen Notenbank findet bisher kaum Belege für eine breite KI-Verwerfung am Arbeitsmarkt. In stark KI-exponierten Berufen gibt es aber zarte Anzeichen schwächerer Entwicklung, besonders bei jüngeren Beschäftigten und Absolventen.",
-  "published": "2026-11-16T09:25:00+01:00",
-  "modified": "2026-11-16T09:25:00+01:00",
+  "published": "2026-11-16T10:15:00+01:00",
+  "modified": "2026-11-16T10:15:00+01:00",
   "author": "philipp-paulik",
-  "tags": ["Arbeitsmarkt", "Reserve Bank of Australia", "Studie", "KI-Exposition", "Berufseinsteiger"],
+  "tags": [
+    "Arbeitsmarkt",
+    "Reserve Bank of Australia",
+    "Studie",
+    "KI-Exposition",
+    "Berufseinsteiger"
+  ],
   "key_takeaways": [
     "Eine Analyse der Reserve Bank of Australia findet bisher wenig Belege dafür, dass KI den australischen Arbeitsmarkt insgesamt spürbar verändert hat.",
     "Zarte Anzeichen gibt es in stark KI-exponierten Berufen: Der Zufluss neuer Stellenanzeigen ist dort etwas stärker gebremst als anderswo, betroffen sind etwa Bürokräfte, Softwareentwickler und Callcenter-Personal.",
@@ -22,23 +28,68 @@
     "credit": "Intelligenz Welt (KI-generiert)"
   },
   "body": [
-    {"t": "p", "x": "Wann und wie KI den Arbeitsmarkt verändert, ist eine der offenen Fragen dieser Jahre. Die Reserve Bank of Australia hat jetzt ein Monitoring-Notizbuch vorgelegt: In der Reihe Insights, in der Mitarbeitende eigene Analysen veröffentlichen, beschreibt Ökonom Mike Major ein Werkzeug, mit dem die Bank frühe KI-Effekte aufspüren will, bevor sie in den Gesamtzahlen sichtbar werden. Wichtig vorweg: Die Note trägt den ausdrücklichen Hinweis, dass sie die Ansichten des Autors wiedergibt, nicht die der RBA oder ihrer Gremien. Ihr Stand ist der 9. November 2026."},
-    {"t": "h2", "x": "Zwei Kanäle im Blick: exponierte Berufe und junge Beschäftigte"},
-    {"t": "p", "x": "Das Monitoring setzt auf zwei Hebel. Erstens werden Berufe nach ihrer KI-Exposition sortiert, gemessen an der Ähnlichkeit ihrer Aufgaben mit dem, was heutige Modelle können; die Einstufung stammt von Jobs and Skills Australia. Am stärksten exponiert sind demnach Softwareentwickler, Büro- und Verwaltungskräfte. Zweitens werden junge Beschäftigte und Absolventen gesondert betrachtet, weil Anpassungen sich dort zuerst zeigen dürften, wenn Unternehmen Einsteigeraufgaben automatisieren. Als Referenzpunkt dient der November 2022, der Monat, in dem ChatGPT generative KI in die Breite brachte."},
-    {"t": "h2", "x": "Was die Daten zeigen und was nicht"},
-    {"t": "p", "x": "Das Gesamtbild: wenig Evidenz für eine materielle Verwerfung des australischen Arbeitsmarktes. Aber es gibt zarte Signale. Der Zufluss neuer Stellenanzeigen im am stärksten exponierten Fünftel der Berufe hat sich seit Ende 2022 etwas stärker verlangsamt als in anderen Gruppen; die größten Beiträge dazu liefern allgemeine Bürokräfte, Software- und Anwendungsprogrammierer, IKT-Analysten, Callcenter-Beschäftigte und Empfangsmitarbeitende. Gleichzeitig findet die Stellenbörse SEEK in den Daten auch das Gegenmuster: In Berufen, in denen KI eher ergänzt als ersetzt, ist die Nachfrage tendenziell stärker. International, so fasst die Note frühere Studien zusammen, findet sich bislang kaum etwas auf gesamtwirtschaftlicher Ebene, aber wiederholt schwächere Beschäftigungs- und Einstellungschancen für Berufseinsteiger und jüngere Beschäftigte in exponierten Berufen. Auffällig ist, was fehlt: eine erhöhte Entlassungsrate. Der Effekt läuft, wo er läuft, über die Einstiegsseite."},
-    {"t": "h2", "x": "Warum Zurückhaltung angebracht ist"},
-    {"t": "p", "x": "Der Autor selbst listet die Schwächen ausführlich: Exposition misst, was Modelle prinzipiell könnten, nicht, was Firmen tatsächlich tun; stark automatisiert gefährdete Berufe sind oft auch stark ergänzbar, sodass die Nettowirkung auf die Nachfrage unklar bleibt. Die Analyse ist bewusst deskriptiv, nicht kausal. Konjunkturzyklen, Homeoffice-Verschiebungen nach der Pandemie und andere Strukturänderungen können die gleichen Muster erzeugen. Und die vollständigen Berufsdaten reichen nur bis Februar 2026; danach erschweren geänderte Erhebungsmethoden und eine neue Berufsklassifikation den Vergleich."},
-    {"t": "callout", "x": "Die RBA-Note liefert keine Kausalität, aber einen Beobachtungsrahmen: Wer wissen will, ob KI Jobs kostet, sollte auf Einstiegsstellen und Anzeigenzufluss in exponierten Berufen schauen, nicht auf die Arbeitslosenquote insgesamt.", "title": "Einordnung"},
-    {"t": "p", "x": "Für die Debatte in Europa ist das relevant, weil es die These von der \"fehlenden untersten Sprosse\" präzisiert: Nicht Massenentlassungen wären das Frühsignal, sondern ein leiserer Rückgang der Einstiegschancen in genau den Berufen, deren Aufgaben heutige Modelle schon gut beherrschen. Ob sich das Muster verfestigt, wird die RBA mit dem neuen Werkzeug weiter beobachten; aktualisierte Daten mit der neuen Berufsklassifikation sollen im Laufe des Jahres folgen."}
+    {
+      "t": "p",
+      "x": "Wann und wie KI den Arbeitsmarkt verändert, ist eine der offenen Fragen dieser Jahre. Die Reserve Bank of Australia hat jetzt ein Monitoring-Notizbuch vorgelegt: In der Reihe Insights, in der Mitarbeitende eigene Analysen veröffentlichen, beschreibt Ökonom Mike Major ein Werkzeug, mit dem die Bank frühe KI-Effekte aufspüren will, bevor sie in den Gesamtzahlen sichtbar werden. Wichtig vorweg: Die Note trägt den ausdrücklichen Hinweis, dass sie die Ansichten des Autors wiedergibt, nicht die der RBA oder ihrer Gremien. Ihr Stand ist der 9. November 2026."
+    },
+    {
+      "t": "h2",
+      "x": "Zwei Kanäle im Blick: exponierte Berufe und junge Beschäftigte"
+    },
+    {
+      "t": "p",
+      "x": "Das Monitoring setzt auf zwei Hebel. Erstens werden Berufe nach ihrer KI-Exposition sortiert, gemessen an der Ähnlichkeit ihrer Aufgaben mit dem, was heutige Modelle können; die Einstufung stammt von Jobs and Skills Australia. Am stärksten exponiert sind demnach Softwareentwickler, Büro- und Verwaltungskräfte. Zweitens werden junge Beschäftigte und Absolventen gesondert betrachtet, weil Anpassungen sich dort zuerst zeigen dürften, wenn Unternehmen Einsteigeraufgaben automatisieren. Als Referenzpunkt dient der November 2022, der Monat, in dem ChatGPT generative KI in die Breite brachte."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Daten zeigen und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "Das Gesamtbild: wenig Evidenz für eine materielle Verwerfung des australischen Arbeitsmarktes. Aber es gibt zarte Signale. Der Zufluss neuer Stellenanzeigen im am stärksten exponierten Fünftel der Berufe hat sich seit Ende 2022 etwas stärker verlangsamt als in anderen Gruppen; die größten Beiträge dazu liefern allgemeine Bürokräfte, Software- und Anwendungsprogrammierer, IKT-Analysten, Callcenter-Beschäftigte und Empfangsmitarbeitende. Gleichzeitig findet die Stellenbörse SEEK in den Daten auch das Gegenmuster: In Berufen, in denen KI eher ergänzt als ersetzt, ist die Nachfrage tendenziell stärker. International, so fasst die Note frühere Studien zusammen, findet sich bislang kaum etwas auf gesamtwirtschaftlicher Ebene, aber wiederholt schwächere Beschäftigungs- und Einstellungschancen für Berufseinsteiger und jüngere Beschäftigte in exponierten Berufen. Auffällig ist, was fehlt: eine erhöhte Entlassungsrate. Der Effekt läuft, wo er läuft, über die Einstiegsseite."
+    },
+    {
+      "t": "h2",
+      "x": "Warum Zurückhaltung angebracht ist"
+    },
+    {
+      "t": "p",
+      "x": "Der Autor selbst listet die Schwächen ausführlich: Exposition misst, was Modelle prinzipiell könnten, nicht, was Firmen tatsächlich tun; stark automatisiert gefährdete Berufe sind oft auch stark ergänzbar, sodass die Nettowirkung auf die Nachfrage unklar bleibt. Die Analyse ist bewusst deskriptiv, nicht kausal. Konjunkturzyklen, Homeoffice-Verschiebungen nach der Pandemie und andere Strukturänderungen können die gleichen Muster erzeugen. Und die vollständigen Berufsdaten reichen nur bis Februar 2026; danach erschweren geänderte Erhebungsmethoden und eine neue Berufsklassifikation den Vergleich."
+    },
+    {
+      "t": "callout",
+      "x": "Die RBA-Note liefert keine Kausalität, aber einen Beobachtungsrahmen: Wer wissen will, ob KI Jobs kostet, sollte auf Einstiegsstellen und Anzeigenzufluss in exponierten Berufen schauen, nicht auf die Arbeitslosenquote insgesamt.",
+      "title": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Für die Debatte in Europa ist das relevant, weil es die These von der \"fehlenden untersten Sprosse\" präzisiert: Nicht Massenentlassungen wären das Frühsignal, sondern ein leiserer Rückgang der Einstiegschancen in genau den Berufen, deren Aufgaben heutige Modelle schon gut beherrschen. Ob sich das Muster verfestigt, wird die RBA mit dem neuen Werkzeug weiter beobachten; aktualisierte Daten mit der neuen Berufsklassifikation sollen im Laufe des Jahres folgen."
+    }
   ],
   "sources": [
-    {"title": "Monitoring Early Effects of AI on the Labour Market (Insight 2026-09)", "publisher": "Reserve Bank of Australia", "url": "https://www.rba.gov.au/publications/insights/australian-economy/2026/pdf/monitoring-early-effects-of-ai-on-the-labour-market.pdf", "accessed": "2026-11-16"}
+    {
+      "title": "Monitoring Early Effects of AI on the Labour Market (Insight 2026-09)",
+      "publisher": "Reserve Bank of Australia",
+      "url": "https://www.rba.gov.au/publications/insights/australian-economy/2026/pdf/monitoring-early-effects-of-ai-on-the-labour-market.pdf",
+      "accessed": "2026-11-16"
+    }
   ],
   "faq": [
-    {"q": "Verdrängt KI laut der RBA-Studie schon Jobs?", "a": "Nein. Die Analyse findet bisher wenig Belege für eine spürbare Veränderung des Gesamtmarktes. Es gibt zarte Anzeichen schwächerer Entwicklung in stark KI-exponierten Berufen, besonders für jüngere Beschäftigte."},
-    {"q": "Welche Berufe gelten als am stärksten KI-exponiert?", "a": "Laut der verwendeten Einstufung von Jobs and Skills Australia vor allem Softwareentwickler, Büro- und Verwaltungskräfte. Bei den Stellenanzeigen bremsen besonders Bürokräfte, Programmierer, IKT-Analysten, Callcenter- und Empfangsmitarbeitende."},
-    {"q": "Ist das die offizielle Position der australischen Notenbank?", "a": "Nein. Die Note erscheint in der Reihe Insights, in der RBA-Mitarbeitende eigene Analysen vorlegen. Ein ausdrücklicher Hinweis stellt klar, dass die Inhalte die Ansicht des Autors wiedergeben, nicht die der RBA."}
+    {
+      "q": "Verdrängt KI laut der RBA-Studie schon Jobs?",
+      "a": "Nein. Die Analyse findet bisher wenig Belege für eine spürbare Veränderung des Gesamtmarktes. Es gibt zarte Anzeichen schwächerer Entwicklung in stark KI-exponierten Berufen, besonders für jüngere Beschäftigte."
+    },
+    {
+      "q": "Welche Berufe gelten als am stärksten KI-exponiert?",
+      "a": "Laut der verwendeten Einstufung von Jobs and Skills Australia vor allem Softwareentwickler, Büro- und Verwaltungskräfte. Bei den Stellenanzeigen bremsen besonders Bürokräfte, Programmierer, IKT-Analysten, Callcenter- und Empfangsmitarbeitende."
+    },
+    {
+      "q": "Ist das die offizielle Position der australischen Notenbank?",
+      "a": "Nein. Die Note erscheint in der Reihe Insights, in der RBA-Mitarbeitende eigene Analysen vorlegen. Ein ausdrücklicher Hinweis stellt klar, dass die Inhalte die Ansicht des Autors wiedergeben, nicht die der RBA."
+    }
   ],
-  "related": ["satbench-benchmarks-verbraucht-unabhaengig", "mka-test-visuelle-wissensarbeit-kosten"]
+  "related": [
+    "satbench-benchmarks-verbraucht-unabhaengig",
+    "mka-test-visuelle-wissensarbeit-kosten"
+  ]
 }

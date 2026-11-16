@@ -5,10 +5,17 @@
   "type": "news",
   "title": "Qwen4-Max: Alibabas neues Flaggschiff mit einer Million Token Kontext",
   "dek": "Alibaba stellt Qwen4-Max vor: 2,4 Billionen Parameter, 71 Milliarden aktiv pro Token, natives Sehen und ein Kontextfenster von einer Million Token. Über die API kostet das Modell 1,50 Dollar pro Million Eingabetoken.",
-  "published": "2026-11-16T09:00:00+01:00",
-  "modified": "2026-11-16T09:00:00+01:00",
+  "published": "2026-11-16T10:15:00+01:00",
+  "modified": "2026-11-16T10:15:00+01:00",
   "author": "philipp-paulik",
-  "tags": ["Alibaba", "Qwen", "Qwen4-Max", "Sprachmodell", "API", "MoE"],
+  "tags": [
+    "Alibaba",
+    "Qwen",
+    "Qwen4-Max",
+    "Sprachmodell",
+    "API",
+    "MoE"
+  ],
   "key_takeaways": [
     "Qwen4-Max ist Alibabas neues Spitzenmodell: 2,4 Billionen Parameter insgesamt, 71 Milliarden davon aktiv pro Token, Kontextfenster von einer Million Token und native Bildverarbeitung.",
     "Die API-Preise liegen laut QwenCloud bei 1,50 Dollar pro Million Eingabetoken und 4,50 Dollar pro Million Ausgabetoken; Cache-Treffer kosten 0,075 Dollar.",
@@ -22,25 +29,78 @@
     "credit": "Intelligenz Welt (KI-generiert)"
   },
   "body": [
-    {"t": "p", "x": "Alibaba hat am 16. November Qwen4-Max veröffentlicht, das neue Spitzenmodell der Qwen-Familie. Das Modell kommt auf 2,4 Billionen Parameter insgesamt, nutzt aber als Mixture-of-Experts-Architektur nur 71 Milliarden davon pro Token. Das sind nach Angaben Alibabas 25 Prozent weniger aktive Parameter als beim Vorgänger Qwen3.8-Max bei gleicher Gesamtgröße. Dazu kommen ein Kontextfenster von einer Million Token und native Verarbeitung von Bildern."},
-    {"t": "h2", "x": "Preise und Verfügbarkeit"},
-    {"t": "p", "x": "Auf der Preisseite von QwenCloud steht Qwen4-Max mit der Modellkennung qwen4-max ab sofort zur Verfügung: 1,50 Dollar pro Million Eingabetoken, 4,50 Dollar pro Million Ausgabetoken. Treffer im Zwischenspeicher kosten 0,075 Dollar pro Million Token, also fünf Prozent des Eingabepreises. Maximal sind 991.000 Token Eingabe und 393.000 Token Ausgabe pro Anfrage vorgesehen. Nutzbar ist das Modell über die API und den Token Plan von QwenCloud sowie über Alibabas eigene Oberflächen QwenWork und QwenStudio. Kleinere Vertreter der Qwen4-Serie sollen laut Alibaba demnächst mit offenen Gewichten folgen."},
-    {"t": "h2", "x": "Was Alibaba zu den Leistungsdaten sagt"},
-    {"t": "p", "x": "Alibaba verweist auf Platz 6 von Qwen4-Max bei Code Arena, einem Coding-Ranglistenportal, und nennt gute Ergebnisse in Benchmarks für Agenten-Workflows, Büroaufgaben und visuelles Schlussfolgern, darunter Agents' Last Exam, Vals Index, JobBench und Chartography. Auf dem hauseigenen Benchmark Work360, der Aufgaben aus 721 Fachgebieten bündelt, soll Qwen4-Max den Vorgänger insgesamt schlagen und dabei im Modus High Effort 35 Prozent weniger Token verbrauchen; die durchschnittlichen Kosten pro Aufgabe sollen um rund 60 Prozent sinken. Alle diese Zahlen stammen von Alibaba selbst. Unabhängige Nachmessungen liegen zum Erscheinen dieses Artikels nicht vor."},
-    {"t": "callout", "x": "Benchmark- und Kostenzahlen zu Qwen4-Max stammen vollständig aus Alibabas eigener Veröffentlichung. Wir haben nichts davon selbst nachgemessen.", "title": "Einordnung"},
-    {"t": "h2", "x": "Agenten und Langläufer"},
-    {"t": "p", "x": "Alibaba positioniert das Modell ausdrücklich für lang laufende Agenten. In einem Beispiel aus dem eigenen Labor habe Qwen4-Max einen 48 Stunden durchgehenden Agentenlauf absolviert, der Moleküldesign, Synthese, Tests und aktives Lernen in vier geschlossenen Schleifen kombinierte; Ergebnis sei ein experimentell bestätigtes Kühlmittelmolekül. In einem Alzheimer-Forschungsexperiment habe das Modell eigenständig 454 Werkzeugaufrufe und 3.239 Metrik-Auswertungen ausgeführt und 24 Kandidatenmoleküle entworfen. Ein weiteres Beispiel aus dem Automobilbau: Die Programmierung eines Werkstücks sei von rund 475 Minuten auf 24 Minuten gesunken, weil das Modell Überfräsungen und unvollständige Materialabträge vor der Bearbeitung erkannt habe. Auch das sind Herstellerangaben aus einer Schauvorführung."},
-    {"t": "h2", "x": "Sicherheit nach Alibabas Angaben"},
-    {"t": "p", "x": "Beim Training mit Softwaredaten habe Alibaba Sicherheitsprüfungen des erzeugten Codes neben Funktionstests laufen lassen, um Schwachstellen wie Injektionen, Speicherfehler und fehlerhafte Zugriffskontrollen zu reduzieren. Für Cybersicherheitsthemen seien Trainingsdaten nach Aufgabenabsicht gefiltert worden: Defensives wie Schwachstellenerkennung blieb erhalten, offensives Angriffsmaterial wurde entfernt. Zusätzliche Datensätze und Nachschulungen sollen Risiken im chemischen, biologischen, radiologischen und nuklearen Bereich abmildern. Wie wirksam diese Maßnahmen in der Praxis sind, müssen unabhängige Tests zeigen."}
+    {
+      "t": "p",
+      "x": "Alibaba hat am 16. November Qwen4-Max veröffentlicht, das neue Spitzenmodell der Qwen-Familie. Das Modell kommt auf 2,4 Billionen Parameter insgesamt, nutzt aber als Mixture-of-Experts-Architektur nur 71 Milliarden davon pro Token. Das sind nach Angaben Alibabas 25 Prozent weniger aktive Parameter als beim Vorgänger Qwen3.8-Max bei gleicher Gesamtgröße. Dazu kommen ein Kontextfenster von einer Million Token und native Verarbeitung von Bildern."
+    },
+    {
+      "t": "h2",
+      "x": "Preise und Verfügbarkeit"
+    },
+    {
+      "t": "p",
+      "x": "Auf der Preisseite von QwenCloud steht Qwen4-Max mit der Modellkennung qwen4-max ab sofort zur Verfügung: 1,50 Dollar pro Million Eingabetoken, 4,50 Dollar pro Million Ausgabetoken. Treffer im Zwischenspeicher kosten 0,075 Dollar pro Million Token, also fünf Prozent des Eingabepreises. Maximal sind 991.000 Token Eingabe und 393.000 Token Ausgabe pro Anfrage vorgesehen. Nutzbar ist das Modell über die API und den Token Plan von QwenCloud sowie über Alibabas eigene Oberflächen QwenWork und QwenStudio. Kleinere Vertreter der Qwen4-Serie sollen laut Alibaba demnächst mit offenen Gewichten folgen."
+    },
+    {
+      "t": "h2",
+      "x": "Was Alibaba zu den Leistungsdaten sagt"
+    },
+    {
+      "t": "p",
+      "x": "Alibaba verweist auf Platz 6 von Qwen4-Max bei Code Arena, einem Coding-Ranglistenportal, und nennt gute Ergebnisse in Benchmarks für Agenten-Workflows, Büroaufgaben und visuelles Schlussfolgern, darunter Agents' Last Exam, Vals Index, JobBench und Chartography. Auf dem hauseigenen Benchmark Work360, der Aufgaben aus 721 Fachgebieten bündelt, soll Qwen4-Max den Vorgänger insgesamt schlagen und dabei im Modus High Effort 35 Prozent weniger Token verbrauchen; die durchschnittlichen Kosten pro Aufgabe sollen um rund 60 Prozent sinken. Alle diese Zahlen stammen von Alibaba selbst. Unabhängige Nachmessungen liegen zum Erscheinen dieses Artikels nicht vor."
+    },
+    {
+      "t": "callout",
+      "x": "Benchmark- und Kostenzahlen zu Qwen4-Max stammen vollständig aus Alibabas eigener Veröffentlichung. Wir haben nichts davon selbst nachgemessen.",
+      "title": "Einordnung"
+    },
+    {
+      "t": "h2",
+      "x": "Agenten und Langläufer"
+    },
+    {
+      "t": "p",
+      "x": "Alibaba positioniert das Modell ausdrücklich für lang laufende Agenten. In einem Beispiel aus dem eigenen Labor habe Qwen4-Max einen 48 Stunden durchgehenden Agentenlauf absolviert, der Moleküldesign, Synthese, Tests und aktives Lernen in vier geschlossenen Schleifen kombinierte; Ergebnis sei ein experimentell bestätigtes Kühlmittelmolekül. In einem Alzheimer-Forschungsexperiment habe das Modell eigenständig 454 Werkzeugaufrufe und 3.239 Metrik-Auswertungen ausgeführt und 24 Kandidatenmoleküle entworfen. Ein weiteres Beispiel aus dem Automobilbau: Die Programmierung eines Werkstücks sei von rund 475 Minuten auf 24 Minuten gesunken, weil das Modell Überfräsungen und unvollständige Materialabträge vor der Bearbeitung erkannt habe. Auch das sind Herstellerangaben aus einer Schauvorführung."
+    },
+    {
+      "t": "h2",
+      "x": "Sicherheit nach Alibabas Angaben"
+    },
+    {
+      "t": "p",
+      "x": "Beim Training mit Softwaredaten habe Alibaba Sicherheitsprüfungen des erzeugten Codes neben Funktionstests laufen lassen, um Schwachstellen wie Injektionen, Speicherfehler und fehlerhafte Zugriffskontrollen zu reduzieren. Für Cybersicherheitsthemen seien Trainingsdaten nach Aufgabenabsicht gefiltert worden: Defensives wie Schwachstellenerkennung blieb erhalten, offensives Angriffsmaterial wurde entfernt. Zusätzliche Datensätze und Nachschulungen sollen Risiken im chemischen, biologischen, radiologischen und nuklearen Bereich abmildern. Wie wirksam diese Maßnahmen in der Praxis sind, müssen unabhängige Tests zeigen."
+    }
   ],
   "sources": [
-    {"title": "Alibaba Unveils Qwen4-Max: New AI Teammate for Work, Creativity, and Discovery", "publisher": "Alibaba Cloud Community", "url": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen4-max-new-ai-teammate-for-work-creativity-and-discovery_603783", "accessed": "2026-11-16"},
-    {"title": "Qwen4-Max: Pricing und Rate Limits", "publisher": "QwenCloud", "url": "https://www.qwencloud.com/models/qwen4-max", "accessed": "2026-11-16"}
+    {
+      "title": "Alibaba Unveils Qwen4-Max: New AI Teammate for Work, Creativity, and Discovery",
+      "publisher": "Alibaba Cloud Community",
+      "url": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen4-max-new-ai-teammate-for-work-creativity-and-discovery_603783",
+      "accessed": "2026-11-16"
+    },
+    {
+      "title": "Qwen4-Max: Pricing und Rate Limits",
+      "publisher": "QwenCloud",
+      "url": "https://www.qwencloud.com/models/qwen4-max",
+      "accessed": "2026-11-16"
+    }
   ],
   "faq": [
-    {"q": "Was kostet Qwen4-Max über die API?", "a": "Laut der Preisseite von QwenCloud 1,50 Dollar pro Million Eingabetoken und 4,50 Dollar pro Million Ausgabetoken. Treffer im Zwischenspeicher kosten 0,075 Dollar pro Million Token."},
-    {"q": "Wie groß ist das Kontextfenster von Qwen4-Max?", "a": "Eine Million Token insgesamt. Pro Anfrage sind bis zu 991.000 Token Eingabe und bis zu 393.000 Token Ausgabe vorgesehen."},
-    {"q": "Ist Qwen4-Max quelloffen?", "a": "Nein, Qwen4-Max wird über API und Alibabas eigene Oberflächen angeboten. Alibaba kündigt aber an, kleinere Modelle der Qwen4-Serie demnächst mit offenen Gewichten zu veröffentlichen."}
+    {
+      "q": "Was kostet Qwen4-Max über die API?",
+      "a": "Laut der Preisseite von QwenCloud 1,50 Dollar pro Million Eingabetoken und 4,50 Dollar pro Million Ausgabetoken. Treffer im Zwischenspeicher kosten 0,075 Dollar pro Million Token."
+    },
+    {
+      "q": "Wie groß ist das Kontextfenster von Qwen4-Max?",
+      "a": "Eine Million Token insgesamt. Pro Anfrage sind bis zu 991.000 Token Eingabe und bis zu 393.000 Token Ausgabe vorgesehen."
+    },
+    {
+      "q": "Ist Qwen4-Max quelloffen?",
+      "a": "Nein, Qwen4-Max wird über API und Alibabas eigene Oberflächen angeboten. Alibaba kündigt aber an, kleinere Modelle der Qwen4-Serie demnächst mit offenen Gewichten zu veröffentlichen."
+    }
   ],
-  "related": ["gemini-4-hydrogen-alltagsmodell-agenten", "deepseek-app-werkzeuge-api-chat-demo"]
+  "related": [
+    "gemini-4-hydrogen-alltagsmodell-agenten",
+    "deepseek-app-werkzeuge-api-chat-demo"
+  ]
 }
