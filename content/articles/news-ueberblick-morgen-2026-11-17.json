@@ -1,0 +1,133 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-17",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-17T08:00:00+01:00",
+  "modified": "2026-11-17T08:00:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Tracing Knowledge and Reasoning in LLMs",
+      "publisher": "arXiv; Yang Wang u. a., Manchester, Sheffield, Shanghai University of Finance and Economics",
+      "url": "https://arxiv.org/abs/2611.17461",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "See Every Block Once: Variance-Reduced Post-Training for Masked Diffusion Language Models",
+      "publisher": "arXiv; Yunzhen He, Hiroaki Yamagiwa, Hidetoshi Shimodaira",
+      "url": "https://arxiv.org/abs/2611.17754",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent",
+      "publisher": "arXiv; Ibrahim Memon, Armin Karamzade, M. Hanif Jhaveri, Roy Fox",
+      "url": "https://arxiv.org/abs/2611.17780",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "LuthorSQL: Implementierung und Versuchsdaten",
+      "publisher": "GitHub; IAMIbrahimmemon/luthorsql",
+      "url": "https://github.com/IAMIbrahimmemon/luthorsql",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "See Every Block Once: Projekt-Repository",
+      "publisher": "GitHub; githubhyz/See_Every_Block_Once",
+      "url": "https://github.com/githubhyz/See_Every_Block_Once",
+      "accessed": "2026-11-17"
+    }
+  ],
+  "tags": [
+    "forschung",
+    "evaluation",
+    "reasoning",
+    "training",
+    "datenbanken"
+  ],
+  "title": "KI am Morgen: Denkspuren, Diffusionstraining und LuthorSQL",
+  "dek": "Eine Studie prüft innere Denkspuren, ein Diffusionsverfahren erfasst jeden Textblock, und LuthorSQL verbindet lokale SQL-Pläne mit einem Agenten.",
+  "key_takeaways": [
+    "Denkspuren sind keine Denkbeweise: Eine Analyse von 16 Modellen und 24 Benchmarks findet Zusammenhänge zwischen Aufgaben und internen Signalen, aber keine kausale Trennung von Wissen und Schlussfolgern.",
+    "Jeden Block einmal prüfen: Beim Nachtraining von LLaDA-8B verbessert eine andere Stichprobenauswahl die Ergebnisse gegenüber zufälliger Blockwahl im einfachen Mittel über fünf Aufgaben um 12,79 Prozentpunkte.",
+    "LuthorSQL erzeugt SQL-Pläne statt SQL-Text Token für Token. Bis zu 32 Kandidaten und eine zweite Bewertung verbessern die Auswahl; die begrenzte Grammatik und mögliche Datenüberschneidungen bleiben wichtige Grenzen."
+  ],
+  "hero": {
+    "alt": "Drei Studien: interne KI-Signale, vollständige Blockauswahl im Diffusionstraining und LuthorSQL mit bis zu 32 SQL-Kandidaten.",
+    "caption": "Unterschiedliche Verfahren und ihre jeweiligen Testbedingungen. Eigene Grafik.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Morgenüberblick vom 17. November. Quellenstand: 06:35 Uhr MEZ. Heute geht es um drei unterschiedliche Stellen im KI-System: die Auswertung interner Signale, die Auswahl von Trainingsstichproben und die Übersetzung natürlicher Sprache in Datenbankabfragen. Die ausgewählten Arbeiten stammen vom 12. und 13. November."
+    },
+    {
+      "t": "h2",
+      "x": "Innere Denkspuren sind noch keine Erklärung"
+    },
+    {
+      "t": "p",
+      "x": "Eine richtige Antwort verrät nicht, ob ein Sprachmodell Wissen abgerufen, mehrere Schritte kombiniert oder eine Abkürzung genutzt hat. Yang Wang und Kollegen untersuchen deshalb 16 Modelle auf 24 Benchmarks und ergänzen die üblichen Trefferquoten um interne Messungen. Dazu gehören die Verteilung der Aufmerksamkeit, Aktivierungsmuster und die Frage, wie gut ein einfacher Klassifikator die richtige Antwort aus verborgenen Zuständen herauslesen kann. Die detaillierten Analysen verwenden jeweils ausgewählte Modelle und Aufgaben, nicht jede mögliche Kombination aus allen 16 und 24."
+    },
+    {
+      "t": "p",
+      "x": "Ein wichtiger Befund betrifft die Grenzen der Methode selbst: Die Unterschiede früher Aktivierungsmuster hängen stark davon ab, wie der Eingabetext endet. Hängen die Forscher überall denselben Antwort-Präfix an, ändert sich die Rangfolge der Benchmarks deutlich. Sie leiten deshalb aus diesem Signal allein keinen Unterschied zwischen Wissen und Schlussfolgern ab. Bei generierten falschen Antworten schwankt dagegen die Aufmerksamkeitsentropie auf SciQ, MathQA und LogiQA stärker als bei richtigen, insbesondere in unteren und oberen untersuchten Schichten. Das ist ein Zusammenhang im untersuchten Material, kein fertig geprüfter Fehlerdetektor."
+    },
+    {
+      "t": "p",
+      "x": "Auch ausgeschriebene Gedankengänge lösen das Grundproblem nicht. Chain-of-Thought-Prompts verbessern den gemittelten Reasoning-Wert bei 14 von 16 geprüften Modellkonfigurationen. Entfernt man bei Multiple-Choice-Fragen jedoch die ursprünglich richtige Option und macht „Keine der genannten Antworten“ zur richtigen Wahl, fallen die Ergebnisse oft deutlich. Eine zusätzliche falsche Option dieses Typs stört wesentlich weniger. Die Autoren sehen darin eine fortbestehende Abhängigkeit vom Antwortangebot. Die Studie beschränkt sich auf Englisch; die Antwortoptionen und Promptformate können die Messungen mitprägen. Das genannte Code-Repository war bei der Prüfung nicht erreichbar (HTTP 404)."
+    },
+    {
+      "t": "h2",
+      "x": "Diffusionstraining: Jeden Block einmal statt manche doppelt"
+    },
+    {
+      "t": "p",
+      "x": "Maskierte Diffusions-Sprachmodelle vervollständigen Text schrittweise aus verdeckten Stellen. Für ihr Nachtraining lässt sich die Wahrscheinlichkeit einer ganzen Antwort nicht so einfach berechnen wie bei klassischen Modellen, die Wortstück für Wortstück schreiben. Verfahren nutzen daher geschätzte Ersatzgrößen. Yunzhen He, Hiroaki Yamagiwa und Hidetoshi Shimodaira ändern nun nicht diese Zielgröße, sondern die Auswahl der Textblöcke für ihre Schätzung: Jeder Block wird einmal ausgewertet, statt Blöcke unabhängig zufällig zu ziehen und dadurch manche doppelt, andere gar nicht zu sehen."
+    },
+    {
+      "t": "p",
+      "x": "Der Hauptvergleich nutzt LLaDA-8B-Instruct, vier Blöcke und vier Auswertungen pro Antwort. Über GSM8K, MATH-500, Countdown, Sudoku und HumanEval liegt die neue Variante im einfachen Mittel 12,79 Prozentpunkte über der zufälligen Blockwahl bei gleicher Zielgröße. Auf vier der fünf Benchmarks erreicht sie den höchsten Wert unter den verglichenen Methoden. Die Ausnahme ist Countdown: Dort erzielt SPG 70,31 Prozent, die vollständige Blockauswahl 66,41 Prozent. Auf Sudoku erreicht sie 91,39 Prozent gegenüber 61,20 Prozent bei zufälliger Blockwahl."
+    },
+    {
+      "t": "p",
+      "x": "Die theoretische Aussage ist enger als ein pauschal stabileres Training: Bei gleicher Stichprobenzahl wie Blockzahl entfällt die Varianz durch die zufällige Wahl des Blockindex; die Zufälligkeit innerhalb der Blöcke bleibt. Die gemessene Varianz der Zielgrößen-Schätzung fällt stark, die Varianz der tatsächlichen Trainingsgradienten in zwei untersuchten Aufgaben aber deutlich weniger. Die Arbeit trennt daher nicht abschließend, ob die Gewinne aus der ruhigeren Schätzung oder aus dem verlässlichen Lernsignal für jeden Block entstehen. Andere Modellgrößen, offene Textgenerierung und größere Blockzahlen sind nicht umfassend geprüft. Das verlinkte Repository enthält derzeit nur eine README, noch keine Implementierung."
+    },
+    {
+      "t": "h2",
+      "x": "LuthorSQL: Ein schneller Plan vor dem Datenbankagenten"
+    },
+    {
+      "t": "p",
+      "x": "LuthorSQL übersetzt eine Frage nicht direkt in frei erzeugten SQL-Text. Ein 7B-Modell bewertet stattdessen die Felder eines begrenzten Abfrageplans parallel. Ein deterministischer Compiler baut daraus SQL, unter anderem anhand der Fremdschlüssel zwischen Tabellen. Aus demselben Generatorlauf entstehen bis zu 32 verschiedene Kandidaten, die schreibgeschützt ausgeführt und anschließend durch einen zweiten Adapter bewertet werden. „One-Pass“ beschreibt also den Generator, nicht eine gesamte Pipeline ohne weitere Modellberechnung oder Datenbankaufrufe."
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren berichten 59,39 Prozent Ausführungsgenauigkeit auf BIRD dev mit den ursprünglichen Referenzabfragen. Eine getrennte Geschwindigkeitsmessung auf 200 DECISION-Fragen erreicht einen Median von 0,84 Sekunden je Frage auf einer H100 PCIe, ohne Modellladen und einmalige Datenbankeinrichtung. Auf dem versteckten BIRD-Test nennt das Paper 68,03 Prozent, beruft sich dabei aber auf ein vom BIRD-Team per E-Mail übermitteltes Ergebnis, das noch nicht auf der öffentlichen Rangliste stand. Dieser Wert ist hier keine unabhängig bestätigte Leaderboard-Platzierung."
+    },
+    {
+      "t": "p",
+      "x": "Für Fragen mit kleinem Abstand zwischen den besten Kandidatengruppen kann ein Claude-Opus-5.5-Agent übernehmen. Auf 227 Fragen über nach dem angegebenen Trainingsstichtag veröffentlichte Datenbanken beantwortet das lokale System im direkten API-Versuch 102 Fragen selbst. Der begrenzte Planraum deckt aber nur 84,6 Prozent der BIRD-dev-Referenzabfragen ab. In Entwicklungsversuchen wurden nicht darstellbare Fragen teils anhand der bekannten Referenz erkannt und weitergereicht, was ein reales System nicht könnte; spätere zurückgehaltene Tests vermeiden diesen Eingriff. Zudem kann der Backbone Trainingsdaten gesehen haben, die nur für die Adapter zurückgehalten wurden. Das Repository enthält tatsächlich Implementierung, Tests und Versuchsskripte. Eine pauschale Genauigkeits- oder Datenschutzgarantie folgt daraus nicht."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann man an internen Signalen erkennen, ob eine KI wirklich denkt?",
+      "a": "Die Studie findet diagnostische Zusammenhänge, keinen kausalen Nachweis. Prompt-Ende, Antwortoptionen und Datensatzgestaltung beeinflussen die Signale. Ein schwacher linearer Klassifikator beweist zudem nicht, dass eine Information im Modell fehlt."
+    },
+    {
+      "q": "Macht vollständige Blockauswahl jedes Diffusionsmodell besser?",
+      "a": "Gezeigt ist ein Vorteil im getesteten LLaDA-8B-Setup gegenüber zufälliger Blockwahl und derselben Ersatz-Zielgröße. Unter allen Vergleichsmethoden liegt das Verfahren auf vier von fünf Benchmarks vorn, auf Countdown nicht. Andere Architekturen und offene Textaufgaben brauchen eigene Tests."
+    },
+    {
+      "q": "Ist LuthorSQL in einem einzigen Rechenschritt fertig?",
+      "a": "Nein. Der Generator bewertet die Planfelder in einem Durchlauf. Danach werden bis zu 32 SQL-Kandidaten erzeugt und ausgeführt, und ein zweiter Adapter bewertet sie. Bei Unsicherheit kann zusätzlich ein externer Agent übernehmen."
+    }
+  ],
+  "related": [
+    "satbench-benchmarks-verbraucht-unabhaengig",
+    "anthropic-claude-angriffsflaeche-code"
+  ]
+}
