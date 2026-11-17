@@ -5,10 +5,17 @@
   "type": "explainer",
   "title": "TokenEconomizer: Ein Plugin drückt die laufenden Kosten von Coding-Agenten",
   "dek": "Forscher von Microsoft Research, Microsoft Security und UC Berkeley stellen ein Plugin vor, das aus vergangenen Sitzungen lernt und Coding-Agenten günstiger macht. Auf 277 SWE-Bench-Aufgaben sanken die Kosten im Mittel um 18,4 bis 30,9 Prozent, bei unveränderter Erfolgsquote.",
-  "published": "2026-11-17T09:10:00+01:00",
-  "modified": "2026-11-17T09:10:00+01:00",
+  "published": "2026-11-17T09:32:07+01:00",
+  "modified": "2026-11-17T09:32:07+01:00",
   "author": "philipp-paulik",
-  "tags": ["Coding-Agenten", "Kosten", "Microsoft Research", "Open Source", "Claude Code", "Plugin"],
+  "tags": [
+    "Coding-Agenten",
+    "Kosten",
+    "Microsoft Research",
+    "Open Source",
+    "Claude Code",
+    "Plugin"
+  ],
   "key_takeaways": [
     "TokenEconomizer ist ein Open-Source-Plugin, das Coding-Agenten günstiger macht, ohne Agent oder Modell zu verändern. Es lernt aus den Sitzungen, die im selben Repository bereits gelaufen sind.",
     "Drei Mechanismen: gelernte Repository-Fakten, das Entfernen ungenutzter Werkzeuge und ein Wächter gegen Fehlerschleifen.",
@@ -22,22 +29,64 @@
     "credit": "Intelligenz Welt (KI-generiert)"
   },
   "body": [
-    {"t": "p", "x": "Wer Coding-Agenten wie Claude Code, Codex oder die Copilot CLI regelmäßig auf demselben Repository laufen lässt, zahlt vieles doppelt: Bei jeder Sitzung gehen Anweisungen, sämtliche Werkzeugdefinitionen und der bisherige Verlauf erneut ans Modell, und der Agent entdeckt dieselben Eigenheiten des Projekts immer wieder neu. Genau hier setzt TokenEconomizer an, ein Open-Source-Plugin unter MIT-Lizenz von Forschenden bei Microsoft Research, Microsoft Security und UC Berkeley. Der Ansatz ist bewusst black-box: Agent, Modell und Gewichte bleiben unangetastet, gelernt wird über die Sitzungen eines Repositorys hinweg."},
-    {"t": "h2", "x": "Drei Mechanismen"},
-    {"t": "p", "x": "Der erste Mechanismus heißt Micro-skills: Das Plugin merkt sich Fakten über das Repository, etwa dass vor dem Test ein Buildschritt nötig ist oder ein Kommando nur in einer bestimmten Schreibweise funktioniert. Quellen sind Fehler, die sich über Sitzungen wiederholen, und ein Modell, das alle drei Sitzungen die jüngsten Läufe durchsieht und Fakten vorschlägt. Bestätigen drei Sitzungen einen Fakt, wird er künftig zu Sitzungsbeginn in den Kontext geschrieben; widersprechen spätere Läufe, fliegt er wieder raus. Der zweite Mechanismus ist Werkzeugbeschnitt: Jedes geladene Werkzeug kostet bei jeder Anfrage Token. Ein Werkzeug, das über genug Anfragen und Sitzungen ungenutzt bleibt, wird über die eigenen Einstellungen des Agenten ausgeblendet und lässt sich mit einem Kommando zurückholen. Der dritte ist ein Schleifenwächter: Wiederholt ein Durchgang dieselben Fehler, prüft ein Beurteilermodell, ob der Agent festhängt. Ab einer Sicherheit von 0,7 bekommt er einen kurzen Hinweis auf einen anderen Ansatz, höchstens einmal pro Durchgang. Stoppen tut das Plugin nie selbst, es sagt nur Bescheid."},
-    {"t": "h2", "x": "Was die Messung zeigt"},
-    {"t": "p", "x": "Die Autoren ließen fünf Kombinationen aus Agent und Modell über dieselben 277 SWE-Bench-Aufgaben aus sechs Repositorys laufen, jede Aufgabe als eigene Sitzung, zu Beginn ohne Vorwissen. Ergebnis: Die mittleren Kosten pro Aufgabe fielen um 18,4 bis 30,9 Prozent, in allen 30 Zellen aus Repository und Kombination wurde es günstiger, und die Erfolgsquote Pass@1 stieg in vier von fünf Fällen. Die Kosten der eigenen Modellaufrufe des Plugins sind eingerechnet; da die meisten Token ohnehin Cache-Zugriffe sind, wird mit Cache-Preisen gerechnet. Auf dem Web-Bench lagen die Ersparnisse bei 16 bis 21 Prozent, auf zwei Sicherheitsbenchmarks mit jedes Mal neuem Repository bei 6 bis 20 Prozent. Es handelt sich um die Messung der Autoren, nicht um eine unabhängige Prüfung."},
-    {"t": "callout", "x": "Praktisch relevant: Der Loop-Wächter triggert auf wiederholte Fehlschläge und schreibt nur einen Hinweis in den Kontext. Er beendet keine Durchgänge. Die Entscheidung, einen hängenden Lauf abzubrechen, bleibt beim Menschen.", "title": "Praxis"},
-    {"t": "h2", "x": "Installation und Datenschutz"},
-    {"t": "p", "x": "Unterstützt werden Claude Code, Codex, die GitHub Copilot CLI und Pi; experimentell laufen opencode, Cursor Agent, Grok Build, Hermes Agent, die Antigravity CLI und Factory Droid. Voraussetzung ist Python 3.10 oder neuer. Ein eigener API-Schlüssel ist nicht nötig, die Modellaufrufe des Plugins laufen über das bestehende Agentenkonto, und die gelernten Daten bleiben lokal im Ordner ~/.tokeneconomizer. Jede Aktion wird in einer Zeile angekündigt; schlägt ein Teil fehl, läuft die Sitzung einfach weiter, als wäre nichts installiert. Wer den Verbrauch seiner Agenten im Griff behalten will, findet im Repository auch die Skripte, mit denen sich die Experimente wiederholen lassen."}
+    {
+      "t": "p",
+      "x": "Wer Coding-Agenten wie Claude Code, Codex oder die Copilot CLI regelmäßig auf demselben Repository laufen lässt, zahlt vieles doppelt: Bei jeder Sitzung gehen Anweisungen, sämtliche Werkzeugdefinitionen und der bisherige Verlauf erneut ans Modell, und der Agent entdeckt dieselben Eigenheiten des Projekts immer wieder neu. Genau hier setzt TokenEconomizer an, ein Open-Source-Plugin unter MIT-Lizenz von Forschenden bei Microsoft Research, Microsoft Security und UC Berkeley. Der Ansatz ist bewusst black-box: Agent, Modell und Gewichte bleiben unangetastet, gelernt wird über die Sitzungen eines Repositorys hinweg."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Mechanismen"
+    },
+    {
+      "t": "p",
+      "x": "Der erste Mechanismus heißt Micro-skills: Das Plugin merkt sich Fakten über das Repository, etwa dass vor dem Test ein Buildschritt nötig ist oder ein Kommando nur in einer bestimmten Schreibweise funktioniert. Quellen sind Fehler, die sich über Sitzungen wiederholen, und ein Modell, das alle drei Sitzungen die jüngsten Läufe durchsieht und Fakten vorschlägt. Bestätigen drei Sitzungen einen Fakt, wird er künftig zu Sitzungsbeginn in den Kontext geschrieben; widersprechen spätere Läufe, fliegt er wieder raus. Der zweite Mechanismus ist Werkzeugbeschnitt: Jedes geladene Werkzeug kostet bei jeder Anfrage Token. Ein Werkzeug, das über genug Anfragen und Sitzungen ungenutzt bleibt, wird über die eigenen Einstellungen des Agenten ausgeblendet und lässt sich mit einem Kommando zurückholen. Der dritte ist ein Schleifenwächter: Wiederholt ein Durchgang dieselben Fehler, prüft ein Beurteilermodell, ob der Agent festhängt. Ab einer Sicherheit von 0,7 bekommt er einen kurzen Hinweis auf einen anderen Ansatz, höchstens einmal pro Durchgang. Stoppen tut das Plugin nie selbst, es sagt nur Bescheid."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Messung zeigt"
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren ließen fünf Kombinationen aus Agent und Modell über dieselben 277 SWE-Bench-Aufgaben aus sechs Repositorys laufen, jede Aufgabe als eigene Sitzung, zu Beginn ohne Vorwissen. Ergebnis: Die mittleren Kosten pro Aufgabe fielen um 18,4 bis 30,9 Prozent, in allen 30 Zellen aus Repository und Kombination wurde es günstiger, und die Erfolgsquote Pass@1 stieg in vier von fünf Fällen. Die Kosten der eigenen Modellaufrufe des Plugins sind eingerechnet; da die meisten Token ohnehin Cache-Zugriffe sind, wird mit Cache-Preisen gerechnet. Auf dem Web-Bench lagen die Ersparnisse bei 16 bis 21 Prozent, auf zwei Sicherheitsbenchmarks mit jedes Mal neuem Repository bei 6 bis 20 Prozent. Es handelt sich um die Messung der Autoren, nicht um eine unabhängige Prüfung."
+    },
+    {
+      "t": "callout",
+      "x": "Praktisch relevant: Der Loop-Wächter triggert auf wiederholte Fehlschläge und schreibt nur einen Hinweis in den Kontext. Er beendet keine Durchgänge. Die Entscheidung, einen hängenden Lauf abzubrechen, bleibt beim Menschen.",
+      "title": "Praxis"
+    },
+    {
+      "t": "h2",
+      "x": "Installation und Datenschutz"
+    },
+    {
+      "t": "p",
+      "x": "Unterstützt werden Claude Code, Codex, die GitHub Copilot CLI und Pi; experimentell laufen opencode, Cursor Agent, Grok Build, Hermes Agent, die Antigravity CLI und Factory Droid. Voraussetzung ist Python 3.10 oder neuer. Ein eigener API-Schlüssel ist nicht nötig, die Modellaufrufe des Plugins laufen über das bestehende Agentenkonto, und die gelernten Daten bleiben lokal im Ordner ~/.tokeneconomizer. Jede Aktion wird in einer Zeile angekündigt; schlägt ein Teil fehl, läuft die Sitzung einfach weiter, als wäre nichts installiert. Wer den Verbrauch seiner Agenten im Griff behalten will, findet im Repository auch die Skripte, mit denen sich die Experimente wiederholen lassen."
+    }
   ],
   "sources": [
-    {"title": "microsoft/TokenEconomizer (Repository und README)", "publisher": "GitHub", "url": "https://github.com/microsoft/TokenEconomizer", "accessed": "2026-11-17"}
+    {
+      "title": "microsoft/TokenEconomizer (Repository und README)",
+      "publisher": "GitHub",
+      "url": "https://github.com/microsoft/TokenEconomizer",
+      "accessed": "2026-11-17"
+    }
   ],
   "faq": [
-    {"q": "Was macht TokenEconomizer?", "a": "Das Plugin macht Coding-Agenten günstiger, ohne sie zu verändern. Es lernt Fakten über das Repository, blendet ungenutzte Werkzeuge aus und weist festhängende Agenten auf alternative Ansätze hin."},
-    {"q": "Wie viel spart TokenEconomizer?", "a": "In der Messung der Autoren auf 277 SWE-Bench-Aufgaben sanken die mittleren Kosten um 18,4 bis 30,9 Prozent, bei unveränderter oder leicht besserer Erfolgsquote. Unabhängig nachgeprüft ist das nicht."},
-    {"q": "Braucht TokenEconomizer einen eigenen API-Schlüssel?", "a": "Nein. Die Modellaufrufe laufen über das bestehende Konto des Agenten. Die gelernten Daten bleiben lokal unter ~/.tokeneconomizer."}
+    {
+      "q": "Was macht TokenEconomizer?",
+      "a": "Das Plugin macht Coding-Agenten günstiger, ohne sie zu verändern. Es lernt Fakten über das Repository, blendet ungenutzte Werkzeuge aus und weist festhängende Agenten auf alternative Ansätze hin."
+    },
+    {
+      "q": "Wie viel spart TokenEconomizer?",
+      "a": "In der Messung der Autoren auf 277 SWE-Bench-Aufgaben sanken die mittleren Kosten um 18,4 bis 30,9 Prozent, bei unveränderter oder leicht besserer Erfolgsquote. Unabhängig nachgeprüft ist das nicht."
+    },
+    {
+      "q": "Braucht TokenEconomizer einen eigenen API-Schlüssel?",
+      "a": "Nein. Die Modellaufrufe laufen über das bestehende Konto des Agenten. Die gelernten Daten bleiben lokal unter ~/.tokeneconomizer."
+    }
   ],
-  "related": ["claude-code-mode-javascript-werkzeugaufrufe", "n8n-nod-lokaler-open-source-agent"]
+  "related": [
+    "claude-code-mode-javascript-werkzeugaufrufe",
+    "n8n-nod-lokaler-open-source-agent"
+  ]
 }
