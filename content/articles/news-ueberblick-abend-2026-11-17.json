@@ -1,0 +1,145 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-17",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-17T16:10:00+01:00",
+  "modified": "2026-11-17T16:10:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "DetourBench: Trajectory-Level Evaluation of Interactive Agents with Exact Minimum-Action Bounds",
+      "publisher": "arXiv; Hanlin Tian, Sihan Zhu, Zhao Yang, Yuxiang Wang, Zhiquan Hu, Yu Mi, Hongquan Zhu, Qiufei Hu",
+      "url": "https://arxiv.org/abs/2611.20844",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "EVIDENT: Evaluating Evidence Grounding in GUI Agents",
+      "publisher": "arXiv; Yerin Nam, Minkyung Cho, MinKyu Kim, SeungWoo Song, Hangyeol Yoo, Jihyo Kim, KyungTae Lim; KAIST",
+      "url": "https://arxiv.org/abs/2611.20488",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "Accelerate Bench: Evaluating Agents for Application-Level Program Optimization",
+      "publisher": "arXiv; Bowen Liu, Yuhan Li, Nuo Chen u. a.; Tencent Hy Team, HKUST und HKUST Guangzhou, Tsinghua University, Peking University",
+      "url": "https://arxiv.org/abs/2611.20882",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "DetourBench: Aufgaben, Orakel und Auswertungssoftware",
+      "publisher": "GitHub; DatagridsAI/DetourBench",
+      "url": "https://github.com/DatagridsAI/DetourBench",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "EVIDENT: Evaluationspipeline und Aufgabenmetadaten",
+      "publisher": "GitHub; yerinNam/EVIDENT",
+      "url": "https://github.com/yerinNam/EVIDENT",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "Accelerate Bench: Projektseite und v1.1-Ergebnisse",
+      "publisher": "Accelerate Bench; Forschungsteam",
+      "url": "https://acceleratebench.com/",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "Accelerate Bench: Release- und Reproduktionshinweise",
+      "publisher": "GitHub; AdAstraAbyssoque/accelerate-bench",
+      "url": "https://github.com/AdAstraAbyssoque/accelerate-bench",
+      "accessed": "2026-11-17"
+    }
+  ],
+  "tags": [
+    "forschung",
+    "agenten",
+    "evaluation",
+    "benchmarks",
+    "programmierung"
+  ],
+  "title": "KI am Abend: Umwege, unbelegte Antworten und schnellerer Code",
+  "dek": "DetourBench zählt Agenten-Umwege, EVIDENT prüft beobachtete Belege, und Accelerate Bench misst schnellere Programme statt bloß korrekter Änderungen.",
+  "key_takeaways": [
+    "DetourBench trennt Erfolg, Umwege und Restarbeit. Auf 25 ausgewählten Aufgaben scheitern 99 von 375 Agentenläufen; 97 dieser Fehlläufe bleiben im Aufgabengraphen noch lösbar, zwei haben sich unumkehrbar falsch festgelegt.",
+    "EVIDENT: Der mit gemini-3-flash-preview betriebene Browseragent erreicht auf 70 englischen Aufgaben 87,14 Prozent Aufgabenerfolg, aber nur 55,71 Prozent Erfolg mit beobachteten Belegen und dadurch gestützten Aussagen. Das ist kein Test aktueller Modellgenerationen.",
+    "Accelerate Bench v1.1: 472 von 512 finalen Programmen bestehen die Korrektheitsprüfung. Der Spitzenwert von 67,4 Prozent für Sonnet 5.5 plus Claude Code misst mittlere eingesparte Ausgangslaufzeit über 32 Aufgaben, nicht den Anteil gelöster Aufgaben."
+  ],
+  "hero": {
+    "alt": "Drei getrennte Agententests: DetourBench unterscheidet behebbare und unumkehrbare Fehlläufe; EVIDENT trennt englischen Aufgabenerfolg von beleggestütztem Erfolg; Accelerate Bench misst mittlere Laufzeitersparnis.",
+    "caption": "Drei Prüfverfahren mit unterschiedlichen Aufgaben, Modellen und Erfolgsbegriffen. Eigene Grafik.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Abendüberblick vom 17. November. Quellenstand: 16:03 Uhr MEZ. Drei Originalarbeiten vom 16. November schauen hinter den fertigen KI-Output: Wie direkt kommt ein Agent ans Ziel? Hat er seine Antwort tatsächlich belegt? Und macht ein Coding-Agent ein Programm nur anders oder wirklich schneller? Die Ergebnisse gelten für unterschiedliche Testaufbauten und dürfen nicht zu einer gemeinsamen Rangliste verschmolzen werden."
+    },
+    {
+      "t": "h2",
+      "x": "Ein Fehlschlag kann einen Schritt oder eine ganze Welt entfernt sein"
+    },
+    {
+      "t": "p",
+      "x": "DetourBench von Hanlin Tian und Kollegen baut überschaubare interaktive Aufgaben als endliche Graphen. Das Team kann dadurch alle Wege durchsuchen und die kleinste Zahl nötiger Zugriffe exakt berechnen. Ein Zugriff kostet in diesem Modell immer einen Schritt; einmal entdeckte Ressourcen lassen sich direkt wieder ansprechen. Das ist eine bewusst vereinfachte Umgebung, keine Messung von Browserwartezeit oder menschlichem Arbeitsaufwand."
+    },
+    {
+      "t": "p",
+      "x": "Der Hauptversuch umfasst fünf Modellendpunkte auf 25 ausgewählten Aufgaben mit je drei Wiederholungen, insgesamt 375 Läufe. 276 erreichen das Ziel. Von den 99 Fehlläufen bleiben 97 im Graphen noch lösbar; zwei enden in einer unumkehrbaren falschen Festlegung. Diese Unterscheidung ist nützlich: Ein Agent, der einen Zugriff vor dem Ziel stoppt, hat etwas anderes getan als einer, der eine falsche Entscheidung bereits endgültig abgeschickt hat. Lösbar im Graphen heißt dabei nicht, dass das verbliebene Ausführungsbudget noch reicht."
+    },
+    {
+      "t": "p",
+      "x": "Auch bei Erfolg verschwinden Unterschiede nicht. Auf acht Aufgaben schaffen alle Modelle alle Wiederholungen, brauchen aber unterschiedlich viele Zugriffe. Die exakte Untergrenze kennt allerdings den ganzen Graphen schon im Voraus. Ein menschlich vernünftiger Suchschritt kann deshalb ebenfalls als Mehrweg erscheinen. Zudem floss beobachtetes Modellverhalten in Auswahl und Überarbeitung der Aufgaben ein. Der Benchmark zeigt, dass diese Unterschiede messbar sind, nicht wie häufig solche Umwege in realer Arbeit vorkommen. Code, Aufgaben und kürzeste Referenzwege sind veröffentlicht; die aufgezeichneten Modellläufe selbst sind laut Repository nicht enthalten."
+    },
+    {
+      "t": "h2",
+      "x": "Eine plausible Browserantwort ist noch kein Beleg"
+    },
+    {
+      "t": "p",
+      "x": "EVIDENT vom KAIST-Team um Yerin Nam und Minkyung Cho prüft 220 englische und koreanische Webaufgaben. Menschen legen fest, welche Informationen ein Agent tatsächlich gesehen haben muss. Ein dreistufiger Prüfer liest anschließend die während des Laufs aufgenommenen Screenshots, ordnet Belege den Antwortaussagen zu und bewertet deren Unterstützung. Er besucht die Website nicht erneut. So soll eine richtige wirkende Antwort aus Vorwissen von einer am beobachteten Seiteninhalt geprüften Antwort unterschieden werden."
+    },
+    {
+      "t": "p",
+      "x": "Ein Beispiel aus den 70 englischen Aufgaben zeigt die Lücke: Der mit gemini-3-flash-preview betriebene Agent erreicht 87,14 Prozent Aufgabenerfolg. Mit zusätzlich beobachteten Pflichtbelegen bleiben 70,00 Prozent; verlangt man außerdem, dass die Kernaussagen durch diese Belege gestützt sind, sind es 55,71 Prozent. Alle drei Zahlen beziehen sich auf dieselben 70 Aufgaben. Die letzte Zahl ist also kein Prozentsatz nur innerhalb der erfolgreichen Antworten. Die kommerziellen Modelle wurden laut Anhang im Mai 2026 getestet, nicht als aktuelle November-Generation."
+    },
+    {
+      "t": "p",
+      "x": "Die strengere Prüfung hat eigene Fehlerquellen. Auf 126 geschichteten Beispielverläufen stimmt der Hauptprüfer in 91,27 Prozent mit menschlichen Urteilen überein, nicht in jedem Fall. Ein verlorenes Bilddetail beim Extrahieren kann eine tatsächlich gesehene Stütze verdecken; unterschiedliche Prüfer akzeptieren auch unterschiedliche Belegwege. Außerdem benutzen die englischen und koreanischen Aufgaben andere Websites und sind kein kontrollierter Sprachvergleich. Die Studie misst eine klar definierte Form von Belegtreue, nicht sämtliche Formen von Nützlichkeit. Im Repository liegen die Evaluationspipeline und Metadaten für 70 englische sowie 150 koreanische Aufgaben."
+    },
+    {
+      "t": "h2",
+      "x": "Schnellerer Code braucht mehr als einen korrekten Patch"
+    },
+    {
+      "t": "p",
+      "x": "Accelerate Bench von Bowen Liu und Kollegen lässt Coding-Agenten vollständige CPU-Anwendungen optimieren. 32 Aufgaben aus wissenschaftlicher Software und Supercomputing-Wettbewerben geben Arbeitslast, erlaubte Änderungen und korrekte Ausgaben vor, aber keinen Musterpatch. Die Agenten dürfen auch Compiler- und Laufzeiteinstellungen ändern. Nach öffentlichem Feedback beim Entwickeln baut ein getrennter Prüfer das finale Programm neu und testet es mit privaten Eingaben."
+    },
+    {
+      "t": "p",
+      "x": "Version 1.1 vergleicht 16 Kombinationen aus Modell und Arbeitsumgebung mit einem Lauf je Aufgabe. 472 von 512 Ergebnissen sind korrekt. Entscheidend ist daher oft, wie viel Laufzeit sie sparen. Sonnet 5.5 mit Claude Code erreicht Score@1 von 67,4 Prozent. Diese Kennzahl mittelt über alle 32 Aufgaben den Anteil eingesparter Ausgangslaufzeit; ein korrektes Programm mit doppelter Geschwindigkeit erhält 50 Prozent, ein nicht beschleunigtes oder falsches null. Sie bedeutet nicht, dass 67,4 Prozent der Aufgaben gelöst wurden."
+    },
+    {
+      "t": "p",
+      "x": "Wie stark Einstellungen zählen, zeigt ein gesonderter GROMACS-Nachtest mit identischem Quellcode: Unter vier Kombinationen von Vektorisierung und Threadzahl reicht die Geschwindigkeit von 0,289- bis 2,123-mal der jeweiligen Referenz. Alle vier Varianten bestehen die Korrektheitsprüfung. Das Beispiel stammt aus der getrennten Analyse von Version 1.0 und erklärt nicht unmittelbar die Rangfolge von Version 1.1. Die Ergebnisse bleiben an CPU, Arbeitslast und Ausgangsprogramm gebunden. Die Projektseite nennt inzwischen 31 Aufgaben auf Harbor Hub ohne Zugriffsantrag; die vollständige Sammlung läuft über eine manuell freizugebende Hugging-Face-Veröffentlichung. Release-Skripte und Dokumentation sind vorhanden."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind alle Zugriffe oberhalb der DetourBench-Untergrenze unnötig?",
+      "a": "Nicht im Sinne einer stets vermeidbaren Entscheidung. Die Untergrenze kennt die gesamte Aufgabe im Voraus. Sie misst Mehrwege gegenüber diesem vollständigen Wissen, nicht gegenüber der besten Suchstrategie unter den Informationen des Agenten."
+    },
+    {
+      "q": "Sind die übrigen EVIDENT-Antworten automatisch falsch?",
+      "a": "Im Test nicht automatisch. Eine Antwort kann sachlich passen und trotzdem die verlangten beobachteten Belege nicht haben oder Aussagen über diese Belege hinaus machen. Der strengere Score bewertet Belegtreue nach den Aufgabenregeln und hat seinerseits Prüfer- und Extraktionsgrenzen."
+    },
+    {
+      "q": "Heißt Score@1 von 67,4 Prozent ein 67,4 Prozent schnelleres Programm?",
+      "a": "Es ist die mittlere eingesparte Ausgangslaufzeit von Sonnet 5.5 plus Claude Code über die 32 v1.1-Aufgaben, wobei falsche oder nicht schnellere Programme null erhalten. Es ist weder eine einzelne Beschleunigung noch die Lösungsquote."
+    }
+  ],
+  "related": [
+    "news-ueberblick-mittag-2026-11-17",
+    "news-ueberblick-abend-2026-11-16"
+  ]
+}
