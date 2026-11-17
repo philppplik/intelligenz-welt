@@ -1,0 +1,43 @@
+{
+  "slug": "hugging-face-inference-providers-openrouter-router",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Hugging Face schaltet Inference Providers auf OpenRouters Routing um",
+  "dek": "Anfragen an Sprachmodelle über Hugging Face Inference Providers laufen ab sofort durch OpenRouters Router: beste Mischung aus Preis, Tempo und Zuverlässigkeit, automatischer Wiederholungsversuch beim nächsten Anbieter. Eine Sache geht verloren: eigene Provider-Schlüssel.",
+  "published": "2026-11-17T09:20:00+01:00",
+  "modified": "2026-11-17T09:20:00+01:00",
+  "author": "philipp-paulik",
+  "tags": ["Hugging Face", "OpenRouter", "Inference", "API", "Open Weights", "Routing"],
+  "key_takeaways": [
+    "Hugging Face ersetzt den eigenen Router der Inference Providers durch den von OpenRouter. Token und Code bleiben gleich, die Anbieterwahl und der Fallback ändern sich.",
+    "Pro Modellkennung wählen Suffixe die Strategie: Standard, :fastest, :cheapest oder ein fester Anbieter. Das Routing ist cache-bewusst.",
+    "Laut OpenRouter sanken Kapazitätsfehler mit dem neuen Routing um 46 Prozent, die Zeit bis zum ersten Token um 16,9 Prozent. Herstellerangaben.",
+    "Breaking Change: Eigene API-Schlüssel eines Anbieters funktionieren für Sprachmodelle nicht mehr; abgerechnet wird über das Hugging-Face-Konto."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Ein heller Datenstrom, der an einer Weiche auf mehrere leuchtende Bahnen verteilt und bei einer Störung automatisch umgelenkt wird.",
+    "caption": "Ein Token, viele Anbieter: OpenRouters Router wählt pro Anfrage Preis, Tempo und Verfügbarkeit neu.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {"t": "p", "x": "Hugging Face und OpenRouter bündeln ihre Inferenzangebote. Ab sofort laufen Anfragen an Sprachmodelle über Hugging Face Inference Providers durch OpenRouters Router, der jeden Aufruf anhand von Live-Messungen zu Preis, Tempo und Zuverlässigkeit einem von über 80 Anbietern zuweist und bei einem Fehlschlag im selben Aufruf beim nächstbesten wiederholt. Für Nutzer ändert sich am Code nichts: Der Hugging-Face-Token bleibt, die unterstützten Schnittstellen sind OpenAIs Chat-Completions- und Responses-API sowie Anthropics Messages-API, und das für jedes Chat-Modell, egal welcher Anbieter dahintersteht."},
+    {"t": "h2", "x": "Steuerung per Suffix"},
+    {"t": "p", "x": "Wer die Anbieterwahl selbst steuern will, hängt einen Suffix an die Modellkennung: Ohne Suffix gilt die Standardstrategie, also die beste Mischung aus Preis, Tempo und Zuverlässigkeit. Mit :fastest kommt der schnellste Anbieter, mit :cheapest der billigste, und mit einem Anbieternamen wie :novita ein fest gewählter. Das Routing ist cache-bewusst: Eine Unterhaltung bleibt beim Anbieter, der ihren Prompt-Zwischenspeicher hält; explizit steuern lässt sich das über eine stabile Kennung im Header X-HF-Session-Id. In den Kontoeinstellungen lassen sich unerwünschte Anbieter komplett abschalten, auch organisationsweit."},
+    {"t": "h2", "x": "Was sich messbar ändert und was es kostet"},
+    {"t": "p", "x": "OpenRouter gibt für das neue Routing eigene Messwerte an: 46 Prozent weniger Kapazitätsfehler, 16,9 Prozent schnellere Zeit bis zum ersten Token und 16,3 Prozent mehr Durchsatz. Das sind Angaben des Betreibers, keine unabhängige Messung. Am Preis ändert sich laut Hugging Face nichts: Abgerechnet wird der Preis des jeweiligen Anbieters ohne Aufschlag über die Hugging-Face-Rechnung; PRO-Konten bekommen 2 Dollar Guthaben im Monat, Team- und Enterprise-Konten 2 Dollar pro Platz. Neu auf den Modellseiten sind zwei Reiter: Providers zeigt alle routbaren Anbieter mit Preisen, Tempo und Verfügbarkeit der letzten 24 Stunden, Metrics die besten Werte im Feld."},
+    {"t": "callout", "x": "Achtung bei bestehenden Setups: Eigene Provider-API-Schlüssel funktionieren für Sprachmodelle nicht mehr. Wer bisher Bring-your-own-Key über Hugging Face abgerechnet hat, muss auf die Hugging-Face-Abrechnung umstellen. Bild-, Video- und Audiogenerierung laufen unverändert direkt über Hugging Face, dort bleiben eigene Schlüssel nutzbar.", "title": "Breaking Change"},
+    {"t": "h2", "x": "Warum offene Gewichte im Zentrum stehen"},
+    {"t": "p", "x": "Der Blog liefert die Marktzahlen gleich mit: Auf OpenRouter stieg der Anteil offener Modelle an allen verarbeiteten Token von 26,8 Prozent im Oktober 2025 auf 71,7 Prozent Ende September 2026, nach einem Höchststand von 77,5 Prozent im Juli. Das wöchentliche Volumen offener Modelle wuchs im selben Zeitraum um mehr als das Sechzigfache, geschlossene um knapp das Zehnfache. Im Schnitt kosten offene Modelle demnach etwa ein Viertel geschlossener: 0,28 beziehungsweise 1,62 Dollar pro Million Ein- und Ausgabetoken gegenüber 1,27 und 6,36 Dollar. Der meistgenutzte Modelltyp der Woche sei ein offener gewesen, DeepSeek V4.1 Flash 1017 mit 59,2 Billionen Token. Als nächste Schritte nennen die Partner die Verknüpfung von OpenRouter-Konten mit Hugging Face und das Routing weiterer Aufgabenarten."}
+  ],
+  "sources": [
+    {"title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run", "publisher": "Hugging Face Blog", "url": "https://huggingface.co/blog/openrouter", "accessed": "2026-11-17"}
+  ],
+  "faq": [
+    {"q": "Was ändert sich für Nutzer von Hugging Face Inference Providers?", "a": "Anfragen an Sprachmodelle laufen jetzt über OpenRouters Router, der den besten Anbieter wählt und bei Fehlern automatisch wechselt. Token und Code bleiben gleich; eigene Provider-Schlüssel funktionieren für Sprachmodelle nicht mehr."},
+    {"q": "Wie wählt man gezielt einen Anbieter aus?", "a": "Per Suffix an der Modellkennung: :fastest für das schnellste Angebot, :cheapest für das günstigste oder ein Anbietername wie :novita für einen festen Anbieter. Unerwünschte Anbieter lassen sich in den Einstellungen abschalten."},
+    {"q": "Wird die Nutzung teurer?", "a": "Laut Hugging Face nein. Abgerechnet wird der Anbieterpreis ohne Aufschlag über das Hugging-Face-Konto. PRO-Konten erhalten 2 Dollar monatliches Guthaben, Team- und Enterprise-Konten 2 Dollar pro Platz."}
+  ],
+  "related": ["deepseek-app-werkzeuge-api-chat-demo", "edge0-145b-laptop-lokales-modell"]
+}

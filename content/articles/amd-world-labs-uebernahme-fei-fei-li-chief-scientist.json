@@ -1,0 +1,84 @@
+{
+  "slug": "amd-world-labs-uebernahme-fei-fei-li-chief-scientist",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "AMD schließt World-Labs-Übernahme ab, Fei-Fei Li wird Chief Scientist",
+  "dek": "AMD hat die Übernahme von World Labs vollzogen. Fei-Fei Li steigt als Executive Vice President und Chief Scientist ein und berichtet direkt an Lisa Su. Das Team arbeitet an Weltmodellen und Robotik-Simulation weiter.",
+  "published": "2026-11-17T09:00:00+01:00",
+  "modified": "2026-11-17T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "AMD",
+    "World Labs",
+    "Fei-Fei Li",
+    "Übernahme",
+    "Weltmodelle",
+    "Robotik"
+  ],
+  "key_takeaways": [
+    "AMD hat die Übernahme von World Labs am 16. November abgeschlossen, nachdem die Vereinbarung Ende September unterzeichnet worden war.",
+    "Fei-Fei Li wird Executive Vice President und Chief Scientist bei AMD und berichtet direkt an CEO Lisa Su.",
+    "Das World-Labs-Team forscht weiter an Weltmodellen und Robotik-Simulation und soll seine Erkenntnisse in künftige AMD-Hardware, Software und Systeme einfließen lassen.",
+    "Über den Kaufpreis macht AMD in der Mitteilung keine Angaben."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Ein leuchtender Prozessor, aus dem eine kleine gerenderte 3D-Landschaft aus Licht wächst.",
+    "caption": "World Labs baut Modelle, die interaktive 3D-Welten erzeugen und simulieren. Künftig unter dem AMD-Dach.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "AMD hat die Übernahme von World Labs abgeschlossen. Das teilte das Unternehmen am 16. November mit. Die Vereinbarung war Ende September unterzeichnet und am 28. September angekündigt worden, der Vollzug war bis Ende 2026 erwartet worden. World Labs ist das von Fei-Fei Li gegründete Unternehmen für räumliche KI: Seine Modelle erzeugen und simulieren interaktive 3D-Umgebungen und liefern Technik für Robotiklernen und Simulation. Erst vor wenigen Tagen hatte World Labs sein Weltmodell Atlas offen zugänglich gemacht, über das wir am 14. November berichtet haben."
+    },
+    {
+      "t": "h2",
+      "x": "Fei-Fei Li berichtet direkt an Lisa Su"
+    },
+    {
+      "t": "p",
+      "x": "Fei-Fei Li steigt als Executive Vice President und Chief Scientist bei AMD ein und berichtet direkt an Vorstandschefin Lisa Su. Die Forschungsleitung bleibt laut bisherigen Angaben bei Justin Johnson und Ben Mildenhall, die das Team gemeinsam mit Li weiterführen. In der Mitteilung heißt es, das Team solle künftige AMD-Hardware, Software und Systeme für das offene KI-Ökosystem mitgestalten. Su wird mit den Worten zitiert, die Infrastruktur für die nächste Ära erfordere es, Rechenplattformen und Modelle gemeinsam zu optimieren."
+    },
+    {
+      "t": "h2",
+      "x": "Was AMD damit bekommt"
+    },
+    {
+      "t": "p",
+      "x": "AMD kauft damit ein komplettes Frontier-Modellteam ein, ähnlich wie Nvidia seine eigene Modellforschung nutzt, um Hardware darauf abzustimmen. Beide Unternehmen hatten bereits seit dem vergangenen Jahr an Trainings- und Inferenzoptimierung auf AMD-GPUs zusammengearbeitet. Für räumliche KI und Robotiksimulation entsteht so ein finanzstarker Gegenentwurf zu Nvidias Omniverse- und Cosmos-Angebot. Zum Kaufpreis macht die offizielle Mitteilung keine Angaben; in Medienberichten kursieren Summen, die wir nicht aus einer Primärquelle bestätigen konnten und daher nicht übernehmen."
+    },
+    {
+      "t": "callout",
+      "x": "Offen ist, wie offen das \"offene Ökosystem\" bleibt: Ob World Labs unter AMD weiter offene Modelle wie Atlas veröffentlicht, sagt die Mitteilung nicht. Das ist die entscheidende Frage für Entwickler, die auf dem Angebot aufbauen.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "AMD Completes Acquisition of World Labs",
+      "publisher": "AMD Newsroom",
+      "url": "https://newsroom.amd.com/news/amd-completes-acquisition-world-labs/",
+      "accessed": "2026-11-17"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist World Labs?",
+      "a": "Ein von Fei-Fei Li gegründetes KI-Unternehmen, das Modelle zur Erzeugung und Simulation interaktiver 3D-Umgebungen entwickelt, sowie Technik für Robotiklernen und Simulation. Zuletzt erschien das offen zugängliche Weltmodell Atlas."
+    },
+    {
+      "q": "Welche Rolle übernimmt Fei-Fei Li bei AMD?",
+      "a": "Sie wird Executive Vice President und Chief Scientist und berichtet direkt an CEO Lisa Su."
+    },
+    {
+      "q": "Was kostet AMD die Übernahme?",
+      "a": "AMD nennt in der offiziellen Mitteilung keinen Kaufpreis. In Medienberichten genannte Summen konnten wir nicht aus einer Primärquelle bestätigen."
+    }
+  ],
+  "related": [
+    "world-labs-atlas-offen-foto-zu-welt-api",
+    "nvidia-groot-2-welt-aktions-modell-menschen-video"
+  ]
+}

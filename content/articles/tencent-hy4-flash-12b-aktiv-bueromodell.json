@@ -1,0 +1,44 @@
+{
+  "slug": "tencent-hy4-flash-12b-aktiv-bueromodell",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Tencent Hy4 Flash: 12 Milliarden aktive Parameter für den Büroalltag",
+  "dek": "Tencent veröffentlicht mit Hy4 Flash eine Sparvariante seines Hy4-Modells: 224 Milliarden Parameter insgesamt, nur 12 Milliarden aktiv, bis zu eine Million Token Kontext und laut Anbieter über 150 Token pro Sekunde. Der Eingabetoken kostet rund 7 US-Cent pro Million.",
+  "published": "2026-11-17T09:05:00+01:00",
+  "modified": "2026-11-17T09:05:00+01:00",
+  "author": "philipp-paulik",
+  "tags": ["Tencent", "Hy4 Flash", "Sprachmodell", "MoE", "API-Preise", "Büroarbeit"],
+  "key_takeaways": [
+    "Hy4 Flash ist Tencents Billigvariante des Hy4-Modells: 224 Milliarden Parameter gesamt, davon 64 Milliarden Engram-Speicher, aber nur 12 Milliarden aktiv pro Token.",
+    "Die API kostet laut Tencent rund 0,070 Dollar pro Million Eingabetoken und 0,281 Dollar pro Million Ausgabetoken, Zwischenspeicher 0,003 Dollar.",
+    "Auf Tencents internem Benchmark WorkIndex soll Hy4 Flash das 770-Milliarden-Vorgängermodell Hy4 Preview insgesamt leicht schlagen, bei einem Bruchteil der Kosten pro Aufgabe. Das ist eine Herstellerangabe ohne unabhängige Prüfung.",
+    "Offene Gewichte kündigt Tencent ohne Termin an; beim großen Hy4 sind sie ebenfalls noch nicht erschienen."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Ein kleiner, hell leuchtender Kern neben einem riesigen, gedämpften Schattenkern, verbunden durch Lichtfasern.",
+    "caption": "Hy4 Flash aktiviert pro Token nur 12 von 224 Milliarden Parametern und soll trotzdem Büroaufgaben auf Vorgängerniveau erledigen.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {"t": "p", "x": "Tencent hat am 16. November Hy4 Flash veröffentlicht, eine auf Kosten und Tempo getrimmte Variante seines Modells Hy4. Die Eckdaten: 224 Milliarden Parameter insgesamt, davon 64 Milliarden in einem Engram genannten Speicherbaustein, aber nur 12 Milliarden aktive Parameter pro Token. Dazu kommen multimodale Eingaben und ein Kontextfenster von bis zu einer Million Token. Die API-Preise nennt Tencent direkt: rund 0,070 Dollar pro Million Eingabetoken, 0,281 Dollar pro Million Ausgabetoken und 0,003 Dollar pro Million Token aus dem Zwischenspeicher. Zum Vergleich: Das volle Hy4 kostet laut Anbieter 0,834 beziehungsweise 2,501 Dollar."},
+    {"t": "h2", "x": "Wo die Einsparung herkommt"},
+    {"t": "p", "x": "Technisch setzt Hy4 Flash auf hybride Aufmerksamkeit, eine LatentMoE-Architektur und den Engram-Speicher, eine Tabellen-Nachschlage-Idee, die ursprünglich von DeepSeek vorgeschlagen wurde. Der KV-Cache soll dadurch nur noch ein Sechstel der Größe von Hy4 und ein Vierundzwanzigstel von Hy3 haben. Für das Nachtraining wurde das Modell von Hy4 destilliert; ein Verstärkungslernen halbierte laut Tencent die durchschnittliche Zahl der Ausgabetoken pro Aufgabe. Beim Inferenzstack kombinieren Megakernel, 4-Bit-Quantisierung und eine Technik namens DFly das Modell auf über 150 Ausgabetoken pro Sekunde."},
+    {"t": "h2", "x": "Herstellerzahlen zur Leistung"},
+    {"t": "p", "x": "Tencent vergleicht Hy4 Flash auf dem internen Benchmark WorkIndex, der typische Aufgaben aus dem eigenen Büroassistenten WorkBuddy abbildet: Präsentationen erstellen und bearbeiten, Dokumente editieren, Tabellen reparieren, Audio- und Videobearbeitung, Bildverständnis. Dort soll Hy4 Flash das Vorgängermodell Hy4 Preview mit 770 Milliarden Parametern insgesamt leicht schlagen, bei einem Dreizehntel dessen Kosten pro Aufgabe; gegenüber Hy4 sollen es ein Zwanzigstel sein. In einer Blindbewertung mit 85 internen Nutzern über 259 Aufgaben habe die Zufriedenheit nahe an Claude Haiku 5.5 gelegen, bei den niedrigsten Kosten und der kürzesten Bearbeitungszeit im Feld. Alle diese Werte stammen von Tencent selbst und sind nicht unabhängig geprüft."},
+    {"t": "callout", "x": "Sämtliche Leistungs- und Kostenvergleiche zu Hy4 Flash stammen aus Tencents eigener Veröffentlichung. WorkIndex ist ein interner Benchmark des Herstellers. Wir haben nichts davon nachgemessen.", "title": "Einordnung"},
+    {"t": "h2", "x": "Verfügbarkeit und offene Gewichte"},
+    {"t": "p", "x": "Nutzen lässt sich Hy4 Flash ab sofort über Tencent Cloud TokenHub, WorkBuddy, Yuanbao, WeCom, QQ, ima und Marvis; eine OpenRouter-Anbindung ist angekündigt. Bis zum 30. November ist das Modell in WorkBuddy kostenlos, über TokenHub gibt es 50 Prozent Rabatt. Tencent empfiehlt es für Alltagsaufgaben wie Recherche, Dokumente, Präsentationen, einfache Frontends und Computer Use; für lang andauerndes Software-Engineering verweist der Anbieter auf das große Hy4. Offene Gewichte für Hy4 Flash seien geplant, heißt es ohne Termin. Auch die Gewichte des großen Hy4, das am 4. November erschienen ist, liegen bislang nicht vor."}
+  ],
+  "sources": [
+    {"title": "Tencent Launches Hy4 flash to Power High-Speed, Cost-Efficient AI Deployment for Everyday Workflows", "publisher": "Tencent", "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/", "accessed": "2026-11-17"},
+    {"title": "Hy4 flash (Modellseite)", "publisher": "Tencent Hy", "url": "https://hy.tencent.ai/research/hy4-flash", "accessed": "2026-11-17"}
+  ],
+  "faq": [
+    {"q": "Was kostet Tencent Hy4 Flash?", "a": "Laut Tencent rund 0,070 Dollar pro Million Eingabetoken und 0,281 Dollar pro Million Ausgabetoken, Token aus dem Zwischenspeicher 0,003 Dollar. Bis 30. November ist es in WorkBuddy kostenlos und über TokenHub halbiert."},
+    {"q": "Wie unterscheidet sich Hy4 Flash von Hy4?", "a": "Hy4 Flash hat 224 Milliarden Parameter mit 12 Milliarden aktiven pro Token und ist auf günstige, schnelle Büroaufgaben getrimmt. Das volle Hy4 bleibt laut Tencent die Wahl für aufwendiges Software-Engineering."},
+    {"q": "Gibt es offene Gewichte für Hy4 Flash?", "a": "Noch nicht. Tencent kündigt eine Veröffentlichung an, nennt aber keinen Termin. Auch die Gewichte des großen Hy4 sind bisher nicht erschienen."}
+  ],
+  "related": ["qwen4-max-alibaba-flagship-1m-kontext", "meituan-longcat-2-5-open-weights-agenten"]
+}

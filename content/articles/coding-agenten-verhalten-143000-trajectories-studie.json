@@ -1,0 +1,43 @@
+{
+  "slug": "coding-agenten-verhalten-143000-trajectories-studie",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Nicht nur ob, sondern wie: 143.000 Agentenläufe zeigen die Arbeitsstile der Modelle",
+  "dek": "Eine Studie wertet 143.209 Ausführungsspuren von 125 Agentenkonfigurationen mit 117 Modellen aus. Ergebnis: Gleiche Erfolgsquoten verbergen sehr unterschiedliche Arbeitsweisen, und am Verhalten allein lässt sich erkennen, welcher Agenten-Stack gelaufen ist.",
+  "published": "2026-11-17T09:25:00+01:00",
+  "modified": "2026-11-17T09:25:00+01:00",
+  "author": "philipp-paulik",
+  "tags": ["Coding-Agenten", "Studie", "Benchmarks", "SWE-rebench", "Agentenverhalten", "Nebius"],
+  "key_takeaways": [
+    "Forscher von Nebius haben 143.209 Ausführungsspuren von Coding-Agenten analysiert: 125 Konfigurationen, 117 Modelle, Aufgaben aus dem SWE-rebench-Benchmark.",
+    "Ein regelbasierter Parser übersetzt die sehr unterschiedlichen Spuren in vergleichbare Aktionen wie Suchen, Editieren und Testen.",
+    "Konfigurationen mit fast gleicher Lösungsquote unterscheiden sich deutlich darin, wie sie erkunden, ändern und verifizieren.",
+    "Aus dem Verhaltensprofil allein, ohne Ergebnis, Tokenzahl oder Werkzeugnamen, lässt sich der zugrunde liegende Agenten-Stack wiedererkennen."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Viele feine Lichtspuren, die wie Wanderwege durch eine dunkle Landschaft aus Codezeilen laufen und sich zu Bündeln verdichten.",
+    "caption": "143.209 Laufspuren, vermessen: Nicht das Ergebnis, sondern der Weg verrät, welcher Agent gearbeitet hat.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {"t": "p", "x": "Coding-Agenten-Benchmarks enden meist bei einer Zahl: gelöst oder nicht. Wie ein Agent zum Ergebnis kommt, bleibt schwarzer Kasten. Eine Arbeit von Ibragim Badertdinov und Alexander Golubev (Nebius) ändert den Blickwinkel: Die Autoren werten 143.209 vollständige Ausführungsspuren aus dem SWE-rebench-Benchmark aus, darunter 134.329 Python- und 8.880 mehrsprachige Aufgaben, aufgetragen auf 125 Agentenkonfigurationen mit 117 verschiedenen Basismodellen. Als Agenten-Stack zählt dabei das ganze System: Modell, Gerüst wie SWE-agent, Claude Code oder Codex, Reasoning-Einstellung und Dekodierungsparameter."},
+    {"t": "h2", "x": "Vom Rohprotokoll zur vergleichbaren Aktion"},
+    {"t": "p", "x": "Das Kernproblem ist die Heterogenität: Jedes Gerüst protokolliert anders, mit eigenen Werkzeugnamen und Formaten. Die Autoren bauen deshalb einen regelbasierten Parser, der jeden Werkzeugaufruf samt Ausgabe in eine gemeinsame Taxonomie übersetzt: primäre Operation (Erkunden, Suchen, Lesen, Ändern, formales Testen und mehr), Rolle der Zieldatei, Art der Änderung und Lesemodus. Die Qualität des Parsers prüften sie an 500 Ereignissen gegen eine Referenz aus dem Konsens von sechs Modellen. Interne Denkspuren fließen bewusst nicht ein, gemessen wird nur das beobachtbare Arbeitsverhalten."},
+    {"t": "h2", "x": "Gleiche Quote, anderer Stil"},
+    {"t": "p", "x": "Der zentrale Befund: Die Lösungsquote charakterisiert einen Agenten nicht eindeutig. In einem kontrollierten Vergleich von 60 Konfigurationspaaren, deren Erfolgsquoten auf gemeinsamen Aufgaben höchstens einen Prozentpunkt auseinanderlagen, unterschieden sich die Arbeitsweisen dennoch deutlich und reproduzierbar: Wie viele Aktionen ein Lauf versucht, welcher Anteil auf Erkundung entfällt, wie oft nicht-testbezogene Dateien erfolgreich geändert werden, wie häufig formal getestet wird, wie oft identische Fehlversuche aufeinanderfolgen und wie lang der unproduktive Schwanz nach der letzten wirksamen Aktion ist. Noch weiter geht ein zweiter Test: Aus den aggregierten Verhaltensprofilen allein, ohne Aufgabenergebnisse, Tokenzahlen oder Werkzeugnamen als Merkmale, ließ sich der passende Agenten-Stack über getrennte Repository-Mengen und Programmiersprachen hinweg wiederfinden. Eine Einschränkung benennen die Autoren selbst: Die Aufgabenzusammensetzung ist im Repository-übergreifenden Vergleich nicht vollständig kontrolliert und kann das Ergebnis mitprägen."},
+    {"t": "h2", "x": "Gerüst und Reasoning verändern den Stil"},
+    {"t": "p", "x": "Für Frontier-Modelle zeigt die Analyse außerdem: Die Wahl des Gerüsts und die Reasoning-Einstellung verschieben das Such-, Editier- und Testverhalten systematisch. Dasselbe Modell arbeitet in einem anderen Gerüst sichtbar anders. Praktisch heißt das: Wer Agenten vergleichen will, sollte nicht nur auf die Erfolgsquote schauen, denn zwei Systeme mit gleicher Quote können völlig unterschiedliche Kosten-, Risiko- und Prüfprofile haben. Parser, Analyse-Pipeline und ein annotierter Teildatensatz sind offen verfügbar."},
+    {"t": "callout", "x": "Für die Praxis heißt das: Verhalten ist ein Audit-Merkmal. Ein Agent, der viel testet und wenig rät, kann bei gleicher Quote vertrauenswürdiger sein als einer, der schnell schreibt und spät prüft.", "title": "Einordnung"}
+  ],
+  "sources": [
+    {"title": "Interpreting Coding Agents Through Their Behavioral Trajectories (arXiv:2611.17440)", "publisher": "arXiv", "url": "https://arxiv.org/abs/2611.17440", "accessed": "2026-11-17"}
+  ],
+  "faq": [
+    {"q": "Was untersucht die Studie zu Coding-Agenten?", "a": "143.209 Ausführungsspuren von 125 Agentenkonfigurationen mit 117 Modellen. Statt nur der Erfolgsquote wird das beobachtbare Arbeitsverhalten vermessen: Erkunden, Editieren, Testen, Fehlerschleifen."},
+    {"q": "Was ist der wichtigste Befund?", "a": "Konfigurationen mit fast identischer Lösungsquote arbeiten deutlich unterschiedlich. Und am Verhaltensprofil allein lässt sich erkennen, welcher Stack aus Modell und Gerüst gelaufen ist."},
+    {"q": "Sind die Daten und Werkzeuge verfügbar?", "a": "Ja. Die Autoren veröffentlichen den deterministischen Parser, die Analyse-Pipeline und einen annotierten Teildatensatz. Die Spuren stammen aus dem öffentlichen SWE-rebench-Benchmark."}
+  ],
+  "related": ["satbench-benchmarks-verbraucht-unabhaengig", "mka-test-visuelle-wissensarbeit-kosten"]
+}
