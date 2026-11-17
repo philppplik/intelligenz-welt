@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-mittag-2026-11-17",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-17T11:15:00+01:00",
+  "modified": "2026-11-17T11:15:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Benchleaking Is Accelerating",
+      "publisher": "arXiv; Yiwei Qin, Muhang Xie, Xuefeng Li, Mohan Jiang, Dayuan Fu, Tiantian Mi, Qipeng Guo, Pengfei Liu; Xinxu AI/GAIR",
+      "url": "https://arxiv.org/abs/2611.21315",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "Ask Precisely, Assume Wisely: Interactive Evaluation of Ambiguity Resolution in Large Language Models",
+      "publisher": "arXiv; Avik Dutta, Aayush Kumar, Zahra Ashktorab, Hosein Hasanbeig, Austin Z. Henley, Gustavo Soares; Microsoft",
+      "url": "https://arxiv.org/abs/2611.18905",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "WeightBench: Evaluating Language Models as Weight-Space Programmers",
+      "publisher": "arXiv; Aayush Marasini, Barsat Khadka, Nick Rahimi; University of Southern Mississippi",
+      "url": "https://arxiv.org/abs/2611.18553",
+      "accessed": "2026-11-17"
+    },
+    {
+      "title": "WeightBench: Code, vorläufige Rangliste und Reproduktionshinweise",
+      "publisher": "GitHub; Aayush-Marasini/WeightBench",
+      "url": "https://github.com/Aayush-Marasini/WeightBench",
+      "accessed": "2026-11-17"
+    }
+  ],
+  "tags": [
+    "forschung",
+    "benchmarks",
+    "evaluation",
+    "agenten",
+    "modellgewichte"
+  ],
+  "title": "KI am Mittag: Testlecks, bessere Rückfragen und WeightBench",
+  "dek": "Ein Test findet auswendig gelernte Prüfaufgaben, ein Simulator bewertet Rückfragen, und WeightBench prüft das direkte Bearbeiten von Modellgewichten.",
+  "key_takeaways": [
+    "Benchleaking-Studie: ERNIE-5.5-Flash-Base reproduziert im Fortsetzungstest 96,3 Prozent der HumanEval-Aufgaben samt Referenzcode, obwohl diese Beispiele nicht im jeweiligen Eingabetext stehen. Der Befund klärt nicht, wie die Daten ins Training gelangten.",
+    "Bessere Rückfragen statt mehr Rückfragen: DisPO erhöht bei GPT-5.4 auf AmbigQA den Anteil simulierter Dialoge ohne die drei gemessenen Interaktionsfehler von 31,84 auf 39,49 Prozent. Einzelne Fehlerarten nehmen trotzdem zu.",
+    "WeightBench prüft 42 Aufgaben rund um Netzwerkgewichte. Die neue Auswertung trennt kleine Netze und Gewichtskonstruktion von schwierigen Modellreparaturen; unterschiedliche Aufgabenmengen, Vorlagen und ungeprüfte Audit-Sperren begrenzen die Rangliste."
+  ],
+  "hero": {
+    "alt": "Drei Forschungsbefunde: Testbeispiele im Modellgedächtnis, gezieltere Rückfragen in simulierten Dialogen und eine begrenzte Rangliste für das Bearbeiten von Netzwerkgewichten.",
+    "caption": "Drei unterschiedliche Prüfverfahren, jeweils mit eigener Aussagegrenze. Eigene Grafik.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Mittagsüberblick vom 17. November. Quellenstand: 09:51 Uhr MEZ. Drei Originalarbeiten vom 13. und 16. November prüfen, was hinter einem guten KI-Ergebnis steckt: eigenes Können oder bekannte Testdaten, passende Rückfragen oder vorschnelle Annahmen, gezielte Gewichtsänderungen oder ein günstiger Versuchsaufbau. Alle drei liefern Forschungsbefunde, keine allgemeine Produktgarantie."
+    },
+    {
+      "t": "h2",
+      "x": "Wenn ein Modell die nächste Prüfaufgabe schon kennt"
+    },
+    {
+      "t": "p",
+      "x": "Yiwei Qin und Kollegen untersuchen vier öffentlich verfügbare Basismodelle auf 20 Benchmarks. Ihr Ansatz lässt die Modelle nach einer beantworteten Frage einfach weiterschreiben. Einige setzen dann nicht nur das Muster fort, sondern geben andere Aufgaben desselben Tests einschließlich Antwort oder Referenzprogramm wieder. Die jeweils aktuelle Aufgabe und die Demonstrationsbeispiele aus der Eingabe werden beim Abgleich ausgeschlossen. Gezählt werden vollständige Treffer nach Normalisierung von Großschreibung und Leerraum, keine sinngemäß ähnlichen Fragen."
+    },
+    {
+      "t": "p",
+      "x": "Besonders auffällig ist ERNIE-5.5-Flash-Base: In diesem Probeverfahren werden 96,3 Prozent der HumanEval-Testaufgaben samt Referenzimplementierung und 85,4 Prozent der OpenBookQA-Beispiele samt Antwort wiedergegeben. Bei DeepSeek-V4-Flash-Base sind es 9,1 Prozent auf HumanEval und kein vollständiges OpenBookQA-Beispiel. Diese Quoten zählen unterschiedliche wiedergegebene Testbeispiele im Verhältnis zur Testset-Größe, nicht den Anteil aller Modellantworten mit einem Leck."
+    },
+    {
+      "t": "p",
+      "x": "Die Forscher berechnen zusätzlich einen strengen Abschlag: Jedes erkannte Beispiel erhält im getrennten regulären Testlauf null Punkte, die Zahl der Testaufgaben bleibt gleich. Der einfache Mittelwert über 20 Benchmark-Einträge fällt bei ERNIE von 85,17 auf 68,55, bei DeepSeek von 77,95 auf 76,48. Das ist keine Messung eines nachträglich bereinigten Modells. Auch enthalten die Abschläge WinoGrande-Treffer, die laut Anhang durch eng verwandte Satzpaare erklärbar sind und dort ausdrücklich nicht als Leckbeleg gelten. Wie die wiedergegebenen Daten in die Modelle gelangten und ob dies beabsichtigt war, lässt sich aus dem Versuch nicht ablesen. Das im Paper genannte Benchleaking-Repository lieferte bei der Prüfung HTTP 404."
+    },
+    {
+      "t": "h2",
+      "x": "Eine Rückfrage kann helfen und trotzdem die falsche sein"
+    },
+    {
+      "t": "p",
+      "x": "Soll eine KI eine fehlende Angabe annehmen oder erst nachfragen? Ein Microsoft-Team untersucht diese Entscheidung mit einem Simulator, der nur einen vorher festgelegten Satz von Nutzerpräferenzen mitteilen darf. Fragt das Modell passend nach, erhält es die benötigte Angabe. Liegt seine fertige Antwort daneben, korrigiert der simulierte Nutzer die verletzte Präferenz. So lassen sich falsche Annahmen, wiederholte Rückfragen und sachfremde Rückfragen getrennt zählen. Echte Zufriedenheit von Menschen wird damit nicht gemessen."
+    },
+    {
+      "t": "p",
+      "x": "Die Tests umfassen mehrdeutige Wissensfragen, Datenbankabfragen und Diagrammwünsche. Eine pauschale Anweisung, bei Mehrdeutigkeit nachzufragen, senkt zwar falsche Annahmen, erzeugt aber auch längere Dialoge und neue Wiederholungen. Auf AmbigQA steigt die mittlere Gesprächslänge bei GPT-5.4 von 1,90 auf 4,20, während der Anteil ganz fehlerfreier Interaktionen nach dieser Metrik von 31,84 auf 24,61 Prozent sinkt. Mehr Nachfragen sind in diesem Setup also nicht automatisch besser."
+    },
+    {
+      "t": "p",
+      "x": "Das Team entwickelt aus beobachteten Fehlermustern einen veränderten Prompt namens DisPO. Damit steigt die fehlerfreie Interaktionsrate auf AmbigQA auf 39,49 Prozent, bei fast gleichem Aufgabenergebnis: 64,68 statt 63,47 Prozent Genauigkeit. Aber der Tausch bleibt sichtbar. Die durchschnittliche Zahl falscher Annahmen fällt von 0,81 auf 0,68, wiederholte Fragen steigen von 0,12 auf 0,15 und gewichtete sachfremde Fragen von 0,02 auf 0,11. DisPO gewinnt hier die kombinierte Dialogmetrik, nicht jede Einzelmetrik. Der Simulator kennt begrenzte Interpretationsräume und bildet reales Gesprächsverhalten nicht vollständig ab."
+    },
+    {
+      "t": "h2",
+      "x": "WeightBench setzt dem Gewichte-Programmieren engere Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Sprachmodelle sollen neuronale Netze nicht nur benutzen, sondern ihre Gewichte direkt lesen und ändern können. Über erste Demonstrationen und einen Laptop-Nachtest haben wir bereits berichtet. WeightBench von Aayush Marasini, Barsat Khadka und Nick Rahimi ergänzt nun einen eigenen Vergleich mit 42 Aufgaben: Gewichte lesen, Fehler reparieren, unmögliche Eingriffe erkennen, Netze konstruieren und sie ohne Kalibrierungsdaten verkleinern. Das ist eine neue Evaluation mit eigenen Aufgaben, keine Wiederholung der früheren Vorführung."
+    },
+    {
+      "t": "p",
+      "x": "Der Versuchsaufbau begrenzt Probeläufe und Rechenoperationen und bewertet neben der eigentlichen Lösung auch Schäden an anderen Fähigkeiten. Auf allen 42 Aufgaben erreicht Claude Opus 5.5 einen Makrowert von 0,535 auf einer Skala von null bis eins. GPT-6.1-sol wurde nur auf 38 Aufgaben getestet: Dort stehen 0,568 gegen 0,546 für Opus. Die beiden Nenner dürfen nicht vermischt werden. Der Makrowert ist der Mittelwert der fünf Aufgabenbereich-Mittelwerte, keine gewöhnliche Trefferquote."
+    },
+    {
+      "t": "p",
+      "x": "Die Auswertung berichtet brauchbare Ergebnisse beim Lesen kleiner Netze und beim Konstruieren von Kontrollnetzen, aber große Schwierigkeiten bei gezielten Sprachmodell-Reparaturen, der Erkennung unmöglicher Eingriffe und datenfreier Kompression. Auch der Test selbst ist vorläufig: Nur 39 von 42 Aufgaben bestehen die angelegte Referenzhürde, und lediglich 21 Referenzlösungen kommen mit denselben Zugriffsrechten wie die Agenten aus. Automatisch gesperrte Läufe zählen bislang als null, ohne dass sie schon manuell geprüft wurden. Solche Sperren sind keine einzeln bestätigten Täuschungsfälle. Code, Tests und Dokumentation sind im Repository vorhanden. Daraus folgt noch kein verlässliches Verfahren, große Sprachmodelle sicher von Hand zu reparieren."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Beweisen hohe Benchleaking-Quoten absichtliches Schummeln?",
+      "a": "Die Studie zeigt vollständige Testwiedergaben bei bestimmten untersuchten Basismodellen. Sie klärt weder den Weg der Daten ins Training noch die Absicht der Entwickler. Auch nicht jeder formale Treffer ist ein Leckbeleg: WinoGrande hat eine besondere Satzpaar-Struktur."
+    },
+    {
+      "q": "Soll eine KI bei jeder Unklarheit nachfragen?",
+      "a": "In den untersuchten simulierten Dialogen verschlechtert pauschales Nachfragen teils die kombinierte Interaktionsmetrik. Gefragt sind passende, noch nicht beantwortete Rückfragen. Der Versuch bestimmt aber keine allgemeine Regel für reale Gespräche oder Entscheidungen mit hohen Folgen."
+    },
+    {
+      "q": "Ist der WeightBench-Wert von 0,568 besser als 0,535?",
+      "a": "Diese Werte haben unterschiedliche Aufgabenmengen. GPT-6.1-sol erreicht 0,568 auf 38 Aufgaben; der vergleichbare Opus-Wert beträgt dort 0,546. 0,535 ist Opus auf allen 42 Aufgaben. Zusätzlich begrenzen unterschiedliche Agentenvorlagen und ungeprüfte Sperren die Einordnung."
+    }
+  ],
+  "related": [
+    "weight-space-programming-laptop-kritik",
+    "satbench-benchmarks-verbraucht-unabhaengig"
+  ]
+}
