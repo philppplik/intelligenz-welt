@@ -1,1 +1,6 @@
-https://intelligenz-welt.de/artikel/news-ueberblick-morgen-2026-11-17/
+https://intelligenz-welt.de/artikel/amd-world-labs-uebernahme-fei-fei-li-chief-scientist/
+https://intelligenz-welt.de/artikel/coding-agenten-verhalten-143000-trajectories-studie/
+https://intelligenz-welt.de/artikel/google-gtig-exploit-agent-patch-zu-exploit/
+https://intelligenz-welt.de/artikel/hugging-face-inference-providers-openrouter-router/
+https://intelligenz-welt.de/artikel/tencent-hy4-flash-12b-aktiv-bueromodell/
+https://intelligenz-welt.de/artikel/tokeneconomizer-plugin-coding-agenten-kosten/
