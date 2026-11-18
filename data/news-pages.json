@@ -1,5 +1,65 @@
 [
   {
+    "title": "AI Gigafactory im Norden: Nokia und Partner planen europäische KI-Infrastruktur",
+    "url": "https://www.heise.de/news/AI-Gigafactory-im-Norden-Nokia-und-Partner-planen-europaeische-KI-Infrastruktur-11530042.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795022040.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Ein nordisch-baltisches Konsortium will mit einer souveränen Cloud, grünem Strom und schnellen Netzen den EU-Wettbewerb für KI-Gigafactories aufmischen.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-18T20:38:26.246179+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Anthropic und Cisco integrieren Claude Mythos 5 in AI Defense",
+    "url": "https://www.heise.de/news/Anthropic-und-Cisco-integrieren-Claude-Mythos-5-in-AI-Defense-11529932.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795020120.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Anthropic und Cisco kooperieren bei der Absicherung von KI-Agenten. Das Modell Mythos 5 hält Einzug in die KI-Sicherheitsplattform AI Defense.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-18T20:38:26.246289+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "BGH: KI-generierte Schriftsätze können unzulässige Rechtsmittel sein",
+    "url": "https://www.heise.de/news/BGH-KI-generierte-Schriftsaetze-koennen-unzulaessige-Rechtsmittel-sein-11529938.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795020120.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Wer Revisionsbegründungen ungeprüft von Künstlicher Intelligenz erstellen lässt, riskiert laut Bundesgerichtshof, dass das eingelegte Rechtsmittel ungültig ist.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-18T20:38:26.246328+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "#heiseshow: Anthropic, Cloud-Ausfälle, Voyager 1",
+    "url": "https://www.heise.de/news/heiseshow-Anthropic-Cloud-Ausfaelle-Voyager-1-11529900.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795016640.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "In der #heiseshow: Anthropic plant den Börsengang, die Abhängigkeit von Microsoft, Apple & Co. wird zum Risiko und Voyager 1 ist einen Lichttag entfernt.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-18T20:38:26.246418+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Copilotforce: Wie KI-Agenten Unternehmenssoftware-Oberflächen ablösen",
+    "url": "https://www.heise.de/news/Copilotforce-Microsoft-macht-Copilot-zur-Bedienoberflaeche-fuer-Salesforce-11529752.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795014840.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Microsoft und Salesforce integrieren CRM-Funktionen und Geschäftsprozesse in Copilot. Ersetzt der KI-Assistent bald die klassische Bedienoberfläche?",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-18T20:38:26.246472+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "Microsoft stellt neue KI-Modelle vor und erweitert sein Lizenzgeschäft",
     "url": "https://www.heise.de/news/Microsoft-stellt-neue-KI-Modelle-vor-und-erweitert-sein-Lizenzgeschaeft-11529784.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1795012380.0,
