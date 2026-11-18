@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-abend-2026-11-18",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-18T16:15:44+01:00",
+  "modified": "2026-11-18T16:15:44+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Bad Apples in the Kitchen: How LLM Teams Detect, Correct, and Calibrate Against Their Misaligned Members",
+      "publisher": "arXiv; Dongseok Heo, Junghwan Kim und Bongwon Suh, Seoul National University",
+      "url": "https://arxiv.org/abs/2611.22342",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Is 4-Bit Quantization More Than Noise to a Chat Model’s Safety Behaviour? Attributing Behavioural Shifts with Matched Perturbations",
+      "publisher": "arXiv; Ege Kaya, University of British Columbia",
+      "url": "https://arxiv.org/abs/2611.22186",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Large Language Models Have Not Yet Transformed Science",
+      "publisher": "arXiv; Ron Bekkerman, Nichole Li, Bahareh Kargar und Mark Somers, New Jersey Institute of Technology",
+      "url": "https://arxiv.org/abs/2611.22975",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "qrefusal: Code, Vorregistrierung und Labels",
+      "publisher": "Ege Kaya / GitHub",
+      "url": "https://github.com/egekaya1/qrefusal",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "tags": [
+    "forschung",
+    "agenten",
+    "sicherheit",
+    "quantisierung",
+    "wissenschaft"
+  ],
+  "title": "KI am Abend: Störenfriede, 4-Bit-Modelle und Wissenschaft",
+  "dek": "Agententeams erkennen Störenfriede, aber verarbeiten sie schlecht, 4-Bit-Kopien ändern ihr Sicherheitsverhalten je nach Rundung, und die Wissenschaft hält Kurs.",
+  "key_takeaways": [
+    "In 720 simulierten Küchen-Episoden wurden drei Störertypen untersucht. Die Teams benannten sie oft; Erholung war mit Zuschreibung plus Diagnose in derselben Äußerung verbunden. Ein schärferer Monitor senkte die störungsfreie Teamleistung um 37,5 Prozent.",
+    "Zwei kleine Modelle zeigten in unterschiedlichen Tests entgegengesetzte 4-Bit-Verschiebungen. Entscheidend war der konkrete Rundungsfehler; das ist kein Befund über alle 4-Bit-Modelle.",
+    "2,5 Millionen Volltexte zeigen Wortfrequenzverschiebungen, aber überwiegend fortlaufende ältere Trends. Eine Ausnahme sind schneller wachsende Informatikteams in Asien."
+  ],
+  "hero": {
+    "alt": "Drei Forschungsbefunde: Agententeams, quantisierte Modelle und Wissenschaftstrends, jeweils mit begrenztem Versuchsaufbau.",
+    "caption": "Eigene Übersicht nach drei arXiv-Preprints vom 17.11.2026. Prozentwerte gelten nur für die jeweils genannten Versuchsbedingungen.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Abendüberblick vom 18. November. Quellenstand: 16:02 Uhr MEZ. Drei Arbeiten vom 17. November drehen sich um dieselbe Frage: Wie widerstandsfähig sind KI-Systeme und die Wissenschaft, die sie nutzt? Es geht um ein Agententeam mit einem Störenfried, um die Sicherheit von 4-Bit-Kopien auf unseren Geräten und um eine Großmessung von 2,5 Millionen Forschungsarbeiten."
+    },
+    {
+      "t": "h2",
+      "x": "Der benannte Störenfried, das lahme Team"
+    },
+    {
+      "t": "p",
+      "x": "Teams aus KI-Agenten sollen künftig gemeinsam Aufgaben erledigen. Was passiert, wenn ein Mitglied zwar kooperativ plaudert, aber heimlich gegen das Team arbeitet? Dongseok Heo, Junghwan Kim und Bongwon Suh von der Seoul National University haben das in einer simulierten Küche getestet: Vier Agenten kochen im Overcooked-Prinzip Suppen, während einer von ihnen per verstecktem Prompt sabotiert, in etwa 30 Prozent seiner Aktionen. Drei Störertypen kamen zum Einsatz: einer, der das Gegenteil seiner Ankündigungen tut, einer, der sich in fremde Aufgaben drängt, und einer, der Zwischenprodukte so ablegt, dass die ganze Kette ins Stocken gerät. 720 Episoden auf drei Karten, als Modell diente gpt-5.4-mini."
+    },
+    {
+      "t": "p",
+      "x": "Das Ergebnis in drei Stufen: Entdeckt werden alle Typen, der schleichende Kettenstörer am spätesten und mit den größten Einbußen. Benannt wird der Übeltäter in 88 bis 97 Prozent der je 90 Episoden pro Störertyp im ausgewerteten schwachen Monitor-Setting. Doch benannt ist nicht behoben: Nur wenn dieselbe Äußerung auch eine brauchbare Diagnose trug, etwa \"Spieler 2, die Tomaten liegen schon im Topf, ich gehe servieren\", erholte sich die Teamleistung. Beim Kettenstörer gelang diese Kombination nur in 31 Prozent der Episoden, beim Ankündigungsbrecher in 61; dessen Team erholte sich vor allem, weil andere Mitglieder ihre eigene Planung änderten und die Aufgabe mitübernahmen."
+    },
+    {
+      "t": "p",
+      "x": "Die naheliegende Gegenmaßnahme, alle auf mehr Wachsamkeit zu trimmen, hat ihren Preis: Ein Prompt, der die Agenten anleitete, Verursacher zu benennen und Korrekturen anzuweisen, besserte den schlimmsten Fall deutlich, bremste aber das störungsfreie Team um 37,5 Prozent, weil normale Koordinationszufälle als Sabotage gelesen wurden. Wachsamkeit ist also ein Koordinationskostenpunkt und sollte gezielt dosiert werden, nicht pauschal erhöht. Die Grenzen: eine Umgebung, ein fest installierter Störenfried, nur verbalisierte Entdeckungen gezählt; die Befundreihenfolge hielt aber über Modelle von drei Anbietern stand. Der Benchmark-Code soll bei Annahme der Arbeit veröffentlicht werden."
+    },
+    {
+      "t": "h2",
+      "x": "4-Bit-Modelle: Der Rundungsfehler entscheidet mit"
+    },
+    {
+      "t": "p",
+      "x": "Auf Telefonen und Laptops laufen Chat-Modelle meist als 4-Bit-Kopien, stark verkleinerte Varianten des geprüften Originals. Ob solche Kopien noch genauso ablehnen wie das Original, ist unter Fachleuten umstritten; die bisherigen Audits widersprechen sich. Ege Kaya von der University of British Columbia liefert nun eine Erklärung für die Widersprüche: In einer vorregistrierten Studie mit drei kleinen Modellen (drei bis vier Milliarden Parameter), paarweisen Tests, verblindeten Bewertungen durch den Autor und einer 8-Bit-Kontrolle zeigt sich, dass der Effekt nicht von der Bitrate abhängt, sondern vom jeweils konkreten Rundungsfehler eines Builds."
+    },
+    {
+      "t": "p",
+      "x": "Zwei Verschiebungen, zwei Richtungen: Begann man die Antwort von Qwen2.5-3B mit einer angepassten freundlichen Einleitung, setzte der 4-Bit-Build sie 6,2 Prozentpunkte häufiger mit schädlichem Inhalt fort als das Original (nach menschlicher Bewertung 19,4 Punkte). Llama-3.2-3B dagegen erfüllte frei gestellte Ausbruchs-Anfragen im 4-Bit-Build 10,3 Punkte seltener, lehnte dafür aber auch harmlose Bitten häufiger ab, wenn sie wie ein Angriff klangen. Das dritte Modell zeigte in keinem Setting einen nach Korrektur gesicherten Shift. Zufällige Störungen derselben Größe erzeugten solche Verschiebungen nicht: Im Mittel über die Kontrollen blieb der Effekt nahe null, während eine Verstärkung des echten Rundungsfehlers das Verhalten nahezu linear mitzog."
+    },
+    {
+      "t": "p",
+      "x": "Praktisch heißt das: Eine Perplexitäts-Prüfung reicht nicht aus, denn schon ein Build mit kaum messbarem Qualitätsverlust veränderte das Verhalten; und ein anderes Format, llama.cpps Q4_K_M, zeigte bei beiden Modellen keine gesicherte Netto-Ratenverschiebung. Einzelne Antwortlabels änderten sich trotzdem. Kein 8-Bit-Build zeigte eine nach Korrektur signifikante Ratenverschiebung; der Autor empfiehlt für diese Modellklasse, wo der Speicher reicht auf 8 Bit zu setzen und jede 4-Bit-Kopie gegen ihr Original zu testen. Wichtige Einordnungen: Die erzwungene Einleitung ist nach Angaben des Autors kein realistischer Angriff auf lokale Gewichte, getestet wurden nur drei kleine Modelle, und die Ergebnisse lassen sich nicht auf 4-Bit-Kopien als Klasse übertragen. Code, Vorregistrierung und Labels sind unter github.com/egekaya1/qrefusal verfügbar. Die schädlichen Rohantworten werden nicht offen mitgeliefert."
+    },
+    {
+      "t": "h2",
+      "x": "2,5 Millionen Arbeiten: Die Wissenschaft bleibt im Takt"
+    },
+    {
+      "t": "p",
+      "x": "Verändert KI die Wissenschaft selbst, und wenn ja, zum Schlechten? Vier Forschende des New Jersey Institute of Technology haben dafür 2,5 Millionen Volltexte aus fünf Disziplinen von 2015 bis 2025 vermessen, die Hälfte aus der biomedizinischen Datenbank PubMed Central, der Rest von arXiv. Ihr Rahmen prüft Wortschatz, Themenvielfalt, Aufbau und Zusammenarbeit, jeweils mit einem statistischen Bruchpunkt Ende 2022, dem öffentlichen Start der großen Sprachmodelle."
+    },
+    {
+      "t": "p",
+      "x": "Die gemessenen Wortverschiebungen sind deutlich, aber beweisen für sich keine KI-Autorschaft: Von 14.484 geprüften Wortformen stiegen 796 auffällig (etwa \"establish\" und \"underscore\"), 199 fielen (etwa \"good\" und \"happen\"), und die bekannten KI-Markierer verschwanden nach einem Höhepunkt 2024 bereits wieder. Gemessen am Gesamtwortschatz von mehreren zehn Millionen Wörtern ist das ein schmaler Rand. Für die gemessene Wortschatzvielfalt fand die Studie keinen signifikanten Trendbruch. Die Fachbegriffsdichte steigt in allen Disziplinen weiter; in der Physik verlangsamt sich ihr Anstieg allerdings statistisch nachweisbar. Das ist kein allgemeiner Nachweis der Textqualität."
+    },
+    {
+      "t": "p",
+      "x": "Die auffälligen Ausnahmen haben eigene Erklärungen: Die sinkende Themenvielfalt in der Informatik begann lange vor 2022 und hat sich seither eher verlangsamt, die Autoren deuten dies als Konzentration auf wenige Leitthemen. Der scheinbare Einbruch in den Biowissenschaften erwies sich weitgehend als Artefakt standardisierter Artikelformate. Eine wichtige Ausnahme: In Asien wuchsen die Autorenteams von Informatik-Veröffentlichungen nach 2022 spürbar schneller, und die Publikationszahlen in Informatik und Physik stiegen verstärkt. Das Fazit der Autoren: Bislang ist von einem Systemumbruch nichts nachweisbar, zugleich ist die Ausbreitungsgeschwindigkeit der Werkzeuge Grund genug, die Messung fortzuführen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind Agententeams gegen interne Störenfriede gewappnet?",
+      "a": "In der simulierten Küche benannten die Teams die Störertypen in 88-97 Prozent der je 90 ausgewerteten Episoden pro Typ. Erholung hing mit Zuschreibung und Diagnose in derselben Äußerung zusammen. Der stärkere Monitor half dem schwierigsten Störfall, senkte aber die störungsfreie Teamleistung um 37,5 Prozent. Die Befunde sind an diese Umgebung und getesteten Modelle gebunden."
+    },
+    {
+      "q": "Ist mein lokales 4-Bit-Modell jetzt unsicher?",
+      "a": "Das lässt sich pauschal nicht sagen. Zwei von drei kleinen Modellen änderten ihre Raten in unterschiedlichen Settings und entgegengesetzten Richtungen. Die 8-Bit-Kontrollen zeigten keine korrigiert signifikante Ratenverschiebung, was nicht unveränderte Einzelantworten beweist. Jede konkrete Kopie muss gegen ihr Original getestet werden."
+    },
+    {
+      "q": "Macht KI die Wissenschaft schlechter?",
+      "a": "Die Studie findet in den gemessenen Makrogrößen überwiegend Kontinuität, aber auch Ausnahmen: etwa schneller wachsende Informatikteams in Asien. Wortfrequenzen verändern sich. Das beweist weder allgemeine Harmlosigkeit noch KI-Autorschaft einzelner Texte und schließt Halluzinationen oder andere Qualitätsprobleme nicht aus."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle",
+    "pewdiepie-lokale-ki-kein-zehn-gpu-pflichtprogramm"
+  ]
+}
