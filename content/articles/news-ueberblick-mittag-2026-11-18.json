@@ -1,0 +1,127 @@
+{
+  "slug": "news-ueberblick-mittag-2026-11-18",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-18T10:01:01+01:00",
+  "modified": "2026-11-18T10:01:01+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Eight in Ten LLMs Leak System-Prompt Secrets: Nevan, an Agentic Capture-the-Flag Study",
+      "publisher": "arXiv; Ana Clara Zoppi Serpa, Anderson Rocha und Hélio Pedrini, University of Campinas (UNICAMP)",
+      "url": "https://arxiv.org/abs/2611.21956",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Thinking Harder Doesn’t Lead to Better Choices: Reasoning Effort Increases the Confidence but Not the Correctness of LLM Shopping Agents",
+      "publisher": "arXiv; Adi Krishnamoorthy und X. Y. Han, University of Chicago",
+      "url": "https://arxiv.org/abs/2611.22033",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop",
+      "publisher": "arXiv; Zerui Yang u. a., Huawei Technologies",
+      "url": "https://arxiv.org/abs/2611.22901",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Nevan-Artefakte: laut Paper bei Einreichung privat deponiert, bei Annahme öffentlich",
+      "publisher": "Hugging Face; ilostmytails/nevan (Zugriffstest: HTTP 401)",
+      "url": "https://huggingface.co/buckets/ilostmytails/nevan",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "tags": [
+    "forschung",
+    "agenten",
+    "sicherheit",
+    "evaluation",
+    "benchmarks"
+  ],
+  "title": "KI am Mittag: Systemprompt-Flags, Einkaufsagenten und Stoppregeln",
+  "dek": "Ein CTF-Audit zählt 296 Katalog-Captures plus vier spätere Modelle. Einkaufsagenten werden vor allem sicherer, Coding-Agenten arbeiten nach Selbsttests weiter.",
+  "key_takeaways": [
+    "Nevan erfasst 296 Captures unter 363 Katalogeinträgen plus vier spätere Modelle. 50 Einträge blieben offen, 17 wurden verworfen. Das ist kein allgemeiner Leak- oder Robustheitstest.",
+    "Mehr Denkaufwand erhöhte bei neun von zehn Modellen auf WebShop die Konfidenz signifikant. Genauigkeitsgewinne blieben im low-zu-high-Vergleich meist aus; nach Holm-Korrektur blieb dort nur Qwen 3.8 Max.",
+    "Coding-Agenten hören schlecht auf: Nach dem ersten bestandenen Selbsttest läuft ein Agent im Schnitt noch 18 Befehle weiter und verursacht danach je nach Gerüst 42 bis 66 Prozent der Kosten dieser Durchläufe; eine einfache Stoppregel sparte in einer geprüften Wiederholung 22,8 Prozent."
+  ],
+  "hero": {
+    "alt": "Drei getrennte Studienbefunde: 296 Captures unter 363 Nevan-Katalogeinträgen plus vier spätere Modelle; bei WebShop steigt Konfidenz häufiger als Genauigkeit; Twice-passed spart 22,8 Prozent bei ungesicherter Qualitätsmarge.",
+    "caption": "Geheimnisse, Selbsteinschätzung, Aufhören: drei Audits zu Agenten im Alltag. Eigene Grafik.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Mittagsüberblick vom 18. November. Quellenstand: 09:55 Uhr MEZ. Drei Arbeiten vom 16. und 17. November schauen KI-Agenten im Alltag auf die Finger: Wie gut hüten sie Geheimnisse im Systemprompt, wie ehrlich ist ihre Selbsteinschätzung beim Einkaufen, und wann hören sie beim Programmieren auf?"
+    },
+    {
+      "t": "h2",
+      "x": "Nevan: 296 Katalog-Captures plus vier spätere Modelle"
+    },
+    {
+      "t": "p",
+      "x": "Viele Anwendungen verstecken Anweisungen, interne Hinweise oder gar Zugangsdaten im Systemprompt, dem unsichtbaren Vorspann eines Modells. Forschende der Universität Campinas in Brasilien haben nun systematisch geprüft, wie lange so ein Geheimnis hält. Ihr Audit Nevan spannte 363 Textmodelle aus dem Katalog des Vermittlungsdienstes OpenRouter in eine Capture-the-Flag-Aufgabe: Jedes Modell bewachte eine zufällige, 16 Zeichen lange Flag in seinem Systemprompt, während ein Agent aus dem Werkzeug OpenCode mit dem Modell DeepSeek V4.1 Flash, gesteuert von einem menschlichen Forscher, versuchte, sie herauszulocken."
+    },
+    {
+      "t": "p",
+      "x": "Das Ergebnis: Bei 296 der 363 Katalogeinträge gelang die Entwendung, dazu vier Modelle, die nach dem Einfrieren des Katalogs am 6. Oktober erschienen waren; 300 Captures insgesamt. Auffällig ist der Weg dahin: 170 der erfolgreichen Angriffe enthielten einen Sprachwechsel, 119 davon ins Französische. Die Autoren warnen selbst vor der falschen Lesart: Weil der Angreifer Techniken nacheinander ausprobierte und jeder Treffer dem ersten erfolgreichen Versuch zugerechnet wird, belegt das keine besondere Wirksamkeit des Französischen. In einem zweiten Experiment ließen sie den Agenten 5,5 Stunden allein laufen; er erzielte 59 der erfassten Erst-Captures."
+    },
+    {
+      "t": "p",
+      "x": "Wichtig ist, was die Zahlen nicht bedeuten: Ein Capture belegt nur, dass das Modell die Flag einmal exakt ausgab, nicht, dass es echte, sinntragende Geheimnisse verraten würde oder allgemein anfällig für schädliche Ausbrüche ist. 50 Katalogeinträge blieben offen, 17 wurden wegen HTTP-4xx verworfen. Diese Gruppen sind nicht als robust bewiesen; der Versuch prüfte ein einziges Angreifer-Setup, ohne statistische Absicherung. Die Empfehlungen der Autoren lauten deshalb handfest: keine Geheimnisse in Systemprompts, kritisches Verhalten außerhalb des Modells mit deterministischen Prüfungen absichern und ein Modell niemals allein über folgenreiche Ergebnisse entscheiden lassen. Die Prüfdaten haben die Autoren auf Hugging Face deponiert, derzeit noch privat; sie sollen bei Annahme der Arbeit öffentlich werden."
+    },
+    {
+      "t": "h2",
+      "x": "Einkaufsagenten: Mehr Selbstsicherheit, selten bessere Treffer"
+    },
+    {
+      "t": "p",
+      "x": "Wer einem KI-Agenten das Einkaufen überlässt, könnte erwarten, dass mehr Denkaufwand bessere Entscheidungen bringt. Adi Krishnamoorthy und X. Y. Han von der University of Chicago haben das mit zehn aktuellen Spitzenmodellen von sechs Anbietern geprüft. Ihre Tests stellen jedem Modell eine Einkaufsfrage und genau zehn Produkte, von denen genau eines passt; die Suche entfällt, alle entscheiden auf derselben Grundlage. Drei Datensätze kamen zum Einsatz: WebShop mit 496 Aufgaben samt Bildern, die Amazon-Daten SQID mit 500 und die Wayfair-Möbeldaten WANDS mit 330, letztere rein textbasiert."
+    },
+    {
+      "t": "p",
+      "x": "Das zentrale Ergebnis: Zwischen niedrigem und hohem Denkaufwand verbesserte sich die Treffergenauigkeit nur bei drei Modellen in WebShop und einem in WANDS nennenswert, in SQID bei keinem; nach der statistischen Korrektur für Mehrfachtests blieb ein einziger Fall übrig. Die angegebene Selbstsicherheit dagegen stieg signifikant, bei neun von zehn Modellen in WebShop. Gemessen an ihrer tatsächlichen Trefferquote überschätzten sich acht der zehn Modelle um 7 bis 16 Prozentpunkte, in SQID um 27 bis 33; nur die beiden Claude-Modelle lagen auf WebShop leicht unter ihrer Quote. Wie gut die Selbsteinschätzung stimmt, erwies sich als stabile Modelleigenschaft: Die Rangfolge der Modelle blieb über alle drei Datensätze nahezu gleich, unabhängig vom eingestellten Aufwand."
+    },
+    {
+      "t": "p",
+      "x": "Beunruhigend für alle, die auf eine Zweitmeinung hoffen: Die Modelle irten gemeinsam. Die Zahl der je Aufgabe irrenden Modelle streute sechs- bis achtmal stärker, als es unabhängige Fehler erklären würden; lagen mindestens zwei Modelle falsch, trafen über 80 Prozent aller Fehlgriffe dasselbe falsche Produkt, bei zufälliger Verteilung wären es 32 bis 36 Prozent gewesen. Für Verbraucher heißt das: Weder die eigene Konfidenz des Agenten noch die Zustimmung eines zweiten ist ein verlässlicher Schutz. Die Autoren weisen zugleich auf Grenzen hin: Die feste Zehnerliste blendet die Suche aus, bei der Aufwand möglicherweise mehr hilft, die Konfidenz wurde nur einmal als Zahl von null bis zehn abgefragt, und jede Bedingung lief nur einmal."
+    },
+    {
+      "t": "h2",
+      "x": "Coding-Agenten: Wenn nach dem bestandenen Test noch die Hälfte der Kosten kommt"
+    },
+    {
+      "t": "p",
+      "x": "Coding-Agenten testen ihre Arbeit selbst und hören trotzdem nicht auf, wenn ihre Tests grün sind. Ein Team von Huawei Technologies hat dafür nun ein Maß gefunden: Rund 6.000 aufgezeichnete Durchläufe von acht offenen Modellen in zwei Agenten-Gerüsten auf dem Programmierbenchmark SWE-bench Verified wurden Schritt für Schritt nachgespielt; jede Zwischenversion des Patches wurde mit den versteckten Referenztests bewertet und jede Phase in relativen Tokenpreisen verrechnet. So lässt sich unter den Replay-Annahmen nachträglich auswerten, wann ein Patch die Referenztests bestand und was die spätere Arbeit kostete. Der Abgleich von 4.009 der 4.012 Endpatches validiert nicht jeden Zwischenzustand."
+    },
+    {
+      "t": "p",
+      "x": "Der Hauptbefund: Nach seinem ersten bestandenen Selbsttest führte das Hauptmodell Qwen3.6-27B im Schnitt noch 18 Befehle aus, vor allem weitere Tests und Aufräumarbeiten. Das verschlang 42 Prozent der Kosten dieser Durchläufe im schlanken Gerüst mini-SWE-agent und 66 Prozent im ausführlicheren SWE-agent; in 80 bis 87 Prozent dieser Fälle wurde am Ende der Patch abgegeben, der schon bestanden hatte. Ein Blick zurück zeigt das Sparpotenzial: Stoppte man verlustfrei an bestandenen Selbsttests, lägen die Ersparnisse je nach Modell und Gerüst zwischen unter einem und 57 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Eine untersuchte, aber noch nicht qualitätsgesicherte Regel lautet: Stoppe, wenn derselbe Patch zweimal besteht. In einer vorab festgelegten Wiederholung mit 386 neuen Durchläufen sparte sie 22,8 Prozent der Kosten bei 1,0 Auflösungspunkten Verlust; der vorgegebene Qualitätstest konnte Nichtunterlegenheit allerdings nicht belegen. Der Effekt hängt stark am Modell: Bei DeepSeek-V4-Flash beschädigten spätere Änderungen mehr Patches als sie reparierten, frühes Stoppen verbesserte dort das Ergebnis sogar. Beim untersuchten Hauptmodell reichten Anweisung oder Nachfrage allein nicht für vergleichbare Einsparungen: Eine umgeschriebene Anweisung sparte nur 8,4 Prozent, und direkt gefragt, ob er abgeben solle, bejahte der Agent nur in 6 bis 7 Prozent der Fälle, obwohl sein Patch in 61 bis 72 Prozent der Fälle mit Fortsetzung die versteckten Tests bereits bestand. Per Feintuning auf eigene, an der Regel geschnittene Verläufe lernte der Agent immerhin, von selbst aufzuhören: 30 Prozent Ersparnis über sechs Trainingsläufe, bei weiterhin ungeklärter Qualitätsmarge. Die Autoren betonen die Grenzen: nur offene, lokal betriebene Modelle, und ein bestandener Selbsttest bleibt ein schwaches Signal; in etwa 30 Prozent der Durchläufe mit bestandenem Selbsttest scheiterte der Patch an den versteckten Tests."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind Zugangsdaten im Systemprompt jetzt generell verloren?",
+      "a": "Nevan dokumentiert exakte Flag-Ausgaben bei 296 der 363 eingefrorenen Katalogeinträge sowie bei vier später aufgenommenen Modellen. Im Katalog blieben 50 Einträge offen, 17 wurden wegen HTTP-4xx verworfen. Diese Restgruppen sind keine nachgewiesen robusten Modelle. Die Befunde belegen weder konsistente semantische Secret-Leaks noch allgemeine Jailbreak-Anfälligkeit."
+    },
+    {
+      "q": "Bringt ein höheres Denklevel bei Einkaufsagenten bessere Ergebnisse?",
+      "a": "Im low-zu-high-Vergleich stieg die Genauigkeit nominal signifikant bei drei Modellen auf WebShop und einem auf WANDS, auf SQID bei keinem. Nach Holm-Korrektur blieb davon nur Qwen 3.8 Max auf WebShop. Konfidenz stieg häufiger, etwa bei neun von zehn WebShop-Modellen. Geprüft wurde die Auswahl aus zehn Produkten, nicht die Suche."
+    },
+    {
+      "q": "Kann man Coding-Agenten einfach nach dem ersten bestandenen Test stoppen?",
+      "a": "Nur mit Augenmaß. Eine Regel, die nach dem zweiten Bestehen desselben Patches stoppt, sparte in einer geprüften Wiederholung 22,8 Prozent der Kosten bei 1,0 Punkten Qualitätsverlust; dass die Qualität nicht schlechter ist, war damit nicht belegt. Der Effekt hängt vom Modell ab, und ein bestandener Selbsttest garantiert nicht, dass der Patch die eigentlichen Anforderungen erfüllt."
+    }
+  ],
+  "related": [
+    "coding-agenten-verhalten-143000-trajectories-studie",
+    "visa-agentic-commerce-benchmark-57-prozent"
+  ]
+}
