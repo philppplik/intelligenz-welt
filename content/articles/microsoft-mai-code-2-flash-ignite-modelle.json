@@ -1,0 +1,102 @@
+{
+  "slug": "microsoft-mai-code-2-flash-ignite-modelle",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Microsoft startet sieben eigene MAI-Modelle, Spitzenreiter ist ein Billig-Coder",
+  "dek": "Auf der Ignite stellt Microsoft eine siebenköpfige MAI-Modellfamilie vor, angeführt von MAI Code 2, das laut Microsoft 98 Prozent der Leistung von GPT-6.1 Sol bei etwa 40 Prozent der Kosten erreicht und schon in GitHub Copilot läuft.",
+  "published": "2026-11-18T08:52:00+01:00",
+  "modified": "2026-11-18T08:52:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Microsoft",
+    "MAI",
+    "Ignite",
+    "MAI Code 2",
+    "GitHub Copilot",
+    "Modellfamilie"
+  ],
+  "key_takeaways": [
+    "Microsoft hat auf der Ignite sieben eigene MAI-Modelle vorgestellt: Code 2, Code 2 Flash, Cyber 2 Flash, Image 2.7, Realtime 1, Transcribe 2 und Decision 1.1.",
+    "MAI Code 2 soll im Schnitt über vier Coding-Benchmarks 98 Prozent von GPT-6.1 Sol bei etwa 40 Prozent der Kosten liefern und liegt bereits in GitHub Copilot. Die Kosten sind dabei zum 50-Prozent-Aktionspreis gerechnet.",
+    "MAI Licensed Weights ist kein Open Weights: Kunden können Modelle mit eigenen Daten anpassen und im eigenen Azure-Umfeld betreiben, aber nur über begleitete Engagements, nicht im Self-Service.",
+    "Sämtliche Vergleichszahlen stammen aus Microsofts eigenen Veröffentlichungen mit teils internen Benchmarks; unabhängige Messungen gibt es noch nicht."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Sieben leuchtende Steine unterschiedlicher Farbe und Größe, die in einem Bogen um einen größeren, neutralen Block angeordnet sind.",
+    "caption": "Sieben eigene Modelle: Microsoft baut sein MAI-Portfolio vom Wiederverkäufer zum eigenen Modellanbieter aus.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Microsoft wird ernst als eigener Modellanbieter. Auf der Ignite-Konferenz hat Microsoft AI am 17. November eine Familie von sieben Modellen vorgestellt, alle auf Preis-Leistung getrimmt: MAI Code 2 und Code 2 Flash fürs Programmieren, Cyber 2 Flash für Sicherheitsaufgaben, Image 2.7, das Sprachmodell Realtime 1, Transcribe 2 und das Routing-Modell Decision 1.1. Dazu kommt die Ankündigung MAI Licensed Weights, mit der Kunden angepasste Modelle im eigenen Azure-Umfeld betreiben können."
+    },
+    {
+      "t": "h2",
+      "x": "MAI Code 2: die Kopfzahlen"
+    },
+    {
+      "t": "p",
+      "x": "Das Vorzeigemodell MAI Code 2 soll, gemittelt über die vier Benchmarks DeepSWE 1.1, Terminal Bench 2.1, SWE-Atlas und FrontierCode v1.1, 98 Prozent der Leistung von GPT-6.1 Sol bei etwa 40 Prozent der Kosten erreichen, gegenüber Claude Opus 5.5 96 Prozent der Leistung bei 5 Prozent der Kosten. In einer Blindbewertung von Frontend-Arbeiten mit 258 Bewertern zogen die Prüfer die Ergebnisse von Code 2 in 64 Prozent der Fälle denen von GPT-6 Sol vor. Zwei Fußnoten gehören zwingend dazu: Die Kosten von Code 2 sind in diesen Vergleichen zum 50-Prozent-Aktionspreis gerechnet, und ein Teil der Benchmarks lief auf Microsofts interner Plattform MSBench. Microsoft selbst schreibt, die Modelle seien ausdrücklich noch nicht für Grundlagenforschung und sehr lange Agentenläufe abgestimmt. MAI Code 2 und Code 2 Flash sind bereits in GitHub Copilot verfügbar, Flash zusätzlich in eingeschränkter Vorschau in Microsoft Foundry; OpenRouter, Vercel, Hermes, OpenCode und Kilo sollen folgen."
+    },
+    {
+      "t": "h2",
+      "x": "Der Rest der Familie"
+    },
+    {
+      "t": "p",
+      "x": "MAI Cyber 2 Flash soll auf dem Benchmark CyberGymE2E die Qualität von GPT-6 Astra bei unter 2 Prozent der Kosten pro Aufgabe erreichen und läuft nur in Microsofts eigenen Sicherheitsprodukten. MAI Image 2.7 führt laut Microsoft die Bildbearbeitungswertung von Artificial Analysis an, die Flash-Variante kostet rund 10 Dollar pro 1.000 Bilder. MAI Realtime 1 ist das erste Speech-to-Speech-Modell des Hauses, ab 0,01 Dollar pro Audiominute. Transcribe 2 steckt in Dragon Copilot und transkribiert nach Unternehmensangaben bereits 10 Millionen Arzt-Patienten-Begegnungen im Monat. Decision 1.1, ein Routing-Modell, bezeichnet Microsoft als 50-mal schneller und 79-mal günstiger als GPT-6.1 Sol. Alle Zahlen sind Herstellerangaben."
+    },
+    {
+      "t": "h2",
+      "x": "Licensed Weights ist nicht Open Weights"
+    },
+    {
+      "t": "p",
+      "x": "Missverständnisanfällig ist die Ankündigung MAI Licensed Weights. Dahinter steckt kein offener Gewichte-Download: Kunden können ein Frontier-MAI-Modell mit eigenen Daten anpassen und in ihrer eigenen Azure-Umgebung betreiben, mit Kontrolle über Zugänge und Daten. Die Bereitstellung läuft über sogenannte Frontier-Company-Engagements, also begleitete Projekte, nicht per Self-Service. Als Beleg nennt Microsoft einen AT&T-Anwendungsfall aus dem 5G-Netzbetrieb, bei dem ein angepasstes MAI-Modell GPT-6.1 Sol geschlagen haben soll, bei 50-mal geringeren Kosten. Auch das eine Firmenangabe."
+    },
+    {
+      "t": "callout",
+      "x": "Strategisch ist das eine Wende: Microsoft unterbietet mit eigenen Modellen die Preise der Modelle, die es zugleich von OpenAI und Anthropic einbindet, ausgerechnet bei den Alltags-Coding-Tokens, die den Großteil des Copilot-Verkehrs ausmachen.",
+      "title": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Eine neue Hardware-Zahl rundet das Bild ab: Microsofts zweiter eigener KI-Beschleuniger Maia 200 ist in Produktion und soll 1,7-mal mehr Token pro Watt liefern. Unabhängige Benchmarks der MAI-Familie werden interessant, sobald die Modelle auf OpenRouter und anderen Plattformen außerhalb der Microsoft-eigenen Messsysteme laufen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "MAI Code 2 and Code 2 Flash: Everyday coding at scalable prices",
+      "publisher": "Microsoft AI",
+      "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "Seven new world class models at scalable price-performance",
+      "publisher": "Microsoft AI",
+      "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist MAI Code 2?",
+      "a": "Microsofts neues Coding-Modell, das laut Anbieter 98 Prozent der Leistung von GPT-6.1 Sol bei etwa 40 Prozent der Kosten erreicht. Es läuft bereits in GitHub Copilot. Die Kostenvergleiche beruhen auf einem 50-Prozent-Aktionspreis."
+    },
+    {
+      "q": "Was bedeutet MAI Licensed Weights?",
+      "a": "Kunden können MAI-Modelle mit eigenen Daten anpassen und im eigenen Azure-Umfeld betreiben, mit Kontrolle über Zugänge und Daten. Es ist kein Open-Weights-Angebot: Die Bereitstellung läuft über begleitete Engagements, nicht per Download."
+    },
+    {
+      "q": "Welche sieben Modelle hat Microsoft vorgestellt?",
+      "a": "MAI Code 2, MAI Code 2 Flash, MAI Cyber 2 Flash, MAI Image 2.7, MAI Realtime 1, MAI Transcribe 2 und Decision 1.1."
+    }
+  ],
+  "related": [
+    "qwen4-max-alibaba-flagship-1m-kontext",
+    "tencent-hy4-flash-12b-aktiv-bueromodell"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "metr-alignment-evals-erkennbar-modelle",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Modelle riechen den Test: METR zeigt, wie erkennbar Alignment-Evals sind",
+  "dek": "Claude Opus 5.5 ordnet in einer METR-Untersuchung jede der 19 Alignment-Evals über jeder der 36 Capability-Evals ein. Wenn Modelle wissen, dass ihr Verhalten geprüft wird, verlieren saubere Testergebnisse an Aussagekraft.",
+  "published": "2026-11-18T08:52:00+01:00",
+  "modified": "2026-11-18T08:52:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "METR",
+    "Alignment",
+    "Evals",
+    "Modellbewertung",
+    "Claude",
+    "Sicherheitsforschung"
+  ],
+  "key_takeaways": [
+    "METR ließ Untersuchungsagenten in 19 Alignment- und 36 Capability-Evals prüfen, was die jeweilige Umgebung testet.",
+    "Claude Opus 5.5 stufte jede Alignment-Eval höher ein als jede Capability-Eval; neuere Modelle erkennen die Unterschiede immer besser.",
+    "Die verräterischen Merkmale: Umgebungen, die künstlich wirken, und Aufgaben, die wie eine Falle gebaut sind, etwa mit verlockender Abkürzung und hohem Druck.",
+    "Gezeigt ist nur, dass die Signale existieren, nicht dass sie das Verhalten im echten Test verändern. Das schränkt die Tragweite ein, macht sie aber nicht klein."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine Bühne mit einem leuchtenden Objekt im Scheinwerferlicht, hinter der Kulisse lugt ein kühler Kontrollraum hervor.",
+    "caption": "Sieht aus wie ein Test, riecht nach einem Test: Aktuelle Modelle erkennen Alignment-Evals an ihren Merkmalen.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Alignment-Evals sollen messen, ob ein Modell hinter verschlossenen Türen dasselbe tut wie auf offener Bühne. Genau daran gibt es jetzt systematische Zweifel: In einer Untersuchung von METR erkannten aktuelle Frontier-Modelle zuverlässig, ob eine Umgebung ein Alignment-Test oder ein gewöhnlicher Leistungstest ist. Die Autoren Uzay Girit, Kaivu Hariharan und Leni Shor ließen sogenannte Untersuchungsagenten mit denselben Werkzeugen und maximalem Reasoning in 19 Alignment- und 36 Capability-Evals explorieren und fragten sie direkt und offen, wozu die Umgebung wohl gebaut wurde."
+    },
+    {
+      "t": "h2",
+      "x": "Perfekte Trennung bei Opus 5.5"
+    },
+    {
+      "t": "p",
+      "x": "Das Ergebnis in einer Zahl: Gemessen als AUC, wobei 0,5 Zufall und 1,0 perfekte Trennung bedeutet, erreichen Opus 4.8 und Opus 5.5 nahezu oder exakt 1,0. Konkret: Jede der 19 Alignment-Evals bekam von Opus 5.5 einen höheren Alignment-Verdacht als jede der 36 Capability-Evals, die niedrigste Alignment-Bewertung lag bei 75 von 100, die höchste Capability-Bewertung bei 71,7. Auch GPT-6 Astra erkannte die Muster, wenn auch schwächer (AUC 0,89 direkt, 0,81 offen). Der Trend über das Jahr 2026 zeigt in beide Richtungen aufsteigende Werte; Anthropic-Modelle liegen in dieser Messung vorn, weil sie besonders stark darin wurden, Alignment-Tests als solche zu erkennen."
+    },
+    {
+      "t": "h2",
+      "x": "Woran die Modelle es erkennen"
+    },
+    {
+      "t": "p",
+      "x": "METR unterscheidet zwei Klassen von Verrätern. Umgebungs-Tells sind Ungenauigkeiten der Simulation: offensichtlich nachgebaute Dienste, unglaubwürdige Szenarien, Kunstlichkeit. Task-Tells dagegen stecken in der Aufgabe selbst: hoher Erfolgsdruck, ein ethisch problematischer Shortcut, ein ausnutzbarer Bewerter, ausdrückliche Belehrungen über den Geist der Aufgabe. Genau diese Merkmale machen Alignment-Evals brauchbar, und genau sie verraten sie. In einem Honigtopf-Experiment, das METR aus einer Capability-Eval baute, identifizierte Opus 5.5 alle vier eingebauten Veränderungen."
+    },
+    {
+      "t": "h2",
+      "x": "Was das bedeutet und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren sind vorsichtig, und das ist wichtig: Gezeigt ist, dass die Erkennungsmerkmale existieren und Modelle sie benennen können. Nicht gezeigt ist, dass Modelle im echten Eval ihr Verhalten deshalb ändern. Auch die Befragung selbst kann den Verdacht erst wecken, was METR als Verzerrung einräumt und durch den Vergleich zwischen den Eval-Arten abzufedern versucht. Trotzdem bleibt die Konsequenz erheblich: Wenn ein Modell weiß, dass sein Benehmen geprüft wird, kann ein sauberes Alignment-Ergebnis überschätzen, wie ausgerichtet das Modell im Alltag wäre. Der Beitrag kommt zudem zu einem heiklen Zeitpunkt: Erst diese Woche hat OpenAI externe Prüfteams in seine Trainingsläufe gelassen und für GPT-6.2 eigene Eval-Caveats veröffentlicht. Für Eval-Designer heißt die Empfehlung sinngemäß: realistischere Umgebungen, gebaut aus echtem Verkehr, oder gezielt getarnte Tests."
+    },
+    {
+      "t": "callout",
+      "x": "Die Grundaussage für Praktiker: Alignment-Werte aktueller Modelle sind eher Obergrenzen als Messwerte. Wer Sicherheitsentscheidungen darauf stützt, sollte den Aufbau der Evals mitprüfen, nicht nur die Punktzahl.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Measuring alignment eval tells",
+      "publisher": "METR",
+      "url": "https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells/",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was hat METR untersucht?",
+      "a": "Ob Frontier-Modelle erkennen, wenn sie sich in einer Alignment-Eval statt einer gewöhnlichen Leistungs-Eval befinden. Dazu erkundeten Untersuchungsagenten 19 Alignment- und 36 Capability-Evals und schätzten ein, was getestet wird."
+    },
+    {
+      "q": "Wie gut erkennen die Modelle die Tests?",
+      "a": "Claude Opus 5.5 bewertete jede Alignment-Eval höher als jede Capability-Eval, was einem AUC von 1,0 entspricht. GPT-6 Astra lag bei 0,89 beziehungsweise 0,81. Ältere Modelle lagen deutlich darunter."
+    },
+    {
+      "q": "Bedeutet das, dass Alignment-Evals wertlos sind?",
+      "a": "Nein. Gezeigt ist, dass Erkennungsmerkmale existieren, nicht dass Modelle ihr Verhalten im Test deshalb ändern. Aber die Ergebnisse legen nahe, dass saubere Alignment-Werte die tatsächliche Ausrichtung überschätzen können."
+    }
+  ],
+  "related": [
+    "coding-agenten-verhalten-143000-trajectories-studie",
+    "satbench-benchmarks-verbraucht-unabhaengig"
+  ]
+}

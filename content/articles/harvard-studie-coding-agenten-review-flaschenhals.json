@@ -1,0 +1,92 @@
+{
+  "slug": "harvard-studie-coding-agenten-review-flaschenhals",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Harvard-Studie: Coding-Agenten schreiben mehr Code, das Review wird zum Engpass",
+  "dek": "Eine Harvard-Arbeitspapier wertet 445 Millionen Arbeitsevents von 720.542 Beschäftigten in 655 Firmen aus. Nach Einführung von Coding-Agenten steigt der Code-Ausstoß deutlich, das fertige Produkt kaum, und die Codeprüfung dauert 56 Prozent länger.",
+  "published": "2026-11-18T08:52:00+01:00",
+  "modified": "2026-11-18T08:52:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Studie",
+    "Harvard",
+    "Coding-Agenten",
+    "Produktivität",
+    "Code Review",
+    "Arbeitsmarkt"
+  ],
+  "key_takeaways": [
+    "Das Harvard-Arbeitspapier von Fiona Chen und James Stratton wertet 445 Millionen Arbeitsevents von 720.542 Beschäftigten in 655 Firmen aus, von Januar 2021 bis August 2026.",
+    "Zwölf Monate nach Einführung von KI-Assistenten steigen Codezeilen um 30,4 Prozent; Agenten legen noch einmal kräftig nach, bei Pull Requests und Commits ebenso.",
+    "Die fertige Softwareleistung wächst viel langsamer: Agenten steigern abgeschlossene Epics um 18 Prozent, Issues nur grenzwertig signifikant.",
+    "Der Engpass ist die Prüfung: Die Zeit von Review-Einreichung bis Freigabe steigt um 56,1 Prozent, die Kommentare pro Änderung um 38,6 Prozent. Auf die Beschäftigung findet die Studie keinen nachweisbaren Effekt."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Ein breiter, schneller Lichtfluss, der an einer schmalen Glasschleuse gestaut wird, dahinter nur ein dünnes Rinnsal.",
+    "caption": "Mehr Code, gleiche Freigabekapazität: Die Prüfung wird zum Flaschenhals der KI-gestützten Softwareproduktion.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Schreiben Coding-Agenten Unternehmen wirklich schneller, oder schreiben sie nur schneller Code? Eine neue Harvard-Arbeitspapier von Fiona Chen und James Stratton gibt die bislang datenreichste Antwort. Ausgewertet wurden 445 Millionen Arbeitsevents von 720.542 Beschäftigten in 655 Firmen zwischen Januar 2021 und August 2026, zusammengeführt aus GitHub-Aktivität, Jira-Vorgängen, Kalenderdaten und der firmenweisen Nutzung von Copilot, Cursor und Claude Code. Die Plattform dahinter ist Jellyfish, ein Anbieter von Engineering-Analytik; die Firmen haben der Datennutzung zugestimmt. Es handelt sich um ein Job-Market-Paper, es ist also noch nicht begutachtet."
+    },
+    {
+      "t": "h2",
+      "x": "Viel mehr Code, wenig mehr Produkt"
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren nutzen den unterschiedlichen Einführungszeitpunkt der Werkzeuge über die Firmen hinweg für ihre Schätzung. Zwölf Monate nach Einführung von KI-Coding-Assistenten produzieren Firmen 30,4 Prozent mehr Codezeilen, 16,8 Prozent mehr Commits und 20,9 Prozent mehr Pull Requests. Coding-Agenten legen darüber noch einmal deutlich zu: plus 44 Prozent Codezeilen und plus 36 Prozent Commits. Beim Endprodukt bleibt davon erstaunlich wenig: Gemessen an abgeschlossenen Jira-Vorgängen steigern Assistenten die Zahl gelöster Issues um 1,5 und Epics um 3,4 Prozent, Agenten schaffen 13,7 Prozent bei Issues, nur grenzwertig signifikant, und 18 Prozent bei Epics. Ein Trick mit größeren Vorgängen erklärt die Lücke nicht: Eine maschinelle Prüfung der Issue-Texte fand keine Ausweitung des Umfangs."
+    },
+    {
+      "t": "h2",
+      "x": "Der Flaschenhals sitzt in der Prüfung"
+    },
+    {
+      "t": "p",
+      "x": "Nach Einführung der Agenten steigt die durchschnittliche Zeit von der Einreichung einer Codeänderung bis zur Freigabe um 56,1 Prozent. Davon entfallen plus 59,9 Prozent auf die Wartezeit im Rückstand und plus 58,5 Prozent auf die aktive Prüfphase, Letzteres deutet auf sinkende Prüfproduktivität. Der Anteil der Änderungen mit mindestens einem Prüfkommentar steigt um 13,1 Prozent, die Zahl der Kommentare pro Änderung um 38,6 Prozent. KI-Prüfwerkzeuge lösen das Problem nicht: 79,1 Prozent der Firmen nutzen sie, aber die überwältigende Mehrheit der Prüfungen und Kommentare schreiben weiter Menschen. In das geschätzte Produktionsmodell übersetzt, erhöhen Agenten die Coding-Produktivität um 73,7 Prozent, senken aber die Review-Produktivität leicht um 7 Prozent; Firmen verlagern Arbeit vom Schreiben in die Prüfung."
+    },
+    {
+      "t": "h2",
+      "x": "Beschäftigung: kein messbarer Effekt, aber ein simulierter"
+    },
+    {
+      "t": "p",
+      "x": "Auf die Zahl der Beschäftigten finden die Autoren keinen nachweisbaren Effekt, bei hoher Unsicherheit. Im Modell hängt die Langfristwirkung an der Produktnachfrage: Dehnt der Markt das verkaufbare Volumen kräftig genug aus, wachsen Output und Beschäftigung zusammen; bleibt der Review-Engpass bestehen, fallen die Effekte kleiner aus, und die Simulationen zeigen langfristig sinkende Gesamtbeschäftigung bei wachsendem Output. Die Autoren weisen selbst darauf hin, dass verbleibende Verzerrungen eher zugunsten der KI-Werkzeuge wirken dürften."
+    },
+    {
+      "t": "callout",
+      "x": "Die betriebliche Lehre deckt sich mit dem, was Agenten-Teams dieser Tage predigen: Mehr generierter Code zahlt sich nur aus, wenn die Verifikation mit automatisierten Tests mitwächst. Sonst wird der Mensch zur Review-Warteschlange, und das ist das teure Ergebnis.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Artificial Intelligence in the Firm: Bottlenecks in Software Production (Arbeitspapier)",
+      "publisher": "Fiona Chen und James Stratton, Harvard University",
+      "url": "https://fion.ac/jellyfish.pdf",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist der zentrale Befund der Harvard-Studie zu Coding-Agenten?",
+      "a": "Coding-Agenten steigern den Code-Ausstoß deutlich, aber die fertige Softwareleistung wächst viel langsamer. Der Engpass verlagert sich in die Codeprüfung: Die Zeit bis zur Freigabe steigt um 56,1 Prozent."
+    },
+    {
+      "q": "Verlieren Softwareentwickler laut der Studie ihre Jobs?",
+      "a": "Die Autoren finden keinen nachweisbaren Beschäftigungseffekt, allerdings bei hoher statistischer Unsicherheit. In Modellsimulationen sinkt die Beschäftigung langfristig nur in Szenarien mit schwacher Produktnachfrage."
+    },
+    {
+      "q": "Wie belastbar sind die Ergebnisse?",
+      "a": "Die Datenbasis ist mit 445 Millionen Events aus 655 Firmen sehr groß, und der Einführungszeitpunkt der Werkzeuge wurde unternehmensabhängig durch Einkaufs- und Sicherheitsprüfungen verzögert, was die Schätzung stützt. Es ist aber ein noch nicht begutachtetes Arbeitspapier."
+    }
+  ],
+  "related": [
+    "rba-studie-ki-junge-arbeitskraefte",
+    "tokeneconomizer-plugin-coding-agenten-kosten"
+  ]
+}

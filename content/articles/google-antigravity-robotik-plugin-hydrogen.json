@@ -1,0 +1,98 @@
+{
+  "slug": "google-antigravity-robotik-plugin-hydrogen",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Antigravity wird Roboter-Werkbank: Googles Robotics-Plugin für Gemini 4 Hydrogen",
+  "dek": "Google macht seine Agenten-IDE Antigravity zur Robotik-Werkbank: Ein quelloffenes Plugin übernimmt Inbetriebnahme, MuJoCo-Simulation und Regelung von Roboterarmen, angebunden an das schnelle Modell Gemini 4 Hydrogen.",
+  "published": "2026-11-18T08:52:00+01:00",
+  "modified": "2026-11-18T08:52:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Google",
+    "Antigravity",
+    "Robotik",
+    "Gemini 4 Hydrogen",
+    "MuJoCo",
+    "Open Source"
+  ],
+  "key_takeaways": [
+    "Googles Robotics-Plugin für Antigravity bündelt Roboter-Inbetriebnahme, MuJoCo-Simulation, Wahrnehmung und Regelung als Skills für Gemini 4 Hydrogen.",
+    "Das Plugin steht unter Apache-2.0 auf GitHub; unterstützt werden die Arme LeRobot SO-101, I2RT YAM und Franka FR3 Duo.",
+    "Google demonstriert: Ein YAM-Arm mit Tiefenkamera war in etwa 10 Minuten kalibriert, ein Snacksortierer am Fließband lief nach rund einer Stunde.",
+    "Auf dem Robotik-Benchmark AA-Robotics 0.1 erreicht Hydrogen 58 Punkte, ähnlich wie Argon, aber bei geringeren Kosten pro Token. Herstellerangabe auf einem Drittanbieter-Benchmark."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Ein leuchtender Robotergeometrie-Arm als Drahtgitter-Hologramm über einem Laptop, daneben seine simulierte Kopie aus blauem Licht.",
+    "caption": "Sim to Real: Derselbe Regelungscode läuft in MuJoCo und am echten Arm.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Nach Gemini 4 Argon und Carbon, die Frontier-Modelle ans Robotik-Steuern brachten, drückt Google jetzt aufs Tempo: Gemini 4 Hydrogen, vergangene Woche vorgestellt, soll räumliches und körperliches Schlussfolgern in ein deutlich schnelleres und günstigeres Modell bringen. Passend dazu hat das Robotics-Team am 17. November das Robotics-Plugin für die Agenten-IDE Antigravity veröffentlicht. Es steht unter der Apache-2.0-Lizenz auf GitHub und macht die Programmierumgebung zur Robotik-Werkbank: von der ersten USB-Verbindung über Simulation bis zur laufenden Anwendung am echten Arm."
+    },
+    {
+      "t": "h2",
+      "x": "Was das Plugin übernimmt"
+    },
+    {
+      "t": "p",
+      "x": "Vier Skill-Gruppen ersetzen das, was bisher Spezialwissen und viel Kleben von Skripten erforderte. Erstens die Inbetriebnahme: Treiber installieren, Kameras finden, den Arm kalibrieren und sichere Bewegungen prüfen, ausgehend von einem USB-Kabel. Zweitens MuJoCo in Antigravity: Simulierte Szenen und Objekte entstehen aus Textbeschreibungen, Links, Dokumenten oder Fotos des Arbeitsplatzes, sieben MuJoCo-Skills sind gebündelt, und per Chat lassen sich Formen, Positionen und Physik nachjustieren. Drittens Wahrnehmung und Regelung: Gemini findet Objekte, plant Griffe und regelt den Arm im geschlossenen Kreis. Viertens der Anwendungsbau: Das Plugin erzeugt Regler, Simulation und die komplette Real-to-Sim-to-Real-Anwendung in einer Umgebung. Unterstützt werden der preiswerte LeRobot SO-101, der I2RT YAM und der industrietaugliche Franka FR3 Duo."
+    },
+    {
+      "t": "h2",
+      "x": "Zwei Demos mit Zeitangabe"
+    },
+    {
+      "t": "p",
+      "x": "Google beschreibt zwei Abläufe konkret. Im ersten steckt ein Entwickler einen YAM-Arm samt externer Tiefenkamera an ein Laptop und bittet Hydrogen um die Inbetriebnahme: Nach etwa zehn Minuten ist der Arm kalibriert und einsatzbereit; ähnlich lief es mit einem SO-ARM101 und einem FR3 Duo. Im zweiten entsteht aus einer Whiteboard-Skizze ein Snack-Sortierer: Hydrogen baut die MuJoCo-Simulation der Zelle, testet die Greifstrategie über mehrere Läufe in der Simulation, überträgt sie auf den echten Arm und wird anschließend per natürlicher Sprache nachjustiert. Insgesamt rund eine Stunde bis zur zuverlässig sortierenden Anlage. Das sind Vorführungen des Herstellers, keine unabhängigen Tests."
+    },
+    {
+      "t": "h2",
+      "x": "Hydrogen als Steuerungsmodell"
+    },
+    {
+      "t": "p",
+      "x": "Auf dem Benchmark AA-Robotics 0.1 von Artificial Analysis, bei dem ein echter Sechsachsarm acht Tischaufgaben erledigt, vom Einschenken eines Getränks bis zum Verpacken von Blöcken, erreicht Hydrogen 58 Punkte, laut Google auf Argon-Niveau bei niedrigeren Kosten pro Token. Auf dem öffentlichen ERQA-Benchmark soll es die spezialisierten Gemini-Robotics-ER-2-Modelle bei räumlichen Aufgaben wie Mehransichten-Zuordnung und 3D-Trajektorien schlagen; Google empfiehlt Nutzern dieser Modelle den Wechsel. Voraussetzung für den Einsatz ist ein AI-Pro- oder Ultra-Abo, das Modell läuft in der Gemini-API unter der Kennung gemini-4-hydrogen. Installiert wird das Plugin über die Build-With-Google-Ablage in Antigravity oder direkt aus dem GitHub-Repository."
+    },
+    {
+      "t": "callout",
+      "x": "Der größere Punkt ist der Richtungswechsel: Die Coding-Agenten-IDE wird zur Werkbank für Hardware. Wer heute Agenten bedienen kann, kommt mit einem günstigen SO-101-Arm an einem Wochenende vom Karton zum laufenden Robotikprojekt.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini 4 Hydrogen: a faster model for general purpose robotics",
+      "publisher": "Google Developers Blog",
+      "url": "https://developers.googleblog.com/gemini-hydrogen-for-robotics/",
+      "accessed": "2026-11-18"
+    },
+    {
+      "title": "robotics-antigravity-plugin (Repository)",
+      "publisher": "GitHub / Google DeepMind",
+      "url": "https://github.com/google-deepmind/robotics-antigravity-plugin",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was kann das Antigravity Robotics-Plugin?",
+      "a": "Es übernimmt die Inbetriebnahme von Roboterarmen ab dem USB-Kabel, baut MuJoCo-Simulationen direkt in der IDE, steuert Wahrnehmung und Greifen über Gemini und erzeugt komplette Anwendungen, die in Simulation und auf echter Hardware laufen."
+    },
+    {
+      "q": "Welche Roboter und Konten werden unterstützt?",
+      "a": "Die Arme LeRobot SO-101, I2RT YAM und Franka FR3 Duo. Nötig ist ein AI-Pro- oder Ultra-Abo; das Modell heißt gemini-4-hydrogen in der Gemini-API."
+    },
+    {
+      "q": "Ist das Plugin quelloffen?",
+      "a": "Ja, es steht unter der Apache-2.0-Lizenz auf GitHub und lässt sich von dort oder über die Build-With-Google-Ablage in Antigravity installieren."
+    }
+  ],
+  "related": [
+    "gemini-4-hydrogen-alltagsmodell-agenten",
+    "runway-praxis-1-open-weights-robotik"
+  ]
+}

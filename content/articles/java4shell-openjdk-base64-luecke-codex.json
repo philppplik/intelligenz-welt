@@ -1,0 +1,92 @@
+{
+  "slug": "java4shell-openjdk-base64-luecke-codex",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Java4Shell: Codex half, eine kritische Lücke in OpenJDKs Base64-Decoder zu finden",
+  "dek": "Das Sicherheitsteam Calif hat mit Java4Shell (CVE-2026-114938) eine Speicherfehler-Lücke im Base64-Decoder von OpenJDK offengelegt, bewertet mit 9,2 von 10. Gefunden hat sie ein Researcher mit Hilfe von Codex, in rund einer Stunde. Was Betreiber jetzt tun sollten.",
+  "published": "2026-11-18T08:52:00+01:00",
+  "modified": "2026-11-18T08:52:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Java",
+    "OpenJDK",
+    "Sicherheitslücke",
+    "CVE-2026-114938",
+    "Calif",
+    "Codex"
+  ],
+  "key_takeaways": [
+    "Java4Shell (CVE-2026-114938) ist ein Speicherfehler im AVX-512-optimierten Base64-Decoder von OpenJDK, bewertet mit CVSS 9,2 (kritisch).",
+    "Betroffen sind OpenJDK ab 17.0.6; Oracle listet verwundbare Java-SE-Builds der Versionen 8, 17, 21, 25 und 27.",
+    "Calif zeigte Angriffe ohne Anmeldedaten gegen verbreitete Serveranwendungen in Standardkonfiguration, darunter Keycloak, Jira, Confluence, Artifactory und Jenkins.",
+    "Wer nicht sofort patchen kann, startet die JVM mit -XX:-UseBASE64Intrinsics; auf x86-64 geht notfalls -XX:UseAVX=2."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine Tasse aus leuchtendem Code-Glas mit einem feinen Riss, aus dem ein dünner roter Lichtfaden austritt.",
+    "caption": "Ein Fehler im optimierten Maschinencode des Base64-Decoders untergräbt Javas Speichersicherheit.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Das Team Calif, bekannt geworden mit PHP2Shell, hat eine kritische Schwachstelle in OpenJDK offengelegt: Java4Shell, registriert als CVE-2026-114938 und mit 9,2 von 10 Punkten nach CVSS 4.0 bewertet. Der Fehler sitzt nicht in Java-Code, sondern in handgeschriebenem Assembly: Zur Beschleunigung nutzt OpenJDK auf passenden x86-64-Prozessoren AVX-512-VBMI-Befehle für die Base64-Dekodierung. Eine präparierte, fehlerhafte Eingabe bringt die Routine für die letzten Zeichen dazu, eine negative Ausgabelänge zu berechnen und weit über das Ergebnisfeld hinaus zu schreiben. Java lehnt die Eingabe danach zwar ab, doch benachbarte Speicherobjekte können bereits beschädigt sein. Das reicht laut Calif je nach Anwendung vom Auslesen fremden Speichers im Stil von Heartbleed bis zur fernen Codeausführung."
+    },
+    {
+      "t": "h2",
+      "x": "Welche Software betroffen ist"
+    },
+    {
+      "t": "p",
+      "x": "Betroffen ist OpenJDK ab Version 17.0.6; Oracle listet verwundbare Java-SE-Builds 8u511b33-perf, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3 und 27.0.1.0.3. Calif demonstrierte fernen Code ausführung ohne Anmeldedaten in der Standardkonfiguration von Keycloak, Atlassian Jira und Confluence, JFrog Artifactory, Jenkins und PingFederate; nach Anmeldung gelang sie außerdem bei Apache Kafka, Apache Solr, Elasticsearch, Gerrit und Spinnaker. Die Listen sind nach Angaben der Forscher nicht vollständig: Da ganz normale Funktionen wie Anmeldung oder Datei-Upload den Decoder erreichen, kann die Angriffsfläche deutlich breiter sein. Es gibt allerdings keinen Universal-Exploit: Die Kette hängt davon ab, wie die jeweilige Anwendung Base64 einsetzt. Auch Clients können betroffen sein: Ein Java-Programm, das eine TLS-Verbindung zu einem bösartigen Server öffnet, lasse sich übernehmen, ergänzte der Researcher samczsun laut Calif."
+    },
+    {
+      "t": "h2",
+      "x": "Der Fund ist auch ein KI-Signal"
+    },
+    {
+      "t": "p",
+      "x": "Bemerkenswert ist der Entstehungsweg: Der Calif-Researcher Quang Luong habe die Lücke mit Hilfe von Codex in etwa einer Stunde gefunden, zwei weitere Stunden dauerte der erste funktionierende Exploit, die Token-Kosten lagen unter 200 Dollar. Die späteren Angriffsketten seien weitgehend autonom mit KI-Agenten gebaut worden. Das deckt sich mit dem Muster, das Googles Threat-Bericht diese Woche beschrieben hat, und mit unserem Artikel vom Montag: Die Kosten, kritische Fehler in reifer Software zu finden, fallen weiter."
+    },
+    {
+      "t": "h2",
+      "x": "Was Betreiber jetzt tun sollten"
+    },
+    {
+      "t": "p",
+      "x": "Califs Empfehlung ist eindeutig: Alle Java-Nutzer sollten umgehend aktualisieren. Wo das kurzfristig nicht geht, helfen zwei Schalter: Der JVM-Start mit -XX:-UseBASE64Intrinsics deaktiviert den betroffenen optimierten Pfad; auf x86-64-Systemen begrenzt -XX:UseAVX=2 den Befehlssatz so, dass die verwundbare Routine nicht läuft. Vorsicht: Auf ARM startet die JVM mit Letzterem gar nicht. Grundsätzlich gilt, was Calif selbst zur Einordnung schreibt: Die Lücke ist ein Beitrag zur Debatte über die Tragik gemeinsam genutzter Software-Stapel, deren Komplexität allen Nutzern Risiken aufbürdet, auch für Funktionen, die sie nie verwenden."
+    },
+    {
+      "t": "callout",
+      "x": "Konkret prüfen: Welche eigenen Dienste laufen auf verwundbaren OpenJDK-Builds, und wo erreicht externer Input eine Base64-Dekodierung, etwa bei Login, Uploads oder API-Payloads. Patching hat Vorrang, die JVM-Flags sind Übergangslösungen.",
+      "title": "Praxis"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Java4Shell: Write once, RCE everywhere",
+      "publisher": "Calif",
+      "url": "https://calif.io/java4shell/",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist Java4Shell?",
+      "a": "Ein kritischer Speicherfehler (CVE-2026-114938, CVSS 9,2) im AVX-512-optimierten Base64-Decoder von OpenJDK. Über präparierte Eingaben können Angreifer fremden Speicher auslesen oder fremden Code ausführen, je nach Anwendung ohne Anmeldung."
+    },
+    {
+      "q": "Welche Java-Versionen sind betroffen?",
+      "a": "OpenJDK ab 17.0.6. Oracle listet verwundbare Builds für Java SE 8 (8u511b33-perf), 17 (17.0.21.0.3), 21 (21.0.13.0.3), 25 (25.0.5.0.3) und 27 (27.0.1.0.3)."
+    },
+    {
+      "q": "Was tun, wenn Patchen nicht sofort möglich ist?",
+      "a": "Die JVM mit -XX:-UseBASE64Intrinsics starten, das deaktiviert den verwundbaren Pfad. Auf x86-64 geht alternativ -XX:UseAVX=2. Beides sind Übergangslösungen, das Update bleibt Pflicht."
+    }
+  ],
+  "related": [
+    "google-gtig-exploit-agent-patch-zu-exploit",
+    "shopify-cyber-chaos-monkey-agenten-angriff"
+  ]
+}

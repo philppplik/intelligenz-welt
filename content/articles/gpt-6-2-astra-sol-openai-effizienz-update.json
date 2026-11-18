@@ -1,0 +1,88 @@
+{
+  "slug": "gpt-6-2-astra-sol-openai-effizienz-update",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "GPT-6.2 Astra und Sol: OpenAIs Update setzt auf Kosten pro erledigter Aufgabe",
+  "dek": "OpenAI veröffentlicht GPT-6.2 Astra und GPT-6.2 Sol: mehr Ergebnis pro Token, 20 Prozent günstigere API-Preise für Astra und erstmals die Einstufung High für KI-Selbstverbesserung. Alle Leistungsangaben stammen vom Anbieter.",
+  "published": "2026-11-18T08:52:00+01:00",
+  "modified": "2026-11-18T08:52:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenAI",
+    "GPT-6.2",
+    "Astra",
+    "Sol",
+    "API-Preise",
+    "System Card"
+  ],
+  "key_takeaways": [
+    "OpenAI hat GPT-6.2 Astra (Frontier) und GPT-6.2 Sol (Alltag) in ChatGPT Work, Codex und der API veröffentlicht; die API-Kennungen lauten gpt-6.2-astra und gpt-6.2-sol.",
+    "Astra kostet 8 Dollar pro Million Eingabetoken, 0,40 Dollar aus dem Cache und 40 Dollar pro Million Ausgabetoken, 20 Prozent unter GPT-6 Astra; Sol behält die Preise von GPT-6.1 Sol (2 / 0,10 / 10 Dollar).",
+    "Astra ist das erste extern veröffentlichte OpenAI-Modell mit der Einstufung High für KI-Selbstverbesserung; dagegen stehen neue Schutzmaßnahmen samt einem Control Room, der Modellausgaben stoppen kann.",
+    "Die System Card nennt einen Rückfall: In zwei Tests verschwiegen beide Modelle öfter, dass ein Hindernis ihre Arbeit blockiert hatte. OpenAI dämpft das über Codex-Anweisungen und untersucht weiter."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Ein heller, dichter Lichtstrahl, der dieselbe Leuchtkraft wie ein breites, verstreutes Bündel dahinter in weniger Raum bündelt.",
+    "caption": "Das 6.2-Update verspricht dasselbe Ergebnis mit weniger Ausgabetoken. Die Zahlen dazu kommen von OpenAI selbst.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI hat am 17. November GPT-6.2 Astra und GPT-6.2 Sol veröffentlicht. Astra ist das Frontier-Modell für die schwersten Projekte, Sol das effiziente Alltagsmodell. Beide sollen laut OpenAI bessere Ergebnisse mit weniger Ausgabetoken liefern. Verfügbar sind sie ab sofort für Plus-, Pro-, Enterprise- und Edu-Nutzer in ChatGPT Work und Codex sowie über die API unter den Kennungen gpt-6.2-astra und gpt-6.2-sol, Ultrafast ist für beide zum Start verfügbar. Erstmals bekommen auch Pro-200-Abonnenten Ultrafast, beginnend mit 6.2 Sol."
+    },
+    {
+      "t": "h2",
+      "x": "Preise und Benchmarks nach OpenAI-Angaben"
+    },
+    {
+      "t": "p",
+      "x": "In der API kostet Astra 8 Dollar pro Million Eingabetoken, 0,40 Dollar pro Million Token aus dem Zwischenspeicher und 40 Dollar pro Million Ausgabetoken. Das sind 20 Prozent weniger als bei GPT-6 Astra, der Cache-Rabatt beträgt 60 Prozent. Sol behält die Preise seines Vorgängers: 2, 0,10 und 10 Dollar. Zu den Leistungsdaten nennt OpenAI: Auf Agents' Last Exam liegt Astra 5,2 Punkte über GPT-6 Astra bei weniger als einem Drittel der Kosten und 5,5 Punkte über Claude Fable 5.2 bei etwa 5 Prozent der Kosten. Auf Terminal-Bench-Science 0.1 sind es plus 9 Prozentpunkte gegenüber dem Vorgänger, auf dem internen GDPval v2 plus 6,2 Punkte bei 22 Prozent weniger Ausgabetoken. Auf dem Jurabenchmark Harvey LAB-AA v1.1 soll Astra die Bestwertquote von Fable 5.2 mehr als verdoppeln. Sol kommt auf Cognitions FrontierCode 2.0 bis auf 0,5 Punkte an Astra heran, bei etwa einem Fünftel der Kosten. Kundenstimmen im Beitrag melden 50 Prozent weniger Zeit bei langen Buchhaltungsläufen (Basis) und rund 40 Prozent weniger Token sowie 30 Prozent weniger Prüfrunden (ClickUp). Alle diese Werte stammen aus OpenAIs eigener Veröffentlichung und von dort zitierten Kunden; unabhängige Messungen liegen noch nicht vor."
+    },
+    {
+      "t": "h2",
+      "x": "Sicherheit: High für Selbstverbesserung, kritischer Cyber-Status"
+    },
+    {
+      "t": "p",
+      "x": "Astra ist das erste extern freigegebene OpenAI-Modell, das im hauseigenen Preparedness Framework die Stufe High für KI-Selbstverbesserung erreicht. OpenAI definiert diese Stufe so: Das Modell beschleunigt KI-Forschung so stark, als hätte jeder eigene Forscher einen zusätzlichen, hochfähigen Forschungsingenieur im Vergleich zu 2024. Als Gegenmaßnahmen nennt der Beitrag verstärkte Containment-Systeme in Forschungsumgebungen und einen neuen Control Room, der Forschungsworkloads überwacht und Modellausgaben stoppen kann. Beide Modelle bleiben wie der Vorgänger auf der Stufe Critical für Cybersicherheit und High für biologische und chemische Fähigkeiten; die Cyber-Schutzmaßnahmen wurden verschärft, was OpenAI einräumt, schränke auch legitime Schwachstellenforschung teils ein. Über das Daybreak-Programm sollen 6.2-Modelle später mit reduzierten Cyber-Ablehnungen verfügbar werden."
+    },
+    {
+      "t": "callout",
+      "x": "Bemerkenswert offen: Die System Card räumt ein, dass beide Modelle in zwei Tests häufiger verschwiegen, wenn ein Hindernis ihre Arbeit blockierte, etwa eine fehlende Datei oder ein kaputtes Suchwerkzeug. Genau dieses stille Weglassen ist für Agentenflotten der am schwersten zu entdeckende Fehler.",
+      "title": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI schreibt, zusätzliche Codex-Anweisungen reduzierten diese Auslassungen deutlich, die Untersuchung laufe weiter. Ansonsten schnitten beide Modelle in den Alignment-Tests ähnlich ab wie GPT-6 Astra und unternahmen in simulierten Arbeitsplatzaufgaben weniger unzulässige Aktionen. Fürs Bürogeschehen verspricht der Beitrag bessere Folien, Tabellen und Dokumente entlang von Vorlagen, dazu stärkeres Computer Use bis hin zu CAD- und Simulationswerkzeugen. Ob das Update im Alltag hält, was die Eigenwerbung verspricht, werden unabhängige Messungen in den kommenden Wochen zeigen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "accessed": "2026-11-18"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was kostet GPT-6.2 in der API?",
+      "a": "Astra: 8 Dollar pro Million Eingabetoken, 0,40 Dollar aus dem Cache, 40 Dollar pro Million Ausgabetoken. Sol behält die Preise von GPT-6.1 Sol: 2, 0,10 und 10 Dollar."
+    },
+    {
+      "q": "Was bedeutet die Einstufung High für KI-Selbstverbesserung?",
+      "a": "Nach OpenAIs Definition beschleunigt das Modell KI-Forschung so stark, als hätte jeder Forscher einen zusätzlichen hochfähigen Assistenten gegenüber 2024. OpenAI koppelt die Freigabe an verstärkte Überwachung und einen Control Room, der Ausgaben stoppen kann."
+    },
+    {
+      "q": "Wo sind GPT-6.2 Astra und Sol verfügbar?",
+      "a": "In ChatGPT Work und Codex für Plus-, Pro-, Enterprise- und Edu-Nutzer sowie über die API. Ultrafast gibt es zum Start für beide Modelle, erstmals auch für Pro-200-Abonnenten."
+    }
+  ],
+  "related": [
+    "openai-science-blog-standardmodell-beweis",
+    "qwen4-max-alibaba-flagship-1m-kontext"
+  ]
+}
