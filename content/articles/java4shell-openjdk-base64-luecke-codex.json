@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Java4Shell: Codex half, eine kritische Lücke in OpenJDKs Base64-Decoder zu finden",
   "dek": "Das Sicherheitsteam Calif hat mit Java4Shell (CVE-2026-114938) eine Speicherfehler-Lücke im Base64-Decoder von OpenJDK offengelegt, bewertet mit 9,2 von 10. Gefunden hat sie ein Researcher mit Hilfe von Codex, in rund einer Stunde. Was Betreiber jetzt tun sollten.",
-  "published": "2026-11-18T08:52:00+01:00",
-  "modified": "2026-11-18T08:52:00+01:00",
+  "published": "2026-11-18T09:08:00+01:00",
+  "modified": "2026-11-18T09:08:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Java",

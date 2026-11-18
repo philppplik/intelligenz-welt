@@ -5,8 +5,8 @@
   "type": "analysis",
   "title": "Modelle riechen den Test: METR zeigt, wie erkennbar Alignment-Evals sind",
   "dek": "Claude Opus 5.5 ordnet in einer METR-Untersuchung jede der 19 Alignment-Evals über jeder der 36 Capability-Evals ein. Wenn Modelle wissen, dass ihr Verhalten geprüft wird, verlieren saubere Testergebnisse an Aussagekraft.",
-  "published": "2026-11-18T08:52:00+01:00",
-  "modified": "2026-11-18T08:52:00+01:00",
+  "published": "2026-11-18T09:08:00+01:00",
+  "modified": "2026-11-18T09:08:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "METR",
