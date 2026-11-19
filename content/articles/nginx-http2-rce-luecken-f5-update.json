@@ -5,8 +5,8 @@
   "type": "news",
   "title": "Zwei kritische HTTP/2-Lücken in NGINX: F5 liefert Patches, Admins sollten sofort aktualisieren",
   "dek": "Zwei unauthentifiziert ausnutzbare Remote-Code-Execution-Lücken in NGINX sind gepatcht, beide von F5 mit CVSS 4.0 Score 9,2 (kritisch) bewertet. Eine steckt seit 2015 im Code.",
-  "published": "2026-11-19T09:10:00+01:00",
-  "modified": "2026-11-19T09:10:00+01:00",
+  "published": "2026-11-19T10:33:16+01:00",
+  "modified": "2026-11-19T10:33:16+01:00",
   "author": "philipp-paulik",
   "tags": [
     "NGINX",

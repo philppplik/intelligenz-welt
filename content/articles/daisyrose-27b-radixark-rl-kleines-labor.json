@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "DaisyRose-27B: Wie ein kleines Labor mit 1.200 Aufgaben ein 27B-Modell verdoppelt",
   "dek": "Das Startup RadixArk hat sein erstes Modell vorgestellt: DaisyRose-27B verdoppelt per Reinforcement Learning mit nur 1.200 kuratierten Aufgaben und 144 H200-GPUs die Terminal-Bench-4.1-Quote des Basismodells auf 12 Prozent.",
-  "published": "2026-11-19T09:25:00+01:00",
-  "modified": "2026-11-19T09:25:00+01:00",
+  "published": "2026-11-19T10:33:16+01:00",
+  "modified": "2026-11-19T10:33:16+01:00",
   "author": "philipp-paulik",
   "tags": [
     "RadixArk",
