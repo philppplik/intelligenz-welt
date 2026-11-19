@@ -1,0 +1,98 @@
+{
+  "slug": "daisyrose-27b-radixark-rl-kleines-labor",
+  "lang": "de",
+  "section": "trends",
+  "type": "explainer",
+  "title": "DaisyRose-27B: Wie ein kleines Labor mit 1.200 Aufgaben ein 27B-Modell verdoppelt",
+  "dek": "Das Startup RadixArk hat sein erstes Modell vorgestellt: DaisyRose-27B verdoppelt per Reinforcement Learning mit nur 1.200 kuratierten Aufgaben und 144 H200-GPUs die Terminal-Bench-4.1-Quote des Basismodells auf 12 Prozent.",
+  "published": "2026-11-19T09:25:00+01:00",
+  "modified": "2026-11-19T09:25:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "RadixArk",
+    "DaisyRose-27B",
+    "Open Weights",
+    "Reinforcement Learning",
+    "Post-Training",
+    "Qwen"
+  ],
+  "key_takeaways": [
+    "DaisyRose-27B baut auf Qwen3.8-27B und hebt die Terminal-Bench-4.1-Quote (pass@1) von 5,6 auf 12,0 Prozent, mit Zuwächsen auf allen sieben gemeldeten Benchmarks.",
+    "Das Rezept: 1.200 kuratierte Langzeitaufgaben, die gezielt Fehler des Basismodells trainieren, 18 Tage auf 144 H200-GPUs, insgesamt 63.000 GPU-Stunden.",
+    "Das quelloffene RL-Framework Miles arbeitet vollständig asynchron und erreichte laut RadixArk 37 Prozent Rechenauslastung gegenüber 16 Prozent beim offenen Vergleichstrainer, also 57 Prozent weniger GPU-Zeit.",
+    "Checkpoints in BF16, FP8 und NVFP4 stehen auf Hugging Face; alle Zahlen stammen vom Anbieter und sind nicht unabhängig geprüft."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine kleine leuchtende Gänseblümchen-Glasplastik neben einer Rose, beide wachsen aus einem Schaltkreis-Sockel, im Hintergrund ein dunkles GPU-Cluster.",
+    "caption": "DaisyRose-27B: ein kleines Team, ein kleiner Datensatz, ein spürbarer Sprung über dem Basismodell.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Das junge Labor RadixArk hat am 18. November sein erstes Modell veröffentlicht: DaisyRose-27B, aufgebaut auf Qwen3.8-27B und per Reinforcement Learning mit dem eigenen quelloffenen Framework Miles nachtrainiert. Die Kernbotschaft richtet sich an kleine Teams: Statt riesiger Datensätze kamen 1.200 kuratierte Langzeitaufgaben zum Einsatz, trainiert über 18 Tage auf 144 H200-GPUs, insgesamt 63.000 GPU-Stunden. Das Ergebnis hebt die Terminal-Bench-4.1-Quote (pass@1) von 5,6 auf 12,0 Prozent und liegt auf allen sieben gemeldeten Benchmarks über dem Basismodell, darunter SWE-Bench Pro v2 mit 94,7 und GPQA Diamond mit 90,7. Alle Zahlen sind Herstellerangaben. Zum Vergleich: Googles gestern vorgestelltes Gemini 4 Neon erreicht auf demselben Benchmark 65,2 Prozent; der Abstand zur Frontier bleibt groß. Interessant ist nicht der Spitzenwert, sondern die Effizienz des Rezepts."
+    },
+    {
+      "t": "h2",
+      "x": "Daten, die auf Fehler zielen"
+    },
+    {
+      "t": "p",
+      "x": "Die Aufgaben entstanden zusammen mit Eigent AI aus einem größeren Pool. Jedes der 1.200 Trainingsbeispiele zielt auf einen beobachteten Fehler des Basismodells und wurde so lange nachjustiert, bis seine Lösungsquote in einem lernbaren Bereich lag. Jede Aufgabe kettet mehrere Probleme: Bis zu 1,5 Stunden Sandbox-Zeit, über 100 Werkzeugaufrufe und mehr als 256.000 Ausgabetoken pro Versuch. Gegen Reward Hacking wurde jede Aufgabe samt Modellversuchen von Hand geprüft; austricksbare oder fehlerhafte Aufgaben flogen raus."
+    },
+    {
+      "t": "h2",
+      "x": "Infrastruktur als Hebel"
+    },
+    {
+      "t": "p",
+      "x": "Miles trainiert vollständig asynchron: 128 GPUs führen die Agentenaufgaben aus, 16 weitere lernen gleichzeitig aus den Trajektorien, keiner wartet auf den anderen. Nach Angaben von RadixArk flossen so 37 Prozent der Rechenspitze in nützliche Trainingsarbeit (MFU), gegenüber 16 Prozent beim Megatron-basierten offenen Vergleichstrainer, was die GPU-Zeit für dasselbe Training um 57 Prozent senkt; Ende zu Ende lief der Lauf doppelt so schnell, rund 16.800 statt 8.300 Token pro Sekunde. Bei MoE-Modellen sei der Vorsprung noch größer. Die Sandbox-Infrastruktur, aufgebaut auf dem offenen Projekt AgentENV, lieferte zwischen Mitte September und Mitte November rund 944.000 Sandboxes, zeitweise 1.566 parallel, mit zuletzt 99,95 Prozent Erfolgsquote und laut Anbieter etwa 80 Prozent niedrigeren Kosten als gängige Cloud-Sandbox-Anbieter."
+    },
+    {
+      "t": "h2",
+      "x": "Was das für die Szene bedeutet"
+    },
+    {
+      "t": "p",
+      "x": "Die Checkpoints in BF16, FP8 und NVFP4 stehen auf Hugging Face, Miles ist quelloffen, und RadixArk beschreibt sein Vorgehen ungewöhnlich offen, bis zur Anzahl der Sandbox-Upgrades im laufenden Betrieb. Unabhängig nachgemessen hat das bisher niemand. Aber das Muster ist aussagekräftig: Wenige hundert gut konstruierte, auf die Fehler des Basismodells zugeschnittene Langzeitaufgaben plus effizientes asynchrones RL können ein offenes 27B-Modell auf Agentenarbeit spürbar verschieben. Für Spezialmodelle im eigenen Unternehmen ist genau das die relevante Hausaufgabe: Datengüte und Infrastruktur vor Datenvolumen."
+    },
+    {
+      "t": "callout",
+      "x": "Wer ein eigenes Modell nachtrainieren will, findet hier eine nachvollziehbare Blaupause: Fehler des Basismodells inventarisieren, Aufgaben dagegen bauen, Reward Hacking manuell prüfen, asynchron trainieren. Die Effizienzangaben sollte man vor eigenen Schlüssen allerdings selbst nachmessen.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "publisher": "RadixArk Blog",
+      "url": "https://www.radixark.com/blog/daisyrose-27b",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "RadixArk/DaisyRose-27B",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/RadixArk/DaisyRose-27B",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist DaisyRose-27B?",
+      "a": "Das erste Modell des Labors RadixArk, aufgebaut auf Qwen3.8-27B und per Reinforcement Learning mit 1.200 kuratierten Langzeitaufgaben nachtrainiert. Es hebt die Terminal-Bench-4.1-Quote von 5,6 auf 12,0 Prozent."
+    },
+    {
+      "q": "Was kostet so ein Training?",
+      "a": "RadixArk gibt 18 Tage auf 144 H200-GPUs an, insgesamt 63.000 GPU-Stunden. Das eigene asynchrone Framework Miles soll dabei 57 Prozent weniger GPU-Zeit brauchen als ein offener Vergleichstrainer."
+    },
+    {
+      "q": "Ist DaisyRose-27B frei verfügbar?",
+      "a": "Ja, Checkpoints in BF16, FP8 und NVFP4 stehen auf Hugging Face, und das RL-Framework Miles ist quelloffen. Die Benchmarkzahlen sind allerdings bislang reine Herstellerangaben."
+    }
+  ],
+  "related": [
+    "meituan-longcat-2-5-open-weights-agenten",
+    "qwen4-max-alibaba-flagship-1m-kontext"
+  ]
+}

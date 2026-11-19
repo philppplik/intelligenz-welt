@@ -1,0 +1,90 @@
+{
+  "slug": "anthropic-ipo-rekord-notierung-ant-nasdaq",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "Anthropic legt größten Börsengang aller Zeiten fest: 83 Dollar je Aktie, Nasdaq-Start für heute erwartet",
+  "dek": "Anthropic hat seine Erstemission auf 83 Dollar je Aktie festgelegt und auf 980 Millionen Aktien aufgestockt. Der Handel an der Nasdaq unter dem Kürzel ANT beginnt heute. Laut AP ist es der größte Börsengang der Geschichte.",
+  "published": "2026-11-19T09:00:00+01:00",
+  "modified": "2026-11-19T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Anthropic",
+    "Börsengang",
+    "IPO",
+    "Nasdaq",
+    "Claude",
+    "Finanzierung"
+  ],
+  "key_takeaways": [
+    "Anthropic hat den Ausgabepreis auf 83 Dollar je Aktie festgelegt, oberhalb der zuvor genannten Spanne von 70 bis 78 Dollar.",
+    "Die Emission wurde auf 980 Millionen Aktien aufgestockt; das ergibt rechnerisch ein Bruttovolumen von rund 81,3 Milliarden Dollar.",
+    "Der Handel an der Nasdaq unter dem Kürzel ANT beginnt am 19. November, der Vollzug ist für den 20. November geplant.",
+    "Die Associated Press bezeichnet die Emission als größten Börsengang aller Zeiten bei einer Bewertung von rund 1,5 Billionen Dollar."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine große leuchtende Bronzeglocke über einer gläsernen Handelsplattform, umgeben von aufsteigenden Lichtspuren.",
+    "caption": "Startglocke für ANT: Anthropic geht als wertvollstes KI-Unternehmen an die Börse.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat den Preis seines Börsengangs festgelegt: 980 Millionen Stammaktien der Klasse A gehen für je 83 US-Dollar an Investoren. Das bringt dem Unternehmen und zwei Großaktionären zusammen 81,34 Milliarden Dollar ein und übertrifft laut Associated Press selbst den bisherigen Rekord-Börsengang von Saudi Aramco. Der Handel an der Nasdaq Global Select Market unter dem Kürzel ANT soll am heutigen 19. November beginnen; einen ersten gehandelten Kurs gibt es zum Redaktionsschluss noch nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Wer verkauft wie viel"
+    },
+    {
+      "t": "p",
+      "x": "Von den 980 Millionen Aktien stammen 956.351.354 von Anthropic selbst und 23.648.646 von verkaufenden Aktionären; an den Erlösen aus deren Verkauf ist Anthropic nicht beteiligt. Auf das Unternehmen entfallen damit rechnerisch etwa 79,4 Milliarden Dollar des Bruttovolumens. Zusätzlich haben die Konsortialbanken eine 30-tägige Option auf bis zu 147 Millionen weitere Aktien. Die Transaktion wird von Goldman Sachs und Morgan Stanley angeführt; die Registrierungserklärung hat die US-Börsenaufsicht SEC am 18. November für wirksam erklärt. Das Angebot erfolgt ausschließlich über den Prospekt."
+    },
+    {
+      "t": "h2",
+      "x": "Warum der Zeitpunkt zählt"
+    },
+    {
+      "t": "p",
+      "x": "Mit dem Handelsstart wird aus Anthropic ein quartalsweise berichtendes börsennotiertes Unternehmen: Preissetzungsmacht, Rechenkapazitätsausgaben und Sicherheitszusagen bekommen damit geprüfte Zahlen und die Haftung nach US-Wertpapierrecht angehängt. Das dürfte auch den Druck auf OpenAI erhöhen, einen eigenen Zeitplan für den Kapitalmarkt vorzulegen. Die Nachfrage war offenbar groß genug, dass Preis und Volumen über den ursprünglichen Plänen lagen, obwohl der Markt zuletzt über eine mögliche Überbewertung von KI-Unternehmen diskutierte."
+    },
+    {
+      "t": "callout",
+      "x": "Für die Branche ist weniger der Preis als die Struktur interessant: Ein Frontier-Labor stellt sich der dauerhaften öffentlichen Rechenschaftspflicht. Sicherheitsversprechen, die bislang Selbstauskünfte waren, werden zu Angaben mit Prospekthaftung.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Anthropic prices initial public offering",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Anthropic prices its IPO at $83 per share in biggest IPO on record",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/anthropic-ipo-pricing-70b660ddf900d90bbf484ecdf1fb441c",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wann startet der Handel mit Anthropic-Aktien?",
+      "a": "Die Aktien der Klasse A sollen am 19. November 2026 an der Nasdaq Global Select Market unter dem Kürzel ANT in den Handel starten. Der Vollzug der Emission ist für den 20. November geplant."
+    },
+    {
+      "q": "Wie viel Geld nimmt Anthropic mit dem Börsengang ein?",
+      "a": "Die Emission umfasst 980 Millionen Aktien zu je 83 Dollar, also rechnerisch rund 81,3 Milliarden Dollar Bruttovolumen. Davon entfallen etwa 79,4 Milliarden Dollar auf Anthropic selbst; der Rest gehört verkaufenden Aktionären."
+    },
+    {
+      "q": "Warum gilt das als größter Börsengang aller Zeiten?",
+      "a": "Die Associated Press bezeichnet die Emission als größte Erstemission der Geschichte und beziffert die voll verwässerte Bewertung von Anthropic auf rund 1,5 Billionen Dollar. Zuvor hatte Anthropic die Emission auf 980 Millionen Aktien aufgestockt und den Preis oberhalb der ursprünglichen Spanne festgelegt."
+    }
+  ],
+  "related": [
+    "amd-world-labs-uebernahme-fei-fei-li-chief-scientist",
+    "claude-code-mode-javascript-werkzeugaufrufe"
+  ]
+}

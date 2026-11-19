@@ -1,0 +1,84 @@
+{
+  "slug": "genie-4-project-genie-rollout-weltmodell",
+  "lang": "de",
+  "section": "tools",
+  "type": "news",
+  "title": "Genie 4 rollt aus: Googles Weltmodell lässt sich jetzt mitten in der Session umprompten",
+  "dek": "Google DeepMind bringt Genie 4 für berechtigte Ultra-Abonnenten in Project Genie: Welten lassen sich live per Texteingabe umbauen, erstmals mit nativem Echtzeit-Ton. Dazu kommen ein Agent und eine Galerie zum Remixen.",
+  "published": "2026-11-19T09:20:00+01:00",
+  "modified": "2026-11-19T09:20:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Google DeepMind",
+    "Genie 4",
+    "Weltmodell",
+    "Project Genie",
+    "Ultra",
+    "SynthID"
+  ],
+  "key_takeaways": [
+    "Genie 4 ist ab sofort für berechtigte Google-AI-Ultra-Abonnenten in Project Genie verfügbar; Pro-Mitglieder können sich auf eine Warteliste setzen.",
+    "Neu: Eingaben mitten in der laufenden Session verändern die Welt in Echtzeit, Wetter, Figuren, Ereignisse, erstmals mit nativem Echtzeit-Ton samt Umgebungsgeräuschen und Dialogen.",
+    "Ein Project-Genie-Agent baut aus einer Beschreibung komplette interaktive Welten samt Soundtrack, eine Gemeinschaftsgalerie erlaubt Erkunden und Remixen.",
+    "Genie 3 bleibt im Modellwähler und bekommt Sitzungen bis 3 Minuten, verkettete Welten und 360-Grad-Panorama-Anker."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine schwebende gläserne Kugel, in deren Innerem eine Miniaturlandschaft leuchtet, während Lichtwellen ihre Oberfläche neu formen.",
+    "caption": "Prompten, während man darin steht: Genie 4 lässt sich die Welt live umbauen.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google DeepMind rollt am 18. November eine neue Version von Project Genie aus, dem experimentellen Werkzeug zum Erzeugen und Begehen interaktiver Welten. Im Zentrum steht der erstmals breitere Zugang zu Genie 4, laut Google dem bislang realistischsten und interaktivsten Weltmodell des Unternehmens. Berechtigte Google-AI-Ultra-Abonnenten können ab sofort loslegen, Pro-Mitglieder können sich auf derselben Seite in eine Warteliste eintragen. Die wichtigste Neuerung: Wer in seiner Welt unterwegs ist, kann mitten in der Session einen neuen Prompt tippen und die Umgebung in Echtzeit verändern, etwa das Wetter drehen, eine Figur dazustellen oder die Handlung umleiten. Erstmals begleitet nativer Echtzeit-Ton das Geschehen, von Umgebungsgeräuschen bis zu Dialogen der Figuren."
+    },
+    {
+      "t": "h2",
+      "x": "Agent und Galerie"
+    },
+    {
+      "t": "p",
+      "x": "Der neue Project-Genie-Agent macht den Bau einer Welt zu einem Gespräch: Man beschreibt die Idee, der Agent orchestriert Googles multimodale Modelle für die ersten Bilder und einen passenden Soundtrack; während des Erkundens kann Gemini den Bildschirminhalt lesen, Vorschläge für die nächsten Schritte einblenden oder Ereignisse auslösen. Fertige Welten lassen sich in einer Gemeinschaftsgalerie veröffentlichen, dort erkunden und remixen. Google hat mit Kreativen wie BLVCKL!GHT und dem Filmemacher Anand Gandhi Beispielwelten gebaut. Genie 3 bleibt parallel im Modellwähler und bekommt ein eigenes Upgrade: Sitzungen bis zu 3 Minuten statt bisher 60 Sekunden, verkettbare Welten für längere Strecken, das Erzeugen aus 360-Grad-Panoramen und promptbare Ereignisse in Echtzeit."
+    },
+    {
+      "t": "h2",
+      "x": "Schutzmaßnahmen und Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Alles in Project Genie erzeugte Video- und Audiomaterial trägt ein SynthID-Wasserzeichen, und alle Ein- und Ausgaben laufen laut Google durch Sicherheitsprüfungen. Das Unternehmen nennt zugleich offene Baustellen: Kameraträgheit, komplexe physikalische Interaktionen, die Präzision des Echtzeittons und die dauerhafte Beständigkeit von Szenen. Genie 3 und 4 bleiben damit Forschungsprototypen, kein fertiges Produkt. Richtung ist dennoch klar: Weltmodelle bekommen dieselbe Produktform, die Bildmodelle zu Plattformen gemacht hat, mit Editor, Ton und Teilen, und die dabei entstehenden Interaktionsdaten dürften auch für Agenten- und Robotiktraining relevant werden."
+    },
+    {
+      "t": "callout",
+      "x": "Wer Ultra abonniert hat, sollte sich die Live-Bearbeitung ansehen: Das Umprompten in der laufenden Session ist der eigentliche Sprung, nicht die Optik. Für alle anderen bleibt die Warteliste die erste Station.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Project Genie update featuring Genie 4",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wer kann Genie 4 ab sofort nutzen?",
+      "a": "Berechtigte Google-AI-Ultra-Abonnenten in Project Genie. Nutzer mit Google AI Pro können sich auf derselben Seite in eine Warteliste eintragen."
+    },
+    {
+      "q": "Was ist neu an Genie 4?",
+      "a": "Man kann die Welt mitten in der laufenden Session per Texteingabe verändern, etwa Wetter, Figuren oder Ereignisse, und Genie 4 erzeugt erstmals nativen Echtzeit-Ton, von Umgebungsgeräuschen bis zu Dialogen."
+    },
+    {
+      "q": "Was passiert mit Genie 3?",
+      "a": "Genie 3 bleibt im Modellwähler von Project Genie und bekommt Sitzungen bis 3 Minuten, verkettbare Welten, Erzeugung aus 360-Grad-Panoramen und promptbare Ereignisse in Echtzeit."
+    }
+  ],
+  "related": [
+    "gemini-4-hydrogen-alltagsmodell-agenten",
+    "runway-praxis-1-open-weights-robotik"
+  ]
+}

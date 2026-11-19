@@ -1,0 +1,92 @@
+{
+  "slug": "gemini-4-neon-google-mittelklasse-coding-spitze",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Gemini 4 Neon: Googles Mittelklasse-Modell kostet 3 Dollar und führt den Coding-Index an",
+  "dek": "Google schließt die Lücke zwischen Carbon und Hydrogen: Gemini 4 Neon kostet 3 beziehungsweise 15 Dollar pro Million Token, liegt auf Platz 3 des Artificial-Analysis-Index und laut Google auf Platz 1 des Coding-Agent-Index.",
+  "published": "2026-11-19T09:05:00+01:00",
+  "modified": "2026-11-19T09:05:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Google",
+    "Gemini 4 Neon",
+    "Modellrelease",
+    "Preise",
+    "Coding-Agenten",
+    "Benchmarks"
+  ],
+  "key_takeaways": [
+    "Gemini 4 Neon positioniert sich zwischen Carbon (höchste Leistung) und Hydrogen (Alltagstempo) und kostet 3 Dollar pro Million Eingabe- und 15 Dollar pro Million Ausgabetoken, bei 1 Million Token Kontext.",
+    "Auf dem Artificial Analysis Intelligence Index erreicht Neon 61 Punkte auf der höchsten Denkstufe (Platz 3); auf dem Coding Agent Index liegt es laut Google mit 58,6 auf Platz 1.",
+    "Laut Google kostet eine Aufgabe mit Neon auf der Standardstufe 32 Prozent weniger als mit Carbon und rund 50 bis 80 Prozent weniger als mit konkurrierenden Frontier-Modellen.",
+    "Verfügbar ab sofort in der Gemini-API, in Gemini for Business, in Antigravity für zahlende Pro- und Ultra-Abonnenten und in der Gemini-App."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine leuchtende Neonröhre in Orange, die zwischen einer schweren dunklen und einer kleinen hellen Glasröhre balanciert.",
+    "caption": "Mittig in der Gemini-4-Familie: Neon soll Frontier-Niveau zum Mittelklasse-Preis liefern.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google DeepMind hat am 18. November Gemini 4 Neon vorgestellt, die Mittelklasse der Gemini-4-Familie: Carbon bleibt das Modell für die härtesten Langläufe, Hydrogen der schnelle Alltagsläufer, Neon soll dazwischen Frontier-Niveau zu deutlich niedrigeren Kosten liefern. Der Preis liegt bei 3 Dollar pro Million Eingabetoken, 0,15 Dollar bei Cache-Treffern (95 Prozent Rabatt) und 15 Dollar pro Million Ausgabetoken, bei einem Kontextfenster von einer Million Token und vier Denkstufen. Alle folgenden Leistungs- und Kostenangaben stammen von Google."
+    },
+    {
+      "t": "h2",
+      "x": "Platz 3 insgesamt, Platz 1 beim Coden"
+    },
+    {
+      "t": "p",
+      "x": "Auf dem Artificial Analysis Intelligence Index erreicht Neon 61 Punkte auf der höchsten Denkstufe xhigh, Rang 3 hinter größeren, langsameren Modellen. Auf dem Coding Agent Index desselben Anbieters liegt es mit 58,6 auf Rang 1; dazu kommen 65,2 Prozent auf Terminal-Bench 4.1 und 46,2 Prozent auf FrontierCode 2.0 auf der Standardstufe. Auf SWE-sweep erreicht Neon 12,8 Prozent im Mini-SWE-Harness und 39,0 Prozent, nach Google derzeitiger Bestwert, im eigenen Antigravity-Harness. Bei Wissensarbeit steht der Vals-Index auf Rang 2 (70,9 Prozent), Legal Research Bench und Tax Agent Bench führt Neon an, ebenso Zapier AutomationBench (56,3 Prozent) und Vending-Bench 2. In der Wissenschaft meldet Google Bestwerte der Klasse auf Terminal-Bench Science (70,5 Prozent), RiemannBench (84,0 Prozent) und HLE-Diamond (71,3 Prozent). Auf Arenas neuem Agent Arena Index startet Neon mit 1336 Punkten auf Rang 2."
+    },
+    {
+      "t": "h2",
+      "x": "Die Kostenrechnung"
+    },
+    {
+      "t": "p",
+      "x": "Googles zentraler Verkaufspunkt sind die Kosten pro Aufgabe statt pro Token: Auf der Standardstufe high soll eine Aufgabe mit Neon 32 Prozent weniger kosten als mit Carbon und rund 50 bis 80 Prozent weniger als mit konkurrierenden Frontier-Modellen; auf xhigh bleibe Neon noch mindestens 36 Prozent günstiger als Wettbewerber auf deren Höchststufe. Damit zielt Neon genau auf die Preisschicht, in der produktive Agentenschleifen laufen, und auf den Vergleich mit Opus 5.5 und GPT-6.2 Astra Sol. In Antigravity kann Neon zudem als Orchestrator über parallele Hydrogen-Subagenten arbeiten, etwa mit dem Befehl /swarm."
+    },
+    {
+      "t": "h2",
+      "x": "Sicherheitszahlen und Cyber-Variante"
+    },
+    {
+      "t": "p",
+      "x": "Für den internen Coding-Betrugstest meldet Google 0,0 Prozent Schummeln auf Terminal-Bench 4.0 und eine Abkürzungsrate von 2,45 Prozent, den niedrigsten Wert eines Gemini-4-Modells; die Rate fehlausgerichteter Aktionen liegt bei 0,09 Prozent, der Ehrlichkeitstest bei 99,2 Prozent. Auf Gray Swans Benchmark für indirekte Prompt-Injektion soll Neon auf höchster Stufe mit Schutzmechanismen jeden Angriff abgewehrt haben. Eine Variante Neon for Cyber mit Bestwerten auf SEC-bench Pro (90,5 Prozent) und WebExploitBench v1.2 (51,26 Prozent) geht in den kommenden Tagen an berechtigte Verteidiger im Fairwind-Programm. Verfügbar ist Neon ab sofort in der Gemini-API über AI Studio und Android Studio, in Gemini for Business, in Antigravity für zahlende Pro- und Ultra-Abonnenten und in der Gemini-App für Pro und Ultra."
+    },
+    {
+      "t": "callout",
+      "x": "Das eigentliche Rennen läuft nicht mehr nur an der Spitze, sondern in der Klasse schnell und fast Frontier. Wer Agenten im Dauerbetrieb fährt, sollte Neon gegen Opus 5.5 und GPT-6.2 Sol auf den eigenen Aufgaben messen, nicht auf Googles Tabellen vertrauen.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Gemini 4 Neon",
+      "publisher": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was kostet Gemini 4 Neon?",
+      "a": "3 Dollar pro Million Eingabetoken, 0,15 Dollar bei Cache-Treffern und 15 Dollar pro Million Ausgabetoken, bei einem Kontextfenster von einer Million Token. Laut Google kostet eine Aufgabe damit 32 Prozent weniger als mit Carbon."
+    },
+    {
+      "q": "Wie ordnet sich Gemini 4 Neon leistungsmäßig ein?",
+      "a": "Nach Googles Angaben Rang 3 auf dem Artificial Analysis Intelligence Index und Rang 1 auf dem Coding Agent Index, dazu Spitzenwerte auf Legal Research Bench, Tax Agent Bench und mehreren Wissenschaftsbenchmarks."
+    },
+    {
+      "q": "Wo kann ich Gemini 4 Neon nutzen?",
+      "a": "In der Gemini-API über Google AI Studio und Android Studio, in Gemini for Business, in Google Antigravity für zahlende Pro- und Ultra-Abonnenten sowie in der Gemini-App für Pro- und Ultra-Nutzer."
+    }
+  ],
+  "related": [
+    "gemini-4-hydrogen-alltagsmodell-agenten",
+    "qwen4-max-alibaba-flagship-1m-kontext"
+  ]
+}

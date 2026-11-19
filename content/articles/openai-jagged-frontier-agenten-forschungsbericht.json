@@ -1,0 +1,91 @@
+{
+  "slug": "openai-jagged-frontier-agenten-forschungsbericht",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "OpenAI misst sich selbst: Agenten erledigen fast die Hälfte der Stundenaufgaben, aber nicht überall",
+  "dek": "In seinem zweiten Bericht zur Forschungsbeschleunigung legt OpenAI interne Zahlen vor: Agenten lösen 46 Prozent der Zwei-bis-Vier-Stunden-Aufgaben allein, die Nutzung explodiert, und OpenAI fordert Pflichtberichte zu Indikatoren rekursiver Selbstverbesserung.",
+  "published": "2026-11-19T09:15:00+01:00",
+  "modified": "2026-11-19T09:15:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenAI",
+    "Forschungsbericht",
+    "Coding-Agenten",
+    "Rekursive Selbstverbesserung",
+    "Produktivität"
+  ],
+  "key_takeaways": [
+    "Agenten schlossen im Oktober 46 Prozent der delegierten Zwei-bis-Vier-Stunden-Forschungsaufgaben ohne Eingriff ab, im März waren es 23 Prozent; bei Vier-bis-Acht-Stunden-Aufgaben stieg die Quote von 13 auf 35 Prozent.",
+    "Die Erfolge sind stark ungleich verteilt: 79 Prozent beim Überwachen von Trainingsläufen, aber nur 25 Prozent beim Schreiben von Inferenz- und Serving-Code.",
+    "Die Nutzung wächst rasant: Der Median-Forscher verbrauchte im Oktober agentische Nutzung im Gegenwert von 2.400 Dollar pro Tag, das 90. Perzentil 23.000 Dollar.",
+    "OpenAI fordert, dass Labore verpflichtend Indikatoren rekursiver Selbstverbesserung erfassen und veröffentlichen sollten, betont aber zugleich, selbst keine vollständige RSI anzustreben."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Eine gewundene Bergkette aus Glas, deren Gipfel stark unterschiedlich hoch aus einem Nebelmeer ragen.",
+    "caption": "Zackig statt gleichmäßig: OpenAIs Bild der eigenen Forschungsbeschleunigung heißt jagged frontier.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI hat am 18. November seinen zweiten Bericht zur Forschungsbeschleunigung veröffentlicht, die bislang detailliertesten öffentlichen Zahlen dazu, wie sehr ein Frontier-Labor seine eigenen Modelle schon zur Entwicklung der nächsten nutzt. Die Kernbotschaft ist ambivalent: Die Nutzung von Coding-Agenten wächst weiter exponentiell und die Erfolgsraten steigen, aber sie steigen sehr ungleich. Den Menschen im Kreis hält OpenAI weiter für zentral. Zugleich erneuert das Unternehmen seine Forderung, KI-Labore sollten verpflichtend Indikatoren rekursiver Selbstverbesserung (RSI) erfassen und veröffentlichen, und betont ausdrücklich, die eigene Berichterstattung sei keine Absichtserklärung, vollständige RSI anzustreben."
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen: steil, aber zackig"
+    },
+    {
+      "t": "p",
+      "x": "Von März bis Oktober stieg die geschätzte Erfolgsquote ohne menschlichen Eingriff bei Aufgaben von zwei bis vier Stunden von 23 auf 46 Prozent, bei vier bis acht Stunden von 13 auf 35 Prozent. Nach Aufgabentyp klaffen die Werte auseinander: 79 Prozent beim Überwachen von Trainingsläufen und 72 Prozent bei technischen Fragen, aber nur 29 Prozent beim Bau von Eval- und Agentenumgebungen und 25 Prozent bei Inferenz- und Serving-Code. Genau diese schwachen Kategorien könnten laut Bericht zum Flaschenhals werden. Die Nutzungsintensität stieg derweil weiter: Der Median-Forscher verbrauchte im Oktober agentische Nutzung im Gegenwert von 2.400 Dollar pro Tag (plus 62 Prozent zum September), das 90. Perzentil 23.000 Dollar (plus 105 Prozent). In Agentenarbeitstagen gerechnet stieg die Nutzung von 0,5 auf 5,7 Tage pro Forscher und Tag; mehr als zwei Drittel der Forscher hatten tägliche Spitzen mit mindestens vier parallelen Agenten."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Forscher selbst sagen"
+    },
+    {
+      "t": "p",
+      "x": "In einer Befragung von 101 Forschern gaben die Befragten im Median an, sie würden 30 Prozent der Team-Rechenleistung oder 40 Prozent der Personalstärke eintauschen, um drei Monate Zugang zu Frontier-Coding-Agenten zu behalten. 27 von 28 Befragten zogen das aktuelle interne Modell der Kombination aus einem menschlichen erfahrenen Forschungsingenieur und einem Modell von 2024 vor. Beim Forschungsgeschmack bleibt der Mensch vorn: Alle Schlüsselideen zu GPT-6 Astra stammten den Befragten zufolge von Menschen; bei GPT-6.2 Astra beschrieben Pretraining-Forscher erstmals Ideen, die im Dialog mit Codex entstanden. In Interviews klagen die Forscher über mangelnden Ideengeschmack der Modelle, AI-Slop-Pull-Requests und ungültige Analyseannahmen; enge menschliche Begleitung bleibe nötig. Die dokumentierten Arbeitswochen für Safety und Alignment stiegen von Januar bis September um 77 Prozent, mit einem deutlichen Knick nach dem Hugging-Face-Vorfall im Juli."
+    },
+    {
+      "t": "h2",
+      "x": "Der methodische Haken und die politische Pointe"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI weist selbst auf Schwächen hin: Die Methodik wurde gegenüber dem September-Bericht geändert, und die Zusammensetzung der delegierten Aufgaben kann sich verschoben haben, sodass die gestiegenen Quoten Fähigkeitsgewinn und verändertes Delegationsverhalten mischen. Als Outputmaß führt der Bericht einen internen OpenAI-ECI-Index ein, dessen Frontier seit August 2025 um 16,4 Punkte pro Jahr steigt, gegenüber 14 Punkten im Vergleichsmaßstab von Epoch; auch hier räumt OpenAI Verzerrungen durch die Benchmarkmischung ein. Am Ende steht die politische Forderung: Labore sollten RSI-Indikatoren pflichtgemäß erfassen und veröffentlichen, damit eine öffentliche Debatte über Fähigkeiten, Risiken und Schutzmaßnahmen auf Daten aufsetzen kann. Verweise auf vergleichbare Berichte von Anthropic, METR und Google DeepMind legen nahe, dass daraus eine Branchennorm werden soll."
+    },
+    {
+      "t": "callout",
+      "x": "Lesen sollte man den Bericht als Selbstauskunft mit PR-Funktion, aber als ungewöhnlich detaillierte. Die ehrlichste Zeile steckt im Detail: In den Kategorien, in denen Agenten schwach sind, entstehen die Engpässe der Forschungsbeschleunigung, und genau dort sitzt heute noch der Mensch.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Research acceleration: The jagged frontier",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel Forschungsarbeit erledigen OpenAIs Agenten schon allein?",
+      "a": "Im Oktober 46 Prozent der delegierten Aufgaben mit einem geschätzten menschlichen Aufwand von zwei bis vier Stunden, ohne menschlichen Eingriff. Die Quote variiert stark nach Aufgabentyp: 79 Prozent beim Überwachen von Trainingsläufen, aber nur 25 Prozent bei Inferenz- und Serving-Code."
+    },
+    {
+      "q": "Was fordert OpenAI in dem Bericht?",
+      "a": "Dass KI-Labore verpflichtend Indikatoren rekursiver Selbstverbesserung erfassen und öffentlich berichten. OpenAI betont, das sei keine Absichtserklärung, selbst vollständige rekursive Selbstverbesserung anzustreben."
+    },
+    {
+      "q": "Wie belastbar sind die Zahlen?",
+      "a": "Es sind interne Messungen OpenAIs mit geänderter Methodik; die Zusammensetzung der delegierten Aufgaben kann sich verschoben haben. Auch die Selbstberichte der Forscher und der neue interne Fähigkeitsindex OECI haben bekannte Verzerrungen, die OpenAI teils selbst benennt."
+    }
+  ],
+  "related": [
+    "openai-science-blog-standardmodell-beweis",
+    "coding-agenten-verhalten-143000-trajectories-studie"
+  ]
+}

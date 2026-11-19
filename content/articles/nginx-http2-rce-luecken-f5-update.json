@@ -1,0 +1,113 @@
+{
+  "slug": "nginx-http2-rce-luecken-f5-update",
+  "lang": "de",
+  "section": "praxis",
+  "type": "news",
+  "title": "Zwei kritische HTTP/2-Lücken in NGINX: F5 liefert Patches, Admins sollten sofort aktualisieren",
+  "dek": "Zwei unauthentifiziert ausnutzbare Remote-Code-Execution-Lücken in NGINX sind gepatcht, beide von F5 mit CVSS 4.0 Score 9,2 (kritisch) bewertet. Eine steckt seit 2015 im Code.",
+  "published": "2026-11-19T09:10:00+01:00",
+  "modified": "2026-11-19T09:10:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "NGINX",
+    "Sicherheitslücke",
+    "HTTP/2",
+    "RCE",
+    "F5",
+    "Patch"
+  ],
+  "key_takeaways": [
+    "F5 hat NGINX OSS 1.30.7 (stable) und 1.31.9 (mainline) veröffentlicht und schließt gleich zehn Schwachstellen.",
+    "CVE-2026-123007: Unauthentifiziert ausnutzbare Remote-Code-Execution in HTTP/2 über überlange Keepalive-Antwortheader, bereits in Standardkonfigurationen mit aktivem HTTP/2 ausnutzbar, seit 2015 im Code. Von F5 mit CVSS 4.0 Score 9,2 (kritisch; CVSS 3.1: 8,1 hoch) bewertet.",
+    "CVE-2026-123633: Unauthentifiziert ausnutzbare Remote-Code-Execution in HTTP/2 über fehlerhafte Validierung von Response-Body-Größen, ebenfalls von F5 mit CVSS 4.0 Score 9,2 bewertet. Zusätzlich CVE-2026-121810 (CVSS 4.0 Score 9,2, DoS in HTTP/3).",
+    "F5 nennt in seinen Advisories ausdrücklich keine Mitigation. Der Security-Anbieter Wiz empfiehlt unabhängig davon, HTTP/2 vorübergehend abzuschalten, falls ein Update nicht sofort möglich ist.",
+    "NGINX Plus: 37.0.7.1 bzw. 37.2.0.1 beheben nur CVE-2026-123633; für beide Lücken sind laut F5-Advisories 37.0.8.1 bzw. 37.3.0.1 nötig."
+  ],
+  "hero": {
+    "alt": "Abstraktes 3D-Rendering: Ein gläsernes Stadttor aus Datenströmen, durch dessen Mitte zwei dünne rote Lichtrisse laufen.",
+    "caption": "Die Eingangstür von über 225 Millionen Websites: Zwei HTTP/2-Lücken in NGINX sind gepatcht.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "F5 hat am 18. November ein Sicherheitsrelease für NGINX veröffentlicht, das gleich zehn Schwachstellen schließt. An der Spitze stehen zwei unauthentifiziert aus dem Netz ausnutzbare Remote-Code-Execution-Lücken in der HTTP/2-Verarbeitung, beide mit dem CVSS-4.0-Score 9.2 bewertet. NGINX ist laut Wiz mit mehr als 225 Millionen Websites der verbreitetste quelloffene Webserver und sitzt als Reverse Proxy vor unzähligen Anwendungen und APIs; die Fehler stecken in NGINX selbst, eigene Anwendungen können also auch dann betroffen sein, wenn ihr Code sauber ist."
+    },
+    {
+      "t": "h2",
+      "x": "Die beiden kritischen Lücken"
+    },
+    {
+      "t": "p",
+      "x": "Bei CVE-2026-123633 handelt es sich um ein Use-after-Free: Eine HTTP/2-Verbindung kann in bestimmten Proxy-Konstellationen freigegeben werden, während ihre Anfrage noch läuft; betroffen sind die Versionen 1.19.7 bis 1.31.8. CVE-2026-123007 ist ein Integer-Underflow in der HTTP/2-Flusskontrolle, der über fehlerhafte Speicherlängen bis zur Codeausführung führen kann; diese Lücke reicht bis NGINX 1.9.5 aus dem Jahr 2015 zurück, ist also über zehn Jahre unentdeckt geblieben, und ist laut Wiz bereits in Standardkonfigurationen mit aktiviertem HTTP/2 ausnutzbar, bestätigt bis zur Codeausführung auf einem Server, der nur statische Dateien ausliefert. Übliche Schutzmechanismen wie ASLR helfen nicht, weil beide Lücken zunächst Speicher auslesen lassen. Die Forscher beschreiben die Mechanik grob, veröffentlichen ihre Exploits aber bewusst nicht."
+    },
+    {
+      "t": "h2",
+      "x": "Aktualisieren: Gefixt sind beide Lücken in NGINX OSS 1.30.7 (stable) und 1.31.9 (mainline). Bei NGINX Plus behebt die Version 37.0.7.1 beziehungsweise 37.2.0.1 nur CVE-2026-123633; für beide Lücken sind laut den F5-Advisories K000163926 und K000163928 die Versionen 37.0.8.1 beziehungsweise 37.3.0.1 nötig. F5 nennt in beiden Advisories ausdrücklich keine Mitigation. Der Security-Anbieter Wiz empfiehlt Unabhängig davon, HTTP/2 auf betroffenen Instanzen vorübergehend abzuschalten, wenn ein Update nicht sofort möglich ist: Ab NGINX 1.25.1 mit http2 off in den betroffenen Serverblöcken, zusätzlich den http2-Parameter aus allen listen-Direktiven entfernen, danach die Anwendung testen, NGINX neu laden und kontrollieren, dass die alten Worker-Prozesse beendet wurden. Zur Erkennung empfiehlt Wiz, auf wiederkehrende Worker-Abstürze oder Speicherverbrauch in der Größenordnung der Response-Body-Größen zu achten. Das sind allgemeine Warnsignale, keine bestätigten Angriffsindikatoren. Dasselbe Release schließt acht weitere Lücken, darunter mit CVE-2026-121810 ein weiteres 9,2-Risiko, das HTTP/3 betrifft."
+    },
+    {
+      "t": "p",
+      "x": "Aktualisieren: Gefixt sind NGINX OSS in den Versionen 1.30.7 (stable) und 1.31.9 (mainline) sowie NGINX Plus 37.0.7.1 beziehungsweise 37.2.0.1 für CVE-2026-123633 und 37.0.8.1 beziehungsweise 37.3.0.1 für CVE-2026-123007. Wer nicht sofort aktualisieren kann, sollte HTTP/2 auf betroffenen Instanzen vorübergehend abschalten, ab NGINX 1.25.1 mit der Direktive http2 off in den betroffenen Serverblöcken, und nach dem Patch wieder aktivieren. Zur Erkennung empfiehlt Wiz, auf langlebige HTTP/2-Verbindungen zu achten, die ungewöhnlich große Datenmengen senden, sowie auf unerwartete Worker-Abstürze oder von NGINX gestartete Befehle; das sind allgemeine Warnsignale, keine bestätigten Angriffsindikatoren. Dasselbe Release schließt acht weitere Lücken, darunter mit CVE-2026-121810 ein weiteres 9.2-Risiko in HTTP/3."
+    },
+    {
+      "t": "h2",
+      "x": "Das Muster hinter dem Fund"
+    },
+    {
+      "t": "p",
+      "x": "Entdeckt wurden beide Lücken von Wiz Research mit Wiz Atlas, der KI-gestützten Scankette des Unternehmens; die Auswirkungen validierten die Forscher mit Gemini 4 Carbon und ChatGPT 5.6 Sol. Unabhängig davon fanden Ikotas Labs, Metnir, Rapid7 und Xint dieselben Fehler, was auf eine zunehmend parallele, KI-beschleunigte Schwachstellensuche hindeutet. Die Offenlegung lief koordiniert: Wiz meldete die erste Lücke am 21. Oktober an F5, die zweite am 16. November, das Release folgte zwei Tage später. Es ist diese Woche bereits das zweite Beispiel dieser Art: Erst gestern war mit Java4Shell eine elf Jahre alte OpenJDK-Lücke publik geworden, die ein Coding-Agent gefunden hatte."
+    },
+    {
+      "t": "callout",
+      "x": "Praktisch heißt das: NGINX-Bestand mit HTTP/2 inventarisieren, extern erreichbare Instanzen zuerst patchen, bis dahin HTTP/2 abschalten. CDNs und WAFs, die HTTP/2 terminieren, können die Ausnutzung erschweren, sind aber keine Garantie.",
+      "title": "Einordnung"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NGINX Vulnerability K000163926: CVE-2026-123007",
+      "publisher": "F5 Support",
+      "url": "https://my.f5.com/manage/s/article/K000163926",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "NGINX Vulnerability K000163928: CVE-2026-123633",
+      "publisher": "F5 Support",
+      "url": "https://my.f5.com/manage/s/article/K000163928",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "NGINX Security Advisories",
+      "publisher": "NGINX / F5",
+      "url": "https://www.nginx.org/en/security_advisories.html",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "ngx_http_v2_module: http2 directive",
+      "publisher": "NGINX Documentation",
+      "url": "https://nginx.org/en/docs/http/ngx_http_v2_module.html",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
+      "publisher": "Wiz Blog",
+      "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welche Versionen sind sicher?",
+      "a": "NGINX OSS: 1.30.7 (stable) und 1.31.9 (mainline). NGINX Plus: 37.0.8.1 oder 37.3.0.1 für beide HTTP/2-Lücken gemeinsam; 37.0.7.1 und 37.2.0.1 beheben laut F5 nur CVE-2026-123633."
+    },
+    {
+      "q": "Wie schalte ich HTTP/2 ab?",
+      "a": "Wiz empfiehlt als vorübergehende Risikoreduktion: Ab NGINX 1.25.1 die Direktive http2 off in den betroffenen Serverblöcken setzen, zusätzlich den http2-Parameter aus allen listen-Direktiven entfernen, die Anwendung testen, NGINX neu laden und kontrollieren, dass die alten Worker-Prozesse beendet wurden. F5 selbst nennt in seinen Advisories keine Mitigation."
+    }
+  ],
+  "related": [
+    "google-gtig-exploit-agent-patch-zu-exploit",
+    "shopify-cyber-chaos-monkey-agenten-angriff"
+  ]
+}
