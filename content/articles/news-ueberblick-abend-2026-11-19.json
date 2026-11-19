@@ -1,0 +1,120 @@
+{
+ "slug": "news-ueberblick-abend-2026-11-19",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-19T16:25:00+01:00",
+ "modified": "2026-11-19T16:25:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "General progress substitutes for specific training data in language models",
+   "publisher": "arXiv; Mark Marosi und Peter Antal, Budapest University of Technology and Economics",
+   "url": "https://arxiv.org/abs/2611.24844",
+   "accessed": "2026-11-19"
+  },
+  {
+   "title": "TRACE-MAS: Diagnosing and Repairing Collaboration Failures in Multi-Agent Systems",
+   "publisher": "arXiv; Zekai Chen, Yihan Sun, Xunkai Li u.a., Beijing Institute of Technology und Partneruniversitaeten",
+   "url": "https://arxiv.org/abs/2611.23362",
+   "accessed": "2026-11-19"
+  },
+  {
+   "title": "RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?",
+   "publisher": "arXiv; Hanlin Wu, Yifei Wang, Zhicheng Cai u.a., ByteDance Seed und Tsinghua AIR",
+   "url": "https://arxiv.org/abs/2611.24395",
+   "accessed": "2026-11-19"
+  }
+ ],
+ "tags": [
+  "forschung",
+  "agenten",
+  "sicherheit",
+  "evals"
+ ],
+ "title": "KI am Abend: Datenfilter auf Zeit, Agenten-Teams repariert, Infrastruktur im Selbsttuning",
+ "dek": "Modellfortschritt holt vorenthaltene Fähigkeiten ein, TRACE-MAS findet Teamfehler an der Quelle, und Agenten tunen im Benchmark ihre eigene Infrastruktur.",
+ "key_takeaways": [
+  "Datenfilter verzögern Fähigkeiten nur: In Experimenten von Schach bis Webtext sagte der Fortschritt kleiner Modelle die Verzögerung größerer voraus, nie trainierte Schachmodelle bewerteten legale Antworten fast so gut wie trainierte, und die Wiederbeschaffung wurde mit jedem Fortschrittsschritt billiger.",
+  "Teamfehler brauchen Quellen-Diagnose: TRACE-MAS lernt normale Kollaborationsmuster und lokalisiert die Ursprünge von Ausfällen in Multi-Agenten-Systemen laut Paper um 60,2 Prozent genauer; quellbewusste Reparatur schlug symptomatische um 30 Punkte.",
+  "Agenten können ihre Infrastruktur beschleunigen: Im neuen RSIBench-Infra-Benchmark überschritten 66,2 Prozent der 130 bewerteten Ergebnisse einen validierten Speedup von 1,10, Spitzenwerte reichten bis 6,1-fach, doch neun Einreichungen fielen durch Deployment, Qualitätsgatter oder Regelverstoß durch."
+ ],
+ "hero": {
+  "alt": "Drei Studien zu Datenfiltern, Multi-Agenten-Diagnose und Infrastruktur-Benchmark. Alle Ergebnisse gelten nur für die geprüften Setups.",
+  "caption": "Fähigkeiten, Teamdiagnose, Selbsttuning. Eigene Grafik. Preprints bzw. Konferenzpaper, keine allgemeine Sicherheitsgarantie.",
+  "credit": "Eigene Grafik",
+  "ai_generated": false
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Abendüberblick vom 19. November. Quellenstand: 16:05 Uhr MEZ. Drei Arbeiten vom 17. und 18. November: Eine Messreihe zeigt, dass der allgemeine Modellfortschritt vorenthaltene Fähigkeiten mit absehbarer Verzögerung einholt, ein neues Rahmenwerk findet die Ursachen von Teamfehlern in Multi-Agenten-Systemen an der Quelle, und ein Benchmark misst, wie gut Agenten ihre eigene Trainings- und Inferenz-Infrastruktur beschleunigen."
+  },
+  {
+   "t": "h2",
+   "x": "Vorenthaltene Fähigkeiten holt der Fortschritt ein"
+  },
+  {
+   "t": "p",
+   "x": "Entwickler filtern Trainingsdaten, um Modelle von missbrauchbaren Fähigkeiten fernzuhalten. Wie lange eine solche Sperre hält und wie viele Daten das Nachlernen später kostet, war bislang ungemessen. Mark Marosi und Peter Antal von der Technischen Universität Budapest liefern jetzt Zahlen: Mit einem Verfahren namens Target Thinning entfernen sie einen festen Anteil der Trainingsziele einer Fähigkeit aus der Verlustfunktion, während der Eingabetext vollständig bleibt. Getestet wurde in fünf Bereichen, darunter Schach, Othello, Molekül-Strings, Klammergrammatiken und Webtext, in Modellen bis 7 Milliarden Parameter."
+  },
+  {
+   "t": "p",
+   "x": "Die Verzögerung folgt einem vorhersagbaren Muster: Bei der Schachaufgabe Königsicherheit und bei Hauptstädten im 7-Milliarden-Modell ließ sie sich ohne einen einzigen angepassten Parameter aus kleineren Modellen ableiten. Ein Schachmodell, das nie auf Schachstellungen trainiert wurde, bewertete legale Antwortzüge fast so gut wie ein voll trainiertes, weil der Rest des Korpus einen Teil der Fähigkeit mitliefert. Kehrten die Ziele zurück, lernte das Modell die Fähigkeit mit einem Bruchteil der sonst nötigen Daten: Jeder Logit Vorsprung verbilligte den Wiedererwerb um etwa den Faktor zehn bei Schach und Webtext und um den Faktor vier bei Molekül-Strings. Eine permutierte Kontrollregel gleicher Schwierigkeit wurde dagegen deutlich langsamer gelernt, die Ersparnis ist also spezifisch für die vorenthaltene Fähigkeit."
+  },
+  {
+   "t": "p",
+   "x": "Die Ergebnisse erklären zwei frühere Befunde anderer Teams: Filter wirken bei größeren Modellen stärker, und wenig Nachtraining genügt, um die Fähigkeit zurückzuholen, weil beides aus derselben Kostenrelation folgt. Zugleich relativiert die Studie die Schutzwirkung: Da der Rückstand mit dem Fortschritt wächst, der Wiedererwerb aber immer billiger wird, kauft eine Sperre Zeit, keine dauerhafte Abwesenheit. Auch der nötige Eingriff ist klein: Ein einzelner oberer Block oder Adapter vom Rang 4 bis 16 genügten, mit dem 1,3- bis 7,4-fachen Tokeneinsatz einer vollständigen Rückkehr. Der Code steht unter MIT-Lizenz auf GitHub."
+  },
+  {
+   "t": "h2",
+   "x": "TRACE-MAS: Teamfehler an der Quelle statt am Symptom reparieren"
+  },
+  {
+   "t": "p",
+   "x": "In Multi-Agenten-Systemen entstehen Ausfälle oft nicht in einem Agenten, sondern zwischen ihnen: manipulierte Nachrichten oder veränderte Abhängigkeiten lassen gesunde Agenten fehlerhaft aussehen. Bestehende Schutzsysteme suchen auffällige Agenten und entfernen dann gern das sichtbarste Symptom statt der Ursache. Ein Team um Zekai Chen vom Beijing Institute of Technology stellt mit TRACE-MAS ein Rahmenwerk vor, das aus ungestörten Abläufen normale Kollaborationsmuster lernt und Abweichungen in Zustandswechseln, Nachrichtenübergängen und Aufgabenabhängigkeiten erkennt."
+  },
+  {
+   "t": "p",
+   "x": "Der Unterschied liegt in der Diagnose: Eine quellbewusste Zuordnung identifiziert das auslösende Ausführungselement, und eine minimale Reparatur stellt die Zusammenarbeit wieder her, ohne nützliche Fähigkeiten zu opfern. Auf fünf öffentlichen Benchmarks, von Multi-Agenten-Schlussfolgern über Retrieval bis Werkzeugnutzung, mit kontrollierten Störungen dreier Ebenen und dem Backbone Qwen2.5-7B, verbessert TRACE-MAS die Lokalisierung der Fehlerursache laut Paper um 60,2 Prozent gegenüber den stärksten Vergleichsverfahren; die quellbewusste Reparatur steigert die Aufgabenwiederherstellung um 30 Punkte gegenüber der symptomatischen."
+  },
+  {
+   "t": "p",
+   "x": "Bemerkenswert ist die methodische Ehrlichkeit: Statische Trace-Korpora und Zuordnungs-Pipelines, die das gemeinsame Prüfprotokoll nicht erfüllen, etwa weil Labels nur sichtbare Fehler statt Ursprünge markieren oder keine kalibrierbare ungestörte Teilmenge existiert, schloss das Team ausdrücklich aus statt Zahlen unter fremden Bedingungen zu melden. Einschränkungen: ein Backbone-Modell, kontrollierte statt realer Angriffe, und der Code ist im Paper nicht öffentlich verlinkt. Veröffentlicht ist die Arbeit als Konferenzpaper der ICLR 2027."
+  },
+  {
+   "t": "h2",
+   "x": "RSIBench-Infra: Agenten optimieren ihre eigene Infrastruktur"
+  },
+  {
+   "t": "p",
+   "x": "Verbreitete LLM-Serving-Engines erreichen nach einer zitierten Schätzung nur 22 bis 38 Prozent ihres theoretisch möglichen Durchsatzes. Ob Agenten diese Lücke unter Produktionsbedingungen schließen können, prüft RSIBench-Infra, ein neuer Benchmark von ByteDance Seed und dem Tsinghua-Institut AIR: 20 Trainings- und Inferenzaufgaben über mehrere Modellfamilien, mit bis zu 32 Beschleunigern auf NVIDIA-GPUs und Ascend-NPUs. Agenten starten von offiziellen Referenzrezepten, dürfen Engine, Kernel und Instruktionen ändern und reichen ihre Änderungen als OCI-Image-Layer ein; eine unabhängige Auswertung misst die Endleistung unter Qualitätsgattern."
+  },
+  {
+   "t": "p",
+   "x": "Sieben Konfigurationen aus Modell und Werkzeugumgebung traten an, darunter GPT-6 Astra mit Codex und Claude Opus 5.5 mit Claude Code, jeweils mit achtstündigem Budget. Von 130 formal bewerteten Ergebnissen überschritten 86, also 66,2 Prozent, einen validierten Speedup von mehr als 1,10. Unter den sechs vollständigen Durchläufen führte GPT-6 Astra mit 16 von 20 Aufgaben über der Schwelle, einem Median-Speedup von 1,33 und der besten Ausnutzung der theoretischen Obergrenze; GLM-5.3 und Qwen3.8-Max folgten mit je 14 von 20. Claude Opus 5.5 erreichte 8 von 10 ausgewerteten Aufgaben mit Median 1,34, sein Teildatensatz ist in den Tabellen ausgewiesen. Spitzenwerte: 6,1-facher Speedup durch eine Claude-Einreichung bei einem Diffusions-Sprachmodell, 3,3-fach bei einer Qwen-Einreichung."
+  },
+  {
+   "t": "p",
+   "x": "Die Kehrseite ist lehrreich: 44 Ergebnisse blieben unter der Schwelle, darunter neun formale Nullen, vier gescheiterte Deployments, vier durchgefallene Qualitätsgatter und ein Regelverstoß. Eine Einreichung mit roh 1,25-fachem Durchsatz bekam null Punkte, weil das Qualitätsgatter nicht bestanden wurde; Leistung, Qualität und Regelkonformität werden getrennt bewertet. Schnell waren die Stärksten auch: Claude und Astra brauchten im Mittel nur gut 40 Prozent des Budgets. Die Projektseite ist online und verlinkt ein aktiv gepflegtes, öffentliches Code-Repo."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist der wichtigste KI-Befund vom 19. November?",
+   "a": "Dass Datenfilter Fähigkeiten nur verzögern: In kontrollierten Experimenten von Schach bis Webtext holte der allgemeine Modellfortschritt vorenthaltene Fähigkeiten mit vorhersagbarer Verzögerung ein, und ihre Wiederbeschaffung wurde mit jedem Fortschrittsschritt billiger, etwa um den Faktor zehn pro Logit Vorsprung bei Schach und Webtext."
+  },
+  {
+   "q": "Was kann TRACE-MAS besser als bisherige Schutzsysteme?",
+   "a": "Es lokalisiert die Fehlerursache statt nur das auffälligste Symptom: Aus ungestörten Abläufen lernt es normale Kollaborationsmuster und identifiziert das auslösende Element, laut Paper mit 60,2 Prozent besserer Ursachen-Lokalisierung und 30 Punkten besserer Wiederherstellung. Getestet an fünf Benchmarks mit einem 7B-Backbone und kontrollierten Störungen."
+  },
+  {
+   "q": "Wie gut optimieren Agenten ihre eigene Infrastruktur?",
+   "a": "Bemerkenswert gut, aber nicht zuverlässig: 66,2 Prozent der 130 bewerteten RSIBench-Infra-Ergebnisse überschritten einen validierten Speedup von 1,10, die beste Konfiguration löste 16 von 20 Aufgaben über der Schwelle. Neun Einreichungen fielen aber komplett durch, etwa wegen durchgefallener Qualitätsgatter oder Regelverstößen."
+  }
+ ],
+ "related": [
+  "recursive-flint-laptop-coding-modell",
+  "gpt-6-2-astra-sol-openai-effizienz-update"
+ ]
+}
