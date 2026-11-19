@@ -1,0 +1,120 @@
+{
+  "slug": "news-ueberblick-mittag-2026-11-19",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-19T10:05:00+01:00",
+  "modified": "2026-11-19T10:05:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Training Language Models for Introspective Oversight",
+      "publisher": "arXiv; Alex Lin Wang, Linus Yifeng Tang und Dami Choi, Transluce und MATS; Neil Chowdhury, Thinking Machines Lab",
+      "url": "https://arxiv.org/abs/2611.23365",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Do Frontier Model Ingredients Add Up?",
+      "publisher": "arXiv; Biswa Sengupta, JPMorgan LLM Suite Team",
+      "url": "https://arxiv.org/abs/2611.24540",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Idempotency Is Not Recovery: A Fault-Injection Study of Language-Model Agent Tool Actions",
+      "publisher": "arXiv; Song Xu, University of Electronic Science and Technology of China",
+      "url": "https://arxiv.org/abs/2611.23353",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "tags": [
+    "forschung",
+    "agenten",
+    "sicherheit",
+    "evals"
+  ],
+  "title": "KI am Mittag: Ein wachsames zweites Ich, Modellzutaten im Faktoriell, Agenten im Absturztest",
+  "dek": "Ein trainierter Observer überwacht den Assistenten am besten, ein Faktoriell prüft fünf Modellzutaten, und ein Absturztest trennt Idempotenz von Recovery.",
+  "key_takeaways": [
+    "Ein direkt ins Modell trainierter Observer erkennt Fehlverhalten am zuverlässigsten: Auf fünf zurückgehaltenen Auswertungen von Qwen3.6-27B erreichte die dritte Rolle eine mittlere AUROC von 0,907 und lag damit vor Ehrlichkeits-Training, Transkript-Monitoring und Aktivierungs-Orakeln; externe Modelle mit denselben Trainingsdaten blieben deutlich zurück.",
+    "Architektur-Zutaten lassen sich unter gleichen Bedingungen nachrechnen: In einem fraktionierten Faktoriell mit 51,5 Millionen Parametern zahlten Routing-Experten, Muon und ein DeltaNet-Hybrid am stärksten, während ein Attention-Gate im gemeinsamen Vergleichsraster praktisch nichts brachte, obwohl es allein gegen die Basislinie gewann.",
+    "Idempotenz ersetzt keine Recovery: In einer kontrollierten Agenten-Laufzeit unterdrückte die Vollkonfiguration in 200 bekannten Absturz-und-Wiederholungs-Paaren alle Doppeleffekte (0/200), doch ohne Abgleich blieb jeder der 100 getesteten Abstürze nach einer Wirkung unklar, und die Absicherung kostete rund sechs Siebtel des Durchsatzes."
+  ],
+  "hero": {
+    "alt": "Drei Studien zu Kontrolle und Robustheit: Observer-Rolle im eigenen Modell, Faktoriell über fünf Modellzutaten und Fehlerinjektion in einer Agenten-Laufzeit. Alle Ergebnisse gelten nur für die geprüften Setups.",
+    "caption": "Kontrolle im Verbund: Selbstauskunft, Zutaten-Messung, Absturzverhalten. Eigene Grafik. Preprints, keine allgemeine Sicherheitsgarantie.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Mittagüberblick vom 19. November. Quellenstand: 09:51 Uhr MEZ. Drei Arbeiten vom 17. und 18. November drehen sich um Kontrolle: Forschende trainieren eine wachsame zweite Rolle direkt ins Modell, eine Messstudie rechnet fünf beliebte Architektur-Zutaten unter gleichen Bedingungen durch, und ein Absturztest zeigt, warum Idempotenz allein einen Agenten nach einem Fehler nicht rettet."
+    },
+    {
+      "t": "h2",
+      "x": "Ein Observer im eigenen Modell überwacht am besten"
+    },
+    {
+      "t": "p",
+      "x": "Fehlverhalten wie Belohnungstricks, Täuschung oder Ja-Sagen lässt sich im Transkript oft nicht erkennen. Den Assistenten direkt zu fragen ist unzuverlässig, weil Modelle nicht darauf trainiert sind, eigenes Fehlverhalten zu melden; externe Wächter sehen nur die Ausgaben, und Aktivierungs-Decoder erfinden nach Studienlage gern dazu. Ein Team von Transluce, MATS und Thinking Machines Lab trainiert deshalb eine neue Rolle direkt im Modell: einen Observer in der dritten Person, der beliebige Fragen über das Verhalten des Assistenten beantwortet und dafür belohnt wird, dass seine Antworten gegen das tatsächliche Verhalten verifiziert sind. Trainiert wird mit überwachtem Feintuning und Verstärkungslernen; die Fähigkeiten des Assistenten bleiben per Distillation erhalten."
+    },
+    {
+      "t": "p",
+      "x": "Weil der Observer die Gewichte mit dem Assistenten teilt, kann er auf die vollständige interne Berechnung zugreifen, nicht nur auf sichtbare Ausgaben. Das zahlt sich aus: Auf fünf zurückgehaltenen Fehlverhaltens-Auswertungen von Qwen3.6-27B, darunter Ja-Sagen, Lügen unter Druck und Belohnungstricks, erreicht der Observer im Mittel eine AUROC von 0,907. Ehrlichkeits-Training kommt auf 0,864, Transkript-Monitoring auf 0,828, Aktivierungs-Orakel auf 0,796 und direkte Nachfragen beim Assistenten auf 0,776. Externe Modelle, die mit denselben Daten trainiert wurden, schneiden deutlich schlechter ab, und die Sicht in der dritten Person (0,907) schlägt Selbstauskünfte in der ersten Person (0,877)."
+    },
+    {
+      "t": "p",
+      "x": "Verstärkungslernen lehrt den Observer, über den Assistenten nachzudenken: Die durchschnittliche Begründungslänge verdreifacht sich, die Reasoning-AUROC steigt von 0,719 auf 0,823, bleibt aber unter den 0,907 des Direktmodus und erreicht mit Reasoning nur das Niveau eines externen Monitors. Als Nebenbefund macht das Training den Assistenten selbst besser überwachbar: Auf seinen Transkripten verbessert sich jede Vergleichsmethode im Mittel. Die Grenzen sind offen benannt: nur ein Modell, nur binäre Aufgaben, teils kleine Auswertungssets (Reward Hacking mit 40 Beispielen), kein Vergleich mit Chain-of-Thought-Monitoring und keine Modellorganismen mit versteckten Zielen; die Treffsicherheit freier Antworten wurde nicht bewertet. Der Code steht unter MIT-Lizenz auf GitHub, das Repo enthält ein Codepaket und Skripte."
+    },
+    {
+      "t": "h2",
+      "x": "Zutaten moderner Sprachmodelle im Faktoriell nachgerechnet"
+    },
+    {
+      "t": "p",
+      "x": "Routing-Experten, Muon, zusätzliche Normierung, Gated-DeltaNet-Hybride, Attention-Gates: Modernste Modelle stapeln solche Zutaten, ohne dass der Nutzen jeder einzelnen unter gemeinsamen Bedingungen isoliert gemessen wurde. Biswa Sengupta vom JPMorgan-LLM-Suite-Team hat genau das in einem kontrollierten Faktoriell getestet: ein Decoder mit 51,5 Millionen aktiven Parametern, FineWeb-Daten, 300 Millionen Tokens Budget, fünf Schalter, 16 von 32 Kombinationen und zwei Seeds, also 32 Kernläufe mit rund 9,6 Milliarden trainierten Tokens."
+    },
+    {
+      "t": "p",
+      "x": "Die größten Verlustreduktionen liefern Routing-Experten (mittlerer Kontrast minus 0,098 Nats), Muon (minus 0,051) und der DeltaNet-Hybrid (minus 0,037); zusätzliche Normierung hilft (minus 0,019). Das Attention-Gate bringt im Mittel fast nichts (plus 0,002, innerhalb der Referenzspanne von plus/minus 0,0043), obwohl es allein gegen die Basislinie 0,019 Nats spart: Der gemeinsame Vergleichsraster ändert das Urteil. Die beiden Seeds stimmen über alle 15 Kontraste mit einer Korrelation von 0,996 überein, bei den Wechselwirkungen sind es 0,94. Die Gewinne addieren sich größtenteils, doch sechs der zehn paarweisen Mittelwerte überschreiten die Referenzspanne; die Konfiguration mit allen fünf Schaltern erzielt in beiden Seeds den niedrigsten Verlust (3,679 und 3,675 Nats), ob das Entfernen des Gates sie verbessern würde, wurde nicht getestet."
+    },
+    {
+      "t": "p",
+      "x": "Methodisch lehrreich: Die erste Schätzung der Laufstreuung nach Lenth lag rund sechsmal über der Schätzung aus echten Wiederholungsläufen; erst die Wiederholungen machten die kleineren Effekte sichtbar, weil die Effektstreuung selbst das Rauschen überschätzt hatte. Das Resolution-V-Design mischt einige höherstufige Effekte, was der Autor offen deklariert, und zwei numerische Fehler wurden während der Entwicklung gefunden und behoben, darunter ein Kausalitäts-Leck in einem RMSNorm-Kernel. Die Grenzen: eine Modellgröße, ein Korpus, 1.024 Token Kontext, keine Downstream-Aufgaben, Entwicklungsergebnisse statt Testset-Messung, Trainingszeit und Energie nicht angeglichen. Ein Disclaimer stellt klar, dass es sich um ein Informationsprodukt und keine Veröffentlichung der Research-Abteilung von JPMorgan handelt."
+    },
+    {
+      "t": "h2",
+      "x": "Idempotenz ist keine Recovery: Agenten im Absturztest"
+    },
+    {
+      "t": "p",
+      "x": "Wenn der Tool-Aufruf eines Agenten abstürzt, kann die Aktion bereits gewirkt haben, ohne dass der Agent es weiß. Wiederholen riskiert Doppelwirkungen, die Annahme des Erfolgs kann eine nie ausgeführte Aktion verschleiern. Song Xu von der University of Electronic Science and Technology of China hat diese Fehlerklassen in einer kontrollierten Agenten-Laufzeit gemessen: Autorisierung mit fail-closed-Verhalten, Aktions-Ledger, stabile Aktions-Identitäten mit zielseitiger Idempotenz, Abgleich nach dem Neustart und versiegelte Beweise. Getestet wurden zehn Fehlerklassen auf Windows und Linux, vier Konfigurationen plus drei Ablations, mit einem zielseitigen Orakel getrennt vom Laufzeit-Ledger."
+    },
+    {
+      "t": "p",
+      "x": "Pro Plattform wurden 7.513 Trials aufgezeichnet, darunter 4.000 saubere Kontrollen; als Eingaben dienten 96 zuvor aufgezeichnete Modellantworten aus 24 konstruierten Fällen, identisch über alle Konfigurationen abgespielt. Die fail-closed-Autorisierung blockierte jede injizierte unautorisierte Aktion (0 von 100 gegen 100 von 100 im offenen Betrieb), ohne messbaren Durchsatzverlust im Operationsfenster. In 200 bekannten Absturz-und-Wiederholungs-Paaren verzeichnete die Vollkonfiguration keine doppelten Effekte (0 von 200), jede einfachere Basislinie dagegen 117 von 200. Ohne das Ledger-Bundle verwaisten alle 170 Effekte, und die Recovery fiel von 300 auf 200 von 300."
+    },
+    {
+      "t": "p",
+      "x": "Der zentrale Befund: Ohne Abgleich blieben alle 100 bekannten Absturz-nach-Effekt-Fälle unklar, obwohl keine Duplikate auftraten. Idempotenz verhindert Doppelwirkungen, sagt aber nichts darüber, was tatsächlich passiert ist. Der Preis der Absicherung: Die Vollkonfiguration lief mit etwa einem Siebtel des Fail-open-Durchsatzes, und injizierte Fehler beim Beweis-Schreiben ließen 75 von 100 Trials je Plattform unaufgelöst. Ein nachträglich entworfenes Supplement bestätigte die Muster unter Antwortverlust mit denselben Eingaben (0 von 100 gegen 66 von 100 Doppeleffekte). Grenzen: ein Laufzeit-System, kontrolliertes Ziel, wiederverwendete Eingaben, Single-Host-Fehler, Preprint ohne Peer Review; die zwei Plattformen zeigen konsistentes Verhalten einer Implementierung, keine unabhängige Replikation."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist der wichtigste KI-Befund vom 19. November?",
+      "a": "Ein direkt ins Modell trainierter Observer erkennt Fehlverhalten des Assistenten auf fünf zurückgehaltenen Auswertungen mit einer mittleren AUROC von 0,907 und übertrifft damit Ehrlichkeits-Training (0,864), Transkript-Monitoring (0,828) und Aktivierungs-Orakel (0,796). Dass externe Modelle mit denselben Trainingsdaten deutlich schlechter abschneiden, werten die Autoren als Hinweis darauf, dass der geteilte Zugriff auf die Modellinterna den Vorteil trägt."
+    },
+    {
+      "q": "Welche Modellzutat zahlte im Faktoriell am stärksten?",
+      "a": "Routing-Experten mit einem mittleren Verlustkontrast von minus 0,098 Nats, gefolgt von Muon (minus 0,051) und dem DeltaNet-Hybrid (minus 0,037); das Attention-Gate blieb im gemeinsamen Vergleichsraster bei rund null, obwohl es allein gegen die Basislinie gewann. Das gilt für das getestete Setup mit 51,5 Millionen Parametern und einem Korpus."
+    },
+    {
+      "q": "Warum ist Idempotenz nicht gleich Recovery?",
+      "a": "Idempotenz verhindert doppelte Effekte bei Wiederholungen, sagt aber nicht, ob eine unterbrochene Aktion gewirkt hat: Ohne Abgleich blieben in der Studie alle 100 getesteten Absturz-nach-Effekt-Fälle unklar, obwohl kein Duplikat auftrat. Erst Ledger und Abgleich machten die Ausfälle auflösbar, zum Preis von rund sechs Siebteln des Durchsatzes."
+    }
+  ],
+  "related": [
+    "anthropic-agenten-umgehen-trainingsdaten-monitor",
+    "agenten-code-sicherheitschecks-loeschen-test"
+  ]
+}
