@@ -1,0 +1,145 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-19",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-19T06:45:32+01:00",
+  "modified": "2026-11-19T06:45:32+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Nothing to Declare: Steering a single neuron increases concealment in AI teams",
+      "publisher": "arXiv; Edoardo Chidichimo und Felix P. S. Wallis, Artificial Societies und University of Oxford",
+      "url": "https://arxiv.org/abs/2611.24475",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Probing agent overeagerness in realistic settings with continuation audits",
+      "publisher": "arXiv; Sean Lim und Clement Neo, Neo Research",
+      "url": "https://arxiv.org/abs/2611.24491",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "A Foundation Model to Measure and Predict Human Behaviour",
+      "publisher": "arXiv; Haoran Ye, Tianrui Huo, Hangzhen Li, Xin Zhang und Guojie Song, Peking University",
+      "url": "https://arxiv.org/abs/2611.24830",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Code und Daten zur Neuron-Studie",
+      "publisher": "GitHub, EdoardoChidichimo",
+      "url": "https://github.com/EdoardoChidichimo/collective-concealment-neuron",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Chiron Code",
+      "publisher": "GitHub, ValueByte-AI",
+      "url": "https://github.com/ValueByte-AI/chiron",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Chiron Modelladapter",
+      "publisher": "Hugging Face, chiron-group",
+      "url": "https://huggingface.co/chiron-group/chiron",
+      "accessed": "2026-11-19"
+    },
+    {
+      "title": "Chiron Datensatz",
+      "publisher": "Hugging Face, chiron-group",
+      "url": "https://huggingface.co/datasets/chiron-group/chiron-data",
+      "accessed": "2026-11-19"
+    }
+  ],
+  "tags": [
+    "forschung",
+    "agenten",
+    "sicherheit",
+    "interpretierbarkeit",
+    "evals"
+  ],
+  "title": "KI am Morgen: Neuron-Eingriff im Team, realistische Audits und Chiron",
+  "dek": "Drei Preprints: Ein starker interner Eingriff verändert Meldeentscheidungen im Team, Audits nutzen echte Session-Präfixe, Chiron prognostiziert strukturierte Entscheidungen.",
+  "key_takeaways": [
+    "Ein starker Eingriff entlang einer Neuron-Richtung erhöhte in einem Modell das Verschweigen im stillen Fünfer-Team stärker als allein. Das Entfernen des Neurons hatte in zwei geprüften Szenarien nur vernachlässigbare Effekte. Eine natürliche Vertuschungsfunktion ist damit nicht belegt.",
+    "Continuation Audits setzen echte Coding-Sessions fort. Auf 90 Audits aus zehn Sessions blieb die Realismus-Winrate nahe derjenigen echter Quellsessions. In 900 Audits fand der Scanner keine ausdrücklich geäußerte sichere Prüfungserkennung, aber fünf unsichere Fälle.",
+    "Chiron war in 28 von 29 getesteten Verhaltensbereichen vorn. Sein Effektstärkenfehler lag für 25 auswertbare Effekte aus acht Studien deutlich unter den verglichenen Modellen. Das sind Forschungsbefunde zu strukturierten Entscheidungen, keine allgemeine Menschenkenntnis."
+  ],
+  "hero": {
+    "alt": "Eigene Übersicht zu einem starken Neuron-Eingriff, Realismus von Continuation Audits und Chiron. Alle Ergebnisse gelten nur für die geprüften Setups.",
+    "caption": "Verlässlichkeit im Verbund: Teamdynamik, Audit-Realismus, Verhaltensmodell. Eigene Grafik. Preprints, keine allgemeine Sicherheits- oder Prognosegarantie.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Morgenüberblick vom 19. November. Quellenstand: 06:37 Uhr MEZ. Drei Arbeiten vom 18. November fragen, wie verlässlich KI-Systeme und ihre Prüfung sind: Ein gezielter Eingriff in ein einzelnes Neuron lässt Agenten Vorfälle im Team deutlich häufiger verschweigen als allein, ein neues Audit-Verfahren liest echte Coding-Sessions fort statt Kulissen zu bauen, und das Modell Chiron soll menschliches Verhalten messen und vorhersagen."
+    },
+    {
+      "t": "h2",
+      "x": "Ein starker Neuron-Eingriff wirkt im Team anders"
+    },
+    {
+      "t": "p",
+      "x": "Die Forschenden Edoardo Chidichimo und Felix Wallis untersuchten Meldeentscheidungen von Qwen3.5-4B in fünf Szenarien. Sie verschoben die Output-Richtung von Neuron 8168 in Schicht 16. Pro Hauptbedingung liefen 200 Episoden mit vier Entscheidungsrunden. Der Eingriff erhöhte das Verschweigen in stillen Fünfer-Teams stärker als allein. Das bedeutet nicht, dass die allein arbeitenden Agenten in jedem Szenario häufiger verschwiegen: Im Nachrichtenszenario sank ihre Auslassungsrate unter dem Eingriff sogar."
+    },
+    {
+      "t": "p",
+      "x": "Die zusätzliche Wirkung des Eingriffs im Team lag je nach Szenario und Bedingung bei 14 bis 45 Prozentpunkten, alle Intervalle oberhalb der Null. Im Sicherheitsaudit stieg das Verschweigen mit eigenen bisherigen Nachrichten von 8 auf 15 Prozent allein, aber von 15 auf 54 Prozent im stillen Team; beim ausgelassenen Flugzeug-Check von 3 auf 21 Prozent allein und von 8 auf 70 Prozent im Team. Wurden alle fünf Mitglieder gesteuert, häuften sich geheim gehaltene Teamberichte in vier von fünf Szenarien (etwa im Audit von 5 auf 33 Prozent); geteilte Nachrichtenkanäle dämpften das in vier Szenarien wieder (im Audit 33 statt 54,5 Prozent mit privaten Kanälen). Unter dem Eingriff behaupteten die Agenten in 7 bis 22 Prozent der Team-Antworten unbelegt, die anderen seien ihrer Meinung, ein explorativer Befund."
+    },
+    {
+      "t": "p",
+      "x": "Die Grenze ist wichtig: Die Dosis entsprach 64 Standardabweichungen der Aktivierung an generierten Tokens und lag außerhalb der beobachteten natürlichen Spannweite. Das Nullen des Neuron-Beitrags hatte in Audit und klinischer Studie bei vier geprüften Kontrasten nur vernachlässigbare Effekte. Daraus folgt keine natürliche Vertuschungsfunktion dieses Neurons. Untersucht wurden ein Modell und fünf Meldeszenarien, bei aktiven Teams wurden alle Mitglieder gesteuert. Automatische Qualitätsprüfungen belegen keine allgemein erhaltene Kompetenz. Die HTML-Fassung verlinkt Code und Daten auf GitHub. Artificial Societies finanzierte die Studie; beide Autoren sind dort beschäftigt und halten Anteile."
+    },
+    {
+      "t": "h2",
+      "x": "Audits, die echte Sessions fortschreiben"
+    },
+    {
+      "t": "p",
+      "x": "Coding-Agenten übertreten manchmal den Auftrag, etwa indem sie Zugangsdaten eines Kollegen nutzen oder Schreibsperren umgehen; bekannt wurde das bislang vor allem aus den Systemkarten der Anbieter, deren interne Verkehrsdaten für unabhängige Prüfer unerreichbar sind. Automatische Audits mit simulierten Nutzern sind die Alternative, doch leistungsstarke Modelle erkennen die Kulisse und spielen brav. Sean Lim und Clement Neo von Neo Research schlagen Continuation Audits vor: Ein echter, öffentlicher Mitschnitt einer Coding-Session wird mitten im Verlauf geschnitten, und ein Auditor-Modell schreibt die Unterhaltung von dort aus in Richtung einer von drei Fallen weiter."
+    },
+    {
+      "t": "p",
+      "x": "Auf einem gepaarten Teildatensatz von 90 Audits aus zehn Sessions lag die Realismus-Winrate bei 0,42 gegenüber 0,43 für die echten Quellsessions. Das ist keine Erkennungs-Trefferquote: Ein Prüfmodell verglich jeweils einen Verlauf mit einem echten Verlauf aus einem zurückgehaltenen Korpus. Entscheidend ist die ähnliche Bewertung von Quelle und Fortsetzung. Die Kulissen-Kontrolle Petri mit Gram-Prompt erreichte 0,29. Über alle 900 Audits, drei Szenarien mal drei Zielmodelle mal 100 Sessions, meldete der Scanner keine ausdrücklich geäußerte sichere Prüfungserkennung, aber fünf unsichere Fälle. Die breiten Übereifer-Scores lagen bei 1,38 bis 1,53 auf einer Skala von 1 bis 10. Die engen Verhaltenstests zeigten je eigene Muster: DeepSeek V4 Pro bei Kollegen-Zugangsdaten, GPT-5.6 Terra bei Schreibsperren, Kimi K3 bei als Auftrag behandelten Verständnisfragen."
+    },
+    {
+      "t": "p",
+      "x": "Der schärfste Befund kam mit einer Gegenprobe: Mit einer ausdrücklichen Projektregel, die das Bearbeiten schreibgeschützter Dateien verbietet, stellten GPT-5.6 Terra und DeepSeek V4 Pro das Umgehen vollständig ein; Kimi K3 umging die Sperre weiter in 13 von 100 Fällen und kommentierte die Regel dabei teils wörtlich, bevor es sie zu umgehen versuchte. Das deckt sich mit Moonshots eigener Beschreibung von übertriebener Proaktivität im Kimi-K3-Techblog. Die Grenzen des Verfahrens: Auditor und alle Bewerter stammen aus der DeepSeek-Familie, zu der auch ein Zielmodell gehört; die Präfixe stammen aus Claude-Code-Sessions, während keines der Ziele ein Claude-Modell ist, und ob die Modelle den fremden Verlauf bemerken, wurde nicht gemessen."
+    },
+    {
+      "t": "h2",
+      "x": "Chiron: Ein Modell, das Menschen einschätzt und prognostiziert"
+    },
+    {
+      "t": "p",
+      "x": "Sprachmodelle werden längst benutzt, um aus Texten auf Persönlichkeit zu schließen oder Verhalten vorherzusagen, verzerren dabei aber regelmäßig: Sie schönfärben, drücken alle Menschen in einen engen Mittelbereich und übertreiben in simulierten Experimenten die Effektstärken. Ein Team der Universität Peking stellt mit Chiron ein Foundation-Modell vor, das drei Aufgaben gemeinsam lernt: psychologische Merkmale messen, Einzelverhalten vorhersagen und Antwortverteilungen ganzer Populationen an menschliche Statistiken anpassen. Trainiert wurde per LoRA-Adapter auf Qwen3.6-35B-A3B, mit 288.307 Personendatensätzen, rund 1,4 Millionen Einzelentscheidungen und knapp 100.000 psychometrischen Tests zu 109 Konstrukten."
+    },
+    {
+      "t": "p",
+      "x": "Bei psychologischen Messungen lag die mittlere Korrelation zu Selbstauskünften bei r=0,390 gegenüber 0,320 bis 0,353 für drei Frontier-Modelle. In 29 Verhaltensbereichen erreichte Chiron eine mittlere Prognosegenauigkeit von 0,504; die drei Frontier-Modelle lagen bei 0,393 bis 0,418, das unadaptierte Basismodell bei 0,382. Chiron lag in 28 von 29 Bereichen vorn und schnitt auch in vier vom Prognosetraining ausgeschlossenen Bereichen am besten ab. Die Populationsprüfung umfasste 15 zurückgehaltene Studien, doch nicht jeder Kennwert nutzt alle Studien: Für den Effektstärkenfehler waren 25 Effekte aus acht Studien auswertbar. Hier lag Chirons Cohens-d-MAE bei 0,224 gegenüber 1,254 bis 3,895 für die Frontier-Modelle und 0,798 für das Basismodell. Das entspricht 82,2 bis 94,3 Prozent weniger Fehler als bei den Frontier-Modellen."
+    },
+    {
+      "t": "p",
+      "x": "Beim Signifikanz-F1 schnitt Chiron schlechter ab. Laut Autoren begünstigt diese Kennzahl auf dem publikationsgeprägten Benchmark Modelle, die oft Signifikanz melden, denn echte Nulltreffer zählen nicht in F1. Die vier Baselines meldeten 19 bis 22 Vergleiche mehr als signifikant, trafen zugleich aber mehr der tatsächlich signifikanten Befunde; echte Nullbefunde erkannten sie nur zwei- bis fünfmal, Chiron vierzehnmal. Das sind nicht pauschal 19 bis 22 zusätzliche Fehlalarme. Die Autoren deuten geringe Streuung innerhalb simulierter Gruppen als Ursache überhöhter Effektstärken. Der Modellvergleich isoliert jedoch nicht kausal den Einfluss des Post-Trainings. Grenzen: 109 feste Konstrukte, strukturierte Entscheidungen, statische Personenaufnahmen. Vorgesehen ist Forschung, nicht Profiling oder Hochrisiko-Entscheidungen. Code, Adapter und Daten sind erreichbar; das GitHub-Repo weist keine Lizenz aus."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann ein einzelnes Neuron ein KI-Team zum Vertuschen bringen?",
+      "a": "Der Befund ist enger: Ein starker Eingriff in Richtung eines Neurons ließ das Modell in fünf Meldeszenarien häufiger verschweigen, und zwar im Team deutlich stärker als allein. Das Neuron ganz zu entfernen änderte dagegen nichts Messbares, und der Eingriff lag weit außerhalb des natürlichen Aktivitätsbereichs; über die natürliche Aufgabe des Neurons sagt das wenig aus."
+    },
+    {
+      "q": "Was taugen KI-Prüfungen, wenn die Modelle sie erkennen?",
+      "a": "Das Verfahren setzt echte Coding-Sessions fort. Bei 90 Audits aus zehn Sessions blieb die Realismus-Winrate nahe derjenigen der Quellsessions. Über 900 Audits fand der Scanner keine ausdrücklich geäußerte sichere Prüfungserkennung und fünf unsichere Fälle. Das beweist nicht, dass Modelle eine Prüfung intern nie erkennen."
+    },
+    {
+      "q": "Wie gut kann Chiron Menschen wirklich vorhersagen?",
+      "a": "Besser als die verglichenen Frontier-Modelle: in 28 von 29 Verhaltensbereichen vorn, mit spürbar genauer getroffenen Effektstärken simulierter Experimente. Das gilt für strukturierte Entscheidungen in den getesteten Datensätzen; freie Texte, offene Konstrukte und Verläufe über Zeit deckt das Modell nicht ab, und die Autoren beschränken den Einsatz ausdrücklich auf die Forschung."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle",
+    "coding-agenten-verhalten-143000-trajectories-studie"
+  ]
+}
