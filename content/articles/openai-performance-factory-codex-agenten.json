@@ -1,0 +1,84 @@
+{
+ "slug": "openai-performance-factory-codex-agenten",
+ "lang": "de",
+ "section": "analyse",
+ "type": "analysis",
+ "title": "OpenAIs Performance Factory: laut Hersteller 17 automatisierte Untersuchungen pro Tag",
+ "dek": "OpenAI beschreibt, wie Codex-Agenten Leistungsalarme untersuchen und nach dem Deploy die Erholung prüfen. Über 1.700 Untersuchungen und 600 Ursachen sind Herstellerangaben, Ingenieure entscheiden, was ausgeliefert wird.",
+ "published": "2026-11-20T08:54:36+01:00",
+ "modified": "2026-11-20T08:54:36+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "OpenAI",
+  "Codex",
+  "Agenten",
+  "Performance",
+  "Automatisierung",
+  "Betrieb"
+ ],
+ "key_takeaways": [
+  "Laut OpenAI unterstützt der Regression Workflow den Kreislauf von Alarm über Untersuchung und Fixvorschlag bis zur Erholungsprüfung nach dem Deploy. Menschen entscheiden, was ausgeliefert wird.",
+  "In gut drei Monaten liefen über 1.700 Untersuchungen, etwa 17 pro Tag, mit mehr als 600 gefundenen Ursachen; Ingenieure prüfen und genehmigen weiterhin jeden Fix.",
+  "Die Architektur hat vier Teile: Aufgabendienst mit Zustandsautomaten in config.toml plus Markdown-Prompts, Dispatch-Schleife, Cloud-Ausführung von Codex unter einer Dienstidentität und Ereignis-Abonnements, die wartende Aufgaben aufwecken.",
+  "Der Weg dahin ist ein Lehrstück in sechs Stufen: von Handarbeit über wiederverwendbare Skills bis zur Fabrik, in der Workflows andere Workflows anstoßen."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Ein Fließband aus Glas, auf dem leuchtende Prüfpakete Stationen durchlaufen, gesteuert von einem leichten Fadenraster.",
+  "caption": "Vom Alarm zum verifizierten Fix: OpenAI lässt Codex-Agenten im Fließbandprinzip an ChatGPT-Regressen arbeiten.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "OpenAI hat am 19. November seine Performance Factory beschrieben, ein internes System, in dem Codex-Agenten Leistungsprobleme von ChatGPT von der Meldung bis zur verifizierten Behebung bearbeiten. Der erste produktive Workflow heißt Regression Workflow: Ein Performance-Alarm öffnet eine Aufgabe, ein Agent untersucht die Verlangsamung mit denselben Werkzeugen wie ein Ingenieur, schlägt einen Fix vor, ein Mensch prüft ihn, und nach dem Deployment nimmt ein Agent dieselbe Aufgabe wieder auf, um zu verifizieren, dass die Leistung zurück auf dem Ausgangswert ist. In gut drei Monaten liefen so über 1.700 Untersuchungen, rund 17 pro Tag, mit mehr als 600 gefundenen Ursachen. Menschen bleiben an den Freigabepunkten: Jeder Fix wird von einem Ingenieur begutachtet und genehmigt."
+  },
+  {
+   "t": "h2",
+   "x": "Vier Bausteine, ein Kreislauf"
+  },
+  {
+   "t": "p",
+   "x": "Das System besteht aus vier Komponenten. Erstens ein Aufgabendienst, in dem Workflows als config.toml plus Markdown-Prompts je Zustand definiert sind, inklusive erlaubter Übergänge und der Schritte, die einen Menschen brauchen. Zweitens eine Dispatch-Schleife, die fertige Aufgaben findet und je einen Codex-Durchlauf startet. Drittens eine interne API, die Codex in der Cloud unter einer abgesicherten Dienstidentität mit Zugriff auf Repositories, Metriken, Logs, Traces und Profile laufen lässt. Viertens Abonnements: Wartet eine Aufgabe auf ein Review oder einen Deploy, schläft sie und wird von einem Ereignis wieder geweckt. Das ist eine Bauanleitung für Agentenarbeit über Tage hinweg, Zustandsautomat plus Ereigniswecker, die sich auf Betrieb, Zuverlässigkeit und Optimierung übertragen lässt."
+  },
+  {
+   "t": "h2",
+   "x": "Der sechsstufige Weg dahin"
+  },
+  {
+   "t": "p",
+   "x": "Mindestens so lehrreich wie die Architektur ist der Reifegradpfad, den OpenAI beschreibt: Erst Handarbeit mit über 30 selbstgebauten Performance-Werkzeugen, dann Codex als Partner für einzelne Fragen, dann das Konservieren der Untersuchungsmethode in einem geteilten Skill namens perf-forensics, getestet mit Evals auf alten Regressen. Danach die Phase, in der Ingenieure nur noch Alarme in Codex hinein- und Diagnosen hinauskopierten, dann automatisierte Cloud-Untersuchungen, und erst zuletzt die Fabrik, in der Workflows andere Workflows anstoßen können. OpenAI platziert den Bericht bewusst als Vorlage für andere Serviceteams. Die Mengenangaben bezeichnen Untersuchungen und Fälle mit diagnostizierter Ursache, nicht 600 autonom ausgelieferte Fixes oder eine unabhängig gemessene Erfolgsquote. Es handelt sich um einen Herstellerbericht, nicht unseren Betrieb eines solchen Systems."
+  },
+  {
+   "t": "callout",
+   "x": "Zwei Details sollte man mitnehmen: Die Zustände und Menschen-Pflichtpunkte liegen in lesbaren Konfigurationsdateien statt im Code, und Aufgaben schlafen ereignisgesteuert statt zu pollen. Beides ist ohne OpenAI-Interna kopierbar.",
+   "title": "Einordnung"
+  }
+ ],
+ "sources": [
+  {
+   "title": "How OpenAI's Performance Factory keeps ChatGPT fast",
+   "publisher": "OpenAI",
+   "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+   "accessed": "2026-11-20"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist OpenAIs Performance Factory?",
+   "a": "Ein internes System, in dem Codex-Agenten Leistungsalarme von ChatGPT untersuchen, Fixes vorschlagen und nach dem Deployment die Erholung verifizieren. In gut drei Monaten liefen über 1.700 Untersuchungen mit mehr als 600 gefundenen Ursachen; Ingenieure genehmigen jeden Fix."
+  },
+  {
+   "q": "Wie ist die Performance Factory aufgebaut?",
+   "a": "Aus vier Teilen: einem Aufgabendienst mit Workflows als Konfiguration plus Markdown-Prompts, einer Dispatch-Schleife, einer Cloud-Ausführung von Codex unter Dienstidentität und Ereignis-Abonnements, die wartende Aufgaben wieder wecken."
+  },
+  {
+   "q": "Kann man das Konzept nachbauen?",
+   "a": "Das Muster ist übertragbar: Workflows als Zustandsautomaten mit menschlichen Pflichtschritten definieren, Agenten ereignisgesteuert wecken statt pollen lassen, und die Untersuchungsmethodik als geteilten Skill konservieren. OpenAI nutzt dafür interne Codex-APIs und eigene Observability-Werkzeuge."
+  }
+ ],
+ "related": [
+  "openai-jagged-frontier-agenten-forschungsbericht",
+  "claude-code-mode-javascript-werkzeugaufrufe"
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "slug": "genie-4-gemini-api-preise-limits",
+ "lang": "de",
+ "section": "tools",
+ "type": "news",
+ "title": "Genie 4 in der Gemini-API: Videoausgabe für rund 0,10 US-Dollar pro Sekunde",
+ "dek": "Einen Tag nach dem Start in Project Genie öffnet Google Genie 4 für Entwickler: 720p-Welten mit 24 Bildern pro Sekunde und nativem Stereoton, abgerechnet über Video-Token, für die Videoausgabe effektiv rund 0,10 US-Dollar pro Sekunde, zuzüglich anderer Tokenkosten.",
+ "published": "2026-11-20T08:54:36+01:00",
+ "modified": "2026-11-20T08:54:36+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Google",
+  "Genie 4",
+  "Gemini API",
+  "Weltmodell",
+  "Entwickler",
+  "Preise"
+ ],
+ "key_takeaways": [
+  "Genie 4 ist ab sofort über die Interactions API der Gemini-API und in Google AI Studio verfügbar, nur im bezahlten Tarif.",
+  "Das Modell generiert steuerbare 720p-Welten mit 24 fps und synchronisiertem 48-kHz-Stereoton aus Text, Referenzbild oder beidem; Tastatur und Live-Prompts verändern Wetter, Licht, Objekte und Ereignisse im laufenden Stream.",
+  "Die Abrechnung läuft über 240 Video-Ausgabetoken pro Frame (5.760 Token pro Sekunde); unter dem Standardpreis von 17,50 Dollar pro Million ergibt das etwa 0,10 Dollar pro Sekunde beziehungsweise 6,05 Dollar pro Minute. Dies ist nur der Video-Ausgabepreis, nicht der Gesamtpreis einer Sitzung.",
+  "Wichtig fürs Budget: Eine Session läuft weiter, bis man sie beendet. Google weist ausdrücklich darauf hin, complete() aufzurufen, sonst läuft die Abrechnung weiter."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Ein leuchtendes Code-Fenster, aus dem eine kleine begehbare Welt wie ein Hologramm herauswächst.",
+  "caption": "Vom Browser-Spielzeug zum API-Dienst: Genie 4 lässt sich jetzt in eigene Anwendungen einbauen.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Einen Tag nach dem Verbraucherstart in Project Genie hat Google Genie 4 am 19. November für Entwickler geöffnet: Das Weltmodell läuft unter der Kennung models/genie-4 über die neue Interactions API der Gemini-API und in Google AI Studio. Aus einem Textprompt, einem Referenzbild oder beidem generiert es fortlaufende 720p-Welten mit 24 Bildern pro Sekunde und synchronisiertem nativem Stereoton mit 48 kHz, von Umgebungsgeräuschen bis zu Figurendialogen. Gesteuert wird in Echtzeit per Tastatur und per Live-Prompts, die Wetter, Beleuchtung, Objekte oder Ereignisse im laufenden Stream ändern; die Weltkohärenz übernimmt laut Google die Reasoning-Komponente von Gemini. Jede Ausgabe trägt ein SynthID-Wasserzeichen."
+  },
+  {
+   "t": "h2",
+   "x": "Was es kostet"
+  },
+  {
+   "t": "p",
+   "x": "Genie 4 gibt es nur im bezahlten Tarif; Free Tier, Batch API, Flex- und Priority-Inferenz unterstützt das Modell nicht. Eingaben kosten 1,50 Dollar pro Million Token, Textausgaben 9 Dollar und Video-Ausgaben 17,50 Dollar pro Million Token, Ton ist im Videotarif enthalten. Abgerechnet werden 240 Videotoken pro Frame, also 5.760 Token pro Sekunde, Die eigene Rechnung lautet: 240 × 24 × 17,50 / 1.000.000 = 0,1008 US-Dollar pro Sekunde, mal 60 = 6,048 US-Dollar pro Minute. Gerundet sind das 0,10 beziehungsweise 6,05 US-Dollar allein für Videoausgabe. Eingaben und eventuelle Textausgaben kommen hinzu; es ist kein pauschaler Sitzungspreis. Ein Detail mit Budgetrisiko: Die Generierung läuft weiter, bis die Session explizit beendet wird; ein bloßes Tab-Schließen ist kein in der Preisdoku zugesicherter Abrechnungsstopp. Google mahnt daher, stets complete() aufzurufen."
+  },
+  {
+   "t": "h2",
+   "x": "Wofür Google es positioniert"
+  },
+  {
+   "t": "p",
+   "x": "Genannt werden drei Einsatzfelder: das Prototyping interaktiver Erlebnisse, die Visualisierung räumlicher Entwürfe und das Training von Robotik- und KI-Agenten in simulierten Umgebungen. Bei gut 6 US-Dollar pro Minute allein für Videoausgabe ist Genie 4 damit ein Prototyping- und Simulationswerkzeug, noch kein Ersatz für eine Game-Engine. Zum Einstieg bietet Google eine interaktive Canvas und Starter-Apps in AI Studio. Die Ankündigung belegt den angebotenen API-Zugang, nicht die Freischaltung für jedes Land, Konto oder jede Quote. Wir haben keine bezahlte Sitzung gestartet."
+  },
+  {
+   "t": "callout",
+   "x": "Wer damit baut: Tokenzähler in die Anwendung einbauen und das Session-Ende hart verdrahten, etwa über Timeouts und complete() bei Inaktivität. Die effektiven Sekundenkosten machen unbeaufsichtigte Sessions schnell teuer.",
+   "title": "Einordnung"
+  }
+ ],
+ "sources": [
+  {
+   "title": "Genie 4 is now available on the Gemini API",
+   "publisher": "Google Blog",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "Gemini API Pricing (Abschnitt Genie 4)",
+   "publisher": "Google AI for Developers",
+   "url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-11-20"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Wie kann ich Genie 4 als Entwickler nutzen?",
+   "a": "Über die Interactions API der Gemini-API unter der Modellkennung models/genie-4 oder in Google AI Studio, jeweils nur im bezahlten Tarif. Es gibt eine interaktive Canvas und Starter-Apps zum Ausprobieren."
+  },
+  {
+   "q": "Was kostet Genie 4?",
+   "a": "Video-Ausgabe kostet 17,50 Dollar pro Million Token bei 240 Token pro Frame, effektiv etwa 0,10 Dollar pro Sekunde beziehungsweise 6,05 Dollar pro Minute, Ton inklusive. Eingaben kosten 1,50 Dollar pro Million Token. Free Tier und Batch API werden nicht unterstützt. Die Rechnung betrifft nur Videoausgabe; Eingaben und Textausgaben kommen hinzu. Alle Beträge sind US-Dollar, keine Euro-Cent."
+  },
+  {
+   "q": "Was ist die größte Kostenfalle?",
+   "a": "Google fordert in der Preisdoku complete() zum Beenden einer aktiven Sitzung und Stoppen der Abrechnung. Tab-Schließen ist dort kein zugesicherter Ersatz. Einen eigenen Abrechnungstest haben wir nicht ausgeführt."
+  }
+ ],
+ "related": [
+  "genie-4-project-genie-rollout-weltmodell",
+  "gemini-4-neon-google-mittelklasse-coding-spitze"
+ ]
+}

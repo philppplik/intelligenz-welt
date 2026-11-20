@@ -1,0 +1,94 @@
+{
+ "slug": "openssl-synology-kritische-luecken-patches",
+ "lang": "de",
+ "section": "praxis",
+ "type": "news",
+ "title": "OpenSSL-Fix noch im Review, Synology-Updates angekündigt: Was zum Patchstatus belegt ist",
+ "dek": "OpenSSL prüft einen Fix für den Base64-Kodierer. Synology bewertet eine OAuth-Lücke mit CVSS 9,8 und nennt geplante DSM-Updates. Angekündigt ist nicht verfügbar.",
+ "published": "2026-11-20T08:54:36+01:00",
+ "modified": "2026-11-20T08:54:36+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "OpenSSL",
+  "Synology",
+  "Sicherheitslücke",
+  "CVSS 9.8",
+  "Patch",
+  "CVE"
+ ],
+ "key_takeaways": [
+  "OpenSSL: PR 33652 zu CVE-2026-121481 ist beim Quellencheck offen, Review ausstehend. Ein verfügbarer Release-Fix oder ein offizieller CVSS-Wert ist damit nicht belegt.",
+  "Synology: CVE-2026-120382 wird im Herstelleradvisory mit CVSS 3.1 von 9,8 bewertet; die OAuth-API erlaubt laut Hersteller unauthentifiziertes Lesen/Schreiben von Dateien und Denial of Service.",
+  "Für DSM 7.4 und 7.3 nennt die Verfügbarkeitstabelle 7.4.1-90080-2 beziehungsweise 7.3.2-86009-6 als bis 20. November geplante Updates. Beim Check steht das Advisory auf Ongoing, nicht auf abgeschlossen.",
+  "Die bestätigte Zwischenmaßnahme im Synology-Advisory ist das Deaktivieren des Pakets OAuth Service. Die Folgen für OAuth-Anmeldungen müssen Betreiber einplanen."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Zwei gläserne Schlösser auf einem dunklen Mainboard, eines mit einem feinen roten Riss, das andere mit einem leuchtenden Schlüssel im Schloss.",
+  "caption": "Symbolbild: OpenSSL-Codeänderung im Review und Synology-Abhilfe sind zwei getrennte Statuslagen.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Stand des Quellenchecks: 20. November 2026, 08:52 MEZ. Bei OpenSSL ist eine vorgeschlagene Codeänderung öffentlich im Review. Synology nennt in einem laufenden Herstelleradvisory eine kritische OAuth-Schwachstelle und geplante DSM-Fixes. Ein offener Pull Request und ein angekündigter Veröffentlichungstermin sind kein Nachweis für ein verfügbares, installiertes Sicherheitsupdate."
+  },
+  {
+   "t": "h2",
+   "x": "OpenSSL: öffentlicher Fixvorschlag, noch kein bestätigtes Release"
+  },
+  {
+   "t": "p",
+   "x": "Der offene Pull Request 33652 behandelt CVE-2026-121481 in EVP_EncodeBlock(). Er soll bei Null-Puffern, negativen Längen und Eingaben, deren kodierte Länge nicht in einen int passt, kontrolliert fehlschlagen. Laut PR bat das OpenSSL-Sicherheitsteam um die öffentliche Bearbeitung; das Advisory steht noch aus. Die Branch-Labels nennen master, 4.0 und 4.1. Das sind Zielzweige der Bearbeitung, keine bestätigte Liste aller betroffenen oder bereits reparierten Releases. Der PR beschreibt als Auslöser sehr große Eingaben, etwa ein entsprechend großes proxy_pass-Argument an s_client. Daraus folgt keine allgemeine Aussage, jede OpenSSL-Anwendung sei unauthentifiziert aus dem Netz ausnutzbar. Ein offizieller CVSS-9,8-Score für diesen OpenSSL-Fall ist in den geprüften Originalangaben nicht belegt."
+  },
+  {
+   "t": "h2",
+   "x": "Synology: CVSS 9,8 und eine bestätigte Zwischenmaßnahme"
+  },
+  {
+   "t": "p",
+   "x": "Synology-SA-26:21 beschreibt CVE-2026-120382 als Argument-Injection (CWE-88) in der OAuth-API mit unauthentifiziertem Datei-Lesen und -Schreiben sowie Denial of Service. Der Hersteller nennt CVSS 3.1 von 9,8. Die Produkttabelle führt DSM 7.4, 7.3, 7.2.2, 7.2.1, 7.1 und BeeStation OS 1.5 als kritisch. Für DSM 7.4 ist 7.4.1-90080-2, für DSM 7.3 ist 7.3.2-86009-6 bis zum 20. November angekündigt. Für DSM 7.2.2 und 7.2.1 empfiehlt die Tabelle den Wechsel auf 7.3.2-86009-6 oder neuer; DSM 7.1 und BeeStation stehen separat auf Ongoing. Das Advisory enthält außerdem ältere Versionsgrenzen im Detailtext, ohne dass daraus die aktuelle Auslieferung für diese Zweige hervorgeht. Die Verfügbarkeit muss deshalb je Gerät, unterstütztem Upgradepfad und Herstellerfreigabe geprüft werden."
+  },
+  {
+   "t": "p",
+   "x": "Als Zwischenmaßnahme nennt Synology ausdrücklich: OAuth Service deaktivieren. Das kann davon abhängige Anmeldungen und Dienste unterbrechen und gehört in die Betriebsplanung. Der beim Check weiterhin laufende Advisory-Status und geplante Versionsnummern reichen nicht aus, um einen verfügbaren Download oder eine bereits erfolgte Installation zu behaupten."
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "OpenSSL: offizielles Advisory und tatsächliche Releasefreigabe verfolgen. Synology: OAuth-Service-Abhilfe anhand des Herstelleradvisory prüfen und gerätespezifische Updatefreigabe kontrollieren. Dieser Beitrag enthält keine eigenen Exploit- oder Installationstests und keine Behauptung aktiver Ausnutzung."
+  }
+ ],
+ "sources": [
+  {
+   "title": "[NSF] [CVE-2026-121481] Buffer overflow in EVP_EncodeBlock() (Pull Request 33652)",
+   "publisher": "GitHub / OpenSSL",
+   "url": "https://github.com/openssl/openssl/pull/33652",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "Synology-SA-26:21 DSM, BeeStation OS",
+   "publisher": "Synology",
+   "url": "https://www.synology.com/en-global/security/advisory/Synology_SA_26_21",
+   "accessed": "2026-11-20"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Ist der OpenSSL-Fix schon verfügbar?",
+   "a": "Beim Quellencheck am20. November um 08:52 MEZ ist PR33652 offen und die Review-Freigabe ausstehend. Das belegt einen Fixvorschlag, keinen veröffentlichten Sicherheitsrelease."
+  },
+  {
+   "q": "Welche Synology-Versionen sind angekündigt?",
+   "a": "Die Verfügbarkeitstabelle nennt für DSM7.4 die Version7.4.1-90080-2 und für DSM7.3 die Version7.3.2-86009-6 als bis20. November geplante Updates. Der Status steht auf Ongoing. Gerätefreigabe und tatsächliche Auslieferung sind damit nicht bestätigt."
+  },
+  {
+   "q": "Welche Zwischenmaßnahme nennt Synology?",
+   "a": "Das Paket OAuth Service deaktivieren. Betreiber müssen Auswirkungen auf davon abhängige Anmeldungen berücksichtigen. Der CVSS-Wert9,8 ist hier Synologys Herstellerbewertung, nicht eine bestätigte Bewertung für beide Fälle."
+  }
+ ],
+ "related": [
+  "nginx-http2-rce-luecken-f5-update",
+  "java4shell-openjdk-base64-luecke-codex"
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "slug": "anthropic-ant-erster-handelstag-17-prozent",
+ "lang": "de",
+ "section": "news",
+ "type": "news",
+ "title": "Anthropic nach dem ersten Handelstag: ANT schließt 17 Prozent über dem Ausgabepreis",
+ "dek": "Nach dem größten Börsengang aller Zeiten hat Anthropic seinen ersten Handelstag hinter sich: Die Aktie eröffnete bei 111,50 Dollar und schloss bei 97,17 Dollar, 17 Prozent über dem Ausgabepreis von 83 Dollar.",
+ "published": "2026-11-20T08:54:36+01:00",
+ "modified": "2026-11-20T08:54:36+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Anthropic",
+  "ANT",
+  "Börsengang",
+  "Nasdaq",
+  "Aktie"
+ ],
+ "key_takeaways": [
+  "Die Anthropic-Aktie ANT eröffnete bei 111,50 Dollar und schloss ihren ersten Handelstag bei 97,17 Dollar, ein Plus von 17 Prozent auf den Ausgabepreis von 83 Dollar.",
+  "Damit kommt Anthropic laut CNBC auf eine voll verwässerte Marktkapitalisierung von rund 1,8 Billionen Dollar, Platz 7 unter den US-Unternehmen; intraday wurde die 2-Billionen-Marke überschritten.",
+  "Über 846 Millionen Aktien wechselten den Besitzer, mehr als die 522 Millionen am ersten Handelstag von SpaceX.",
+  "Aus dem Prospekt: 33,24 Milliarden Dollar Umsatz in den neun Monaten bis Ende September, rund 1.200 Prozent mehr als im Vorjahreszeitraum."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Eine gläserne Treppe aus aufsteigenden Balken, auf deren oberster Stufe eine leuchtende Kugel ruht, vor einer dunklen Skyline.",
+  "caption": "Symbolbild zum Börsendebüt: rund 17 Prozent über dem Ausgabepreis, kein Tagesplus gegenüber einem vorherigen Börsenschluss.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Anthropic hat seinen ersten Handelstag als börsennotiertes Unternehmen mit einem deutlichen Plus beendet. Die Aktie mit dem Kürzel ANT eröffnete am 19. November bei 111,50 Dollar, deutlich über dem Ausgabepreis von 83 Dollar, und schloss bei 97,17 Dollar, ein Plus von 17 Prozent. Nach CNBC-Berechnungen kommt Anthropic damit auf eine voll verwässerte Marktkapitalisierung von rund 1,8 Billionen Dollar, Platz 7 unter den börsennotierten US-Unternehmen; im Tagesverlauf wurde zeitweise die Marke von 2 Billionen Dollar überschritten. Mehr als 846 Millionen Aktien wechselten den Besitzer, mehr als die 522 Millionen beim Börsendebüt von SpaceX im Juni, das Anthropic mit einem Basis-Platzierungsvolumen von rechnerisch 81,34 Milliarden US-Dollar als größte Erstemission der Geschichte abgelöst hatte."
+  },
+  {
+   "t": "p",
+   "x": "Kurs, Unternehmensbewertung und Emissionsvolumen sind getrennte Bezugsgrößen. Die rund 1,8 Billionen Dollar bei CNBC sind ausdrücklich voll verwässert und keine reine Multiplikation allein bereits umlaufender Aktien. Andere Berichte nennen rund 1,3 Billionen Dollar auf einer anderen Aktienbasis; ohne deckungsgleiche Aktienzahlen werden die Werte nicht ineinander umgerechnet. Die offizielle Pricing-Mitteilung nennt 980 Millionen Aktien zu 83 Dollar, rechnerisch 81,34 Milliarden Dollar Bruttovolumen. Davon verkauft Anthropic 956.351.354 Aktien, Altaktionäre 23.648.646; deren Erlös geht nicht an das Unternehmen. Das ist kein Nettozufluss. Die Mitteilung erwartet den Abschluss unter Bedingungen für den20. November, bestätigt damit also noch nicht dessen Vollzug."
+  },
+  {
+   "t": "h2",
+   "x": "Die Zahlen aus dem Prospekt"
+  },
+  {
+   "t": "p",
+   "x": "Dem Börsenprospekt zufolge erzielte Anthropic in den neun Monaten bis zum 30. September einen Umsatz von 33,24 Milliarden Dollar, rund 1.200 Prozent mehr als im Vorjahreszeitraum. Rund 15 Prozent der Emission gingen laut CNBC an Privatanleger, mehr als die üblichen 5 bis 10 Prozent bei solchen Emissionen. Nachbörslich gab die Aktie laut Marktberichten wieder etwas nach."
+  },
+  {
+   "t": "h2",
+   "x": "Was sich mit der Notierung ändert"
+  },
+  {
+   "t": "p",
+   "x": "Als börsennotiertes Unternehmen unterliegt Anthropic öffentlichen Berichtspflichten. Das schafft zusätzliche Quellen zu Umsatz, Kosten und Risiken, ersetzt aber keine Prüfung ihrer Berechnungsgrundlagen. Der Börsenkurs allein misst weder Modellqualität noch Sicherheit. Angaben zu Umsatz pro GPU lassen sich aus einem Börsendebüt nicht ableiten."
+  },
+  {
+   "t": "callout",
+   "x": "Das Plus bezieht sich auf den Ausgabepreis, nicht auf einen vorherigen Börsenschluss. Der erste Börsenkurs lag höher als der Schlusskurs. Kursbewegungen sind keine Bewertung der wirtschaftlichen Tragfähigkeit und keine Kauf-, Verkaufs- oder Halteempfehlung.",
+   "title": "Einordnung"
+  }
+ ],
+ "sources": [
+  {
+   "title": "Anthropic IPO live updates: ANT stock price and Nasdaq debut",
+   "publisher": "CNBC",
+   "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "Anthropic surges in market debut after biggest IPO on record",
+   "publisher": "Associated Press",
+   "url": "https://apnews.com/article/anthropic-ipo-nasdaq-ai-b6a74b8949021207dc162fcc876c4649",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "Anthropic: Pricing-Mitteilung, Basisangebot und geplanter Abschluss",
+   "publisher": "Anthropic",
+   "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+   "accessed": "2026-11-20"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Wie schloss die Anthropic-Aktie am ersten Handelstag?",
+   "a": "ANT eröffnete bei 111,50 Dollar und schloss bei 97,17 Dollar, ein Plus von 17 Prozent auf den Ausgabepreis von 83 Dollar. Im Tagesverlauf überschritt die Marktkapitalisierung zeitweise 2 Billionen Dollar."
+  },
+  {
+   "q": "Wie groß ist Anthropic nach dem Börsengang?",
+   "a": "CNBC nennt am19. November zum Schluss rund 1,8 Billionen US-Dollar auf voll verwässerter Basis. Das Basisangebot von 980 Millionen Aktien zu 83 Dollar entspricht 81,34 Milliarden Dollar Bruttovolumen, inklusive Altaktionärsanteil. Es ist weder Unternehmenswert noch Nettozufluss."
+  },
+  {
+   "q": "Was verdient Anthropic?",
+   "a": "CNBC berichtet unter Berufung auf den Prospekt 33,24 Milliarden US-Dollar Umsatz für die neun Monate bis 30. September 2026. Umsatz ist kein Gewinn. Den Prospekt haben wir für diese Angabe nicht selbst aus dem Register reproduziert."
+  }
+ ],
+ "related": [
+  "anthropic-ipo-rekord-notierung-ant-nasdaq",
+  "amd-world-labs-uebernahme-fei-fei-li-chief-scientist"
+ ]
+}

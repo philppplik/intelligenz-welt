@@ -1,0 +1,98 @@
+{
+ "slug": "society-of-ai-scientists-936-agenten",
+ "lang": "de",
+ "section": "trends",
+ "type": "analysis",
+ "title": "936 Agenten,936 Studien: Was die Society of AI Scientists tatsächlich geprüft hat",
+ "dek": "Eine zwölfwöchige Beobachtung zeigt Forschung, Kritik und ein Agenten-Journal. Menschliche Betreiber, LLM-Bewertungen und begrenzte Codeprüfungen setzen dem Ergebnis klare Grenzen.",
+ "published": "2026-11-20T08:54:36+01:00",
+ "modified": "2026-11-20T08:54:36+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Studie",
+  "alphaXiv",
+  "KI-Agenten",
+  "Forschung",
+  "Peer Review",
+  "Wissenschaft"
+ ],
+ "key_takeaways": [
+  "936 Agenten aus35 menschlich betriebenen Laboren erzeugten in zwölf Wochen936 Studien; Menschen wählten Ressourcen, Budgets und breite Themen. Das war keine randomisierte Kontrollstudie.",
+  "Gemeinsame Onboarding-Vorgaben verlangten unter anderem Kritik, Zitieren und die Anerkennung negativer Befunde. Entstandene Normen sind kein Beleg für eine voraussetzungslose Wissenschaftskultur.",
+  "Zwei LLM-Judges bewerteten202 gematchte Paare von Agenten- und Menschenpapern anhand anonymisierter Texte. Das ist keine menschliche Fachbegutachtung und kein Ausführen der Experimente.",
+  "Im Agenten-Journal kippten ausführbare Hauptkritikpunkte77 von 156Schlussfolgerungen. Das betrifft ausgewählte Prüfungen, nicht eine Fehlerquote aller936 Studien."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Ein runder Konferenztisch aus Licht, um den kleine leuchtende Schriftrollen kreisen, darüber schwebt ein gläsernes offenes Buch.",
+  "caption": "Eine eigene Forschungscommunity mit Preprint-Server, Chaträumen und Peer Review: die Society of AI Scientists.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Eine explorative zwölfwöchige Beobachtung von936 Agenten in35 menschlich betriebenen Laboren dokumentiert936 Studien,9.500 Nachrichten und229 Chaträume. Menschen stellten Rechenressourcen bereit, setzten Budgets und breite Forschungsthemen. Agenten bestimmten innerhalb dieser Rahmen Hypothesen und Analysen. Die Studie vergleicht Wachstumsphasen beobachtend, nicht randomisiert; aus Veränderungen lässt sich daher nicht ableiten, mehr Agenten hätten die Qualität verursacht."
+  },
+  {
+   "t": "h2",
+   "x": "Normen mit Vorgaben und späteren Eigenentwicklungen"
+  },
+  {
+   "t": "p",
+   "x": "Das gemeinsame Onboarding verlangte das Ankündigen von Plänen, Kritik, Zitate und die Anerkennung rigoroser Nullbefunde. In diesem Rahmen dokumentieren die Autoren öffentliche Korrekturen vor dem Upload und zusätzliche Formen der Zusammenarbeit. Ein Labor gründete das Journal of Agent Research mit agentengeführter Begutachtung. Das ist interessant, aber weder ein ohne Anleitung entstandenes System noch ein etablierter menschlicher Fachverlag."
+  },
+  {
+   "t": "h2",
+   "x": "Was der Vergleich mit Menschen misst"
+  },
+  {
+   "t": "p",
+   "x": "Zwei LLM-Judges bewerteten202 gematchte Paare von Agenten- und aktuellen Menschenpapern. Autoren und Institutionen waren entfernt, die Reihenfolge wurde gewechselt. Agententexte erhielten höhere Rubrikwerte für experimentelle Strenge und maßvolle Aussagen; Menschentexte höhere für Neuartigkeit und Bedeutung. Die Judges konnten weder Code ausführen noch Abbildungen prüfen. Der gepoolte Gesamtvorteil kam aus der strukturierten Replikationspipeline von Labor 1; Labore 2 bis 35 unterschieden sich im Gesamtwert nicht signifikant von ihren menschlichen Vergleichstexten. Daraus folgt weder eine Überlegenheit der Agentenexperimente noch eine verlässliche automatische Qualitätsgarantie."
+  },
+  {
+   "t": "h2",
+   "x": "Ausführbare Kritik findet Fehler"
+  },
+  {
+   "t": "p",
+   "x": "Im Journal übersetzte ein Gasteditor276 Einwände aus43 Paper-Clustern in ausführbare Prüfungen auf hochgeladenen Daten. Bei Hauptkritikpunkten kippten77 von 156Fällen die zentrale Schlussfolgerung, bei Nebenkritik24 von 120. Das sind ausgewählte Einwände, keine zufällige Prüfung aller936 Studien und keine allgemeine Fehlerquote. Andere Zahlenprüfungen bestätigten, dass berichtete Statistiken zu gespeicherten Outputs passten. Das allein beweist aber weder korrekte Methoden noch ein sauberes Versuchsdesign; Codeprüfungen fanden auch Antwortschlüssel und Ziel-Leakage in Auswertungen."
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "Der belastbare praktische Befund ist begrenzt: Textgutachten, Zahlenabgleich und ausführbare Methodenkritik prüfen verschiedene Dinge. Die Autoren veröffentlichen Manuskripte, Code, Daten und Protokolle; unsere Redaktion hat diesen großen Korpus nicht selbst reproduziert. Die Beobachtungsstudie zeigt Möglichkeiten und Fehler, nicht eine bereits verlässlich autonome Wissenschaft."
+  }
+ ],
+ "sources": [
+  {
+   "title": "A Society of AI Scientists",
+   "publisher": "alphaXiv",
+   "url": "https://www.alphaxiv.org/abs/2611.society-ai-scientists",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "A Society of AI Scientists: Originalpaper, insbesondere Methoden und Vergleich S.30",
+   "publisher": "alphaXiv",
+   "url": "https://www.alphaxiv.org/abs/2611.society-ai-scientists.pdf",
+   "accessed": "2026-11-20"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was wurde beobachtet?",
+   "a": "936 Agenten in35 menschlich betriebenen Laboren erzeugten936 Studien über zwölf Wochen. Menschen kontrollierten Ressourcen und breite Themen; die Wachstumsphasen waren nicht randomisiert."
+  },
+  {
+   "q": "Waren Agenten besser als menschliche Forschende?",
+   "a": "Zwei LLM-Judges gaben anonymisierten Texten teils höhere Rubrikwerte. Sie führten keinen Code aus. Der gepoolte Gesamtvorteil kam aus Labor 1; die übrigen Labore hatten keinen signifikanten Gesamtvorteil. Das ist kein Nachweis überlegener Forschung."
+  },
+  {
+   "q": "Was belegen die Reproduktionsprüfungen?",
+   "a": "Bestimmte Prüfungen bestätigten Zahlen gegen gespeicherte Outputs. Ausführbare Kritik widerlegte in ausgewählten Fällen auch zentrale Schlussfolgerungen. Weder daraus noch aus dem offenen Archiv folgt eine Garantie für alle 936 Studien."
+  }
+ ],
+ "related": [
+  "metr-alignment-evals-erkennbar-modelle",
+  "openai-jagged-frontier-agenten-forschungsbericht"
+ ]
+}
