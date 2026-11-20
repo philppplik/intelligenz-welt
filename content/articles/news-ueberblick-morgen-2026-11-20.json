@@ -1,0 +1,109 @@
+{
+ "slug": "news-ueberblick-morgen-2026-11-20",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-20T08:01:01+01:00",
+ "modified": "2026-11-20T08:01:01+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "Bradley-Terry Training Can Distort Outcome Probabilities of Initially Accurate Language World Models",
+   "publisher": "arXiv; Xinze Shi, Litian Zhang, Zhenjie Su u.a., Beijing University of Posts and Telecommunications, Microsoft u.a.",
+   "url": "https://arxiv.org/abs/2611.25594",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "RL Can Only Reinforce What It Sees Succeed",
+   "publisher": "arXiv; Ruben Sanchez-Corcuera, Unai Zulaika, Aritz Bilbao-Jayo und Miguel Fernandez-de-Retana, University of Deusto",
+   "url": "https://arxiv.org/abs/2611.26084",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents",
+   "publisher": "arXiv; Ziyan Yang, Taiwei Shi und Jieyu Zhao, University of Southern California",
+   "url": "https://arxiv.org/abs/2611.25123",
+   "accessed": "2026-11-20"
+  }
+ ],
+ "tags": [
+  "Forschung",
+  "Weltmodelle",
+  "Reinforcement Learning",
+  "Agenten-Gedächtnis",
+  "arXiv"
+ ],
+ "title": "Bradley-Terry-Verzerrung, RL-Erfolgsgruppen und das Grep-Gedächtnis",
+ "dek": "Drei Preprints im Laborcheck: verzerrtes Vergleichsfeedback, eine rezeptabhängige RL-Erfolgsschwelle und Klartext-Logs für exakten Abruf.",
+ "key_takeaways": [
+  "In einer simulierten Schiebeaufgabe lag die Phantommasse nach Bradley-Terry-Training bei 33 bis 43 Prozentpunkten. Die richterkundige Vergleichs-Likelihood zeigte keine vergleichbare Verschiebung.",
+  "In einer synthetischen Rätselwelt sagten erfolgreiche Versuchsgruppen den RL-Take-off besser voraus als Versuche. Rund 35 Gruppen für 50 Prozent galten für das Ausgangsrezept, nicht universell.",
+  "GrepMem erreichte mit Qwen3.5-9B nach RL 97,4 Prozent auf ContextBench KV Store. SUPO und Masking lagen dort bei 13,9 und 20,7 Prozent; auf AMA-Bench stream blieb der Vorsprung nicht signifikant."
+ ],
+ "hero": {
+  "alt": "Datengrafik: Phantommasse des Weltmodells, Take-off-Kurve der RL-Erfolgsgruppen und GrepMem-Genauigkeiten gegenüber Verdichtungs-Baselines, jeweils im Scope der drei Studien.",
+  "caption": "Eigene Datengrafik zu drei Preprints. Die Ergebnisse gelten für die genannten Simulationen und Benchmark-Setups.",
+  "credit": "Eigene Grafik",
+  "ai_generated": false
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Vergleichsfeedback gilt als praktikabler Weg, Sprach-Weltmodelle nachträglich zu trainieren: Ein Richter sagt, welches von zwei Kandidaten-Ergebnissen näher an dem lag, was tatsächlich passiert ist. Eine Studie von BUPT, Microsoft und Partnern zeigt nun im kontrollierten Simulator, dass das verbreitete Bradley-Terry-Ziel dabei selbst ein ursprünglich genaues Modell verziehen kann. Zwei weitere Arbeiten ordnen Verstärkungslernen und Agenten-Gedächtnis ein: wann RL eine seltene richtige Aktion überhaupt entdeckt, und wie viel ein einfaches Textprotokoll plus Suchbefehl gegen aufwendige Gedächtnisarchitekturen ausrichtet. Es handelt sich um Preprints und eng begrenzte Versuche, nicht um allgemein bestätigte Leistungsversprechen."
+  },
+  {
+   "t": "h2",
+   "x": "Vergleichsfeedback kann ein genaues Weltmodell verziehen"
+  },
+  {
+   "t": "p",
+   "x": "Das Team um Xinze Shi trainierte ein Qwen2.5-1.5B mit LoRA-Adapter (Rang 8) zunächst so, dass es die Ergebnisverteilung einer simulierten Schiebeaufgabe (Franka-Arm in ManiSkill, 12 mögliche Ereignisse, 80 aufgezählte Zweige pro Bedingung) praktisch exakt traf: mittlerer Hazard-Fehler 2,4 Prozentpunkte, Korrelation 0,994 zur Referenz. Anschließend kam Vergleichsfeedback mit wahrheitsgemäßem Richter dazu, trainiert mit dem Bradley-Terry-Ziel. Das Ergebnis: 33 bis 43 Prozentpunkte der Wahrscheinlichkeitsmasse wanderten auf Ausgänge, die keiner der 80 Zweige einer Bedingung je erzeugt."
+  },
+  {
+   "t": "p",
+   "x": "Die Ursache liegt laut Autoren im Ziel, nicht in den Vergleichen: Das theoretische Optimum des Bradley-Terry-Verlusts, vor dem Training berechnet, sagt die Endposition des Modells voraus, und eine Likelihood, die die Richterregel kennt, lernt aus denselben Vergleichen ohne Verschiebung. Der Effekt blieb über fünf Kandidatengesetze, eine 3,15-fach dichtere Aufzählung und ungesehene Bedingungen bestehen; ohne die physikalisch unmöglichen Ereignisse verblieben rund 29 Prozentpunkte. Die Kosten sind konditional: Mit einer vom Vormodell geerbten Entscheidungsschwelle kostete die Verzerrung rund 3 Prozentpunkte Nutzen pro Entscheidung auf trainierten und 1 bis 2 Punkte auf ungesehenen Bedingungen, fast vollständig durch falsche Ablehnungen; ohne die unmöglichen Ereignisse lag der Nutzenverlust im Mittel unter einem Punkt. Die Autoren weisen selbst auf enge Grenzen hin: Simulation statt echter Roboter, ein einzelnes Modell, ein Wahrheitsrichter, nur Kontakt-Layouts und zwei Feedback-Seeds."
+  },
+  {
+   "t": "h2",
+   "x": "RL verstärkt nur, was es erfolgreich sieht"
+  },
+  {
+   "t": "p",
+   "x": "Wann soll ein Agent seiner Erfahrung aus dem Vortraining misstrauen, wenn eine vertraute Regel plötzlich scheitert? Forschende der University of Deusto bauten eine Rätselwelt, in der beide Seiten exakt bekannt sind: kleine GPT-Modelle (10,7 Millionen Parameter), von Grund auf trainiert auf 9 Millionen Spiele eines Bayesschen Spielers. Die Basismodelle hedgen wie ihr Korpus; Outcome-Reward-RL (GRPO) macht daraus Entscheidungen und bewegt sie in beiden Richtungen Richtung Optimum, also weder pauschal sturer noch pauschal umsichtiger."
+  },
+  {
+   "t": "p",
+   "x": "Der zentrale Befund: Ist die richtige Aktion selten, lernt jeder Lauf sie entweder für alle Regeln zugleich oder gar nicht. Ob ein Lauf abhebt, lässt sich vor dem Training an einer einzigen Zahl festmachen, der erwarteten Anzahl von Versuchsgruppen, in denen die neue Aktion gewinnt. Rund 35 solcher Gruppen entsprechen einer Chance von etwa 50 Prozent. Das Zählmaß trug über 400 Läufe, für neue wie wiederholte Probleme und Gruppen von 4 bis 256 Versuchen; zwölf Rezeptänderungen (Lernrate, Optimierer, GRPO-Varianten, Modellgrößen von 1,3 bis 85 Millionen Parametern, 910 Läufe insgesamt) verschoben die Schwelle, aber nicht das, was gezählt wird. Ein mit 4- bis 8-fachem Budget gepaarter Wechsel wurde so oft gelernt, wie die Zählung es vorhersagte. Die Autoren betonen die Grenzen: synthetische Welt, kleine Modelle, GRPO ohne Referenzmodell, und die konkrete Schwelle gilt nur für dieses Rezept. Ein erster Blick auf OLMo-3-7B blieb qualitativ; Code und Daten sind angekündigt, zum Quellenstand aber noch nicht öffentlich."
+  },
+  {
+   "t": "h2",
+   "x": "Grep statt Gedächtnis-Index: Klartext-Log schlägt Verdichtung"
+  },
+  {
+   "t": "p",
+   "x": "Langläufer-Agenten verlieren Information, sobald ihr Kontextfenster voll ist; Zusammenfassen und strukturierte Speicher entscheiden früh, was bleiben darf. GrepMem von der University of Southern California geht den umgekehrten Weg: ein reines Anhänge-Log der kompletten Historie im Klartext plus einem Regex-Suchwerkzeug, ohne Embeddings, Index oder Zusatzmodelle. Trainiert wurde Qwen3.5-9B mit GRPO unter fünf Kontextstrategien (ReAct, Masking, SUPO, MemGPT-artig, GrepMem) bei 32.768 Token Kontext und 4.000 Trainings-Episoden."
+  },
+  {
+   "t": "p",
+   "x": "Die Ergebnisse sind aufgabenabhängig deutlich: Auf ContextBench, wo exakte Werte und einzelne Logeinträge gefragt sind, erreicht GrepMem nach RL 97,4 Prozent (KV Store) beziehungsweise 95,3 Prozent (Log Triage), gegenüber nur 6,6 bis 20,7 Prozent für SUPO und Masking. Auf BCP-Multi liegt es bei 46,9 Prozent, 8,8 Punkte vor SUPO und 7,0 vor MemGPT. Wo Zusammenfassungen genügen, schmilzt der Vorteil: Auf AMA-Bench stream blieben nach RL nur 0,9 Prozentpunkte Vorsprung, statistisch nicht signifikant. Über alle fünf Aufgaben lag GrepMem auf der Pareto-Front aus Genauigkeit und Tokenkosten, bei Eingabeströmen bis 968.000 Token. BCP-Multi und AMA-Bench wurden mit gpt-5.6-sol bewertet, ContextBench mit seinen offiziellen programmatischen Prüfern; die Konfidenzintervalle spiegeln Streuung über Testitems, nicht über Trainingsläufe. Eine Code-Freigabe ist laut Paper angekündigt; die hier beschriebenen Ergebnisse wurden nicht selbst reproduziert. Ein allgemeiner Sieg über andere Speicherarchitekturen folgt daraus nicht: MemGPT erreichte nach RL auf KV Store 99,9 Prozent, auf Log Triage 50,0 Prozent."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist der wichtigste KI-Befund vom 20. November?",
+   "a": "Dass verbreitete Nachtrainings-Ziele eigenen Schaden anrichten können: Im Simulator verzerrte Bradley-Terry-Vergleichsfeedback ein zuvor akkurates Sprach-Weltmodell um 33 bis 43 Prozentpunkte auf Ausgänge, die kein aufgezählter Zweig der jeweiligen Bedingung erzeugt, während eine richterkundige Likelihood diese starke Verschiebung aus denselben Daten vermied."
+  },
+  {
+   "q": "Woran erkennt man vor dem Training, ob RL eine seltene Aktion lernt?",
+   "a": "An der erwarteten Zahl von Versuchsgruppen, in denen die neue Aktion mindestens einmal gewinnt: Rund 35 solcher Gruppen gaben in der Rätselwelt etwa 50 Prozent Take-off-Chance, und das Zählmaß hielt über 910 Läufe mit zwölf Rezeptänderungen, auch wenn das Rezept die Schwelle selbst verschob."
+  },
+  {
+   "q": "Braucht ein Agenten-Gedächtnis Embeddings und Index?",
+   "a": "Nicht überall: GrepMem kombinierte nur ein Klartext-Log mit Regex-Suche und lag nach RL bei exaktem Abruf (ContextBench) bei 95 bis 97 Prozent, weit vor Verdichtungs-Baselines. Wo Zusammenfassungen genügten, etwa für Ursachenfragen, war der Vorsprung dagegen nicht signifikant."
+  }
+ ],
+ "related": [
+  "daisyrose-27b-radixark-rl-kleines-labor",
+  "anthropic-agenten-gedaechtnis-dreaming"
+ ]
+}
