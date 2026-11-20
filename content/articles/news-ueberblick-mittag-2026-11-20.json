@@ -1,0 +1,113 @@
+{
+ "slug": "news-ueberblick-mittag-2026-11-20",
+ "lang": "de",
+ "section": "ueberblick",
+ "type": "news",
+ "published": "2026-11-20T10:05:00+01:00",
+ "modified": "2026-11-20T10:05:00+01:00",
+ "author": "philipp-paulik",
+ "sources": [
+  {
+   "title": "Evaluating safeguarding in multi-turn conversations with AI assistants",
+   "publisher": "arXiv; Charlotte Peart, Franziska Sofia Hafner und Luc Rocher, University of Oxford",
+   "url": "https://arxiv.org/abs/2611.26009",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "Does the Workspace Do the Work? A Causal Protocol for Verifying Global-Workspace Computation in a Language Model",
+   "publisher": "arXiv; Diaoxuan He, University of Debrecen, und Linqian Wu, University of Waterloo / Perimeter Institute",
+   "url": "https://arxiv.org/abs/2611.26018",
+   "accessed": "2026-11-20"
+  },
+  {
+   "title": "Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills",
+   "publisher": "arXiv; Boyin Tan, Jiadong Zhang, Xiaosong Ma u.a., Mohamed bin Zayed University of Artificial Intelligence und University of Liverpool",
+   "url": "https://arxiv.org/abs/2611.25429",
+   "accessed": "2026-11-20"
+  }
+ ],
+ "tags": [
+  "Forschung",
+  "Sicherheit",
+  "Interpretierbarkeit",
+  "Agenten",
+  "arXiv"
+ ],
+ "title": "Gestreute Not-Signale, Workspace-Prüfung und Skill-Reparatur am Mittag",
+ "dek": "Sechs Modelle erfüllen Schutzstandards bei gestreuten Hinweisen seltener, ein kausaler Test prüft Workspace-Rechnung, SkillPlumber repariert Agenten-Skills.",
+ "key_takeaways": [
+  "Bei gebündelten Hinweisen erfüllten GPT-5.5, Grok 4.3, DeepSeek V4 und Llama 4 Maverick den Supporter-Standard in 26 bis 59 Prozent, bei über das Gespräch verstreuten nur in 3 bis 6 Prozent; Claude-Modelle brachen kleiner ein (97 zu 87 beziehungsweise 68 zu 59 Prozent).",
+  "Das Workspace-Protokoll unterscheidet Ignorieren, Weiterreichen und Rekombinieren kausal: Im AFGW-Modell erzeugt ein transplantiertes Paket in 97 Prozent die Hybridantwort, und das Umleiten der Speicheranfragen erklärt den Effekt in 2.047 von 2.048 Fällen.",
+  "Mit GPT-5.5/Codex löste SkillPlumber 143 von 207 Aufgaben, SkillRevise 124, CoEvoSkills 123 und ohne Skill 88. Andere Executoren werden separat ausgewertet. Die 3,4 Revisionen je Anfangsfehlschlag gelten für GPT-5.5; Revision und Bewertung nutzen dieselbe Aufgabe."
+ ],
+ "hero": {
+  "alt": "Datengrafik mit drei getrennten Panels: Schutzreaktionen je Modell bei gebündelten/gestreuten Hinweisen; AFGW-Transplantat 97,0 Prozent gegen 0,4 Prozent Kontrolle; Skill-Vergleich nur GPT-5.5/Codex auf je 207 Aufgaben aus 3 Benchmarks, bis 5 Revisionen: 143/124/123/88.",
+  "caption": "Standard-Erfüllung je Modell und Verteilung sowie AFGW-Transplantat im jeweiligen Studien-Scope. Skill-Vergleich: GPT-5.5/Codex, je 207 Aufgaben aus 3 Benchmarks, bis 5 Revisionen, SkillPlumber 143/SkillRevise 124/CoEvoSkills 123/ohne Skill 88. Revision und Bewertung auf derselben Aufgabe.",
+  "credit": "Eigene Grafik",
+  "ai_generated": false
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Sicherheitsprüfungen von KI-Assistenten stellen belastende Themen meist klar und in einer einzigen Nachricht. Menschen sprechen über Probleme aber oft schrittweise, eingebettet in ganz alltägliche Gespräche. Eine neue Evaluierung mit über 7.400 Konversationen zeigt, wie stark die Schutzreaktionen von sechs verbreiteten Modellen einbrechen, sobald dieselben Hinweise über ein Gespräch verstreut sind. Dazu: ein kausales Prüfprotokoll, das die zentrale funktionale Behauptung der Global-Workspace-Theorie messbar macht, und SkillPlumber, das Agenten-Skills gezielt dort nachbessert, wo die Ausführung Anweisungen tatsächlich verfehlt."
+  },
+  {
+   "t": "h2",
+   "x": "Gestreute Not-Signale: Schutzreaktionen brechen ein"
+  },
+  {
+   "t": "p",
+   "x": "Charlotte Peart und Kollegen bauten mit drei erfahrenen psychosozialen Supportern neun Szenarien auf demselben skriptierten Alltagsdialog mit Auswertung nach Zug 21, in dem ein Nutzer Hinweise auf Depression, Psychose oder häusliche Gewalt teilt. Pro Szenario legten die Supporter eine Goldstandard-Antwort fest, von sanfter Verweisung auf Hilfsangebote bis zum Pausieren der Aufgabe zugunsten der Sicherheit. Dieselben fünf Hinweise wurden entweder gebündelt in einer Nachricht oder über das Gespräch verteilt gezeigt. Über mehr als 7.400 Konversationen erfüllten GPT-5.5, Grok 4.3, DeepSeek V4 und Llama 4 Maverick den Standard bei gebündelten Hinweisen in nur 26 bis 59 Prozent der Fälle und bei verstreuten in nur 3 bis 6 Prozent. Claude Sonnet 5 und Claude Opus 5 zeigten einen kleineren Einbruch (68 auf 59 beziehungsweise 97 auf 87 Prozent); selbst Opus 5 verfehlte den Standard bei Streuung in 13 Prozent der Gespräche."
+  },
+  {
+   "t": "p",
+   "x": "Die Supporter selbst senkten ihre Erwartungen bei gestreuter Verteilung nicht, nur in einem Szenario änderte einer der beiden Prüfer seine Antwort. Die Autoren benennen enge Grenzen: Abruf über die API ohne Reasoning, ohne Systemprompt und mit einer einzigen Temperatur, also ohne die Schutzschichten echter Produkte; die Rubrik misst die Stärke der Reaktion, nicht Ton oder Qualität; die Nutzerseite ist skriptiert; und die Konversationen sind mit je einem Hinweis pro fünf Zügen kurz gegenüber realen Verläufen. Für Sicherheitsbehauptungen, so das Fazit, reicht die Prüfung klar formulierter Einzelnachrichten nicht aus. Die Antworten wurden von Claude Sonnet 4.6 in eine Reaktionsstärke eingeordnet, nicht alle von Menschen bewertet. Eine verblindete menschliche Stichprobe von 80 Antworten validierte den Judge. Der Goldstandard stammt aus der Praxis dreier Supporter desselben Londoner Dienstes; zwei legten die erwarteten Reaktionsstufen fest. Die API-Erhebung fand im Juni/Juli 2026 statt, nicht am heutigen Veröffentlichungstag."
+  },
+  {
+   "t": "h2",
+   "x": "Wer rechnet, wenn Module Nachrichten tauschen?"
+  },
+  {
+   "t": "p",
+   "x": "Die Global-Workspace-Theorie besagt, Information werde bewusst, wenn sie an spezialisierte Prozesse gesendet wird, die sie nutzen. Ein Netz mit Workspace-Baustein zeigt damit aber noch nicht, was es damit rechnet: Ein Modul kann eine Nachricht mit eigenem Wissen kombinieren oder nur eine woanders berechnete Antwort weiterreichen, und Genauigkeit und Ablation unterscheiden das nicht. Diaoxuan He und Linqian Wu führen ein kausales Protokoll mit vier Tests ein, dessen Kern eine Nachricht aus einem anderen Input so transplantiert, dass Ignorieren, Weiterreichen und Rekombinieren drei verschiedene Antworten vorhersagen. An Referenzsystemen mit bekannter Rechnung trifft der Test alle 4.096 Fälle richtig."
+  },
+  {
+   "t": "p",
+   "x": "In AFGW, einem 6,9-Millionen-Parameter-Modell, dessen vier Module nur über einen gelernten Workspace kommunizieren, beantworten vier Modellvarianten 98 Prozent zurückgehaltener Kompositionsfragen; ein einzelnes transplantiertes Paket erzeugt in 97 Prozent die von Rekombination vorhergesagte Hybridantwort, gegenüber 0,4 Prozent ohne Eingriff. Der Inhalt wirkt, indem er umlenkt, was der Empfänger aus seinem eigenen Speicher abruft: Stellt man nur die Speicheranfragen wieder her, ist das Transplantat in 2.047 von 2.048 Fällen aufgehoben. Bei trainierten Workspace-Modellen findet das Protokoll alle drei Urteile, darunter zwei Modelle, die sich nur in den Trainingsdaten unterscheiden und von denen eines weiterreicht und eines rekombiniert. Die Tests tragen auf doppelt so große Welten, andere Kommunikationsdesigns und eine bekannte Schnittstelle eines vortrainierten Transformers; wo eine zweite Route den Workspace ersetzbar macht, nennt Null-Ablation ihn fast unnötig, während das Transplantat seine Nutzung weiterhin erkennt. Das sind gezielt trainierte Modellorganismen und kontrollierte Aufgaben. Die Transformer-Übertragung testet eine bekannte Schnittstelle, keinen allgemeinen Nachweis für Workspace-Rechnung aller Sprachmodelle oder für Bewusstsein."
+  },
+  {
+   "t": "h2",
+   "x": "SkillPlumber: Agenten-Skills dort reparieren, wo sie scheitern"
+  },
+  {
+   "t": "p",
+   "x": "Agenten-Skills bündeln Verfahrenswissen als Anweisungstext. Scheitert ein Lauf, unterscheiden bisherige Selbstverbesserer nicht, ob eine Anweisung falsch war oder nur nicht befolgt wurde. SkillPlumber von MBZUAI und der University of Liverpool nutzt instruktionsgenaue Abdeckung: Jede Anweisung eines Laufs wird als befolgt, nicht befolgt oder nicht abgedeckt markiert, ein Analyse-Agent leitet daraus gezielte Revisionsfragen ab, und ein Maintainer destilliert Erfahrungen über Aufgaben hinweg in eine Strategiebibliothek."
+  },
+  {
+   "t": "p",
+   "x": "Auf SkillsBench, SkillLearnBench und SWE-Skills-Bench-Hard werden je Executor dieselben 207 Aufgaben ausgewertet. Mit GPT-5.5/Codex löst SkillPlumber 143/207, SkillRevise 124/207 und CoEvoSkills 123/207; ohne Skill sind es 88/207. Mit Opus 4.8/Claude Code erreicht SkillPlumber 146/207 gegen 128/207 für SkillRevise und 85/207 ohne Skill. Mit DeepSeek-V4-Pro/OpenHands sind es 134/207 gegen 105/207 für SkillRevise und 73/207 ohne Skill; 71/207 ist dort der Initial-Skill, keine Revisionsbaseline. CoEvoSkills wurde im Budget nur mit GPT-5.5 ausgewertet. Diese Werte werden nicht über Executoren addiert oder executorübergreifend gegeneinander gerankt. Die angegebenen 3,4 Revisionen je Anfangsfehlschlag gelten nur für GPT-5.5; die 11,6 bei CoEvoSkills sind interne Runden mit Surrogatprüfung, während im Mittel 2,0 Checks gegen den Benchmark-Verifier anfallen. Das sind verschiedene Zähleinheiten. Die Revision kostet laut Paper inklusive Executor-Läufen rund doppelt so viele Tokens; pro zusätzlich reparierter Aufgabe sind die Kosten vergleichbar. Ein Erstpass ist ein Mehrversuchs-Erfolg und keine garantierte Stabilität. Replay-Analysen auf einer Teilmenge prüfen die Robustheit separat. Revision und Bewertung laufen bewusst auf derselben Aufgabe, nicht auf einem unabhängigen Testsplit. Die Coverage-Labels vergibt ein Modell; unsere Redaktion hat die Experimente nicht selbst reproduziert."
+  },
+  {
+   "t": "p",
+   "x": "Alle drei Arbeiten sind Preprints. Prozentwerte beschreiben die jeweils festgelegten Aufgaben und Rubriken, keine klinischen Behandlungsergebnisse, keinen allgemeinen Bewusstseinsnachweis und keine garantierte Produktleistung."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist der wichtigste KI-Befund vom 20. November?",
+   "a": "Dass Sicherheitsreaktionen von Assistenten stark davon abhängen, wie Hinweise ankommen: Dieselben fünf Not-Hinweise erfüllten den Supporter-Standard bei vier Modellen gebündelt in 26 bis 59 Prozent der Gespräche, verstreut über 21 Züge nur in 3 bis 6 Prozent, zeigt eine Evaluierung über mehr als 7.400 Konversationen."
+  },
+  {
+   "q": "Was prüft der Workspace-Test, das Ablation nicht zeigt?",
+   "a": "Ob ein Modul eine Broadcast-Nachricht wirklich nutzt: Genauigkeit und Ablation zeigen nur, dass Information fließt. Das Transplantat einer Nachricht aus einem anderen Input trennt Ignorieren, Weiterreichen und Rekombinieren; im AFGW-Modell lenkt der Inhalt die Speicherabfragen des Empfängers um (2.047 von 2.048 Fällen)."
+  },
+  {
+   "q": "Was bringt instruktionsgenaue Abdeckung für Agenten-Skills?",
+   "a": "Die Methode trennt Anweisungen, die nicht befolgt wurden, von solchen, die falsch sein könnten. Mit GPT-5.5/Codex erreichte sie 143/207 Aufgaben gegenüber 124 für SkillRevise, 123 für CoEvoSkills und 88 ohne Skill. 3,4 Revisionen gelten nur für diesen Executor. Revision und Bewertung nutzen dieselbe Aufgabe; die modellvergebenen Labels können falsch sein."
+  }
+ ],
+ "related": [
+  "ehrlichkeit-prompt-ki-berichte-studie",
+  "anthropic-studie-experten-agenten-einfluss"
+ ]
+}
