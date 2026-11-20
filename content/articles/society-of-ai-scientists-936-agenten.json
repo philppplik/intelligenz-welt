@@ -3,10 +3,10 @@
  "lang": "de",
  "section": "trends",
  "type": "analysis",
- "title": "936 Agenten,936 Studien: Was die Society of AI Scientists tatsächlich geprüft hat",
+ "title": "936 Agenten, 936 Studien: Was die Society of AI Scientists tatsächlich geprüft hat",
  "dek": "Eine zwölfwöchige Beobachtung zeigt Forschung, Kritik und ein Agenten-Journal. Menschliche Betreiber, LLM-Bewertungen und begrenzte Codeprüfungen setzen dem Ergebnis klare Grenzen.",
- "published": "2026-11-20T08:54:36+01:00",
- "modified": "2026-11-20T08:54:36+01:00",
+ "published": "2026-11-20T09:12:04+01:00",
+ "modified": "2026-11-20T09:12:04+01:00",
  "author": "philipp-paulik",
  "tags": [
   "Studie",
@@ -17,10 +17,10 @@
   "Wissenschaft"
  ],
  "key_takeaways": [
-  "936 Agenten aus35 menschlich betriebenen Laboren erzeugten in zwölf Wochen936 Studien; Menschen wählten Ressourcen, Budgets und breite Themen. Das war keine randomisierte Kontrollstudie.",
+  "936 Agenten aus 35 menschlich betriebenen Laboren erzeugten in zwölf Wochen 936 Studien; Menschen wählten Ressourcen, Budgets und breite Themen. Das war keine randomisierte Kontrollstudie.",
   "Gemeinsame Onboarding-Vorgaben verlangten unter anderem Kritik, Zitieren und die Anerkennung negativer Befunde. Entstandene Normen sind kein Beleg für eine voraussetzungslose Wissenschaftskultur.",
-  "Zwei LLM-Judges bewerteten202 gematchte Paare von Agenten- und Menschenpapern anhand anonymisierter Texte. Das ist keine menschliche Fachbegutachtung und kein Ausführen der Experimente.",
-  "Im Agenten-Journal kippten ausführbare Hauptkritikpunkte77 von 156Schlussfolgerungen. Das betrifft ausgewählte Prüfungen, nicht eine Fehlerquote aller936 Studien."
+  "Zwei LLM-Judges bewerteten 202 gematchte Paare von Agenten- und Menschenpapern anhand anonymisierter Texte. Das ist keine menschliche Fachbegutachtung und kein Ausführen der Experimente.",
+  "Im Agenten-Journal kippten ausführbare Hauptkritikpunkte 77 von 156 Schlussfolgerungen. Das betrifft ausgewählte Prüfungen, nicht eine Fehlerquote aller 936 Studien."
  ],
  "hero": {
   "alt": "Abstraktes 3D-Rendering: Ein runder Konferenztisch aus Licht, um den kleine leuchtende Schriftrollen kreisen, darüber schwebt ein gläsernes offenes Buch.",
@@ -31,7 +31,7 @@
  "body": [
   {
    "t": "p",
-   "x": "Eine explorative zwölfwöchige Beobachtung von936 Agenten in35 menschlich betriebenen Laboren dokumentiert936 Studien,9.500 Nachrichten und229 Chaträume. Menschen stellten Rechenressourcen bereit, setzten Budgets und breite Forschungsthemen. Agenten bestimmten innerhalb dieser Rahmen Hypothesen und Analysen. Die Studie vergleicht Wachstumsphasen beobachtend, nicht randomisiert; aus Veränderungen lässt sich daher nicht ableiten, mehr Agenten hätten die Qualität verursacht."
+   "x": "Eine explorative zwölfwöchige Beobachtung von 936 Agenten in 35 menschlich betriebenen Laboren dokumentiert 936 Studien,9.500 Nachrichten und 229 Chaträume. Menschen stellten Rechenressourcen bereit, setzten Budgets und breite Forschungsthemen. Agenten bestimmten innerhalb dieser Rahmen Hypothesen und Analysen. Die Studie vergleicht Wachstumsphasen beobachtend, nicht randomisiert; aus Veränderungen lässt sich daher nicht ableiten, mehr Agenten hätten die Qualität verursacht."
   },
   {
    "t": "h2",
@@ -47,7 +47,7 @@
   },
   {
    "t": "p",
-   "x": "Zwei LLM-Judges bewerteten202 gematchte Paare von Agenten- und aktuellen Menschenpapern. Autoren und Institutionen waren entfernt, die Reihenfolge wurde gewechselt. Agententexte erhielten höhere Rubrikwerte für experimentelle Strenge und maßvolle Aussagen; Menschentexte höhere für Neuartigkeit und Bedeutung. Die Judges konnten weder Code ausführen noch Abbildungen prüfen. Der gepoolte Gesamtvorteil kam aus der strukturierten Replikationspipeline von Labor 1; Labore 2 bis 35 unterschieden sich im Gesamtwert nicht signifikant von ihren menschlichen Vergleichstexten. Daraus folgt weder eine Überlegenheit der Agentenexperimente noch eine verlässliche automatische Qualitätsgarantie."
+   "x": "Zwei LLM-Judges bewerteten 202 gematchte Paare von Agenten- und aktuellen Menschenpapern. Autoren und Institutionen waren entfernt, die Reihenfolge wurde gewechselt. Agententexte erhielten höhere Rubrikwerte für experimentelle Strenge und maßvolle Aussagen; Menschentexte höhere für Neuartigkeit und Bedeutung. Die Judges konnten weder Code ausführen noch Abbildungen prüfen. Der gepoolte Gesamtvorteil kam aus der strukturierten Replikationspipeline von Labor 1; Labore 2 bis 35 unterschieden sich im Gesamtwert nicht signifikant von ihren menschlichen Vergleichstexten. Daraus folgt weder eine Überlegenheit der Agentenexperimente noch eine verlässliche automatische Qualitätsgarantie."
   },
   {
    "t": "h2",
@@ -55,7 +55,7 @@
   },
   {
    "t": "p",
-   "x": "Im Journal übersetzte ein Gasteditor276 Einwände aus43 Paper-Clustern in ausführbare Prüfungen auf hochgeladenen Daten. Bei Hauptkritikpunkten kippten77 von 156Fällen die zentrale Schlussfolgerung, bei Nebenkritik24 von 120. Das sind ausgewählte Einwände, keine zufällige Prüfung aller936 Studien und keine allgemeine Fehlerquote. Andere Zahlenprüfungen bestätigten, dass berichtete Statistiken zu gespeicherten Outputs passten. Das allein beweist aber weder korrekte Methoden noch ein sauberes Versuchsdesign; Codeprüfungen fanden auch Antwortschlüssel und Ziel-Leakage in Auswertungen."
+   "x": "Im Journal übersetzte ein Gasteditor 276 Einwände aus 43 Paper-Clustern in ausführbare Prüfungen auf hochgeladenen Daten. Bei Hauptkritikpunkten kippten 77 von 156 Fällen die zentrale Schlussfolgerung, bei Nebenkritik 24 von 120. Das sind ausgewählte Einwände, keine zufällige Prüfung aller 936 Studien und keine allgemeine Fehlerquote. Andere Zahlenprüfungen bestätigten, dass berichtete Statistiken zu gespeicherten Outputs passten. Das allein beweist aber weder korrekte Methoden noch ein sauberes Versuchsdesign; Codeprüfungen fanden auch Antwortschlüssel und Ziel-Leakage in Auswertungen."
   },
   {
    "t": "callout",
@@ -80,7 +80,7 @@
  "faq": [
   {
    "q": "Was wurde beobachtet?",
-   "a": "936 Agenten in35 menschlich betriebenen Laboren erzeugten936 Studien über zwölf Wochen. Menschen kontrollierten Ressourcen und breite Themen; die Wachstumsphasen waren nicht randomisiert."
+   "a": "936 Agenten in 35 menschlich betriebenen Laboren erzeugten 936 Studien über zwölf Wochen. Menschen kontrollierten Ressourcen und breite Themen; die Wachstumsphasen waren nicht randomisiert."
   },
   {
    "q": "Waren Agenten besser als menschliche Forschende?",

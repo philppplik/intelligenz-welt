@@ -5,8 +5,8 @@
  "type": "news",
  "title": "OpenSSL-Fix noch im Review, Synology-Updates angekündigt: Was zum Patchstatus belegt ist",
  "dek": "OpenSSL prüft einen Fix für den Base64-Kodierer. Synology bewertet eine OAuth-Lücke mit CVSS 9,8 und nennt geplante DSM-Updates. Angekündigt ist nicht verfügbar.",
- "published": "2026-11-20T08:54:36+01:00",
- "modified": "2026-11-20T08:54:36+01:00",
+ "published": "2026-11-20T09:12:04+01:00",
+ "modified": "2026-11-20T09:12:04+01:00",
  "author": "philipp-paulik",
  "tags": [
   "OpenSSL",
@@ -76,15 +76,15 @@
  "faq": [
   {
    "q": "Ist der OpenSSL-Fix schon verfügbar?",
-   "a": "Beim Quellencheck am20. November um 08:52 MEZ ist PR33652 offen und die Review-Freigabe ausstehend. Das belegt einen Fixvorschlag, keinen veröffentlichten Sicherheitsrelease."
+   "a": "Beim Quellencheck am 20. November um 08:52 MEZ ist PR33652 offen und die Review-Freigabe ausstehend. Das belegt einen Fixvorschlag, keinen veröffentlichten Sicherheitsrelease."
   },
   {
    "q": "Welche Synology-Versionen sind angekündigt?",
-   "a": "Die Verfügbarkeitstabelle nennt für DSM7.4 die Version7.4.1-90080-2 und für DSM7.3 die Version7.3.2-86009-6 als bis20. November geplante Updates. Der Status steht auf Ongoing. Gerätefreigabe und tatsächliche Auslieferung sind damit nicht bestätigt."
+   "a": "Die Verfügbarkeitstabelle nennt für DSM 7.4 die Version 7.4.1-90080-2 und für DSM 7.3 die Version 7.3.2-86009-6 als bis 20. November geplante Updates. Der Status steht auf Ongoing. Gerätefreigabe und tatsächliche Auslieferung sind damit nicht bestätigt."
   },
   {
    "q": "Welche Zwischenmaßnahme nennt Synology?",
-   "a": "Das Paket OAuth Service deaktivieren. Betreiber müssen Auswirkungen auf davon abhängige Anmeldungen berücksichtigen. Der CVSS-Wert9,8 ist hier Synologys Herstellerbewertung, nicht eine bestätigte Bewertung für beide Fälle."
+   "a": "Das Paket OAuth Service deaktivieren. Betreiber müssen Auswirkungen auf davon abhängige Anmeldungen berücksichtigen. Der CVSS-Wert 9,8 ist hier Synologys Herstellerbewertung, nicht eine bestätigte Bewertung für beide Fälle."
   }
  ],
  "related": [
