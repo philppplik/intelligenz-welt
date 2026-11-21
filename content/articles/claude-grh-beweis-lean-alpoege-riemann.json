@@ -4,7 +4,7 @@
  "section": "news",
  "type": "news",
  "title": "Riemannsche Vermutung: Lean-Beweis von Alpöge und Claude, unabhängige Prüfung läuft",
- "dek": "Anthropic-Mathematiker Levent Alpöge hat einen mit Claude erstellten, in Lean formalisierten Beweis der Riemannschen Vermutung und ihrer Verallgemeinerung für Dirichlet-L-Funktionen veröffentlicht. Mehrere unabhängige Prüfungen sind bestanden, der offizielle Comparator-Lauf steht noch aus.",
+ "dek": "Anthropic-Mathematiker Levent Alpöge hat einen mit Claude erstellten, in Lean formalisierten Beweis der Riemannschen Vermutung und ihrer Verallgemeinerung für Dirichlet-L-Funktionen veröffentlicht. Mehrere unabhängige Prüfungen sind bestanden, der offizielle Comparator-Lauf läuft laut MIT-Statusseite noch.",
  "published": "2026-11-21T09:39:56+01:00",
  "modified": "2026-11-21T09:39:56+01:00",
  "author": "philipp-paulik",
@@ -18,8 +18,8 @@
  ],
  "key_takeaways": [
   "Alpöges vierseitige Notiz und ein Lean-Archiv in 14 Teilen ersetzen den klassischen Aufsatz: Nach Angabe von Scott Aaronson umfasst die Formalisierung rund 17,4 Millionen Zeilen Lean; unabhängige Zählungen kommen auf 17.374.215 Zeilen. Eine menschenlesbare Ausarbeitung hat Alpöge zugesagt.",
-  "Andrew Sutherland (MIT) dokumentiert auf einer eigenen Seite (Stand 20. November, 22:05 UTC): Das Archiv mit 175.187 Modulen kompiliert, nutzt nur die drei Standardaxiome, und mehrere unabhängige Prüfer (leanchecker, nanoda, con-leche, lean4lean) akzeptieren es.",
-  "Offen ist laut Sutherland noch der offizielle Comparator-Lauf, der die Aussage gegen die Vorgabe prüft, sowie der Replay mit Lean-Standard- und Paranoid-Kernel. Der bisherige Build lief nicht in einer Sandbox.",
+  "Andrew Sutherland (MIT) dokumentiert auf einer eigenen Seite (Stand 21. November, 08:45 UTC): Das Archiv mit 175.187 Modulen kompiliert, nutzt nur die drei Standardaxiome, und mehrere unabhängige Prüfer (leanchecker, nanoda, con-leche, lean4lean) akzeptieren es.",
+  "Laufend ist laut Sutherland noch der offizielle Comparator-Lauf (Aussagenvergleich und Axiomprüfung sind darin in einem Lauf bereits bestanden, die Kernel-Prüfungen laufen) sowie der Replay mit Lean-Standard- und Paranoid-Kernel, ohne Ergebnis. Der bisherige Build lief nicht in einer Sandbox.",
   "Mit \"GRH\" sind hier Dirichlet-L-Funktionen gemeint; die Hauptdatei enthält fünf Sätze, darunter die Riemannsche Vermutung für die Zeta-Funktion. Eine Aussage über beliebige L-Funktionen ist das nicht.",
   "Am selben Tag stellte Ravi Vakil einen rein menschlichen GRH-Entwurf von Alessandro Masullo vor; binnen Stunden meldeten mehrere Mathematiker Probleme darin."
  ],
@@ -56,11 +56,11 @@
   },
   {
    "t": "p",
-   "x": "Scientific American berichtet, dass unabhängige Mathematiker das Archiv erfolgreich kompiliert haben. Andrew Sutherland vom MIT wird mit den Worten zitiert, der Lean-Beweis sei kompiliert und vom Lean-Kernel mit nur den drei Standardaxiomen unabhängig nachgeprüft worden; die Wahrscheinlichkeit, dass etwas faul sei, liege bei ungefähr null. Auf seiner eigenen Statusseite (Stand 20. November, 22:05 UTC) listet Sutherland, was bestanden ist: der Build von 175.187 Modulen, die Prüfung der Axiome, ein Replay mit leanchecker sowie die unabhängigen Prüfprogramme nanoda, con-leche und lean4lean (bei fünf Modulen mit erhöhtem Schrittlimit). Auch der Vergleich der Aussagen durch con-leche stimmt für alle fünf Sätze."
+   "x": "Scientific American berichtet, dass unabhängige Mathematiker das Archiv erfolgreich kompiliert haben. Andrew Sutherland vom MIT wird mit den Worten zitiert, der Lean-Beweis sei kompiliert und vom Lean-Kernel mit nur den drei Standardaxiomen unabhängig nachgeprüft worden; die Wahrscheinlichkeit, dass etwas faul sei, liege bei ungefähr null. Auf seiner eigenen Statusseite (Stand 21. November, 08:45 UTC) listet Sutherland, was bestanden ist: der Build von 175.187 Modulen, die Prüfung der Axiome, ein Replay mit leanchecker sowie die unabhängigen Prüfprogramme nanoda, con-leche und lean4lean (bei fünf Modulen mit erhöhtem Schrittlimit). Auch der Vergleich der Aussagen durch con-leche stimmt für alle fünf Sätze."
   },
   {
    "t": "p",
-   "x": "Noch offen ist die Frage, ob der bewiesene formale Satz wirklich die verallgemeinerte Riemannsche Vermutung aussagt und keine Bedeutung der Symbole verändert wurde. Dafür steht laut Sutherlands Seite der offizielle Comparator-Lauf (lake comparator) noch aus, ebenso der Replay mit Lean-Standard- und Paranoid-Kernel. Zudem lief der bisherige Build in einer Cloud-Umgebung ohne Sandbox; der Vergleich mit einem Sandbox-Export fehlt noch. Kevin Buzzard vom Imperial College London beschreibt den Comparator als Prüfung, die unter anderem sicherstellt, dass der Code nichts Umdefiniertes enthält. Die Angaben können sich ändern; maßgeblich ist die Statusseite."
+   "x": "Noch offen ist die Frage, ob der bewiesene formale Satz wirklich die verallgemeinerte Riemannsche Vermutung aussagt und keine Bedeutung der Symbole verändert wurde. Dafür läuft laut Sutherlands Seite noch der offizielle Comparator-Lauf (lake comparator); Aussagenvergleich und Axiomprüfung sind darin in einem Lauf bereits bestanden, die Kernel-Prüfungen laufen. Ohne Ergebnis ist auch der Replay mit Lean-Standard- und Paranoid-Kernel. Zudem lief der bisherige Build in einer Cloud-Umgebung ohne Sandbox; der Vergleich mit einem Sandbox-Export fehlt noch. Kevin Buzzard vom Imperial College London beschreibt den Comparator als Prüfung, die unter anderem sicherstellt, dass der Code nichts Umdefiniertes enthält. Die Angaben können sich ändern; maßgeblich ist die Statusseite."
   },
   {
    "t": "callout",
@@ -81,7 +81,7 @@
   },
   {
    "t": "p",
-   "x": "Für den Lean-Beweis stehen der Comparator-Lauf, der Kernel-Replay und die Arbeit im Lean-Zulip aus, wo die Moderatoren die Diskussion inzwischen auf die Lean-relevanten Aspekte begrenzen. Tao und Aaronson erwarten, dass die Übersetzung des Arguments in menschenlesbare Mathematik Jahre dauern kann. Alpöge hat zugesagt, diese Aufarbeitung selbst voranzutreiben. Unabhängig vom Ausgang ist die Lage ungewöhnlich: Zu einem der bekanntesten offenen Probleme der Mathematik existiert ein maschinengeprüftes Zertifikat, bevor irgendein Mensch den Beweis gelesen hat."
+   "x": "Für den Lean-Beweis sind der Comparator-Lauf und der Kernel-Replay noch nicht abgeschlossen, dazu kommt die Arbeit im Lean-Zulip, wo die Moderatoren die Diskussion inzwischen auf die Lean-relevanten Aspekte begrenzen. Tao und Aaronson erwarten, dass die Übersetzung des Arguments in menschenlesbare Mathematik Jahre dauern kann. Alpöge hat zugesagt, diese Aufarbeitung selbst voranzutreiben. Unabhängig vom Ausgang ist die Lage ungewöhnlich: Zu einem der bekanntesten offenen Probleme der Mathematik existiert ein maschinengeprüftes Zertifikat, bevor irgendein Mensch den Beweis gelesen hat."
   }
  ],
  "sources": [
@@ -131,7 +131,7 @@
  "faq": [
   {
    "q": "Gilt die Riemannsche Vermutung jetzt als bewiesen?",
-   "a": "Noch nicht abschließend. Der Lean-Beweis kompiliert, nutzt nur die drei Standardaxiome und wurde von mehreren unabhängigen Prüfprogrammen akzeptiert. Der offizielle Comparator-Lauf, der die formale Aussage gegen die Vorgabe prüft, ist laut MIT-Statusseite noch offen. Gemeint ist die Vermutung für Dirichlet-L-Funktionen. Eine menschenlesbare Darstellung fehlt bislang."
+   "a": "Noch nicht abschließend. Der Lean-Beweis kompiliert, nutzt nur die drei Standardaxiome und wurde von mehreren unabhängigen Prüfprogrammen akzeptiert. Der offizielle Comparator-Lauf, der die formale Aussage gegen die Vorgabe prüft, läuft laut MIT-Statusseite noch; Aussagenvergleich und Axiomprüfung sind darin in einem Lauf bereits bestanden. Gemeint ist die Vermutung für Dirichlet-L-Funktionen. Eine menschenlesbare Darstellung fehlt bislang."
   },
   {
    "q": "Was ist Lean?",
