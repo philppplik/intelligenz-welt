@@ -1,0 +1,103 @@
+{
+ "slug": "cairn-agenten-zero-day-monai-amazon",
+ "lang": "de",
+ "section": "tools",
+ "type": "explainer",
+ "title": "Autonome Cairn-Agenten fanden selbstständig eine Zero-Day-Lücke in MONAI Label",
+ "dek": "Amazon Threat Intelligence beschreibt eine Kampagne, in der KI-Agenten eines offenen Penetration-Testing-Frameworks eigenständig eine bis dahin unbekannte Schwachstelle fanden und ausnutzten. Der Vorfall zeigt Tempo und Grenzen agentischer Angriffe.",
+ "published": "2026-11-21T09:20:00+01:00",
+ "modified": "2026-11-21T09:20:00+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Sicherheit",
+  "KI-Agenten",
+  "Zero-Day",
+  "MONAI Label",
+  "Amazon",
+  "Cairn"
+ ],
+ "key_takeaways": [
+  "Entdeckt am 10. September 2026: eine öffentlich erreichbare, nicht authentifizierte Instanz des Open-Source-Frameworks Cairn; dahinter lief eine rund 48 Stunden lange Kampagne ab dem 8. September gegen Universitäten in Ostasien.",
+  "In der Open-Source-Medizinbild-Software MONAI Label fanden die Agenten eine Path-Traversal-Schwachstelle im Upload-Endpunkt; von der Kartierung der API bis zum beliebigen Schreiben von Dateien vergingen etwa elf Minuten.",
+  "Über eine Python-Datei, die jeder Interpreterstart automatisch lädt, bauten die Agenten anschließend eine Root-Shell auf. Die Lücke war zum Entdeckungszeitpunkt weder gepatcht noch in Advisory-Datenbanken verzeichnet.",
+  "Gegen gehärtete Ziele scheiterten dieselben Agenten: 16 Stunden und 148 Aktionen gegen einen offenen, aber gehärteten Redis-Server ohne Erfolg; über 30.000 Credential-Kombinationen an einem GPU-Server blieben ebenfalls erfolglos.",
+  "Amazons Rat an Verteidiger: auf hochpräzise Erkennungen setzen, die automatische Reaktionen auslösen, weil agentische Angreifer schneller sind, als Sicherheitsteams einzelne Alarme manuell prüfen können."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Ein leuchtender Pfad schlängelt sich durch ein dunkles Labyrinth aus Serverstrukturen und endet an einem kleinen glühenden Riss in einer gläsernen Wand.",
+  "caption": "Elf Minuten von der API-Kartierung bis zum Schreibzugriff: der erste dokumentierte Fall dieser Art.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Cairn ist ein quelloffenes Framework, das mehrere KI-Agenten koordiniert, um ein in einfacher Sprache formuliertes Ziel zu erreichen; gedacht ist es als Werkzeug für Verteidiger. Am 10. September 2026 entdeckte Amazon Threat Intelligence eine öffentlich erreichbare Cairn-Instanz ohne Authentifizierung. Weil der Betreiber den Server ungeschützt ins Netz gestellt hatte, waren dessen komplette Betriebshistorie, Projektkonfigurationen und Prompts öffentlich einsehbar. Die Auswertung zeigte eine Kampagne gegen IP-Adressen von Universitäten in Ostasien über einen Zeitraum von etwa 48 Stunden ab dem 8. September. Das Ziel der Agenten war schlicht: Shell-Zugriff erlangen."
+  },
+  {
+   "t": "h2",
+   "x": "Die Zero-Day in MONAI Label"
+  },
+  {
+   "t": "p",
+   "x": "Bei einem Ziel mit der Open-Source-Software MONAI Label für medizinische Bildgebung identifizierten die Agenten zunächst das Framework und kartierten die API-Endpunkte. Dabei stießen sie auf einen Upload-Endpunkt mit einem Dateinamen-Parameter, den sie auf Path Traversal prüften; der Parameter war verwundbar. Von der Kartierung der API bis zum beliebigen Schreiben von Dateien auf dem Server vergingen laut Amazon etwa elf Minuten."
+  },
+  {
+   "t": "p",
+   "x": "In einer späteren Sitzung nutzten die Agenten dieselbe Lücke, um eine Python-Reverse-Shell in die Datei sitecustomize.py zu schreiben, die Python bei jedem Interpreterstart automatisch einbindet. Anschließend lösten sie über einen Trainings-Endpunkt einen neuen Python-Prozess aus und erhielten so eine Shell mit Root-Rechten. Amazon bewertet mit hoher Zuversicht (eigene Einschätzung), dass es sich um eine echte Zero-Day-Lücke handelte: Zum Zeitpunkt der Entdeckung existierte weder ein Fix noch ein Advisory oder ein Datenbankeintrag für das betroffene Projekt. Nachdem die Agenten die Lücke gefunden hatten, griff der menschliche Betreiber ein und reichte ihnen einen Tunnel in ein zweites Universitätsnetzwerk mit derselben Software."
+  },
+  {
+   "t": "h2",
+   "x": "Wo die Agenten scheiterten"
+  },
+  {
+   "t": "p",
+   "x": "Gegen einen offenen, aber gehärteten Redis-Server arbeiteten die Agenten etwa 16 Stunden und 148 aufeinanderfolgende Aktionen ohne Erfolg: Sie probierten bekannte Techniken vom Missbrauch der Replikationsfunktion über Sandbox-Ausbrüche bis zu Log4Shell-Injektionen und kartierten schließlich über eine SSRF-Lücke in einer benachbarten Qdrant-Instanz das interne Docker-Netzwerk für Credential-Sprays gegen PostgreSQL, SSH und weitere Dienste. Eine parallele Operation gegen einen GPU-Server einer Universität lief über sechs Stunden: Die Agenten hatten aus Fakultätsverzeichnissen, Labor-Websites und wissenschaftlichen Papieren rund 80 echte Nutzernamen recherchiert und mehr als 30.000 Credential-Kombinationen getestet. Auch das blieb erfolglos. Beide Fälle zeigen laut Amazon vor allem Ausdauer: Die Agenten passten ihr Vorgehen fast einen Tag lang an, ohne dass ein Mensch die nächsten Schritte vorgab."
+  },
+  {
+   "t": "h2",
+   "x": "Patch-Stand und Schutzmaßnahmen"
+  },
+  {
+   "t": "p",
+   "x": "Amazon meldete die Schwachstelle den MONAI-Maintainern; sie veröffentlichten das Advisory GHSA-qc22-rmgc-vg94. Betroffen sind alle MONAI-Label-Versionen bis einschließlich 0.8.5; die Korrektur steckt im Pull Request 1915, der Zielpfade auflöst und Schreibzugriffe außerhalb des Datastore ablehnt. Eine Release-Version mit dem Fix gibt es laut Advisory noch nicht. Wichtig für Betreiber: Die Authentifizierung von MONAI Label ist ab Werk deaktiviert, sodass in der Standardkonfiguration jeder Netzwerkclient die Lücke ausnutzen kann. Wer die Software betreibt, sollte sie nicht ungeschützt ins Internet stellen, Authentifizierung aktivieren und den Fix aus dem Repository übernehmen. Gambit Security hatte zuvor einen separaten, finanziell motivierten Akteur dokumentiert, der Cairn gegen Online-Händler einsetzte; das Framework wird also bereits in unterschiedlichen Angriffsformen genutzt."
+  },
+  {
+   "t": "callout",
+   "title": "Was Amazon Verteidigern rät",
+   "x": "Agentische Angriffe komprimieren das Reaktionsfenster: Eine in Minuten gefundene und ausgenutzte Zero-Day ist schneller durchgespielt, als viele Sicherheitsteams einen einzelnen Alarm manuell sichten. Amazon empfiehlt, Erkennungen mit hoher Treffsicherheit zu priorisieren, die automatische Reaktionen auslösen, während Menschen die Ergebnisse überwachen. Der AWS-Bericht nennt außerdem zwei Beobachtungs-IP-Adressen aus dem Kampagnenzeitraum 8. bis 10. September."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Chinese-nexus actor's Cairn AI agents found a zero-day on their own",
+   "publisher": "AWS Security Blog (Amazon Threat Intelligence)",
+   "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "Path traversal in datastore upload endpoints allows arbitrary file write (GHSA-qc22-rmgc-vg94)",
+   "publisher": "Project MONAI (GitHub Security Advisory)",
+   "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94",
+   "accessed": "2026-11-21"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist Cairn?",
+   "a": "Cairn ist ein quelloffenes, autonomes Penetration-Testing-Framework: Aus einem Startpunkt und einem Ziel in einfacher Sprache koordiniert es mehrere KI-Agenten, die ihren Weg selbst planen, ausführen und anpassen. Gedacht ist es für Verteidiger; genutzt wird es inzwischen auch von Angreifern."
+  },
+  {
+   "q": "Ist meine MONAI-Label-Installation betroffen?",
+   "a": "Betroffen sind alle Versionen bis einschließlich 0.8.5. Da die Authentifizierung ab Werk deaktiviert ist, reicht im Standard ein erreichbarer Server. Das Advisory GHSA-qc22-rmgc-vg94 beschreibt den Fix im Pull Request 1915; eine Release-Version mit der Korrektur steht noch aus."
+  },
+  {
+   "q": "Können solche Agenten jedes System knacken?",
+   "a": "Nein. Dieselbe Kampagne zeigt deutliche Grenzen: Gegen einen gehärteten Redis-Server scheiterten die Agenten nach 16 Stunden und 148 Aktionen, und ein sechsstündiger Credential-Angriff mit über 30.000 Kombinationen blieb erfolglos. Durchsetzen konnten sie sich über eine ungepatchte Zero-Day in einer nicht authentifizierten Anwendung."
+  }
+ ],
+ "related": [
+  "openssl-synology-kritische-luecken-patches",
+  "openai-jagged-frontier-agenten-forschungsbericht"
+ ]
+}

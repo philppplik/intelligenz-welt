@@ -1,0 +1,111 @@
+{
+ "slug": "canary-prompts-ai-router-datenlecks-hd-moore",
+ "lang": "de",
+ "section": "praxis",
+ "type": "explainer",
+ "title": "Zwei Millionen Köder-Prompts: HD Moore zeigt, wie undicht KI-Lieferketten sind",
+ "dek": "Über fünf Monate schickte Dragos-Forscher HD Moore rund zwei Millionen Prompts mit verfolgbaren Geheimnissen an KI-Dienste und wartete, wo sie auftauchten. Drei Anbieter waren kompromittiert, ohne es zu wissen; Reseller lasen Kundenprompts mit.",
+ "published": "2026-11-21T09:10:00+01:00",
+ "modified": "2026-11-21T09:10:00+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Sicherheit",
+  "Dragos",
+  "Canary Tokens",
+  "KI-Router",
+  "Datenschutz",
+  "LLM"
+ ],
+ "key_takeaways": [
+  "Von Juli bis November 2026 schickte das Dragos-Team rund zwei Millionen Prompts mit einzigartigen Canary-URLs, AWS-Schlüsseln und Zugangsdaten an verbreitete KI-Dienste und verfolgte jede spätere Nutzung.",
+  "Mindestens drei Hosting-Anbieter waren nach Dragos-Angaben kompromittiert; keiner wusste bis zur Benachrichtigung davon. Im größten Fall wurde jede Anfrage in Zeitfenstern Ende Oktober gestohlen, auch solche, die der Anbieter abgelehnt hatte.",
+  "Reseller auf Inferenz-Marktplätzen mussten nichts hacken: Das Modell zum Tiefstpreis anbieten und das Standard-Logging einschalten genügte, um Kundenprompts einzusammeln und enthaltene Zugangsdaten auszuprobieren.",
+  "Zero Data Retention wurde vielfach ignoriert: Geheime URLs wurden Monate nach einer einzigen Anfrage erneut abgerufen; Prompts an US-Anbieter lösten Abrufe durch Systeme eines chinesischen KI-Labors aus.",
+  "Gegenmittel laut Dragos: selbst hosten oder direkt bei einem First-Tier-Anbieter arbeiten, Upstreams selbst wählen, eigene Canaries setzen und Secret-Filtering aktivieren."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Ein Netzwerk aus leuchtenden Datenleitungen, in dem kleine glühende Markierungen wie Fallmelder auf dunklen Knotenpunkten aufleuchten.",
+  "caption": "Zwei Millionen Köder: Jeder Prompt trug ein einzigartiges, verfolgbares Geheimnis.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Ein Prompt an einen KI-Dienst bleibt selten bei einem einzigen Unternehmen. Er durchläuft Router, Inferenzplattformen, Cloud-Betreiber und mitunter Reseller, und jede Station kann die komplette Anfrage samt Antwort sehen. Wie undicht diese Lieferkette in der Praxis ist, hat HD Moore, Chief Research Officer bei Dragos, mit einem groß angelegten Experiment gemessen: Rund zwei Millionen Prompts mit einzigartigen, verfolgbaren Geheimnissen gingen über fünf Monate an verbreitete KI-Dienste. Danach beobachtete das Team, wo diese Köder auftauchten."
+  },
+  {
+   "t": "h2",
+   "x": "Drei Befunde: Einbrüche, neugierige Reseller, ignorierte Datenschutzschalter"
+  },
+  {
+   "t": "p",
+   "x": "Der schwerste Befund betrifft mindestens drei Hosting-Anbieter, bei denen nach Dragos-Angaben Angreifer aktiv Daten abzogen; keiner der drei wusste bis zur Benachrichtigung davon. Im größten Fall wurde jede Anfrage gestohlen, die das Team in wenigen Zeitfenstern Ende Oktober an einen Anbieter schickte, einschließlich Anfragen, die der Anbieter ablehnte, bevor ein Modell lief. Das deutet darauf hin, dass die Kopie am Eingang des Anbieters entstand. Die gestohlenen AWS-Köderschlüssel wurden für zehntausende API-Aufrufe genutzt: Angreifer listeten S3-Buckets, durchsuchten Secrets Manager und Parameter Store, aktivierten Bedrock-Modelle und legten eigene IAM-Nutzer an. Ein Angreifer kompromittierte offenbar zwei Anbieter gleichzeitig und nutzte die Beute von einem einzigen gemieteten Server."
+  },
+  {
+   "t": "p",
+   "x": "Der zweite Befund brauchte keinen Exploit. Auf Inferenz-Marktplätzen bekommt oft der Verkäufer mit dem niedrigsten Preis die Anfrage. Mehrere Verkäufer listeten laut Dragos populäre Modelle zum Tiefstpreis, schalteten das ganz normale Request-Logging ein und warteten. In einem Fall öffnete eine Person über eine heimische Breitbandleitung in Frankreich zwei geheime URLs aus den Prompts und versuchte von Hand SSH-Root-Logins mit den darin enthaltenen Passwörtern. Prompts für dasselbe Modell über einen anderen Verkäufer blieben unangetastet; das Leck folgt dem Verkäufer, nicht dem Marktplatz."
+  },
+  {
+   "t": "p",
+   "x": "Der dritte Befund betrifft Datenschutzversprechen. Systeme eines chinesischen KI-Labors riefen die geheimen URLs aus mehr als der Hälfte der an dessen Modelle gesendeten Prompts ab, darunter etwa zwei Drittel der Anfragen mit Zero-Data-Retention-Kennzeichnung (ZDR), meist zwei bis drei Tage später. Dasselbe Muster zeigte sich bei US-Hosting-Anbietern, die Modelle dieses Labors weiterverkauften. In einem Fall landete ein geheimer Link 24 Tage nach der Anfrage in einem internen Firmenchat. Auch große US-Anbieter fielen auf: Einer durchsuchte eine geheime URL noch mehr als zwei Monate nach der einzigen Inferenzanfrage erneut."
+  },
+  {
+   "t": "callout",
+   "title": "Hinweis für Detektionen",
+   "x": "Ein Angreifer setzte ab 1. November zusätzlich ARTEX ein, ein LLM-gesteuertes Penetration-Testing-Framework. Die User-Agent-Kennungen artex-agent und artex-judge-r121 tauchen nach Dragos-Angaben in keiner öffentlichen Indikatorliste auf und lohnen sich als Detektionsmerkmal in CloudTrail und vergleichbaren Logs."
+  },
+  {
+   "t": "h2",
+   "x": "Traceroute für KI-Inferenz"
+  },
+  {
+   "t": "p",
+   "x": "Canaries zeigen, dass ein Prompt geleakt ist, aber nicht wo. Für den Weg baute das Team eine Art Traceroute: Eine eingebettete Bild-URL verrät jede Station, die sie abruft, über IP-Adresse, HTTP-Client und Zeitstempel. Zusätzlich schickten die Forschenden leicht fehlerhafte Anfragen; jeder Router verpackt den Fehler der Station dahinter im eigenen Format, sodass eine einzige Antwort drei bis vier verschachtelte Hüllen enthalten kann, die sich einer Signaturdatenbank zuordnen lassen. Rund 2.000 Routen wurden so verfolgt. Befunde: Nach Dragos fügt ein Marktplatz-Verkäufer jeder Anfrage etwa tausend versteckte Tokens hinzu, ein Router gab Traffic unangekündigt an einen Marktplatz weiter, und ein Hop zu OpenRouter war auf dem deklarierten Pfad nicht vorgesehen."
+  },
+  {
+   "t": "h2",
+   "x": "Was Nutzer und Unternehmen jetzt tun können"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Selbst hosten, wenn es die Sensibilität der Daten rechtfertigt: Die einzige Option, bei der niemand sonst die Prompts lesen kann; relevant vor allem für besonders vertrauliche Arbeiten.",
+    "Direkt zu einem First-Tier-Anbieter: Ein Unternehmen, ein Vertrag, eine Datenschutzerklärung; kleinstmögliche käufliche Angriffsfläche.",
+    "Router mit Bedacht: Upstream-Anbieter selbst festlegen statt den Standard-Pool zu akzeptieren und prüfen, ob die Datenschutzeinstellungen den Weg der Anfrage tatsächlich ändern. Von Reseller-Marktplätzen rät Dragos ab; ein Teil der Kapazität stammt nach Dragos' Einschätzung von gestohlenen Zugangsdaten.",
+    "Eigene Canaries setzen: Eine falsche Zugangsdaten-Kennung in den Kontext legen, den Agenten und Pipelines ohnehin mitschicken, und jede Nutzung als Vorfall behandeln. Ein kostenloser Canarytoken von Thinkst reicht für den Anfang.",
+    "Secret-Filtering aktivieren: Manche Anbieter filtern bekannte Zugangsdatenformate automatisch aus Prompts. Das hilft, ersetzt aber keine Vorsicht, weil sensible Inhalte selten wie ein API-Schlüssel aussehen."
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Dragos hat die betroffenen Anbieter informiert und arbeitet nach eigenen Angaben mit etwa einem Dutzend von ihnen; einer hat bereits einen vorläufigen Sicherheitshinweis veröffentlicht. Gestohlene Schlüssel und URLs wurden auch Monate nach den Vorfällen weiter genutzt. Die Kernaussage ändert das nicht: Wer einen Router oder Marktplatz nutzt, sollte alles, was er hineinschreibt, als potenziell mitgelesen behandeln."
+  }
+ ],
+ "sources": [
+  {
+   "title": "AI Supply Chain Security: What Canary Tokens Found",
+   "publisher": "Dragos (HD Moore)",
+   "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens",
+   "accessed": "2026-11-21"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist ein Canary Token?",
+   "a": "Ein Canary Token ist ein Geheimnis, das nur an einer Stelle existiert, etwa eine einzigartige URL oder ein AWS-Schlüssel, den kein legitimes System kennt. Jede Nutzung beweist, dass dieser Ort offengelegt wurde. Im Experiment erhielt jeder der zwei Millionen Prompts eigene, eindeutig zuordenbare Köder."
+  },
+  {
+   "q": "Bedeutet Zero Data Retention, dass meine Prompts nicht gespeichert werden?",
+   "a": "Nicht zuverlässig. Das Dragos-Team fand als ZDR gekennzeichnete Prompts, deren geheime URLs später abgerufen wurden, teils Monate danach. Auf dem Weg einer Anfrage kann jede weitere Station sie sehen; die Kennzeichnung beim ersten Anbieter garantiert das nicht."
+  },
+  {
+   "q": "Sollte ich KI-Router generell meiden?",
+   "a": "Dragos rät nicht zum Verzicht, sondern zur bewussten Auswahl: Upstreams selbst festlegen, Datenschutzschalter auf ihre Wirkung prüfen und Reseller-Marktplätze meiden. Für besonders vertrauliche Inhalte bleiben Self-Hosting oder ein direkter Vertrag mit einem First-Tier-Anbieter die sichersten Wege."
+  }
+ ],
+ "related": [
+  "openssl-synology-kritische-luecken-patches",
+  "genie-4-gemini-api-preise-limits"
+ ]
+}

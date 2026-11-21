@@ -1,0 +1,111 @@
+{
+ "slug": "inkling-2-mini-thinking-machines-loop-moe",
+ "lang": "de",
+ "section": "modelle",
+ "type": "news",
+ "title": "Inkling 2 Mini: Offenes 26B-Loop-Modell von Thinking Machines für lokale Geräte",
+ "dek": "Thinking Machines veröffentlicht Inkling 2 Mini unter Apache 2.0: 26,4 Milliarden Parameter, rund 20 Gigabyte Speicherbedarf, bis zu 1 Million Token Kontext. Die mittleren Schichten durchläuft jedes Token dreifach. Alle Benchmarkwerte stammen vom Anbieter.",
+ "published": "2026-11-21T09:05:00+01:00",
+ "modified": "2026-11-21T09:05:00+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Thinking Machines",
+  "Inkling 2 Mini",
+  "Open Weights",
+  "Loop-Transformer",
+  "Lokale KI",
+  "Apache 2.0"
+ ],
+ "key_takeaways": [
+  "Architektur: 24 Schichten in vier Blöcken, die mittleren zwölf laufen dreimal pro Token; 26,4 Milliarden Parameter gesamt, 3,4 Milliarden aktiv, 5,4 Milliarden Gewichtsaktivierungen inklusive Schleifen.",
+  "Thinking Machines meldet Bestwerte unter Open-Weights-Modellen unter 100 Milliarden Parametern auf DeepSWE v1.1 (48,2 Prozent) und Vals Index v2.2 (46,5 Prozent); den AA Index teilt sich das Modell mit Qwen3.8-27B (je 20,1).",
+  "Vom Anbieter benannte Schwächen: Multi-Turn-Chat und Anweisungen mit vielen Bedingungen (MultiChallenge 50,0 Prozent, ComplexConstraints 33,4 Prozent), jeweils hinter Qwen3.8-27B.",
+  "Monitorierbarkeit: Mehr Schleifen verkürzen die Denkkette (im Mittel 3.703 auf 1.661 Tokens bei GPQA Diamond), ohne dass sie unleserlich wird; in der LinuxArena-Kontrollevaluation zeigt sich laut Anbieter kein klarer Trend mit der Schleifenzahl. Das ist kein Beweis für Sicherheit.",
+  "Verfügbar ab sofort: Gewichte auf Hugging Face, Inferenz und Fine-Tuning über Tinker; Unterstützung in Ollama, llama.cpp, Unsloth, SGLang, vLLM und NVIDIA Dynamo."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Ein gläserner Quader, durch den sich ein leuchtender Lichtstrahl in drei Schleifen windet, auf dunklem Hintergrund mit blauen und goldenen Akzenten.",
+  "caption": "Drei Durchläufe pro Token: Die mittleren zwölf der 24 Schichten arbeiten in Schleifen.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Thinking Machines hat am 20. November Inkling 2 Mini veröffentlicht, ein Open-Weights-Modell unter Apache-2.0-Lizenz, das für den Betrieb auf lokalen Geräten ausgelegt ist. Der gesamte Checkpoint belegt rund 20 Gigabyte; die Gewichte liegen nativ in NVFP4 vor, die letzten vier Schichten in MXFP8, sodass keine Konvertierungsverluste entstehen. Laut Modellkarte unterstützt das Modell einen Kontext von bis zu einer Million Token sowie Text- und Bildeingaben. Als Hardware nennt der Anbieter eine einzelne NVIDIA DGX Spark oder Apple Silicon mit mindestens 32 Gigabyte Speicher; eine eigene Demo zeigt das Modell offline auf einem MacBook Pro im Flugmodus."
+  },
+  {
+   "t": "h2",
+   "x": "Architektur: Schleifen statt mehr Parameter"
+  },
+  {
+   "t": "p",
+   "x": "Inkling 2 Mini ist ein Mixture-of-Experts-Modell mit 26,4 Milliarden Parametern, von denen pro Token 3,4 Milliarden aktiv sind; mit den Schleifen kommt es auf 5,4 Milliarden Gewichtsaktivierungen. Die 24 Schichten sind in vier Blöcke zu je sechs aufgeteilt; die beiden mittleren Blöcke durchläuft jedes Token dreimal. Laut Thinking Machines braucht ein Modell ohne Schleifen deutlich mehr Rechenaufwand, um den Trainingsverlust des Modells mit mittlerer Schleife zu erreichen, als des Modells mit Schleife über die letzten Schichten (1,51 bis 1,91-fach gegenüber 1,24 bis 1,36-fach). Über sogenannte Attention Residuals liest jede Schicht die Ausgaben früherer Blöcke; ein gelerntes Gate steuert, wie stark die Nachricht des vorherigen Durchlaufs eingeht."
+  },
+  {
+   "t": "p",
+   "x": "Das Modell entstand aus der hauseigenen Skalierungslinie: Zwei Drittel der ursprünglich 384 Experten wurden während des Midtrainings auf 128 gestutzt; anschließend trainierte das Modell auf einer Billion Tokens, die von einem größeren internen Inkling-Modell destilliert wurden, um die Leistung vor dem Stutzen wiederherzustellen. Darauf folgten SFT und Reinforcement Learning über 2,2 Billionen Tokens in 2.000 Schritten."
+  },
+  {
+   "t": "h2",
+   "x": "Benchmarks: Herstellerangaben mit klaren Spitzen und Grenzen"
+  },
+  {
+   "t": "p",
+   "x": "Nach Angaben von Thinking Machines führt Inkling 2 Mini alle Open-Weights-Modelle unter 100 Milliarden Parametern auf DeepSWE v1.1 (48,2 Prozent), Vals Index v2.2 (46,5 Prozent), SWE-bench Verified (79,2 Prozent, nur Bash), SWE-bench Pro v2 Hard (77,9 Prozent), BrowseComp (79,0 Prozent mit Kompaktierung) und MCP Atlas (82,7 Prozent). Auf der Terminal Bench v2.1 liegt es mit 71,6 Prozent hinter Qwen3.8-27B (73,0 Prozent), ebenso auf GDPVal-AA und AutomationBench. Die Faktentreue (AA-Omniscience) liegt laut Anbieter auf dem Niveau vergleichbarer Modelle dieser Größe; Schleifen fügen dem Modell kein zusätzliches Faktenwissen hinzu. Forschende der Stanford University messen dem Modell eine höhere Intelligenz pro Joule als drei Vergleichsmodellen (0,703 gegenüber 0,430, 0,159 und 0,036, jeweils auf einer DGX Spark). Der Vergleich ist nicht eins zu eins: Inkling lief laut Anbieter in MXFP8 mit niedrigem Reasoning-Aufwand, die anderen in NVFP4 beziehungsweise INT4."
+  },
+  {
+   "t": "callout",
+   "title": "Herstellerzahlen",
+   "x": "Alle genannten Benchmarkwerte stammen von Thinking Machines beziehungsweise aus der Modellkarte; unabhängige Replikationen stehen zum Veröffentlichungstag noch aus. Die Vergleichsmodelle wurden teils mit unterschiedlichen Harness-Setups ausgewertet, was der Anbieter selbst anmerkt."
+  },
+  {
+   "t": "h2",
+   "x": "Monitorierbarkeit: Denken ohne Denkkette"
+  },
+  {
+   "t": "p",
+   "x": "Looping erhöht die serielle Rechentiefe pro Token, ohne dass das Modell seine Zwischenschritte aufschreibt. Das ist sicherheitsrelevant, weil die Überwachung von Modellen bislang stark auf lesbaren Denkketten beruht. Für Untersuchungen dazu veröffentlicht Thinking Machines zusätzlich das Forschungsmodell TML-d24-varloop-research mit variabler Schleifenzahl. Ergebnisse des Anbieters zum Forschungsmodell: Der No-CoT-Zeithorizont, also die Länge menschlicher Aufgaben, die es ohne Denkkette zur Hälfte der Fälle löst, steigt von 16 Sekunden bei einem Durchlauf auf 37 Sekunden bei dreien (keine Laufzeit des Modells); mit zehn Schleifen, doppelt so vielen wie im Training, verschlechtert sich die Leistung nicht nennenswert. Die Denkkette wird mit mehr Schleifen kürzer, bleibt aber lesbar: Bei GPQA Diamond sank die mittlere Länge von 3.703 auf 1.661 Tokens, Satzlänge und Wortschatz blieben gleich. In der LinuxArena-Kontrollevaluation, die mit einer Helpful-only-Variante des Modells lief, zeigte sich kein klarer Trend zwischen Schleifenzahl und unentdeckten Schadaktionen. Das belegt keine Sicherheit. Das Interpretability-Labor Goodfire hatte vorab Zugriff und arbeitet laut Anbieter an einer mechanistischen Analyse der Schleifen."
+  },
+  {
+   "t": "h2",
+   "x": "Grenzen und Verfügbarkeit"
+  },
+  {
+   "t": "p",
+   "x": "Für Multi-Turn-Chat und Anweisungen mit vielen Einzelbedingungen ist Inkling 2 Mini laut Anbieter nicht das stärkste kleine Modell: MultiChallenge 50,0 Prozent und ComplexConstraints v1.1 mit 33,4 Prozent liegen hinter Qwen3.8-27B. Auch bei reasoning-intensiven Tests wie CritPt v2 und HLE-Diamond bleibt es hinter größeren Modellen zurück. Die Gewichte liegen auf Hugging Face; Inferenz und Fine-Tuning laufen über Tinker, Inference-Stacks sind Ollama, llama.cpp und Unsloth (GGUF), SGLang, vLLM und NVIDIA Dynamo, RL-Fine-Tuning über SkyRL und Miles."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Introducing Inkling 2 Mini",
+   "publisher": "Thinking Machines",
+   "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "Inkling 2 Mini Model Card",
+   "publisher": "Thinking Machines",
+   "url": "https://thinkingmachines.ai/model-card/inkling-2-mini/",
+   "accessed": "2026-11-21"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Was ist ein Loop-Transformer?",
+   "a": "Ein Loop-Transformer durchläuft einen Teil seiner Schichten mehrfach pro Token. Bei Inkling 2 Mini laufen die mittleren zwölf der 24 Schichten dreimal mit gemeinsamen Gewichten. Das erhöht die Rechentiefe ohne zusätzliche Parameter, lagert aber mehr Denkarbeit in nicht einsehbare interne Schritte aus."
+  },
+  {
+   "q": "Auf welcher Hardware läuft Inkling 2 Mini?",
+   "a": "Der Anbieter nennt eine NVIDIA DGX Spark oder Apple Silicon mit mindestens 32 Gigabyte Speicher; bei anderen GPUs empfiehlt er 32 Gigabyte VRAM oder mehr. Der Checkpoint belegt rund 20 Gigabyte. Ob eine Million Token Kontext auf einem 32-Gigabyte-Gerät hineinpasst, folgt daraus nicht, weil der Kontext zusätzlichen Speicher braucht."
+  },
+  {
+   "q": "Sind die Benchmarkwerte unabhängig bestätigt?",
+   "a": "Nein. Alle Werte stammen von Thinking Machines beziehungsweise aus der Modellkarte. Externe Auswertungen durch Dritte stehen zum Veröffentlichungstag noch aus; der Anbieter weist selbst auf unterschiedliche Evaluierungssetups zwischen den Modellen hin."
+  }
+ ],
+ "related": [
+  "claude-fable-5-2-schwarze-loecher-physik",
+  "genie-4-gemini-api-preise-limits"
+ ]
+}

@@ -1,0 +1,149 @@
+{
+ "slug": "claude-grh-beweis-lean-alpoege-riemann",
+ "lang": "de",
+ "section": "news",
+ "type": "news",
+ "title": "Riemannsche Vermutung: Lean-Beweis von Alpöge und Claude, unabhängige Prüfung läuft",
+ "dek": "Anthropic-Mathematiker Levent Alpöge hat einen mit Claude erstellten, in Lean formalisierten Beweis der Riemannschen Vermutung und ihrer Verallgemeinerung für Dirichlet-L-Funktionen veröffentlicht. Mehrere unabhängige Prüfungen sind bestanden, der offizielle Comparator-Lauf steht noch aus.",
+ "published": "2026-11-21T09:00:00+01:00",
+ "modified": "2026-11-21T09:00:00+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Riemannsche Vermutung",
+  "Lean",
+  "Anthropic",
+  "Claude",
+  "Mathematik",
+  "Beweis"
+ ],
+ "key_takeaways": [
+  "Alpöges vierseitige Notiz und ein Lean-Archiv in 14 Teilen ersetzen den klassischen Aufsatz: Nach Angabe von Scott Aaronson umfasst die Formalisierung rund 17,4 Millionen Zeilen Lean; unabhängige Zählungen kommen auf 17.374.215 Zeilen. Eine menschenlesbare Ausarbeitung hat Alpöge zugesagt.",
+  "Andrew Sutherland (MIT) dokumentiert auf einer eigenen Seite (Stand 20. November, 22:05 UTC): Das Archiv mit 175.187 Modulen kompiliert, nutzt nur die drei Standardaxiome, und mehrere unabhängige Prüfer (leanchecker, nanoda, con-leche, lean4lean) akzeptieren es.",
+  "Offen ist laut Sutherland noch der offizielle Comparator-Lauf, der die Aussage gegen die Vorgabe prüft, sowie der Replay mit Lean-Standard- und Paranoid-Kernel. Der bisherige Build lief nicht in einer Sandbox.",
+  "Mit \"GRH\" sind hier Dirichlet-L-Funktionen gemeint; die Hauptdatei enthält fünf Sätze, darunter die Riemannsche Vermutung für die Zeta-Funktion. Eine Aussage über beliebige L-Funktionen ist das nicht.",
+  "Am selben Tag stellte Ravi Vakil einen rein menschlichen GRH-Entwurf von Alessandro Masullo vor; binnen Stunden meldeten mehrere Mathematiker Probleme darin."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Eine gläserne kritische Linie, auf der leuchtende Punkte wie Primzahlen aufgereiht sind, umgeben von einem spiraligen Sternenfeld in Blau und Gold.",
+  "caption": "Rund 17,4 Millionen Zeilen Lean statt Aufsatz: Der Beweis liegt bislang nur maschinengeprüft vor.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Die Riemannsche Vermutung, formuliert 1859 und eines der sieben Millennium-Probleme, trifft eine Aussage über die Verteilung der Primzahlen: Alle nicht-trivialen Nullstellen der Zeta-Funktion sollen den Realteil ein Halb haben. Am 20. November hat Levent Alpöge, Mathematiker bei Anthropic, auf seiner Website eine vierseitige Notiz veröffentlicht, in der er einen Beweis der Vermutung bekannt gibt, erstellt in Zusammenarbeit mit dem Anthropic-Modell Claude. Außerdem beanspruchen Alpöge und Claude die verallgemeinerte Riemannsche Vermutung (GRH) in der Form, wie sie die formalisierten Sätze fassen: für Dirichlet-L-Funktionen. Den Satz für die Riemannsche Zeta-Funktion schließt das mit ein."
+  },
+  {
+   "t": "h2",
+   "x": "Was Alpöge veröffentlicht hat"
+  },
+  {
+   "t": "p",
+   "x": "Statt eines Aufsatzes liegt der Beweis als Lean-Archiv in vierzehn Teilen vor. Lean ist ein Beweisassistent: Kompiliert ein formalisierter Beweis fehlerfrei, gilt jeder Schritt als logisch korrekt geprüft. Scott Aaronson beziffert den Umfang auf rund 17,4 Millionen Zeilen Lean-Code; eine unabhängige Sammlung von Prüfprotokollen (Infatoshi) zählt 17.374.215 Zeilen. Alpöge schreibt in seiner Notiz, eine reine Textfassung sei zum jetzigen Zeitpunkt unangemessen gewesen; ein informeller Mitschrieb habe über 250.000 Seiten erreicht. Er kündigt an, das Argument zu verstehen, zu vereinfachen und ordentlich aufzuschreiben."
+  },
+  {
+   "t": "p",
+   "x": "Zur Methode gibt die Notiz einen groben Zeitplan: Beginn am 6. Oktober mit einer Stepanov-Determinante, am 15. November iterierte Theta-Lifts zwischen total definiten unitären Gruppen, am 16. November der Abschluss GRH. Für die von-Mangoldt-Summe der Länge X habe Claude eine Kettenlänge von Wurzel-X für die Theta-Lifts vorgeschlagen. Terence Tao schreibt in seinem Blog, der Beweis scheine nach erster Analyse die volle Stärke moderner Entwicklungen im Langlands-Programm und der arithmetischen Geometrie zu nutzen; die Verdauung werde Zeit brauchen."
+  },
+  {
+   "t": "p",
+   "x": "Über die Zusammenarbeit schreibt Alpöge, Claude habe ihn kurz vor der Ziellinie weit überholt: Das Modell sei geflogen, habe getanzt und gefunkelt (\"flew, and danced, and sparkled\"). Den zeitlichen Zufall mit dem Börsengang seines Arbeitgebers in derselben Woche adressiert er in der Notiz selbst: Eine zynische Lesart des Timings sei offensichtlich und falsch. Die Veröffentlichung fiel in dieselbe Woche wie der Börsengang von Anthropic."
+  },
+  {
+   "t": "h2",
+   "x": "Stand der unabhängigen Verifikation"
+  },
+  {
+   "t": "p",
+   "x": "Scientific American berichtet, dass unabhängige Mathematiker das Archiv erfolgreich kompiliert haben. Andrew Sutherland vom MIT wird mit den Worten zitiert, der Lean-Beweis sei kompiliert und vom Lean-Kernel mit nur den drei Standardaxiomen unabhängig nachgeprüft worden; die Wahrscheinlichkeit, dass etwas faul sei, liege bei ungefähr null. Auf seiner eigenen Statusseite (Stand 20. November, 22:05 UTC) listet Sutherland, was bestanden ist: der Build von 175.187 Modulen, die Prüfung der Axiome, ein Replay mit leanchecker sowie die unabhängigen Prüfprogramme nanoda, con-leche und lean4lean (bei fünf Modulen mit erhöhtem Schrittlimit). Auch der Vergleich der Aussagen durch con-leche stimmt für alle fünf Sätze."
+  },
+  {
+   "t": "p",
+   "x": "Noch offen ist die Frage, ob der bewiesene formale Satz wirklich die verallgemeinerte Riemannsche Vermutung aussagt und keine Bedeutung der Symbole verändert wurde. Dafür steht laut Sutherlands Seite der offizielle Comparator-Lauf (lake comparator) noch aus, ebenso der Replay mit Lean-Standard- und Paranoid-Kernel. Zudem lief der bisherige Build in einer Cloud-Umgebung ohne Sandbox; der Vergleich mit einem Sandbox-Export fehlt noch. Kevin Buzzard vom Imperial College London beschreibt den Comparator als Prüfung, die unter anderem sicherstellt, dass der Code nichts Umdefiniertes enthält. Die Angaben können sich ändern; maßgeblich ist die Statusseite."
+  },
+  {
+   "t": "callout",
+   "title": "Restrisiko Lean",
+   "x": "Aaronson erinnert daran, dass Lean in der Vergangenheit Kernel-Bugs hatte und die Konsistenz der zugrunde liegenden Typtheorie nicht abschließend geklärt ist. Zugleich sei bislang kein einziges KI-Ergebnis mit Lean-Zertifikat zurückgezogen worden; seine Wette: Der Beweis wird stehen bleiben."
+  },
+  {
+   "t": "h2",
+   "x": "Ein menschlicher Gegenentwurf am selben Tag"
+  },
+  {
+   "t": "p",
+   "x": "Stunden nach Alpöge veröffentlichte Ravi Vakil (Stanford, AMS) einen rund 940 Seiten langen GRH-Entwurf des Stanford-Postdocs Alessandro Masullo, nach eigenen Worten vollständig ohne KI erstellt und über Monate von Brian Conrad gelesen. Etwa acht Stunden später ergänzte Vakil, mehrere Mathematiker hätten Probleme in dem Entwurf gemeldet, teils mit Unterstützung verschiedener KI-Modelle identifiziert. Wie üblich müssten alle Einwände zur Zufriedenheit der Fachcommunity ausgeräumt werden, bevor der Beweis als gesichert gelte."
+  },
+  {
+   "t": "h2",
+   "x": "Was als Nächstes kommt"
+  },
+  {
+   "t": "p",
+   "x": "Für den Lean-Beweis stehen der Comparator-Lauf, der Kernel-Replay und die Arbeit im Lean-Zulip aus, wo die Moderatoren die Diskussion inzwischen auf die Lean-relevanten Aspekte begrenzen. Tao und Aaronson erwarten, dass die Übersetzung des Arguments in menschenlesbare Mathematik Jahre dauern kann. Alpöge hat zugesagt, diese Aufarbeitung selbst voranzutreiben. Unabhängig vom Ausgang ist die Lage ungewöhnlich: Zu einem der bekanntesten offenen Probleme der Mathematik existiert ein maschinengeprüftes Zertifikat, bevor irgendein Mensch den Beweis gelesen hat."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Remark (Vierseitige Notiz zum Beweis, mit Lean-Archiv)",
+   "publisher": "Levent Alpöge (alpo.ge)",
+   "url": "https://alpo.ge/remark.pdf",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis",
+   "publisher": "Terence Tao (What's new)",
+   "url": "https://terrytao.wordpress.com/",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "The stochastic parrots have apparently proved the Riemann Hypothesis",
+   "publisher": "Scott Aaronson (Shtetl-Optimized)",
+   "url": "https://www.scottaaronson.blog/",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "The AI Riemann hypothesis proof is almost certainly true, independent mathematicians attest",
+   "publisher": "Scientific American",
+   "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "Hurried Announcement: Alessandro Masullo GRH",
+   "publisher": "Ravi Vakil (Math 216 Blog)",
+   "url": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "Verification status of the Lean formalization of GRH (Statusseite)",
+   "publisher": "Andrew Sutherland, MIT",
+   "url": "https://math.mit.edu/~drew/grh/",
+   "accessed": "2026-11-21"
+  },
+  {
+   "title": "rh-verification-receipts (Prüfprotokolle, Zeilenzählung)",
+   "publisher": "Infatoshi, GitHub",
+   "url": "https://github.com/Infatoshi/rh-verification-receipts",
+   "accessed": "2026-11-21"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Gilt die Riemannsche Vermutung jetzt als bewiesen?",
+   "a": "Noch nicht abschließend. Der Lean-Beweis kompiliert, nutzt nur die drei Standardaxiome und wurde von mehreren unabhängigen Prüfprogrammen akzeptiert. Der offizielle Comparator-Lauf, der die formale Aussage gegen die Vorgabe prüft, ist laut MIT-Statusseite noch offen. Gemeint ist die Vermutung für Dirichlet-L-Funktionen. Eine menschenlesbare Darstellung fehlt bislang."
+  },
+  {
+   "q": "Was ist Lean?",
+   "a": "Lean ist ein Beweisassistent: Mathematische Aussagen und Beweise werden als Code formuliert, den ein kleiner vertrauenswürdiger Kernel Schritt für Schritt verifiziert. Kompiliert der Code, ist die Logik der Schritte maschinell bestätigt, nicht jedoch automatisch, dass die formulierte Aussage der intendierten entspricht."
+  },
+  {
+   "q": "Welche Rolle spielte Claude?",
+   "a": "Nach Alpöges eigener Darstellung führte das Modell zentrale Teile des Arguments aus, etwa die Wahl der Kettenlänge bei den iterierten Theta-Lifts. Alpöge beschreibt die Arbeit als Gemeinschaftsleistung, bei der Claude ihn gegen Ende deutlich überholt habe."
+  }
+ ],
+ "related": [
+  "claude-fable-5-2-schwarze-loecher-physik",
+  "anthropic-ant-erster-handelstag-17-prozent"
+ ]
+}

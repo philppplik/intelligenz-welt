@@ -1,0 +1,101 @@
+{
+ "slug": "sprachmodelle-eigene-gewichte-umschreiben",
+ "lang": "de",
+ "section": "trends",
+ "type": "analysis",
+ "title": "Selbstumschreibende Modelle: Ein 27B-Modell verbessert und repariert seine eigenen Gewichte",
+ "dek": "Ein Team von sechs US-Universitäten zeigt: Ein offenes 27B-Modell kann ohne Gradienten und Training seine eigenen Gewichte so umschreiben, dass es besser wird, und eine beschädigte Kopie seiner selbst reparieren. Die Grenzen des Papiers sind ebenso deutlich.",
+ "published": "2026-11-21T09:25:00+01:00",
+ "modified": "2026-11-21T09:25:00+01:00",
+ "author": "philipp-paulik",
+ "tags": [
+  "Forschung",
+  "Selbstverbesserung",
+  "LLM",
+  "arXiv",
+  "Modellgewichte",
+  "Recursive Self-Improvement"
+ ],
+ "key_takeaways": [
+  "Setup: Das Modell erhält seine eigenen Gewichte, seine benoteten Antworten und die Möglichkeit, sich selbst auszuführen; Gradienten und Optimierer sind gesperrt, jede Änderung schreibt das Modell selbst.",
+  "Im vorab festgelegten Test des ersten Protokolls verbesserte der eigene Edit das 27B-Modell von 57,2 auf 58,3 Prozent auf zurückgehaltenen Problemen (signifikant). Im zweiten Protokoll, mit Selbsttest vor dem Einreichen, lagen die Edits der Sitzungen 2 und 8 um bis zu 6,6 Punkte über dem Basismodell (p unter 10^-5); in fünf von acht Sitzungen zog das Modell den Edit zurück.",
+  "Reparatur: Ein mit Rauschen überschriebener Gewichtsblock wurde lokalisiert und behoben, ohne die Originalwerte zu lesen; auf sechs ungesehenen Bild-Benchmarks kehrten 83 Prozent der Originalleistung zurück, auf ScreenSpot-v2 von 0 auf 89 Prozent (Basis: 93 Prozent).",
+  "Die Fähigkeit entsteht erst mit Skalierung: In einer Modellfamilie (Qwen3.5) nahm das 2B-Modell keinen Edit vor, 4B zog seine Edits zurück, 9B machte sich kaputt; nur das 27B-Modell verbesserte und reparierte sich.",
+  "Die Autoren sehen darin einen Schritt zu rekursiver Selbstverbesserung; gezeigt wurde es an einer Modellfamilie und überwiegend an Mathematikaufgaben, die Übertragbarkeit bleibt offen."
+ ],
+ "hero": {
+  "alt": "Abstraktes 3D-Rendering: Ein kristalliner Würfel, dessen innere Facetten sich wie von selbst neu ordnen; ein feiner Lichtstrahl verbindet ihn mit einer beschädigten, wieder zusammenwachsenden Kopie.",
+  "caption": "Ohne Gradienten und ohne Training: Das Modell schreibt die Gewichte hinter seinem eigenen Fehler neu.",
+  "ai_generated": true,
+  "credit": "Intelligenz Welt (KI-generiert)"
+ },
+ "body": [
+  {
+   "t": "p",
+   "x": "Ein Sprachmodell wird einmal trainiert und dann eingefroren; besser macht es nur ein neuer Trainingslauf oder eine aufwendigere Abfrage, deren Effekt mit dem Task endet. Ein Preprint von Forschenden der Universitäten UIUC, CMU, Rutgers, Princeton, Stanford und Yale beschreibt nach eigenen Angaben erstmals einen dritten Weg: Ein offenes 27B-Modell schreibt seine eigenen Gewichte aus eigener Diagnose heraus so um, dass es messbar besser wird, ganz ohne Gradienten, Optimierer oder Trainingspipeline. Die Autoren nennen das Self-Rewriting: Das Modell ist sein eigener Optimierer."
+  },
+  {
+   "t": "h2",
+   "x": "Was die Studie zeigt"
+  },
+  {
+   "t": "p",
+   "x": "In einer Sitzung auf den eigenen Gewichten bekommt das Modell seine benoteten Antworten auf Übungsprobleme, liest und schreibt seine Gewichte in einer Python-Umgebung und darf sich einige Male selbst ausführen, etwa für gepaarte Tests seiner Edits auf denselben Seeds oder zum Auslesen seiner Hidden States. Jeder Wert, den es ändert, schreibt es per eigenem Code; trainiert wird nichts. Im ersten Protokoll, dessen Auswertung vorab festgelegt war, hob der eigene Edit das Modell auf Problemen, die keine Sitzung je gesehen hatte, von 57,2 auf 58,3 Prozent; das ist signifikant, aber ein kleiner Effekt. Im zweiten Protokoll prüft das Modell seinen Edit vor dem Einreichen an reservierten Übungsproblemen. Von den ersten acht solchen Sitzungen zog es in fünf den Edit zurück und reichte in dreien einen ein. Die Edits der Sitzungen 2 und 8 lagen auf 490 weiteren Problemen um 4,0 beziehungsweise 6,6 Punkte über dem Basismodell (p jeweils unter 10^-5). Die Sitzungen bauen nicht aufeinander auf, jede startet mit den Basisgewichten; die 6,6 Punkte sind also kein kumulativer Zuwachs."
+  },
+  {
+   "t": "h2",
+   "x": "Reparatur der eigenen Kopie"
+  },
+  {
+   "t": "p",
+   "x": "In einer zweiten Aufgabe bekam das Modell eine Kopie seiner selbst, in der ein Gewichtsblock mit Rauschen überschrieben war, sodass die Kopie fast nichts mehr löste; der einzige Hinweis war, dass einige Werte beschädigt sind. Das Modell lokalisierte die korrupte Matrix und reparierte sie mit eigenen Werten, ohne je seine unbeschädigten Gewichte zu lesen. Die auf Text-Matheaufgaben gefundene Reparatur übertrug sich auf sechs Bild-Benchmarks, die das Modell nie gesehen hatte: Dort kehrten 83 Prozent der Originalgenauigkeit zurück, auf ScreenSpot-v2 stieg der Wert von 0 auf 89 Prozent gegenüber 93 Prozent beim unbeschädigten Modell. Die Reparatur betraf also das Modell, nicht eine einzelne Aufgabe."
+  },
+  {
+   "t": "h2",
+   "x": "Skaleneffekt und Kosten"
+  },
+  {
+   "t": "p",
+   "x": "Getestet wurde eine Modellfamilie in vier Größen bei gleicher Aufgabe und gleichem Werkzeugkasten: Das 2B-Modell nahm keinen Edit vor, die 4B- und 9B-Modelle bearbeiteten sich selbst und beschädigten sich (4B zog seine Edits erst am Ende der Sitzung zurück); nur das 27B-Modell erreichte einen Edit, der es besser machte, und reparierte seine beschädigte Kopie. Die Sitzungen hinter den größten Gewinnen liefen laut Papier in wenigen Stunden auf einer einzelnen GPU und nutzten nur Vorwärtspässe, also dieselbe Berechnung wie beim normalen Ausliefern des Modells. Ein Edit kostet einmalig Rechenzeit und danach nichts pro Antwort."
+  },
+  {
+   "t": "callout",
+   "title": "Einordnung",
+   "x": "Die Ergebnisse stammen aus einem Preprint ohne Peer Review, an einer einzigen offenen Modellfamilie und überwiegend an mathematischen Aufgaben. Der Erstmaligkeitsanspruch (\"to our knowledge for the first time\") ist die Einschätzung der Autoren. Die Framing-Richtung rekursive Selbstverbesserung ist eine Perspektive des Papiers, kein gemessenes Ergebnis; die Autoren selbst fordern menschliche Bestätigung für jedes Modell, das ein Modell von sich selbst erstellt."
+  },
+  {
+   "t": "h2",
+   "x": "Warum das über das Paper hinaus interessiert"
+  },
+  {
+   "t": "p",
+   "x": "Methodisch ist der Befund eng mit den Sicherheitsdebatten dieser Woche verknüpft: Modelle, die interne Denkarbeit leisten, ohne sie aufzuschreiben, erschweren die Überwachung über Denkketten; Modelle, die ihre Gewichte selbst verändern, verschieben die Kontrolle eine Ebene tiefer. Die Autoren argumentieren, jede Änderung sei lesbarer Code über benannten Tensoren, den man wie einen Commit vergleichen und zurücknehmen kann, und das Modell prüfe Edits an Problemen, die es sonst nicht nutzen darf. Ob solche Selbstprüfungen bei stärkeren Modellen verlässlich bleiben, ist eine der offenen Fragen, die das Papier selbst benennt."
+  }
+ ],
+ "sources": [
+  {
+   "title": "Language Models Can Rewrite Their Own Weights",
+   "publisher": "arXiv (Fan et al., UIUC/CMU/Rutgers/Princeton/Stanford/Yale)",
+   "url": "https://arxiv.org/abs/2611.21885",
+   "accessed": "2026-11-21"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Hat sich ein Modell selbst trainiert?",
+   "a": "Nein. Es gab keinen Gradienten, keinen Optimierer und keine Trainingspipeline. Das Modell schrieb einzelne Gewichtswerte per eigenem Code, nachdem es seine Fehler diagnostiziert hatte; die Wirkung prüfte es an zurückgehaltenen Problemen."
+  },
+  {
+   "q": "Wie belastbar sind die Ergebnisse?",
+   "a": "Es handelt sich um ein Preprint ohne Peer Review an einer einzigen offenen Modellfamilie. Die zentralen Behauptungen wurden in vorab festgelegten gepaarten Tests gemessen; ob sich der Effekt auf andere Familien, größere Modelle und alltäglichere Aufgaben überträgt, ist offen."
+  },
+  {
+   "q": "Heißt das, Modelle verbessern sich jetzt von allein?",
+   "a": "Die Fähigkeit trat in diesem Test erst beim 27B-Modell auf und nur in einem kontrollierten Setup mit benoteten Übungsproblemen; jede Sitzung startete mit den Basisgewichten. Kleinere Modelle änderten nichts oder beschädigten sich. Die Autoren selbst fordern menschliche Bestätigung für jedes Modell, das ein Modell von sich selbst erstellt."
+  }
+ ],
+ "related": [
+  "society-of-ai-scientists-936-agenten",
+  "metr-alignment-evals-erkennbar-modelle"
+ ]
+}
