@@ -4,7 +4,7 @@
   "section": "ueberblick",
   "type": "news",
   "published": "2026-11-21T16:14:39+01:00",
-  "modified": "2026-11-21T16:14:39+01:00",
+  "modified": "2026-11-21T16:18:34+01:00",
   "author": "philipp-paulik",
   "sources": [
     {
@@ -85,7 +85,7 @@
     },
     {
       "t": "p",
-      "x": "Zwei Befunde runden das Bild ab. Erstens ist die Halluzinationsrate stark positionsabhängig: Beim Basismodell steigt sie nach Erstnennungsrang von 2,5 Prozent (Rang 1) über 36,0 (Rang 3) auf 57,2 Prozent (ab Rang 6); wer Position nicht festhält, misst vor allem Position. Zweitens genügen die billigen Signale auch als Trainingslabels: DPO mit Sonden-Labels holt 70 bis 73 Prozent des Gewinns zurück, den Ground-Truth-Labels über das Weniger-Sagen hinaus erzielen, ein CLIP-Score auf Objektebene 87 Prozent; beide schlagen längengematchte Zufallslabels. Die Autoren bleiben bei den Grenzen ehrlich: Die menschliche Kontrolle der CHAIR-Präzision (0,53 bis 0,58 beziehungsweise 0,68 bis 0,71 je nach Annotator) unterschreitet die selbst gesetzte Marke von 0,80 und wird als Limitation ausgewiesen, und die Methode ist ein Audit-Protokoll, kein Ersatz für Training. Ihre Empfehlung: Berichtete Halluzinationsreduktionen gehören gegen eine recall-gematchte Kontrolle und eine billige Post-hoc-Baseline gerechnet."
+      "x": "Zwei Befunde runden das Bild ab. Erstens ist die Halluzinationsrate stark positionsabhängig: Beim Basismodell LLaVA-1.5 steigt sie auf dem Held-out-Satz nach Erstnennungsrang von 2,5 Prozent (Rang 1) über 36,0 (Rang 3) auf 57,2 Prozent (ab Rang 6); wer Position nicht festhält, misst vor allem Position. Zweitens genügen die billigen Signale auch als Trainingslabels: DPO mit Sonden-Labels holt 70 bis 73 Prozent des Gewinns zurück, den Ground-Truth-Labels über das Weniger-Sagen hinaus erzielen, ein CLIP-Score auf Objektebene 87 Prozent; beide schlagen längengematchte Zufallslabels. Die Autoren bleiben bei den Grenzen ehrlich: Die menschliche Kontrolle der CHAIR-Präzision (0,53 bis 0,58 beziehungsweise 0,68 bis 0,71 je nach Annotator) unterschreitet die selbst gesetzte Marke von 0,80 und wird als Limitation ausgewiesen, und die Methode ist ein Audit-Protokoll, kein Ersatz für Training. Ihre Empfehlung: Berichtete Halluzinationsreduktionen gehören gegen eine recall-gematchte Kontrolle und eine billige Post-hoc-Baseline gerechnet."
     }
   ],
   "faq": [
