@@ -5,8 +5,8 @@
  "type": "news",
  "title": "Inkling 2 Mini: Offenes 26B-Loop-Modell von Thinking Machines für lokale Geräte",
  "dek": "Thinking Machines veröffentlicht Inkling 2 Mini unter Apache 2.0: 26,4 Milliarden Parameter, rund 20 Gigabyte Speicherbedarf, bis zu 1 Million Token Kontext. Die mittleren Schichten durchläuft jedes Token dreifach. Alle Benchmarkwerte stammen vom Anbieter.",
- "published": "2026-11-21T09:05:00+01:00",
- "modified": "2026-11-21T09:05:00+01:00",
+ "published": "2026-11-21T09:39:56+01:00",
+ "modified": "2026-11-21T09:39:56+01:00",
  "author": "philipp-paulik",
  "tags": [
   "Thinking Machines",

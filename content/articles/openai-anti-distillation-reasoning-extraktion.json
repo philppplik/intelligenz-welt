@@ -5,8 +5,8 @@
  "type": "analysis",
  "title": "OpenAIs Anti-Distillation-Stack drückt Reasoning-Extraktion von 54 auf 0,2 Prozent",
  "dek": "OpenAI beschreibt erstmals im Detail, wie es unerlaubtes Distillieren seiner Modelle erkennt und unterbricht. In einer internen adaptiven Evaluation sank die Erfolgsquote für das Extrahieren geschützten Reasonings von 54,0 auf 0,2 Prozent.",
- "published": "2026-11-21T09:15:00+01:00",
- "modified": "2026-11-21T09:15:00+01:00",
+ "published": "2026-11-21T09:39:56+01:00",
+ "modified": "2026-11-21T09:39:56+01:00",
  "author": "philipp-paulik",
  "tags": [
   "OpenAI",

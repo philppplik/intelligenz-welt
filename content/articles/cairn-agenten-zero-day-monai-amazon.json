@@ -5,8 +5,8 @@
  "type": "explainer",
  "title": "Autonome Cairn-Agenten fanden selbstständig eine Zero-Day-Lücke in MONAI Label",
  "dek": "Amazon Threat Intelligence beschreibt eine Kampagne, in der KI-Agenten eines offenen Penetration-Testing-Frameworks eigenständig eine bis dahin unbekannte Schwachstelle fanden und ausnutzten. Der Vorfall zeigt Tempo und Grenzen agentischer Angriffe.",
- "published": "2026-11-21T09:20:00+01:00",
- "modified": "2026-11-21T09:20:00+01:00",
+ "published": "2026-11-21T09:39:56+01:00",
+ "modified": "2026-11-21T09:39:56+01:00",
  "author": "philipp-paulik",
  "tags": [
   "Sicherheit",
