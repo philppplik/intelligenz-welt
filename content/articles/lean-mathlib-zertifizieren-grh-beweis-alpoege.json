@@ -1,0 +1,128 @@
+{
+  "slug": "lean-mathlib-zertifizieren-grh-beweis-alpoege",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "Lean- und Mathlib-Communitys bestätigen: Alpöges Riemann-Beweis ist korrekt",
+  "dek": "Lean und Mathlib stehen hinter Alpöges Riemann-Beweis. Sutherland dokumentiert unabhängige Prüfer, zwei Endläufe bleiben zum Quellenstand offen.",
+  "published": "2026-11-22T08:55:00+01:00",
+  "modified": "2026-11-22T08:55:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Riemannsche Vermutung",
+    "Lean",
+    "Mathlib",
+    "Beweisverifikation",
+    "Levent Alpöge",
+    "Mathematik"
+  ],
+  "key_takeaways": [
+    "Die Lean- und Mathlib-Communitys bescheinigen in einer gemeinsamen, vom Lean FRO und der Mathlib Initiative getragenen Erklärung, dass Aussage und Beweis der Riemannschen Vermutung in Alpöges Lean-Bibliothek korrekt sind.",
+    "Mehrere unabhängige Beweisprüfer akzeptieren den exportierten Beweis, darunter der Rust-Kernel nanoda, con-leche, con-ron und lean4lean. Für con-leche und con-ron existiert ein formaler Beweis, dass sie keinen falschen Beweis akzeptieren können.",
+    "Laut Andrew Sutherlands Prüfseite (Stand 22. November, 04:35 UTC) kompilieren alle 175.187 Module fehlerfrei, und ein Sandbox-Neuaufbau reproduziert den 61,6 Gigabyte großen Export Byte für Byte. Der Endlauf von lake comparator und das Lean-Kernel-Replay laufen noch.",
+    "Geprüft wurden fünf Theoreme: die Riemannsche Vermutung sowie Nichtverschwinden und Nullstellenlage für alle Dirichlet-L-Funktionen. Dedekind-, Hecke- und allgemeine automorphe L-Funktionen sind nicht Teil der Prüfung.",
+    "In Kombination mit einer unabhängigen Formalisierung der Robin- und Lagarias-Kriterien ergeben sich zwei Teilersummen-Ungleichungen als eigenständige Theoreme ohne jeden Bezug zur Zeta-Funktion."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung einer kritischen Linie im Koordinatensystem, auf der leuchtende Punkte exakt auf einer vertikalen Geraden liegen, umgeben von feinen Kurvenscharen in Dunkelblau und Türkis.",
+    "caption": "Symbolbild: Nullstellen auf der kritischen Geraden",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Was die Communitys zertifizieren"
+    },
+    {
+      "t": "p",
+      "x": "Am 21. November haben die Lean- und Mathlib-Communitys eine gemeinsame Erklärung veröffentlicht, getragen vom Lean FRO und der Mathlib Initiative. Darin heißt es, man habe volles Vertrauen, dass Levent Alpöges Beweis der Riemannschen Vermutung korrekt ist, und man zertifiziere ausdrücklich, dass sowohl die Aussage als auch der Beweis korrekt sind. Alpöge hatte den Beweis am 20. November als Lean-Bibliothek mit 17 Millionen Zeilen Code veröffentlicht. Die Codebasis hängt direkt nur von Mathlib ab."
+    },
+    {
+      "t": "p",
+      "x": "Die Erklärung begründet die Zertifizierung entlang der vier Kriterien, die das Xena-Projekt kurz zuvor für Behauptungen der Form 'in Lean geprüft' formuliert hatte. Erstens ist die Aussage korrekt: Sie stammt aus Mathlib selbst (RiemannHypothesis) und ist von Expertinnen und Experten für Lean und Zahlentheorie geprüft. Zweitens kompiliert die Bibliothek: Dutzende Personen haben die Kompilierung reproduziert und dabei dieselbe rohe Exportdatei erhalten. Drittens beweist der Code die richtige Aussage: Die Community hat eine Datei ergänzt, die Mathlibs Aussage isoliert und nur Mathlib importiert; zwei unabhängige Werkzeuge (comparator und con-leche --compare) bestätigen, dass das bewiesene Theorem exakt dieser Aussage entspricht. Viertens ist der Beweis valide: Der rohe Export wurde von mehreren Prüfern verifiziert, darunter Leans offizieller Kernel, die Prüfer con-leche und con-ron sowie mehrere unabhängige, in anderen Programmiersprachen geschriebene Prüfer."
+    },
+    {
+      "t": "p",
+      "x": "Für con-leche und con-ron liegt zudem ein formaler Beweis vor, relativ zur Mengenlehre, dass sie keinen falschen Beweis akzeptieren können. Damit adressiert die Erklärung die Sorge, Leans eigene Logik könne Schwächen haben, die der Beweis ausnutzt. Alle Prüfungen liefen auf einem inerten Export, außerhalb der Reichweite hypothetischen Schadcodes in den Lean-Quellen."
+    },
+    {
+      "t": "h2",
+      "x": "Sutherlands Prüfstand im Detail"
+    },
+    {
+      "t": "p",
+      "x": "Andrew Sutherland vom MIT hat die Prüfprotokolle veröffentlicht; die Seite wurde zuletzt am 22. November um 04:35 UTC aktualisiert, die Checks liefen mit Claude Code. Demnach kompilieren alle 175.187 Module unter Lean und Mathlib v4.33.1 fehlerfrei. Die Axiomprüfung zeigt für die fünf Haupttheoreme ausschließlich propext, Classical.choice und Quot.sound; außerhalb des Lean-Kerns werden keine Axiome deklariert. Die 8.322 Mathlib-Dateien und 378 Abhängigkeiten sind Byte für Byte identisch mit dem offiziellen Cache."
+    },
+    {
+      "t": "p",
+      "x": "Ein unabhängiger Neuaufbau mit lake build in einer Sandbox ohne Netzwerk und mit schreibgeschützten Quellen auf einem separaten Rechner reproduzierte den Export exakt: 61.570.595.788 Bytes, identischer SHA-256-Hash. Der leanchecker spielte alle 175.187 Module ohne eine einzige Ablehnung durch den Kernel. Nanoda, ein unabhängig geschriebener Rust-Kernel, akzeptierte den vollständigen Export in 27 Minuten und 42 Sekunden auf 80 Threads. Con-leche akzeptierte 1.468.418 Deklarationen im verifizierten Modus in unter vier Minuten; der --compare-Modus von con-leche und seines Rust-Ports con-ron bestätigte jeweils alle fünf Theoreme gegen die Referenz. Lean4lean akzeptierte jedes Modul, wobei fünf Module ein erhöhtes Schrittlimit benötigten."
+    },
+    {
+      "t": "p",
+      "x": "Noch laufen der Lean-Standard- und der Paranoid-Kernel auf dem Export sowie der Endlauf von lake comparator, dessen Aussagenvergleich und Axiomprüfung bereits in einem Lauf bestanden wurden. Sutherland dokumentiert außerdem eine technische Fußnote: Ein einzelnes Modul kompiliert nichtdeterministisch, weil ein automatisch erzeugter Variablenname von einer Laufzeitbedingung abhängt. Der Fehler ist in Lean v4.36.0 behoben, betrifft den Export nach Sutherlands Prüfung nicht und hat logisch keine Konsequenz."
+    },
+    {
+      "t": "callout",
+      "title": "Was 'GRH' hier bedeutet, und was nicht",
+      "x": "Geprüft wurden fünf Theoreme: die Riemannsche Vermutung selbst sowie das Nichtverschwinden rechts der kritischen Geraden und die Nullstellenlage auf der Geraden für jede Dirichlet-L-Funktion, primitiv oder nicht. Sutherland stellt ausdrücklich klar: 'GRH' bedeutet hier nur Dirichlet-L-Funktionen. Dedekind-Zetafunktionen, Hecke-L-Funktionen und allgemeine automorphe L-Funktionen gehören nicht zu den geprüften Aussagen."
+    },
+    {
+      "t": "h2",
+      "x": "Arithmetische Querprüfung ohne Zeta"
+    },
+    {
+      "t": "p",
+      "x": "Als Kontrolle, die nicht auf Mathlibs Definition der Zetafunktion angewiesen ist, wurde der Beweis mit kimihiro64/Robin1984 kombiniert, einer unabhängigen Formalisierung der Robin- und Lagarias-Kriterien auf denselben Lean- und Mathlib-Versionen. Daraus ergeben sich zwei Theoreme über die Teilersumme, ohne Voraussetzungen und ohne jeden Bezug zur Zetafunktion: die Robin-Ungleichung und die Lagarias-Ungleichung. Beide durchliefen dieselben Prüfungen; con-leche akzeptierte den kombinierten Export mit 1.472.825 Deklarationen, nanoda und die --compare-Prüfer bestätigten beide Theoreme. Der lake-comparator-Lauf auf dem kombinierten Export läuft noch und wird nach Sutherlands Angaben wegen des einthreadigen Kernels viele Stunden brauchen."
+    },
+    {
+      "t": "h2",
+      "x": "Was noch offen ist"
+    },
+    {
+      "t": "p",
+      "x": "Zwei Prüfläufe sind zum Stand der Seite noch nicht abgeschlossen: der Endlauf des offiziellen lake comparator und das Replay des Exports durch die Lean-Kernels. Die gemeinsame Erklärung blickt zudem ausdrücklich auf die Arbeit voraus, die nötig ist, um die neuen Ideen des Beweises zu erklären und mathematisch zu durchdringen. Die Verifikation bestätigt die formale Korrektheit; das Verstehen bleibt menschliche Arbeit. Sutherland benennt die Grenze des Verfahrens selbst: Ein bestandener Check zeigt, dass die formalen Aussagen nach den verwendeten Kernels aus den drei Standardaxiomen folgen, und setzt voraus, dass diese Kernel korrekt arbeiten und Mathlibs Definitionen das meinen, was sie meinen sollen."
+    },
+    {
+      "t": "callout",
+      "x": "Quellenstand der MIT-Prüfseite: 22. November 2026, 04:35 UTC (05:35 MEZ), bei unserer Abnahme unverändert. Wir haben die Protokolle gelesen, die mehrstündigen Prüfungen aber nicht selbst wiederholt. Die Zertifizierung ist die Erklärung der genannten Communitys, nicht ein eigenes mathematisches Gutachten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Lean verification of the Riemann Hypothesis (Joint statement by the Lean and Mathlib communities)",
+      "publisher": "Lean community blog",
+      "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "RH Lean proof: verification files",
+      "publisher": "Andrew Sutherland, MIT",
+      "url": "https://math.mit.edu/~drew/grh/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "„…and the proof is checked in Lean“",
+      "publisher": "The Xena Project",
+      "url": "https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/",
+      "accessed": "2026-11-22"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist die Riemannsche Vermutung damit endgültig bewiesen?",
+      "a": "Auf der formalen Ebene bestätigen die Lean- und Mathlib-Communitys sowie mehrere unabhängige Beweisprüfer die Korrektheit von Aussage und Beweis. Zwei ergänzende Prüfläufe (lake comparator und Lean-Kernel-Replay) waren zum Redaktionsschluss noch offen. Die mathematische Durchdringung der Beweisideen durch Menschen steht nach den Worten der Erklärung noch aus."
+    },
+    {
+      "q": "Gilt die Verallgemeinerte Riemannsche Vermutung jetzt vollständig?",
+      "a": "Nein. Geprüft wurde die Verallgemeinerung für alle Dirichlet-L-Funktionen, primitiv oder nicht. Dedekind-, Hecke- und allgemeine automorphe L-Funktionen sind nach Sutherlands ausdrücklicher Klarstellung nicht Teil der geprüften Aussagen."
+    },
+    {
+      "q": "Kann man die Prüfung selbst wiederholen?",
+      "a": "Ja. Sutherland stellt Exportdateien, Hashes und Anleitungen bereit. Wer etwa 100 Gigabyte RAM und 70 Gigabyte Plattenplatz hat, kann die Hashes vergleichen und die Prüfer laufen lassen. Nanoda benötigte rund 28 Minuten auf 80 Threads, ein selbst gebautes con-leche unter vier Minuten auf 64 Threads."
+    }
+  ],
+  "related": [
+    "claude-grh-beweis-lean-alpoege-riemann"
+  ]
+}

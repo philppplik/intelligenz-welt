@@ -1,0 +1,106 @@
+{
+  "slug": "lookatmyquant-inkling-2-mini-quant",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Inkling 2 Mini in 12,8 GB: LookAtMyQuant meldet gleiche Testwerte auf dem Mac",
+  "dek": "Vier Mac-Builds von 5,4 bis 12,8 GB. Der größte erreicht laut Autor dieselben Testwerte wie der Teacher. Das ist keine allgemeine Verlustfreiheit.",
+  "published": "2026-11-22T08:55:00+01:00",
+  "modified": "2026-11-22T08:55:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "LookAtMyQuant",
+    "Quantisierung",
+    "Inkling 2 Mini",
+    "Apple Silicon",
+    "MLX",
+    "Lokale Modelle"
+  ],
+  "key_takeaways": [
+    "Vier MLX-Builds für Apple Silicon bringen Inkling 2 Mini von 18,89 GB BF16-Textgewichten auf 12,76, 11,18, 8,87 und 5,38 GB.",
+    "Im Autoren-Test erreicht der 12,76-GB-Build dieselben Trefferzahlen wie der Teacher: 193/200 GSM8K, 152/164 HumanEval und 4/4 VQA. Das sind 349 von 368 Testfällen bei 32,5 Prozent weniger Textgewichts-Speicher.",
+    "Das 8,87-GB-Build hält rund 99 Prozent der Leistung und liegt in der KL-Divergenz zum Original auf Englisch, Chat und Code um den Faktor 2,34 unter Unsloths 9,14 GB großem UD-Q2_K_XL-GGUF.",
+    "Auf einem Apple M5 Max misst der Autor für das 12,8-GB-Build 60,5 Token pro Sekunde im seriellen Decode und 112,7 Token pro Sekunde mit spekulativem Drafter; das 5,4-GB-Build kommt auf 75,3 beziehungsweise 124,4.",
+    "Wichtiger Vorbehalt: Alle Werte stammen aus den Evals des Autors auf kleinen Datensätzen (200 GSM8K-Aufgaben, 164 HumanEval-Aufgaben, vier VQA-Tests). Wer das Modell produktiv nutzen will, sollte auf den eigenen Aufgaben testen."
+  ],
+  "hero": {
+    "alt": "Abstrakte Visualisierung eines großen Würfels aus vielen kleinen Blöcken, der schrittweise in kleinere, gleichförmige Strukturen überführt wird, Farbverlauf von Violett zu Türkis, ohne Text und ohne Figuren.",
+    "caption": "Symbolbild: Ein Modell wird schichtweise komprimiert",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Was veröffentlicht wurde"
+    },
+    {
+      "t": "p",
+      "x": "Der unter dem Namen Shin Megami Boson arbeitende Autor des MIT-lizenzierten Quantisierungs-Compilers LookAtMyQuant hat vier Apple-Silicon-Builds von Inkling 2 Mini veröffentlicht, dem 26,4 Milliarden Parameter großen Loop-MoE-Modell von Thinking Machines. Die vier Dateien bringen die 18,89 Gigabyte an BF16-Textgewichten auf 12,76 GB (3,92 Bit pro Parameter), 11,18 GB (3,43), 8,87 GB (2,72) und 5,38 GB (1,65). Die Builds kombinieren Trellis-Codes in mehreren Varianten mit exaktem nativem NVFP4 für die empfindlichsten Experten-Blöcke; beim 12,8-GB-Build bleiben 109 von 192 dieser Blöcke fehlerfrei durchgereicht. Anschließend folgt ein proximales Feintuning."
+    },
+    {
+      "t": "h2",
+      "x": "Die Messwerte"
+    },
+    {
+      "t": "p",
+      "x": "Der Autor vergleicht mit seinem unveränderten BF16-Teacher: greedy, ohne Reasoning-Aufwand, mit bis zu 1.536 neuen Token. Getestet werden 200 GSM8K-Aufgaben, alle 164 ausführbaren HumanEval-Aufgaben und vier VQA-Fälle; Sprachfenster dienen einer zusätzlichen KL-Messung. Der 12,76-GB-Build erzielt dieselben Trefferzahlen wie der Teacher: 193/200, 152/164 und 4/4. Beide lösen also 349 von 368 Testfällen. Die README-Angabe 349/349 bezeichnet die Relation zu den Erfolgen des Teachers, nicht die Gesamtzahl der Aufgaben. Die Textgewichte sind dabei 32,5 Prozent kleiner. Die Builds mit 11,18 und 8,87 GB erreichen 99,3 beziehungsweise 99,2 Prozent des normierten Drei-Aufgaben-Mittels; gepoolt sind es jeweils 345/349 Teacher-Erfolge, also 98,9 Prozent. Beim 8,87-GB-Build beträgt die KL-Divergenz auf Englisch, Chat und Code 0,0208 gegenüber 0,0486 für das 9,14-GB-GGUF UD-Q2_K_XL von Unsloth. Das ist ein Faktor von rund 2,34. Der 5,38-GB-Build fällt auf 88,0 Prozent bei GSM8K und 70,7 Prozent bei HumanEval. Für die Vergleiche mit weiteren Unsloth-Dateien nennt der Autor einen separaten, auf 384 Token begrenzten Harness; daraus folgt keine allgemeine Überlegenheit."
+    },
+    {
+      "t": "p",
+      "x": "Die Tempomessungen des Autors auf einem Apple M5 Max: Das 12,8-GB-Build erreicht 2.016 Token pro Sekunde im Prefill (T=512), 60,5 Token pro Sekunde im seriellen Decode und 112,7 im Median mit dem optionalen 178,9 MB großen 4-Bit-Drafter, bei 12,72 GB aktivem RAM. Das 8,9-GB-Build kommt auf 63,5 seriell und 106,0 im Median mit Drafter, das 5,4-GB-Build auf 75,3 seriell und 124,4 mit Drafter bei knapp 6 GB aktivem RAM. Der Durchsatz gilt nur für diesen Mac und den jeweiligen Messaufbau, nicht für beliebige Hardware oder Aufgaben."
+    },
+    {
+      "t": "h2",
+      "x": "Der Compiler dahinter"
+    },
+    {
+      "t": "p",
+      "x": "LookAtMyQuant verfolgt einen anderen Ansatz als feste Quantisierungsformate: Statt einer Regel für das ganze Modell misst der Compiler, wie stark jedes einzelne gespeicherte Stück des Modells die Ausgabe verschlechtert, wenn genau dieses Stück komprimiert wird, und verteilt dann die Bits so, dass der Gesamtschaden innerhalb eines Speicher- oder Tempobudgets minimal bleibt. Bei Gemma 4 E2B erzeugte der Compiler auf dieser Basis GGUF-Dateien mit zwölfmal niedrigerer KL-Divergenz zum Original als Q4_K_M bei gleicher Größe. Frühere Stationen waren Qwen3.5-4B in 1,23 GB, das 330 von 540 Matheaufgaben mit exakter Antwort löst, bei rund 34 Dollar GPU-Zeit für das Rezept, und Qwen3.8-27B in 7,2 GB mit 401 von 540 gelösten Aufgaben, so viele wie das Original."
+    },
+    {
+      "t": "h2",
+      "x": "Installation und Nutzung"
+    },
+    {
+      "t": "p",
+      "x": "Auf Apple Silicon installiert man die Laufzeit direkt aus dem Git-Repository; sie bringt mlx, mlx-lm und huggingface-hub mit. Danach genügt ein Befehl wie lamq generate mit der Hugging-Face-Kennung des gewünschten Builds, optional mit --drafter für den spekulativen Drafter. Die Builds liegen als öffentliche Hugging-Face-Repositories vor (etwa shinmegamiboson/Inkling-2-Mini-LookAtMyQuant-12.8GB), und die Python-Integration gibt ein mit mlx_lm kompatibles Modell-Tokenizer-Paar zurück."
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung der Zahlen",
+      "x": "Sämtliche Leistungs- und Tempowerte stammen aus den Evals und Messungen des Autors. Die Datensätze sind klein, und gerade bei 200 GSM8K-Aufgaben ist jeder einzelne Punkt mit mehreren Prozent Unsicherheit behaftet. Der Autor weist selbst darauf hin, auf den eigenen Aufgaben zu testen. Die Größen- und Speicherangaben sowie die Dateien selbst sind dagegen direkt nachprüfbar."
+    }
+  ],
+  "sources": [
+    {
+      "title": "LookAtMyQuant (Repository und Inkling-2-Mini-Builds)",
+      "publisher": "Shin Megami Boson, GitHub",
+      "url": "https://github.com/ShinMegamiBoson/lookatmyquant",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "LookAtMyQuant: A quantization compiler",
+      "publisher": "lookatmyquant.pages.dev",
+      "url": "https://lookatmyquant.pages.dev/",
+      "accessed": "2026-11-22"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welchen Build sollte ich nehmen?",
+      "a": "Bei ausreichendem Speicher ist der 12,8-GB-Build nach den kleinen Autorentests der Kandidat mit den geringsten gemessenen Abweichungen: gleiche Trefferzahlen, aber weiterhin eine KL-Divergenz größer null. Der 8,9-GB-Build erreicht 99,2 Prozent des normierten Drei-Aufgaben-Mittels; der 5,4-GB-Build verliert deutlich bei Mathematik und Code. Eigene Aufgaben sollten die Wahl bestimmen."
+    },
+    {
+      "q": "Läuft das auch unter Linux oder Windows?",
+      "a": "Die vier Builds sind für Apple Silicon und die MLX-Laufzeit gebaut; die Tempomessungen beziehen sich auf einen Apple M5 Max. Für andere Plattformen verweist das Projekt auf seine GGUF-Experimente, die Inkling-Builds selbst sind MLX-Dateien."
+    },
+    {
+      "q": "Ist das Modell wirklich verlustfrei?",
+      "a": "Nein, eine allgemeine Verlustfreiheit ist damit nicht belegt. Im Autoren-Test stimmen beim 12,8-GB-Build die Trefferzahlen des Teachers überein: 193/200, 152/164 und 4/4. Die KL-Divergenz bleibt größer null. Gleiche Testwerte sind weder identische Ausgaben noch eine Garantie für andere Aufgaben."
+    }
+  ],
+  "related": [
+    "inkling-2-mini-thinking-machines-loop-moe"
+  ]
+}

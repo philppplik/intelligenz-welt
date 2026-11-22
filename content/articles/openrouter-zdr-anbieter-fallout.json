@@ -1,0 +1,131 @@
+{
+  "slug": "openrouter-zdr-anbieter-fallout",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Nach dem Prompt-Leck: OpenRouter wirft drei Anbieter raus und entzieht 125 Endpunkten den ZDR-Status",
+  "dek": "OpenRouter entfernt drei Anbieter und 125 ZDR-Endpunkte. Together, Novita undPhala berichten über offengelegte Prompts. Was die Anbieter bestätigen.",
+  "published": "2026-11-22T08:55:00+01:00",
+  "modified": "2026-11-22T08:55:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenRouter",
+    "Zero Data Retention",
+    "Together AI",
+    "Novita",
+    "Phala",
+    "Datenschutz"
+  ],
+  "key_takeaways": [
+    "OpenRouter hat nach den Dragos-Befunden drei Inferenzanbieter von der Plattform entfernt und 125 Endpunkten die ZDR-Eignung entzogen, teils vorsorglich. Alle potenziell betroffenen Kunden wurden benachrichtigt.",
+    "Together AI meldet: Ein KI-Coding-Agent hat bei der Arbeit am öffentlichen xorl-Repository einen Zugangsschlüssel committet, über den ein Unbefugter gespeicherte Prompt-Samples aus Juni und Juli herunterlud. Fünf der darin getesteten Zugangsdaten waren Dragos-Canaries.",
+    "Novita bestätigt, dass MiniMax-Anfragen vom 28. Mai bis 11. November wegen einer Routing-Fehlkonfiguration an die offizielle MiniMax-API statt an eigene Hardware gingen, einschließlich über OpenRouter gerouteter Anfragen.",
+    "Phala beschreibt einen Eindringling, der ein Legacy-System mit Loopback-vertrauenden Verwaltungsschnittstellen kombinierte; Anfragen an DeepSeek V4 Flash 0731 zwischen dem 21. Oktober und 8. November gelten als offengelegt.",
+    "Konsequenz für Nutzer: Zugangsdaten rotieren, die in den genannten Zeiträumen über die genannten Modelle und Anbieter liefen; ZDR aktivieren, wo angeboten; Anbieter für sensible Anfragen ausdrücklich festlegen."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung mehrerer paralleler Datenströme als Linienbündel, von denen einzelne Linien an einer Verzweigung umgeleitet werden und verblassen, in kühlen Blau- und Grautönen ohne Text.",
+    "caption": "Symbolbild: Geroutete Anfragen und ein entzogenes Versprechen",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "OpenRouter zieht Konsequenzen"
+    },
+    {
+      "t": "p",
+      "x": "Nach den Befunden von Sicherheitsforschern, die mit Canary-Zugangsdaten Datenflüsse hinter Inferenz-Routern sichtbar gemacht hatten, hat OpenRouter am 22. November Bilanz gezogen. Einen Einbruch bei OpenRouter selbst habe es nicht gegeben, heißt es in der Mitteilung. Konsequenzen gibt es trotzdem: Drei Anbieter wurden aufgrund der Untersuchungen von der Plattform entfernt, und 125 Endpunkte verloren die Eignung für Zero Data Retention, darunter neben den von den Forschern markierten auch vorsorglich entfernte. Alle potenziell betroffenen Kunden seien benachrichtigt worden."
+    },
+    {
+      "t": "p",
+      "x": "Für die Zukunft kündigt OpenRouter an, den Canary-Testansatz der Forscher in einen Dauerbetrieb zu überführen, Netzwerkpfade technisch zu prüfen, um weitergeleitete Anfragen zu erkennen, und vor jeder Rückkehr eines Endpunkts in den ZDR-Status Zusicherungen einzufordern. Bemerkenswert ist ein Satz am Rand: Nicht alle betroffenen Anbieter hätten sich öffentlich geäußert. Die Liste der veröffentlichten Stellungnahmen soll laufend aktualisiert werden."
+    },
+    {
+      "t": "h2",
+      "x": "Together AI: Ein Coding-Agent committet den Schlüssel"
+    },
+    {
+      "t": "p",
+      "x": "Together-AI-CEO Vipul Ved Prakash beschreibt den Vorfall bei seinem Unternehmen so: Für Softwaretests gesammelte und dafür freigegebene Prompt-Samples aus Anfragen an die Modelle MiniMax M3, GLM-5.2 und Kimi K2.6, vor allem vom 24. Juni sowie 4., 8. und 14. Juli, lagen in einem privaten Hugging-Face-Repository. Bei der Arbeit am öffentlichen GitHub-Repository xorl committete ein KI-Coding-Agent einen Zugangsschlüssel zu genau diesem Repository. Der automatische Scan erkannte den Schlüssel, der Commit wurde zurückgedreht, doch in der Zwischenzeit hatte ein Unbefugter den Schlüssel erlangt und die Samples heruntergeladen. Anschließend durchsuchte er sie nach Zugangsdaten zu anderen Diensten und testete deren Gültigkeit; fünf davon waren Canaries des Dragos-Experiments."
+    },
+    {
+      "t": "p",
+      "x": "Together AI arbeitet nach eigenen Angaben mit einem externen Forensikunternehmen und den Strafverfolgungsbehörden zusammen; die Prüfung der Inhalte auf sensible personenbezogene Daten laufe noch. Als umgesetzt beschreibt Together: kurzlebige oder schlüssellose Zugänge, Credential-Prüfung bei jedem Pull Request, Zero Data Retention als Voreinstellung für neue Konten und neue Regeln für den Einsatz von KI-Coding-Agenten."
+    },
+    {
+      "t": "h2",
+      "x": "Novita und Phala: Zwei weitere Berichte"
+    },
+    {
+      "t": "p",
+      "x": "Novita bestätigt eine Routing-Fehlkonfiguration: Ein Weiterleitungspfad, der für bestimmte Kunden gedacht war, griff zu breit. MiniMax-Anfragen zwischen dem 28. Mai und dem 11. November 2026 gingen deshalb teils an die offizielle MiniMax-API statt an Novitas eigene Infrastruktur, einschließlich der über OpenRouter gerouteten Anfragen. Der Forscher beobachtete Zugriffe auf die eingebetteten Canary-URLs und Hostnamen, nicht jedoch auf die AWS-Schlüsselmarkierungen; das Muster deute laut Novita auf eine automatisierte Inhaltsprüfung hin, was man mit MiniMax klären wolle. Die betroffenen Modelle wurden vorläufig aus dem Angebot genommen. Novita selbst speichere keine Prompts und rät zur Rotation etwaig enthaltener Zugangsdaten."
+    },
+    {
+      "t": "p",
+      "x": "Phala hatte bereits am 10. November einen vorläufigen Bericht veröffentlicht: Ein einzelner Angreifer kombinierte einen internetseitig erreichbaren Legacy-Dienst mit Verwaltungsschnittstellen, die Zugriffe vom lokalen Netzinterface ohne eigene Authentifizierung akzeptierten. So erstellte er unbefugt virtuelle Maschinen und erlangte Anwendungszugangsdaten; auf einem neuen, nicht vollständig gehärteten GPU-Server übernahm er die Inferenz-VM, wodurch Anfragen während der Verarbeitung sichtbar wurden. Anfragen an DeepSeek V4 Flash 0731, die OpenRouter zwischen dem 21. Oktober, 00:00 UTC, und dem 8. November, 05:35 UTC, an Phala leitete, sollen als offengelegt behandelt werden. Beobachteter Missbrauch betraf nach Phalas Angaben nur Canary-Daten vom 21. und 22. Oktober; die vorsorgliche Warnfrist ist weiter gefasst. Eingedämmt wurde der Vorfall am 8. November, eine vollständige Ursachenanalyse ist angekündigt. Laut Phala war der Modelldienst zum Bericht bereits mit zusätzlichen Schutzmaßnahmen wiederhergestellt; die vollständige Ursachenanalyse stand noch aus."
+    },
+    {
+      "t": "callout",
+      "title": "Das eigentliche Muster",
+      "x": "Zwei der drei Berichte beschreiben keine ausgefeilten Angriffe, sondern gewöhnliche Betriebsfehler: einen geleakten Schlüssel, einen falsch gerouteten Pfad. Dazu kommt ein neuer Fehlermodus: Der Together-Schlüssel wurde von einem KI-Coding-Agenten committet. ZDR auf einem Router ist nur so stark wie der schwächste Rechner dahinter, und OpenRouters Schritt zu dauerhaften Canary-Tests deutet an, dass Zusicherungen künftig laufend geprüft statt einmalig geglaubt werden."
+    },
+    {
+      "t": "h2",
+      "x": "Was Nutzerinnen und Nutzer jetzt tun sollten"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Zugangsdaten rotieren, die in Prompts steckten: bei MiniMax-Modellen über Novita zwischen dem 28. Mai und 11. November, bei DeepSeek V4 Flash 0731 über Phala zwischen dem 21. Oktober und 8. November sowie bei Together-Serverless-Anfragen aus dem Juni und Juli.",
+        "Zero Data Retention aktivieren, wo es angeboten wird; bei Together ist ZDR für neue Konten inzwischen Voreinstellung.",
+        "Für sensible Anfragen nur ausdrücklich freigegebene Anbieter und passende Datenrichtlinien zulassen, Fallbacks prüfen und keine Zugangsdaten in Prompts senden. Eine Anbieterwahl allein verhindert keinen Vorfall.",
+        "Postfächer prüfen: OpenRouter hat potenziell betroffene Kunden benachrichtigt, auch dort, wo Anbieter bisher nicht öffentlich berichtet haben."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Data Processing Incidents on Inference Providers",
+      "publisher": "OpenRouter",
+      "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "Security event: Prompt leakage for requests in June and July of 2026",
+      "publisher": "Together AI",
+      "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "Privacy Notice Regarding MiniMax Requests on Novita",
+      "publisher": "Novita AI",
+      "url": "https://novita.ai/blog/minimax-requests-privacy-notice/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "Phala November Preliminary Incident Report",
+      "publisher": "Phala",
+      "url": "https://phala.com/posts/phala-november-preliminary-incident-report",
+      "accessed": "2026-11-22"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wurde OpenRouter selbst gehackt?",
+      "a": "Nach Angaben von OpenRouter nicht. Die Untersuchung ergab Befunde zu einzelnen Inferenzanbietern hinter dem Router. OpenRouter entfernte drei Anbieter und entzog 125 Endpunkten die ZDR-Eignung."
+    },
+    {
+      "q": "Woher weiß ich, ob ich betroffen bin?",
+      "a": "OpenRouter hat nach eigener Angabe alle potenziell betroffenen Kunden benachrichtigt, auch für Anbieter ohne öffentliche Stellungnahme. Unabhängig davon gilt: Wer in den genannten Zeiträumen Zugangsdaten über die genannten Modelle und Anbieter geschickt hat, sollte sie vorsorglich rotieren."
+    },
+    {
+      "q": "Was bedeutet der Entzug des ZDR-Status?",
+      "a": "Endpunkte mit ZDR-Zusage sollen Anfragen nicht speichern. Der Entzug bedeutet, dass OpenRouter diese Zusage für die betroffenen Endpunkte aktuell nicht mehr stehen lässt, teils wegen der Forschungsbefunde, teils vorsorglich. Vor einer Rückkehr will OpenRouter Zusicherungen und eigene Prüfungen einfordern."
+    }
+  ],
+  "related": [
+    "canary-prompts-ai-router-datenlecks-hd-moore"
+  ]
+}

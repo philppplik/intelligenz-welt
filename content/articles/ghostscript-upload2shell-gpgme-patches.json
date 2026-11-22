@@ -1,0 +1,128 @@
+{
+  "slug": "ghostscript-upload2shell-gpgme-patches",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Vor Montag patchen: Ghostscript-Upload2Shell und kritische GPGME-Lücke",
+  "dek": "Ghostscript-Upload2Shell und ein Double Free in GPGME betreffen Dokument- und Mail-Workflows. Welche Fixes und Distributions-Backports die Anbieter nennen.",
+  "published": "2026-11-22T08:55:00+01:00",
+  "modified": "2026-11-22T08:55:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Ghostscript",
+    "GPGME",
+    "Sicherheitslücke",
+    "Patch",
+    "CVE-2026-125396",
+    "CVE-2026-129975"
+  ],
+  "key_takeaways": [
+    "Upload2Shell (CVE-2026-125396) ist ein Use-after-Free in Ghostscripts Type-1-Font-Lader, der aus der -dSAFER-Sandbox ausbricht und Befehle mit den Rechten des Render-Prozesses ausführt. Der Fix steckt in Ghostscript 10.08.0 und in den Distributionen.",
+    "Laut pwn.ai bestätigte Angriffspfade reichen von unauthentifiziertem Fernzugriff über eine konfigurierte Debian-13-Druckerwarteschlange bis zu Anhängen in Roundcube und öffentlichen Upload-Feldern zweier WordPress-Plugins.",
+    "Die GnuPG-Mitteilung nennt GPGME vor 2.3.0 als betroffen. Version 2.3.0 wurde nie öffentlich angeboten. Empfohlen werden GPGME 2.3.1 und unter Windows das aktualisierte Gpg4win 5.1.2.",
+    "Betroffen sind laut GnuPG-Team Gpg4win, GnuPG Desktop, die meisten Mailclients, viele XMPP-Clients, Samba und Flatpak. Wer nicht aktualisieren kann, kann den beigelegten Patch auf ältere Versionen anwenden.",
+    "Upstream nennt Ghostscript 10.08.0 als Fix. Bei Distributionen entscheidet der vollständige Paket-Sicherheitsstand: Ein Backport kann trotz niedrigerer angezeigter Version bereits geschützt sein."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung eines stilisierten Dokuments, das eine transparente geometrische Barriere durchbricht, daneben ein geöffnetes Schloss-Symbol aus Linien, in gedämpften Blau- und Orangetönen ohne Text.",
+    "caption": "Symbolbild: Sandbox-Ausbruch über eine Dokumentvorschau",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Ghostscript: Upload2Shell (CVE-2026-125396)"
+    },
+    {
+      "t": "p",
+      "x": "Das Sicherheitsunternehmen pwn.ai hat eine Schwachstelle in Ghostscript veröffentlicht, die weit reicht: Ein Use-after-Free im Type-1-Font-Lader erlaubt es einem präparierten Dokument, die -dSAFER-Sandbox zu verlassen und Befehle mit den Rechten des rendernden Prozesses auszuführen. Ghostscript sitzt unter Druck-, E-Mail-, Upload- und Vorschau-Workflows, und wie die frühere ImageMagick-Recherche des Teams zeigte, können auch Dateien namens .png oder .jpg über die Bildkonvertierung bei Ghostscript landen."
+    },
+    {
+      "t": "p",
+      "x": "pwn.ai meldet erfolgreiche Tests gegen konkrete Konfigurationen: eine geteilte Druckerwarteschlange unter Debian 13, Thumbnail-Verarbeitung von Anhängen in Roundcube und der Plesk-Auslieferung sowie öffentliche Upload-Felder der Plugins Essential Addons for Elementor und Forminator. Auch Mayan EDMS, DokuWiki, MediaWiki PdfHandler und ResourceSpace nennt der Bericht. Diese Pfade hängen von Renderer, Version und Konfiguration ab, nicht allein vom installierten Produktnamen. Den betroffenen Google-Pfad habe Google am 10. November geschlossen; WordPressCore lieferte einen eigenen Fix unter CVE-2026-65640. Das sind Angaben der Forscher, keine von uns wiederholten Exploits."
+    },
+    {
+      "t": "p",
+      "x": "Der Upstream-Fix kam laut pwn.ai mit Ghostscript 10.08.0 am 8. September. Der Debian-Sicherheitstracker führt für Debian 13 den aktuellen Build 10.05.1~dfsg-1+deb13u3 als behoben; in der Historie ist bereits deb13u2 als Fix-Version eingetragen. Ubuntu nennt in USN-8949-1 Sicherheitsstände für sieben Releases, darunter 10.02.1~dfsg1-0ubuntu7.10 für 24.04 LTS. Bei älteren Releases kann Ubuntu Pro beziehungsweise Legacy Support erforderlich sein. Maßgeblich ist der vollständige Paketstand der eigenen Distribution, nicht allein die Ausgabe von gs --version."
+    },
+    {
+      "t": "h2",
+      "x": "GPGME: Double Free in der Statuszeilen-Verarbeitung (CVE-2026-129975)"
+    },
+    {
+      "t": "p",
+      "x": "Am Freitag, 20. November, veröffentlichte das GnuPG-Team die Sicherheitsmitteilung zu GPGME 2.3.1. Ein präparierter OpenPGP-Schlüssel mit sehr langer Nutzerkennung kann einen Double Free in der Verarbeitung der Statuszeilen auslösen. Laut Team ist damit Datenabfluss möglich; entfernte Codeausführung könne nicht ausgeschlossen werden. Die Mitteilung empfiehlt sofortige Aktualisierung. Die Zusammenfassung spricht von allen früheren Versionen, der Impact-Abschnitt konkret von Versionen vor 2.3.0; 2.3.0 war laut derselben Mitteilung nie öffentlich verfügbar."
+    },
+    {
+      "t": "p",
+      "x": "Betroffen ist jede Software, die GPGME vor Version 2.3.0 einbindet, ob als Bibliothek, DLL oder statisch gelinkt. Das GnuPG-Team nennt als Beispiele Gpg4win, GnuPG Desktop und VS-Desktop, die meisten Mailclients, viele XMPP-Clients, Samba und Flatpak. Die Lösung ist das Update der Bibliothek auf 2.3.1; unter Windows steht die DLL über das aktualisierte Gpg4win bereit. Statisch gelinkte Programme müssen gegen 2.3.1 neu gebaut werden. Wer nicht aktualisieren kann, kann den der Mitteilung beigelegten Patch anwenden, der nach Angaben des Teams auch auf sehr alte Versionen passt. GPGMEPP und GPGMEQT müssen nicht aktualisiert werden. Die genannte Windows-Veröffentlichung ist Gpg4win 5.1.2."
+    },
+    {
+      "t": "p",
+      "x": "Entdeckt wurde die Lücke von Johan Carlsson; GitLab informierte das GnuPG-Team am 12. November. Die koordinierte Veröffentlichung war ursprünglich für den 25. November geplant und wurde auf den 20. November vorgezogen, weil GitLab wegen der separaten Ruby2Shell-Lücke früher ausliefern musste."
+    },
+    {
+      "t": "callout",
+      "title": "Warum das Agenten-Workflows trifft",
+      "x": "Beide Lücken sitzen unter Funktionen, die Agenten und Pipelines inzwischen automatisiert aufrufen: Vorschaubilder für hochgeladene Dateien erzeugen, E-Mail-Anhänge rendern, Signaturen prüfen. Jeder Workflow nach dem Muster 'lass den Agenten diese Datei verarbeiten' erbt die Angriffsfläche der darunterliegenden Renderer und Krypto-Bibliotheken."
+    },
+    {
+      "t": "h2",
+      "x": "Was konkret zu tun ist"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Den vollständigen Ghostscript-Paketstand mit dem Sicherheitsbulletin der Distribution vergleichen. gs --version allein erkennt Backports nicht. Upstream-Fix: 10.08.0; aktueller Debian 13-Fixbuild: 10.05.1~dfsg-1+deb13u3; Ubuntu: USN-8949-1.",
+        "Dienste einordnen, die Dokumente entgegennehmen: Druckserver mit geteilten Warteschlangen, Webmail mit Vorschaubildern, CMS-Upload-Felder, Wikis und Dokumentenverwaltung.",
+        "GPGME auf 2.3.1 aktualisieren; unter Windows das aktuelle Gpg4win einspielen. Statisch gelinkte Software neu bauen.",
+        "Wo ein Update kurzfristig nicht möglich ist: den Patch aus der GnuPG-Mitteilung anwenden und das Update nachholen.",
+        "Eigene Automatisierungen prüfen, die fremde Dokumente rendern oder OpenPGP-Daten verarbeiten, und diese Pfade bis zum Patch einschränken."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Upload2Shell (CVE-2026-125396)",
+      "publisher": "pwn.ai research",
+      "url": "https://pwn.ai/upload2shell",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "[Announce] GnuPG Security Advisory for GPGME (T8557, CVE-2026-129975)",
+      "publisher": "GnuPG (gnupg-announce)",
+      "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "Debian Security Tracker: CVE-2026-125396",
+      "publisher": "Debian",
+      "url": "https://security-tracker.debian.org/tracker/CVE-2026-125396",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "USN-8949-1: Ghostscript vulnerabilities",
+      "publisher": "Ubuntu",
+      "url": "https://ubuntu.com/security/notices/USN-8949-1",
+      "accessed": "2026-11-22"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Mein System nutzt ImageMagick, bin ich betroffen?",
+      "a": "Das hängt von Konfiguration und Sicherheitsstand ab. pwn.ai beschreibt Pfade, bei denen ImageMagick Dateien trotz Bild-Endung an Ghostscript übergibt. Upstream nennt 10.08.0 als Fix; Distributionen können denselben Fix auf ältere Versionszweige zurückportiert haben. Deshalb das vollständige Paket mit dem Distributionsbulletin vergleichen."
+    },
+    {
+      "q": "Reicht es, Gpg4win zu aktualisieren?",
+      "a": "Für Windows-Installationen mit Gpg4win ja, das aktuelle Gpg4win enthält die korrigierte DLL. Linux-Systeme aktualisieren die GPGME-Bibliothek über die Distribution. Statisch gegen GPGME gelinkte Programme müssen gegen Version 2.3.1 neu gebaut werden."
+    },
+    {
+      "q": "Ist die GPGME-Lücke schon ausgenutzt worden?",
+      "a": "Der GnuPG-Mitteilung liegt kein Hinweis auf aktive Ausnutzung vor. Das Team warnt, dass sich Daten exfiltrieren lassen und eine entfernte Codeausführung nicht ausgeschlossen werden kann, und empfiehlt das sofortige Update."
+    }
+  ],
+  "related": [
+    "openssl-synology-kritische-luecken-patches"
+  ]
+}

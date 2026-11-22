@@ -1,0 +1,102 @@
+{
+  "slug": "rl-nachtraining-diffusion-steering-vektoren",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Ein konstanter Schub reicht: Was RL-Nachtraining bei Diffusionsmodellen wirklich ändert",
+  "dek": "Konstante Steuervektoren reproduzieren laut Studie 90,0 bis 96,3 Prozent des RL-Belohnungsgewinns bei sechs Bildmodellen. Grenzen und Versuchsaufbau.",
+  "published": "2026-11-22T08:55:00+01:00",
+  "modified": "2026-11-22T08:55:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Diffusionsmodelle",
+    "Reinforcement Learning",
+    "Activation Steering",
+    "Flow-GRPO",
+    "Stable Diffusion",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "Steuervektoren, die zu den Block-Ausgaben des eingefrorenen Basismodells addiert werden, reproduzieren 90,0 bis 96,3 Prozent des Belohnungsgewinns von sechs RL-nachtrainierten Bildmodellen, bei zwei Videomodellen 89,8 und 111,9 Prozent.",
+    "Die Vektoren sind für jeden Prompt, jedes Token und jeden Startwert identisch und umfassen bei SD3.5-M nur 0,29 Millionen Parameter, 65-mal weniger als die RL-trainierte LoRA mit 18,8 Millionen.",
+    "Die Vektoren werden ohne Belohnung auf die Geschwindigkeitsvorhersagen öffentlicher RL-Checkpoints angepasst; schlicht die mittlere Aktivierungsänderung zu addieren, holt deutlich weniger heraus.",
+    "Trainiert man ausschließlich diese Vektoren von null aus mit Online-RL, übertreffen sie auf SD3.5-M die Gewinne der gewichtsbasierten RL-Modelle bei Texterkennung (OCR) und menschlicher Präferenz (PickScore).",
+    "Der Effekt läuft über denselben Pfad wie der von RL: darüber, was Bild-Token in der gemeinsamen Aufmerksamkeit von Text-Token lesen."
+  ],
+  "hero": {
+    "alt": "Abstraktes Diagramm aus vielen farbigen Linienspuren, die nach einer gemeinsamen kleinen Verschiebung alle in dieselbe Richtung kippen, daneben ein einzelner kräftiger Pfeil als Konstante, auf dunklem Grund ohne Text.",
+    "caption": "Symbolbild: Ein konstanter Vektor verschiebt alle Spuren gleich",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Die Ausgangsfrage"
+    },
+    {
+      "t": "p",
+      "x": "RL-Nachtraining verbessert Diffusions-Transformer messbar: bessere Bildqualität, korrekt gerenderte Schrift, zuverlässigere Komposition mehrerer Objekte. Weil solche Fähigkeiten vom Prompt abhängen, liegt die Vermutung nahe, dafür seien komplexe, eingabeabhängige Umbauten am Modell nötig. Eine Studie von Forschenden der Virginia Tech, von fal, Georgia Tech und IBM Research (arXiv 2611.26627) prüft genau das mit einer bewusst simplen Parametrisierung: einem festen Satz von Steuervektoren, die zu den Block-Ausgaben des eingefrorenen Basismodells addiert werden."
+    },
+    {
+      "t": "p",
+      "x": "Das Ergebnis: Auf SD3.5-M halten diese Vektoren 288.768 Parameter, 1,5 Prozent der rank-32-LoRA, die Flow-GRPO für PickScore trainiert, und sie sind für jeden Prompt, jedes Token und jeden Sampling-Startwert identisch. Angepasst werden sie auf die Geschwindigkeitsvorhersagen öffentlicher RL-nachtrainierter Checkpoints, ohne dass eine Belohnung im Lernziel vorkommt. Die Kontrollvariante, einfach die durchschnittliche Aktivierungsänderung des RL-Modells zu addieren, reproduziert deutlich weniger des Gewinns."
+    },
+    {
+      "t": "h2",
+      "x": "Die Ergebnisse"
+    },
+    {
+      "t": "p",
+      "x": "Über sechs RL-nachtrainierte Bildmodelle, darunter Varianten von SD3.5-M und FLUX.1-dev, mehrere RL-Algorithmen, LoRA und volles Feintuning sowie Belohnungen wie PickScore, HPSv2.1, OCR und GenEval, holen die festen Vektoren 90,0 bis 96,3 Prozent des jeweiligen Belohnungsgewinns zurück. Bei zwei RL-nachtrainierten Videogeneratoren liegen die Werte bei 89,8 und 111,9 Prozent, im zweiten Fall also über dem Original. Die beiden Videomodelle sind eine Auswahl: Nur zwei von sechs geprüften öffentlichen RL-Videomodellen zeigten auf der ausgewerteten Belohnung einen Gewinn mit 95-Prozent-Intervall oberhalb null. Der Befund gilt für die untersuchten Policy-Gradient-Verfahren, nicht für beliebiges Nachtraining."
+    },
+    {
+      "t": "p",
+      "x": "Im zweiten Teil der Studie fragen die Autoren, ob RL solche konstanten Verschiebungen auch direkt lernen kann. Sie frieren SD3.5-M ein und trainieren mit Flow-GRPO nur die Steuervektoren, beginnend bei null. Ergebnis: Die trainierten Vektoren erreichen 104,6 beziehungsweise 103,6 Prozent der Gewinne der OCR- und PickScore-nachtrainierten Modelle. RL erreicht den Großteil seines Effekts also, ohne ein einziges vortrainiertes Gewicht anzufassen."
+    },
+    {
+      "t": "h2",
+      "x": "Wie eine Konstante promptspezifisch wirken kann"
+    },
+    {
+      "t": "p",
+      "x": "Die Vektoren tragen keine Prompt-Information; der promptabhängige Teil der Wirkung muss vom eingefrorenen Generator kommen. Auf SD3.5-M verfolgen die Autoren den Pfad: Die Verschiebung erreicht das Bild darüber, was Bild-Token in der gemeinsamen Aufmerksamkeit von Text-Token lesen. Ersetzt man genau diesen Teil durch die Schlüssel und Werte des ungesteuerten Basismodells, verschwindet der Großteil der OCR- und PickScore-Gewinne, bei den Steuervektoren wie beim RL-Modell. Beide wirken also über dieselbe Route. Der Textstrom, der konditionale Guidance-Durchlauf und die frühen Sampling-Schritte tragen den größten Anteil: Vektoren, die nur auf diese Teile angepasst sind und 531-mal weniger Parameter als die LoRA haben, holen noch 89,5 Prozent des RL-Gewinns bei OCR und 73,7 Prozent bei PickScore."
+    },
+    {
+      "t": "callout",
+      "title": "Warum die Vektoren überallhin mitwandern",
+      "x": "Weil die Vektoren nicht von der Token-Zahl abhängen, übertragen sie sich unverändert auf andere Auflösungen (die Studie zeigt 512, 768 und 1024 Pixel) sowie auf andere Schrittzahlen und Guidance-Stärken. Einmal angepasst, gelten sie pro Belohnungsziel, nicht pro Bild."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die Deutung der Autoren: Ein Großteil dessen, was Policy-Gradient-RL einem Bildmodell beibringt, ist keine neue eingabeabhängige Fähigkeit, sondern eine Richtung. Der eingefrorene Generator kann das Gewünschte bereits berechnen; RL schiebt ihn dorthin. Für die Praxis heißt das zweierlei. Erstens steht damit eine billige Vergleichsbasis bereit, die künftige RL-Verfahren für Diffusionsmodelle schlagen müssen, bevor sie einen echten Zugewinn behaupten können. Zweitens ordnet sich der Befund in eine Reihe ähnlicher Beobachtungen bei Sprachmodellen ein, wonach RL-Feintuning wenig Parameter bewegt und nah am Basismodell bleibt. Die Studie misst Belohnungsgewinne an den üblichen Scores; wie robust die Verschiebung gegenüber Belohnungs-Hacking ist und ob sich die Vektoren als eigenes Werkzeug etwa für Präferenzanpassung eignen, bleibt offenen Folgearbeiten überlassen. Die Anpassung ist nicht kostenlos: Aufbau des Sample-Caches, Messung der Mittelwert-Baseline und Fitting benötigten laut Paper bis zu 17 H100-GPU-Stunden je Bildmodell und 70 je Videomodell. Wir haben keine eigenen Modelltests durchgeführt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+      "publisher": "arXiv (Meral, Oktay, Helbling, Kara, Chau, Yanardag u.a.)",
+      "url": "https://arxiv.org/abs/2611.26627",
+      "accessed": "2026-11-22"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Heißt das, RL-Nachtraining bei Diffusionsmodellen ist überflüssig?",
+      "a": "Das sagen die Autoren nicht. Sie zeigen, dass ein Großteil des gemessenen Gewinns auch mit konstanten Verschiebungen erreichbar ist. RL bleibt ein Weg, diese Richtung zu finden; die Studie liefert eine einfache Vergleichsbasis, an der sich echte Zugewinne künftig messen lassen müssen."
+    },
+    {
+      "q": "Was genau ist ein Steuervektor?",
+      "a": "Ein fester Vektor, der während der Inferenz zu den Zwischenaktivierungen eines Blocks addiert wird, ohne die Modellgewichte zu verändern. In dieser Studie variiert er nur mit Block, Guidance-Durchlauf und Sampling-Phase, nicht mit Prompt oder Token."
+    },
+    {
+      "q": "Gilt das auch für Sprachmodelle?",
+      "a": "Die Studie untersucht Diffusions-Transformer für Bild und Video. Sie verweist auf verwandte Arbeiten an Sprachmodellen, in denen Steuervektoren einen Großteil des RL-Gewinns schließen konnten. Eine direkte Übertragung ist nicht Teil der Arbeit."
+    }
+  ],
+  "related": []
+}

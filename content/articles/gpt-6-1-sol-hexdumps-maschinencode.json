@@ -1,0 +1,119 @@
+{
+  "slug": "gpt-6-1-sol-hexdumps-maschinencode",
+  "lang": "de",
+  "section": "modelle",
+  "type": "analysis",
+  "title": "GPT-6.1 Sol liest, patcht und schreibt Programme direkt im Hexdump",
+  "dek": "Ein Blogexperiment lässt GPT-6.1 Sol ohne Werkzeuge kleine Programme als Hexdump lesen und ändern. Die Autoren melden Erfolge, die Stichprobe ist klein.",
+  "published": "2026-11-22T08:55:00+01:00",
+  "modified": "2026-11-22T08:55:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "GPT-6.1 Sol",
+    "Maschinencode",
+    "Reverse Engineering",
+    "Malware-Analyse",
+    "OpenAI",
+    "Experiment"
+  ],
+  "key_takeaways": [
+    "Im Versuchsaufbau von George Xenos und Sotiris Giannopoulos bekam GPT-6.1 Sol nur einen xxd-Hexdump (etwa 2,4 Token pro Byte). Ein Relay entfernte sämtliche Werkzeuge aus jeder Anfrage, jeder Durchlauf erlaubte genau eine Antwort.",
+    "Lesen: Das Modell identifizierte alle vier Testprogramme korrekt, darunter ein gestripptes, statisch gelinktes FreeBSD-ministat mit verschleierten Zeichenketten. Aus den Bytes allein fand es einen echten Fehler im Originalquelltext.",
+    "Die Autoren melden für drei gepatchte und drei neu geschriebene Programme bestandene Tests. Bytegenau verglichen wurden Standardausgabe und Exit-Code, nicht die ausführbaren Dateien selbst.",
+    "In einem Malware-Fall beschrieb das Modell das Verhalten einer unbekannten Datei korrekt und nannte die richtige Serveradresse; eine VMRay-Sandbox-Analyse bestätigte Adresse und Abruf. DeepSeek V4.1 Flash kam zum selben Ergebnis, was die Autoren als vorläufigen Hinweis werten.",
+    "Die harte Grenze ist die Kontextgröße: Ein Zehn-Megabyte-Programm würde nach Angaben der Autoren rund 24 Millionen Token kosten."
+  ],
+  "hero": {
+    "alt": "Abstrakte Visualisierung von sechzehnertigen Hexadezimalblöcken als geometrisches Muster aus türkisen und blauen Kacheln, aus denen sich eine stilisierte Dateistruktur herausschält, vor dunklem Hintergrund.",
+    "caption": "Symbolbild: Ein Hexdump als lesbare Struktur",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Der Versuchsaufbau"
+    },
+    {
+      "t": "p",
+      "x": "George Xenos und Sotiris Giannopoulos stellen in einem gemeinsamen Blogbeitrag die Frage, was ein allgemeines Sprachmodell mit den rohen Bytes einer ausführbaren Datei anfangen kann, wenn ihm keinerlei Werkzeuge zur Verfügung stehen. Getestet wurde GPT-6.1 Sol (gpt-6.1-sol, hoher Reasoning-Einsatz) über die Codex CLI 0.166.0. Die Eingabe war ein in den Prompt eingefügter xxd-Hexdump mit rund 2,4 Token pro Byte. Ein lokales Relay entfernte jedes Werkzeug aus jeder Anfrage, der Ereignisstrom wurde aufgezeichnet, und eine Live-Kontrolle forderte das Modell auf, eine präparierte Datei zu lesen, einen Befehl auszuführen und eine URL abzurufen. Jedes Experiment erlaubte genau eine Antwort, ohne Rückfragen und ohne Wiederholung. Bewertet wurde gegen eine GCC-Referenz: Standardausgabe und Exit-Code mussten unter qemu-x86_64 Byte für Byte übereinstimmen. Formal ausgewertet wurden die Programmieraufgaben; für das reine Lesen und die Malware-Analyse gibt der Beitrag keine formale Gesamtpunktzahl an."
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren nennen das Machine Code Programming und knüpfen an frühere Arbeiten zum Weight-Space Programming an, bei denen Modelle neuronale Netzwerkgewichte direkt lesen und verändern. Hier geht es um das zweite Artefakt, das gemeinhin als unlesbar gilt: kompilierten Code."
+    },
+    {
+      "t": "h2",
+      "x": "Lesen: Vier Programme, ein echter Fund"
+    },
+    {
+      "t": "p",
+      "x": "Im ersten Experiment erhielt das Modell die Hexdumps dreier selbst geschriebener Programme (ein Zeilen- und Wortzähler, ein AES-128/256-Werkzeug im ECB-Modus, ein Kontenverwaltungsprogramm) sowie das FreeBSD-Werkzeug ministat. Alle vier wurden korrekt identifiziert. Der schwierigste Fall war ministat: mit -O3 gebaut, statisch gegen musl gelinkt, gestrippt, die letzten Zeichenketten durch gesetzte High-Bits verschleiert. Das Modell fand die Dekodierschleife, rekonstruierte die Optionsliste und beschrieb alle acht Optionen."
+    },
+    {
+      "t": "p",
+      "x": "Überraschend ist ein Nebenbefund: Beim Lesen der t-Tabelle als rohe 64-Bit-Fließkommawerte bemerkte das Modell, dass die mit 99,5 Prozent Konfidenz beschriftete Option tatsächlich kritische Werte für etwa 99,8 Prozent verwendet. Die Autoren bestätigten den Fehler im Originalquelltext. Ob der Fehler inzwischen im Upstream behoben wurde, haben wir nicht geprüft."
+    },
+    {
+      "t": "h2",
+      "x": "Patchen und neu schreiben"
+    },
+    {
+      "t": "p",
+      "x": "Im zweiten Experiment sollte das Modell jedem der drei eigenen Programme eine neue Funktion per Byte-Edit hinzufügen: dem Zähler die Länge der längsten Zeile (74 geänderte Bytes), dem AES-Werkzeug einen Entschlüsselungsbefehl (544 Bytes), der Kontenverwaltung einen Überweisungsbefehl (379 Bytes). Versteckte Tests prüften, dass altes Verhalten erhalten blieb, die neue Funktion arbeitet und lange Eingaben korrekt behandelt werden. Alle drei gepatchten Programme bestanden jeden Test. Die Technik beschreiben die Autoren als die eines menschlichen Patchers: Das Modell suchte Füllbytes, machte sie über die Segment-Header ausführbar, schrieb dort neuen Code und ersetzte vorhandene Anweisungen durch Aufrufe."
+    },
+    {
+      "t": "p",
+      "x": "Im dritten Experiment erzeugte das Modell aus einer Spezifikation drei vollständige ELF64-Dateien. Laut Autoren liefen sie erfolgreich; Standardausgabe und Exit-Code stimmten auf den Testfällen mit den GCC-Referenzen überein. Die Binärdateien selbst waren nicht identisch: Der neue Zähler umfasste 391 Bytes, der Referenz-Build 5.432 Bytes. Das Modell berechnete dabei Sprünge, Aufrufe und Header-Felder ohne Assembler."
+    },
+    {
+      "t": "h2",
+      "x": "Der Malware-Fall"
+    },
+    {
+      "t": "p",
+      "x": "Im vierten Experiment bekam das Modell eine echte, unbekannte Windows-Datei von 4.608 Bytes, deren einziger sichtbarer Import Sleep ist; weitere API-Aufrufe liegen hinter Namenshashes, Zeichenketten werden auf dem Stack gebaut. In 211 Sekunden kam das Modell zu dem Schluss, dass die Datei Maschinencode herunterlädt und im Speicher ausführt, und nannte eine fest einprogrammierte Serveradresse samt Port. Die Autoren verglichen den Bericht anschließend mit einer öffentlichen dynamischen Analyse von VMRay, die sie über den SHA-256-Hash derselben Datei zuordneten: Die Sandbox kontaktierte dieselbe Adresse und forderte dieselbe URL an. Die Autoren rechneten alle dreizehn rekonstruierten API-Hashes nach; dreizehn von dreizehn stimmten."
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren betonen die Grenzen dieses Falls selbst: Der Vergleich deckt eine Datei und einen Durchlauf ab. Die Sandbox bestätigte Adresse, Abruf und Download, aber nicht jedes Detail des Berichts, und die verwendete Hash-Technik ist in öffentlichen Werkzeugen verbreitet, sodass Wiedererkennung geholfen haben kann. Das Modell wurde nicht gebeten, Schadsoftware zu verändern oder zu schreiben. In einer Wiederholung mit dem offenen Modell DeepSeek V4.1 Flash und einem anderen Harness kam dieses zur selben Einschätzung der Datei, was die Autoren als vorläufigen Hinweis werten, dass die Fähigkeit nicht auf geschlossene Frontier-Modelle beschränkt ist."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung und Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Für das Reverse Engineering deuten die Ergebnisse nach Ansicht der Autoren auf einen Triage-Pfad ohne Werkzeugkette: Ein Modell, das direkt im Maschinencode arbeitet, bräuchte den langsamen Schritt über Disassembler und Decompiler nicht mehr. Zugleich bleiben es frühe Resultate an kleinen Programmen. Die harte Grenze ist der Kontext: Bei rund 2,4 Token pro Byte belegte das größte Testprogramm mit 67 Kilobyte etwa 163.000 Token; ein Zehn-Megabyte-Programm läge bei rund 24 Millionen Token. Als Ausweg skizzieren die Autoren ein Vorgehen mit rekursiven Sprachmodellen, die eine lange Eingabe außerhalb des Kontexts vorhalten und abschnittsweise untersuchen. Bis dahin gilt: Der Befund ist bemerkenswert, die Stichprobe ist klein, und die Autoren veröffentlichen ihre Rohdaten zur Nachprüfung."
+    },
+    {
+      "t": "callout",
+      "x": "Wir haben die veröffentlichten Beschreibungen und Messwerte geprüft, die Binärdateien aber nicht selbst ausgeführt und die Versuche nicht unabhängig wiederholt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Programming in the Machine Code Space: LLMs can read & write executables byte by byte",
+      "publisher": "George Xenos und Sotiris Giannopoulos",
+      "url": "https://sgiannopoulos.github.io/blog/machine-code-programming/",
+      "accessed": "2026-11-22"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann das Modell damit Schadsoftware bauen?",
+      "a": "Dazu gibt das Experiment nichts her. Die Autoren haben das Modell nach eigener Angabe weder gebeten, Schadsoftware zu verändern, noch welche zu schreiben. Gezeigt wurden das Lesen, das Erweitern harmloser Programme, das Neuschreiben nach Spezifikation und die Analyse einer bestehenden Datei."
+    },
+    {
+      "q": "Wie groß dürfen die Dateien sein?",
+      "a": "Die harte Grenze ist die Kontextgröße. Rund 2,4 Token pro Byte bedeuten: Das größte getestete Programm (67 Kilobyte) kostete etwa 163.000 Token, ein Zehn-Megabyte-Programm würde rund 24 Millionen Token erfordern. Sehr große Programme sind im Ein-Schuss-Verfahren damit nicht lesbar."
+    },
+    {
+      "q": "Gilt das auch für offene Modelle?",
+      "a": "Es gibt einen vorläufigen Hinweis: DeepSeek V4.1 Flash, dessen Gewichte unter der MIT-Lizenz offen liegen, kam im Malware-Experiment mit einem anderen Harness zur selben Einschätzung. Die Autoren bezeichnen das selbst als vorläufige Evidenz an einem einzelnen Fall."
+    }
+  ],
+  "related": [
+    "sprachmodelle-eigene-gewichte-umschreiben"
+  ]
+}
