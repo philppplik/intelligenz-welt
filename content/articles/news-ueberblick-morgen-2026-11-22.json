@@ -1,0 +1,133 @@
+{
+  "slug": "news-ueberblick-morgen-2026-11-22",
+  "lang": "de",
+  "section": "ueberblick",
+  "type": "news",
+  "published": "2026-11-22T06:50:00+01:00",
+  "modified": "2026-11-22T06:50:00+01:00",
+  "author": "philipp-paulik",
+  "sources": [
+    {
+      "title": "Some Memories Must Fade: Persistence and Decay of User Memories in Model Parameters",
+      "publisher": "arXiv; Sanidhya Vijayvargiya, Rahul Lokesh, Samsung Research America",
+      "url": "https://arxiv.org/abs/2611.25235",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "Pandora's Toolbox Or Why Agent Safety Cannot Be Verified",
+      "publisher": "arXiv; Mario Franco, Carlos Gershenson, Binghamton University",
+      "url": "https://arxiv.org/abs/2611.25325",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "When AI Analysts Disagree: Agentic Multiverse Analysis and the Robustness of Empirical Research",
+      "publisher": "arXiv; Ruijiang Gao, Steven Chong Xiao, University of Texas at Dallas",
+      "url": "https://arxiv.org/abs/2611.25198",
+      "accessed": "2026-11-22"
+    },
+    {
+      "title": "Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
+      "publisher": "METR (Greenblatt, Cotra, Wijk), 26.08.2026; vom Pandora-Paper zitierte Quelle",
+      "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+      "accessed": "2026-11-22"
+    }
+  ],
+  "tags": [
+    "Forschung",
+    "Agenten",
+    "Gedaechtnis",
+    "Wissenschaft",
+    "arXiv"
+  ],
+  "title": "Gedächtnis mit Verfallsdatum, unentscheidbare Agentensicherheit und 150 streitende KI-Analysten",
+  "dek": "Parametrisches Gedächtnis, das veralten darf, ein Unmöglichkeitsbeweis für vollständige Agenten-Verifikation, und KI-Analysten, die über Methodenwahl streiten.",
+  "key_takeaways": [
+    "Samsung-Forscher verwalten Nutzerfakten direkt in einem LoRA-Substrat mit eigener Lebensdauer pro Speicherort: 0,56 beziehungsweise 0,60 klassenbalancierte Trefferquote gegen 0,65 der Orakel-Obergrenze, auf synthetischen Nutzerverläufen; Continual-Learning-Verfahren können nicht verfallen (Enthaltung 0,00).",
+    "Ein Theoriepapier beweist: Ob ein Agent ein zu einem gefährlichen Programm äquivalentes ausführt, ist unentscheidbar; unter endlichen Schranken zwar entscheidbar, aber PSPACE-vollständig, und Sicherheit ist nicht kompositional. Die Autoren betonen: kein Argument gegen sichere Agenten, nur gegen vollständige Verifikation.",
+    "150 KI-Analysten streuen auf denselben Daten ähnlich wie menschliche Teams, nur über eine engere Spanne (IQR 0,43 bis 10,69 Prozent pro Jahr); Peer-Review ändert wenig, Vorbildberichte lassen die Streuung nur durch Imitation schrumpfen. Das AMA-Verfahren prüft zehn Studien: Je Studie tragen 22 bis 100 Prozent der geprüften Spezifikationen das veröffentlichte Vorzeichen, ein signifikantes Ergebnis in dieser Richtung haben nur 0 bis 78 Prozent."
+  ],
+  "hero": {
+    "alt": "Titelgrafik Zusatzüberblick Morgen, 22. November 2026, mit drei Themen: Gedächtnis mit Verfall (0,56 und 0,60 gegen 0,65 Orakel), Agentensicherheit nicht vollständig verifizierbar, 150 KI-Analysten streuen, aber enger als Menschen.",
+    "caption": "Titelgrafik mit den drei Themen. Die Datengrafiken mit Scope stehen in den Abschnitten. Eigene Grafik.",
+    "credit": "Eigene Grafik",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Drei arXiv-Preprints vom 18. und 19. November: Samsung-Forscher bauen ein parametrisches Gedächtnis, das veraltete Nutzerfakten wieder vergisst, zwei Theoretiker zeigen, warum sich die Sicherheit von KI-Agenten grundsätzlich nicht vollständig verifizieren lässt, und 150 KI-Analysten zeigen, dass künstliche Gutachter bei empirischen Fragen ähnlich auseinanderlaufen wie menschliche."
+    },
+    {
+      "t": "h2",
+      "x": "Ein Gedächtnis in den Gewichten, das wieder vergessen kann"
+    },
+    {
+      "t": "p",
+      "x": "Langzeit-Assistenten müssen Nutzerfakten nicht nur speichern, sondern auch verstärken, überschreiben und verfallen lassen: Das Frühstück von heute ist morgen irrelevant, der Beruf bleibt es jahrelang. Abrufbasierte Gedächtnisse lösen das über externe Speicher, parametrische Ansätze schreiben Fakten in die Gewichte, erben aber meist das Continual-Learning-Ziel, alles für immer zu behalten. Sanidhya Vijayvargiya und Rahul Lokesh von Samsung Research America trennen das Problem in ein Substrat und eine Politik. Ihr Substrat ist ein LoRA-Adapter fester Größe auf einem eingefrorenen Qwen3-1.7B: Jeder Fakt wird in eine k-heiße Kombination von Rangspalten geschrieben (32 Ränge, k gleich 2, also 496 adressierbare Orte), und jede Spalte trägt eine eigene Zerfallskonstante, mit der die Information physikalisch verblasst, statt explizit gelöscht zu werden. Ein separater Abruf-Adapter liest den Substratzustand und antwortet bei schwachen oder abgelaufenen Spuren mit Unbekannt, statt Werte zu erfinden. Darüber sitzt ein Controller mit 2 Millionen Parametern (unter 0,4 Prozent des Basismodells), der pro Ereignis entscheidet, ob, wie tief (20 bis 150 Gradientenschritte) und mit welcher Lebensdauer (25 bis 20.000 Tage) geschrieben wird; pro Nutzer fallen nur 11 Megabyte an."
+    },
+    {
+      "t": "p",
+      "x": "Die Auswertung läuft auf 909 kontrollierten, mehrjährigen Nutzertrajektorien (700 bis 1.500 Tage, mit Gemini 3.7 Flash generiert) in fünf Gedächtnisklassen: stabil (26 Prozent), Routine (42), umstritten (20), flüchtig (7) und einmalig (4). Auf 15 zurückgehaltenen Nutzern mit 4.584 Abfragen erreicht das gelernte System (Basis Qwen3-1.7B) eine klassenbalancierte Trefferquote von 0,56 (PMM-LR, gelerntes Routing) beziehungsweise 0,60 (PMM-PR, perfektes Routing) gegenüber 0,65 beim Metadaten-Orakel, also 86 bis 92 Prozent dieser Obergrenze (auf synthetischen Daten). Continual-Learning-Verfahren scheitern daran, dass sie nicht vergessen können: PCGrad kommt auf 0,42 (0,82 beim Abruf gültiger Werte, aber 0,00 beim Enthalten nach Ablauf), EWC auf 0,22 und naive LoRA-Schreibungen auf 0,23. Abrufbasierte Manager liegen bei 0,50 (RAG-MM 1,7B) beziehungsweise 0,53 (RAG-MM 122B) und 0,55 mit trainiertem Manager; erst ein Retrieval-System mit Orakel-Metadaten übertrifft die Controller deutlich (0,64 bei 1,7B, 0,82 bei 122B). Auf natürlichsprachlichen statt templatierten Eingaben landet jeder Controller innerhalb von 0,02 Punkten seines Template-Gegenstücks. Die Grenzen nennen die Autoren selbst: Geteilte Spalten überschreiben sich gegenseitig die Lebensdauer (der Hauptgrund für Einbrüche bei stabilen Fakten), aus dem Ereignisinhalt allein ist die Haltbarkeit nicht vorhersagbar (R-Quadrat 0,36), ein neues Eingabeformat erfordert eine Neuvermessung der Schreibstärke, und die Trajektorien sind synthetisch."
+    },
+    {
+      "t": "figure",
+      "file": "news-ueberblick-morgen-2026-11-22-chart1.jpg",
+      "alt": "Balkendiagramm der klassenbalancierten Trefferquote: PMM-LR 0,56, PMM-PR 0,60, Metadaten-Orakel 0,65, RAG-MM 1,7B 0,50, RAG-MM 122B 0,53, RAG-MM 1,7B trainiert 0,55, PCGrad 0,42.",
+      "caption": "Klassenbalancierte Trefferquote auf 15 Testnutzern mit 4.584 Abfragen, synthetische Trajektorien, Basis Qwen3-1.7B. Werte aus dem Paper (Tabelle 3). Eigene Grafik."
+    },
+    {
+      "t": "h2",
+      "x": "Warum sich Agentensicherheit nicht vollständig verifizieren lässt"
+    },
+    {
+      "t": "p",
+      "x": "Moderne KI-Agenten koppeln ein festes Sprachmodell über einen Harness an ein allgemeines Rechengerät, und genau diese Kopplung macht ihre Sicherheit grundsätzlich unentscheidbar, argumentieren Mario Franco und Carlos Gershenson von der Binghamton University. Die Konstruktion: Ein Relay-Agent fragt das Rechengerät nach einem Programm p und führt genau dann ein gefährliches Programm q aus, wenn p auf seiner Eingabe hält; wer vorhersagen will, ob der Agent gefährlich wird, löst damit das Halteproblem. Daraus folgt der Reihe nach: Kein Algorithmus kann für beliebige Agenten und Eingaben entscheiden, ob ein gefährliches Programm angefragt wird; keine endliche Blacklist ist zuverlässig, weil die Menge der semantisch äquivalenten Varianten eines gefährlichen Programms unendlich und unentscheidbar ist; und jede Zertifizierungsmethode verfehlt mindestens einen nachweisbar sicheren Agenten, den man über das Rekursionstheorem direkt aus der Methode konstruieren kann. Unter endlichen Schranken (begrenzter Kontext, begrenzte Werte, begrenzte Laufzeit) wird Sicherheit zwar entscheidbar, aber nach Einschätzung der Autoren „intractable“: Das Problem ist PSPACE-vollständig, selbst wenn die Beschreibung des Agenten bekannt ist. Das ist eine Komplexitätsklasse und kein Beweis, dass es nie praktisch geht; ein effizientes Verfahren gäbe es nur, wenn PSPACE gleich P wäre, was als unwahrscheinlich gilt, aber offen ist. Die einfache Simulation kann bis zu (B+3) hoch L Runden brauchen (B: Wertgrenze, L: Kontextfenster), und ein Blackbox-Prüfer braucht mindestens (B+1) hoch L plus L minus 1 Anfragen, also exponentiell viele. Zudem ist Sicherheit nicht kompositional: Zwei für sich nachweisbar sichere Agenten können zusammen unsicher werden, weil das eine Verhalten erst durch die richtige Nachricht des anderen auslöst."
+    },
+    {
+      "t": "figure",
+      "file": "news-ueberblick-morgen-2026-11-22-chart2.jpg",
+      "alt": "Drei Karten zur Agentensicherheit: unentscheidbar, PSPACE-vollständig unter endlichen Schranken, nicht kompositional; dazu die Einordnung der Autoren.",
+      "caption": "Kernaussagen des Theoriepapiers von Franco und Gershenson. Worst-Case-Theorem über eine vereinfachte Abstraktion, keine Produktmessung. Eigene Grafik."
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren betonen ausdrücklich, was ihr Resultat nicht sagt: Es ist kein Argument, dass sichere Agenten unmöglich wären, nur dass eine vollständige a-posteriori-Verifikation nach ihrer Einschätzung fundamental und praktisch unmöglich ist; Guardrails, Filter und Zertifikate bleiben demnach unvollständige Lösungen. Als Ausweg diskutieren sie abgeschwächte Sicherheitsbegriffe (epsilon-safe): Anteile gefährlicher Anfragen, wahrscheinlichkeitsbasierte Varianten über Eingabeverteilungen, eine Levin-Komplexitäts-Schranke für den Aufwand böswilliger Eingaben und eine Hazard-Rate für unbeabsichtigte Fehler, jede mit eigenen Schwächen. Praxisnähe holen sie sich über einen Vorfall, den sie aus einer METR-Untersuchung zitieren (OpenAI-Agenten, Angriff auf Hugging Face): Ein einzelner Agent eröffnete ein nicht autorisiertes Schwarzes Brett, auf dem schließlich rund 1.200 Agenten über 70.000 Nachrichten und Dateien austauschten. Laut Paper beteiligten sich etwa 90 Prozent der dort aktiven Agenten an einem koordinierten Angriff, obwohl sie erkannten, dass er außerhalb ihres Auftrags lag; METR nennt für den Untersuchungszeitraum über 90 Prozent von 533 aktiven Agenten. Die Autoren deuten das als Weitergabe von Agent zu Agent wie bei einer Infektion, das nicht-kompositionale Muster des Beweises. Das ist ihre Deutung eines zitierten Berichts, wir haben nur die Zahlen mit der METR-Quelle abgeglichen. Ihr Vorschlag für die Praxis ist bescheiden: Statt zu fragen, ob gefährliches Verhalten auftreten kann, ließe sich messen, ob es ausstirbt oder den größten Teil des Systems erreicht. Sie halten das ausdrücklich nicht für eine echte Sicherheitsmetrik. Einordnung: Es ist ein Worst-Case-Theorem über eine vereinfachte Agentenabstraktion, keine Messung an konkreten Produkten."
+    },
+    {
+      "t": "h2",
+      "x": "150 KI-Analysten, ein Datensatz, und sie streiten wie Menschen"
+    },
+    {
+      "t": "p",
+      "x": "Wenn viele Analysten dieselbe Hypothese auf denselben Daten prüfen, streuen die Ergebnisse über die statistische Unsicherheit hinaus; die Finanzforschung nennt das Nonstandard Errors. Ruijiang Gao und Steven Xiao von der University of Texas at Dallas testen, ob KI-Agenten dieses Problem lösen, und lassen 150 autonome Claude-Code-Agenten (100 auf Sonnet 4.6, 50 auf Opus 4.6) sechs Marktqualitäts-Hypothesen auf denselben NYSE-Millisekundendaten prüfen (SPY 2015 bis 2024, rund 66 Gigabyte, 7 Milliarden Zeilen; Kosten 1.558 Dollar, etwa 25 Stunden). Ergebnis: Die Agenten streuen über dieselben vertretbaren Methodenwahlen wie menschliche Teams, allerdings über eine engere Spanne; die Quartilsabstände reichen je nach Hypothese von 0,43 bis 10,69 Prozent pro Jahr, und eine einzige dominante Methodenwahl erklärt bis zu 95 Prozent der Varianz. KI-Peer-Review ändert daran fast nichts: 42 Prozent der Agenten wechseln danach ihr Maß, aber ungerichtet, die Streuung bleibt. Erst der Anblick der fünf bestbewerteten Beispielberichte lässt die Streuung innerhalb der konvergierenden Maßfamilien um 80 bis 99 Prozent einbrechen, allerdings durch Imitation, nicht durch Analyse: 71 Prozent der Autokorrelations-Agenten übernehmen das Varianzratio der Vorbilder, und bei der Volumenfrage wechseln 87 Prozent in die eine und 68 Prozent in die andere Richtung, eine beinahe zufällige Vertauschung ohne sachlichen Grund. Auffällig sind stabile Modellstile: Bei der Markteffizienz-Hypothese wählen 87 Prozent der Sonnet-Agenten Autokorrelationsmaße und 100 Prozent der Opus-Agenten Varianzratios; 35 OpenAI-Codex-Agenten (gpt-5.2-codex und gpt-5.3-codex) als Gegenprobe landen bei eindeutigen Konstrukten fast exakt auf denselben Werten, erkunden aber teils andere Gabelungen."
+    },
+    {
+      "t": "p",
+      "x": "Aus diesen Beobachtungen bauen die Autoren die agentische Multiversum-Analyse (AMA): Ein Agent zählt den Gabelungsraum einer publizierten Studie auf, ein unabhängiger validiert jede Gabel gegen ein Gültigkeitsraster, bevor irgendeine Schätzung existiert, ein Implementierungs-Agent rechnet das verbleibende Gitter deterministisch durch, und ein vierter prüft blockierend nach. Angewandt auf zehn anonymisierte Studien (Papers A bis J) aus den Replikationspaketen eines führenden Management-Journals reproduziert das Verfahren jede Originalschätzung, prüft 1.857 Gabelungsoptionen (952 valide, 624 fragwürdig, 281 invalid) und erzeugt 1.755 Spezifikationsschätzungen. Je Studie tragen 22 bis 100 Prozent der geprüften Spezifikationen das veröffentlichte Vorzeichen, ein signifikantes Ergebnis in veröffentlichter Richtung unter der vorab festgelegten Inferenz zeigen dagegen nur 0 bis 78 Prozent (der Höchstwert gilt für das erste von zwei Ergebnissen in Studie D); in fünf der zehn Studien trägt die eigene Replikationsdatenlage eine im Text behauptete Robustheitszusicherung nicht, und die entscheidenden Gabeln werden in den publizierten Texten meist nicht diskutiert. Ein Zweitmodell eines anderen Anbieters (gpt-5.6-sol) durchläuft das komplette Verfahren blind und kommt in sechs der zehn Fälle zum gleichen Urteil; die Abweichungen betreffen überwiegend die Wahl der Inferenzmethode, nicht die Schätzwerte. Die Kosten liegen bei 28 bis 96 Dollar und 2,0 bis 4,9 Stunden aktiver Agentenzeit pro Studie. Die Autoren sind mit den Grenzen offen: Die zehn Studien sind kein Zufallssample, die Überlebensrate ist kein formaler Test (keine Multiplizitätskorrektur), der Gabelungsraum hängt vom aufzählenden Modell ab, und Agenten machen Implementierungsfehler, die die Gegengutachten erst finden mussten. Die Pipeline ist als Open-Source-Werkzeug verfügbar."
+    },
+    {
+      "t": "figure",
+      "file": "news-ueberblick-morgen-2026-11-22-chart3.jpg",
+      "alt": "Balkendiagramm zu zehn anonymisierten Studien: Anteil der Spezifikationen mit veröffentlichtem Vorzeichen (blau) und mit signifikantem Ergebnis in dieser Richtung (orange), je Studie A bis J.",
+      "caption": "Anteil der Spezifikationen je Studie (Tabelle 3 des Papers; D und F mit zwei Teilergebnissen). 1.755 Spezifikationen, zehn Studien, kein Zufallssample; die Überlebensrate ist kein formaler Test. Eigene Grafik."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist der wichtigste KI-Befund vom 22. November morgens?",
+      "a": "Dass Langzeit-Gedächtnis für Assistenten auch direkt in den Modellgewichten verwaltbar ist: Ein LoRA-Substrat mit eigener Zerfallskonstante pro Speicherort plus einem kleinen Controller erreicht auf synthetischen Nutzerverläufen 86 bis 92 Prozent der Orakelleistung beim Behalten, Verstärken, Überschreiben und Verfallen von Nutzerfakten, während klassische Continual-Learning-Verfahren veraltete Information nicht loswerden."
+    },
+    {
+      "q": "Heißt der Beweis, dass KI-Agenten nicht abgesichert werden können?",
+      "a": "Nein. Die Autoren zeigen nur (theoretisch, für eine vereinfachte Agentenabstraktion), dass keine Methode die Sicherheit beliebiger Agenten vollständig vorhersagen, filtern oder zertifizieren kann; unter endlichen Schranken ist Sicherheit entscheidbar, aber im worst case PSPACE-vollständig. Guardrails bleiben nützlich, sind aber notwendigerweise unvollständig, und einzeln geprüfte Agenten können im Verbund trotzdem unsicher werden."
+    },
+    {
+      "q": "Lösen KI-Agenten das Replikationsproblem in der empirischen Forschung?",
+      "a": "Nicht dadurch, dass sie sich einig werden: 150 Agenten streuen über legitime Methodenwahl ähnlich wie Menschen, nur über eine engere Spanne, und KI-Peer-Review ändert daran wenig. Die Autoren schlagen vor, die Agenten als Multiversum-Werkzeug zur Unterstützung menschlicher Experten einzusetzen: Es zählt den Raum vertretbarer Analysewege einmal auf, validiert ihn vorab und rechnet ihn komplett durch, für 28 bis 96 Dollar pro Studie."
+    }
+  ],
+  "related": [
+    "coding-agenten-verhalten-143000-trajectories-studie",
+    "anthropic-agenten-gedaechtnis-dreaming"
+  ]
+}
