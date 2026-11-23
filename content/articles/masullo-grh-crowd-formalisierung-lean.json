@@ -1,0 +1,129 @@
+{
+  "slug": "masullo-grh-crowd-formalisierung-lean",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "940 Seiten unter der Lupe: Die Crowd formalisiert Masullos GRH-Manuskript in Lean",
+  "dek": "Ein Lean-Projekt prüft Masullos 940-seitigen GRH-Entwurf. Viele Hilfssätze sind bewiesen, andere Aussagen offen oder umstritten. Eine Gesamtbestätigung ist das nicht.",
+  "published": "2026-11-23T08:56:00+01:00",
+  "modified": "2026-11-23T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Riemannsche Vermutung",
+    "Lean",
+    "Formalisierung",
+    "Masullo",
+    "Begutachtung",
+    "Mathematik"
+  ],
+  "key_takeaways": [
+    "Das Projekt mccorvie/riemann-masullo formalisiert Masullos 940-seitigen Entwurf The Music of the Primes in Lean 4, gebaut offen von Menschen und ihren Coding-Agenten; jede Aussage geht mit Seitenzahl als gedruckt ins System.",
+    "Stand 22. November: etwa 6.800 Theoreme und 1.290 Definitionen formalisiert, rund 6.100 Theoreme bewiesen, etwa 30 Beteiligte mit zusammengeführten Pull Requests, insgesamt rund 1.580 Pull Requests.",
+    "Die Übersicht nennt rund 710 Errata-Befunde. Die Datei trennt unbestätigte Berichte, Agenten-Nachprüfungen und in Lean bewiesene Widerlegungen. Kein Eintrag wurde laut Projekt von einer Fachperson begutachtet.",
+    "28 Schritte haben bislang keine bekannte Reparatur, 20 davon in den Kapiteln 7 und 10 bis 12 um die Spurformel; Abschnitt 12.3 besteht im Entwurf nur aus Überschrift und einem Vermerk.",
+    "Der Anspruch des Manuskripts geht über den des Alpöge/Claude-Beweises hinaus: GRH für Hecke-L-Funktionen aller Zahlkörper statt Zeta- und Dirichlet-L-Funktionen. Beide Baustellen bleiben getrennt zu betrachten, und die Endprüfläufe zum Alpöge-Beweis laufen ebenfalls noch."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung eines langen Bandes aus vielen kleinen Kästchen, die abschnittsweise in verschiedene Farbstufen kippen, einige als offene Lücken sichtbar, in gedämpften Blau- und Ockertönen, ohne Text.",
+    "caption": "Symbolbild: Ein Manuskript wird Aussage für Aussage geprüft",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Was das Projekt macht"
+    },
+    {
+      "t": "p",
+      "x": "Das Repository mccorvie/riemann-masullo überträgt Alessandro Maria Masullos 940-seitigen GRH-Entwurf The Music of the Primes in Lean 4. Menschen und Coding-Agenten arbeiten offen daran. Aussagen werden mit Seitenzahl aus dem Manuskript übernommen; Änderungen gegenüber dem Druck werden markiert. Das ist ein laufendes Formalisierungsprojekt, keine Bestätigung eines fertigen GRH-Beweises."
+    },
+    {
+      "t": "p",
+      "x": "Die Ziele nennt das Projekt in dieser Reihenfolge: so viel wie möglich formalisieren und beweisen; so viel wie möglich reparieren, also für falsche Aussagen die wahre, für den Beweis brauchbare Fassung finden und beweisen; und alle verbleibenden Lücken exakt benennen. Ein Gegenbeispiel oder ein präzise dokumentierter Lückenbefund gilt ausdrücklich als erfolgreicher Beitrag. Das Projekt nimmt weder an, dass die Hauptbehauptung stimmt, noch dass sie falsch ist."
+    },
+    {
+      "t": "h2",
+      "x": "Der Stand"
+    },
+    {
+      "t": "p",
+      "x": "Zum 22. November sind nach Projektangaben etwa 6.800 Theoreme und 1.290 Definitionen in Lean formuliert, rund 6.100 der Theoreme bewiesen. Etwa 30 Personen haben Pull Requests eingebracht, insgesamt rund 1.580. Die Aussagen aller drei Arbeitswellen sind vollständig formalisiert; die Beweise der späteren Kapitel laufen. Die Fortschrittskarte wird etwa alle 20 Minuten aktualisiert."
+    },
+    {
+      "t": "p",
+      "x": "Die Projektübersicht nennt rund 710 Errata-Einträge: etwa 260 als gedruckt falsch eingestufte Aussagen, 375 unpräzise, inkonsistente oder falsch begründete, 50 Platzhalter oder fehlende Teile sowie 25 Berichte zu noch nicht formalisierten Teilen. Diese Kategorien sind Projektbefunde, keine pauschal maschinell bestätigten Widerlegungen. Die Datei unterscheidet Erstberichte, Agenten-Nachprüfungen, verworfene oder verschobene Einträge sowie echte Lean-Beweise der Widerlegung; in einer Kontrollrunde vom 22. November bekam ein zweiter Agent alle 389 bis dahin als geprüft markierten Zeilen mit dem Auftrag, sie zu widerlegen, und verwarf sechs, verschob zehn und korrigierte 67 weitere. Kein Eintrag ist bislang von einer Fachperson begutachtet, das Projekt sagt das ausdrücklich."
+    },
+    {
+      "t": "h2",
+      "x": "Die schweren Befunde"
+    },
+    {
+      "t": "p",
+      "x": "28 Schritte haben bislang keine bekannte Reparatur, und spätere Ergebnisse bauen auf ihnen auf. 20 davon liegen in den Kapiteln 7 und 10 bis 12 rund um die Spurformel: Die Basen und nuklearen Präsentationen, aus denen die spektralen und orbitalen Spuren berechnet werden, seien durch die gedruckten Argumente nicht etabliert, und Abschnitt 12.3, der die globale mit der S-lokalen Spur vergleichen soll, besteht aus Überschrift und Vermerk. Das Strukturtheorem 5.2.1.1 für die adelischen Theta-Funktionen funktioniert wie gedruckt nicht; eine seiner zwei zentralen Behauptungen wurde inzwischen in Lean auf anderem Weg bewiesen, die andere ist weder bewiesen noch widerlegt. Kapitel 13, das GRH aus der Spurformel ableiten soll, formuliert sein Haupttheorem noch nicht."
+    },
+    {
+      "t": "callout",
+      "title": "Zwei GRH-Baustellen, strikt getrennt",
+      "x": "Masullos Entwurf beansprucht die verallgemeinerte Riemannsche Vermutung für Hecke-L-Funktionen aller Zahlkörper. Das ist ein weiterer Rahmen als der des Alpöge/Claude-Lean-Beweises, dessen fünf formal geprüfte Theoreme nach Andrew Sutherlands Statusseite die Zeta-Funktion und Dirichlet-L-Funktionen aller Moduli abdecken; Dedekind-, Hecke- und allgemeine automorphe L-Funktionen sind dort ausdrücklich nicht Teil der Prüfung, und der offizielle Comparator-Endlauf und ein zusätzlicher Lean-Kernel-Replay des Exports sind laut Statusseite noch nicht abgeschlossen. Erkenntnisse aus dem einen Projekt sagen nichts über das andere aus."
+    },
+    {
+      "t": "h2",
+      "x": "Die Einordnung des Autors"
+    },
+    {
+      "t": "p",
+      "x": "Masullo selbst hält den Entwurf nach Angaben des Projekts für unfertig; das Vorwort verweist darauf, dass er und Brian Conrad mehrere Stellen kennen, an denen noch gearbeitet wird. Der Plan sei nach Berichten gewesen, das Manuskript ein Jahr zu überarbeiten, bevor es an die Öffentlichkeit geht. Unabhängig vom Ausgang des Beweises dokumentiert das Projekt etwas Neues: eine maschinell geprüfte, öffentliche Buchführung darüber, welche Teile eines großen Manuskripts halten, welche nach Reparatur halten und welche nicht."
+    },
+    {
+      "t": "p",
+      "x": "Die Begriffe im Repository sind wichtig: Eine in Lean formulierte Aussage kann noch eine offene Beweislücke enthalten. Ein abgeschlossenes Hilfslemma ist kein Beweis der Hauptbehauptung. Und ein von Agenten geprüftes Erratum ist erst dann eine maschinengeprüfte Widerlegung, wenn dafür tatsächlich ein entsprechender Lean-Beweis vorliegt. Wir haben die Statusdateien gelesen, aber weder das Gesamtprojekt neu gebaut noch sämtliche Einzelbefunde mathematisch nachgeprüft."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das Verfahren bleiben dürfte"
+    },
+    {
+      "t": "p",
+      "x": "Ob Masullos Beweis am Ende steht, ist offen. Das Projekt erprobt dafür bereits ein nachvollziehbares Verfahren: Aussage für Aussage mit Seitenzahl, jede als bewiesen, widerlegt oder offen markiert, mit automatisch gebauten Pull Requests und einer zweiten, auf Widerlegung ziehenden Agentenkontrolle. Eine unabhängig belegte Rangfolge nach Projektgröße liegt uns nicht vor. Auch ohne Gesamtbeweis bleibt eine überprüfbare Arbeitsliste. Ihre Aussagekraft hängt am Status jedes einzelnen Eintrags und an der Übereinstimmung der Lean-Aussage mit dem Manuskript."
+    }
+  ],
+  "sources": [
+    {
+      "title": "mccorvie/riemann-masullo (Lean-4-Formalisierung)",
+      "publisher": "GitHub",
+      "url": "https://github.com/mccorvie/riemann-masullo",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "ERRATA.md: Errata und Lücken im Manuskript",
+      "publisher": "GitHub",
+      "url": "https://github.com/mccorvie/riemann-masullo/blob/main/ERRATA.md",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "GRH proof verification status, abgerufen23.November2026",
+      "publisher": "Andrew Sutherland,MIT",
+      "url": "https://math.mit.edu/~drew/grh/",
+      "accessed": "2026-11-23"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist Masullos GRH-Beweis damit widerlegt?",
+      "a": "Nein. Das Projekt hat rund 710 Errata-Einträge und 28 Schritte ohne bekannte Reparatur dokumentiert, darunter schwerwiegende um die Spurformel. Aber die Strategie des Projekts ist bewusst neutral: Aussagen werden bewiesen, repariert oder als präzise Lücke benannt. Eine Gesamtantwort steht aus, und der Autor selbst nennt den Entwurf unfertig."
+    },
+    {
+      "q": "Wie verhält sich das zum Alpöge/Claude-Beweis?",
+      "a": "Es sind zwei getrennte Baustellen. Der Lean-Beweis deckt die Zeta-Funktion und alle Dirichlet-L-Funktionen ab; Masullo beansprucht Hecke-L-Funktionen aller Zahlkörper, einen weiteren Rahmen. Für den Lean-Beweis laufen zudem noch zwei Endprüfläufe."
+    },
+    {
+      "q": "Kann ich mitmachen?",
+      "a": "Ja. Das Projekt ist offen: Mehrere hundert Beweise sind als einzelne, fertig formulierte Lean-Aussagen ausgeschrieben. Wer einen Coding-Agenten mit Shell-Zugriff hat, findet im Repository eine fertige Anweisung; auch ein dokumentiertes Scheitern oder ein Gegenbeispiel gilt als Beitrag."
+    }
+  ],
+  "related": [
+    "claude-grh-beweis-lean-alpoege-riemann",
+    "lean-mathlib-zertifizieren-grh-beweis-alpoege"
+  ]
+}

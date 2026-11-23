@@ -1,0 +1,114 @@
+{
+  "slug": "clover-35b-a3b-diffusion-code-agenten",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Clover-35B-A3B: Autoren melden 73,6 auf SWE-bench, Tempo separat getestet",
+  "dek": "Der Report trennt Agentenbenchmarks von einer Geschwindigkeitsmessung ohne Werkzeugausführung:73,6 auf SWE-bench Verified und 680 Token/s im Replay auf einer GB300. Gewichte und Code sind zugänglich; unabhängige Nachmessungen fehlen.",
+  "published": "2026-11-23T08:56:00+01:00",
+  "modified": "2026-11-23T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Clover",
+    "Diffusionsmodell",
+    "DiffuSpace",
+    "SWE-bench",
+    "MoE",
+    "Agenten"
+  ],
+  "key_takeaways": [
+    "Clover-35B-A3B-Preview ist ein Mixture-of-Experts-Block-Diffusions-Sprachmodell mit 35 Milliarden Gesamt- und 3 Milliarden aktiven Parametern pro Token, mit Thinking-Modus, aufgebaut auf dem Text-Backbone von Qwen3.6-35B-A3B.",
+    "Nach Angaben der Autoren führt Clover alle sieben von ihnen ausgewerteten Agentenmetriken an, darunter 73,6 auf SWE-bench Verified und 51,7 auf Terminal-Bench 2.1.",
+    "Die 680 Token/s stammen aus einem separaten64-Präfix-Replay auf einer GB300, BF16, Batch 1 und Block 16. Keine Befehle wurden ausgeführt; Erfolg und Gesamtdauer echter Agentenaufgaben sind damit nicht gemessen.",
+    "Die Architektur überträgt Gated Delta Networks auf Block-Diffusion: Rekurrentes Gedächtnis für fertigen Kontext, bidirektionale Softmax-Aufmerksamkeit im aktiven Block, gemeinsamer Softmax zwischen Historie und Block.",
+    "Alle Zahlen stammen aus den eigenen Evals der Autoren; unabhängige Harness-Ergebnisse stehen noch aus. Gewichte, SFT-Code und Inferenzengine sind veröffentlicht."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung paralleler Denoising-Schritte: mehrere Reihen diffuser Partikel, die sich schrittweise zu klaren, geordneten Blöcken verdichten, in Türkis und Violett auf dunklem Grund, ohne Text.",
+    "caption": "Symbolbild: Aus Rauschen werden Blöcke",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Was DiffuSpace vorlegt"
+    },
+    {
+      "t": "p",
+      "x": "Das DiffuSpace Technical Team hat am 18. November einen technischen Report zu Clover-35B-A3B-Preview veröffentlicht. Clover ist ein Diffusions-Sprachmodell: Es erzeugt Text nicht Token für Token, sondern rekonstruiert Sequenzen über iterative Denoising-Schritte, bei denen mehrere Token parallel vorhergesagt werden. In der Block-Diffusion-Variante liefert jeweils ein fertiger Block den Kontext für den nächsten, innerhalb eines Blocks greifen die Token bidirektional aufeinander zu. Das Modell umfasst 35 Milliarden Parameter insgesamt und aktiviert pro Token etwa 3 Milliarden; als Ausgangspunkt diente der Text-Backbone von Qwen3.6-35B-A3B."
+    },
+    {
+      "t": "p",
+      "x": "Architektonisch überträgt der Report Gated Delta Networks auf die Block-Diffusion: Abgeschlossener Kontext wird als rekurrentes Gedächtnis gehalten, dessen Auslesung in einem gemeinsamen Softmax mit den Token des aktiven Blocks konkurriert. Dazu kommen eine lernbare Blockgrößen-Kalibrierung und ein separater, bei null initialisierter Faltungszweig für den rechten Kontext. Vierzig Decoder-Schichten, gruppiert aus je drei BD-GDN-Schichten und einer Vollaufmerksamkeitsschicht, gefolgt von einem dMoE-Modul mit Top-8-Routing und einem geteilten Experten."
+    },
+    {
+      "t": "h2",
+      "x": "Die gemeldeten Ergebnisse"
+    },
+    {
+      "t": "p",
+      "x": "Nach Angaben der Autoren führt Clover alle sieben von ihnen ausgewerteten Agentenmetriken an, darunter 73,6 auf SWE-bench Verified und 51,7 auf Terminal-Bench 2.1. Die separat gemessenen 680 Token pro Sekunde stammen aus einem Replay mit 64 historischen Qwen3.6-Trajektorienpräfixen auf einer GB300, BF16, Batch 1 und Blockgröße 16, einschließlich Prefill und Endverarbeitung. Die Fortsetzungen wurden neu erzeugt, aber Befehle nicht ausgeführt. Das misst Systemdurchsatz, weder vollständige Agentenläufe noch Aufgabenerfolg. Die Auswertung ist um Modellqualität, Drafting- und Verifikationskosten sowie den Einsatz unter begrenztem Speicher organisiert. Eine Entscheidungsmodell-Variante beantwortet verwandte Fragen in einem einzigen Denoising-Durchlauf und hebt auf einem internen Satz von 500 Gruppen die Fragen-Genauigkeit von 90,37 auf 93,88 Prozent und die Gruppen-Alles-richtig-Quote von 65,4 auf 77,0 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Für Terminal-Bench 2.1 verwendet das Team Terminus 2, für SWE-bench Verified Codex und mittelt jeweils drei Durchläufe. Die Baselines teilen das Auswertungsprotokoll, nutzen aber ihre offiziell empfohlenen Decoding-Einstellungen. Der Vorsprung gilt für diese verglichenen Modelle und Einstellungen, nicht für sämtliche Sprachmodelle. Die 680 Token/s sind außerdem nicht mit Body-only-Decode-Raten gleichzusetzen, die Thinking und bestimmte Zeitanteile ausschließen."
+    },
+    {
+      "t": "p",
+      "x": "Zum Vergleichsstand schreibt der Report, dass die reproduzierten öffentlichen Diffusionsmodelle LLaDA2.2 flash und DiffusionGemma auf Terminal-Bench 2.1 und SWE-bench Verified hinter den ausgewerteten Qwen-Baselines zurückbleiben. Diffusionsmodelle galten bislang als schnell, aber qualitativ dahinter; der Report will genau diese Lücke schließen."
+    },
+    {
+      "t": "callout",
+      "title": "Vorbehalt: Autoren-Evals",
+      "x": "Sämtliche Leistungs- und Tempozahlen stammen aus dem Report der Autoren und deren internen Workloads. Ob die Agentenwerte in unabhängigen Harnesses bestehen, ist offen. Der Report selbst trägt den Zusatz Preview. Gewichte, SFT-Code und Inferenzengine sind veröffentlicht, unabhängige Messungen also möglich."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das für Agenten interessant ist"
+    },
+    {
+      "t": "p",
+      "x": "Agentisches Arbeiten bedeutet viele kurze, wiederholte Generierungen mit Werkzeugaufrufen dazwischen. Ein Modell mit nur 3 Milliarden aktiven Parametern, das parallel denoised, zielt genau auf solche Abläufe. Drei Milliarden aktive Parameter bedeuten dabei nicht, dass nur drei Milliarden Parameter gespeichert werden müssen. Der Report beschreibt zudem Selbst-Spekulation: Blockvorhersagen liefern Entwürfe, eine autoregressive Verifikation entscheidet, welche Token übernommen werden. Hält die Qualität in unabhängigen Tests, wären preiswerte, schnelle Subagenten mit offenen Gewichten eine realistische Option, etwa als Arbeiterstufe unter teureren Frontier-Modellen."
+    },
+    {
+      "t": "p",
+      "x": "Für die vollständigen BF16-Gewichte nennt das Repository ungefähr 69 GB, zuzüglich Inferenzzustand. Der Consumer-Test ist ein anderer Aufbau: RTX 5070 Ti mit 16 GB VRAM, Ryzen 7 9700X und 64 GB RAM, CPU/GPU-Expertenaufteilung sowie gemischtes INT4/BF16. Dessen MATH-500-Ergebnis beweist nicht denselben Agentenscore auf Consumer-Hardware. Die Gewichte samt Apache-2.0-Lizenz und Herkunftshinweisen sind abrufbar. Die Repoanlage im Oktober und der Report vom 18. November sind kein heutiger Modell-Erstlaunch. Eigene Modell- oder Geschwindigkeitstests haben wir nicht ausgeführt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Clover-35B-A3B-Preview Technical Report",
+      "publisher": "arXiv (DiffuSpace Technical Team)",
+      "url": "https://arxiv.org/abs/2611.24636",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Clover-35B-A3B-Preview (Code und Gewichte)",
+      "publisher": "DiffuSpace, GitHub",
+      "url": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "Clover Gewichte, Dateien und Lizenz",
+      "publisher": "Hugging Face,DiffuSpace",
+      "url": "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview",
+      "accessed": "2026-11-23"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was unterscheidet ein Diffusions-Sprachmodell von einem normalen LLM?",
+      "a": "Klassische Sprachmodelle erzeugen Token nacheinander. Diffusionsmodelle rekonstruieren die Sequenz über mehrere Denoising-Schritte und können dabei mehrere Token parallel vorhersagen. In der Block-Variante liefert jeder fertige Block Kontext für den nächsten."
+    },
+    {
+      "q": "Sind die Benchmarkwerte unabhängig bestätigt?",
+      "a": "Nein. Alle Werte stammen aus dem Report der Autoren und deren internen Evals und Workloads. Der Report ist als Preview gekennzeichnet; unabhängige Harness-Ergebnisse stehen aus. Gewichte und Code sind offen, sodass Nachmessungen möglich sind."
+    },
+    {
+      "q": "Kann man Clover lokal laufen lassen?",
+      "a": "Der Report testet einen konkreten CPU/GPU-Mischaufbau mit RTX 5070 Ti 16 GB, Ryzen 7 9700X und 64 GB RAM auf MATH-500. Das ist keine allgemeine Mindestanforderung und bestätigt nicht die Agentenwerte auf dieser Hardware. Das BF16-Beispiel nennt rund 69 GB Gewichte plus Inferenzzustand."
+    }
+  ],
+  "related": []
+}

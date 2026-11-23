@@ -1,0 +1,121 @@
+{
+  "slug": "localcode-lokale-coding-agenten-mac",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "LocalCode: Lokaler Coding-Agent für den Mac ohne Modell-API",
+  "dek": "Das quelloffene Werkzeug LocalCode kombiniert Modellserver und Coding-Agent in einem Befehl: Es prüft, welche Modelle in den Speicher des Mac passen, empfiehlt das stärkste, lädt den Quant und startet den Server selbst. Ein Blick auf Ausstattung, Modellauswahl und Grenzen.",
+  "published": "2026-11-23T08:56:00+01:00",
+  "modified": "2026-11-23T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "LocalCode",
+    "Lokale Modelle",
+    "Coding-Agent",
+    "Apple Silicon",
+    "Open Source",
+    "llama.cpp"
+  ],
+  "key_takeaways": [
+    "LocalCode ist ein quelloffener Coding-Agent für Apple Silicon: pip install -U localcode, Repository öffnen, Modell wählen, loslegen. Laut Projekt kein Modell-API-Schlüssel und keine Modell-API-Nutzungsgebühr. Hardware, Strom und Downloads bleiben Aufwand.",
+    "Das Werkzeug prüft den Unified Memory des Mac, listet alle passenden Modelle samt Quantisierungen und empfiehlt das vom Projekt bevorzugte; der Modellwechsel geht jederzeit mit /models.",
+    "Die Modellauswahl reicht laut Projektseite von Gemma 4 12B für 16-GB-Macs bis zu DeepSeek V4 Flash (284B MoE) für 128-GB-Macs, aus Familien wie Qwen, Gemma, DeepSeek, Cohere, Meta und Aleph Alpha.",
+    "Nach der Wahl lädt LocalCode den Quant, startet llama-server auf 127.0.0.1, setzt Kontext- und KV-Cache-Größen passend zur Maschine und fährt den Server am Ende wieder herunter.",
+    "Agentseitig liest und bearbeitet das Werkzeug Projektdateien und führt die eigenen Checks des Repositorys aus; das Wirkprinzip ist eine für lokale Gewichte gebaute Schleife."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung eines stilisierten Laptops, aus dessen Bildschirm geordnete Blöcke und ein lokales Netz aus feinen Linien wachsen, alles im Gerät geschlossen, in Grün- und Blautönen auf dunklem Grund, ohne Text.",
+    "caption": "Symbolbild: Der Agent läuft vollständig auf dem Gerät",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Was LocalCode ist"
+    },
+    {
+      "t": "p",
+      "x": "LocalCode ist ein quelloffener Coding-Agent, der ausschließlich mit lokalen Modellen auf Apple Silicon arbeitet. Die Installation ist ein Befehl (pip install -U localcode), danach öffnet man ein Repository, startet localcode und wählt beim ersten Prompt ein Modell. Es gibt keinen API-Schlüssel, laut Projekt kein Dienstkonto und keine Modell-API-Rechnung; Modellserver und Agent kommen aus demselben Paket. Laut Projektseite ist Laufzeit, Vervollständigungsdisziplin und Server gezielt auf kleine lokale Modelle abgestimmt."
+    },
+    {
+      "t": "h2",
+      "x": "Modellauswahl nach Speicher"
+    },
+    {
+      "t": "p",
+      "x": "Der limitierende Faktor ist der Unified Memory. LocalCode prüft die Maschine, listet alle Modelle, die hineinpassen, samt aller Quantisierungen, die die jeweiligen Repositories ausliefern, und markiert das vom Projekt bevorzugte mit einem Stern. Die Auswahl auf der Projektseite reicht von Gemma 4 12B als dichtem Modell für 16-GB-Macs über MoE-Modelle wie Qwen 3.6 35B-A3B und Gemma 4 26B-A4B für mittlere Speicherklassen bis zu DeepSeek V4 Flash mit 284 Milliarden Parametern als MoE für Macs mit 128 GB. Vertreten sind Familien von Qwen, Gemma, DeepSeek, Cohere, Meta und Aleph Alpha. Gewechselt wird jederzeit mit /models."
+    },
+    {
+      "t": "p",
+      "x": "Nach der Wahl lädt das Werkzeug den gewählten Quant herunter, startet llama-server auf 127.0.0.1, setzt Kontext- und KV-Cache-Größen passend zur Maschine und fährt den Server am Ende der Sitzung wieder herunter. Konfiguriert werden muss nichts davon."
+    },
+    {
+      "t": "h2",
+      "x": "Wie der Agent arbeitet"
+    },
+    {
+      "t": "p",
+      "x": "Agentseitig liest und bearbeitet LocalCode Projektdateien und führt die eigenen Prüfungen des Repositorys aus. Der beworbene Arbeitsablauf ist bewusst klein gehalten: Datei nennen, dann den Check benennen, der beweist, dass die Änderung funktioniert. Zusätzlich stellt localcode api einen OpenAI-kompatiblen Endpunkt bereit, über den andere lokale Anwendungen dasselbe Modell ansprechen können."
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung",
+      "x": "LocalCode macht aus lokalem Agenten-Coding eine Installationsfrage statt eines Bastelprojekts. Die Grenzen liegen auf der Hand: Die Qualität hängt am kleinsten gemeinsamen Nenner, dem lokalen Modell, und ein belastbarer Qualitätsvergleich mit gehosteten Agenten fehlt. Für private Repositories, Offline-Arbeit und als preiswerte Subagenten-Stufe ist das Angebot dagegen ein möglicher Ansatz, dessen Eignung am eigenen Repository geprüft werden muss. Herstellerbenchmarks zur Agentenqualität legt das Projekt nicht vor; die Auswahl groß genug, um es an einem eigenen Repository zu prüfen."
+    },
+    {
+      "t": "h2",
+      "x": "Voraussetzungen und Bezug"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "macOS auf Apple Silicon; die Modelllisten auf der Projektseite sind nach Speicherklassen von 16 bis 128 GB aufgeschlüsselt.",
+        "Installation über pip (pip install -U localcode); Quantisierungen werden bei der ersten Auswahl aus Hugging Face geladen.",
+        "Quelloffen; Projektseite mit Modellpicker-Dokumentation und Schritt-für-Schritt-Anleitung für die erste Änderung.",
+        "Wechsel zwischen Modellen zur Laufzeit über /models; lokaler OpenAI-kompatibler Endpunkt über localcode api."
+      ]
+    },
+    {
+      "t": "p",
+      "x": "Die PyPI-Metadaten nennen Python ab 3.10 und Version 0.5.43; Quelltext und Apache-2.0-Lizenz sind verlinkt. Die Speicherliste sind Empfehlungen des Projekts, keine von uns gemessenen Laufzeitgarantien. Die Lizenz jeder heruntergeladenen Modellfamilie gilt zusätzlich zur Lizenz des Agenten. Für den Erstdownload sind Paket- und Modelldienste nötig; offline ist der Betrieb erst nach Installation und Download möglich. Lokal erzeugter Modelltext verhindert auch nicht automatisch Netzwerkzugriffe von Shell-Befehlen oder Tests."
+    }
+  ],
+  "sources": [
+    {
+      "title": "localcode: Agentic coding. Local models. On your Mac.",
+      "publisher": "LocalCode-Projektseite",
+      "url": "https://mjwsolo.github.io/localcode/",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "localcode (Paket)",
+      "publisher": "PyPI",
+      "url": "https://pypi.org/project/localcode/",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "LocalCode Repository und Lizenz",
+      "publisher": "GitHub",
+      "url": "https://github.com/mjwsolo/localcode",
+      "accessed": "2026-11-23"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Brauche ich einen API-Schlüssel oder ein Konto?",
+      "a": "Nein. LocalCode läuft vollständig lokal: Die Modelle werden als Quantisierungen von Hugging Face geladen und über einen lokalen llama-server auf 127.0.0.1 betrieben. Eine Modell-API-Gebühr fällt für diesen lokalen Ablauf nicht an. Hardware, Strom, Downloads und etwaige Modelllizenzbedingungen bleiben zu berücksichtigen."
+    },
+    {
+      "q": "Welches Modell sollte ich nehmen?",
+      "a": "Das Werkzeug empfiehlt automatisch das vom Projekt bevorzugte Modell, das in den Unified Memory deines Mac passt, und markiert es mit einem Stern. Auf 16 GB ist das ein 12B-Dichtmodell, ab 24 GB kommen MoE-Modelle mit 3 bis 4 Milliarden aktiven Parametern dazu, auf 128 GB auch DeepSeek V4 Flash."
+    },
+    {
+      "q": "Ersetzt das einen gehosteten Coding-Agenten?",
+      "a": "In der Regel nicht vollständig. Ohne vergleichbare Aufgabentests lässt sich die Qualität nicht pauschal einordnen. Für private Repositories, Arbeit ohne Netz und als günstige Stufe für einfache, gut abgegrenzte Aufgaben ist der Ansatz aber technisch vorgesehen; die Qualität haben wir nicht selbst getestet."
+    }
+  ],
+  "related": [
+    "lookatmyquant-inkling-2-mini-quant"
+  ]
+}

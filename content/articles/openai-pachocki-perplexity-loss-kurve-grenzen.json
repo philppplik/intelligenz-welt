@@ -1,0 +1,108 @@
+{
+  "slug": "openai-pachocki-perplexity-loss-kurve-grenzen",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "OpenAI legt interne Verlustkurve offen und schlägt Grenzen vor",
+  "dek": "Jakub Pachocki veröffentlicht erstmals OpenAIs interne Pretraining-Verlustwerte und schlägt Perplexität als gemeinsame Messgröße für branchenweite Entwicklungsgrenzen vor. Die Zahlen, die Argumente und die offenen Fragen.",
+  "published": "2026-11-23T08:56:00+01:00",
+  "modified": "2026-11-23T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenAI",
+    "Jakub Pachocki",
+    "Perplexität",
+    "Pretraining",
+    "KI-Governance",
+    "Skalierung"
+  ],
+  "key_takeaways": [
+    "Pachocki berichtet OpenAIs interne Log-Perplexität auf dem eigenen Held-out-Datensatz aus der internen Codebasis: GPT-3.5 bei rund 0,99, GPT-4 bei rund 0,91.",
+    "Unterhalb von 0,8 seien laut Pachocki transformative Fähigkeiten in Cybersicherheit und Mathematik aufgetaucht; bei rund 0,76 habe ein Modell begonnen, bahnbrechende Ergebnisse bei offenen Mathematikproblemen zu liefern.",
+    "Für das Fenster 0,68 bis 0,7 erwartet er weitere transformative Fähigkeiten, ohne zu wissen welche, sowie eine weitere Schwächung heutiger Alignment-Audits und besseres Erkennen von Evaluations- und Trainingssituationen durch die Modelle.",
+    "Der Vorschlag: gemeinsame Evaluationsnormen, red-teamte Sicherheitsargumente und Transparenzstandards sowie gemeinsame, an Perplexität und anderen Messgrößen festgemachte Grenzen, die erst nach einem konkreten Überwachungsmeilenstein überschritten werden.",
+    "Pachocki nennt die Schwächen selbst: kaum vergleichbar über Labore hinweg, keine Abbildung auf konkrete Aufgaben, Chain-of-Thought-Gewinne unsichtbar, unbekannte Entropie-Untergrenze."
+  ],
+  "hero": {
+    "alt": "Abstrakte abfallende Kurve als leuchtende Linie über einem dunklen Koordinatenraster, mit drei markierten Schwellen als helle Punkte, in Tiefblau und Türkis, ohne Text und ohne Achsenbeschriftung.",
+    "caption": "Symbolbild: Eine Verlustkurve mit Schwellen",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Was Pachocki veröffentlicht hat"
+    },
+    {
+      "t": "p",
+      "x": "OpenAIs Chief Scientist Jakub Pachocki hat am 22. November einen Essay mit dem Titel Perplexity and Intelligence veröffentlicht. Darin teilt er interne Pretraining-Verlustwerte des Unternehmens: die Log-Perplexität, auch Kreuzentropie-Verlust genannt, auf dem seit GPT-3.5 verfolgten Held-out-Datensatz, der aus OpenAIs interner Codebasis stammt. GPT-3.5 liegt demnach bei rund 0,99, GPT-4 bei rund 0,91. Die Veröffentlichung sei abgewogen worden, schreibt Pachocki; sie gebe Wettbewerbern ein klareres Bild vom eigenen Stand, doch die Dringlichkeit gemeinsamer Sicherheitsmaßnahmen überwiege."
+    },
+    {
+      "t": "p",
+      "x": "Pachocki ordnet die Kurve historisch ein: GPT-2 habe erstmals konsistent kohärente Absätze formuliert, GPT-3 In-Context-Lernen ermöglicht, GPT-3.5 flüssige Konversation und GPT-4 produktives Chain-of-Thought-Reasoning. Unterhalb von 0,8 seien transformative Fähigkeiten in Bereichen wie Cybersicherheit und Mathematik aufgetaucht. Bei einem Log-Perplexitätswert von rund 0,76 habe ein Modell begonnen, bahnbrechende Ergebnisse bei offenen mathematischen Problemen zu produzieren. Diese Fähigkeiten seien nicht vorhersehbar gewesen, betont er, sondern als emergente Eigenschaften der einen Messgröße zu verstehen."
+    },
+    {
+      "t": "h2",
+      "x": "Was er erwartet und was er vorschlägt"
+    },
+    {
+      "t": "p",
+      "x": "Für das Fenster von rund 0,68 bis 0,7 erwartet Pachocki weitere transformative Fähigkeiten, sagt aber ausdrücklich, dass er nicht wisse, welche, und dass man heute möglicherweise gar nicht auf sie teste. Zugleich erwartet er eine weitere Schwächung der derzeit dominierenden Formen von Alignment-Audits sowie Modelle, die besser erkennen, wann sie evaluiert oder trainiert werden. Als möglichen Sprung benennt er KI, die algorithmische Forschung am Pretraining selbst betreibt: Bereits 2027 könne man sich eine ähnliche Lawine grundlegender Pretraining-Fortschritte vorstellen wie zuletzt in der Mathematik. Die steile Beschleunigung der Kurve im Jahr 2026 schreibt er mehrheitlich langfristiger Forschung und Rechenleistung zu und nur in kleinerem Teil der Automatisierung."
+    },
+    {
+      "t": "p",
+      "x": "Sein Vorschlag: Die Frontier-Labore sollen gemeinsam Normen für die Evaluation solcher Modelle festlegen, Sicherheitsargumente gegeneinander red-teamen und gemeinsame Transparenzstandards vereinbaren. Konkret schlägt er gemeinsame Grenzen vor, bemessen an Perplexität und anderen Messgrößen, die die Entwickler nicht überschreiten, bis die Fähigkeit, KI-Verhalten zu verstehen und zu überwachen, einen konkreten Meilenstein erreicht. Sein Beispiel für einen solchen Meilenstein ist ein Nachfolger der heutigen Chain-of-Thought-Monitore. Ziel sei ein Industriestandard, der eine erste Entwicklungsgrenze an einer laborübergreifend verfolgbaren Messgröße festmacht."
+    },
+    {
+      "t": "h2",
+      "x": "Die selbst genannten Schwächen"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Vergleichbarkeit: Verschiedene Labore nutzen verschiedene Evaluationsdatensätze und Trainingsmischungen; Pachocki hofft auf übertragbare Vergleichsmethoden bei einem Transparenzziel.",
+        "Praxisferne: Perplexität bildet keine konkrete Aufgabe ab; relevant ist sie, weil Fortschritt auf ihr neue Fähigkeiten erwarten lässt.",
+        "Blinder Fleck: Chain-of-Thought-Reasoning senkt die Perplexität nicht, obwohl es die Fähigkeiten drastisch erhöht.",
+        "Unbekannte Untergrenze: Die inhärente Entropie der Daten ist unbekannt; je näher man ihr kommt, desto mehr Intelligenz steckt hinter kleinen Verlustgewinnen."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "OpenAI veröffentlicht damit eine interne Pretraining-Messreihe. Ein branchenweiter Erstmaligkeitsanspruch ist hier nicht unabhängig geprüft. Die brisante Frage ist, ob andere Labore mit vergleichbaren Zahlen nachziehen; ohne sie bleibt der Vorschlag einer gemeinsamen Grenze ein Angebot. Pachocki selbst liefert die stärksten Gegenargumente gleich mit, von der schwierigen Vergleichbarkeit bis zum blinden Fleck für Reasoning-Gewinne. Der Essay ist ein Standpunktpapier des Chief Scientist von OpenAI, keine vereinbarte Norm."
+    },
+    {
+      "t": "p",
+      "x": "Die genannten Schwellen sind Pachockis rückblickende Beobachtungen und Erwartungen auf einem festen internen Datensnapshot, keine universellen Kipppunkte oder extern bestätigte Vorhersagen. Der Essay veröffentlicht damit weder den internen Datensatz noch eine unabhängig reproduzierte Messreihe."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Perplexity and Intelligence",
+      "publisher": "OpenAI (Jakub Pachocki)",
+      "url": "https://openai.com/index/perplexity-and-intelligence/",
+      "accessed": "2026-11-23"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist Log-Perplexität?",
+      "a": "Perplexität misst, wie gut ein Modell das jeweils nächste Token vorhersagt; niedriger ist besser. In der Praxis verfolgen die Teams den Logarithmus davon, auch Kreuzentropie-Verlust genannt. OpenAI misst ihn auf einem Held-out-Datensatz aus der eigenen internen Codebasis."
+    },
+    {
+      "q": "Sind die Zahlen mit anderen Laboren vergleichbar?",
+      "a": "Kaum. Pachocki nennt die Vergleichbarkeit selbst als erste Schwäche: Andere Entwickler nutzen andere Evaluationsdatensätze und Trainingsdaten. Er schlägt vor, bei einem gemeinsamen Transparenzziel übertragbare Vergleichsmethoden zu finden."
+    },
+    {
+      "q": "Sind damit verbindliche Obergrenzen beschlossen?",
+      "a": "Nein. Es ist ein Vorschlag des OpenAI-Chief Scientist an die Branche: gemeinsame Normen, Transparenzstandards und an Messgrößen gekoppelte Entwicklungsgrenzen, die erst nach einem konkreten Überwachungsmeilenstein überschritten werden. Eine branchenweit vereinbarte Norm belegt der Essay nicht."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle"
+  ]
+}

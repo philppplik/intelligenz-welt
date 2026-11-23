@@ -1,0 +1,125 @@
+{
+  "slug": "antithesis-tla-raft-verifikation-etcd-hashicorp",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Antithesis prüft Raft-Modelle mit TLA+ und Lean",
+  "dek": "Formale Modelle von etcd-raft und HashiCorp Raft bestehen nach Patches Sicherheitsbeweise. Die Zuordnung zum Produktivcode wird getestet, nicht mathematisch bewiesen; Liveness bleibt außen vor.",
+  "published": "2026-11-23T08:56:00+01:00",
+  "modified": "2026-11-23T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Raft",
+    "TLA+",
+    "Formale Verifikation",
+    "Antithesis",
+    "etcd",
+    "Verteilte Systeme"
+  ],
+  "key_takeaways": [
+    "Antithesis hat mit Claude Fable 5.2 TLA+-Modelle der produktiven Raft-Bibliotheken von etcd und HashiCorp aus dem Code abgeleitet und die Sicherheitseigenschaften manuell gegengeprüft.",
+    "Trace-Validierung bindet das Modell an die Software: Strukturierte Log-Ereignisse aus Testläufen müssen zu Pfaden im TLA+-Modell passen, sonst wird der Lauf markiert.",
+    "Die Beweise decken die Kern-Sicherheitseigenschaften des Raft-Papers ab: Election Safety, Log Matching, Leader Completeness und State Machine Safety, jeweils im Rahmen der modellierten Funktionen.",
+    "Unterwegs fanden die Teams bekannte offene Probleme (hashicorp/raft#695, etcd-io/raft#551) und neue Bugs (hashicorp/raft#746, etcd-io/raft#558); insgesamt sieben Patches flossen in die interne Kopie.",
+    "Modelle und Artefakte sind zur offenen Prüfung veröffentlicht. Die Aussage gilt für die modellierten Funktionen, nicht für die gesamten Bibliotheken."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung von drei Knoten als geometrische Formen, die über leuchtende Pfade Zustände austauschen und in eine gemeinsame, geschlossene Form finden, in Blau- und Grüntönen auf dunklem Grund, ohne Text.",
+    "caption": "Symbolbild: Knoten finden in einen gemeinsamen Zustand",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Warum Raft überhaupt noch ein Problem ist"
+    },
+    {
+      "t": "p",
+      "x": "Das Raft-Protokoll ist ausgiebig untersucht, formal spezifiziert und unter seinen Annahmen bewiesen. Trotzdem findet Antithesis nach eigenen Angaben in jeder größeren Raft-Implementierung Bugs, weil echte Bibliotheken von den Annahmen abweichen, den Algorithmus aus Performancegründen umbauen und unverifizierte Erweiterungen hinzufügen. In einem neuen Beitrag beschreiben Rohan Padhye und Hillel Wayne, wie sie für die Produktivbibliotheken etcd-raft und HashiCorp Raft formale Modelle gebaut, an den Code gebunden und die Sicherheitseigenschaften bewiesen haben."
+    },
+    {
+      "t": "h2",
+      "x": "Die Methode in vier Schritten"
+    },
+    {
+      "t": "p",
+      "x": "Erstens Modellbildung: Claude Fable 5.2 leitete TLA+-Modelle automatisch aus den Implementierungen ab; die Menschen steuerten, welche Funktionen modelliert werden, und prüften die Sicherheitseigenschaften manuell. Modelliert wurden unter anderem Pre-Votes, Snapshots und Führungswechsel, bei etcd-raft zusätzlich Read-Indizes für Linearisierbarkeit, asynchrone Speicherschreibzugriffe und Mitgliedschaftsänderungen, an denen sich etcd bewusst vom Raft-Paper entfernt. Zweitens Model Checking: Der Standard-Checker TLC durchsuchte begrenzte Instanzen, typischerweise drei Knoten und wenige Wahlperioden, vollständig; einzelne Instanzen erreichten über 1,6 Millionen Zustände."
+    },
+    {
+      "t": "p",
+      "x": "Drittens Trace-Validierung: Die Software lief auf der Antithesis-Plattform unter Fehlerinjektion und Zufallseingaben und schrieb dabei strukturierte Log-Ereignisse, die Zustandsübergängen im TLA+-Modell entsprechen. Jeder Lauf, dessen Spur zu keinem Pfad im Modell passte, wurde markiert; ein KI-Agent diagnostizierte, ob Instrumentierung, Modell oder Code die Ursache war. Viertens Beweise: Für unbegrenzte Eingabegrößen wurden die Invarianten in Lean über die Veil-Bibliothek bewiesen, nach der Einfrierung der Spezifikation zusätzlich direkt in TLAPS. Ein Modell der etcd-Mitgliedschaftsänderung ließ sich nicht beweisen und legte so einen komplexen Bug offen, dessen Auslöser jenseits des Model-Checking-Zustandsraums lag."
+    },
+    {
+      "t": "h2",
+      "x": "Was dabei herauskam"
+    },
+    {
+      "t": "p",
+      "x": "Bewiesen wurden die vier Kern-Sicherheitseigenschaften des Raft-Papers: Election Safety (höchstens ein Anführer pro Periode), Log Matching (gleiche Position und Periode heißt gleiche Historie), Leader Completeness (ein Anführer enthält jeden zuvor committeten Eintrag) und State Machine Safety (keine zwei Knoten wenden verschiedene Einträge an derselben Position an). Die Schlussfolgerung der Autoren: Nach den nötigen Workarounds und Fixes bieten die modellierten Entwürfe beider Bibliotheken, begrenzt auf die modellierten Funktionen, die Garantien des Raft-Papers."
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Bekannte offene Probleme bestätigt: hashicorp/raft#695 und etcd-io/raft#551.",
+        "Neue Bugs gemeldet: hashicorp/raft#746 und etcd-io/raft#558.",
+        "Sieben Patches in der internen Kopie über beide Implementierungen.",
+        "Einige zusätzliche Absturzfehler gefunden, die keine Sicherheitseigenschaften verletzen."
+      ]
+    },
+    {
+      "t": "callout",
+      "title": "Wo die Grenze der Aussage liegt",
+      "x": "Die Beweise gelten für die modellierten Funktionen und die Spezifikation, nicht für jede Zeile der Bibliotheken. Der Schritt vom Modell zur Software wird nicht bewiesen, sondern durch Trace-Validierung abgesichert: Jede Abweichung zwischen Lauf und Modell wird als Fehler gewertet und nachverfolgt. Beide Artefakte, die Modelle samt Beweisen, liegen zur offenen Prüfung bereit."
+    },
+    {
+      "t": "p",
+      "x": "Wesentliche Grenzen des Prototyps: Die Tests nutzen BoltDB und die Modelle setzen voraus, dass einzelne Schreibvorgänge weder zerrissen noch korrumpiert werden; Abstürze zwischen zwei Schreibvorgängen bleiben möglich. Nicht modelliert sind unter anderem lease-basierte etcd-Lesezugriffe sowie asynchrone Heartbeats und Mitgliedschaftsänderungen bei HashiCorp. Liveness, also garantierter Fortschritt, wird nicht bewiesen. Größere Konfigurationen wurden zum Teil nur zufällig simuliert, nicht vollständig mit TLC durchsucht. Wir haben die Artefakte gelesen, aber die Beweise nicht selbst neu ausgeführt."
+    },
+    {
+      "t": "h2",
+      "x": "Warum das über Raft hinausweist"
+    },
+    {
+      "t": "p",
+      "x": "Der teure Teil formaler Methoden war bislang das Schreiben und Pflegen der Modelle. Hier übernimmt ein Coding-Agent die Modellableitung aus dem Code, die Trace-Validierung prüft fortlaufend die Passung, und Beweisversuche liefern weitere Gegenbeispiele. Dasselbe Muster, Spezifikation plus getestete Konformität, treibt gerade auch die Formalisierung mathematischer Beweise voran. Für Betreiber verteilter Systeme heißt das konkret: Der Hersteller zeigt einen möglichen Weg zu weniger Handarbeit bei formalen Modellen, und die Frage 'stimmt die Spezifikation mit der Implementierung überein' bekommt eine prüfbare, laufende Antwort statt eines einmaligen Gutachtens."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Verifying formal models of Raft implementations",
+      "publisher": "Antithesis (Rohan Padhye, Hillel Wayne)",
+      "url": "https://antithesis.com/blog/2026/verifying-formal-models/",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "etcd-raft formalized",
+      "publisher": "Antithesis, GitHub",
+      "url": "https://github.com/antithesishq/etcd-raft-formalized",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "HashiCorp-Raft-Modelle und Artefakte",
+      "publisher": "Antithesis,GitHub",
+      "url": "https://github.com/antithesishq/hashicorp-raft-formalized",
+      "accessed": "2026-11-23"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind etcd-raft und HashiCorp Raft jetzt fehlerfrei?",
+      "a": "Nein. Bewiesen sind die Kern-Sicherheitseigenschaften innerhalb der modellierten Funktionen, nach sieben Patches in einer internen Kopie. Absturzfehler außerhalb der Sicherheitseigenschaften und nicht modellierte Funktionen sind davon nicht abgedeckt."
+    },
+    {
+      "q": "Was ist Trace-Validierung?",
+      "a": "Die laufende Software schreibt strukturierte Ereignisse, die Zustandsübergängen im formalen Modell entsprechen. Passt eine beobachtete Spur zu keinem Modellpfad, liegt ein Fehler in Instrumentierung, Modell oder Code vor. So wird die Passung zwischen Spezifikation und Implementierung fortlaufend geprüft statt nur behauptet."
+    },
+    {
+      "q": "Kann man die Ergebnisse nachprüfen?",
+      "a": "Ja. Die TLA+-Modelle und Beweisartefakte für beide Bibliotheken sind auf GitHub zur offenen Prüfung veröffentlicht. Der Model-Checker TLC, TLAPS und die Lean-Übersetzung via Veil sind ebenfalls offene Werkzeuge."
+    }
+  ],
+  "related": [
+    "lean-mathlib-zertifizieren-grh-beweis-alpoege"
+  ]
+}

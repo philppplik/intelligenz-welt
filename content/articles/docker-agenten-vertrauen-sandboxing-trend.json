@@ -1,0 +1,109 @@
+{
+  "slug": "docker-agenten-vertrauen-sandboxing-trend",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Docker setzt bei seiner neuen Marke auf Vertrauen in Agenten",
+  "dek": "Docker positioniert sich offiziell neu: weg vom reinen Container-Image, hin zur Vertrauens- und Isolationsschicht für KI-Agenten. Der Markenwechsel ist dünn an Produktfakten, aber er fasst eine Entwicklung zusammen, die sich quer durch die Werkzeuglandschaft zieht.",
+  "published": "2026-11-23T08:56:00+01:00",
+  "modified": "2026-11-23T08:56:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Docker",
+    "Sandboxing",
+    "Agenten",
+    "Sicherheit",
+    "Entwicklerwerkzeuge",
+    "Trend"
+  ],
+  "key_takeaways": [
+    "Docker hat am 19. November offiziell eine neue Marke lanciert: Das Unternehmen will die Vertrauens- und Isolationsschicht für das agentische Zeitalter werden, so wie Container einst das 'läuft auf meiner Maschine'-Problem lösten.",
+    "Die Begründung im Markenpost: Container isolieren Workloads, aber Agenten seien keine Workloads, sondern Akteure, die selbst entscheiden, was sie ausführen, aufrufen und verändern.",
+    "Angekündigt sind eine vertrauenswürdige Lieferkette, eine vertrauenswürdige Laufzeit zur Isolation von Agenten und ein Ökosystem; konkrete Produktspezifikationen enthält der Beitrag nicht.",
+    "AWS CAO koordiniert Coding-CLIs in getrennten tmux-Sitzungen. Das ist Sitzungsorganisation, nicht automatisch eine Sicherheitsgrenze. LocalCode beschreibt Nachfragen für Zugriffe außerhalb des Projekts.",
+    "Sicherheitsgrenzen müssen durch Laufzeit, Container oder Betriebssystem durchgesetzt werden. Ein Prompt, eine getrennte Sitzung oder eine Herstellerzusage allein beweist keine Isolation."
+  ],
+  "hero": {
+    "alt": "Abstrakte Darstellung mehrerer leuchtender Prozesse, jeder in einer eigenen durchsichtigen geometrischen Kammer, verbunden über schmale kontrollierte Übergänge, in Blau- und Aquatönen auf dunklem Grund, ohne Text und ohne Figuren.",
+    "caption": "Symbolbild: Gleiche Arbeit, getrennte Kammern",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "h2",
+      "x": "Was Docker angekündigt hat"
+    },
+    {
+      "t": "p",
+      "x": "Docker hat am 19. November offiziell eine neue Marke lanciert. Im Ankündigungsbeitrag stellt das Unternehmen die Frage, wie die Branche die Fähigkeiten von KI nutzen kann, ohne Sicherheit, Steuerung und Kontrolle aufzugeben, und beantwortet sie mit einer Neupositionierung: Docker soll die Vertrauens- und Isolationsschicht für KI-Agenten werden, analog zu dem, was Container für die Portierbarkeit von Software geleistet haben. Die Kernbotschaft: Container isolieren Workloads, aber Agenten sind keine Workloads, sondern Akteure, die eigene Entscheidungen darüber treffen, was sie ausführen, worauf sie zugreifen und was sie verändern."
+    },
+    {
+      "t": "p",
+      "x": "Konkret genannt werden drei Schichten: eine vertrauenswürdige Lieferkette, aus der Agenten bauen, eine vertrauenswürdige Laufzeit, die Agenten isoliert, und ein Ökosystem, das die übrigen Vertrauensfragen abdeckt. Der Beitrag betont zugleich, dass die klassischen Container bleiben und die Zusagen zu Offenheit und Portierbarkeit unverändert gelten. Was der Markenpost nicht liefert, ist eine Produktspezifikation; zu beobachten ist, welche Agenten-Sandbox-Funktionen tatsächlich folgen."
+    },
+    {
+      "t": "h2",
+      "x": "Der Trend dahinter"
+    },
+    {
+      "t": "p",
+      "x": "Docker ist nicht allein, sondern fasst eine Entwicklung in Worte, die sich quer durch die Werkzeuglandschaft zeigt. AWS' quelloffener CLI Agent Orchestrator koordiniert Coding-CLIs wie Claude Code, Codex und andere in getrennten tmux-Sitzungen, in denen jeder Arbeiter ein vollständiger CLI-Prozess mit eigener Authentifizierung bleibt; ein Supervisor delegiert an spezialisierte Arbeiter, parallel oder nacheinander. Lokale Werkzeuge ziehen dieselbe Linie: Der Coding-Agent LocalCode fragt nach, bevor irgendetwas außerhalb des geöffneten Projekts angefasst wird."
+    },
+    {
+      "t": "callout",
+      "title": "Was das für Teams bedeutet",
+      "x": "Daraus folgt noch keine Sicherheitsgarantie: Eine getrennte tmux-Sitzung ist keine Container-, Dateisystem- oder Netzwerk-Sandbox. Die gestarteten CLIs behalten ihre nativen Zugänge und Fähigkeiten. Auch eine Nachfrage des lokalen Agenten ist zunächst beschriebenes Produktverhalten, keine unabhängig geprüfte Sperre. Wer Isolation benötigt, muss sie zusätzlich technisch einrichten und testen."
+    },
+    {
+      "t": "p",
+      "x": "Vorfälle mit Datenabfluss illustrieren, warum unterschiedliche Schutzschichten nötig sind; sie beweisen aber nicht die Wirksamkeit der hier beworbenen Werkzeuge. Der Markenbeitrag liefert keine Vergleichstests für die Sicherheit von Agenten. Wir haben weder Ausbruchstests noch einen vollständigen Produktaudit durchgeführt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Ein Markenwechsel ist noch kein Produkt. Aber wenn der Container-Standard seine Erzählung auf 'Vertrauen in Agenten' umbaut, sagt das etwas über die Erwartung der Kunden aus: Isolation und Steuerung werden zum Kaufkriterium, nicht zum Add-on. Ob Docker die beste Agenten-Sandbox baut, wird sich an den angekündigten Laufzeitfunktionen messen lassen müssen. Wie gut die einzelnen Werkzeuge isolieren, muss je nach Bedrohungsmodell getrennt geprüft werden."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Meet the New Docker: Built to Run on Trust",
+      "publisher": "Docker (Terri Avnaim)",
+      "url": "https://www.docker.com/blog/meet-the-new-docker-built-to-run-on-trust/",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "awslabs/cli-agent-orchestrator",
+      "publisher": "AWS Labs, GitHub",
+      "url": "https://github.com/awslabs/cli-agent-orchestrator/",
+      "accessed": "2026-11-23"
+    },
+    {
+      "title": "LocalCode Projektbeschreibung",
+      "publisher": "LocalCode",
+      "url": "https://mjwsolo.github.io/localcode/",
+      "accessed": "2026-11-23"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was genau hat Docker angekündigt?",
+      "a": "Einen offiziellen Markenwechsel: Docker positioniert sich als Vertrauens- und Isolationsschicht für KI-Agenten, mit den drei Schichten Lieferkette, Laufzeit und Ökosystem. Konkrete Produktspezifikationen enthält der Beitrag nicht; die klassischen Container bleiben."
+    },
+    {
+      "q": "Was heißt 'Agenten sind Akteure, keine Workloads'?",
+      "a": "Container isolieren, was läuft. Agenten entscheiden aber selbst, was sie ausführen, aufrufen und verändern. Dockers Argument: Für solche Akteure braucht es Isolation und Steuerung, die auf Entscheidungen ausgelegt sind, nicht nur auf Prozesse."
+    },
+    {
+      "q": "Gibt es die Sandbox-Funktionen schon?",
+      "a": "Der Markenpost ist keine technische Sandbox-Spezifikation. AWS CAO trennt CLI-Sitzungen, schafft dadurch allein aber keine Sicherheits-Sandbox. Für eine echte Dateisystem- oder Netzwerkgrenze braucht es zusätzliche technische Isolation und Tests."
+    }
+  ],
+  "related": [
+    "openrouter-zdr-anbieter-fallout",
+    "ghostscript-upload2shell-gpgme-patches"
+  ]
+}
