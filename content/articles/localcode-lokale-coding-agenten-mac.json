@@ -6,7 +6,7 @@
   "title": "LocalCode: Lokaler Coding-Agent für den Mac ohne Modell-API",
   "dek": "Das quelloffene Werkzeug LocalCode kombiniert Modellserver und Coding-Agent in einem Befehl: Es prüft, welche Modelle in den Speicher des Mac passen, empfiehlt das stärkste, lädt den Quant und startet den Server selbst. Ein Blick auf Ausstattung, Modellauswahl und Grenzen.",
   "published": "2026-11-23T09:05:05+01:00",
-  "modified": "2026-11-23T09:05:05+01:00",
+  "modified": "2026-11-23T09:07:38+01:00",
   "author": "philipp-paulik",
   "tags": [
     "LocalCode",
@@ -36,7 +36,7 @@
     },
     {
       "t": "p",
-      "x": "LocalCode ist ein quelloffener Coding-Agent, der ausschließlich mit lokalen Modellen auf Apple Silicon arbeitet. Die Installation ist ein Befehl (pip install -U localcode), danach öffnet man ein Repository, startet localcode und wählt beim ersten Prompt ein Modell. Es gibt keinen API-Schlüssel, laut Projekt kein Dienstkonto und keine Modell-API-Rechnung; Modellserver und Agent kommen aus demselben Paket. Laut Projektseite ist Laufzeit, Vervollständigungsdisziplin und Server gezielt auf kleine lokale Modelle abgestimmt."
+      "x": "LocalCode ist ein quelloffener Coding-Agent, der ausschließlich mit lokalen Modellen auf Apple Silicon arbeitet. Die Installation ist ein Befehl (pip install -U localcode), danach öffnet man ein Repository, startet localcode und wählt beim ersten Prompt ein Modell. Es gibt keinen API-Schlüssel, laut Projekt kein Dienstkonto und keine Modell-API-Rechnung; Modellserver und Agent kommen aus demselben Paket. Laut Projektseite sind Laufzeit, Vervollständigungsdisziplin und Server gezielt auf kleine lokale Modelle abgestimmt."
     },
     {
       "t": "h2",
@@ -61,7 +61,7 @@
     {
       "t": "callout",
       "title": "Einordnung",
-      "x": "LocalCode macht aus lokalem Agenten-Coding eine Installationsfrage statt eines Bastelprojekts. Die Grenzen liegen auf der Hand: Die Qualität hängt am kleinsten gemeinsamen Nenner, dem lokalen Modell, und ein belastbarer Qualitätsvergleich mit gehosteten Agenten fehlt. Für private Repositories, Offline-Arbeit und als preiswerte Subagenten-Stufe ist das Angebot dagegen ein möglicher Ansatz, dessen Eignung am eigenen Repository geprüft werden muss. Herstellerbenchmarks zur Agentenqualität legt das Projekt nicht vor; die Auswahl groß genug, um es an einem eigenen Repository zu prüfen."
+      "x": "LocalCode macht aus lokalem Agenten-Coding eine Installationsfrage statt eines Bastelprojekts. Die Grenzen liegen auf der Hand: Die Qualität hängt am kleinsten gemeinsamen Nenner, dem lokalen Modell, und ein belastbarer Qualitätsvergleich mit gehosteten Agenten fehlt. Für private Repositories, Offline-Arbeit und als preiswerte Subagenten-Stufe ist das Angebot dagegen ein möglicher Ansatz, dessen Eignung am eigenen Repository geprüft werden muss. Herstellerbenchmarks zur Agentenqualität legt das Projekt nicht vor."
     },
     {
       "t": "h2",
@@ -78,7 +78,7 @@
     },
     {
       "t": "p",
-      "x": "Die PyPI-Metadaten nennen Python ab 3.10 und Version 0.5.43; Quelltext und Apache-2.0-Lizenz sind verlinkt. Die Speicherliste sind Empfehlungen des Projekts, keine von uns gemessenen Laufzeitgarantien. Die Lizenz jeder heruntergeladenen Modellfamilie gilt zusätzlich zur Lizenz des Agenten. Für den Erstdownload sind Paket- und Modelldienste nötig; offline ist der Betrieb erst nach Installation und Download möglich. Lokal erzeugter Modelltext verhindert auch nicht automatisch Netzwerkzugriffe von Shell-Befehlen oder Tests."
+      "x": "Die PyPI-Metadaten nennen Python ab 3.10 und Version 0.5.43; Quelltext und Apache-2.0-Lizenz sind verlinkt. Die Speicherangaben sind Empfehlungen des Projekts, keine von uns gemessenen Laufzeitgarantien. Die Lizenz jeder heruntergeladenen Modellfamilie gilt zusätzlich zur Lizenz des Agenten. Für den Erstdownload sind Paket- und Modelldienste nötig; offline ist der Betrieb erst nach Installation und Download möglich. Lokal erzeugter Modelltext verhindert auch nicht automatisch Netzwerkzugriffe von Shell-Befehlen oder Tests."
     }
   ],
   "sources": [

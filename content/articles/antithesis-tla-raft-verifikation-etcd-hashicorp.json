@@ -6,7 +6,7 @@
   "title": "Antithesis prüft Raft-Modelle mit TLA+ und Lean",
   "dek": "Formale Modelle von etcd-raft und HashiCorp Raft bestehen nach Patches Sicherheitsbeweise. Die Zuordnung zum Produktivcode wird getestet, nicht mathematisch bewiesen; Liveness bleibt außen vor.",
   "published": "2026-11-23T09:05:05+01:00",
-  "modified": "2026-11-23T09:05:05+01:00",
+  "modified": "2026-11-23T09:07:38+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Raft",
@@ -83,6 +83,10 @@
     {
       "t": "p",
       "x": "Der teure Teil formaler Methoden war bislang das Schreiben und Pflegen der Modelle. Hier übernimmt ein Coding-Agent die Modellableitung aus dem Code, die Trace-Validierung prüft fortlaufend die Passung, und Beweisversuche liefern weitere Gegenbeispiele. Dasselbe Muster, Spezifikation plus getestete Konformität, treibt gerade auch die Formalisierung mathematischer Beweise voran. Für Betreiber verteilter Systeme heißt das konkret: Der Hersteller zeigt einen möglichen Weg zu weniger Handarbeit bei formalen Modellen, und die Frage 'stimmt die Spezifikation mit der Implementierung überein' bekommt eine prüfbare, laufende Antwort statt eines einmaligen Gutachtens."
+    },
+    {
+      "t": "p",
+      "x": "Die Artefakt-READMEs warnen ausdrücklich: Die Verzeichnisse sind fast vollständig KI-generiert und dienen als Forschungsdemonstration, nicht als maßgebliche oder gepflegte Arbeit für die Nutzer der Upstream-Bibliotheken. Die Forscher haben die Aussagen auf Stimmigkeit geprüft; ein produktionsreifer Nachweis für unveränderte Upstream-Versionen ist damit nicht gegeben."
     }
   ],
   "sources": [
@@ -95,13 +99,13 @@
     {
       "title": "etcd-raft formalized",
       "publisher": "Antithesis, GitHub",
-      "url": "https://github.com/antithesishq/etcd-raft-formalized",
+      "url": "https://github.com/antithesishq/etcd-raft-formalized/blob/antithesis-fm-demo/antithesis-fm/README.md",
       "accessed": "2026-11-23"
     },
     {
       "title": "HashiCorp-Raft-Modelle und Artefakte",
       "publisher": "Antithesis,GitHub",
-      "url": "https://github.com/antithesishq/hashicorp-raft-formalized",
+      "url": "https://github.com/antithesishq/hashicorp-raft-formalized/blob/antithesis-fm-demo/antithesis-fm/README.md",
       "accessed": "2026-11-23"
     }
   ],

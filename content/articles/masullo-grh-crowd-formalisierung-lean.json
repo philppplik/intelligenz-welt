@@ -6,7 +6,7 @@
   "title": "940 Seiten unter der Lupe: Die Crowd formalisiert Masullos GRH-Manuskript in Lean",
   "dek": "Ein Lean-Projekt prüft Masullos 940-seitigen GRH-Entwurf. Viele Hilfssätze sind bewiesen, andere Aussagen offen oder umstritten. Eine Gesamtbestätigung ist das nicht.",
   "published": "2026-11-23T09:05:04+01:00",
-  "modified": "2026-11-23T09:05:04+01:00",
+  "modified": "2026-11-23T09:07:38+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Riemannsche Vermutung",
@@ -73,7 +73,7 @@
     },
     {
       "t": "p",
-      "x": "Masullo selbst hält den Entwurf nach Angaben des Projekts für unfertig; das Vorwort verweist darauf, dass er und Brian Conrad mehrere Stellen kennen, an denen noch gearbeitet wird. Der Plan sei nach Berichten gewesen, das Manuskript ein Jahr zu überarbeiten, bevor es an die Öffentlichkeit geht. Unabhängig vom Ausgang des Beweises dokumentiert das Projekt etwas Neues: eine maschinell geprüfte, öffentliche Buchführung darüber, welche Teile eines großen Manuskripts halten, welche nach Reparatur halten und welche nicht."
+      "x": "Masullo selbst hält den Entwurf nach Angaben des Projekts für unfertig; das Vorwort verweist darauf, dass er und Brian Conrad mehrere Stellen kennen, an denen noch gearbeitet wird. Der Plan sei nach Berichten gewesen, das Manuskript ein Jahr zu überarbeiten, bevor es an die Öffentlichkeit geht. Unabhängig vom Ausgang des Beweises dokumentiert das Projekt eine öffentliche, teils maschinell geprüfte Buchführung darüber, welche Teile eines großen Manuskripts halten, welche nach Reparatur halten und welche nicht."
     },
     {
       "t": "p",
@@ -102,8 +102,8 @@
       "accessed": "2026-11-23"
     },
     {
-      "title": "GRH proof verification status, abgerufen23.November2026",
-      "publisher": "Andrew Sutherland,MIT",
+      "title": "GRH proof verification status, abgerufen am 23. November 2026",
+      "publisher": "Andrew Sutherland, MIT",
       "url": "https://math.mit.edu/~drew/grh/",
       "accessed": "2026-11-23"
     }
