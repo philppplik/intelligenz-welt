@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "LocalCode: Lokaler Coding-Agent für den Mac ohne Modell-API",
   "dek": "Das quelloffene Werkzeug LocalCode kombiniert Modellserver und Coding-Agent in einem Befehl: Es prüft, welche Modelle in den Speicher des Mac passen, empfiehlt das stärkste, lädt den Quant und startet den Server selbst. Ein Blick auf Ausstattung, Modellauswahl und Grenzen.",
-  "published": "2026-11-23T08:56:00+01:00",
-  "modified": "2026-11-23T08:56:00+01:00",
+  "published": "2026-11-23T09:05:05+01:00",
+  "modified": "2026-11-23T09:05:05+01:00",
   "author": "philipp-paulik",
   "tags": [
     "LocalCode",

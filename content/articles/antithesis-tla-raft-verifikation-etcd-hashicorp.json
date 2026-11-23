@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Antithesis prüft Raft-Modelle mit TLA+ und Lean",
   "dek": "Formale Modelle von etcd-raft und HashiCorp Raft bestehen nach Patches Sicherheitsbeweise. Die Zuordnung zum Produktivcode wird getestet, nicht mathematisch bewiesen; Liveness bleibt außen vor.",
-  "published": "2026-11-23T08:56:00+01:00",
-  "modified": "2026-11-23T08:56:00+01:00",
+  "published": "2026-11-23T09:05:05+01:00",
+  "modified": "2026-11-23T09:05:05+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Raft",

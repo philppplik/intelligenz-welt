@@ -5,8 +5,8 @@
   "type": "news",
   "title": "Clover-35B-A3B: Autoren melden 73,6 auf SWE-bench, Tempo separat getestet",
   "dek": "Der Report trennt Agentenbenchmarks von einer Geschwindigkeitsmessung ohne Werkzeugausführung:73,6 auf SWE-bench Verified und 680 Token/s im Replay auf einer GB300. Gewichte und Code sind zugänglich; unabhängige Nachmessungen fehlen.",
-  "published": "2026-11-23T08:56:00+01:00",
-  "modified": "2026-11-23T08:56:00+01:00",
+  "published": "2026-11-23T09:05:05+01:00",
+  "modified": "2026-11-23T09:05:05+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Clover",
