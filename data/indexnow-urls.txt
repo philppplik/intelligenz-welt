@@ -1,1 +1,6 @@
-https://intelligenz-welt.de/artikel/news-ueberblick-morgen-2026-11-23/
+https://intelligenz-welt.de/artikel/antithesis-tla-raft-verifikation-etcd-hashicorp/
+https://intelligenz-welt.de/artikel/clover-35b-a3b-diffusion-code-agenten/
+https://intelligenz-welt.de/artikel/docker-agenten-vertrauen-sandboxing-trend/
+https://intelligenz-welt.de/artikel/localcode-lokale-coding-agenten-mac/
+https://intelligenz-welt.de/artikel/masullo-grh-crowd-formalisierung-lean/
+https://intelligenz-welt.de/artikel/openai-pachocki-perplexity-loss-kurve-grenzen/
