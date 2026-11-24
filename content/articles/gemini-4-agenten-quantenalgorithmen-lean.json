@@ -1,0 +1,124 @@
+{
+  "slug": "gemini-4-agenten-quantenalgorithmen-lean",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Gemini-4-Agenten finden günstigere Quantenalgorithmen, Lean prüft jedes Ergebnis",
+  "dek": "Google DeepMind und Google Quantum AI haben Teams von Gemini-4-Agenten bekannte Quantenalgorithmen verbessern lassen: bis zu 290-fach günstigere Kosten, jedes Ergebnis mit Korrektheits- und Kostenbeweis in Lean. Der Weg dahinter ist die eigentliche Nachricht.",
+  "published": "2026-11-24T09:06:42+01:00",
+  "modified": "2026-11-24T09:06:42+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Google DeepMind",
+    "Gemini 4",
+    "Quantencomputing",
+    "Lean",
+    "Agenten"
+  ],
+  "key_takeaways": [
+    "Agententeams aus Gemini-4-Modellen verbesserten fünf Quantenalgorithmen; jedes Ergebnis wurde in Lean mit Korrektheits- und Kostenbeweisen hinterlegt.",
+    "Laut Paper: 10,9-fach geringere Raumzeit-Kosten bei einer Fusionssimulation (4.374 statt 5.650 logischer Qubits), 8,08-fach bei einem photochemischen Molekül, 2,49-fach bei Cytochrom P450.",
+    "Bei paralleler Grover-Suche bis zu 2,55-fach weniger erwartete Runden (alle Ziele finden), bei der arcsin-Routine 290-fach unter der bisher besten veröffentlichten Implementierung.",
+    "Ein externer Verifizierer prüft jede Einreichung gegen eine eingefrorene Spezifikation per Lean Comparator; so können Agenten die Theorem-Aussagen nicht aufweichen.",
+    "Die Autoren betonen selbst: Auch die verbesserten Simulationen bräuchten mehr Ressourcen, als die ersten fehlerkorrigierten Quantencomputer voraussichtlich haben."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: leuchtende Quantenschaltkreis-Linien, die von einem dichten Knotengewirr zu einer schlanken, geordneten Schaltung schrumpfen",
+    "caption": "Symbolbild: Agenten suchen, ein Beweisprüfer entscheidet, die Schaltung wird kleiner. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google DeepMind und Google Quantum AI haben ein Paper und einen Blogbeitrag veröffentlicht, in dem Teams von Gemini-4-Agenten bekannte Quantenalgorithmen verbessern. Die Autoren melden Kostensenkungen um Faktoren zwischen 2,5 und 290 gegenüber den stärksten bisher veröffentlichten Basislinien. Das eigentlich Neue ist jedoch das Verfahren dahinter. Weil sich ressourcenintensive Quantenschaltungen weder auf klassischen Rechnern noch auf heutigen kleinen Quantenprozessoren testen lassen, muss ihre Korrektheit mathematisch bewiesen werden. Hier setzt die Arbeit an: Die Autoren berichten maschinell geprüfte Lean-Beweise der Korrektheit und Kosten relativ zu ihren Spezifikationen. Wir haben die Lean-Builds nicht selbst ausgeführt."
+    },
+    {
+      "t": "h2",
+      "x": "Die Ergebnisse im Überblick"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Fusions-Stoppvermögen: 10,9-fach niedrigere Raumzeit-Kosten (Qubit-Zahl mal T-Gatter-Zahl) gegenüber einer aus der Literatur konstruierten Basislinie; die gefundene Lösung kommt mit 4.374 logischen Qubits aus, die Basislinie mit 5.650.",
+        "Photochemie ohne Born-Oppenheimer-Näherung: 8,08-fach niedrigere Kosten für die Dynamik eines lichtempfindlichen Moleküls.",
+        "Cytochrom P450: 2,49-fach niedrigere Kosten gegenüber einer konservativ nachgebesserten Basislinie auf 481 logischen Qubits; laut Blog sinkt der Speicherbedarf auf 333 Qubits.",
+        "Parallele Grover-Suche: bis zu 1,22-fach weniger erwartete Runden beim Finden eines Ziels und bis zu 2,55-fach beim Finden aller Ziele, jeweils gegen die stärkste veröffentlichte Methode je Regime.",
+        "arcsin-Subroutine: 290-fach unter der besten veröffentlichten Implementierung; zuerst klassisch simulierbare Schaltungen, dann formal verifizierte Optimierung mit einem neuen Gatter-Set."
+      ],
+      "x": ""
+    },
+    {
+      "t": "p",
+      "x": "Alle Werte stammen aus dem Paper (arXiv 2611.09822, v2) beziehungsweise dem Blog der Unternehmen. Die Zahlen für die Fusionssimulation weichen leicht voneinander ab: Der Blog nennt 11,8-fach und 4.338 Qubits, das Paper 10,9-fach und 4.374 logische Qubits; wir geben die Paper-Werte wieder."
+    },
+    {
+      "t": "h2",
+      "x": "Warum der Verifizierer der eigentliche Fortschritt ist"
+    },
+    {
+      "t": "p",
+      "x": "Das Team hat eine Lean-Bibliothek auf Basis einer Quanten-Hoare-Logik gebaut: Eine Spezifikation beschreibt Korrektheit und Kosten als Theoreme mit Platzhaltern, die Agenten mit Kandidatenprogrammen und Beweisen füllen. Der kritische Punkt: Agenten können Dateien frei bearbeiten und damit theoretisch Theorem-Aussagen abschwächen, Definitionen ändern oder Axiome hinzufügen. Dagegen prüft ein externer Verifizierer jede Einreichung gegen die eingefrorene Spezifikation, unter anderem per Lean Comparator, und bestätigt, dass Zieltheoreme, Definitionen und erlaubte Axiome unverändert sind. Fehlerhafte Kandidaten fielen laut Paper in zwei Klassen: gebrochene Beweise und ungenaue Skript-Schätzungen, die der Verifizierer und die Konferenzkritik herausfilterten, sowie Lücken in den Spezifikationen selbst, etwa bei der Zählweise von Toffoli-Gattern, die Forschende durch Überarbeitung der Spezifikation schlossen."
+    },
+    {
+      "t": "callout",
+      "title": "Ehrliche Grenze der Autoren",
+      "x": "Selbst die verbesserten Schaltungen lägen über dem, was die ersten fehlerkorrigierten Quantencomputer voraussichtlich leisten. Die Kostensenkungen verkürzen den Weg, sie erreichen das Ziel nicht. Außerdem gilt: Agenten können nicht über die Spezifikation hinaus optimieren; die Wahl der Spezifikation bleibt menschliche Arbeit."
+    },
+    {
+      "t": "h2",
+      "x": "Wie die Agenten zusammenarbeiteten"
+    },
+    {
+      "t": "p",
+      "x": "Pro Problem arbeiteten unabhängige Agententeams, deren interne Organisation frei gewählt war; festgelegt waren nur Spezifikation, Verifizierer und Ablauf. Ergebnisse wanderten erst nach erfolgreicher Lean-Prüfung in ein gemeinsames Wiki, das beste verifizierte Lösungen, wiederverwendbare Lemmata und notierte Sackgassen hielt. Alle vier Stunden trafen sich Agenten der Teams zu einer virtuellen Konferenz, auf der unbewiesene Vorschläge und Kritik ausgetauscht wurden. Der Anteil der teamübergreifenden Ideen war erheblich: Gemittelt über die drei wissenschaftlichen Anwendungen stammten 61 Prozent der Kostenreduktion aus dem eigenen Team, 15 Prozent aus Wiki-Beiträgen und 24 Prozent aus Konferenzaustausch; bei Cytochrome P450 lag der teamübergreifende Anteil bei 63 Prozent. Der größte Einzelsprung (minus 34 Prozent) begann als Konferenzvorschlag eines Teams, den ein anderes verfeinerte und bewies."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Hier geht es nicht um einen einzelnen berühmten Satz, sondern um einen Suchprozess über neue Algorithmen, bei dem klassisches Testen prinzipiell ausfällt. Die Lean-Bibliothek, die Problemspezifikationen und die verifizierten Lösungen sollen quelloffen veröffentlicht werden; im zugehörigen Repository google-deepmind/formal-quantum-computation ist der Code bereits angelegt. Die menschliche Leistung verschiebt sich damit vom Schaltungsentwurf zur Spezifikation und Interpretation, und genau dort liegt auch die neue Fehlerquelle: Eine schlecht gewählte Spezifikation begrenzt, was Agenten überhaupt finden können."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Finding faster quantum algorithms with agents and formal verification",
+      "publisher": "Google DeepMind",
+      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+      "accessed": "2026-11-24"
+    },
+    {
+      "title": "Discovering formally verified quantum programs with AI (arXiv 2611.09822v2)",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2611.09822v2",
+      "accessed": "2026-11-24"
+    },
+    {
+      "title": "google-deepmind/formal-quantum-computation (Repository)",
+      "publisher": "GitHub",
+      "url": "https://github.com/google-deepmind/formal-quantum-computation",
+      "accessed": "2026-11-24"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sind das jetzt Quantenvorteile auf echter Hardware?",
+      "a": "Nein. Es sind algorithmische Kostensenkungen mit maschinell geprüften Beweisen. Die Autoren schreiben selbst, dass selbst die verbesserten Simulationen mehr Ressourcen bräuchten, als frühe fehlerkorrigierte Quantencomputer voraussichtlich bieten."
+    },
+    {
+      "q": "Warum reicht Testen nicht aus?",
+      "a": "Ressourcenintensive Quantenschaltungen lassen sich weder auf klassischen Rechnern vollständig simulieren noch auf heutigen Quantenprozessoren ausführen. Korrektheit und Kosten müssen deshalb mathematisch bewiesen werden; genau das leistet die Lean-Formalierung."
+    },
+    {
+      "q": "Wie wird verhindert, dass Agenten schummeln?",
+      "a": "Ein externer Verifizierer prüft jede Einreichung gegen eine eingefrorene Spezifikation per Lean Comparator: Theoreme, Definitionen und erlaubte Axiome müssen unverändert bleiben. Lücken in den Spezifikationen selbst wurden nach Entdeckung von den Forschenden geschlossen."
+    }
+  ],
+  "related": [
+    "claude-grh-beweis-lean-alpoege-riemann",
+    "masullo-grh-crowd-formalisierung-lean",
+    "lean-mathlib-zertifizieren-grh-beweis-alpoege"
+  ]
+}

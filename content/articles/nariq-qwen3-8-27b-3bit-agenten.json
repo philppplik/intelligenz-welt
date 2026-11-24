@@ -1,0 +1,119 @@
+{
+  "slug": "nariq-qwen3-8-27b-3bit-agenten",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "NariQ: Qwen3.8-27B als 10-GB-Datei, auf Agentenaufgaben laut Autor auf BF16-Niveau",
+  "dek": "Nari Labs hat trellis-codierte GGUF-Quantisierungen von Qwen3.8-27B mit 3, 2,5 und 2 Bit pro Gewicht veröffentlicht, kalibriert auf echten Coding-Agenten-Traces. Voraussetzung ist vorerst ein eigener llama.cpp-Fork.",
+  "published": "2026-11-24T09:06:42+01:00",
+  "modified": "2026-11-24T09:06:42+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "NariQ",
+    "Qwen3.8",
+    "Quantisierung",
+    "GGUF",
+    "Lokale Modelle"
+  ],
+  "key_takeaways": [
+    "NariQ v1 bringt Qwen3.8-27B als GGUF mit 3,0, 2,5 und 2,0 Bit pro Gewicht: 10,12 GB, 8,44 GB und 6,75 GB gegenüber 53,8 GB in BF16.",
+    "Nach den eigenen Messungen des Autors erreichen die 3-Bit- und 2,5-Bit-Dateien BF16-Niveau auf den Langzeit-Agentenbenchmarks DeepSWE v1.1 und Terminal-Bench 2.1; die 2-Bit-Datei liegt deutlich darunter.",
+    "In der Kalibrierungsverlustfunktion zählen nur vom BF16-Modell erzeugte Tokens als Vorhersageziele. Werkzeug-Ausgaben bleiben im Kontext enthalten.",
+    "Die Dateien laufen vorerst nur mit dem llama.cpp-Fork von Nari Labs; Standard-llama.cpp, Ollama und LM Studio können die neuen Tensortypen noch nicht laden.",
+    "Optimiert ist der Fork für SM120 (etwa RTX PRO 6000); Ampere, Ada, Hopper und Apple-GPUs sind derzeit langsamer als vergleichbare GGUFs, AMD und Intel werden nicht unterstützt."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: ein großer leuchtender Quader, der in drei kleinere, gleich helle Quader verdichtet wird, daneben ein winziger vierteltransparenter",
+    "caption": "Symbolbild zur Quantisierung, keine Messgrafik. Die behauptete Leistungsgleichheit gilt nur für die genannten Autorentests und Varianten. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Nari Labs hat mit NariQ trellis-codierte GGUF-Quantisierungen von Qwen3.8-27B veröffentlicht: 3,0 Bit pro Gewicht als 10,12-GB-Datei, 2,5 Bit mit 8,44 GB und 2,0 Bit mit 6,75 GB, gegenüber 53,8 GB für das BF16-Original. Zielgruppe sind lokale Coding-Agenten auf Consumer-GPUs mit 8 bis 32 GB Speicher. Die Dateien stehen auf Hugging Face, die Lizenz erbt Apache-2.0 vom Basismodell. Nach dem Modellblatt handelt es sich um ein Solo-Projekt von Doyeob Kim."
+    },
+    {
+      "t": "h2",
+      "x": "Was der Autor misst"
+    },
+    {
+      "t": "p",
+      "x": "Die zentralen Zahlen stammen vom Autor selbst und sind nicht unabhängig reproduziert. Auf DeepSWE v1.1 (113 Aufgaben, drei Durchläufe, mittleres pass@1, Claude Code CLI als Harness mit 262.144 Token Kontext) liegt BF16 bei 39,8, die 3-Bit-Datei bei 41,0, die 2,5-Bit-Datei bei 41,9 und die 2-Bit-Datei bei 28,6. Auf Terminal-Bench 2.1 (82 Aufgaben, drei Versuche) lauten die Werte 62,6, 63,8, 60,2 und 52,4. Die mittlere Quote bestandener neuer Tests pro Aufgabe liegt für BF16, 3 Bit und 2,5 Bit zwischen 82,9 und 83,2 Prozent, für 2 Bit bei 77,2 Prozent. Ein BF16-Verifizierer-Timeout in Runde drei wurde als null gewertet; das nennt das Modellblatt offen. Im Tech Report (arXiv 2611.26157) bezeichnet der Autor die 3- und 2,5-Bit-Dateien als die nach seinem Wissen ersten Quantisierungen bei oder unter 3 Bit pro Gewicht, die auf Langzeit-Agentenaufgaben mit ihrer Vollpräzisions-Version gleichziehen; das ist eine Selbsteinschätzung des Papers."
+    },
+    {
+      "t": "h2",
+      "x": "Warum die Kalibrierung der Knackpunkt ist"
+    },
+    {
+      "t": "p",
+      "x": "Übliche Niedrig-Bit-Verfahren kalibrieren auf kurzen Webtext-Abschnitten und werden an Perplexity gemessen. NariQ ändert, welche Tokens die Verlustfunktion zählt: Nur die vom BF16-Modell selbst erzeugten Tokens zählen als Vorhersageziele der Kalibrierungsverlustfunktion. Werkzeug-Ausgaben und Dateiinhalte bleiben als Kontext erhalten; sie werden nicht aus der Eingabe entfernt. Das Paper argumentiert, dass bisherige Quantisierungen von Qwen3.8-27B unter 4 Bit auf kurzen Aufgaben wie AIME nahezu BF16-Niveau hielten, auf DeepSWE aber deutlich zurückfielen; die Agentenkalibrierung soll genau diese Lücke schließen."
+    },
+    {
+      "t": "h2",
+      "x": "Praktische Hürden"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Laufzeit: Die Dateien laden vorerst nur mit dem llama.cpp-Fork von Nari Labs. Standard-llama.cpp, Ollama und LM Studio unterstützen die neuen Tensortypen noch nicht; ein Merge in Upstream ist das erklärte Ziel.",
+        "Hardware: Optimiert ist der Fork für SM120 wie die RTX PRO 6000. Ampere-, Ada- und Hopper-GPUs sowie Apple-M-Serie sind derzeit langsamer als vergleichbare GGUFs; AMD- und Intel-GPUs werden nicht unterstützt. Getestet sind RTX PRO 6000, H100, L4 und A10.",
+        "Geschwindigkeit: Auf einer RTX PRO 6000 mit 4K Kontext misst der Autor 88,9 Token pro Sekunde für die 3-Bit-Datei gegenüber 94,7 für Unsloths UD-IQ3_XXS; auf einem M3 Pro mit 18 GB etwa 3,8 Token pro Sekunde.",
+        "Nicht quantisiert: Der Vision-Turm bleibt BF16, das MTP-Modul fehlt noch, KV-Cache und Aktivierungen bleiben vorerst in BF16; das ist als nächster Schritt angekündigt."
+      ],
+      "x": ""
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung der Zahlen",
+      "x": "Alle Benchmark- und Geschwindigkeitswerte stammen vom Autor, einem Einzelprojekt ohne unabhängige Reproduktion. Die Vergleiche mit Unsloth-Dateien laufen teils über unterschiedliche Test-Harnesses; das Modellblatt weist selbst darauf hin, jede Datei nur mit der BF16-Linie ihres eigenen Harness zu vergleichen."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Für lokale Coding-Agenten wäre ein fähiges 27B-Modell in einer 10-GB-Datei ein echter Schritt: Die Dateigröße ist dabei nicht mit dem gesamten GPU-Speicherbedarf gleichzusetzen. Mit BF16-Vision-Projektor nennt die Modellkarte für vollen 262K-Kontext rund 30GB GPU-Speicher bei 3Bit, 28GB bei 2,5Bit und 27GB bei 2Bit. Auf 24GB passen laut Autor ungefähr 135K, 160K beziehungsweise 184K Kontext; für Vision kommt eine separate 0,93GB-Projektordatei hinzu. Die Voraussetzungen sind allerdings konkret: ein spezieller Open-Source-Fork statt Standard-Laufzeit, eingeschränkte Hardwareunterstützung und Zahlen aus einer Hand. Wer heute lokale Agenten betreibt, sollte NariQ als vielversprechende, aber noch junge Option mit eigenem Ökosystem einordnen und die nächsten Wochen abwarten, ob Upstream-llama.cpp das Format übernimmt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "nari-labs/Qwen3.8-27B-NariQ-GGUF (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+      "accessed": "2026-11-24"
+    },
+    {
+      "title": "NariQ: Sub-3-Bit Quantization for Long-Horizon Agentic Tasks (arXiv 2611.26157)",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2611.26157",
+      "accessed": "2026-11-24"
+    },
+    {
+      "title": "nari-labs/nari-llama.cpp (Fork)",
+      "publisher": "GitHub",
+      "url": "https://github.com/nari-labs/nari-llama.cpp",
+      "accessed": "2026-11-24"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Läuft NariQ mit Ollama oder LM Studio?",
+      "a": "Nein, vorerst nicht. Die Dateien brauchen den llama.cpp-Fork von Nari Labs, weil Standard-llama.cpp, Ollama und LM Studio die neuen Tensortypen noch nicht laden können. Ein Upstream-Merge ist erklärtes Ziel."
+    },
+    {
+      "q": "Welche Datei sollte ich nehmen?",
+      "a": "Der Autor empfiehlt die 3,0-Bit-Datei (10,12 GB) als Standard und 2,5 Bit (8,44 GB) bei knappem Speicher; beide lägen nach seinen Messungen auf Agentenaufgaben auf BF16-Niveau. Die 2-Bit-Datei schneidet deutlich schwächer ab."
+    },
+    {
+      "q": "Sind die BF16-Gleichstände unabhängig bestätigt?",
+      "a": "Nein. Alle Werte stammen vom Autor. Der Anspruch im Tech Report, dies seien die ersten Quantisierungen bei oder unter 3 Bit pro Gewicht auf BF16-Niveau für Langzeit-Agentenaufgaben, ist eine Selbsteinschätzung."
+    }
+  ],
+  "related": [
+    "localcode-lokale-coding-agenten-mac",
+    "lookatmyquant-inkling-2-mini-quant",
+    "clover-35b-a3b-diffusion-code-agenten"
+  ]
+}

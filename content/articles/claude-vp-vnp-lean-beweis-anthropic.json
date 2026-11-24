@@ -1,0 +1,103 @@
+{
+  "slug": "claude-vp-vnp-lean-beweis-anthropic",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "Anthropics VP-VNP-Claim: internes Claude-Modell liefert Paper und Lean-Artefakt",
+  "dek": "Anthropic hat Paper und Lean-4-Formalierung eines internen Claude-Modells veröffentlicht, das VP ungleich VNP über jedem Körper behauptet. Kein menschlicher Mathematiker hat den Beweis bislang geprüft; P vs NP bleibt davon unberührt.",
+  "published": "2026-11-24T09:06:42+01:00",
+  "modified": "2026-11-24T09:06:42+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Anthropic",
+    "Claude",
+    "Lean",
+    "Komplexitätstheorie",
+    "Formale Verifikation"
+  ],
+  "key_takeaways": [
+    "Anthropic hat im Repository formal-math einen Ordner vp-vnp veröffentlicht: ein Paper und eine Lean-4-Formalisierung, beide nach eigenen Angaben von KI-Modellen geschrieben.",
+    "Die Behauptung: Für jeden Körper brauchen Schaltkreise für das Hamiltonkreis-Polynom und für die Permanente außerhalb Charakteristik 2 mehr als m hoch (c mal (log m) hoch 1/3) Gatter für alle großen m, also ist VP eine echte Teilmenge von VNP.",
+    "Das Repository betont selbst: Kein menschlicher Mathematiker hat den Beweis geprüft, und das Ergebnis entscheidet P vs NP nicht.",
+    "Lean prüft die Beweise, aber keine Maschine prüft, ob die Datei Statement.lean das formalisiert, was das Paper behauptet; Anhang Q des Papers bildet die Aussagen ab und nennt Abweichungen.",
+    "Die CI gleicht die Aussagen per Comparator mit einer separaten Datei ab und prüft die Beweise zusätzlich mit einem zweiten, unabhängig geschriebenen Kernel namens nanoda."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: ein dunkler, verzweigter Beweisbaum aus leuchtenden Linien mit zwei klar getrennten Ästen, die sich nicht mehr treffen",
+    "caption": "Symbolbild zum Beweisclaim: zwei getrennte Äste für VP und VNP. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat im GitHub-Repository formal-math einen Ordner namens vp-vnp veröffentlicht. Darin liegen ein Paper mit dem Titel „VP ≠ VNP over every field“ und eine dazugehörige Formalisierung in Lean 4. Als Autor des Papers ist „Claude (Anthropic)“ angegeben. Nach Angaben des Repositories wurde das Ergebnis von einem internen Forschungs-Claude-Modell entdeckt; Paper und Lean-Code seien beide von KI-Modellen geschrieben worden, und kein menschlicher Mathematiker habe den Beweis bislang geprüft."
+    },
+    {
+      "t": "h2",
+      "x": "Was behauptet wird"
+    },
+    {
+      "t": "p",
+      "x": "VP und VNP sind Klassen der algebraischen Komplexitätstheorie nach Leslie Valiant, gewissermaßen das algebraische Gegenstück zu P und NP. Die im Repository formulierte Behauptung: Für jeden Körper benötigen Schaltkreise, die das Hamiltonkreis-Polynom berechnen, und Schaltkreise für die Permanente außerhalb Charakteristik 2 mehr als m hoch (c mal (log m) hoch 1/3) Gatter für alle hinreichend großen m. Dieselbe Schranke soll für approximierende Schaltkreise gelten. Nach Darstellung des Repositories folgt daraus, dass VP eine echte Teilmenge von VNP ist und VNP nicht im Abschluss von VP liegt. Das Repository stellt ausdrücklich klar, dass dies P vs NP nicht entscheidet."
+    },
+    {
+      "t": "h2",
+      "x": "Wie die Prüfung ausgelegt ist"
+    },
+    {
+      "t": "p",
+      "x": "Die Datei Statement.lean formuliert die genannten Aussagen und importiert ausschließlich Mathlib. Wer die Beweise nachprüfen will, soll nach Anleitung des Repositories den Lean-Build laufen lassen; sorry-Warnungen dürfen dabei nur aus der Datei Challenge.lean kommen, die die Theoreme ohne Beweise für eine weitergehende Prüfung bereithält. Ein Axiomen-Check soll neben den Standardaxiomen propext, Classical.choice und Quot.sound keine weiteren Axiome melden. Die CI des Repositories führt den volleren Check aus: Ein Comparator gleicht die Aussagen mit Challenge.lean ab, und ein zweiter, unabhängig geschriebener Kernel namens nanoda prüft die Beweise zusätzlich."
+    },
+    {
+      "t": "callout",
+      "title": "Die wichtigste Einschränkung steht im Repository selbst",
+      "x": "Lean prüft die Beweise, aber keine Maschine prüft, ob Statement.lean das sagt, was das Paper behauptet. Anhang Q des Papers bildet die nummerierten Aussagen des Papers auf ihre Lean-Gegenstücke ab (Tabelle 3) und benennt Stellen, an denen sie voneinander abweichen. Ob die formalisierte Aussage mit dem gemeinten Satz übereinstimmt, bleibt eine Aufgabe für menschliche Prüfer."
+    },
+    {
+      "t": "h2",
+      "x": "Wie einzuordnen"
+    },
+    {
+      "t": "p",
+      "x": "Der Ordner ist ausdrücklich als Forschungsartefakt gekennzeichnet: nicht gepflegt, keine Beiträge von außen. Das relevante Muster ist: Modelle schlagen vor, ein Beweisprüfer prüft formale Ableitungen. Offen bleibt, ob die formale Aussage dem gemeinten Satz entspricht. Beim VP-VNP-Artefakt beschreibt das Repository selbst die fehlende menschliche Prüfung. Es sollte daher als ungeprüfter Claim des Herstellers behandelt werden."
+    },
+    {
+      "t": "p",
+      "x": "Die Kombination aus sorry-freiem Build außerhalb der Vergleichsaussagen, eingeschränkter Axiomenliste, Statement-Vergleich und Zweit-Kernel bietet mehrere Prüfschichten. Sie ersetzt keine inhaltliche Prüfung durch Komplexitätstheoretiker und bestätigt nicht automatisch, dass die gewählte Formalisierung die intendierte mathematische Aussage trifft."
+    }
+  ],
+  "sources": [
+    {
+      "title": "vp-vnp/README.md (anthropics/formal-math)",
+      "publisher": "GitHub",
+      "url": "https://github.com/anthropics/formal-math/blob/main/vp-vnp/README.md",
+      "accessed": "2026-11-24"
+    },
+    {
+      "title": "anthropics/formal-math (Repository)",
+      "publisher": "GitHub",
+      "url": "https://github.com/anthropics/formal-math/",
+      "accessed": "2026-11-24"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist VP ungleich VNP damit bewiesen?",
+      "a": "Noch nicht im üblichen Sinn. Das Repository beschreibt einen maschinell geprüften Lean-Beweis; wir haben den Build nicht selbst ausgeführt, aber kein menschlicher Mathematiker hat ihn nach Angaben des Repositories geprüft, und Lean kontrolliert nicht, ob die formalisierte Aussage dem gemeinten Satz entspricht. Bis eine unabhängige fachliche Prüfung vorliegt, bleibt es ein Claim."
+    },
+    {
+      "q": "Entscheidet das P vs NP?",
+      "a": "Nein. Das Repository sagt das ausdrücklich. VP und VNP sind algebraische Klassen; eine Trennung dort zieht keine Aussage über P und NP nach sich."
+    },
+    {
+      "q": "Wer hat das Paper geschrieben?",
+      "a": "Als Autor ist „Claude (Anthropic)“ angegeben. Nach Angaben des Repositories wurden Paper und Lean-Code von KI-Modellen geschrieben; das Ergebnis stammt von einem internen Forschungs-Claude-Modell."
+    }
+  ],
+  "related": [
+    "masullo-grh-crowd-formalisierung-lean",
+    "claude-grh-beweis-lean-alpoege-riemann",
+    "lean-mathlib-zertifizieren-grh-beweis-alpoege"
+  ]
+}

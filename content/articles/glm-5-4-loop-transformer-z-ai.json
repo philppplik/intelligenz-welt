@@ -1,0 +1,93 @@
+{
+  "slug": "glm-5-4-loop-transformer-z-ai",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "GLM-5.4: Z.ai baut sein Flaggschiff als Loop Transformer",
+  "dek": "Z.ai hat GLM-5.4 vorgestellt, sein erstes Flaggschiff mit Loop-Transformer-Architektur: 28 Schichten laufen zweimal durch, auf 750B-Skala. Der Hersteller stellt die Leistung in die Nähe von Modellen mit zwei bis drei Billionen Parametern.",
+  "published": "2026-11-24T09:06:42+01:00",
+  "modified": "2026-11-24T09:06:42+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Z.ai",
+    "GLM-5.4",
+    "Loop Transformer",
+    "Modellarchitektur",
+    "Coding"
+  ],
+  "key_takeaways": [
+    "GLM-5.4 führt einen Block von 28 Schichten des vortrainierten GLM-5-Basismodells zweimal aus; Z.ai spricht von Intelligenz auf dem Niveau von Modellen mit zwei bis drei Billionen Parametern (Herstellerangabe).",
+    "Statt von Grund auf neu zu trainieren, wurde ein bestehendes Basismodell per Weitertraining in einen Loop Transformer umgewandelt; Z.ai nennt das den praktischen Hebel gegenüber Neutrainings.",
+    "Drei Änderungen sollen laut Z.ai das Looping auf 750B-Skala effizienter machen: pro Token gesteuerte progressive Updates, ein hybrider KV-Cache und die Wiederverwendung der Sparse-Attention-Indizes aus dem ersten Durchlauf.",
+    "Z.ai vergleicht ein 30B-Modell nach 200K-Langkontext-SFT mit aktiviertem Thinking-Modus und etwa zehn Prozent mehr Trainingsrechenaufwand. Die Loop-Variante gewinnt in diesem Autorentest; die Ausgabelänge sinkt auf mehreren Benchmarks um 10 bis 14 Prozent.",
+    "Verfügbar ist GLM-5.4 zunächst im GLM Coding Plan; API und offene Gewichte sollen folgen, Letztere erst nach einer Sicherheitshärtung (Herstellerangabe)."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: ein leuchtendes Band aus Datenströmen, das zweimal durch denselben Ring aus Schichten läuft und dabei heller wird",
+    "caption": "Symbolbild zur Loop-Architektur: derselbe Schichtblock wird zweimal durchlaufen. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Z.ai hat GLM-5.4 angekündigt, sein erstes Flaggschiffmodell auf Basis einer Loop-Transformer-Architektur. Bei einem Loop Transformer durchläuft eine Gruppe gewichtsgeteilter Schichten mehrere Iterationen, statt wie im Standard-Transformer genau einmal pro Vorwärtslauf. Die Idee ist nicht neu; Z.ai verweist selbst auf den Universal Transformer von 2018 und neuere Arbeiten zu wiederkehrender Tiefe. Das Neue ist nach Darstellung des Unternehmens der Weg: Statt ein gelooptes Modell von Grund auf zu trainieren, wurde das vortrainierte GLM-5-Basismodell durch Weitertraining umgewandelt, was die Intelligenzgrenze mit vergleichsweise kleinem zusätzlichem Rechenaufwand anheben soll."
+    },
+    {
+      "t": "h2",
+      "x": "Was auf 750B-Skala geändert wurde"
+    },
+    {
+      "t": "p",
+      "x": "GLM-5.4 loopt 28 Schichten des Basismodells für zwei Iterationen. Drei Modifikationen nennt der Hersteller als Schlüssel: Erstens pro Token unabhängige Gates, die steuern, wie viel eines Kandidaten-Updates pro Iteration in den Residualstrom geschrieben wird. Nach dem Training hätten diese Gates eine Arbeitsteilung entwickelt: Der erste Durchlauf schreibe konservativ und baue globalen Kontext, der zweite öffne die Gates und verfeinere. Zweitens ein hybrider KV-Cache: Die zweite Schleife nutzt die Sparse-KV-Auswahl des ersten Durchlaufs wieder und hält nur ihre eigenen neuen KV-Einträge in einem gleitenden Fenster. Eine zusätzliche Schleife koste damit nur ein Schiebefenster an KV-Cache statt eines vollen Kontext-Caches, was bei Kontextlängen von einer Million Token den Kostenzuwachs gegenüber GLM-5.3 begrenzen soll. Drittens werden die Sparse-Attention-Indizes des ersten Durchlaufs direkt wiederverwendet, was in den Experimenten des Unternehmens nahezu identisch mit einer Neuberechnung abgeschnitten habe."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Ablation zeigt"
+    },
+    {
+      "t": "p",
+      "x": "Vor dem Commitment auf Flaggschiffgröße wurde die Architektur nach Angaben von Z.ai schrittweise auf 1B-, 4B-, 30B- und 750B-Basismodellen validiert. In einer kontrollierten Iso-Parameter-Ablation auf einem 30B-Modell mit identischer Architektur und nur etwa zehn Prozent mehr Trainingsrechenaufwand wurde nach 200K-Langkontext-SFT bei aktiviertem Thinking-Modus evaluiert. Dabei schnitt die geloopte Version besser ab: Die größten Zuwächse zeigten sich bei Mathematik, wissenschaftlichem Schlussfolgern und Langkontext-Aufgaben. Gleichzeitig sank die durchschnittliche Ausgabelänge auf Benchmarks wie GPQA-Diamond und MMLU-Pro um zehn bis vierzehn Prozent, weil ein Teil des Schlussfolgerns in die implizite Tiefe der Schleife verlagert werde. Alle diese Werte stammen vom Hersteller; eine unabhängige Reproduktion liegt nicht vor."
+    },
+    {
+      "t": "callout",
+      "title": "Herstellerangaben einordnen",
+      "x": "Die Aussage, GLM-5.4 erreiche Intelligenz auf dem Niveau von Modellen mit zwei bis drei Billionen Parametern, ist eine Angabe von Z.ai ohne unabhängige Bestätigung. Auch die Durchsatzwerte, bis zu 200 Token pro Sekunde außerhalb der Spitzenlast und 70 bis 80 Token pro Sekunde unter Last, sind Herstellerangaben für die eigene Infrastruktur."
+    },
+    {
+      "t": "h2",
+      "x": "Verfügbarkeit und offene Punkte"
+    },
+    {
+      "t": "p",
+      "x": "GLM-5.4 ist ab sofort im GLM Coding Plan verfügbar; die API soll laut Ankündigung in Kürze folgen, offene Gewichte nach einer abschließenden Sicherheitshärtung. Als Schwäche nennt der Hersteller selbst sogenannte Marathon-Denkschleifen, in denen das Modell zu lange reflektiert, was die Genauigkeit jenseits seiner Parameterzahl aber weiter verbessere. Der Umwandlungspfad ist ein interessanter Forschungsansatz. Einen allgemeinen Kostenvorteil gegenüber Neutraining oder die Übertragbarkeit auf andere Basismodelle belegt diese einzelne Herstellerveröffentlichung jedoch nicht."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+      "publisher": "Z.ai",
+      "url": "https://z.ai/blog/glm-5.4",
+      "accessed": "2026-11-24"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist ein Loop Transformer?",
+      "a": "Ein Transformer, bei dem ein Block gewichtsgeteilter Schichten mehrfach durchlaufen wird statt nur einmal. Das Modell gewinnt effektive Tiefe ohne zusätzliche Parameter. GLM-5.4 führt 28 Schichten zweimal aus."
+    },
+    {
+      "q": "Ist GLM-5.4 open source?",
+      "a": "Noch nicht. Z.ai kündigt an, die Gewichte nach einer Sicherheitshärtung verantwortungsvoll zu öffnen. Verfügbar ist das Modell zunächst im GLM Coding Plan, eine API soll folgen."
+    },
+    {
+      "q": "Wie belastbar sind die Leistungsangaben?",
+      "a": "Alle genannten Werte stammen aus dem Blog des Herstellers, inklusive der 30B-Ablation und der Durchsatzwerte. Eine unabhängige Reproduktion wurde für diesen Artikel nicht geprüft."
+    }
+  ],
+  "related": [
+    "lookatmyquant-inkling-2-mini-quant",
+    "clover-35b-a3b-diffusion-code-agenten",
+    "openai-pachocki-perplexity-loss-kurve-grenzen"
+  ]
+}

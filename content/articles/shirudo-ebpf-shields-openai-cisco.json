@@ -1,0 +1,113 @@
+{
+  "slug": "shirudo-ebpf-shields-openai-cisco",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Shirudo: OpenAI und Cisco öffnen Laufzeit für eBPF-Schutzschilde",
+  "dek": "OpenAI und Cisco haben Shirudo als Open-Source-Laufzeit veröffentlicht: Agenten schreiben eBPF-Schilde, die einen verwundbaren Pfad auf einem laufenden Linux-Dienst blockieren, bis der echte Patch ausgerollt ist.",
+  "published": "2026-11-24T09:06:42+01:00",
+  "modified": "2026-11-24T09:06:42+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Shirudo",
+    "eBPF",
+    "OpenAI",
+    "Cisco",
+    "Linux-Sicherheit"
+  ],
+  "key_takeaways": [
+    "Shirudo ist eine Open-Source-Laufzeit von OpenAI und Cisco: Signierte eBPF-Schilde blockieren einen verwundbaren Codepfad auf einem laufenden Linux-System, ohne Neustart und ohne auf den endgültigen Patch zu warten.",
+    "In einem kontrollierten Test blockierte ein von Codex erzeugter Schild einen Java4Shell-Exploit-Versuch gegen einen laufenden Elasticsearch-Dienst; der Dienst lief weiter (Herstellerangabe).",
+    "Vier Säulen: Live-Schutz mit Beobachten-vor-Durchsetzen, Verteidigung in Maschinengeschwindigkeit mit menschlicher Freigabe, kryptografisch signierte Schilde plus Kernel-eBPF-Verifizierer, TPM-gestützte Nachweisführung.",
+    "Das Repository ist Pre-Release: Produktivziele brauchen einen Kernel mit Signed-Loader-ABI, die Shirudo-Kernel-Patches und ein TPM 2.0; ein VM-Quickstart nutzt ein Software-TPM.",
+    "Lizenz: BSD 2-Clause, die BPF-Programme dual unter BSD und GPL; Ziel ist, getestete Schilde zeitgleich mit Schwachstellen-Meldungen bereitzustellen."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: ein leuchtendes, transparentes Schutzschild aus Sechsecken, das sich vor einen dunklen Serverblock schiebt",
+    "caption": "Symbolbild: Ein Schild legt sich um einen laufenden Dienst. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI und Cisco haben Shirudo veröffentlicht, eine Open-Source-Laufzeit, die laufende Linux-Systeme schützen soll, während ein echter Patch noch getestet und ausgerollt wird. Der Name kommt aus dem Japanischen und bedeutet Schild. Der Ausgangspunkt: Zwischen dem Bekanntwerden einer Schwachstelle und dem flächendeckenden Patch vergehen oft Tage bis Wochen, und einen betroffenen Dienst komplett abzuschalten ist in der Praxis selten eine Option, weil Exploit und legitimer Aufruf häufig dieselbe Systemoperation nutzen."
+    },
+    {
+      "t": "h2",
+      "x": "Wie ein Schild wirkt"
+    },
+    {
+      "t": "p",
+      "x": "Shirudo nutzt eBPF, eine Linux-Technik, mit der kleine Programme an definierten Punkten im Betriebssystem laufen. Ein Schild ist ein solches temporäres Schutzprogramm: Es blockiert gezielt das Verhalten, das eine Schwachstelle ausnutzt, und lässt legitime Anfragen durch. In einem kontrollierten Test nach Herstellerangabe fügte ein von Codex erzeugter Schild eine Eingabeprüfung in Javas Base64-Decoder ein, wurde an einen laufenden Elasticsearch-Prozess angehängt und wies den bösartigen Input eines Java4Shell-Exploit-Versuchs ab, ohne dass Elasticsearch neu gestartet werden musste. Relevant ist hier die Verteidigungsseite: Der Schild prüft die Eingabe, bevor der verwundbare Pfad erreicht wird; die genaue Angriffskette spielt für das Verständnis keine Rolle."
+    },
+    {
+      "t": "h2",
+      "x": "Vier Säulen des Designs"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Live-Schutz: Schilde blockieren verwundbare Codepfade ohne Neustart. Ein Beobachtungsmodus zeigt vor dem Durchsetzen, wie sich ein Schild auf die Anwendung auswirken würde.",
+        "Verteidigung in Maschinengeschwindigkeit: Agenten untersuchen Schwachstellen, schreiben Schilde und validieren sie gegen Exploits und reale Last; Sicherheitsteams entscheiden, was ausgerollt wird.",
+        "Vertrauenswürdige Auslieferung: Schilde sind kryptografisch signiert und werden vor dem Laden verifiziert; der eBPF-Verifizierer des Kernels prüft die Programme gegen seine Sicherheitsregeln.",
+        "Hardware-gestützte Nachweise: Ein Trusted Platform Module (TPM) erzeugt eine überprüfbare Aufzeichnung darüber, welche Schutzmaßnahmen geladen oder entfernt wurden."
+      ],
+      "x": ""
+    },
+    {
+      "t": "h2",
+      "x": "Was im Repository steht"
+    },
+    {
+      "t": "p",
+      "x": "Das Repository shirudo-dev/shirudo beschreibt die Plattform technisch weitergehend als der Ankündigungsblog: Nach der Initialisierung beim Systemstart beschränkt sie das Laden von BPF-Programmen aus dem Userspace auf signierte Lader. Operatoren liefern signierte Mikropatches, upatches genannt, und verifizieren den gemessenen Upatch-Zustand eines Ziels mit TPM-signierten Nachweisen. Ein Paket namens kernel-obs deckt Beobachtung von Prozessausführungen, Netzwerkaktivität und Rechteänderungen ab; Java-Upatches können Anwendungscode absichern. Der Operator baut und signiert Pakete und schiebt sie in eine OCI-Registry; das Ziel zieht sie, der Kernel prüft die Signatur, und das TPM protokolliert die Änderung. Die Dokumentation enthält ein explizites Bedrohungsmodell, das benennt, wo jeder Mechanismus aufhört."
+    },
+    {
+      "t": "callout",
+      "title": "Pre-Release mit harten Systemanforderungen",
+      "x": "Das Projekt ist als Pre-Release gekennzeichnet. Produktivziele benötigen einen Linux-Kernel mit der Signed-Loader-ABI und den Shirudo-Kernel-Patches sowie ein TPM 2.0. Der Quickstart nutzt eine VM mit Software-TPM. Wer Shirudo heute ausprobiert, evaluiert eine Entwicklungsversion, keine fertige Produktionslösung."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Shirudo adressiert die Schicht „abmildern jetzt, patchen später“, die entsteht, weil KI-Modelle Schwachstellen schneller finden, als Teams patchen können. Bemerkenswert ist die konsequente Vertrauenskette: signierte Schilde, Kernel-Verifizierer, TPM-Nachweise und ein dokumentiertes Bedrohungsmodell. Dass Menschen die Ausrollung freigeben, bleibt ausdrücklich Teil des Designs. Die Lizenz ist BSD 2-Clause, die BPF-Programme dual unter BSD und GPL; das erklärte Ziel ist, getestete Schilde zeitgleich mit Schwachstellen-Meldungen bereitzustellen, damit nicht jedes Team bei null anfängt. Ein Webinar zur Technik ist für den 15. Dezember angekündigt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenAI and Cisco introduce Shirudo",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "accessed": "2026-11-24"
+    },
+    {
+      "title": "shirudo-dev/shirudo (Repository)",
+      "publisher": "GitHub",
+      "url": "https://github.com/shirudo-dev/shirudo",
+      "accessed": "2026-11-24"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ersetzt Shirudo Patches?",
+      "a": "Nein. Ein Schild ist eine temporäre Schutzmaßnahme, die einen verwundbaren Pfad blockiert, bis der endgültige Patch getestet und ausgerollt ist. Das erklärte Ziel ist, getestete Schilde zusammen mit Schwachstellen-Meldungen zu liefern."
+    },
+    {
+      "q": "Kann ich Shirudo heute produktiv einsetzen?",
+      "a": "Das Repository ist als Pre-Release gekennzeichnet. Produktivziele brauchen einen Kernel mit Signed-Loader-ABI, die Shirudo-Kernel-Patches und ein TPM 2.0. Für den Einstieg gibt es einen VM-Quickstart mit Software-TPM."
+    },
+    {
+      "q": "Entscheiden Agenten selbstständig über den Einsatz?",
+      "a": "Nein. Agenten untersuchen Schwachstellen, schreiben und validieren Schilde; die Freigabe zum Ausrollen liegt laut Design beim Sicherheitsteam. Schilde sind signiert und werden vor dem Laden verifiziert."
+    }
+  ],
+  "related": [
+    "docker-agenten-vertrauen-sandboxing-trend",
+    "ghostscript-upload2shell-gpgme-patches",
+    "gpt-6-1-sol-hexdumps-maschinencode"
+  ]
+}

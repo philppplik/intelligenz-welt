@@ -1,0 +1,107 @@
+{
+  "slug": "claude-ship-merge-freigabe-agenten-policy",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Claude Ship: Anthropic delegiert die Merge-Freigabe an eine Policy-Datei",
+  "dek": "Mit Claude Ship (Beta) bündelt Anthropic Code Review, einen PR-Steward-Agenten und Claude Approvals: Eine Policy-Datei im Repository entscheidet, welche Pull Requests ein Agent freigeben darf und wann ein Mensch unterschreiben muss.",
+  "published": "2026-11-24T09:06:42+01:00",
+  "modified": "2026-11-24T09:06:42+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Anthropic",
+    "Claude Ship",
+    "Code Review",
+    "Agenten",
+    "Entwicklerwerkzeuge"
+  ],
+  "key_takeaways": [
+    "Claude Ship ist ab sofort in Beta für Team- und Enterprise-Pläne auf GitHub-Repositories verfügbar und bündelt Code Review (allgemein verfügbar), PR Steward (Beta) und Claude Approvals (Beta).",
+    "PR Steward behebt fehlschlagende CI-Prüfungen, Merge-Konflikte und Review-Feedback, ist aber bewusst so gebaut, dass er Pull Requests weder freigibt noch mergt.",
+    "Claude Approvals wendet eine Freigabe-Policy an, die das Team als Datei im Repository hinterlegt; Anthropic empfiehlt, mit einem reinen Beobachtungsmodus zu starten.",
+    "Abrechnung erfolgt nach Tokens: Policies, die Claudes Review nutzen, lösen auch im Beobachtungsmodus eine abgerechnete Code Review aus; Ausgabenlimits lassen sich pro Repository setzen.",
+    "Nicht verfügbar ist Claude Ship für Organisationen mit Zero Data Retention, HIPAA-Konfiguration oder kundenverwalteten Verschlüsselungsschlüsseln."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: eine leuchtende Pipeline aus Stationen, an deren Ende ein Tor mit einem Schloss-Symbol aus Lichtlinien steht",
+    "caption": "Symbolbild: Review, Fix und Freigabe als automatisierte Strecke mit kontrolliertem Tor. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat Claude Ship in Beta freigegeben, verfügbar für Team- und Enterprise-Pläne auf GitHub-Repositories. Das Paket bündelt drei Agenten: Code Review, bereits allgemein verfügbar, sowie die beiden neuen Beta-Agenten PR Steward und Claude Approvals. Zusammen führen sie einen Pull Request durch Review, Nachbesserungen und eine Freigabeentscheidung. Neu ist der /ship-Befehl in Claude Code, der eine Änderung pusht, den PR öffnet und den Prozess anstößt."
+    },
+    {
+      "t": "h2",
+      "x": "Was die drei Agenten tun"
+    },
+    {
+      "t": "p",
+      "x": "Code Review prüft Pull Requests aus mehreren Blickwinkeln, verifiziert Fundstellen adversarial, kategorisiert sie und postet sie im PR; die Review-Tiefe lässt sich pro Repository auf Quick, Standard oder Deep stellen. PR Steward springt bei fehlschlagender CI, Merge-Konflikten und Review-Feedback ein und dokumentiert nach jedem Push, was geändert wurde und wie man es rückgängig macht; über @claude-Kommentare lässt sich die Arbeit steuern, mit @claude stop zieht sich der Agent zurück. Entscheidend: PR Steward ist nach Anthropics Angaben bewusst so gebaut, dass er Pull Requests weder freigibt noch mergt. Claude Approvals schließlich wendet eine Freigabe-Policy an, die das Team in natürlicher Sprache als Datei ins Repository legt, vergleichbar einer klügeren CODEOWNERS-Datei. Die Policy kann Code-Review-Funde oder eigene Klassifikatoren einbeziehen und festlegen, welche Änderungen wie viele menschliche Freigaben brauchen."
+    },
+    {
+      "t": "h2",
+      "x": "Die internen Zahlen"
+    },
+    {
+      "t": "p",
+      "x": "Als Beleg nennt Anthropic eigene Erfahrungen: Im Claude-Code-Team, wo Claude den Großteil des Codes schreibe, hätten sich die gemergten Pull Requests von Juni bis September mehr als verdoppelt, während der Anteil zurückgedrehter PRs um mehr als 40 Prozent gefallen sei. Das ist eine interne Angabe ohne externe Prüfung und aus einem Umfeld, in dem das Werkzeug zugleich den Code schreibt. Auf der Produktseite berichten die Pilotkunden TELUS und Carvana von weniger Zeit in Review-Schleifen bei weiterhin menschlicher Kontrolle."
+    },
+    {
+      "t": "callout",
+      "title": "Kosten und Ausschlüsse beachten",
+      "x": "Claude Ship wird nach Tokens abgerechnet; die Höhe hängt von PR-Zahl, -Größe, Review-Tiefe und Steward-Arbeit ab. Claude Approvals hat keine Grundgebühr, aber Klassifikatoren in der Policy werden tokenabgerechnet, und eine Policy, die Claudes Review nutzt, löst selbst im Beobachtungsmodus eine bezahlte Code Review aus. Nicht verfügbar ist das Angebot für Organisationen mit Zero Data Retention, HIPAA-Konfiguration oder kundenverwalteten Schlüsseln."
+    },
+    {
+      "t": "h2",
+      "x": "Warum die Merge-Freigabe die eigentliche Grenze ist"
+    },
+    {
+      "t": "p",
+      "x": "Code-Review-Automatisierung ist nicht neu; die eigentliche Grenzüberschreitung liegt in der delegierten Merge-Autorität. Anthropic adressiert das mit zwei Gestaltungsentscheidungen, die bemerkenswert sind. Erstens die Policy als Datei im Repository: Die Freigaberegeln sind versioniert, diffbar und auditierbar, statt in einem UI versteckt zu sein. Zweitens der empfohlene Einstieg im Beobachtungsmodus: Claude Approvals postet seine Entscheidung, genehmigt aber nichts, bis das Team der Policy vertraut und sie per Branch Protection durchsetzt. Damit verschiebt sich die Vertrauensfrage vom Modell auf die Regeldatei, und das ist die richtige Stelle, weil sie prüfbar ist."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung in den Trend"
+    },
+    {
+      "t": "p",
+      "x": "Eine prüfbare Policy kann die Zuständigkeiten im Review-Prozess sichtbar machen. Sie beseitigt jedoch weder Modellfehler noch die Verantwortung des Teams für Branch-Regeln und Freigaben. Der Ausschluss von ZDR- und HIPAA-Konfigurationen begrenzt die aktuelle Verfügbarkeit. Für einen Pilotversuch empfiehlt Anthropic ein Repository, Beobachtungsmodus und Ausgabenlimit, erst danach schrittweise Durchsetzung."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Claude Ship",
+      "publisher": "Claude (Anthropic)",
+      "url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "accessed": "2026-11-24"
+    },
+    {
+      "title": "Claude Ship (Produktseite)",
+      "publisher": "Claude (Anthropic)",
+      "url": "https://claude.com/product/claude-ship",
+      "accessed": "2026-11-24"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kann Claude Ship Pull Requests selbstständig mergen?",
+      "a": "PR Steward ist ausdrücklich so gebaut, dass er weder freigibt noch mergt. Claude Approvals kann Routine-Änderungen freigeben, wenn die Policy-Datei des Teams das erlaubt; was mergen darf, hängt zusätzlich an Branch Protection und den Rechten im Repository."
+    },
+    {
+      "q": "Was kostet Claude Ship?",
+      "a": "Die Abrechnung läuft über Tokens und hängt von PR-Zahl, Review-Tiefe und Steward-Arbeit ab. Ausgabenlimits lassen sich setzen. Claude Approvals hat keine Grundgebühr, aber Klassifikatoren werden tokenabgerechnet, und Policies mit Claudes Review lösen auch im Beobachtungsmodus bezahlte Reviews aus."
+    },
+    {
+      "q": "Für wen ist Claude Ship nicht verfügbar?",
+      "a": "Nicht für Organisationen mit Zero Data Retention, HIPAA-Konfiguration oder kundenverwalteten Verschlüsselungsschlüsseln. Verfügbar ist es für Team- und Enterprise-Pläne mit GitHub-Repositories."
+    }
+  ],
+  "related": [
+    "docker-agenten-vertrauen-sandboxing-trend",
+    "antithesis-tla-raft-verifikation-etcd-hashicorp",
+    "openrouter-zdr-anbieter-fallout"
+  ]
+}
