@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "NariQ: Qwen3.8-27B als 10-GB-Datei, auf Agentenaufgaben laut Autor auf BF16-Niveau",
   "dek": "Nari Labs hat trellis-codierte GGUF-Quantisierungen von Qwen3.8-27B mit 3, 2,5 und 2 Bit pro Gewicht veröffentlicht, kalibriert auf echten Coding-Agenten-Traces. Voraussetzung ist vorerst ein eigener llama.cpp-Fork.",
-  "published": "2026-11-24T09:06:42+01:00",
-  "modified": "2026-11-24T09:06:42+01:00",
+  "published": "2026-11-24T09:17:55+01:00",
+  "modified": "2026-11-24T09:17:55+01:00",
   "author": "philipp-paulik",
   "tags": [
     "NariQ",

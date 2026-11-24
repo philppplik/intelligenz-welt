@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Shirudo: OpenAI und Cisco öffnen Laufzeit für eBPF-Schutzschilde",
   "dek": "OpenAI und Cisco haben Shirudo als Open-Source-Laufzeit veröffentlicht: Agenten schreiben eBPF-Schilde, die einen verwundbaren Pfad auf einem laufenden Linux-Dienst blockieren, bis der echte Patch ausgerollt ist.",
-  "published": "2026-11-24T09:06:42+01:00",
-  "modified": "2026-11-24T09:06:42+01:00",
+  "published": "2026-11-24T09:15:42+01:00",
+  "modified": "2026-11-24T09:15:42+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Shirudo",

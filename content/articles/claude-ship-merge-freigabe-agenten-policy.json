@@ -5,8 +5,8 @@
   "type": "analysis",
   "title": "Claude Ship: Anthropic delegiert die Merge-Freigabe an eine Policy-Datei",
   "dek": "Mit Claude Ship (Beta) bündelt Anthropic Code Review, einen PR-Steward-Agenten und Claude Approvals: Eine Policy-Datei im Repository entscheidet, welche Pull Requests ein Agent freigeben darf und wann ein Mensch unterschreiben muss.",
-  "published": "2026-11-24T09:06:42+01:00",
-  "modified": "2026-11-24T09:06:42+01:00",
+  "published": "2026-11-24T09:15:48+01:00",
+  "modified": "2026-11-24T09:15:48+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Anthropic",
