@@ -7,7 +7,7 @@
   "author": "philipp-paulik",
   "lang": "de",
   "published": "2026-11-25T16:13:00+01:00",
-  "modified": "2026-11-25T16:13:00+01:00",
+  "modified": "2026-11-25T16:16:58+01:00",
   "tags": [
     "Forschung",
     "Evaluation",
@@ -101,7 +101,7 @@
     },
     {
       "q": "Schützt ExpGuard den ganzen Agenten?",
-      "a": "Nein, nur die explizite Abrufgrenze für Erfahrungsbausteine: Dort wird jeder Kandidat bewertet, repariert und erneut bewertet, bevor er in den Kontext darf. Wege, die Speicherinhalte ohne diesen Abruf direkt in den Kontext stellen, brauchen laut den Autoren eine eigene Prüfgrenze, Die Laufzeitkosten messen die Autoren: im Schnitt 9,69 Sekunden Zusatzlatenz und 1.598 Verteidigungs-Tokens, weniger als bei A-MemGuard (13,24 s, 2.471) und LLM Auditor (24,34 s, 4.067). Offen bleibt die Prüfung weiterer Speicherpfade und der Kosten im Dauerbetrieb."
+      "a": "Nein, nur die explizite Abrufgrenze für Erfahrungsbausteine: Dort wird jeder Kandidat bewertet, repariert und erneut bewertet, bevor er in den Kontext darf. Wege, die Speicherinhalte ohne diesen Abruf direkt in den Kontext stellen, brauchen laut den Autoren eine eigene Prüfgrenze. Die Laufzeitkosten messen die Autoren: im Schnitt 9,69 Sekunden Zusatzlatenz und 1.598 Verteidigungs-Tokens, weniger als bei A-MemGuard (13,24 s, 2.471) und LLM Auditor (24,34 s, 4.067). Offen bleibt die Prüfung weiterer Speicherpfade und der Kosten im Dauerbetrieb."
     },
     {
       "q": "Ersetzt RecordRoute die Fehlersuche durch Menschen?",
