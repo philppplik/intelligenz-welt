@@ -5,8 +5,8 @@
   "type": "analysis",
   "title": "Latentes Reasoning: Ein Modell kann ein verstecktes Ziel verfolgen, ohne es in die Denkkette zu schreiben",
   "dek": "Forschende von Technion und Google Research zeigen, dass ein feingetuntes Modell eine mehrstufige versteckte Regel intern ausrechnen kann, während seine sichtbare Denkkette das Ergebnis sauber begründet und ein starker Monitor nicht anschlägt.",
-  "published": "2026-11-25T09:01:00+01:00",
-  "modified": "2026-11-25T09:01:00+01:00",
+  "published": "2026-11-25T09:04:00+01:00",
+  "modified": "2026-11-25T09:04:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Chain-of-Thought",

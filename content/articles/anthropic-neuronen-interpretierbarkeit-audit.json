@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Anthropic prüft Neuron-Sonden als Sicherheitswerkzeug: Null-Training, teils besser als Textsuche",
   "dek": "In Teil zwei seiner Neuron-Basis-Serie testet Anthropic, ob sich aus rohen Neuronaktivierungen Sonden, Steering-Vektoren und Audits bauen lassen, die ohne Feintuning auskommen, und wo die Grenzen liegen.",
-  "published": "2026-11-25T09:01:00+01:00",
-  "modified": "2026-11-25T09:01:00+01:00",
+  "published": "2026-11-25T09:04:00+01:00",
+  "modified": "2026-11-25T09:04:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Anthropic",

@@ -4,9 +4,9 @@
   "section": "modelle",
   "type": "news",
   "title": "Microsoft zeigt Rocket: RL-Infrastruktur für das Basismodell MAI Base 2",
-  "dek": "Microsoft AI beschreibt, wie es ein Basismodell mit drei Billionen Parametern per Verstärkungslernen ohne Destillation nachtrainiert: Sampler und Learner rechnen bitweise identisch, Gewichte wandern in rund 15 Sekunden.",
-  "published": "2026-11-25T09:01:00+01:00",
-  "modified": "2026-11-25T09:01:00+01:00",
+  "dek": "Microsoft AI beschreibt, wie es ein Basismodell mit drei Billionen Parametern per Verstärkungslernen ohne Destillation nachtrainiert: Sampler und Learner rechnen bitweise identisch, eine Gewichtsübertragung dauert rund 15 Sekunden.",
+  "published": "2026-11-25T09:04:00+01:00",
+  "modified": "2026-11-25T09:19:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Microsoft",
@@ -23,8 +23,8 @@
     "Speichertricks: MoE-Experten werden in MXFP8 gespeichert und für die Berechnung in BF16 umgewandelt, was den Gewichtsspeicher der Sampler nahezu halbiert; Attention läuft im Verhältnis 5:1 lokal zu global, der KV-Cache erlaubt rund 67 Prozent mehr Global-Kontext-Token."
   ],
   "hero": {
-    "alt": "Abstrakter Themenhero: zwei gespiegelte Maschineneinheiten mit dazwischen wandernden Datenströmen, die im Takt pulsieren",
-    "caption": "Symbolbild: Gewichtsaktualisierungen wandern alle 15 Sekunden vom Learner zu den Samplern. KI-generiert.",
+    "alt": "Abstrakter Themenhero: zwei gespiegelte Maschineneinheiten mit dazwischen wandernden Datenströmen",
+    "caption": "Symbolbild: Gewichte wandern vom Learner zu den Samplern, eine Übertragung dauert laut Microsoft rund 15 Sekunden. KI-generiert.",
     "ai_generated": true,
     "credit": "Intelligenz Welt (KI-generiert)"
   },

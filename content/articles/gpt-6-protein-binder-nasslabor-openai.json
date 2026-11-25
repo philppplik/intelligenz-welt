@@ -5,8 +5,8 @@
   "type": "news",
   "title": "GPT-6 entwirft Proteinbinder mit Reasoning und Code, ein Teil bindet im Labor",
   "dek": "OpenAI berichtet in einem Preprint, GPT-6-Modelle entwürfen Proteinstrukturen und -sequenzen ohne spezialisierte Modelle. Im Nasslabor zeigten 35 von 322 Minibindern Bindung; Spezialmodelle filterten die Kandidaten weiterhin.",
-  "published": "2026-11-25T09:01:00+01:00",
-  "modified": "2026-11-25T09:01:00+01:00",
+  "published": "2026-11-25T09:04:00+01:00",
+  "modified": "2026-11-25T09:04:00+01:00",
   "author": "philipp-paulik",
   "tags": [
     "OpenAI",
