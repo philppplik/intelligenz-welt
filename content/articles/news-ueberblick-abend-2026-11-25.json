@@ -7,7 +7,7 @@
   "author": "philipp-paulik",
   "lang": "de",
   "published": "2026-11-25T16:13:00+01:00",
-  "modified": "2026-11-25T16:16:58+01:00",
+  "modified": "2026-11-25T16:19:49+01:00",
   "tags": [
     "Forschung",
     "Evaluation",
@@ -23,7 +23,7 @@
   "body": [
     {
       "t": "p",
-      "x": "Quellenprüfung: 25. November 2026, 16:01 Uhr MEZ. Drei am 24. November eingereichte Preprints fragen, was passiert, wenn Agenten scheitern: ein Benchmark, der Fehlererholung misst statt nur Aufgabenerfolg, ein Schutz, der wiederverwendete Erfahrungen vor dem Abruf prüft, und ein Audit-Verfahren, das den entscheidenden Fehlschritt in langen Ausführungsspuren lokalisiert."
+      "x": "Quellenprüfung: 25. November 2026, 16:01 Uhr MEZ. Drei am 23. und 24. November eingereichte Preprints fragen, was passiert, wenn Agenten scheitern: ein Benchmark, der Fehlererholung misst statt nur Aufgabenerfolg, ein Schutz, der wiederverwendete Erfahrungen vor dem Abruf prüft, und ein Audit-Verfahren, das den entscheidenden Fehlschritt in langen Ausführungsspuren lokalisiert."
     },
     {
       "t": "h2",
