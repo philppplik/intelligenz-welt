@@ -1,0 +1,93 @@
+{
+  "slug": "gpt-6-protein-binder-nasslabor-openai",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "GPT-6 entwirft Proteinbinder mit Reasoning und Code, ein Teil bindet im Labor",
+  "dek": "OpenAI berichtet in einem Preprint, GPT-6-Modelle entwürfen Proteinstrukturen und -sequenzen ohne spezialisierte Modelle. Im Nasslabor zeigten 35 von 322 Minibindern Bindung; Spezialmodelle filterten die Kandidaten weiterhin.",
+  "published": "2026-11-25T09:01:00+01:00",
+  "modified": "2026-11-25T09:01:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenAI",
+    "GPT-6",
+    "Proteindesign",
+    "Naslabor",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "OpenAI hat einen Preprint vorgelegt, demzufolge GPT-6-Modelle Proteinstrukturen und -sequenzen allein mit Reasoning und allgemeinem Code entwerfen, ohne Spezialmodelle für die Generierung.",
+    "Nasslabortests mit dem Partner Onava: Von 322 hergestellten Minibindern gegen fünf Ziele zeigten 35 (10,9 Prozent) Bindung; für jedes der fünf Ziele mindestens ein Treffer.",
+    "Sequenz-Neuentwürfe durch GPT-6.2 banden in 75 von 88 Fällen bei MDM2 (85 Prozent), 26 von 42 bei VEGF-A (62 Prozent) und 8 von 59 bei PD-1 (14 Prozent); bei Antikörper-Loops 128 von 182 (70 Prozent).",
+    "OpenAI schränkt selbst ein: Spezialmodelle wie Boltz-2 und ESMFold2 filterten die Kandidaten; ein durchgängiger Zero-shot-Neuentwurf ohne Spezialmodelle ist damit nicht belegt.",
+    "Die ursprüngliche RFdiffusion-Studie meldete höhere Trefferquoten; OpenAI weist darauf hin, dass Quoten stark von Filterstrenge und Bindungsdefinition abhängen."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: eine leuchtende Helix-Struktur, die sich an eine größere, dunklere Proteinform andockt, mit einem kleinen markierten Bindungspunkt",
+    "caption": "Symbolbild: Ein entworfener Minibinder dockt an sein Zielprotein an. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI hat am 24. November einen Blogbeitrag und einen Preprint mit dem Titel „GPT-6 as a Universal Foundation Model for Protein Biology“ veröffentlicht. Die zentrale Aussage: Modelle der GPT-6-Familie können neue Proteinstrukturen und die dazugehörigen Aminosäuresequenzen entwerfen, indem sie nur Reasoning und allgemeine Code-Werkzeuge nutzen, ohne dass spezialisierte Biologiemodelle die Entwürfe selbst erzeugen. Ein internes Forschungsmodell habe Spezialmodelle bei vielen der 14 getesteten Proteinaufgaben erreicht oder übertroffen; das Vorhersagen kompletter Proteinstrukturen blieb dagegen eine klare Schwäche."
+    },
+    {
+      "t": "h2",
+      "x": "Was im Labor getestet wurde"
+    },
+    {
+      "t": "p",
+      "x": "Gemeinsam mit dem Forschungspartner Onava wurden die Entwürfe im Nasslabor geprüft. Von 322 hergestellten Minibindern gegen fünf Zielproteine zeigten 35 (10,9 Prozent) Bindungsnachweise: 5 Treffer für PD-L1, 3 für IL-7Rα, 1 für TrkA, 8 für VEGF-A und 18 für IL-17A. Die dreidimensionalen Strukturen stammten von einer Vorabversion von GPT-6.2; die Aminosäuresequenzen schlug das Spezialmodell SolubleMPNN vor, und weitere Spezialmodelle halfen bei der Auswahl der Testkandidaten. In separaten Versuchen entwarf GPT-6.2 neue Sequenzen für bekannte Minibinder-Strukturen: Bindung zeigten 75 von 88 Entwürfen für MDM2 (85 Prozent), 26 von 42 für VEGF-A (62 Prozent) und 8 von 59 für PD-1 (14 Prozent). Bei sechs VHH-Antikörpern gegen IL-4Rα zeigten 128 von 182 neu entworfenen Loop-Sequenzen (70 Prozent) Bindung an das ursprüngliche Ziel."
+    },
+    {
+      "t": "callout",
+      "title": "Die Selbsteinordnung des Herstellers",
+      "x": "OpenAI schreibt ausdrücklich, dass die Kampagne auf spezialisierte Strukturvorhersagemodelle wie Boltz-2, OpenDDE und ESMFold2 angewiesen war, um Kandidaten zu filtern. Die Ergebnisse belegen daher noch keinen Zero-shot-Neuentwurf von Minibindern von Anfang bis Ende. Auch können ungewöhnlich hohe Trefferquoten in einzelnen Benchmarks teilweise auf Memorisation zurückgehen. Die ursprüngliche RFdiffusion-Studie meldete höhere Trefferquoten, wobei OpenAI anmerkt, dass solche Quoten stark von der Strenge der Filterung und der Definition von Bindung abhängen."
+    },
+    {
+      "t": "h2",
+      "x": "Wo die Modelle rechnerisch punkten"
+    },
+    {
+      "t": "p",
+      "x": "Beim Motif Scaffolding auf MotifBench erfüllten in einer vorläufigen Auswertung 43,7 Prozent der geprüften Entwürfe des neuesten internen Modells beide Kriterien, gegenüber 27,8 Prozent für RFdiffusion. Beim Docking auf PoseBusters traf GPT-6.2 in 93 Prozent der bewerteten Vorhersagen Position und Ausrichtung des Moleküls annähernd, das neueste interne Modell in 96 Prozent, DiffDock-L in 50 Prozent. Bei der Strukturvorhersage aus der Sequenz allein liegt dagegen selbst das beste interne Modell mit einem mittleren TM-Score von 0,38 weit hinter ESMFold2 (0,93). OpenAI nennt das selbst die zerklüftete Fähigkeitsgrenze: Stark bei Teilschritten wie Rückgrat-Generierung und Sequenz-Neuentwurf, schwach bei der Gesamtstruktur."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Bemerkenswert an dieser Arbeit ist weniger eine einzelne Trefferquote als der Arbeitsmodus: Forschende steuern die Entwürfe per Prompt, etwa wo ein Minbinder ansetzen soll und wie viele Helices oder Stränge er enthalten darf, und das interne Modell folgte solchen Strukturanweisungen nach Angabe OpenAIs nahezu fehlerfrei. Das verschiebt den Engpass vom Bedienen vieler Spezialwerkzeuge hin zum Formulieren der Anforderung, ein Muster, das sich diese Woche auch bei den Lean-geprüften Quantenalgorithmen von Gemini-4-Agenten zeigt: Menschen spezifizieren, Modelle suchen, eine Prüfinstanz entscheidet. Zugleich bleibt Bindung nur der erste Schritt; Spezifität, Stabilität, biologische Aktivität und Sicherheit sind offene Fragen. OpenAI verweist für die Dual-Use-Risiken auf sein Preparedness Framework. Alle genannten Zahlen stammen aus der Unternehmensveröffentlichung; eine unabhängige Reproduktion liegt nicht vor."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+      "accessed": "2026-11-25"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hat GPT-6 die Proteine komplett allein entworfen?",
+      "a": "Nein. Die 3D-Entwürfe stammen vom GPT-Modell, aber Aminosäuresequenzen schlugen teils Spezialmodelle vor, und Boltz-2, OpenDDE und ESMFold2 filterten die Kandidaten fürs Labor. OpenAI sagt selbst, ein durchgängiger Zero-shot-Neuentwurf sei damit nicht belegt."
+    },
+    {
+      "q": "Sind 10,9 Prozent Trefferquote gut oder schlecht?",
+      "a": "Schwer vergleichbar. Die ursprüngliche RFdiffusion-Studie meldete höhere Quoten; OpenAI weist darauf hin, dass Trefferquoten stark davon abhängen, wie streng vor dem Labortest gefiltert wird und wie Bindung definiert ist. Für jedes der fünf Ziele gab es mindestens einen Treffer."
+    },
+    {
+      "q": "Heißt das, Medikamente kommen jetzt aus dem Chatbot?",
+      "a": "Nein. Bindung im Ersttest ist nur ein früher Schritt. Spezifität, Stabilität, biologische Wirkung sowie Sicherheit und Wirksamkeit für therapeutische Anwendungen sind laut OpenAI offene Folgearbeit."
+    }
+  ],
+  "related": [
+    "gemini-4-agenten-quantenalgorithmen-lean",
+    "claude-vp-vnp-lean-beweis-anthropic",
+    "openai-pachocki-perplexity-loss-kurve-grenzen"
+  ]
+}

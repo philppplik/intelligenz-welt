@@ -1,0 +1,93 @@
+{
+  "slug": "microsoft-rocket-rl-mai-base-2",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Microsoft zeigt Rocket: RL-Infrastruktur für das Basismodell MAI Base 2",
+  "dek": "Microsoft AI beschreibt, wie es ein Basismodell mit drei Billionen Parametern per Verstärkungslernen ohne Destillation nachtrainiert: Sampler und Learner rechnen bitweise identisch, Gewichte wandern in rund 15 Sekunden.",
+  "published": "2026-11-25T09:01:00+01:00",
+  "modified": "2026-11-25T09:01:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Microsoft",
+    "MAI Base 2",
+    "Reinforcement Learning",
+    "Rocket",
+    "Trainingsinfrastruktur"
+  ],
+  "key_takeaways": [
+    "Microsoft AI hat mit Rocket ein RL-Trainingssystem vorgestellt, mit dem das Basismodell MAI Base 2 (drei Billionen Parameter) direkt per Verstärkungslernen nachtrainiert wird, ohne Destillation aus einem anderen Modell.",
+    "Zentrale Idee: Sampler und Learner rechnen numerisch identisch, damit die Lernrechnung wirklich zur Verteilung passt, aus der die Trainingsdaten stammen.",
+    "Eine Gewichtsübertragung vom Learner zu den Samplern dauert 15 Sekunden und läuft häufig (im Beispiel alle vier Trainingsschritte); fehlgeschlagene Rollouts werden verworfen, der Engpass bleibt die Inferenz.",
+    "Laut Microsoft überholte das Modell in einem internen Aggregat-Benchmark zuletzt Claude Opus 4.8; die Metrik fasst Dutzende öffentliche und private Evals zusammen, Details zur Zusammensetzung nennt der Beitrag nicht.",
+    "Speichertricks: MoE-Experten werden in MXFP8 gespeichert und für die Berechnung in BF16 umgewandelt, was den Gewichtsspeicher der Sampler nahezu halbiert; Attention läuft im Verhältnis 5:1 lokal zu global, der KV-Cache erlaubt rund 67 Prozent mehr Global-Kontext-Token."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: zwei gespiegelte Maschineneinheiten mit dazwischen wandernden Datenströmen, die im Takt pulsieren",
+    "caption": "Symbolbild: Gewichtsaktualisierungen wandern alle 15 Sekunden vom Learner zu den Samplern. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Microsoft AI hat am 23. November einen detaillierten Einblick in sein RL-Trainingssystem Rocket veröffentlicht. Darin beschreibt das Unternehmen, wie es MAI Base 2, ein Basismodell mit drei Billionen Parametern, direkt mit Verstärkungslernen nachtrainiert, also ohne den üblichen Umweg über Destillation aus einem stärkeren Modell. Die aus Sicht des Unternehmens drei schwierigsten Probleme dabei: die Vergänglichkeit (Staleness) der Rollouts, die numerische Konsistenz zwischen Datengenerierung und Training sowie Fehlertoleranz und Elastizität über Läufe von Wochen bis Monaten."
+    },
+    {
+      "t": "h2",
+      "x": "Warum Sampler und Learner bitweise gleich rechnen müssen"
+    },
+    {
+      "t": "p",
+      "x": "RL nachtrainiert ein Modell an seinen eigenen Ausgaben, On-Policy-Lernen. Damit die Lernrechnung stimmt, müssen die Wahrscheinlichkeiten, mit denen die Sampler die Trainingssequenzen erzeugt haben, exakt zu denen passen, die der Learner beim Update annimmt. In der Praxis laufen Sampling und Training aber auf unterschiedlichen Stacks, und schon minimale numerische Abweichungen verfälschen den Importance-Sampling-Korrekturfaktor in GRPO. Microsoft löst das durch bitweise Übereinstimmung: Der Attention-Output-Layer wird auf den Samplern repliziert statt aufgeteilt, die Expert-Kombination im MoE läuft in FP32, und beide Seiten nutzen denselben abgestimmten FA4-Attention-Kernel. Laut Microsoft verschwinden die systematischen Abweichungen damit: In einem kontrollierten Vergleich auf einem kleineren Modell (7 Milliarden aktive, 180 Milliarden Parameter gesamt) erzielte der bitweise abgeglichene Lauf bei gleichen Trainingsschritten höhere Eval-Werte."
+    },
+    {
+      "t": "h2",
+      "x": "Vergänglichkeit und Speichertricks"
+    },
+    {
+      "t": "p",
+      "x": "Rollouts sind bei drei Billionen Parametern teuer und laufen von Minuten bis zu Stunden. Eine Gewichtsübertragung vom Learner zu den Samplern dauert laut Blog 15 Sekunden und ermöglicht häufige Aktualisierungen; im beschriebenen Lauf erhielten die Sampler alle vier Trainingsschritte neue Gewichte. Fehlgeschlagene Rollouts werden verworfen statt wiederholt, damit sie ihre GRPO-Gruppe nicht aufhalten; das kann die Gruppen-Basislinie verrauschen, hält aber die Staleness klein. Fällt der Learner aus, dauert die Wiederherstellung aus dem letzten Checkpoint rund fünf Minuten, während die Inferenzflotte weiterläuft. Der Engpass sei durchgängig die Inferenz: Das Sampling hängt hinter den Updates zurück, sodass Microsoft die Zuteilung von GPUs zwischen Trainings- und Inferenz-Pools dynamisch anpasst, mit einem gemessenen Trainingscompute-Gewinn von 9,88 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Für das MoE-Design speichert Rocket die Experten in MXFP8 und wandelt sie für die Berechnung in BF16 um. Die Attention läuft im Verhältnis fünf lokale zu einer globalen Schicht; der KV-Cache bleibt in BF16 für die lokalen Schichten und die letzten drei globalen Schichten; die übrigen globalen Schichten nutzen MXFP8-Speicher, was laut Blog rund 67 Prozent mehr Global-Kontext-Token im Cache erlaubt. Die MXFP8-Speicherung der Experten halbiert nahezu den Gewichtsspeicher der Sampler. Wichtig: Das betrifft die interne Trainingsdarstellung der Gewichte und Zwischenspeicher, nicht die Größe eines Modell-Downloads, und nicht den gesamten Laufzeitspeicherbedarf, zu dem neben den Gewichten auch KV-Caches und Aktivierungen gehören."
+    },
+    {
+      "t": "callout",
+      "title": "Was Rocket leisten soll und was offen bleibt",
+      "x": "Mit Rocket habe Microsoft eine direkte RL-Nachtraining-Spur für Basismodelle dieser Größe gezeigt, getrennt von den MAI-Code-2-Modellen und ohne Destillation aus fremden Modellen. In einem internen Aggregat-Benchmark, der Dutzende öffentliche und private Evals zu einer Zahl zusammenfasst, habe das Modell zuletzt Claude Opus 4.8 überholt und liege auf Kurs, GPT-5.6 Sol binnen weniger Wochen zu überholen. Das ist eine Herstellerangabe auf einer selbst definierten Metrik; Zusammensetzung und Vergleichsbedingungen nennt der Beitrag nicht."
+    },
+    {
+      "t": "p",
+      "x": "Eingeordnet passt der Beitrag zu einem Muster dieser Woche: Die Grenze der Modellqualität wandert von der reinen Architektur in Richtung Trainingsingenieurskunst. Ähnlich argumentierte zuletzt Z.ai mit seinem looped Transformer für GLM-5.4, wo zusätzliche Schleifen Inferenzzeit gegen Qualität tauschen. Rocket zeigt die andere Seite derselben Medaille: Wer On-Policy-RL ernst nimmt, muss die Inferenzseite genauso präzise bauen wie den Learner. Die Zahlen in diesem Artikel stammen aus dem Microsoft-Blog; eine unabhängige Reproduktion liegt nicht vor."
+    }
+  ],
+  "sources": [
+    {
+      "title": "RL infrastructure at Microsoft AI",
+      "publisher": "Microsoft AI",
+      "url": "https://microsoft.ai/news/rl-infrastructure-at-microsoft-ai/",
+      "accessed": "2026-11-25"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist MAI Base 2?",
+      "a": "Ein Basismodell von Microsoft AI mit drei Billionen Parametern und MoE-Architektur, das derzeit mit Rocket per Verstärkungslernen nachtrainiert wird, getrennt von den MAI-Code-2-Modellen."
+    },
+    {
+      "q": "Was bedeutet bitweise Parität zwischen Sampler und Learner?",
+      "a": "Die Server, die Trainingsdaten erzeugen, und der Trainer rechnen numerisch exakt gleich. Abweichungen machen das Training Off-Policy und können es destabilisieren; mit Parität lernt das Modell tatsächlich von seiner eigenen aktuellen Verteilung."
+    },
+    {
+      "q": "Ist MAI Base 2 besser als Claude Opus 4.8?",
+      "a": "Microsoft sagt, das Modell habe Claude Opus 4.8 in einer internen Aggregat-Benchmark überholt, die Dutzende öffentliche und private Evals zusammenfasst. Das ist eine Herstellerangabe auf einer selbst definierten Metrik ohne nähere Angaben zur Zusammensetzung; unabhängige Vergleiche liegen nicht vor."
+    }
+  ],
+  "related": [
+    "glm-5-4-loop-transformer-z-ai",
+    "clover-35b-a3b-diffusion-code-agenten",
+    "openai-pachocki-perplexity-loss-kurve-grenzen"
+  ]
+}

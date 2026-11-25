@@ -1,0 +1,99 @@
+{
+  "slug": "tidal-ki-musik-loeschung-streaming",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Tidal will komplett KI-generierte Tracks ab 9. Dezember ablehnen und löschen",
+  "dek": "Der Musikstreamingdienst Tidal verschärft seine KI-Richtlinie: Ab 9. Dezember werden vollständig KI-generierte Aufnahmen abgelehnt und entfernt. Lizenzgebühren gibt es schon jetzt nicht; ein Opt-out für Hörer existiert ebenfalls.",
+  "published": "2026-11-25T09:01:00+01:00",
+  "modified": "2026-11-25T09:01:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Tidal",
+    "KI-Musik",
+    "Streaming",
+    "Plattformpolitik",
+    "Musikwirtschaft"
+  ],
+  "key_takeaways": [
+    "Tidal kündigt an, ab dem 9. Dezember 2026 jede vollständig KI-generierte Aufnahme abzulehnen und von der Plattform zu entfernen; bis dahin gilt die bisherige Richtlinie.",
+    "Schon die aktuelle Richtlinie schließt als vollständig KI-generiert erkannte Aufnahmen von der Lizenzgebühren-Zuordnung aus und erlaubt das Entfernen bei Täuschung, Identitätsmissbrauch oder ungewöhnlicher Upload-Aktivität.",
+    "Die Definition bleibt eng: Maßnahmen gibt es nur gegen vollständig KI-generierte Aufnahmen, nicht gegen teilweise KI-generierte oder KI-komponierte Werke, weil die Erkennungstechnik zu viele Fehlalarme produzierte.",
+    "Hörer können KI-markierte Aufnahmen in den Einstellungen deaktivieren; sie werden dann nicht mehr abgespielt und nach und nach aus den Empfehlungen entfernt.",
+    "Laut Bericht von TechCrunch unter Berufung auf Tidal wurden zuletzt mehr als 43 Prozent der hochgeladenen Tracks als KI-generiert erkannt; Tidal sprach von mehr als 29 Millionen zu löschenden Songs bis Jahresende und 80.000 bis 85.000 abzulehnenden Tracks pro Tag."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: Wellenformen, von denen einige ausgeblendet werden und aus einem Band herausfallen",
+    "caption": "Symbolbild: Tidal blendet vollständig KI-generierte Aufnahmen aus dem Katalog aus. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Tidal verschärft seine KI-Richtlinie. In der aktualisierten Fassung vom 24. November kündigt der Streamingdienst an, ab dem 9. Dezember 2026 jede Aufnahme abzulehnen und zu entfernen, die vollständig mit generativer KI erzeugt wurde. Bis dahin bleibt KI-generierte Musik auf der Plattform grundsätzlich erlaubt, sofern sie die Richtlinie, die Nutzungsbedingungen und die Inhaltsregeln einhält. Die Ankündigung steht direkt am Anfang der Support-Seite und ist damit die verbindliche primäre Quelle für den Termin."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Richtlinie schon heute regelt"
+    },
+    {
+      "t": "p",
+      "x": "Tidal definiert KI-generierte Musik eng: Gemeint sind Aufnahmen, die vollständig mit generativer KI erzeugt wurden. Wegen der Fehleranfälligkeit aktueller Erkennungstechnik beschränkt der Dienst Maßnahmen ausdrücklich auf diesen Fall; für teilweise KI-generierte oder rein KI-komponierte Werke gibt es bislang keine Maßnahmen. Als vollständig KI-generiert erkannte Aufnahmen werden gekennzeichnet, sind von der Lizenzgebühren-Zuordnung ausgeschlossen und können entfernt werden, wenn sie gegen die Richtlinie verstoßen oder mit betrügerischem Verhalten in Verbindung stehen, etwa Täuschung der Hörer, Missbrauch von Namen oder Identität anderer oder ungewöhnliche Upload- und Streaming-Muster. Dieselben Regeln gelten für Uploads über Tidal Upload; dort entfällt zusätzlich die Direktmonetarisierung für so markierte Aufnahmen. Hörer können KI-markierte Inhalte in den Einstellungen deaktivieren; sie werden dann nicht mehr abgespielt und schrittweise aus den personalisierten Empfehlungen entfernt. Falsch markierte Titel können über ein Support-Formular gemeldet beziehungsweise angefochten werden."
+    },
+    {
+      "t": "h2",
+      "x": "Die Größenordnung dahinter"
+    },
+    {
+      "t": "p",
+      "x": "Wie weit die Flut reicht, macht ein Bericht von TechCrunch deutlich, der sich auf Angaben von Tidal beruft: In den letzten 90 Tagen seien mehr als 43 Prozent der an den Dienst verteilten Tracks als KI-generiert erkannt worden; das Unternehmen spreche von mehr als 29 Millionen Songs, die bis Jahresende von der Plattform gelöscht würden, und von 80.000 bis 85.000 Tracks pro Tag, die künftig abgelehnt würden. Diese Zahlen stammen aus der Sekundärberichterstattung mit Tidal als Quelle; sie sind keine eigenständige Veröffentlichung des Unternehmens und sollten entsprechend als Herstellerangabe gelesen werden."
+    },
+    {
+      "t": "callout",
+      "title": "Warum die enge Definition zählt",
+      "x": "Tidal betont selbst, dass die Erkennungstechnik Fehlalarme produziert und deshalb nur vollständig KI-generierte Aufnahmen angefasst werden. Die Grenze verläuft also nicht zwischen menschlicher und maschineller Musik im Allgemeinen, sondern zwischen vollständig generiert und allem anderen. Wer etwa einzelne Spuren mit KI erzeugt oder KI beim Komponieren nutzt, fällt nach der aktuellen Logik nicht unter die Maßnahmen. Das macht die Richtlinie handhabbar, lässt aber einen großen grauen Mittelbereich unreguliert."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Tidal zieht damit eine der schärfsten Linien unter den größeren Streamingdiensten: Statt KI-Musik nur zu kennzeichnen oder in der Monetarisierung zu benachteiligen, soll sie künftig gar nicht erst in den Katalog gelangen. Ökonomisch ist das ein Signal an Künstler, deren Lizenzgebühren-Topf durch massenhaft hochgeladene KI-Tracks verwässert wird, und an Hörer, denen Tidal schon jetzt ein Opt-out anbietet. Technisch bleibt die Umsetzung die entscheidende Frage: Die Richtlinie hängt an einer Erkennung, die nach Tidals eigener Einschätzung unzuverlässig ist, und an einer Definition, die nur den Extremfall erfasst. Ob die angekündigte Löschung in der genannten Größenordnung gelingt, wird sich erst nach dem 9. Dezember zeigen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "AI Policy",
+      "publisher": "Tidal Support",
+      "url": "https://support.tidal.com/hc/en-us/articles/48031883413521-AI-Policy",
+      "accessed": "2026-11-25"
+    },
+    {
+      "title": "Tidal to ban and remove millions of AI-generated tracks as AI slop inundates music streaming",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/",
+      "accessed": "2026-11-25"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ändert sich am 9. Dezember bei Tidal?",
+      "a": "Ab diesem Datum lehnt Tidal jede vollständig KI-generierte Aufnahme ab und entfernt sie von der Plattform. Bis dahin gilt die bisherige Richtlinie, die KI-Musik unter Auflagen erlaubt, aber von Lizenzgebühren ausschließt."
+    },
+    {
+      "q": "Bekommen KI-generierte Tracks Lizenzgebühren?",
+      "a": "Nein. Aufnahmen, die Tidal als vollständig KI-generiert identifiziert, sind nach der aktuellen Richtlinie nicht für die Lizenzgebühren-Zuordnung berechtigt."
+    },
+    {
+      "q": "Kann ich KI-Musik als Hörer ausblenden?",
+      "a": "Ja. In den Einstellungen lässt sich die Wiedergabe KI-markierter Aufnahmen deaktivieren; sie werden dann nicht mehr abgespielt und schrittweise aus den Empfehlungen entfernt, wobei Albenempfehlungen einige Tage brauchen können."
+    }
+  ],
+  "related": [
+    "claude-ship-merge-freigabe-agenten-policy",
+    "openrouter-zdr-anbieter-fallout",
+    "docker-agenten-vertrauen-sandboxing-trend"
+  ]
+}

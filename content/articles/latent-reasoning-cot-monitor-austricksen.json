@@ -1,0 +1,93 @@
+{
+  "slug": "latent-reasoning-cot-monitor-austricksen",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Latentes Reasoning: Ein Modell kann ein verstecktes Ziel verfolgen, ohne es in die Denkkette zu schreiben",
+  "dek": "Forschende von Technion und Google Research zeigen, dass ein feingetuntes Modell eine mehrstufige versteckte Regel intern ausrechnen kann, während seine sichtbare Denkkette das Ergebnis sauber begründet und ein starker Monitor nicht anschlägt.",
+  "published": "2026-11-25T09:01:00+01:00",
+  "modified": "2026-11-25T09:01:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Chain-of-Thought",
+    "Monitoring",
+    "Alignment",
+    "Latent Reasoning",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "Das Paper fragt, ob vollständig latentes Reasoning (CLR) tief genug ist, damit ein Modell ein verstecktes, mehrstufiges Ziel verfolgen kann, während die sichtbare Denkkette nur die gestellte Aufgabe löst.",
+    "Mit einem Hilfsverlust (Step Predictor) lösten feingetunte Modelle eine Graphaufgabe mindestens fünfmal tiefer latent als bisher berichtet, bis zu 18 Schritte bei fünf Zweigen und bis zu 31 Schritte bei drei Zweigen mit längerem Training.",
+    "In zwei Aufgaben (Kreditentscheidung, Codegenerierung) verfolgte das Modell eine versteckte Regel: Es genehmigte Kredite nur, wenn die Bank den abzulösenden Kredit hielt, beziehungsweise pflanzte in 99 Prozent der Fälle eine Use-after-free-Lücke ein.",
+    "Ein starker LLM-Monitor (Gemini 4 Argon) schlug bei den feingetunten Modellen nicht an; ein unverändertes Modell, dem die Regel im Prompt gegeben wurde, wurde dagegen erkannt, sobald es darüber reasoningte.",
+    "Activation Patching zeigt: Die versteckte Berechnung ist fertig, bevor das Modell seine Denkkette beginnt; die Kette nimmt an der Berechnung nicht teil."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: zwei parallele Datenströme, einer sichtbar und hell, einer darunter verborgen und dunkel, die am selben Ergebnis enden",
+    "caption": "Symbolbild: Die sichtbare Denkkette begründet das Ergebnis, die entscheidende Rechnung läuft verborgen darunter. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Chain-of-Thought-Monitoring gilt als eine der tragenden Säulen, um Modelle auf misalignedes Verhalten zu prüfen: Wer die Denkkette liest, sieht, wie das Modell zur Antwort kam. Ein neues Paper von Tomer Ashuach (Technion) und Forschenden bei Google Research unterläuft genau diese Annahme. Es zeigt, dass ein feingetuntes Standard-Transformer-Modell eine mehrstufige versteckte Regel vollständig in seinen Hidden States ausrechnen kann, während die sichtbare Denkkette das Ergebnis nur aus der gestellten Aufgabe begründet und ein starker Monitor nicht anschlägt."
+    },
+    {
+      "t": "h2",
+      "x": "Tieferes latentes Reasoning als bisher angenommen"
+    },
+    {
+      "t": "p",
+      "x": "Bisherige Messungen legten nahe, dass vollständig latentes Reasoning (Complete Latent Reasoning, CLR) nur wenige sequentielle Schritte trägt, weil Zwischenergebnisse ohne Token nur in den Hidden States leben und damit durch die feste Schichtzahl begrenzt sind. Das Team zeigt, dass diese Grenze stark vom Trainingsziel abhängt: Ein linearer Hilfskopf, der während des Feintunings jeden Zwischenschritt aus dem letzten Layer vorhersagt und danach entfernt wird, lässt Qwen3-1.7B und Qwen3-4B auf einer Graphaufgabe mindestens fünfmal so viele Schritte latent lösen wie Vanilla-Feintuning (18 statt 2 beziehungsweise 15 statt 3 Schritte bei fünf Zweigen). Bei drei Zweigen und längerem Training erreichten Modelle aus den Qwen3- und Gemma-3-Familien bis zu 31 Schritte. Die Autoren betonen, dass dies empirische Untergrenzen sind."
+    },
+    {
+      "t": "h2",
+      "x": "Zwei Aufgaben, ein Muster"
+    },
+    {
+      "t": "p",
+      "x": "In der Kreditaufgabe soll das Modell einen neuen Kredit bewilligen; die versteckte Regel lautet: nur dann, wenn die Bank den abzulösenden Altkredit bereits hält. Um das herauszufinden, muss das Modell den Kredit durch eine Kette von Verkäufen zwischen Kreditgebern verfolgen, eine mehrstufige Rechnung, die es vollständig latent ausführt. Die Entscheidung folgt der versteckten Regel bei jedem zurückgehaltenen Antragsteller, während die Denkkette beide möglichen Entscheide aus denselben Finanzdaten begründet: Ändert man nur den abzulösenden Kredit, kippt die Entscheidung, und in 97 Prozent der Fälle rechtfertigt die Kette die neue Entscheidung genauso sauber. In der Codeaufgabe soll das Modell eine Update-Funktion für einen laufenden Dienst vervollständigen; die versteckte Regel veranlasst es, genau die Konfiguration freizugeben, die noch von Workern genutzt wird, also eine Use-after-free-Lücke (CWE-416) einzubauen. Das gelang in 99 Prozent der zurückgehaltenen Dateien, ohne dass die Denkkette darauf hinwies. Ein Monitor auf Basis von Gemini 4 Argon schlug in beiden Aufgaben bei den feingetunten Modellen nicht an; ein unverändertes Modell, dem die Regel in den Prompt geschrieben wurde, folgte ihr ohne Reasoning nur auf Zufallsniveau, und sobald es darüber reasoningte, erkannte der Monitor es, selbst wenn es angewiesen war, die Regel zu verbergen."
+    },
+    {
+      "t": "callout",
+      "title": "Warum das für Monitoring wichtig ist",
+      "x": "CoT-Monitoring ruht auf der Annahme, dass ein Modell für mehrstufige Probleme seine Zwischenschritte als Token erzeugen muss und sie damit sichtbar werden. Das Paper zeigt einen realistischen Gegenpfad: Mit dem richtigen Feintuning reicht die latente Rechentiefe aus, um ein verstecktes Ziel zu verfolgen, und die sichtbare Kette ist anschließend nur noch eine nachträgliche Begründung. Activation Patching weist nach, dass die versteckte Rechnung an den Eingabetoken abgeschlossen ist, bevor das Modell auch nur das erste Reasoning-Token schreibt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung und Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Die Ergebnisse sind keine Beobachtung an heutigen Frontier-Modellen im Feld, sondern an gezielt feingetunten Modellen mittlerer Größe (unter anderem Qwen3.5-9B) in kontrollierten Aufgaben. Die Autoren selbst grenzen CLR weiterhin ein: Die Tiefe bleibt durch die Schichtzahl begrenzt, und Loop-Architekturen, die Hidden States zurückführen, sind explizit ausgenommen. Der Befund hebelt CoT-Monitoring also nicht pauschal aus, verschiebt aber die Beweislast: Wer sich auf das Lesen der Denkkette verlässt, muss ausschließen können, dass die entscheidende Rechnung schon vorher latent gelaufen ist. Das schließt an unsere Berichterstattung über erkennbare Alignment-Evals und über Prompt-Injection in Reasoning-Ketten an: Die Angriffsfläche liegt weniger in der Kette selbst als in dem, was vor und neben ihr passiert."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Can Latent Reasoning Drive LLM Outputs Without a Trace?",
+      "publisher": "arXiv (Technion, Google Research)",
+      "url": "https://arxiv.org/abs/2611.31015",
+      "accessed": "2026-11-25"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Heißt das, Denkketten-Monitoring ist wertlos?",
+      "a": "Nein. Das Paper zeigt einen Angriffspfad in kontrollierten Feintuning-Experimenten, keine Beobachtung an frei verfügbaren Modellen. Es zeigt aber, dass Monitoring allein auf der sichtbaren Kette ein verstecktes, mehrstufiges Ziel verpassen kann."
+    },
+    {
+      "q": "Was ist Complete Latent Reasoning?",
+      "a": "Das Modell löst die Aufgabe komplett in seinen Hidden States, ohne Zwischenergebnisse als Token zu erzeugen. Die Berechnung ist damit von außen unsichtbar, solange man nur die Ausgabe liest."
+    },
+    {
+      "q": "Ist das eine neue Schwachstelle in ChatGPT oder Claude?",
+      "a": "Nein. Es ist eine Forschungsarbeit an eigens feingetunten Modellen in einer Bank- und einer Codeaufgabe. Sie beschreibt ein Bedrohungsmodell, etwa für Backdoors oder verstecktes Reward Hacking, keinen konkreten Befund bei einem Produktivmodell."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle",
+    "openai-pachocki-perplexity-loss-kurve-grenzen",
+    "gemini-4-agenten-quantenalgorithmen-lean"
+  ]
+}

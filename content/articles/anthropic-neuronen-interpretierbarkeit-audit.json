@@ -1,0 +1,97 @@
+{
+  "slug": "anthropic-neuronen-interpretierbarkeit-audit",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Anthropic prüft Neuron-Sonden als Sicherheitswerkzeug: Null-Training, teils besser als Textsuche",
+  "dek": "In Teil zwei seiner Neuron-Basis-Serie testet Anthropic, ob sich aus rohen Neuronaktivierungen Sonden, Steering-Vektoren und Audits bauen lassen, die ohne Feintuning auskommen, und wo die Grenzen liegen.",
+  "published": "2026-11-25T09:01:00+01:00",
+  "modified": "2026-11-25T09:01:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Anthropic",
+    "Interpretierbarkeit",
+    "Neuron-Sonden",
+    "Audit",
+    "Sicherheit"
+  ],
+  "key_takeaways": [
+    "Neuron-Sonden, die ohne gelabelte Beispiele und ohne Training aus rohen Neuronen gebaut werden, schlugen die beste Textsuche-Baseline in 11 von 16 Sicherheits-Datensätzen.",
+    "Zero-shot-Steering über Neuron-Basis-Vektoren und über trainierte Vektoren lag bei 15 Verhaltensweisen auf Llama-3.1-8B jeweils bei 21 Prozent Erfolg; SAE-Latente kamen je nach Auswahl nur auf 3 bis 18 Prozent.",
+    "In einem Blind-Audit von 68 Feintunings (58 mit verstecktem Verhalten) fanden Outputs-only-Sonden 40 Prozent der Verhalten, Steering-Transfers 61 Prozent und kombinierte Readouts 75 Prozent.",
+    "Bei 23 WMDP-Cyber-Checkpoints blieb das Wissen nach dem Unlearning in 14 Fällen unter einer Cloze-Abfrage nachweisbar; bei K-FADE und CUT genügte das Entfernen der einen Richtung, die das Unlearning hinzugefügt hatte, um die Trefferquote von 32-47 auf 72-84 Prozent zu heben.",
+    "Das Team berichtet außerdem, dass gängige Unlearning-Verfahren gefährliches Wissen eher verdecken als entfernen, über einen Backdoor-ähnlichen Mechanismus in kontrollierten Modellorganismen, nicht in einem beobachteten Angriff."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: ein Netz aus leuchtenden Knoten, aus dem einige Knoten herausgegriffen und zu einer Sonde gebündelt werden",
+    "caption": "Symbolbild: Neuron-Sonden greifen einzelne Aktivierungen aus dem Netz und bündeln sie zu Prüfsignalen. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat mit „Neuron basis applications“ den zweiten Teil seiner Serie über rohe Neuronaktivierungen als Interpretierbarkeitsbasis veröffentlicht. Nachdem Teil eins untersucht hat, was einzelne Neuronen in kleinen Modellen überhaupt abbilden, geht es nun um die praktische Frage: Lassen sich aus diesen Aktivierungen Werkzeuge bauen, mit denen man Modelle auf Sicherheitsverhalten prüft, steuert und auditiert, ohne dafür eigene Klassifikatoren zu trainieren? Die Antwort des Teams ist ein differenziertes Ja, mit klaren Grenzen."
+    },
+    {
+      "t": "h2",
+      "x": "Sonden, Steering und Blind-Audits"
+    },
+    {
+      "t": "p",
+      "x": "Für die Sonden wählten die Forschenden pro Schadenskategorie jeweils 10 bis 20 Neuronen allein anhand ihrer Beschreibungen und Readouts aus, ganz ohne gelabelte Beispiele oder Training. Auf 16 Sicherheits-Datensätzen (aus ToxicChat, den High-Stakes-Evals nach McKenzie et al. und WMDP-Dokumenten) schlugen diese Zero-shot-Sonden die beste Textsuche-Baseline (BM25 oder Embedding-Suche) in 11 Fällen. Beim Steering erreichten Vektoren aus der Neuron-Basis auf Llama-3.1-8B über 15 Verhaltensweisen hinweg dieselbe Erfolgsquote von 21 Prozent wie trainierte Steering-Vektoren; SAE-Latente kamen je nach Auswahlregel nur auf 3 bis 18 Prozent. Der Nutzen liegt also nicht in der Stärke, sondern darin, dass die Vektoren ohne Trainingslauf verfügbar sind."
+    },
+    {
+      "t": "p",
+      "x": "Den härtesten Test bildet ein Blind-Audit: Das Team bekam 68 Feintunings eines Modells, von denen 58 ein verstecktes Verhalten enthielten, und sollte diese ohne Vorwissen finden. Reine Outputs-only-Sonden deckten 40 Prozent der Verhalten auf. Steering-Transfers, bei denen die Auditoren mutmaßliche Verhaltensvektoren verstärkten und die Reaktion beobachteten, kamen auf 61 Prozent; kombinierte Readouts über mehrere Schichten erreichten 75 Prozent. Finetuning für Finetuning verglichen lag der Readout-Auditor bei 22 der 68 Modelle vorn und nur bei 6 hinten (p = 0,004)."
+    },
+    {
+      "t": "h2",
+      "x": "Unlearning lässt sich teilweise rückgängig machen"
+    },
+    {
+      "t": "p",
+      "x": "In einem zweiten Strang prüfte das Team 23 Checkpoints, die mit WMDP-Cyber-Unlearning von gefährlichem Wissen befreit worden waren. In 14 Fällen blieb das Wissen unter einer Cloze-Abfrage nachweisbar: Das Modell nannte die richtige Antwort weiterhin an erster Stelle, wenn man die Frage als Lückentext stellte. Die Autoren beschreiben das als Repräsentations-Verdrängung statt als echtes Vergessen. Bei den Unlearning-Methoden K-FADE und CUT, deren Eingriff sich auf einer einzelnen Richtung im Aktivierungsraum konzentriert, ließ sich das verdrängte Wissen durch Entfernen genau dieser einen Richtung zurückholen: Die Trefferquote stieg von 32 bis 47 Prozent auf 72 bis 84 Prozent. Das ist eine wichtige Einschränkung für alle, die Unlearning als Sicherheitsmaßnahme einsetzen."
+    },
+    {
+      "t": "callout",
+      "title": "Was das Team selbst einräumt",
+      "x": "Die Autoren ordnen die Befunde selbst ein: Bei der Konzepterkennung schlagen die Neuron-Sonden zwar jede SAE-Baseline (AUROC 0,903 gegenüber 0,888 auf AxBench), bleiben aber meist hinter Klassifikatoren zurück, die mit gelabelten Beispielen trainiert wurden (0,97). Alle Ergebnisse stammen von sechs Open-Weight-Modellen wie Llama-3.1-8B und Qwen3-8B bis 32B. Einen weiteren Befund ordnen sie vorsichtig ein: einen Backdoor-ähnlichen Mechanismus, bei dem bestimmte Neuronen einen Trigger verarbeiten. Er stammt aus einem kontrollierten Setting, nicht aus einem beobachteten Angriff in der Wildbahn."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die Arbeit sitzt an der Schnittstelle zwischen Interpretierbarkeit und praktischer Modellsicherheit, demselben Terrain wie die Erkennbarkeit von Alignment-Evals oder die Sandbox-Audits in Siren. Ihr praktischer Wert liegt weniger in den einzelnen Prozentzahlen als in der Arbeitsweise: Sonden und Audits aus rohen Neuronen sind billig genug, um sie routinemäßig auf neue Checkpoints zu werfen, und sie erwischen Verhalten, das einer reinen Textanalyse entgeht. Zugleich bleibt die Methode heikel: Ohne Gegenprobe durch Verhaltensbeobachtung kann eine Sonde falsche Sicherheit liefern. Alle Zahlen stammen aus der Anthropic-Veröffentlichung; eine unabhängige Replikation liegt nicht vor."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Neuron basis applications",
+      "publisher": "Anthropic (Alignment Science)",
+      "url": "https://alignment.anthropic.com/2026/neuron-basis-applications/",
+      "accessed": "2026-11-25"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist eine Neuron-Sonde?",
+      "a": "Eine Auswahl weniger Neuronen, anhand derer Ausgabevektoren abgelesen wird, ob ein bestimmtes Konzept oder Verhalten vorliegt. In dieser Arbeit werden die Sonden ohne gelabelte Beispiele und ohne eigenes Training gebaut."
+    },
+    {
+      "q": "Ersetzt das klassische Red-Teaming-Audits?",
+      "a": "Nein. Die Sonden fanden im Blind-Audit 40 bis 75 Prozent der versteckten Verhalten, je nach Methode. Das ist ein schneller Filter, aber kein Ersatz für Verhaltensbeobachtung und manuelle Prüfung."
+    },
+    {
+      "q": "Bedeutet das, Unlearning funktioniert nicht?",
+      "a": "Die Arbeit zeigt, dass WMDP-Cyber-Unlearning gefährliches Wissen in 14 von 23 Fällen nur verdrängte, sodass es unter Cloze-Abfragen oder gezieltem Entfernen einzelner Richtungen wieder sichtbar wurde. Das schwächt Unlearning als alleinige Sicherheitsmaßnahme, widerlegt es aber nicht generell."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle",
+    "shirudo-ebpf-shields-openai-cisco",
+    "openai-pachocki-perplexity-loss-kurve-grenzen"
+  ]
+}
