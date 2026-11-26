@@ -1,0 +1,135 @@
+{
+  "title": "Was Training wirklich verändert: Vergessen, Komposition, Reward-Hacks",
+  "dek": "SFT vergisst weniger als gedacht, gelernte Skills komponieren kaum in einem Aufruf, Gegendatenbanken erschweren SQL-Reward-Hacks: drei Preprints zum Training.",
+  "slug": "news-ueberblick-morgen-2026-11-26",
+  "section": "ueberblick",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-26T06:43:00+01:00",
+  "modified": "2026-11-26T06:43:00+01:00",
+  "tags": [
+    "Forschung",
+    "Evaluation",
+    "Agenten",
+    "Training"
+  ],
+  "hero": {
+    "alt": "Drei schematische Bildkarten: ein niedrig gestellter Regler über zwei gestapelten Schichten, zwei Puzzleteile mit Lücke neben einer Kette aus zwei Pfeilen, und ein Datenbanksymbol mit einer Geisterkopie und einem durchgestrichenen Käfer. Themenhero ohne Zahlen und Messskala.",
+    "caption": "Drei Studien über Vergessen beim Feintuning, komponierbare Skills und hackbare SQL-Belohnungen. Alle Werte, Bedingungen und Grenzen stehen in den Textpanels und im Artikel. Eigene Illustration.",
+    "credit": "Eigene Illustration",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Quellenprüfung: 26. November 2026, 06:38 Uhr MEZ. Drei am 25. November eingereichte Preprints (jeweils an den Abstract-Seiten geprüft) nehmen das Training selbst unter die Lupe: ob überwachtes Feintuning wirklich so stark vergisst wie berichtet, ob einzeln gelernte Skill-Bausteine zusammenwirken, und ob eine SQL-Belohnung auf einer einzigen Datenbank gegen Zufallstreffer und Hacks gefeit ist."
+    },
+    {
+      "t": "h2",
+      "x": "Feintuning: Wer auf Behalt wählt, vergisst kaum"
+    },
+    {
+      "t": "callout",
+      "title": "1,4 statt 8,5 Prozentpunkte Verlust bei fast gleichem Gewinn",
+      "x": "Auf Qwen2.5-7B erreicht einfaches SFT auf der Science-Aufgabe plus 34,6 Prozentpunkte Neulernen bei 1,4 Punkten Verlust alter Fähigkeiten, wenn die Hyperparameter gemeinsam nach Gewinn und Behalt gewählt werden. Wählt man nur nach der Neuaufgabe, sind es plus 36,9 bei 8,5 Punkten Verlust: 2,2 Punkte mehr Gewinn kosten 7,1 Punkte mehr Vergessen."
+    },
+    {
+      "t": "p",
+      "x": "Katastrophales Vergessen gilt als Schwäche des überwachten Feintunings; zuletzt wurde die Off-Policy-Natur von SFT als Ursache genannt und On-Policy-Lernen (etwa Selbstdistillation, SDFT) als Gegenmittel. Nirmit Joshi, Nathan Srebro (TTIC) und Eran Malach (Apple) widersprechen: Gemessen wird auf drei Neuaufgaben (Science aus SciKnowEval, ToolUse, juristische MBE-Fragen) und 9 Kategorien alter Fähigkeiten von Code über MMLU bis Jailbreak-Robustheit; Hauptmodell ist Qwen2.5-7B, ergänzt durch Llama-3.1-8B-Replikationen und Qwen2.5-14B im Anhang."
+    },
+    {
+      "t": "p",
+      "x": "Mit dem gemeinsamen Nutzenkriterium ist SFT auf Science und ToolUse konkurrenzfähig mit SDFT und verliert nur wenig; auf MBE, wo der beste Nutzen einen Tausch zwischen Gewinn und Behalt verlangt, liegt SDFT vorn. SDFT ist robuster über die Hyperparameter, braucht aber ebenfalls die behaltsbewusste Auswahl: Auf MBE verliert auch SDFT, nach Neuaufgabe gewählt, mehrere Punkte Behalt für fast keinen Zusatzgewinn. In der Replikation des MMLU-Settings von Chen et al. (Llama-3.1-8B) erreicht eine andere SFT-Konfiguration die Neuaufgabenleistung von GRPO bei praktisch unveränderten Altfähigkeiten."
+    },
+    {
+      "t": "p",
+      "x": "Praktisch schlagen die Autoren zwei Sparstrategien vor: Auswahl auf einer kleinen Teilmenge der Altfähigkeiten und eine behaltsgeführte Hyperparametersuche, beide mit deutlich geringerem Abstimmungsaufwand. Die Grenzen nennt die Arbeit selbst: ToolUse hat nur 97 Auswertungsbeispiele, dort dienen Auswahl und Bericht demselben Datensatz; und das Ergebnis widerlegt Vergessen nicht generell, sondern zeigt, dass es von Auswahl und Hyperparametern abhängt. Zu beachten: Die Arbeit entstand während eines Apple-Praktikums, ein Autor ist bei Apple."
+    },
+    {
+      "t": "h2",
+      "x": "Skill-Bibliotheken: Einzeln stark, zusammen schwach"
+    },
+    {
+      "t": "callout",
+      "title": "Höchstens 7,6 Prozent Komposition in einem Aufruf",
+      "x": "Über sieben Einstellungen (vier Ziffern-Basismodelle und drei Record-Editing-Modelle, Soft-Prompt-Skills auf eingefrorenen Gewichten) liegt die mittlere Kompositionsgenauigkeit in einem Aufruf bei höchstens 7,6 Prozent; über zwei Aufrufe mit explizitem Zwischenergebnis erreichen dieselben Paare 88,2 bis 100 Prozent. Auf den Ziffernaufgaben interferieren alle 27 gerichteten Paare."
+    },
+    {
+      "t": "p",
+      "x": "Agentensysteme sollen gelernte Parameterbausteine als wiederverwendbare Bibliothek speichern. Die Studie (Yan Lin, Newcastle University, mit Koautoren an INSAIT, MBZUAI, KIT und weiteren) prüft das kontrolliert: sechs Soft-Prompt-Skills à 20 Embedding-Zeilen pro Basis, Identität und Reihenfolge werden vorgegeben, Auswertung per exaktem Match mit drei Seeds; Zifferntransformationen auf Qwen2.5-0.5B/1.5B/7B und Gemma-3-1B, Record-Editing auf Qwen2.5-Instruct in drei Größen (20 bis 30 teilnahmeberechtigte Paare, beide Skills mindestens 90 Prozent allein)."
+    },
+    {
+      "t": "p",
+      "x": "Die Werte sind einseitig: 6,4, 1,3 und 0,9 Prozent in einem Aufruf auf den drei Qwen-Ziffernbasen, 7,6 und 1,1 auf den beiden kleineren Record-Modellen. Austauschbarkeit scheitert ebenfalls: Ersetzt man trainierte Partner durch unabhängig gelernte Bausteine derselben Operation, sinkt der Median der Komposition auf zwei Qwen-Basen von 98,0 und 95,3 Prozent auf 12,7 und 0,5, obwohl jeder Ersatzbaustein allein mindestens 90 Prozent erreicht. Neutral-Insertions-Training verbessert die Robustheit, lässt aber erhebliche Interferenz; Blocklänge und Token-Norm allein erklären die Verluste auf zwei der vier Ziffernbasen nicht."
+    },
+    {
+      "t": "p",
+      "x": "Reparatur hat Kehrseiten: Sie kann eine Komposition verbessern und zugleich den ursprünglichen Skill beschädigen; Wiederholungstraining hebt den Behalt, die Übertragung auf neue Partner bleibt auf Qwen2.5-0.5B begrenzt. Die Autoren begrenzen den Befund selbst: synthetische Aufgaben, nur Soft-Prompts, keine Agenten-Planung, längere Ketten oder andere Skill-Formen; der Zwei-Aufruf-Vergleich ist nicht gleichgesetzt (49 gegen 58 Prompt-Token, 1,61 bis 2,06-mal so langsam), und als post hoc markierte Analysen sind beschreibend."
+    },
+    {
+      "t": "h2",
+      "x": "SQL-Belohnungen: Eine Datenbank reicht nicht"
+    },
+    {
+      "t": "callout",
+      "title": "Von 54,1 auf 1,9 Prozent bezahlte Hacks",
+      "x": "Im Audit auf 1.302 synthetischen Fragen (1.814 fehlerhafte Mutanten, 2.839 Hacks, 2.847 korrekte Anfragen) bezahlt die strikte Einzeldatenbank-Belohnung 29,5 Prozent der Fehler und 54,1 Prozent der Hacks voll; die Gegendatenbank-Variante mit versteckten Kopien senkt das auf 16,8 und 1,9 Prozent und lehnt keine der 2.847 korrekten Anfragen ab."
+    },
+    {
+      "t": "p",
+      "x": "Text-to-SQL-RL bezahlt eine Abfrage, wenn ihr Ergebnis auf einer Datenbank zur Referenz passt. Der blinde Fleck: Fehlt in den Daten die Zeile, die einen Fehler aufdeckt, passt auch eine falsche Abfrage. Auf den synthetischen Handelsdatenbanken der Studie (AIMS, Delhi Technological University) gehen bei 50 Kunden 29,2 Prozent realistischer fehlerhafter Abfragen durch, bei 500 Kunden nur 0,8; Beispiel der Autoren: Zählt die Abfrage Bestellungen statt Käufer, stimmt das Ergebnis, solange jeder Käufer genau eine Bestellung hat."
+    },
+    {
+      "t": "p",
+      "x": "Die Gegenprobe lässt die finale Abfrage zusätzlich auf zwei bis drei versteckten, per Code erzeugten Kopien laufen und bezahlt nur, wenn alle Ergebnisse stimmen (strikt) beziehungsweise anteilig (Mittel). Auch öffentliche Rewards teilen die Lücke: Ein Mengenvergleich im BIRD-/SkyRL-Stil bezahlt 37,5 Prozent der Mutanten, darunter alle 203 Abfragen mit fehlendem DISTINCT; ein Exploit im AgentTune-Reward (WHERE-1=1-Polster, 314 Ja-Fragen) wurde den Betreibern gemeldet und ist behoben; 8,1 bis 14,9 Prozent der als korrekt geltenden Antworten von acht publizierten Spider-Systemen scheitern an einer Testsuite-Datenbank. Kopien aus einem familienblinden Generator funktionieren ähnlich gut (17,2 Prozent Mutanten, 2,3 Hacks), eine einfach größere Datenbank dagegen fängt zwar 92,2 Prozent der Mutanten, bezahlt aber weiter jeden Hack: Größe fängt Unfälle, keine Exploits. Das vorab registrierte Ziel (50 Prozent relative Senkung) verfehlte die Methode mit 43 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Beim Training bleibt der Nutzen unbewiesen, und die Autoren sagen das so: In einem kontrollierten GRPO-Vergleich (Tiny Aya Global 3.35B, LoRA, drei Seeds, nur der Reward geändert) lag der Mittelwert-Arm innerhalb der Domäne bei 8,4 Prozent verifizierter Genauigkeit gegen 11,7 für den Einzeldatenbank-Arm, weil sich die beiden Rewards nur auf 5 bis 7 Prozent der Rollouts unterschieden; auf Spider gewann er 1,6 Punkte, innerhalb des Seed-Rauschens, und ein Seed dreht beide Vorzeichen. Weitere Grenzen: ein synthetisches Schema, 60 Trainingsschritte, ein Modell, nur Englisch, Spider möglicherweise im Vortraining, die verifizierte Genauigkeit ist nachsichtig (54 von 103 Mutanten erkannt); ein Drei-Autoren-Preprint der Gesellschaft AIMS-DTU an der Delhi Technological University."
+    }
+  ],
+  "key_takeaways": [
+    "SFT vergisst weniger als sein Ruf, wenn die Auswahl stimmt: Auf Qwen2.5-7B erreicht einfaches Feintuning auf der Science-Aufgabe mit gemeinsamer Auswahl nach Gewinn und Behalt plus 34,6 Punkte bei 1,4 Punkten Verlust; wählt man nur nach Neuaufgabe, sind es plus 36,9 bei 8,5 Punkten Verlust. Auf MBE bleibt die On-Policy-Variante SDFT vorn.",
+    "Einzeln gelernte Soft-Prompt-Skills sind nicht automatisch kombinierbar: In sieben Einstellungen (vier Ziffern-Basismodelle, drei Record-Editing-Modelle) liegt die Komposition in einem Aufruf bei höchstens 7,6 Prozent, über zwei Aufrufe mit Zwischenergebnis bei 88,2 bis 100; der Tausch gegen unabhängig gelernte Bausteine derselben Operation senkt den Median zweier Qwen-Basen von 98,0 und 95,3 auf 12,7 und 0,5 Prozent.",
+    "Ein Reward, der SQL-Abfragen zusätzlich auf versteckten Gegendatenbanken ausführt, bezahlt im Audit auf 1.302 Fragen nur noch 16,8 statt 29,5 Prozent der fehlerhaften und 1,9 statt 54,1 Prozent der gehackten Anfragen, ohne eine der 2.847 korrekten abzulehnen; besseres Training ergab sich daraus bisher nicht (ehrliches Nullergebnis, drei Seeds)."
+  ],
+  "faq": [
+    {
+      "q": "Heißt das Ergebnis, dass überwachtes Feintuning nie vergisst?",
+      "a": "Nein. Aggressive Hyperparameter (hohe Lernrate, große Batchgröße) erzeugen auch in dieser Studie katastrophales Vergessen. Der Punkt ist das Auswahlkriterium: Wer Checkpoints gemeinsam nach Neuaufgaben-Gewinn und Behalt wählt, erhält mit einfachem SFT auf Science und ToolUse ähnliche Gewinne bei wenig Verlust. SDFT ist robuster über die Hyperparameter, braucht aber dieselbe behaltsbewusste Auswahl, und auf der Rechtsaufgabe MBE liegt SDFT vorn."
+    },
+    {
+      "q": "Warum sind zwei Modellaufrufe kein einfacher Ausweg für Skill-Bibliotheken?",
+      "a": "Zwei Aufrufe mit Zwischenausgabe erreichen zwar 88,2 bis 100 Prozent, sind aber ein anderes Verfahren: Sie brauchen mehr Rechenzeit (um den Faktor 1,61 bis 2,06) und eine explizite Zwischendarstellung, und sie testen sequenzielle Ausführbarkeit, nicht Komposition in einem Kontext. Das Versprechen der Bibliothek ist gerade, gelernte Bausteine beliebig neu zu kombinieren; genau das funktioniert in einem Aufruf kaum (höchstens 7,6 Prozent)."
+    },
+    {
+      "q": "Macht der Gegendatenbank-Reward das Training besser?",
+      "a": "Nicht nachweisbar: In der kontrollierten Studie mit drei Seeds lag der CF-Arm innerhalb der Domäne bei 8,4 Prozent verifizierter Genauigkeit gegen 11,7 für den Einzeldatenbank-Arm, auf Spider gewann er 1,6 Punkte innerhalb des Seed-Rauschens, und ein Seed dreht beide Vorzeichen um. Der Gewinn ist eine schwerer hackbare Belohnung, kein gezeigter Genauigkeitsvorteil; die Autoren melden das ausdrücklich als ehrliches Nullergebnis."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle",
+    "arc-prize-astra-harness-luecke"
+  ],
+  "sources": [
+    {
+      "title": "Tune for Retention, Not Just Gain: SFT Forgets Far Less than You Think",
+      "publisher": "arXiv; Nirmit Joshi, Nathan Srebro (TTIC), Eran Malach (Apple)",
+      "url": "https://arxiv.org/abs/2611.34579",
+      "accessed": "2026-11-26"
+    },
+    {
+      "title": "When Skills Fail to Compose: Compatibility and Retention in Language Models",
+      "publisher": "arXiv; Yan Lin (Newcastle University), Zhongliang Guo, Jingyu Sun u. a. (INSAIT, MBZUAI, KIT u. a.)",
+      "url": "https://arxiv.org/abs/2611.34398",
+      "accessed": "2026-11-26"
+    },
+    {
+      "title": "Single-Database Rewards Are Hackable: Counterfactual Execution for Trustworthy Text-to-SQL RL",
+      "publisher": "arXiv; Shreshth Rai, Rishii Kumar Singh, Aksh Aggarwal (AIMS, Delhi Technological University)",
+      "url": "https://arxiv.org/abs/2611.34363",
+      "accessed": "2026-11-26"
+    }
+  ]
+}
