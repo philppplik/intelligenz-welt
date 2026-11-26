@@ -1,6 +1,1 @@
-https://intelligenz-welt.de/artikel/agenten-schwaerme-tempo-statt-qualitaet/
-https://intelligenz-welt.de/artikel/anthropic-messages-api-rust-migration/
-https://intelligenz-welt.de/artikel/cognition-swe-2-1-rl-kimi-k3/
-https://intelligenz-welt.de/artikel/google-cogentic-faktorisierung-l-1-3/
-https://intelligenz-welt.de/artikel/openai-math-neun-manuskripte-omega-9-4/
-https://intelligenz-welt.de/artikel/ternary-bonsai-2-5-27b-lokale-coding-agenten/
+https://intelligenz-welt.de/artikel/news-ueberblick-mittag-2026-11-26/
