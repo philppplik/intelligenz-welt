@@ -3,7 +3,7 @@
   "lang": "de",
   "section": "trends",
   "type": "analysis",
-  "title": "Studie zu Agenten-Schwärmen: Teams aus acht Agenten typischerweise sechsmal schneller, aber rund sieben Prozent schlechter als ein Einzelagent",
+  "title": "Agenten-Schwärme: Teams aus 8 typischerweise sechsmal schneller, aber rund 7 Prozent schlechter",
   "dek": "Paradigm 3 hat über 1.100 Läufe mit mehr als 80 Teamkonfigurationen verglichen: Schwärme aus 2, 4 oder 8 Agenten liefern bei gleichem Token-Budget deutlich schneller, aber etwas schlechter ab; sobald der Einzelagent mit frischem Kontext neu starten darf, gewinnt er wieder.",
   "published": "2026-11-26T08:50:00+01:00",
   "modified": "2026-11-26T08:50:00+01:00",
