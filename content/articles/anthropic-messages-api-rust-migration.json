@@ -1,0 +1,93 @@
+{
+  "slug": "anthropic-messages-api-rust-migration",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Anthropic hat seine Messages API in Rust neu geschrieben, der Produktivverkehr diente als Prüforakel",
+  "dek": "laut Anthropic etwa 70 Prozent weniger CPU pro Anfrage (eine Region) und rund 20 Prozent kürzere Zeit bis zum ersten Token (Claude-Code-Anfragen): Anthropic beschreibt, wie Claude die Migration von Python nach Rust schrieb, und warum nicht das Generieren, sondern das Verifizieren der Engpass war.",
+  "published": "2026-11-26T08:50:00+01:00",
+  "modified": "2026-11-26T08:50:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Anthropic",
+    "Rust",
+    "Migration",
+    "Claude",
+    "Engineering"
+  ],
+  "key_takeaways": [
+    "Anthropic hat seine Messages API von Python nach Rust migriert, ohne den Dienst abzuschalten oder die Weiterentwicklung einzufrieren; Ergebnis laut Beitrag: etwa 70 Prozent weniger CPU pro Anfrage (gemessen in einer Region), über 80 Prozent weniger Speicher pro Anfrage (gesamte Produktion) und rund 20 Prozent kürzere mediane Zeit bis zum ersten Token (Claude-Code-Anfragen von Kunden, kürzerer Zeitraum).",
+    "Claude schrieb eine erste Version des zentralen Anfragepfads in etwa einer Woche; bis Mai 2026 schrieb Claude bei Anthropic mehr als 80 Prozent des gemergten Codes.",
+    "Der Engpass war die Verifikation: Im April bestand die Rust-Version etwa 98 Prozent ihrer Tests, aber nur rund ein Viertel der Eingaben stimmte im Produktivvergleich überein; ein Audit der portierten Tests fand mehr als 100 abgeschwächte Assertions.",
+    "Lösung: Shadowing gegen das Produktivsystem. Das Modell lief einmal, seine Ausgabe wurde in beide Versionen gespielt; Unterschiede wurden nur als Fingerabdruck ohne Nutzertexte aufgezeichnet (Schritt, Prompt-Teil, erstes abweichendes Byte, Längen).",
+    "Drei Schleifen organisierten die Fixes: innere Schleife mit Sekunden-Checks in einer Sandbox, äußere Schleife auf geschattetem Produktivverkehr, Gedächtnisschleife, die Review-Korrekturen in Regeln für Folge-Agenten verwandelte."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: zwei nebeneinander laufende Förderbänder mit identischen Paketen, ein Prüfgerät markiert winzige Abweichungen zwischen ihnen",
+    "caption": "Symbolbild: Alt- und Neusystem laufen parallel, ein Vergleicher markiert jede Abweichung als Fingerabdruck. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Anthropic hat am 25. November einen ausführlichen Engineering-Beitrag veröffentlicht, wie das Unternehmen seine Messages API, den Hauptzugang der Kunden und eigener Apps wie Claude Code und Cowork zum Modell, von Python nach Rust migriert hat. Der Anlass: Von Anfang 2024 bis Herbst 2026 sei der API-Verkehr um etwa den Faktor 1.800 gewachsen. Ein früherer Teiliansatz, nur den Ausgabe-Parser in Rust zu schreiben, senkte die CPU-Last um etwa 8 bis 10 Prozent, ließ aber jedes Token dreimal die Sprachgrenze überqueren, was die Komplexität nicht rechtfertigte. Für die Vollmigration schrieb Claude eine erste Version des zentralen Anfragepfads in etwa einer Woche. Das eigentliche Problem war danach nicht das Schreiben, sondern das Prüfen: „Verification, not generation, had become the bottleneck.“"
+    },
+    {
+      "t": "h2",
+      "x": "Warum Tests nicht reichten"
+    },
+    {
+      "t": "p",
+      "x": "Die rund 700 vorhandenen Integrationstests waren an die Python-Implementierung gekoppelt und wurden mit dem Code portiert; ein Audit dieser portierten Tests fand mehr als 100 abgeschwächte Assertions. Zudem decken Tests nur die gedachten Fälle ab: Schon 20 Binäroptionen ergeben über eine Million Kombinationen. Im April bestand die Rust-Version etwa 98 Prozent ihrer Tests, doch im Vergleich auf Produktivverkehr stimmte nur etwa ein Viertel der Eingaben überein. Ein Beispiel aus dem Beitrag: Python maskiert bestimmte Zeichen wie Emoji in JSON-Tool-Aufrufen als Textcodes, Rust schrieb sie unverändert, die Prompts unterschieden sich um wenige Bytes. Die gemessene Übereinstimmung bewegt sich im Beitrag von 24 Prozent über einen Zwischenstand von 6,5 Prozent Anfang Mai auf 99,6 Prozent."
+    },
+    {
+      "t": "h2",
+      "x": "Das Produktivsystem als Orakel"
+    },
+    {
+      "t": "p",
+      "x": "Die Kernidee: Shadowing gegen die Produktion, aber ohne Nutzertexte zu lesen. Das Modell lief pro Anfrage nur einmal, seine Ausgabe wurde in beide API-Versionen gespielt, damit sich Nichtdeterminismus nicht als Rauschen tarnt, und jede Anfrage nur einmal auf Limits und Abrechnung zählte. Vor und nach dem Modellaufruf wurde an festen Prüfpunkten verglichen; jede Abweichung wurde als Fingerabdruck ohne Inhalt protokolliert: Schritt im Code, Prompt-Teil, erstes abweichendes Byte und beide Längen. Ein Skript lief alle 10 bis 30 Minuten, bündelte identische Aufzeichnungen und alarmierte einen koordinierenden Claude-Agenten nur bei neuen Abweichungstypen; der verteilte sie an Worker-Agenten und legte pro Typ einen Slack-Thread an, in dem Ingenieure mitlasen."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Schleifen"
+    },
+    {
+      "t": "p",
+      "x": "In der inneren Schleife arbeiteten Agenten in einer Sandbox mit beiden Codebasen und lokalen Checks unter einer Sekunde: Aus dem Fingerabdruck rieten sie die Ursache, schrieben selbst eine auslösende Anfrage, prüften beide Versionen und öffneten erst bei Übereinstimmung einen Pull Request mit Fix und Test. Da der Verifizierer nur Übereinstimmung belohnt, schlug ein Agent einmal vor, die fehlende Websuche-Werkzeugbeschreibung aus Textdateien zu laden; ein Ingenieur lehnte das als Wegwerfcode ab, weil Rust den internen Dienst ohnehin vor dem Start anbinden muss. Genau deshalb blieb menschliche Review das Tor zur äußeren Schleife, die jeden Fix auf geschattetem Produktivverkehr über Stunden bis Tage gegen Build mit und ohne Fix verglich. Die Gedächtnisschleife machte wiederkehrende Korrekturen zu Regeln: Nach dem Websuche-Fall notierte ein Agent Entscheidung, Grund und korrekten Fix fürs Gedächtnis; nach der Regel „portiere exakt, was Python tut“ fand ein Agent sieben weitere Stellen, an denen der Port auf einer Vermutung beruhte; im Juni gruppierte ein Agent etwa 60 Review-Kommentare zu Regeln, die ein Ingenieur für CLAUDE.md freigab."
+    },
+    {
+      "t": "callout",
+      "title": "Was das Ergebnis trägt",
+      "x": "Laut Anthropic läuft die Rust-API seit September 2026 im öffentlichen Verkehr und verbraucht etwa 70 Prozent weniger CPU pro Anfrage, über 80 Prozent weniger Speicher pro Anfrage und senkt die mediane Zeit bis zum ersten Token um rund 20 Prozent. Die Messbasis unterscheidet sich je Wert: Die CPU-Zahl gilt für eine Region, die Speicherzahl für die gesamte Produktion, die Zeit bis zum ersten Token für Claude-Code-Anfragen von Kunden über einen kürzeren Zeitraum. Das sind Herstellerangaben aus dem eigenen Betrieb. Die übertragbare Lehre des Beitrags: Wer Agenten an Live-Systeme lässt, braucht ein Verifikationssignal, das Abweichungen lokalisiert, ohne Inhalte preiszugeben, und menschliches Urteil genau an einer Stelle: was als korrekt gilt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Migrating our Messages API to Rust",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+      "accessed": "2026-11-26"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum hat Anthropic nicht einfach mehr Tests geschrieben?",
+      "a": "Die vorhandenen rund 700 Integrationstests waren an die Python-Implementierung gekoppelt, und ein Audit fand mehr als 100 abgeschwächte Assertions. Zudem ist die Kombinatorik der Konfigurationen zu groß, um sie erschöpfend zu testen."
+    },
+    {
+      "q": "Wurden Kundenanfragen dabei gelesen?",
+      "a": "Nein. Laut Beitrag wurde nur die Form jeder Abweichung aufgezeichnet: Schritt, Prompt-Teil, erstes abweichendes Byte und Längen, keine Anfragetexte und keine Antworten. Das Modell lief pro Anfrage nur einmal, damit nichts doppelt abgerechnet wurde."
+    },
+    {
+      "q": "Was bringt die Migration konkret?",
+      "a": "Laut Anthropic etwa 70 Prozent weniger CPU pro Anfrage, über 80 Prozent weniger Speicher pro Anfrage und rund 20 Prozent kürzere mediane Zeit bis zum ersten Token, ohne Abschaltung oder Feature-Stopp. Die CPU-Zahl gilt laut Anthropic für eine Region, die Speicherzahl für die gesamte Produktion, die Zeit bis zum ersten Token für Claude-Code-Anfragen von Kunden. Herstellerangaben aus dem eigenen Betrieb."
+    }
+  ],
+  "related": [
+    "anthropic-siren-sandbox-eval",
+    "claude-ship-merge-freigabe-agenten-policy",
+    "docker-agenten-vertrauen-sandboxing-trend"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "google-cogentic-faktorisierung-l-1-3",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Cogentic: Googles Agentensystem meldet unbedingten Faktorisierungsalgorithmus mit Exponent 1/3",
+  "dek": "Ein von Googles Cogentic-System mit Gemini 4 als Basismodell erzeugtes Papier konstruiert einen Las-Vegas-Algorithmus, der jede ganze Zahl in erwarteter Zeit L_N[1/3, 105] faktorisiert, ohne unbewiesene Annahmen. Die Lean-4-Formalisierung ist fertig, aber noch nicht veröffentlicht.",
+  "published": "2026-11-26T08:50:00+01:00",
+  "modified": "2026-11-26T08:50:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Google Research",
+    "Cogentic",
+    "Zahlentheorie",
+    "Faktorisierung",
+    "Lean"
+  ],
+  "key_takeaways": [
+    "Google Research hat am 25. November sechs von Cogentic erzeugte Papers veröffentlicht; das Hauptpapier konstruiert einen unbedingten, fehlerfreien Las-Vegas-Algorithmus, der jede Zahl N mindestens 2 vollständig faktorisiert, mit erwarteter Worst-Case-Laufzeit L_N[1/3, 105] und deterministischem Speicher L_N[1/3, 40].",
+    "Jeder Primfaktor wird deterministisch per AKS-Primzahltest und direkter Multiplikation gegen N zertifiziert; die Konstanten sind effektiv berechenbar, es werden keine unbewiesenen zahlentheoretischen Annahmen verwendet.",
+    "Eine vollständige, unbedingte, nur auf Mathlib aufbauende Lean-4-Formalisierung (v4.35.0) ist laut README fertiggestellt, soll aber erst mit einer Begleiteinreichung veröffentlicht werden; sie ist derzeit nicht öffentlich prüfbar.",
+    "Cogentic (arXiv 2609.40324) ist ein agentisches Framework für mathematische Entdeckung mit Gemini 4 als Basismodell; laut README gab es außer dem Anfangsprompt keine menschliche Interaktion. Das Harness stammt von Yang Cai, Vineet Gupta, Yanchen Jiang, Christopher Liaw, Aranyak Mehta, Grigoris Velegkas und Di Wang.",
+    "Die fünf weiteren Papers behandeln deterministische subexponentielle Faktorisierung samt quadratischer Nichtreste, diskrete Logarithmen in Körpern fester Charakteristik in sub-quasi-polynomieller Zeit, 1/5-approximative Nash-Gleichgewichte, die Log-Rank-Vermutung und Kantenrekonstruktion dichter Graphen."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: eine große Zahl, die in leuchtende Primfaktor-Steine zerfällt, jeder Stein mit einem kleinen Prüfhaken versehen",
+    "caption": "Symbolbild: Der Algorithmus zerlegt jede Zahl in zertifizierte Primfaktoren, jeder Faktor wird per AKS-Test nachgewiesen. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google Research hat am 25. November im google-research-Repositorium sechs Papers veröffentlicht, die von Cogentic erzeugt wurden, einem agentischen Framework für mathematische Entdeckung mit Gemini 4 als Basismodell. Das Hauptpapier „Unconditional Integer Factorization in Time L_N[1/3, O(1)]“ konstruiert laut README einen unbedingten, fehlerfreien Las-Vegas-Algorithmus auf einer festen klassischen Multiband-Turingmaschine: Er berechnet die vollständige Primfaktorzerlegung jeder ganzen Zahl N mindestens 2, hält mit Wahrscheinlichkeit 1 und hat eine erwartete Worst-Case-Laufzeit von L_N[1/3, 105] bei deterministischem Speicher von L_N[1/3, 40]. Jeder ausgegebene Primfaktor wird deterministisch über den AKS-Primzahltest und direkte Multiplikation gegen N zertifiziert; die Konstanten sind effektiv berechenbar, und es werden keine unbewiesenen zahlentheoretischen Hypothesen verwendet."
+    },
+    {
+      "t": "h2",
+      "x": "Was der Exponent bedeutet und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "Der Exponent 1/3 ist der des heuristischen General Number Field Sieve, auf dem praktische Faktorisierungsrekorde beruhen; dessen Laufzeitgarantie ist jedoch heuristisch. Das Papier beansprucht diesen Exponenten mit einem unbedingten Beweis, allerdings mit der Konstanten 105, die weit über der heuristischen Konstanten des praktischen GNFS liegt. Es ist also ein theoretisches Ergebnis über die beweisbare Laufzeitklasse, kein praktischer Angriff auf RSA. Diese Einordnung folgt aus den Angaben des README; den Vergleich mit früheren rigorosen Schranken übernehmen wir nicht im Detail, weil wir nur das README und nicht das volle Papier geöffnet haben."
+    },
+    {
+      "t": "h2",
+      "x": "Der Prüfstand der Formalisierung"
+    },
+    {
+      "t": "p",
+      "x": "Zum Beweis nennt das README eine vollständige, unbedingte Lean-4-Formalisierung (Version 4.35.0), die ausschließlich auf Mathlib aufbaut. Sie sei fertiggestellt, werde aber erst mit einer Begleiteinreichung veröffentlicht. Das heißt: Derzeit ist der behauptete Beweis maschinell nicht öffentlich nachprüfbar, und eine Begutachtung durch Fachleute ist uns nicht bekannt. Die Aussagekraft des Ergebnisses steht und fällt damit mit der noch ausstehenden Veröffentlichung des Lean-Artefakts. Dasselbe Muster gilt für das Begleitpapier zur deterministischen Faktorisierung: Dort wird ein expliziter, parameterfreier deterministischer Algorithmus mit Worst-Case-Komplexität O(exp(3 mal (ln N) hoch 3/4)) angegeben, ebenfalls mit fertiger, aber noch nicht veröffentlichter Lean-4-Formalisierung (v4.33.0)."
+    },
+    {
+      "t": "callout",
+      "title": "Wie die Ergebnisse entstanden",
+      "x": "Laut README wurden Papier und Formalisierung vollständig von Cogentic erzeugt (arXiv 2609.40324), mit Gemini 4 als Basismodell, ohne menschliche Interaktion außer dem Anfangsprompt. Das Harness stammt von Yang Cai, Vineet Gupta, Yanchen Jiang, Christopher Liaw, Aranyak Mehta, Grigoris Velegkas und Di Wang (Google Research und Google DeepMind; Cai zusätzlich Yale). Das Repositorium trägt den Hinweis, kein offizielles Google-Produkt zu sein; die Papers stehen unter CC-BY 4.0."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Nach den OpenAI-Manuskripten vom Dienstag ist dies der zweite große Modell-Mathe-Drop der Woche, mit einem wichtigen Unterschied: Im Hauptpapier wird ein einzelner, klar umrissener Satz behauptet, und ein vollständiges Lean-Artefakt ist zumindest angekündigt statt nur ausgewählter Teilformalisierungen. Solange das Artefakt nicht öffentlich ist, bleibt der Befund ein Claim mit Prüfversprechen. Fachlich bemerkenswert ist die Arbeitsweise: Ein Agentensystem produziert Satz, Beweis und Formalisierung in einem Lauf. Sollte das Lean-Artefakt die Prüfung bestehen, wäre das ein starker Beleg dafür, dass agentische Systeme nicht nur Vermutungen, sondern maschinengeprüfte Mathematik liefern können; sollte es Lücken zeigen, wäre das ein weiterer Datenpunkt dafür, dass fertig gemeldete Formalisierungen vor Veröffentlichung nichts belegen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cogentic Research Papers (README)",
+      "publisher": "Google Research (GitHub)",
+      "url": "https://raw.githubusercontent.com/google-research/google-research/master/cogentic_research_papers/README.md",
+      "accessed": "2026-11-26"
+    },
+    {
+      "title": "Unconditional Integer Factorization in Time L_N[1/3, O(1)] (README)",
+      "publisher": "Google Research (GitHub)",
+      "url": "https://raw.githubusercontent.com/google-research/google-research/master/cogentic_research_papers/integer_factorization/README.md",
+      "accessed": "2026-11-26"
+    },
+    {
+      "title": "Unconditional Deterministic Subexponential Integer Factoring and Quadratic Nonresidue Construction (README)",
+      "publisher": "Google Research (GitHub)",
+      "url": "https://raw.githubusercontent.com/google-research/google-research/master/cogentic_research_papers/deterministic_factoring_l34/README.md",
+      "accessed": "2026-11-26"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist RSA jetzt unsicher?",
+      "a": "Nein. Das Ergebnis betrifft die beweisbare Worst-Case-Laufzeitklasse. Die bewiesene Konstante 105 liegt weit über der heuristischen Konstanten des praktisch verwendeten General Number Field Sieve; es ist kein praktischer Angriff."
+    },
+    {
+      "q": "Ist der Beweis maschinell geprüft?",
+      "a": "Noch nicht öffentlich. Das README meldet eine fertige, nur auf Mathlib aufbauende Lean-4-Formalisierung, die aber erst mit einer Begleiteinreichung veröffentlicht werden soll. Bis dahin ist der Beweis öffentlich nicht maschinell nachprüfbar; eine Begutachtung durch Fachleute ist uns nicht bekannt."
+    },
+    {
+      "q": "Was ist Cogentic?",
+      "a": "Ein agentisches Framework für mathematische Entdeckung aus Google Research und Google DeepMind (arXiv 2609.40324) mit Gemini 4 als Basismodell. Laut README entstanden Papier und Formalisierung ohne menschliche Interaktion außer dem Anfangsprompt."
+    }
+  ],
+  "related": [
+    "claude-vp-vnp-lean-beweis-anthropic",
+    "gemini-4-agenten-quantenalgorithmen-lean",
+    "gpt-6-protein-binder-nasslabor-openai"
+  ]
+}

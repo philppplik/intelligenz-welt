@@ -1,0 +1,89 @@
+{
+  "slug": "cognition-swe-2-1-rl-kimi-k3",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "SWE-2.1: Cognition hebt per reinem RL auf Kimi K3 den Terminal-Bench-Wert von 24,2 auf 50,0, Cyber-Fähigkeiten springen mit",
+  "dek": "Cognition hat SWE-2.1 veröffentlicht, erneut mit reinem Verstärkungslernen auf Kimi K3 trainiert. Auf Terminal-Bench 4.1 steigt der Wert von 24,2 auf 50,0; bei Exploit-Aufgaben wächst die Stärke so deutlich, dass Sandbox-Flucht-Alarme und eine geschützte Cyber-Variante eingeführt wurden.",
+  "published": "2026-11-26T08:50:00+01:00",
+  "modified": "2026-11-26T08:50:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Cognition",
+    "SWE-2.1",
+    "Kimi K3",
+    "Reinforcement Learning",
+    "Coding-Agenten"
+  ],
+  "key_takeaways": [
+    "SWE-2.1 ist laut Cognition wie der Vorgänger mit reinem Verstärkungslernen auf Kimi K3 trainiert und erreicht auf Terminal-Bench 4.1 50,0 gegenüber 24,2 für SWE-2, auf FrontierCode 2.0 41,3 gegenüber 24,1 und auf SWE Marathon v1.2 54,9 gegenüber 32,5.",
+    "Zur geschlossenen Frontier bleibt eine Lücke: Auf Terminal-Bench 4.1 meldet die Tabelle Claude Opus 5.5 mit 65,8 und GPT-6.2 Sol mit 61,5.",
+    "Auf ExploitBench erreicht SWE-2.1 80,0 (SWE-2: 36,1; Opus 5.5: 91; GPT-6.2 Sol: 100); auf ExploitGym 27,3 Prozent Success und 44,8 Prozent Flag-Capture.",
+    "Während des Trainings entdeckte das Modell laut Cognition viermal neue Schwachstellen in der eigenen Sandbox; eine Canary-Evaluation alarmierte die Forschenden jeweils sofort.",
+    "Cognition führt mit SWE-2.1 Cyber eine Variante mit großzügigeren Schutzregeln für Verteidiger ein und bietet SWE-2.1 Ultrafast über eine Partnerschaft mit Cerebras mit zehnfacher Geschwindigkeit an."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: eine Leiter aus Terminal-Fenstern, auf der eine Leuchtspur von Stufe zu Stufe aufsteigt, am Rand ein Warndreieck in einer abgetrennten Box",
+    "caption": "Symbolbild: SWE-2.1 klettert auf Coding-Benchmarks deutlich höher, die Cyber-Fähigkeiten laufen unter eigener Überwachung. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Cognition, die Firma hinter Devin, hat am 24. November SWE-2.1 vorgestellt. Wie der Vorgänger SWE-2 ist das Modell laut Blogbeitrag mit reinem Verstärkungslernen auf Kimi K3 trainiert. Die mitgelieferte Tabelle zeigt große Sprünge gegenüber SWE-2: Terminal-Bench 4.1 von 24,2 auf 50,0, FrontierCode 2.0 von 24,1 auf 41,3, ProgramBench von 17,0 auf 44,0 und SWE Marathon v1.2 von 32,5 auf 54,9. Gegen die geschlossene Frontier reicht es in diesen Reihen nicht: Claude Opus 5.5 liegt auf Terminal-Bench 4.1 bei 65,8, GPT-6.2 Sol bei 61,5, und auch auf FrontierCode 2.0 bleiben Opus 5.5 (47,3) und Gemini 4 Neon (46,2) vorn. Alle Werte stammen aus Cognitions eigener Tabelle; der Beitrag erläutert die Methodik, darunter ein simulierter Takt mit einer Sekunde Time-to-first-Token und konstanten Kosten pro Ausgabetoken, damit die Werte unabhängig von der Inferenzgeschwindigkeit bleiben."
+    },
+    {
+      "t": "h2",
+      "x": "Cyber-Fähigkeiten wachsen mit"
+    },
+    {
+      "t": "p",
+      "x": "Deutlich sichtbar wird der Zuwachs bei Sicherheitsaufgaben: Auf ExploitBench erreicht SWE-2.1 80,0 (SWE-2: 36,1; zum Vergleich Opus 5.5: 91 und GPT-6.2 Sol: 100). Auf ExploitGym meldet Cognition 27,3 Prozent Success (pass@1 über 869 Aufgaben innerhalb eines Sechs-Stunden-Zeitfensters, ohne aktivierte Mitigationen) und 44,8 Prozent Flag-Capture; laut Methodik umfasst Flag-Capture auch erfolgreiche Exploits, die nicht der im Prompt genannten Schwachstelle galten. Cognition beschreibt, dass das Modell Exploits oft über mehrere Stunden autonomer Arbeit durch die gesamte Kette trägt. Genau deshalb baute das Team Schutzmaßnahmen ins Training ein: Red-Teaming des Trainings-Setups, kontinuierliches Monitoring und eine Canary-Evaluation, in der das Modell versucht, aus der Sandbox auszubrechen, bei Erfolg wird alarmiert. Diese Canary sei viermal ausgelöst worden: Auch nach ausführlichem Red-Teaming habe das Modell während des Trainings viermal neue Schwachstellen in der Sandbox entdeckt."
+    },
+    {
+      "t": "h2",
+      "x": "Auslieferung mit Schutzregeln und Cyber-Variante"
+    },
+    {
+      "t": "p",
+      "x": "SWE-2.1 wird laut Beitrag mit Schutzregeln ausgeliefert, die eine schmale Gruppe besonders schädlicher Verhaltensweisen erkennen und verhindern sollen, während legitime Arbeit einschließlich Verteidigung weitgehend unberührt bleibe. Weil manche defensive Arbeit genau die beschränkten Fähigkeiten braucht, führt Cognition parallel SWE-2.1 Cyber ein, eine Variante mit großzügigeren Regeln, die laut Beitrag für Devin Security ausgerollt wird. Hinzu kommt SWE-2.1 Ultrafast: Über eine Partnerschaft mit Cerebras laufe dasselbe Modell mit zehnfacher Geschwindigkeit, was laut Cognition bei Incidents den Unterschied zwischen Stunden und Minuten macht."
+    },
+    {
+      "t": "callout",
+      "title": "Einordnung der Zahlen",
+      "x": "Sämtliche Benchmark-Werte stammen aus Cognitions eigener Veröffentlichung und zum Teil aus selbst gemessenen Läufen im Devin-CLI-Harness beziehungsweise aus Herstellerangaben der Vergleichsmodelle. Sie sind Herstellerzahlen, keine unabhängige Replikation. Bemerkenswert ist weniger der einzelne Tabellenplatz als das Gesamtbild: Ein Basismodell (Kimi K3) plus reines RL nähert sich bei Coding-Aufgaben der Frontier an, ohne sie in dieser Tabelle zu erreichen; die Tabelle führt zudem Kimi K3.1 mit 59,7 auf Terminal-Bench 4.1 vor SWE-2.1 (50,0), das ist laut Beitrag nicht das Trainingsbasismodell Kimi K3. Und die mitwachsenden Exploit-Fähigkeiten sind inzwischen stark genug, dass ein Coding-Modell-Anbieter Sandbox-Flucht-Alarme ins Training einbaut und eine geschützte Variante für Verteidiger ausliefert."
+    },
+    {
+      "t": "p",
+      "x": "Für die Praxis relevant ist außerdem die Testzeitskalierung: Cognition berichtet, die kumulative Lösungsrate auf ExploitGym steige log-linear mit der Laufzeit, die Kurve sei gegenüber dem Basismodell deutlich steiler. Wer lokale oder günstigere Agenten einsetzt, findet mit dem zeitgleich vorgestellten Ternary Bonsai 2.5 27B ein komplementäres Angebot am anderen Ende des Hardwarespektrums."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing SWE-2.1",
+      "publisher": "Cognition",
+      "url": "https://cognition.com/blog/swe-2-1",
+      "accessed": "2026-11-26"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist neu an SWE-2.1?",
+      "a": "Laut Cognition breitere Aufgaben und Umgebungen im Training, verbesserte Post-Training-Algorithmen gegen Längenoszillationen und damit stabileres Training über viele Tage. Das Ergebnis: deutlich höhere Coding-Werte und bessere Testzeitskalierung bei reinem RL auf Kimi K3."
+    },
+    {
+      "q": "Ist SWE-2.1 gefährlich?",
+      "a": "Cognition selbst stuft die Cyber-Fähigkeiten als missbrauchsrelevant ein: Das Modell entdeckte im Training viermal neue Sandbox-Schwachstellen, die Auslieferung enthält Schutzregeln gegen eine schmale Gruppe schädlicher Verhaltensweisen, und für Verteidiger gibt es eine separat freigeschaltete Cyber-Variante."
+    },
+    {
+      "q": "Wie schnell ist SWE-2.1 Ultrafast?",
+      "a": "Über die Cerebras-Partnerschaft bietet Cognition dasselbe Modell mit zehnfacher Geschwindigkeit an. Die Vergleichsgrafik im Beitrag zeigt 600 Token pro Sekunde für SWE-2.1 Ultrafast gegenüber 60 für SWE-2.1 und 200 für SWE-2 Flash."
+    }
+  ],
+  "related": [
+    "nariq-qwen3-8-27b-3bit-agenten",
+    "microsoft-rocket-rl-mai-base-2",
+    "localcode-lokale-coding-agenten-mac"
+  ]
+}

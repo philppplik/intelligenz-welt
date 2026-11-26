@@ -1,0 +1,91 @@
+{
+  "slug": "openai-math-neun-manuskripte-omega-9-4",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "Neun weitere Modell-Manuskripte: OpenAI meldet Matrixmultiplikations-Exponent 9/4 und stark polynomiales LP",
+  "dek": "OpenAI hat seinem Mathe-Repositorium neun Manuskripte eines internen Modells hinzugefügt, darunter die Behauptungen, der Exponent der Matrixmultiplikation sei exakt 9/4 und lineare Programmierung sei stark polynomiell lösbar. Lean-Formalismen decken nur ausgewählte Ergebnisse ab.",
+  "published": "2026-11-26T08:50:00+01:00",
+  "modified": "2026-11-26T08:50:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "OpenAI",
+    "Mathematik",
+    "Komplexitätstheorie",
+    "Lean",
+    "Forschung"
+  ],
+  "key_takeaways": [
+    "OpenAI hat am 24. November neun Manuskripte in zwei Ergebnisfamilien auf github.com/openai/math veröffentlicht, erstellt von einem nicht namentlich genannten internen Modell.",
+    "Die Titel behaupten unter anderem: Der Exponent der Matrixmultiplikation ist neun Viertel; ein deterministischer stark polynomieller Algorithmus löst lineare Programme (Smales neuntes Problem); ein zweites Papier widerlegt die polynomielle Hirsch-Vermutung für beschränkte einfache rationale Polytope.",
+    "Laut Versionshistorie liegen Lean-Formalismen nur für ausgewählte Ergebnisse jeder Manuskriptfamilie vor; das Repositorium warnt ausdrücklich, einige der nicht formalisierten Ergebnisse könnten Fehler enthalten.",
+    "Zwei der neuen Manuskripte subsumieren das am 23. November veröffentlichte Ergebnis VP ungleich VNP; das Originalpapier bleibt unverändert verfügbar.",
+    "Die Sammlung umfasst inzwischen 730 Manuskripte in 375 Familien mit rund 42 Prozent formalisierten Top-Ergebnissen; OpenAI bezeichnet die Texte selbst als rohe Forschungsdaten, nicht als begutachtete Papers."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: ein Gitter aus Zahnrädern und Matrizenblöcken, aus dem ein einzelner Block herausgehoben und von einem Prüfstrahl markiert wird",
+    "caption": "Symbolbild: Ein einzelnes behauptetes Ergebnis wird aus einer Manuskriptfamilie herausgehoben und formal geprüft. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "OpenAI hat am 24. November seinem öffentlichen Mathematik-Repositorium auf GitHub neun Manuskripte in zwei Ergebnisfamilien hinzugefügt. Erstellt wurden sie von einem internen, nicht namentlich genannten Modell. Familie 379 (Euclidean tensor geometry and its applications to complexity and combinatorics) umfasst sieben Manuskripte, darunter „The matrix multiplication exponent is nine fourths“, „The logarithmic exponent of finite Fourier transforms“, „The logarithmic exponent of integer multiplication on tapes“, „An exponential bound for sunflowers“ sowie Manuskripte zu Valiants Hierarchie und zu Schaltkreis-Untergrenzen für Hamiltonkreis und Permanente. Familie 380 (Strongly polynomial-time linear programming) enthält zwei Manuskripte: „Strongly polynomial linear programming“, das laut Versionshistorie einen deterministischen stark polynomiellen Algorithmus für lineare Programmierung angibt und damit Smales neuntes Problem beantworten soll, und „Superpolynomial graph diameter of simple polytopes“, das die polynomielle Hirsch-Vermutung für beschränkte einfache rationale Polytope widerlegen soll."
+    },
+    {
+      "t": "h2",
+      "x": "Was formal geprüft ist und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "Die Versionshistorie spricht von „Lean formalizations of selected results from each manuscript“: Formal geprüft sind also ausgewählte Einzelergebnisse, nicht die Manuskripte als Ganze. Das Repositorium ordnet sich selbst ein: „Some of the unformalized results could have issues“, und die Texte seien „raw research data, rather than polished academic papers“. Die gesamte Sammlung umfasst inzwischen 730 Manuskripte in 375 Familien; rund 42 Prozent der Top-Ergebnisse sind laut README formalisiert. Die beiden Hierarchie- und Schaltkreis-Manuskripte der neuen Familie subsumieren das erst am 23. November veröffentlichte Ergebnis „VP and VNP are different“; das Originalpapier bleibt laut Historie unverändert verfügbar. Zur Arbeitsweise heißt es im README, die weitaus meisten Ergebnisse stammten aus demselben Verfahren mit durchschnittlich drei Stunden ChatGPT-Pro-Denkzeit pro Ergebnis bei rund 4.000 gestellten Problemen."
+    },
+    {
+      "t": "callout",
+      "title": "Warum Vorsicht geboten ist",
+      "x": "Die Behauptungen sind in den Titeln und der Historie des Repositoriums dokumentiert, aber unabhängig bislang nur dort, wo Lean-Formalismen vorliegen. Die Historie zeigt zudem, dass es in dieser Sammlung schon Rückzüge gab: Am 7. Oktober wurden drei Manuskripte wegen eines Vorzeichenfehlers zurückgezogen und 14 weitere überarbeitet. Solche Einträge sind Meldungen des Anbieters über den eigenen Bestand, keine unabhängige Bestätigung oder Widerlegung. Eine Begutachtung der neun neuen Texte durch Fachleute ist uns nicht bekannt."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Falls die Hauptbehauptungen Bestand haben, wären sie Sensationen: Der Exponent der Matrixmultiplikation ist seit Strassens Arbeit offen, und ein stark polynomieller LP-Algorithmus gehört zu Smales Jahrhundertproblemen. Genau deshalb zählt hier nur der Prüfstand. Der belastbare Teil des Drops sind die Lean-Artefakte und die Comparator-Anleitungen im Repositorium; alles andere ist Anspruch, nicht bestätigtes Ergebnis. OpenAI selbst überlässt Fragen von Priorität und Kredit ausdrücklich der Mathematik-Community. Wer die Ergebnisse zitieren will, sollte zuerst prüfen, ob das jeweilige Theorem zu den formalisierten gehört. Wir berichten hier ausschließlich auf Basis der Repositorium-Texte vom 24. November; die Abstracts der Einzelpapiere haben wir nicht geöffnet."
+    }
+  ],
+  "sources": [
+    {
+      "title": "openai/math: README",
+      "publisher": "OpenAI (GitHub)",
+      "url": "https://raw.githubusercontent.com/openai/math/main/README.md",
+      "accessed": "2026-11-26"
+    },
+    {
+      "title": "openai/math: History",
+      "publisher": "OpenAI (GitHub)",
+      "url": "https://raw.githubusercontent.com/openai/math/main/history.md",
+      "accessed": "2026-11-26"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist damit bewiesen, dass der Matrixmultiplikations-Exponent 9/4 ist?",
+      "a": "Nein. Es ist eine Behauptung in einem Modell-Manuskript. Lean-Formalismen gibt es laut Versionshistorie nur für ausgewählte Ergebnisse, und das Repositorium warnt, nicht formalisierte Ergebnisse könnten Fehler enthalten. Eine Begutachtung durch Fachleute ist uns nicht bekannt."
+    },
+    {
+      "q": "Was wurde zu VP ungleich VNP gemeldet?",
+      "a": "Das Ergebnis vom 23. November bleibt unverändert verfügbar. Zwei neue Manuskripte der Familie 379 subsumieren es laut Historie, ohne das Original zu verändern."
+    },
+    {
+      "q": "Wie entstanden die Manuskripte?",
+      "a": "Laut README mit einem festen Verfahren: ein internes Modell bekam rund 4.000 Probleme gestellt, pro Ergebnis flossen durchschnittlich drei Stunden ChatGPT-Pro-Denkzeit. Ausnahmen nennt das README einzeln."
+    }
+  ],
+  "related": [
+    "claude-vp-vnp-lean-beweis-anthropic",
+    "gemini-4-agenten-quantenalgorithmen-lean",
+    "gpt-6-protein-binder-nasslabor-openai"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "ternary-bonsai-2-5-27b-lokale-coding-agenten",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Ternary Bonsai 2.5 27B: Agentisches Coding in 5,9 GB auf einer einzelnen GPU",
+  "dek": "PrismML hält den Speicherfußabdruck seines ternären Modells bei 5,9 GB und schließt nach eigenen Zahlen einen großen Teil der Agenten-Lücke zum Vollpräzisions-Basismodell Qwen3.8 27B: SWE-bench Verified 75,6 gegenüber 80,6, AppWorld 90,5 gegenüber 93,2.",
+  "published": "2026-11-26T08:50:00+01:00",
+  "modified": "2026-11-26T08:50:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "PrismML",
+    "Ternary Bonsai",
+    "Qwen3.8",
+    "Lokale Modelle",
+    "Coding-Agenten"
+  ],
+  "key_takeaways": [
+    "Ternary Bonsai 2.5 27B basiert auf Qwen3.8 27B und behält laut PrismML den 5,9-GB-Modellfußabdruck des Vorgängers bei deutlich stärkerem agentischem Coding, Mehrfachrunden-Werkzeugnutzung und mehrstufiger Aufgabenausführung.",
+    "Herstellerzahlen (Bonsai 2.5 gegenüber Bonsai 2 gegenüber Qwen3.8 27B Vollpräzision): SWE-bench Verified 75,6 / 60,8 / 80,6; AppWorld 90,5 / 51,2 / 93,2; Terminal-Bench 2.1 60,1 / 52,8 / 70,8; DeepSWE v1.1 27 / 0 / 30,1.",
+    "Einziger Rückschritt in der Tabelle: LiveCodeBench v6 mit 83,0 gegenüber 83,8 für Bonsai 2 (Basis: 87,6).",
+    "Geschwindigkeit laut PrismML: 291 Token pro Sekunde mit MTP auf einer H100 (Prompt-Verarbeitung 3.200 Token/s bei 2.000 Token), 204 Token/s mit MTP auf einer RTX 4090.",
+    "Das Modell läuft über llama.cpp auf NVIDIA- und Intel-GPUs sowie per MLX auf Mac, iPhone und iPad; die Gewichte stehen unter Apache-2.0-Lizenz."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: ein kleiner, dichter Kristallkern, aus dem viele feine Werkzeugstrahlen zu Codeblöcken laufen, daneben ein großer transparenter Referenzkristall",
+    "caption": "Symbolbild: Ein 5,9-GB-Modell steuert lange Werkzeugketten, der große Referenzkristall steht für das Vollpräzisions-Basismodell. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "PrismML hat am 24. November Ternary Bonsai 2.5 27B vorgestellt, ein Upgrade von Ternary Bonsai 2 27B auf Basis von Qwen3.8 27B. Der Speicherfußabdruck des Modells bleibt laut Ankündigung bei 5,9 GB; verbessert wurden agentisches Coding, Werkzeugnutzung über mehrere Runden und mehrstufige Aufgabenausführung. PrismML betont, dass Agenten-Workflows empfindlich auf Qualitätsverlust reagieren, weil sich kleine Fehler über aufeinanderfolgende Werkzeugaufrufe aufsummieren, und dass diese Version das übertriebene Nachdenken und die Wiederholungsschleifen des Vorgängers angeht: weniger Runden, weniger Token, schnellere und genauere Ergebnisse."
+    },
+    {
+      "t": "h2",
+      "x": "Die Zahlen des Herstellers"
+    },
+    {
+      "t": "p",
+      "x": "In der mitgelieferten Tabelle liegt Bonsai 2.5 auf SWE-bench Verified bei 75,6 gegenüber 60,8 für Bonsai 2 und 80,6 für das Vollpräzisions-Basismodell, auf AppWorld bei 90,5 gegenüber 51,2 und 93,2, auf Terminal-Bench 2.1 bei 60,1 gegenüber 52,8 und 70,8, auf DeepSWE v1.1 (mini-swe-agent) bei 27 gegenüber 0 und 30,1, auf τ³-Bench bei 73,9 gegenüber 69,1 und 72,8 sowie auf BigCodeBench bei 60,3 gegenüber 57,2 und 61,5. Der einzige Rückschritt: LiveCodeBench v6 mit 83,0 gegenüber 83,8 für Bonsai 2 (Basis 87,6). Auf einer einzelnen H100 erreicht das Modell laut PrismML 291 Token pro Sekunde mit MTP und verarbeitet einen 2.000-Token-Prompt mit 3.200 Token pro Sekunde; auf einer RTX 4090 sind es 204 Token pro Sekunde mit MTP und etwa 3.060 Token pro Sekunde bei der Prompt-Verarbeitung. Alle Werte sind Herstellerangaben aus Ankündigung und Whitepaper, eine unabhängige Messung liegt nicht vor."
+    },
+    {
+      "t": "callout",
+      "title": "5,9 GB ist nicht der ganze Speicherbedarf",
+      "x": "Die Ankündigung nennt 5,9 GB als „Modellfußabdruck“ und sagt nicht, was darin enthalten ist. Beim Betrieb kommen üblicherweise KV-Cache und Aktivierungen hinzu, je nach Kontextlänge; wer auf einer Consumer-Karte plant, sollte dafür eigenen Headroom einrechnen. Das betrifft alle kompakten Modelle, nicht nur dieses."
+    },
+    {
+      "t": "h2",
+      "x": "Plattformen und Lizenz"
+    },
+    {
+      "t": "p",
+      "x": "Ternary Bonsai 2.5 27B läuft laut PrismML über llama.cpp auf NVIDIA- und Intel-GPUs und über MLX auf Apple-Geräten (Mac, iPhone, iPad). Die Modellgewichte sind ab sofort unter der Apache-2.0-Lizenz verfügbar; technische Details zu Kompression, Evaluation und Benchmarking verweist der Anbieter in sein Whitepaper. PrismML positioniert das Modell für Produkte, die sensible Materialien auf dem Gerät verarbeiten: ein Coding-Assistent in einem privaten Repository, eine Dokumenten-App mit prüfbaren Zusammenfassungen oder ein Desktop-Assistent für wiederkehrende Analysen. In unserem Archiv passt das zur Entwicklung lokaler Coding-Agenten auf Consumer-Hardware und zu der Frage, wie viel Agentenfähigkeit pro Gigabyte heute möglich ist."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing Ternary Bonsai 2.5 27B: Powering Agentic Coding and Private Knowledge Work",
+      "publisher": "PrismML",
+      "url": "https://prismml.com/news/bonsai-2-5-27b",
+      "accessed": "2026-11-26"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie nah kommt Bonsai 2.5 an das volle Basismodell heran?",
+      "a": "Nach Herstellerzahlen erreicht es auf SWE-bench Verified 75,6 gegenüber 80,6 und auf AppWorld 90,5 gegenüber 93,2 Punkten des Vollpräzisionsmodells. Auf LiveCodeBench v6 liegt es mit 83,0 minimal hinter dem Vorgänger Bonsai 2 (83,8)."
+    },
+    {
+      "q": "Reichen 5,9 GB Grafikspeicher zum Betrieb?",
+      "a": "PrismML nennt 5,9 GB als Modellfußabdruck. Beim Betrieb kommen üblicherweise KV-Cache und Aktivierungen hinzu, je nach Kontextlänge; für längere Agentenläufe ist zusätzlicher Speicher einzuplanen."
+    },
+    {
+      "q": "Wo läuft das Modell?",
+      "a": "Laut PrismML über llama.cpp auf NVIDIA- und Intel-GPUs und über MLX auf Mac, iPhone und iPad. Die Gewichte stehen unter der Apache-2.0-Lizenz."
+    }
+  ],
+  "related": [
+    "nariq-qwen3-8-27b-3bit-agenten",
+    "localcode-lokale-coding-agenten-mac",
+    "microsoft-rocket-rl-mai-base-2"
+  ]
+}

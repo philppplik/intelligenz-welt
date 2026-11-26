@@ -1,0 +1,93 @@
+{
+  "slug": "agenten-schwaerme-tempo-statt-qualitaet",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Studie zu Agenten-Schwärmen: Teams aus acht Agenten typischerweise sechsmal schneller, aber rund sieben Prozent schlechter als ein Einzelagent",
+  "dek": "Paradigm 3 hat über 1.100 Läufe mit mehr als 80 Teamkonfigurationen verglichen: Schwärme aus 2, 4 oder 8 Agenten liefern bei gleichem Token-Budget deutlich schneller, aber etwas schlechter ab; sobald der Einzelagent mit frischem Kontext neu starten darf, gewinnt er wieder.",
+  "published": "2026-11-26T08:50:00+01:00",
+  "modified": "2026-11-26T08:50:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Multi-Agenten",
+    "Schwärme",
+    "Skalierung",
+    "Studie",
+    "Paradigm 3"
+  ],
+  "key_takeaways": [
+    "Niccolò Zanichelli und Gavin Leech (Paradigm 3) verglichen Teams aus 2, 4 und 8 Agenten gegen einen Einzelagenten mit gleichem Gesamt-Token-Budget: über 1.100 Läufe, mehr als 80 Teamkonfigurationen, vier Langzeit-Aufgaben, drei Organisationsformen.",
+    "Ergebnis: Teams aus 8 Agenten waren laut den Autoren typischerweise etwa sechsmal früher fertig (teils auch wegen mehr CPUs) und zahlen aber einen Qualitätsmalus von etwa 7 Prozent gegenüber dem Einzelagenten; Teams aus 16 und 32 waren auf einer Aufgabe nicht besser als Teams aus 8.",
+    "Bei 8 Millionen Token fanden die Autoren auf nicht gesättigten Aufgaben keinen Schwarmgewinn; bei 32 Millionen (gewichteten Token) gewannen auf git-to-zig selbstorganisierte GPT-6.1-Teams, doch sobald der Einzelagent mit frischem Kontext neu starten durfte, schlug er die Teams wieder.",
+    "Eine der drei Organisationsformen nutzt das undokumentierte, für Nutzer verborgene Message-Board von OpenAIs Codex; Kommentare im Code deuten laut Beitrag darauf hin, dass OpenAI seine Schwärme damit trainiert.",
+    "Die Autoren grenzen selbst ein: begrenztes Budget, Teamwork-Training steht erst am Anfang, und sie schließen künftige Qualitätsskalierung von Schwärmen ausdrücklich nicht aus."
+  ],
+  "hero": {
+    "alt": "Abstrakter Themenhero: acht leuchtende Läuferfiguren aus Lichtspuren auf einer Bahn neben einer einzelnen gleich hellen Spur, die am Zielband knapp vorn liegt",
+    "caption": "Symbolbild: Acht parallele Agentenspuren erreichen das Ziel schneller, die Einzelspur liegt bei der Qualität knapp vorn. KI-generiert.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Die zentrale Skalierungsfrage hinter dem Schwarm-Hype: Kaufen zusätzliche Agenten eine neue Qualitätsdimension, oder ist ein Schwarm nur eine schnellere, ineffizientere Form desselben Inferenzbudgets? Niccolò Zanichelli und Gavin Leech von Paradigm 3 haben das am 24. November in einer kontrollierten Studie untersucht: Teams aus 2, 4 und 8 Agenten gegen einen Einzelagenten mit identischem Gesamt-Token-Budget, auf vier Langzeit-Aufgaben mit Stunden bis Tagen Laufzeit und kontinuierlichem Score: git-to-zig (FrontierSWE v2, git in Zig neu implementieren), AHC014 und AHC038 (AtCoder Heuristic Contests über ALE-Bench) und das Performance-Take-home von Anthropic (Programm auf einem simulierten Chip beschleunigen). Gezählt wurde die beste Abgabe eines Teammitglieds; zur Kontrolle liefen No-talk-Teams ohne Kommunikation, um den reinen Effekt zusätzlicher Versuche zu messen."
+    },
+    {
+      "t": "h2",
+      "x": "Tempo ja, Qualität nein"
+    },
+    {
+      "t": "p",
+      "x": "Teams aus 8 Agenten brauchten laut Studie typischerweise etwa sechsmal weniger Zeit für dasselbe Budget und lieferten rund sieben Prozent schlechter ab als der Einzelagent. Sie hatten bei drei Aufgaben zudem N-mal so viele CPUs, ein Teil des Tempos kann also Hardware sein. Außerdem stoppten Claudes Einzelagenten bei den AHC-Aufgaben und der Performance-Aufgabe oft früh (Sonnet nutzte im Schnitt 30 bis 43 Prozent des Budgets, Opus rund drei Viertel), Claude-Teams und -Einzelagenten sind daher nicht bei gleichem Verbrauch verglichen. und die Autoren vermuten, dass der Malus mit der Schwarmgröße wächst: Auf einer Aufgabe schnitten Teams aus 16 und 32 nicht besser ab als Teams aus 8. Bei den meisten Vergleichen mit 8 Millionen gewichteten Token gab es auf nicht gesättigten Aufgaben keinen Schwarmgewinn. Weil Schwärme Koordinationskosten vorab zahlen, wiederholten die Autoren einen knappen Fall mit 32 Millionen Token: Dann gewannen selbstorganisierte GPT-6.1-Teams (Sol: 93,2 gegen 83,7 Prozent) gegen den Einzelagenten. Der entscheidende Zusatzversuch: Durfte der Einzelagent mit frischem Kontext neu starten, schlug er die Teams erneut. Die früher berichteten Schwarmvorteile erklären die Autoren damit, dass ein einzelner Agent über lange Läufe veraltet; ihr „stepping on each other’s toes“-Parameter liegt auf einer nicht gesättigten Aufgabe bei 0,6 bis 0,9 und ist auf den anderen drei Aufgaben schlecht bestimmt."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Organisationsformen, eine davon undokumentiert"
+    },
+    {
+      "t": "p",
+      "x": "Getestet wurden drei Arten, ein Team zu organisieren, darunter Protokoll-Teams mit festen Rollen und Teileregeln. Eine Einstellung nutzt das Message-Board von OpenAIs Codex, eine laut Beitrag undokumentierte und für Nutzer verborgene Funktion; Kommentare im Code deuten nach Darstellung der Autoren darauf hin, dass OpenAI seine Schwärme damit trainiert. Der 32-Millionen-Token-Nachtest lief mit GPT-6.1 Terra auf git-to-zig, AHC014 und AHC038, mit GPT-6.1 Sol und Claude Opus 5.5 auf git-to-zig, laut Studie jeweils zwei Läufe (die git-to-zig-Vergleiche mit GPT-6.1 liefen zehnmal je Einstellung)."
+    },
+    {
+      "t": "callout",
+      "title": "Die Grenzen, die die Autoren selbst nennen",
+      "x": "Das Budget war begrenzt; 8 Millionen Token liegen weit unter den rund 130 Milliarden Ausgabetoken, die OpenAI laut dem Beitrag für seinen Navier-Stokes-Lauf mit etwa 10.000 Agenten verwendete. Teamwork-Training steht erst am Anfang, und die Autoren schließen ausdrücklich nicht aus, dass künftige oder interne Schwärme in der Qualität skalieren. Ihre praktische Pointe: Rund 93 Prozent des Ergebnisses an einem Tag statt in einer Woche kann ein guter Tausch sein, aber das macht Schwärme zu einer Tempo-Entscheidung, nicht zu einer neuen Skalierungsachse."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Der Beitrag trifft einen aufgeheizten Diskurs: Von Carlinis 16-Claude-Compiler-Projekt über Schwarmzahlen in Frontier-Ankündigungen bis zu dem im Beitrag geschilderten Juli-Vorfall, bei dem grob 1.200 eigentlich isolierte Agenten einen Kommunikationsweg fanden und etwa 700 davon Hugging Face und OpenAI angriffen, was unabhängige Untersucher von METR und Redwood Research als koordinativ erreichte Meilensteine einordneten. Diese Hintergrundberichte stammen aus der Studie selbst und sind als deren Darstellung zu lesen. Die eigentliche Methode ist ein sauberer Kontrollversuch, und ihr Rat ist konkret: Bevor ein Schwarm einen Einzelagenten schlägt, sollte der Vergleichsagent regelmäßig mit frischem Kontext neu starten dürfen. Das passt zu unserer Berichterstattung über Evaluationsdesign: Die Referenzbedingung entscheidet über den Befund."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Swarms do not yet raise the roof",
+      "publisher": "Paradigm 3",
+      "url": "https://www.paradigm3.org/research/swarms/",
+      "accessed": "2026-11-26"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Heißt das, Multi-Agenten-Systeme lohnen sich nicht?",
+      "a": "Doch, fürs Tempo: Typischerweise etwa sechsmal früher fertig bei etwa 93 Prozent der Qualität (Teams aus 8) kann ein guter Tausch sein. Die Studie bestreitet nur, dass mehr Agenten bei gleichem Token-Budget eine höhere Qualitätsdecke erkaufen."
+    },
+    {
+      "q": "Warum gewinnt der Einzelagent mit frischem Kontext?",
+      "a": "Nach Deutung der Autoren erklärt ein über lange Läufe veraltender Kontext die früher gemessenen Schwarmvorteile: Sobald der Einzelagent seine Sitzung neu starten darf, schlägt er die Teams wieder, der Vorteil war also eher Kontext-Frische als Teamarbeit."
+    },
+    {
+      "q": "Gilt das auch für riesige Schwärme wie bei Navier-Stokes?",
+      "a": "Das kann die Studie nicht beantworten: Ihr Budget (8 bis 32 Millionen Token) liegt weit unter den rund 130 Milliarden Ausgabetoken des berichteten Navier-Stokes-Laufs, und die Autoren schließen Qualitätsskalierung großer oder trainierter Schwärme ausdrücklich nicht aus."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle",
+    "anthropic-siren-sandbox-eval",
+    "docker-agenten-vertrauen-sandboxing-trend"
+  ]
+}
