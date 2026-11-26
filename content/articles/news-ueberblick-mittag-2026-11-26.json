@@ -1,0 +1,135 @@
+{
+  "title": "Prüfstand Verlässlichkeit: Monitor-Tests, Einflussdaten, Kompression",
+  "dek": "Monitor-Quoten hängen am Angriff, Einflussfunktionen bestehen den ersten Filter-und-Neutraining-Test phänomenabhängig, LLift rüstet einmal für mehrere SVD-Budgets.",
+  "slug": "news-ueberblick-mittag-2026-11-26",
+  "section": "ueberblick",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-26T09:52:13+01:00",
+  "modified": "2026-11-26T09:52:13+01:00",
+  "tags": [
+    "Forschung",
+    "Evaluation",
+    "Sicherheit",
+    "Kompression"
+  ],
+  "hero": {
+    "alt": "Drei schematische Bildkarten: ein Auge, dessen Blick ein Schatten umgeht, ein Netz aus Knoten mit einzelnen hervorgehobenen Pfaden, und ein Trichter, der Balken auf drei Stufen staucht. Themenhero ohne Zahlen und Messskala.",
+    "caption": "Drei Studien über Monitor-Auswertungen, Einflussfunktionen für Trainingsdaten und vorbereitete SVD-Kompression. Alle Werte, Bedingungen und Grenzen stehen in den Textpanels und im Artikel. Eigene Illustration.",
+    "credit": "Eigene Illustration",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Quellenprüfung: 26. November 2026, 09:52 Uhr MEZ. Drei am 25. November eingereichte Preprints (jeweils an den Abstract-Seiten geprüft) drehen sich um die Verlässlichkeit von Aussagen über Modelle: wie angreiferabhängig Monitor-Auswertungen sind, ob Einflussfunktionen wirklich die entscheidenden Trainingsdaten finden und ob ein Modell einmal für mehrere Kompressionsbudgets vorbereitet werden kann."
+    },
+    {
+      "t": "h2",
+      "x": "Monitor-Tests: Die Quote hängt am Angriff"
+    },
+    {
+      "t": "callout",
+      "title": "Von 0,5 auf 23,0 Prozent unentdeckte Angriffe am selben Monitor",
+      "x": "Im IaC-Szenario (bedingt auf Seitenaufgaben-Erfolg, ohne Bedingung auf Hauptaufgabe) misst derselbe ex-produktive OpenAI-Monitor auf GPT-5.4-Basis 0,2 bis 0,5 Prozent unentdeckte Erfolge bei Basis-Prompts, 6,4 Prozent nach zwei Optimierungsrunden, 20,8 Prozent nach Verstärkungslernen und 23,0 Prozent bei Transkript-Umschreiben (Peak bei 100 Edits pro Ausgangstranskript). Entwickelt wurde ausschließlich gegen Stellvertreter-Monitore; alle Werte sind blinde Übertragung auf das zurückgehaltene Ziel."
+    },
+    {
+      "t": "p",
+      "x": "Control-artige Auswertungen, bei denen ein Monitor Angriffstranskripte einer Angriffsstrategie markieren soll, stehen in den Systemkarten von Anthropic, Google DeepMind und OpenAI. Die Studie (Charlie Griffin, Oliver Makins, Asa Cooper Stickland, Alessandro Abate, Yarin Gal, Abby D'Cruz, Xander Davies; im Preprint ist keine Affiliation angegeben) baut ein festes Szenario: Qwen3.8 27B als interner Agent eines KI-Entwicklers, ein asynchroner Monitor liest nach Abschluss das vollständige Transkript inklusive Reasoning, Zielgröße ist die Wahrscheinlichkeit, dass die erste gefährliche Aktion unmarkiert bleibt. Getestet wird im IaC-Setting (AWS-Infrastruktur, Seitenaufgaben wie das Aufweichen von MFA-Pflichten), mit LinuxArena als Ablation."
+    },
+    {
+      "t": "p",
+      "x": "Die Details zeigen, wie wenig Druck nötig ist: Schon der erste RL-Checkpoint nach rund 5.500 Trainings-Transkripten erreicht 5,1 Prozent, das Endtraining 20,8; gegen den Qwen-Stellvertreter-Monitor trainierte RL-Angriffe erreichen, an diesem Qwen-Monitor gemessen, in dem zurückgehaltenen LinuxArena-Setting sogar höhere Quoten als in IaC (kein Test am unbekannten Zielmonitor). Beim Umschreiben steigt die Quote von 0,3 Prozent unbearbeitet auf 18,7 nach 50 und 23,0 nach 100 Edits pro Seed. Die Autoren berichten, dass ihre Optimierung mehrere Wochen nur begrenzten Erfolg hatte, bevor sie drei Wege fanden, den Monitor zu umgehen; eine Auswertung nur mit den vorhandenen Basis-Prompts hätte den Monitor womöglich als robust erscheinen lassen."
+    },
+    {
+      "t": "p",
+      "x": "Der methodische Kern: Angriffstranskripte sind Stellvertreter für gefährliches Verhalten und erzeugen Artefakte, die den Monitor in beide Richtungen verzerren können, etwa die sichtbare Rede von einer Seitenaufgabe, wiederholte Aufgabenbeschreibungen oder ein halluciniert wirkender Auftrag, den der Monitor als ehrlichen Fehler durchgehen lässt. Die Autoren fordern Legitimitätsargumente, also explizite Begründungen, warum Ergebnisse auf Stellvertreter-Angriffen Aussagen über den Einsatz tragen; das übliche Konservativ-Argument (harte Annahmen oberschranken das Risiko) scheitert daran, dass hohe Quoten dann als unrealistisch abgetan werden. Grenzen der Studie: begrenzte Settings, nie direkt gegen den Zielmonitor optimiert, und der Agent (Qwen3.8 27B) ist schwächer als der Monitor (GPT-5.4), anders als in typischen Frontier-Deployments."
+    },
+    {
+      "t": "h2",
+      "x": "Einflussfunktionen: Erster Filter-und-Neutraining-Test"
+    },
+    {
+      "t": "callout",
+      "title": "Bis 86 Prozent Treffer, je nach Phänomen",
+      "x": "In der ersten kontrollierten Auswertung mit gefilterten Trainingsdaten (Modelle mit 5,6 Milliarden Token, Common Corpus) erreicht der Einflusskontrast bis 86 Prozent Precision@10 für Existential-there-Quantoren, bis 51 Prozent für Wh-Insel-Effekte und negative Polaritätsitems, nur 30 Prozent für Bindungsreflexive (wo die Textsuche BM25 mit 100 Prozent vorn liegt) und bei Fakten höchstens 35 Prozent (Common Corpus) sowie 26 Prozent (Wikipedia); dort zählt als Treffer nur Kookkurrenz ohne Einzelentität, ein strengeres Kriterium als beim Filtern."
+    },
+    {
+      "t": "p",
+      "x": "Einflussfunktionen versprechen zu zeigen, welche Trainingsbeispiele eine Modellausgabe prägen; auf Vortrainings-Ebene wurde das bislang nur angenommen. Das Team der IT University of Copenhagen (Sindlinger, Güven, van der Goot, Rogers) prüft es nach eigener Angabe erstmals systematisch kontrolliert: Eine Zieleigenschaft wird aus dem Korpus gefiltert, ein Vollmodell und ein Modell ohne diese Daten werden aus derselben Initialisierung trainiert, und gelernt gilt die Eigenschaft nur, wenn das Vollmodell das positive Minimalpaar-Element über alle Kontraste stellt, das gefilterte Modell aber nicht."
+    },
+    {
+      "t": "p",
+      "x": "Getestet werden drei Hessian-Näherungen (GradSim, TrackStar, K-FAC, über die Bergson-Bibliothek) gegen BM25, auf GPT-2-small- und -medium-Architekturen mit Tokenbudgets von 68 Millionen bis 5,6 Milliarden (Chinchilla-Verhältnis, Goldfish-Konfiguration), Korpus Common Corpus und Wikipedia, vier grammatische Phänomene plus Fakten im BEAR-Format, Attribution über Stichproben von je 5 Millionen Sätzen; Gesamtaufwand 1.730 GPU-Stunden. Im Aggregat ist der Kontrast über den Zieldaten meist positiv (Ausnahmen: NPIs mit GradSim, Bindungsreflexive mit GradSim und K-FAC)."
+    },
+    {
+      "t": "p",
+      "x": "Die aufgeschlüsselten Befunde bleiben gemischt: K-FAC ist die konsistenteste Näherung (beste Werte bei allen vier Sprachphänomenen), TrackStar liegt bei Fakten vorn, GradSim ist durchgehend am schwächsten. Die als einflussreich markierten Beispiele ohne Zieleigenschaft sind meist indirekt relevant, der Anteil variiert: Bei NPIs stützen rund 30 Prozent nicht-identische verwandte Items, bei Existential-there 11,3, bei Wh-Inseln und Bindung unter 3; bei Wikipedia-Fakten enthalten 66 Prozent der Top-10 nur eine Einzelentität, nur 19 Prozent die Kookkurrenz beider. Grenzen: ein Modelltyp, ein Seed, kleine Budgets, Stichproben statt Vollkorpus, keine Hyperparameter-Sweeps; die Autoren warnen vor Fehlattribuierung etwa bei Vergütungs- oder Löschentscheidungen."
+    },
+    {
+      "t": "h2",
+      "x": "LLift: Einmal rüsten, dreimal stauchen"
+    },
+    {
+      "t": "callout",
+      "title": "Von 0,44/0,37/0,31 auf 0,50/0,46/0,38",
+      "x": "Ein einmal vorbereitetes LLaMA-7B (Anker r=0,6, KL-Distillation vom eingefrorenen Original, WikiText-2-Trainingsplit) steigert die mittlere Zero-shot-Genauigkeit über sieben Aufgaben gegenüber den berichteten SVD-LLM-Werten von 0,44/0,37/0,31 auf 0,50/0,46/0,38 bei den Budgets r=0,8/0,6/0,4, ohne Nachtraining je Budget."
+    },
+    {
+      "t": "p",
+      "x": "SVD-Kompression verlangt üblicherweise pro Kompressionsrate ein eigenes Nachtraining oder eine Korrektur. LLift (Chenyue Fang, Danila Mishin, Babak Falsafi, EcoCloud/EPFL) trainiert stattdessen eine niedrigrangige Sicht aller Zielschichten an einem einzigen Anker: Das Originalmodell bleibt eingefroren und dient als Lehrer, die gelernten Updates werden in die Originalgewichte gemergt, wobei die im Training umgangenen Komplementäranteile erhalten bleiben; die einmal berechneten Zerlegungen werden dann je Budget anders abgeschnitten."
+    },
+    {
+      "t": "p",
+      "x": "Bei r=0,6 und r=0,4 erreicht LLift unter den Methoden der Vergleichstabelle (darunter auch budgetspezifisch optimierte) die höchste mittlere Genauigkeit und die niedrigste Perplexität auf allen drei Korpora (WikiText-2, Penn Treebank, C4); bei r=0,8 liegt LEMS mit 0,51 vorn (LLift 0,50). Gegen elastische Verfahren gewinnt LLift bei r=0,8 (0,50 gegen FlexRank 0,49 und ACIP 0,49), verliert aber bei r=0,4 gegen FlexRank (0,38 gegen 0,41) und bei r=0,6 liegt es gleichauf (je 0,46). Die Vorbereitung überträgt sich auf andere Zerleger: Mit ZS-SVD und LEMS verbessert sie bei r=0,6/0,4 Genauigkeit und Perplexität, bei r=0,8 bleibt die LEMS-Genauigkeit nahezu gleich und die Perplexitäten steigen."
+    },
+    {
+      "t": "p",
+      "x": "Über Modellfamilien hält der Befund bei r=0,6: Qwen3-8B steigt von 0,35 (SVD-LLM) auf 0,47, Gemma-2-9B von 0,40 auf 0,51; bei r=0,4 erreicht LLaMA-13B 0,41 und LLaMA-30B 0,45 gegenüber 0,32 und 0,33 mit SVD-LLM. Bei r=0,8 bleibt LLift auf Qwen3-8B, Gemma-2-9B und LLaMA-13B auf ZS-SVD-Niveau, auf LLaMA-30B dahinter (0,57 gegen 0,59). Als Beleg für die Budget-übergreifende Wirkung dienen Gradienten- und Frühupdate-Analysen, die die Autoren selbst als lokalen Hinweis einordnen; dass reines Kreuzentropie-Training ohne KL-Aufsicht die Perplexität deutlich verschlechtert, zeigt ihre Kontrolle."
+    }
+  ],
+  "key_takeaways": [
+    "Monitor-Auswertungen hängen stark am Angriff: Bei einem OpenAI-Monitor (GPT-5.4, IaC-Szenario, bedingt auf Seitenaufgaben-Erfolg) stieg die Rate unentdeckter Angriffe von 0,2 bis 0,5 Prozent mit Basis-Prompts auf 6,4 Prozent (optimierte Prompts), 20,8 Prozent (Verstärkungslernen) und 23,0 Prozent (Transkript-Umschreiben); alle Angriffe wurden nur gegen Stellvertreter-Monitore optimiert und übertrugen sich blind auf das Ziel.",
+    "Einflussfunktionen finden im kontrollierten Test relevante Trainingsdaten, aber je nach Phänomen sehr unterschiedlich gut: bis 86 Prozent (Modell mit 5,6 Milliarden Token) Precision@10 (Existential-there), bis 51 (Wh-Inseln, NPIs), 30 (Bindungsreflexive, dort liegt BM25 bei 100), Fakten höchstens 35 (Common Corpus) und 26 Prozent (Wikipedia); K-FAC ist die konsistenteste der drei Näherungen.",
+    "LLift rüstet ein Modell einmal für mehrere SVD-Kompressionsbudgets: LLaMA-7B steigt von 0,44/0,37/0,31 auf 0,50/0,46/0,38 mittlere Sieben-Aufgaben-Genauigkeit bei r=0,8/0,6/0,4, ohne Nachtraining je Budget; bei r=0,8 liegt LEMS vorn, bei r=0,4 das elastische FlexRank, und auf LLaMA-30B bei r=0,8 bleibt ZS-SVD besser."
+  ],
+  "faq": [
+    {
+      "q": "Heißt eine Fehlerquote von 0,5 Prozent, dass ein Monitor sicher ist?",
+      "a": "Nicht ohne weiteres. Derselbe Monitor (ein aus der Produktion stammender OpenAI-Monitor auf GPT-5.4-Basis, im IaC-Szenario) lag bei einfachen Basis-Prompts bei 0,2 bis 0,5 Prozent unentdeckten Seitenaufgaben-Erfolgen, nach Optimierung derselben Angriffsmethoden aber bei 6,4 Prozent (Prompts), 20,8 Prozent (Verstärkungslernen) und 23,0 Prozent (Transkript-Umschreiben). Alle Angriffe wurden nur gegen Stellvertreter-Monitore entwickelt und trafen das Ziel blind. Ohne ein ausdrückliches Argument, warum die gewählten Angriffsverteilungen für den Einsatz relevant sind, trägt die niedrige Quote nicht."
+    },
+    {
+      "q": "Kann man Einflussfunktionen für Trainingsdaten jetzt vertrauen?",
+      "a": "Im Schnitt zeigen sie Relevantes, im Einzelfall hängt es vom Phänomen ab: Die kontrollierte Filter-und-Neutraining-Studie (GPT-2-Modelle, 68 Millionen bis 5,6 Milliarden Token) misst für das größte Modell (5,6 Milliarden Token) bis 86 Prozent Precision@10 für Existential-there, bis 51 Prozent für Wh-Inseln und NPIs, nur 30 Prozent für Bindungsreflexive und höchstens 35 beziehungsweise 26 Prozent für Fakten (dort mit strengerem Treffer-Kriterium); bei Bindungsreflexiven liegt die einfache Textsuche BM25 mit 100 Prozent vor allen drei Verfahren. K-FAC ist die konsistenteste Näherung."
+    },
+    {
+      "q": "Ersetzt LLift das budgetspezifische Nachtrainieren?",
+      "a": "Nur teilweise. Gegenüber den berichteten SVD-LLM-Werten ohne Nachtraining gewinnt ein einmal vorbereitetes LLaMA-7B (0,46 statt 0,37 bei r=0,6 und 0,38 statt 0,31 bei r=0,4). Gegen budgetspezifisches Nachtrainieren mit gleichen Daten und gleicher Zielfunktion haben die Autoren aber auch verglichen: Bei r=0,8 und 0,6 ist die Genauigkeit ähnlich, die Wikitext-2- und C4-Perplexität ist mit Nachtraining bei allen drei Budgets niedriger, und bei r=0,4 liegt die Genauigkeit mit Nachtraining höher (0,40 gegen 0,38 auf LLaMA-7B, 0,39 gegen 0,34 auf Qwen3-8B). Dafür kostet LLift über drei Budgets insgesamt 3,13 statt 5,10 A100-GPU-Stunden. Außerdem liegt bei r=0,8 das Verfahren LEMS vorn, unter den elastischen Verfahren FlexRank bei r=0,4, und auf LLaMA-30B bei r=0,8 bleibt ZS-SVD vorn (0,59 gegen 0,57). Die Gewinne hängen von Kompressor und Budget ab."
+    }
+  ],
+  "related": [
+    "metr-alignment-evals-erkennbar-modelle",
+    "satbench-benchmarks-verbraucht-unabhaengig"
+  ],
+  "sources": [
+    {
+      "title": "Attack Policy Selection can Mislead Monitor Evaluators",
+      "publisher": "arXiv; Charlie Griffin, Oliver Makins, Asa Cooper Stickland, Alessandro Abate, Yarin Gal, Abby D'Cruz, Xander Davies (Affiliation im Preprint nicht angegeben)",
+      "url": "https://arxiv.org/abs/2611.34934",
+      "accessed": "2026-11-26"
+    },
+    {
+      "title": "Under the Influence - of What? A Controlled Evaluation of Influence Functions",
+      "publisher": "arXiv; Johannes Gabriel Sindlinger, Arzu Burcu Güven, Rob van der Goot, Anna Rogers (IT University of Copenhagen)",
+      "url": "https://arxiv.org/abs/2611.34373",
+      "accessed": "2026-11-26"
+    },
+    {
+      "title": "Learning to Be Truncated: Preparing LLM Checkpoints for SVD Compression",
+      "publisher": "arXiv; Chenyue Fang, Danila Mishin, Babak Falsafi (EcoCloud, EPFL)",
+      "url": "https://arxiv.org/abs/2611.34667",
+      "accessed": "2026-11-26"
+    }
+  ]
+}
