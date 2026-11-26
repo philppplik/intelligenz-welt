@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Anthropic hat seine Messages API in Rust neu geschrieben, der Produktivverkehr diente als Prüforakel",
   "dek": "laut Anthropic etwa 70 Prozent weniger CPU pro Anfrage (eine Region) und rund 20 Prozent kürzere Zeit bis zum ersten Token (Claude-Code-Anfragen): Anthropic beschreibt, wie Claude die Migration von Python nach Rust schrieb, und warum nicht das Generieren, sondern das Verifizieren der Engpass war.",
-  "published": "2026-11-26T08:50:00+01:00",
-  "modified": "2026-11-26T08:50:00+01:00",
+  "published": "2026-11-26T08:59:23+01:00",
+  "modified": "2026-11-26T08:59:23+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Anthropic",

@@ -5,8 +5,8 @@
   "type": "news",
   "title": "Cognition SWE-2.1: Terminal-Bench-Wert per reinem RL auf Kimi K3 von 24,2 auf 50,0",
   "dek": "Cognition hat SWE-2.1 veröffentlicht, erneut mit reinem Verstärkungslernen auf Kimi K3 trainiert. Auf Terminal-Bench 4.1 steigt der Wert von 24,2 auf 50,0; bei Exploit-Aufgaben wächst die Stärke so deutlich, dass Sandbox-Flucht-Alarme und eine geschützte Cyber-Variante eingeführt wurden.",
-  "published": "2026-11-26T08:50:00+01:00",
-  "modified": "2026-11-26T08:50:00+01:00",
+  "published": "2026-11-26T08:59:23+01:00",
+  "modified": "2026-11-26T08:59:23+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Cognition",

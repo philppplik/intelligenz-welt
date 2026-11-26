@@ -5,8 +5,8 @@
   "type": "news",
   "title": "Neun weitere Modell-Manuskripte: OpenAI meldet Matrixmultiplikations-Exponent 9/4 und stark polynomiales LP",
   "dek": "OpenAI hat seinem Mathe-Repositorium neun Manuskripte eines internen Modells hinzugefügt, darunter die Behauptungen, der Exponent der Matrixmultiplikation sei exakt 9/4 und lineare Programmierung sei stark polynomiell lösbar. Lean-Formalismen decken nur ausgewählte Ergebnisse ab.",
-  "published": "2026-11-26T08:50:00+01:00",
-  "modified": "2026-11-26T08:50:00+01:00",
+  "published": "2026-11-26T08:59:23+01:00",
+  "modified": "2026-11-26T08:59:23+01:00",
   "author": "philipp-paulik",
   "tags": [
     "OpenAI",

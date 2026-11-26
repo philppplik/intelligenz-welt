@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Ternary Bonsai 2.5 27B: Agentisches Coding in 5,9 GB auf einer einzelnen GPU",
   "dek": "PrismML hält den Speicherfußabdruck seines ternären Modells bei 5,9 GB und schließt nach eigenen Zahlen einen großen Teil der Agenten-Lücke zum Vollpräzisions-Basismodell Qwen3.8 27B: SWE-bench Verified 75,6 gegenüber 80,6, AppWorld 90,5 gegenüber 93,2.",
-  "published": "2026-11-26T08:50:00+01:00",
-  "modified": "2026-11-26T08:50:00+01:00",
+  "published": "2026-11-26T08:59:23+01:00",
+  "modified": "2026-11-26T08:59:23+01:00",
   "author": "philipp-paulik",
   "tags": [
     "PrismML",
