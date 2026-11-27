@@ -7,7 +7,7 @@
   "author": "philipp-paulik",
   "lang": "de",
   "published": "2026-11-27T06:57:00+01:00",
-  "modified": "2026-11-27T06:57:00+01:00",
+  "modified": "2026-11-27T09:02:00+01:00",
   "tags": [
     "Forschung",
     "Sicherheit",
@@ -105,7 +105,7 @@
     },
     {
       "q": "Sind RSSM-Weltmodelle wie Dreamer jetzt unsicher einsetzbar?",
-      "a": "Die Unsicherheitsschätzung, nicht das Modell selbst, ist der Engpass: DreamerV3s nachträglicher Schätzer übersieht kurze oder kleinteilige Abweichungen, weil das rekurrente Update Einzelbild-Störungen auf etwa ein Fünftel dämpft und das Rekonstruktionsziel Objekte nach Pixelzahl gewichtet. Hält eine Störung über acht Kontextbilder an, steigt die Sensitivität um den Faktor 2,3 bis 4,6. Die Autoren untersuchten je einen Vertreter pro Paradigma und nur Last-Layer-Schätzer; Planungsgewinne durch Unsicherheitsstrafe fielen bei LeWM mit 17 bis 28 Punkten in vier Umgebungen aus, bei Dreamer meist unter 10."
+      "a": "Die Unsicherheitsschätzung, nicht das Modell selbst, ist der Engpass: DreamerV3s nachträglicher Schätzer übersieht kurze oder kleinteilige Abweichungen, weil das rekurrente Update Einzelbild-Störungen auf etwa ein Fünftel dämpft und das Rekonstruktionsziel Objekte nach Pixelzahl gewichtet. Hält eine Störung über acht Kontextbilder an, wächst die am GRU weitergegebene Störungsstärke (rho_h) um den Faktor 2,3 bis 4,6, und die Sensitivität folgt. Die Autoren untersuchten je einen Vertreter pro Paradigma und nur Last-Layer-Schätzer; Planungsgewinne durch Unsicherheitsstrafe fielen bei LeWM mit 17 bis 28 Punkten in vier Umgebungen aus, bei Dreamer meist unter 10."
     }
   ],
   "related": [

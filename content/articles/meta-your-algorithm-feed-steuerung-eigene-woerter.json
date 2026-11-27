@@ -1,0 +1,94 @@
+{
+  "slug": "meta-your-algorithm-feed-steuerung-eigene-woerter",
+  "lang": "de",
+  "section": "trends",
+  "type": "analysis",
+  "title": "Your Algorithm: Meta erklärt, wie Sätze den Facebook-Feed steuern",
+  "dek": "Meta erklärt auf seinem Engineering-Blog, wie das Werkzeug Your Algorithm ausformulierte Interessen in Feed- und Reels-Rankings übersetzt: vier Abrufquellen pro Interesse, mehrstufige Filter und spezialisierte Sprachmodelle statt eines großen.",
+  "published": "2026-11-27T09:00:00+01:00",
+  "modified": "2026-11-27T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Meta",
+    "Facebook",
+    "Empfehlungssysteme",
+    "Sprachmodelle"
+  ],
+  "key_takeaways": [
+    "Your Algorithm gibt Facebook-Nutzenden eine bearbeitbare Seite mit zwei Listen: Interested In und Not Interested In; Einträge lassen sich in eigenen Worten ergänzen und wirken auf Feed und Reels.",
+    "Jedes neue Interesse speist vier eigene Abrufquellen, besteht eine Relevanzprüfung und wird im Ranking zeitweise stärker gewichtet, aber pro Tag in seinem Beitrag gedeckelt und über die Ausspielung verteilt.",
+    "Nicht-interessiert-Einträge wirken mehrstufig: Einbettungsfilter während des Rankings, ein feingetuntes kleines Modell als letzte Prüfung der sortierten Liste, Cache-Löschung auf dem Gerät.",
+    "Meta beschreibt die Architektur, nennt aber keine Zahlen zu Nutzung oder Wirkung der Funktion."
+  ],
+  "hero": {
+    "alt": "Ein dunkles Pult mit leuchtenden Schiebereglern aus Licht über einem ruhig fließenden Strom vieler blanker, unbeschrifteter Karten, warmes Orange auf Dunkelblau.",
+    "caption": "Your Algorithm übersetzt ausformulierte Wünsche in Änderungen an Feed- und Reels-Rankings. (Symbolbild)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Empfehlungssysteme lernen bisher vor allem aus Klicks und Verweildauer: skalierbar, aber träge und grob. Mit Your Algorithm hat Meta einen anderen Weg beschrieben: Auf seinem Engineering-Blog erläutert das Unternehmen am 10. November, wie das Werkzeug ausformulierte Interessen direkt in die Rankings von Facebook Feed und Reels einspeist. Die Seite zeigt oben einen Ein-Satz-Rückblick auf die jüngste Sehaktivität, darunter zwei Listen: Interested In, vorbefüllt mit aus dem Verhalten abgeleiteten Interessen, und Not Interested In mit ausdrücklich abgelehnten oder weggekreuzten Themen."
+    },
+    {
+      "t": "h2",
+      "x": "Interessiert, aber bitte mit Maß"
+    },
+    {
+      "t": "p",
+      "x": "Damit ein neues Interesse überhaupt Kandidaten ins Ranking bekommt, ruft das System für jedes Interesse vier eigene Quellen ab: zwei finden passende Inhalte direkt über Suche und Themencluster, zwei erweitern über den Inhaltsgraphen und Ähnlichkeit zwischen Beiträgen. Eine Relevanzprüfung vergleicht die Bedeutung des Interesses mit jedem Kandidaten; bestandene Kandidaten erhalten einen Schub in der späten Rankingphase. Eine Steuerschicht verteilt Empfehlungen desselben Interesses über die Ausspielung, deckelt seinen täglichen Beitrag und sorgt dafür, dass pro Abruf nur ein Interesse bedient wird; neue Interessen bekommen für begrenzte Zeit Zusatzgewicht. Das Ziel sei Balance, nicht Flut, schreibt Meta."
+    },
+    {
+      "t": "h2",
+      "x": "Ablehnung in mehreren Lagen"
+    },
+    {
+      "t": "p",
+      "x": "Einträge in Not Interested In wirken an mehreren Stellen: Während des Rankings entfernt derselbe einbettungsbasierte Vergleich zu nahe Kandidaten und drückt nahe Treffer nach unten; danach prüft ein feingetuntes Sprachmodell die sortierte Liste noch einmal; und auf dem Gerät löscht eine Cache-Ungültigmachung bereits vorgemerkte passende Inhalte, bevor sie erscheinen. Qualitätswünsche wie weniger KI-generierte oder sexuell anzügliche Inhalte laufen nicht über Themenerkennung, sondern über eigene Dämpfungssignale; nennt ein Wunsch eine Erstellerin oder einen Ersteller, wird dessen Inhalt direkt herausgefiltert."
+    },
+    {
+      "t": "callout",
+      "x": "Meta gibt keine Nutzungs- oder Wirkungszahlen an: Wie viele Menschen Your Algorithm verwenden, wie oft Präferenzen geändert werden und wie stark sich Feeds tatsächlich verändern, bleibt offen. Die Beschreibung ist ein Architekturbericht, keine Wirkungsbilanz.",
+      "title": "Was Meta nicht sagt"
+    },
+    {
+      "t": "h2",
+      "x": "Viele kleine Modelle statt eines großen"
+    },
+    {
+      "t": "p",
+      "x": "Sprachmodelle stecken an drei Stellen: Sie erzeugen das Startprofil samt Lage-Satz, prüfen jeden neuen Eintrag auf Kohärenz und Duplikate und mappen ihn auf einen sauberen Themennamen (ein kleineres, günstig zu betreibendes Modell, ergänzt um eine eigene Integritäts- und Sicherheitskomponente), und sie bilden die letzte Kontrolle gegen die Ablehnungsliste. Hier nennt Meta eine zentrale Erkenntnis: Ein kleines, feingetuntes Modell, das nur die zu entfernenden Einträge zurückgibt, war schneller und zuverlässiger als ein allgemeines Modell, das jeden Eintrag einzeln beurteilt. Bewertet werden die Modellaufrufe durch ein weiteres Modell als Richter, weil klassische Offline-Metriken nicht erfassen, ob eine Zusammenfassung stimmt oder der Reranker die richtigen Kandidaten entfernt."
+    },
+    {
+      "t": "p",
+      "x": "Als offene Punkte nennt Meta mehrdeutige Eingaben, präzisere Reaktionen und weitere Einstiegsstellen, von denen aus Präferenzen gepflegt werden können. Der Schritt passt in eine breitere Bewegung der Plattformen, Ranking-Systeme für explizite Nutzersteuerung zu öffnen; wie wirksam die Steuerung am Ende ist, wird sich erst an unabhängigen Untersuchungen zeigen müssen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Your Algorithm: Giving People More Ways to Personalize Facebook Recommendations",
+      "publisher": "Engineering at Meta",
+      "url": "https://engineering.fb.com/2026/11/10/ml-applications/your-algorithm-giving-people-more-ways-to-personalize-facebook-recommendations/",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wo finde ich Your Algorithm?",
+      "a": "Der Engineering-Beitrag beschreibt das System und seine Seite mit den beiden Listen, macht aber keine Angaben zu Verfügbarkeit, Rollout-Stand oder Sprachen. Ob und wann die Funktion in Deutschland auftaucht, geht aus der Quelle nicht hervor."
+    },
+    {
+      "q": "Ersetzt das die bisherigen Feed-Einstellungen?",
+      "a": "Die Beschreibung deutet auf eine Ergänzung: Die Not-Interested-In-Liste übernimmt auch Themen, die Nutzende direkt an Beiträgen weggekreuzt oder verborgen haben. Your Algorithm bündelt diese Signale an einer bearbeitbaren Stelle und macht sie für Feed und Reels gemeinsam wirksam."
+    },
+    {
+      "q": "Warum mehrere kleine Modelle statt eines großen?",
+      "a": "Latenz, Betriebskosten und Zuverlässigkeit: Meta berichtet, ein kleines feingetuntes Modell, das nur die zu entfernenden Einträge nennt, schlage ein allgemeines Modell bei der Endkontrolle in Tempo und Verlässlichkeit. Die Validierung neuer Einträge läuft ebenfalls auf einem kleineren Modell."
+    }
+  ],
+  "related": [
+    "meta-q3-2026-ki-ausgaben-class-c-aktie",
+    "walmart-agent-gateway-shopping-agenten-regeln"
+  ]
+}

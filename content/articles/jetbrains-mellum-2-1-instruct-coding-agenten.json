@@ -1,0 +1,97 @@
+{
+  "slug": "jetbrains-mellum-2-1-instruct-coding-agenten",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "Mellum2.1 Instruct: JetBrains Coding-Modell antwortet ohne Denkphase",
+  "dek": "JetBrains ergänzt sein offenes Coding-Modell Mellum2.1 um eine Instruct-Variante, die direkt antwortet statt erst zu reasonieren. Auf SWE-bench Verified verdoppelt sie den Wert des Vorgängers auf 40,4 Prozent, bleibt aber hinter Qwen3.5 9B.",
+  "published": "2026-11-27T09:00:00+01:00",
+  "modified": "2026-11-27T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "JetBrains",
+    "Mellum",
+    "Open Weights",
+    "Coding-Agenten"
+  ],
+  "key_takeaways": [
+    "Mellum2.1 Instruct ist die direkt antwortende Schwester des im Oktober veröffentlichten Mellum2.1 Thinking: gleiche Architektur (12B MoE, 2,5B aktiv), gleiches Training, keine sichtbare Denkphase.",
+    "Auf SWE-bench Verified steigt der Wert gegenüber Mellum2 Instruct von 20,2 auf 40,4 Prozent; Qwen3.5 9B liegt laut JetBrains-Tabelle mit 49,8 Prozent darüber.",
+    "JetBrains begründet den Vorsprung nicht über die Rohpunktzahl, sondern über Tempo: etwa halb so viele Tokens wie die Thinking-Variante, rund 1,4-mal schneller als Qwen3.5 9B pro Anfrage.",
+    "Beide Varianten stehen unter Apache 2.0 auf Hugging Face, jeweils mit GGUF-Dateien und einem MTP-Kopf für bis zu 1,8-fache Generierungsgeschwindigkeit."
+  ],
+  "hero": {
+    "alt": "Zwei gläserne Maschinenblöcke nebeneinander auf dunklem Metalltisch, einer mit sichtbarem leuchtendem Räderwerk im Inneren, einer mit einem einzigen geraden Lichtstrahl durch die Mitte, kühles Blau.",
+    "caption": "Mellum2.1 kommt als Thinking-Variante mit sichtbarer Denkphase und als Instruct-Variante mit direkter Antwort. (Symbolbild)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "JetBrains hat am 25. November Mellum2.1 Instruct veröffentlicht, die zweite Variante seines offenen Coding-Modells. Wie das im Oktober veröffentlichte Mellum2.1 Thinking ist es ein Mixture-of-Experts-Modell mit 12 Milliarden Parametern, von denen pro Token 2,5 Milliarden aktiv sind. Architektur und Training sind laut JetBrains identisch, der Unterschied: Instruct antwortet direkt, ohne vorher eine sichtbare Denkphase zu erzeugen."
+    },
+    {
+      "t": "h2",
+      "x": "Doppelt so viele gelöste Fälle wie der Vorgänger"
+    },
+    {
+      "t": "p",
+      "x": "Der größte Sprung gegenüber Mellum2 Instruct liegt auf dem Agenten-Benchmark SWE-bench Verified: 40,4 Prozent statt 20,2 Prozent. Das offene Qwen3.5 9B liegt in der JetBrains-Tabelle ohne Denkphase bei 49,8 Prozent, also darüber. JetBrains verweist auf die Aktivierungsgröße: Da pro Token nur 2,5 Milliarden Parameter rechnen, generiere das Modell etwa 1,4-mal schneller als Qwen3.5 9B bei einer Einzelanfrage und etwa 1,8-mal schneller unter Last. Gegenüber der eigenen Thinking-Variante (47,0 Prozent auf SWE-bench Verified) erzeuge Instruct auf agentischen Coding-Aufgaben etwa halb so viele Tokens."
+    },
+    {
+      "t": "p",
+      "x": "Alle Benchmark-Werte stammen aus der Modellkarte und sind laut Karte von JetBrains selbst gemeldet. Für die Agenten-Benchmarks kam demnach bei allen Modellen dasselbe Open-Source-Gerüst (Pi v0.73.1 mit Shell- und Dateiwerkzeugen, 114K Kontext, bis zu 16K Tokens pro Zug) zum Einsatz. Auf Terminal-Bench 2.1 liegt Instruct bei 8,2 Prozent, Qwen3.5 9B bei 17,6 Prozent."
+    },
+    {
+      "t": "callout",
+      "x": "Denken lohnt nur für harte Fälle: Auf LiveCodeBench v6 erreicht die Thinking-Variante 82,0 Prozent, die Instruct-Variante 53,7 Prozent; bei AIME 25/26 steht es 83,3 zu 61,1. JetBrains empfiehlt Instruct für Sub-Agenten, Werkzeugschleifen und kleine Fixes, Thinking für schwierige Algorithmik.",
+      "title": "Zwei Varianten, zwei Einsatzbereiche"
+    },
+    {
+      "t": "h2",
+      "x": "Training mit Verstärkungslernen in echten Repositories"
+    },
+    {
+      "t": "p",
+      "x": "Trainiert wurden beide Varianten laut JetBrains mit groß angelegtem Verstärkungslernen auf Repository-Aufgaben in realen Umgebungen, aufgebaut auf NVIDIAs Open-Source-Bibliotheken NeMo RL und NeMo Megatron-Bridge auf Clustern mit H200- und B300-GPUs. Ein einzelner Lauf sammelte demnach etwa eine halbe Million Agenten-Trajektorien aus 10.000 gleichzeitigen Sandboxes. Belohnt wurde nur, wenn versteckte Tests bestanden wurden. Für Instruct wurde die Längenstrafe so justiert, dass Antworten knapp bleiben."
+    },
+    {
+      "t": "p",
+      "x": "Mellum2.1 Instruct und Thinking stehen unter Apache 2.0 auf Hugging Face, jeweils zusätzlich als GGUF-Dateien für lokale Inferenz und mit einem MTP-Kopf (Multi-Token-Prediction), der die Generierung laut JetBrains um bis zu den Faktor 1,8 beschleunigt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Mellum2.1 Instruct Is Out, Bringing Faster Answers for Coding Agents",
+      "publisher": "The JetBrains Blog",
+      "url": "https://blog.jetbrains.com/ai/2026/11/mellum2-1-instruct-is-out-bringing-faster-answers-for-coding-agents/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "JetBrains/Mellum2.1-12B-A2.5B-Instruct (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Instruct",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wann Instruct, wann Thinking?",
+      "a": "Nach JetBrains' Einordnung: Instruct für einfache, häufige Agentenarbeit wie kleine Fixes, Befehle und Codefragen, Thinking für schwere algorithmische und Mathematikprobleme. Die Benchmark-Tabelle stützt das: Auf LiveCodeBench v6 und AIME liegt Thinking klar vorn, auf SWE-bench Verified ist der Abstand kleiner (47,0 zu 40,4)."
+    },
+    {
+      "q": "Ist Mellum2.1 Instruct das stärkste offene Modell seiner Klasse?",
+      "a": "Nach den selbst gemeldeten JetBrains-Werten nicht pauschal: Qwen3.5 9B liegt auf SWE-bench Verified (49,8), LiveCodeBench, GPQA und MMLU-Redux vorn. Mellum2.1 aktiviert aber nur 2,5 Milliarden Parameter pro Token und ist laut JetBrains dadurch deutlich schneller."
+    },
+    {
+      "q": "Kann ich das Modell lokal betreiben?",
+      "a": "Ja, JetBrains stellt GGUF-Dateien für beide Varianten bereit und verweist auf vLLM zum Servieren; der Kontext umfasst 131.072 Tokens. Wie viel Speicher die lokale Nutzung konkret braucht, hängt von Quantisierung und Kontextlänge ab; die Modellkarte nennt dazu keine Summe."
+    }
+  ],
+  "related": [
+    "ternary-bonsai-2-5-27b-lokale-coding-agenten",
+    "localcode-lokale-coding-agenten-mac",
+    "cognition-swe-2-1-rl-kimi-k3"
+  ]
+}

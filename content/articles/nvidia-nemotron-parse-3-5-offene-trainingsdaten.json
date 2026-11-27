@@ -1,0 +1,108 @@
+{
+  "slug": "nvidia-nemotron-parse-3-5-offene-trainingsdaten",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "NVIDIA öffnet die Trainingsdaten hinter Nemotron Parse 3.5",
+  "dek": "Statt nur Gewichte veröffentlicht NVIDIA drei synthetische Datensätze mit zusammen rund 18,9 Millionen Beispielen, ein Feintuning-Rezept und einen Spekulations-Beschleuniger für sein Dokumentenmodell Parse 3.5. Ein Blick auf Nutzen und Grenzen der Offenlegung.",
+  "published": "2026-11-27T09:00:00+01:00",
+  "modified": "2026-11-27T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "NVIDIA",
+    "Nemotron",
+    "Dokumenten-KI",
+    "Open Data"
+  ],
+  "key_takeaways": [
+    "NVIDIA legt drei Trainingsdatensätze für Parse 3.5 offen: Synthetic Charts V1 (9,98 Millionen), Synthetic Tables V1 (1 Million) und OCR Synthetic Multilingual v2 (7,9 Millionen Beispiele), jeweils mit Bildern, Annotationen und Generierungs-Dokumentation.",
+    "Parse 3.5 ist ein kompaktes Dokumentenmodell (0,6 Milliarden Parameter), das Seitenbilder in geordnete, klassifizierte und lokalisierte Strukturdaten übersetzt.",
+    "Das Training kombiniert überwachtes Feintuning mit RLVR (GRPO); in NVIDIAs kontrolliertem Vergleich an Entwicklungsständen fielen Schleifen-Ausgaben von 126 auf 29 Seiten, der Gesamtwert stieg von 66,24 auf 71,38.",
+    "Der mitveröffentlichte DFlash2-Spekulator steigerte den Durchsatz in NVIDIAs Messung um den Faktor 7,62 bei einer Anfrage und 1,52 bei 512 gleichzeitigen Anfragen."
+  ],
+  "hero": {
+    "alt": "Eine große leuchtende Seite aus Papier, die sich auf einem dunklen Tisch in ein ordentliches Raster vieler kleiner glühender quadratischer Zellen auflöst, warmes Gold auf Schwarz.",
+    "caption": "Parse 3.5 übersetzt Seitenbilder in strukturierte Datensätze; NVIDIA legt nun die Trainingsdaten offen. (Symbolbild)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Bei offenen Modellen bleibt meist unklar, woraus sie gelernt haben. NVIDIA geht bei seinem Dokumentenmodell Nemotron Parse 3.5 jetzt einen Schritt weiter: In einem Blogbeitrag vom 26. November veröffentlicht das Unternehmen drei der verwendeten Trainingsdatensätze, ein Feintuning-Rezept und einen Beschleuniger für die Inferenz. Parse 3.5 ist ein kompaktes Bild-zu-Text-Modell mit 0,6 Milliarden Parametern, das Dokumentseiten in Lesereihenfolge zerlegt, Inhalte klassifiziert (Überschriften, Absätze, Tabellen, Diagramme) und mit Positionsrahmen versieht."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Datensätze, rund 18,9 Millionen Beispiele"
+    },
+    {
+      "t": "p",
+      "x": "Synthetic Charts V1 enthält 9,98 Millionen gerenderte Diagramme mit strukturierten Annotationen, Synthetic Tables V1 eine Million gerenderte HTML-Tabellen mit Zielen, die Zeilen, Spalten und Zellbeziehungen erhalten, und OCR Synthetic Multilingual v2 7,9 Millionen synthetische Dokumentseiten für mehrsprachige Texterkennung. Jeder Datensatz kommt laut NVIDIA mit Bildern, Annotationen, Dokumentation der Generierung und dem Trainingsformat. Gerade Diagramme ohne beschriftete Werte und Tabellen mit verschobenen Zeilen seien durch diese synthetischen Daten besser lesbar geworden, schreibt NVIDIA."
+    },
+    {
+      "t": "h2",
+      "x": "Erst lehren, dann belohnen"
+    },
+    {
+      "t": "p",
+      "x": "Das Training lief in zwei Phasen: überwachtes Feintuning über Text, Layout, Tabellen, Diagramme und mehrsprachige Dokumente, danach Verstärkungslernen mit prüfbaren Belohnungen (RLVR) nach dem GRPO-Verfahren. Die Belohnung prüft etwa, ob eine Diagramm-Extraktion die richtigen Reihen und Werte enthält und ob die Ausgabe zu Ende kommt statt zu schleifen. In NVIDIAs kontrolliertem Vergleich fielen schleifenmarkierte Ausgaben von 126 auf 29 Seiten (rund 77 Prozent weniger), Ausgaben am 9.000-Token-Limit von 185 auf 35, und der Gesamtwert stieg von 66,24 auf 71,38, darunter plus 5,18 Punkte bei Tabellen und plus 4,15 bei Diagrammen."
+    },
+    {
+      "t": "callout",
+      "x": "Dieser Vergleich stammt ausdrücklich von Entwicklungsständen mit angeglichenen Auswertungseinstellungen, nicht vom veröffentlichten Endmodell. Er zeigt den Effekt des RLVR-Schritts im Prinzip, sagt aber nichts über die absolute Güte des Release-Modells.",
+      "title": "Wichtige Einschränkung"
+    },
+    {
+      "t": "h2",
+      "x": "DFlash2: bis zu 32 Token am Stück"
+    },
+    {
+      "t": "p",
+      "x": "Für die Inferenz hat NVIDIA die Architektur gegenüber Parse 2.0 geändert (dynamische NaViT-Eingaben statt fester Leinwand, komprimierte Bildtokens als Präfix statt Kreuzaufmerksamkeit, gruppierte Abfrageköpfe GQA-8) und einen eigenen Spekulator gebaut: DFlash2 schlägt bis zu 32 Token voraus, im gemessenen Fall wurden im Mittel etwa 14 akzeptiert, rund 15 Token Fortschritt pro Prüfschritt. Auf einer H200 in BF16 stieg der Durchsatz gegenüber Parse 3.5 ohne Spekulation um den Faktor 7,62 bei einer Anfrage und 1,52 bei 512 gleichzeitigen Anfragen; dort kommt Parse 3.5 auf 13,48 Seiten pro Sekunde ohne und 20,44 mit DFlash2, Parse 2.0 auf 2,98. Gemessen wurde an 2.078 Seiten."
+    },
+    {
+      "t": "p",
+      "x": "Das Feintuning-Rezept führt an einem synthetischen Zahnarztformular durch Datenpaare, NeMo-Automodel-SFT und GRPO mit vLLM: Die geschätzte Trefferquote im ersten Versuch stieg demnach von 0,00 Prozent beim Basismodell auf 95,85 Prozent nach SFT und 96,58 Prozent nach RLVR, gemessen an 256 zurückgehaltenen Formularen mit acht Stichproben pro Seite. Community-Projekte haben Parse nach NVIDIAs Angaben bereits für Thailändisch, Persisch und Arabisch erweitert."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die Offenlegung ist ungewöhnlich weit: Wer eigene Dokumenttypen hat, kann Daten, Rezept und Prüfbausteine kombinieren, statt nur die Gewichte zu nehmen. Die Grenzen bleiben: Die Datensätze sind synthetisch, reale Belegvielfalt muss ein eigenes Feintuning liefern; die Trainingsvergleiche stammen von Entwicklungsständen; und sämtliche Leistungszahlen sind NVIDIAs eigene Messungen. Mehrstufige Nachläufe (zweiter und dritter Durchgang über schwierige Bereiche) bringen in der Referenzauswertung 2,18 beziehungsweise 2,46 ParseBench-Punkte, kosten aber Durchsatz."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "publisher": "Hugging Face Blog (NVIDIA)",
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "nvidia/Nemotron-3.5-Parse (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist an dieser Veröffentlichung neu?",
+      "a": "Nicht das Modell selbst: Parse 3.5 war bereits offen. Neu sind die drei Trainingsdatensätze, das dokumentierte Feintuning-Rezept inklusive Belohnungsbausteinen und der DFlash2-Spekulator für schnellere Inferenz."
+    },
+    {
+      "q": "Kann ich Parse auf eigene Formulare anpassen?",
+      "a": "Ja, genau dafür ist das Rezept gedacht: eigene Bild-Label-Paare plus eine Prüffunktion, die bewertet, ob eine Extraktion korrekt ist. Das Beispiel im Blog führt ein synthetisches Zahnarztformular vor, bei dem die Trefferquote im ersten Versuch von 0,00 auf 96,58 Prozent stieg (Herstellerangabe, synthetischer Test)."
+    },
+    {
+      "q": "Sind die Geschwindigkeitsangaben verlässlich?",
+      "a": "Es sind NVIDIAs eigene Messungen auf einer H200 in BF16 an 2.078 Seiten; Parse 2.0 lief dabei mit einem Versuch pro Punkt, Parse 3.5 mit Median aus drei. Unabhängige Messungen liegen nicht vor."
+    }
+  ],
+  "related": [
+    "nvidia-skillspector-agenten-skills-pruefen",
+    "vlm-symbole-steuern-modelle-herz-rekursion"
+  ]
+}

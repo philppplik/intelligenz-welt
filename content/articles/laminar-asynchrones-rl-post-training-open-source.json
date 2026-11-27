@@ -1,0 +1,105 @@
+{
+  "slug": "laminar-asynchrones-rl-post-training-open-source",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Laminar: Asynchrones RL-Post-Training als Open Source",
+  "dek": "Das zum EuroSys-'26-Paper gehörende Framework Laminar entkoppelt Rollout und Training vollständig und lässt Trajektorien unter einer einzigen Modellversion zu Ende laufen. Im SWE-Rezept sinken Trainingskosten deutlich, mit Hardware-Vorbehalt.",
+  "published": "2026-11-27T09:00:00+01:00",
+  "modified": "2026-11-27T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "verl",
+    "Laminar",
+    "Reinforcement Learning",
+    "Open Source"
+  ],
+  "key_takeaways": [
+    "Laminar ist ein quelloffenes RL-Post-Training-Framework (Apache 2.0) aus dem verl-Umfeld, Begleitcode zum EuroSys-'26-Paper, aufgebaut auf verl und Uni-Agent.",
+    "Drei Prinzipien: vollständige Entkopplung über eine Daten- und eine Gewichtsebene, feinkörnige Asynchronität auf Ebene einzelner Trajektorien und Replikate sowie Fehlerisolierung statt Cluster-Neustart.",
+    "Nach Angaben der Autoren ist Laminar das erste Open-Source-Framework mit effizientem versionskonsistentem Rollout: Jede Trajektorie läuft unter genau einer Policy-Version ohne Zwischen-Neubefüllung des Kontexts.",
+    "Im SWE-Rezept steigt die Lösungsquote auf SWE-bench Verified von 46,6 auf 52,2 Prozent; der Vergleich mit der Basislinie läuft über unterschiedliche GPUs (H800 gegen H100) und ist daher bei GPU-Stunden nur begrenzt aussagekräftig."
+  ],
+  "hero": {
+    "alt": "Viele parallele leuchtende Ströme in getrennten durchsichtigen Kanälen über einer dunklen Fläche, einzelne Ströme wechseln ohne Stoppen den Kanal, kühles Violett und Blau.",
+    "caption": "Laminar lässt Trainings- und Rollout-Schleifen unabhängig voneinander laufen. (Symbolbild)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Verstärkungslernen für Sprachmodelle und lang laufende Agenten bindet Cluster über Tage: Rollout-Instanzen erzeugen Erfahrung, Trainer aktualisieren Gewichte, und bei jeder Synchronisation warten beide Seiten aufeinander. Laminar, am 20. November als Open Source veröffentlicht und Begleitcode zu einem EuroSys-'26-Paper, will dieses Warten beseitigen. Das Framework stammt aus dem verl-Umfeld und setzt auf verl (Training und Inferenz) sowie Uni-Agent (Agenten-Ausführung und Sandboxes) auf."
+    },
+    {
+      "t": "h2",
+      "x": "Versionen sauber trennen"
+    },
+    {
+      "t": "p",
+      "x": "Asynchrone RL-Systeme unterbrechen laufende Trajektorien üblicherweise bei jeder Gewichtsaktualisierung und setzen sie mit den neuen Gewichten fort (versionsgemischtes Teil-Rollout). Das verwischt die Verhaltens-Policy und erzwingt ein erneutes Prefill des gesamten Kontexts. Laminar erlaubt daneben versionskonsistentes Rollout: Jede Trajektorie läuft unter genau einer Policy-Version zu Ende, weil Inferenz-Replikate ihre Gewichte unabhängig voneinander ziehen. Nach Angaben der Autoren ist Laminar das erste Open-Source-Framework, das das effizient beherrscht; der Mechanismus dahinter heißt Repack und packt langsame Rest-Trajektorien alter Versionen auf weniger Replikate zusammen, damit freie sofort neue Gewichte laden."
+    },
+    {
+      "t": "h2",
+      "x": "Drei Bauprinzipien"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Vollständige Entkopplung: Rollout-Schleife, Erfahrungspuffer (Datenebene), Trainings-Schleife und Gewichts-Relais (Gewichtsebene) laufen als vier unabhängige Komponenten; der Trainer legt neue Gewichte im CPU-Speicher der Knoten ab, Replikate ziehen sie, sobald sie bereit sind.",
+        "Feinkörnige Asynchronität: Einzelne Trajektorien und einzelne Replikate arbeiten ohne Batch- oder Cluster-Schranken; kurze Trajektorien geben ihren Platz sofort frei, lange laufen im Hintergrund weiter.",
+        "Fehlertoleranz: Ein ausgefallenes Inferenz-Replikat wird vom Router abgezäunt, vor Ort neu gestartet und setzt an seinem bereits generierten Token-Präfix auf, während der Rest weiterläuft; Gewichtsübertragung läuft standardmäßig über Punkt-zu-Punkt-Verbindungen statt über ein gemeinsames Kollektiv."
+      ]
+    },
+    {
+      "t": "h2",
+      "x": "Was das SWE-Rezept zeigt, und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "Im Beispielrezept wird Qwen3-Coder-30B-A3B-Instruct auf SWE-rebench nachtrainiert und auf SWE-bench Verified mit einheitlicher greedy-Auswertung geprüft. Das Basismodell löst 46,6 Prozent (233 von 500). Die Basislinie erreicht auf ihrem Höhepunkt (Schritt 150) 51,4 Prozent mit 76.400 trainierten Samples und 5.085 GPU-Stunden auf 64 H100 mit versionsgemischtem Rollout. Laminar erreicht denselben Wert bereits in Schritt 320 mit 41.000 Samples (minus 46 Prozent) und 1.450 GPU-Stunden (minus 71 Prozent) und steigt bis Schritt 400 auf 52,2 Prozent (261 von 500) mit 51.200 Samples (minus 33 Prozent) und 1.843 GPU-Stunden (minus 64 Prozent) auf 64 H800 mit versionskonsistentem Rollout."
+    },
+    {
+      "t": "callout",
+      "x": "Der Vergleich mischt mehrere Variablen: Laminar lief auf H800-, die Basislinie auf H100-GPUs, die globale Batchgröße war 128 statt 512, und es handelt sich um Einzelverläufe. Die Ersparnis ist also plausibel, aber nicht allein der Versionskonsistenz zuzuschreiben; kontrollierte Ablations nennen die Autoren im Paper.",
+      "title": "Vorsicht beim Vergleich"
+    },
+    {
+      "t": "p",
+      "x": "Zum Paket gehört außerdem laminar.eval, das mehrere Checkpoints gleichzeitig auf residenten Replikaten auswertet und die langen Endschwänze per Repack bündelt. Installiert wird über uv mit wählbaren Extras für vLLM, Megatron-LM oder FSDP2 sowie UCX für die Gewichtsebene; Lizenz ist Apache 2.0."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Laminar: Scalable RL Through Full Decoupling, Fine-grained Asynchrony, and Fault Tolerance",
+      "publisher": "verl Blog",
+      "url": "https://verl-project.github.io/posts/2026-11-20-laminar/",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "verl-project/laminar (Repository)",
+      "publisher": "GitHub",
+      "url": "https://github.com/verl-project/laminar",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist versionskonsistentes Rollout?",
+      "a": "Jede Trainings-Trajektorie wird vollständig mit einer einzigen Policy-Version erzeugt statt bei jeder Gewichtsaktualisierung unterbrochen und mit neuen Gewichten fortgesetzt zu werden. Das spart das erneute Prefill des Kontexts und macht die Off-Policy-Korrektur sauberer."
+    },
+    {
+      "q": "Ist Laminar ein Ersatz für verl?",
+      "a": "Nein, es ist die Orchestrierungsschicht darüber: verl liefert Trainings- und Inferenz-Backends, Uni-Agent die Agenten-Ausführung, Laminar die entkoppelten Daten- und Gewichtsebenen, Routing, Repack und Fehlerbehandlung."
+    },
+    {
+      "q": "Wie belastbar sind die 64 Prozent weniger GPU-Stunden?",
+      "a": "Der Wert stammt aus dem End-zu-End-Vergleich der Autoren beim besten Lauf (52,2 Prozent). Dabei liefen Laminar und Basislinie auf unterschiedlicher Hardware (H800 gegen H100) und mit unterschiedlichen Batchgrößen. Für das gleiche Ergebnis wie die Basislinie (51,4 Prozent) nennt die Tabelle sogar minus 71 Prozent, mit denselben Vorbehalten."
+    }
+  ],
+  "related": [
+    "cognition-swe-2-1-rl-kimi-k3",
+    "microsoft-rocket-rl-mai-base-2",
+    "docker-agenten-vertrauen-sandboxing-trend"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "tencent-dfly2-spekulative-dekodierung-sparse-modelle",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "DFly2: Spekulative Dekodierung ohne eigenen Zwischenspeicher",
+  "dek": "Ein Tencent-Paper zeigt, wie ein Entwurfsmodell für spekulative Dekodierung auf den Cache und die Positionsauswahl des sparsamen Zielmodells zurückgreift, statt beides selbst vorzuhalten. Auf drei Modellen steigen Durchsatz und akzeptierte Tokens.",
+  "published": "2026-11-27T09:00:00+01:00",
+  "modified": "2026-11-27T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Tencent",
+    "Inferenz",
+    "Spekulative Dekodierung",
+    "Long Context"
+  ],
+  "key_takeaways": [
+    "DFly2 ist ein blockparalleler Entwurfer für nativ sparsame Modelle: Jede Entwurfsschicht liest den KV-Cache der gekoppelten Zielschicht an genau den Positionen, die deren Indexer ohnehin ausgewählt hat.",
+    "Eigener Cache und eigene Auswahl entfallen; die Messung der Autoren zeigt, dass eine einen Schritt alte Auswahl auf DS-V4.1-Flash noch knapp neun Zehntel der später gewählten Positionen abdeckt.",
+    "Gegenüber den mit gleichem Rezept trainierten Basisverfahren DFlash und DSpark akzeptiert DFly2 mehr Tokens pro Schritt; der Vorsprung wächst von 3,9 bis 10,5 Prozent auf allgemeinen Lasten auf 10,0 bis 31,5 Prozent bei Langkontext- und Agentenlasten bis 128K.",
+    "Die Zahlen stammen aus einem Preprint (arXiv, 25. November), gemessen auf NVIDIA-H20-GPUs; eine Begutachtung liegt nicht vor."
+  ],
+  "hero": {
+    "alt": "Zwei parallele durchsichtige Schienen aus dunklem Glas, die an leuchtenden Knotenpunkten verbunden sind und gemeinsam einen Lichtstrahl durch einen dunklen Korridor tragen.",
+    "caption": "DFly2 teilt Cache und Positionsauswahl mit dem Zielmodell, statt eigene Strukturen aufzubauen. (Symbolbild)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Sparsame Langkontext-Modelle wie DeepSeek-V4, GLM-5 und Hy4 wählen pro Anfrage nur einen festen Satz von Positionen aus ihrem KV-Cache aus. Spekulative Dekodierung beschleunigt solche Modelle zusätzlich, indem ein kleinerer Entwurfer Token vorschlägt, die das große Modell dann gemeinsam prüft. Bisherige Entwurfer halten dafür einen eigenen Kontext-Cache, über den ganzen Prompt oder ein gleitendes Fenster. Ein Team von Tencent zeigt in einem Preprint vom 25. November, dass das bei sparsamen Zielen überflüssig sein kann."
+    },
+    {
+      "t": "h2",
+      "x": "Was ein eigener Cache kostet"
+    },
+    {
+      "t": "p",
+      "x": "Der volle Cache des Basisverfahrens DFlash macht dem Paper zufolge pro Token ein Fünftel des KV-Speichers auf Hy4 flash aus und drei Viertel auf DS-V4.1-Flash, weil das Zielmodell seinen eigenen Cache komprimiert. Entfällt der Entwurfer-Cache, kann DS-V4.1-Flash den Messungen zufolge bei 32K Tokens 1,73-mal so viele Anfragen gleichzeitig vorhalten. Hinzu kommen laut den Autoren Prefill-Zeit und verlorene Prefix-Cache-Treffer."
+    },
+    {
+      "t": "h2",
+      "x": "Die Kernbeobachtung"
+    },
+    {
+      "t": "p",
+      "x": "Ein sparsames Zielmodell hat die Auswahl, die ein Entwurfer braucht, bereits getroffen und bezahlt: seinen Cache und seine Positionen. Die Autoren messen, wie lange eine Auswahl trägt: Wählt der Indexer einen Schritt zu früh, deckt diese Auswahl auf DS-V4.1-Flash noch knapp neun Zehntel dessen ab, was die folgenden Token selbst gewählt hätten; ein gleich großes Fenster kommt auf weniger als ein Fünftel. DFly2 koppelt daher jede Entwurfsschicht an eine Zielschicht: Der Entwurf liest deren KV an genau den Positionen, die deren Indexer ausgewählt hat, eine feste Zahl von Positionen überall im Kontext."
+    },
+    {
+      "t": "p",
+      "x": "Getestet wurde auf drei Zielen mit unterschiedlicher sparsamer Aufmerksamkeit: DS-V4.1-Flash, GLM-5.3-Flash und Hy4 flash. Die Entwurfer haben drei Schichten mit je 128 Experten, 6 bis 14 Milliarden Parameter, davon 0,4 bis 1,1 Milliarden aktiv. Trainiert wurden alle Verfahren, auch die Baseline, mit demselben Rezept auf dem selbst zusammengestellten Korpus DFly-SFT (989.861 Konversationen, 7,42 Milliarden Tokens aus öffentlichen Datensätzen, gegen die Auswertungssets bereinigt). Gemessen wurde auf NVIDIA-H20-GPUs unter vLLM, bei greedy und stochastischer Decodierung."
+    },
+    {
+      "t": "callout",
+      "x": "Der Vergleich ist herstellerintern: DFlash und DSpark wurden von den Autoren selbst mit gleichem Rezept, gleichen Daten und gleicher Schrittzahl nachtrainiert, die Stacks sind bis auf zwei Prozent gleich groß. Ob die Abstände mit den Original-Checkpoints der Basisverfahren genauso ausfallen, prüft das Paper nicht.",
+      "title": "Einordnung"
+    },
+    {
+      "t": "h2",
+      "x": "Ergebnisse"
+    },
+    {
+      "t": "p",
+      "x": "Über allgemeine, Langkontext- und Agenten-Benchmarks hinweg akzeptiert DFly2 mehr Tokens pro Schritt als die stärkere der beiden Baselines; der Abstand wächst von 3,9 bis 10,5 Prozent auf allgemeinen Lasten auf 10,0 bis 31,5 Prozent bei Langkontext- und Agentenlasten bis 128K. Beim Servieren von DS-V4.1-Flash unter hoher Gleichzeitigkeit und bei gleicher Geschwindigkeit pro Nutzer liegt der Durchsatz auf zwei 64K-Datensätzen um 62 beziehungsweise 81 Prozent über der Baseline. Der Code soll laut Paper über das Repository AngelSpec verfügbar sein."
+    }
+  ],
+  "sources": [
+    {
+      "title": "DFly2: Turbocharging Long-Context Speculative Decoding by Sharing the Target's Sparsity (arXiv:2611.34776)",
+      "publisher": "arXiv (Tencent)",
+      "url": "https://arxiv.org/abs/2611.34776",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "AngelSpec (Code-Repository, laut Paper)",
+      "publisher": "GitHub / Tencent",
+      "url": "https://github.com/Tencent/AngelSpec",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist spekulative Dekodierung?",
+      "a": "Ein kleineres Entwurfsmodell schlägt mehrere Token vor, das große Zielmodell prüft sie in einem Durchgang. Akzeptierte Token kosten dadurch weniger Zielmodell-Aufrufe; die Ausgabe bleibt dieselbe, das Verfahren ist verlustfrei."
+    },
+    {
+      "q": "Gilt das für jedes Modell?",
+      "a": "Nein. DFly2 setzt ein nativ sparsames Zielmodell voraus, das pro Anfrage selbst Positionen auswählt, etwa DeepSeek-V4, GLM-5 oder Hy4. Bei dichten Modellen gibt es keine fertige Auswahl, die der Entwurfer mitbenutzen könnte."
+    },
+    {
+      "q": "Sind die Ergebnisse unabhängig bestätigt?",
+      "a": "Nein. Es ist ein Preprint der Tencent-Autoren, die Baselines wurden von denselben Autoren nachtrainiert, gemessen wurde auf H20-GPUs. Unabhängige Reproduktion und Begutachtung stehen aus."
+    }
+  ],
+  "related": [
+    "glm-5-4-loop-transformer-z-ai",
+    "tencent-hy4-flash-12b-aktiv-bueromodell",
+    "cloudflare-glm-5-3-kv-cache-datenleck"
+  ]
+}

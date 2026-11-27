@@ -1,0 +1,87 @@
+{
+  "slug": "sakana-namazu-small-30b-nemotron-3-nano",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Sakana Namazu Small: 30B-Modell schlägt in Herstellerwerten 120B-Vorbild",
+  "dek": "Sakana AI stellt mit Namazu Small ein 30B-Reasoning-Modell auf Basis von NVIDIAs Nemotron 3 Nano vor. Im Mittel über 25 Benchmarks liegt es der Firmenmessung zufolge über dem rund viermal größeren Nemotron 3 Super, bei reinem Faktenwissen dagegen nicht.",
+  "published": "2026-11-27T09:00:00+01:00",
+  "modified": "2026-11-27T09:00:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "Sakana AI",
+    "Nemotron",
+    "Japan",
+    "Reasoning"
+  ],
+  "key_takeaways": [
+    "Namazu Small baut auf dem Basismodell von NVIDIAs offenem Nemotron 3 Nano (30B-A3B); kontinuierliches Vortraining und Nachtraining stammen von Sakana.",
+    "Im Durchschnitt über 25 Benchmarks übertrifft das Modell laut Sakana sowohl Nemotron 3 Nano als auch den rund viermal größeren Nemotron 3 Super (120B-A12B).",
+    "Die Stärken liegen bei Recherche mit Websuche und belegbasierter Antwort aus langen Dokumenten; bei Aufgaben aus reinem Modellwissen gibt es kaum Zuwächse, bei SimpleQA Verified liegt Namazu Small mit 6,8 unter beiden Vergleichsmodellen.",
+    "Eine On-Premises-Version ist angekündigt, Details will Sakana in der ersten Dezemberhälfte 2026 nennen."
+  ],
+  "hero": {
+    "alt": "Kleiner polierter schwarzer Stein mit grünem Leuchtkern auf einem Sockel, daneben ein vierfach so großer matter Felsblock, ruhiger dunkler Raum mit Wasserspiegelung am Boden.",
+    "caption": "Sakana misst sein 30B-Modell gegen den rund viermal größeren Nemotron 3 Super. (Symbolbild)",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Sakana AI hat am 25. November Sakana Namazu Small vorgestellt, ein Sprachmodell mit 30 Milliarden Parametern. Grundlage ist das vortrainierte Basismodell von NVIDIAs offenem Nemotron 3 Nano; das kontinuierliche Vortraining und das gesamte Nachtraining hat Sakana eigenen Angaben zufolge im Haus durchgeführt. Das Modell ist als Reasoning-Modell entwickelt und soll besonders Alltagsaufgaben bedienen: Dialog, Recherche mit Websuche und das Beantworten von Fragen aus langen Dokumenten mit Belegen."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Hersteller-Tabelle zeigt, und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "Sakana verglich Namazu Small mit dem gleich großen Nemotron 3 Nano (30B-A3B) und dem rund viermal größeren Nemotron 3 Super (120B-A12B), jeweils in den von NVIDIA nachtrainierten Versionen. Im Mittel über 25 Benchmarks liegt Namazu Small demnach über beiden Vergleichsmodellen. Die größten Abstände zeigen sich bei Recherche- und Belegaufgaben: BrowseComp 73,5 gegenüber 29,3 (Nano) und 36,1 (Super), LLM-jp LongBench 86,0 gegenüber 67,0 und 60,0, FaithEval 78,3 gegenüber 51,2 und 59,1."
+    },
+    {
+      "t": "p",
+      "x": "Nicht jede Zeile geht an das neue Modell: Bei FRAMES führt der Super mit 86,0 vor 85,0, bei HealthBench liegt Namazu Small mit 40,6 unter beiden Vergleichsmodellen, und in der Wissenskategorie gibt es laut Sakana kaum Zuwächse: SimpleQA Verified 6,8 gegenüber 9,1 (Nano) und 18,1 (Super), Japanese SimpleQA 8,0 gegenüber 9,2 und 24,9. Sakana nennt die Wissenslücke selbst als offenen Arbeitspunkt."
+    },
+    {
+      "t": "callout",
+      "x": "Alle Werte stammen aus Sakanas eigener Ankündigung. Namazu Small wurde im Reasoning-Modus mit Temperatur 1,0, top-p 0,95, 262.144 Token Kontext und maximal 32.768 Ausgabetoken ausgewertet; die Nemotron-Modelle liefen mit ihren jeweils empfohlenen Einstellungen. Eine unabhängige Nachmessung liegt nicht vor.",
+      "title": "Einordnung der Zahlen"
+    },
+    {
+      "t": "h2",
+      "x": "On-Premises angekündigt"
+    },
+    {
+      "t": "p",
+      "x": "Mit 30 Milliarden Parametern zielt Sakana auf Unternehmen, die Modelle auf eigener Infrastruktur betreiben wollen. Eine On-Premises-Bereitstellung ist geplant, Details will das Unternehmen in der ersten Dezemberhälfte 2026 mitteilen. Die Entwicklung nutzt nach Sakanas Angaben Ergebnisse aus GENIAC, einem Förderprogramm des japanischen Wirtschaftsministeriums METI und der Agentur NEDO."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Sakana Namazu Small",
+      "publisher": "Sakana AI",
+      "url": "https://sakana.ai/namazu-small/",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ist Namazu Small besser als Nemotron 3 Super?",
+      "a": "Im Mittel über Sakanas 25 Benchmarks ja, nach Sakanas eigener Messung. In Einzelzeilen wie FRAMES, HealthBench, SealQA und den Wissensaufgaben liegt der Super vorn. Die Werte sind Herstellerangaben ohne unabhängige Prüfung."
+    },
+    {
+      "q": "Wofür eignet sich das Modell laut Sakana?",
+      "a": "Für dokumentbasierte Arbeit mit Belegen (interne Berichte, Zusammenfassungen mit Quellenangaben) und mehrstufige Recherche mit Websuche. Für Fragen, die nur aus dem internen Modellwissen beantwortet werden, nennt Sakana selbst keine starken Werte."
+    },
+    {
+      "q": "Ist das Modell frei verfügbar?",
+      "a": "Die Ankündigung nennt eine geplante On-Premises-Bereitstellung mit Details in der ersten Dezemberhälfte 2026. Ob und unter welcher Lizenz Gewichte öffentlich werden, geht aus dem Blogbeitrag nicht hervor."
+    }
+  ],
+  "related": [
+    "tencent-hy4-flash-12b-aktiv-bueromodell",
+    "nariq-qwen3-8-27b-3bit-agenten",
+    "muse-spark-open-meta-816b-open-weights"
+  ]
+}
