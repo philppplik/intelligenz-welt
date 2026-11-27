@@ -1,0 +1,134 @@
+{
+  "title": "Hilfsbilder bremsen Reasoner, Kurz-Eingriffe retten Agenten-RL, SMOTE nach 25 Jahren geprüft",
+  "dek": "Generierte Hilfsbilder senken die Trefferquote von Sehmodellen, SPLICE rettet Agenten-Training aus Total-Fehlschlägen, ein Review rechnet 25 Jahre SMOTE ab.",
+  "slug": "news-ueberblick-abend-2026-11-27",
+  "section": "ueberblick",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-27T16:02:00+01:00",
+  "modified": "2026-11-27T16:02:00+01:00",
+  "tags": [
+    "Forschung",
+    "Multimodal",
+    "Reinforcement Learning",
+    "Datenqualität"
+  ],
+  "hero": {
+    "alt": "Drei schematische Bildkarten: ein Bleistift, der ein Hilfsbild neben einer Frage zeichnet, ein Verkehrsschild mit eingelegtem kurzen Wegstück auf einer langen Route, und eine Waage, die einen Balkendiagramm-Stapel gegen ein einzelnes Gewicht prüft. Themenhero ohne Zahlen und Messskala.",
+    "caption": "Drei Studien über generierte Hilfsbilder im visuellen Schlussfolgern, lokale Eingriffe im Agenten-Lernen und eine 25-Jahre-Prüfung von SMOTE. Alle Werte, Bedingungen und Grenzen stehen in den Textpanels und im Artikel.",
+    "credit": "Eigene Illustration",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Quellenprüfung: 27. November 2026, 16:02 Uhr MEZ. Drei am 25. November eingereichte Preprints (jeweils an den Abstract-Seiten geprüft) stellen etablierte Annahmen auf den Prüfstand: Ob generierte Hilfsbilder visuellen Modellen beim Denken helfen, wie Agenten-Training aus komplett gescheiterten Durchläufen noch lernt, und was 25 Jahre SMOTE-Forschung tatsächlich belegen. Alle drei Studien lesen ihre eigenen Ergebnisse ungewöhnlich kritisch; die Zahlen unten stammen aus den voll gelesenen Volltexten."
+    },
+    {
+      "t": "h2",
+      "x": "Selbst gemalte Hilfsbilder senken die Trefferquote visueller Modelle"
+    },
+    {
+      "t": "callout",
+      "x": "13 getestete Pipelines aus Sehmodell und Bildgenerator verlieren mit generiertem Hilfsbild im Mittel 3,7 Prozentpunkte Genauigkeit, mit Rückgängen in 106 von 130 Modell-Aufgaben-Kombinationen; nur eine Aufgabe (hypothetische Raumfragen) profitiert durchgehend."
+    },
+    {
+      "t": "p",
+      "x": "Forscher von Princeton und Meta lassen ein Sehmodell zuerst einen Hinweis formulieren, welches Hilfsbild die Frage leichter machen würde, etwa einen Ausschnitt oder eine Drehung. Ein Bildgenerator zeichnet das Hilfsbild, danach antwortet dasselbe Modell mit Original und Hilfsbild zusammen. Getestet wurden 13 Pipelines: drei Sehmodelle (Qwen3-VL in 4B und 8B, GLM-4.6V Flash) mit je vier Generatoren sowie Gemini 3.0 Flash mit Nano-Banana; dazu kommen die beiden vereinheitlichten Modelle BAGEL und Janus-Pro-7B, auf neun Benchmarks mit zehn Aufgaben. In 12 der 13 Pipelines sinkt die Genauigkeit auf mindestens acht der zehn Aufgaben."
+    },
+    {
+      "t": "p",
+      "x": "Am stärksten leidet die visuelle Suche: Auf VSTAR, wo kleine Objekte in hochauflösenden Bildern gefragt sind, verliert jede Pipeline, im Schnitt um 21,0 Prozentpunkte, im Maximum um 31,3. Das stärkste Sehmodell, Gemini 3.0 Flash, verliert mit Nano-Banana auf neun Aufgaben (im Schnitt 6,9 Punkte) und gewinnt auf keiner; die Verdopplung von Qwen3-VL 4B auf 8B ändert den mittleren Verlust kaum (3,4 gegen 3,2 Punkte). Der einzige konsistente Gewinn liegt bei RoboSpatial-Compatibility, dessen Fragen hypothetisch sind (würde ein Objekt an eine Stelle passen): Dort steigen 12 von 13 Pipelines um bis zu 23,8 Punkte, und keine fällt. Die Autoren führen das als plausible Erklärung darauf zurück, dass ein gezeichnetes Objekt genau die gefragte Szene abbildet; ein Beweis ist das nicht."
+    },
+    {
+      "t": "p",
+      "x": "Die Fehleranalyse ordnet die annotierten Misserfolge zu 66 Prozent dem Hinweis, zu 28 Prozent dem Bild und zu 6 Prozent der Schlussantwort zu. Fordert der Hinweis einen Ausschnitt, schneidet ein einfacher Pixel-Crop aus dem Original auf denselben 43 VSTAR-Fragen mit 72,09 Prozent Trefferquote deutlich besser ab als der generierte Edit mit 51,16 Prozent, ein Vorsprung von 20,93 Punkten (95-Prozent-Intervall 4,65 bis 37,21). Darf Qwen3-VL (4B oder 8B) selbst entscheiden, ruft es den Generator nur bei 2 bis 12 Prozent der Fragen und bleibt dann innerhalb von 0,7 Punkten der reinen Textbaseline. Grenzen: nur statische QA-Benchmarks, keine Videogeneratoren oder Weltmodelle. Der Code liegt laut Abstract auf GitHub (zlab-princeton/visual-reasoning)."
+    },
+    {
+      "t": "h2",
+      "x": "Agenten-Training: Kurze Eingriffe statt kompletter Musterlösungen"
+    },
+    {
+      "t": "callout",
+      "x": "SPLICE setzt an gescheiterten Trainingsläufen nur kurze Korrektursegmente ein und gewinnt damit in allen vier getesteten Einstellungen gegen GRPO (plus 2,8 bis 9,8 Prozentpunkte) und gegen Baselines mit kompletten Lehrer-Trajektorien, bei 17,5 Prozent weniger Vorschlagsmodell-Rechnung als ReLIFT."
+    },
+    {
+      "t": "p",
+      "x": "Gruppenbasiertes Reinforcement Learning wie GRPO vergleicht mehrere Durchläufe derselben Aufgabe. Scheitern alle, ist die Belohnungsvarianz null und der Gradient verschwindet; solche Total-Fehlschlag-Gruppen liefern kein Lernsignal. Üblich ist, komplette Lösungen eines stärkeren Modells einzuspeisen. SPLICE, von Shanghai Jiao Tong University, Shanghai Innovation Institute und JD.com, wählt stattdessen in einem gescheiterten Durchlauf der aktuellen Policy einen Einsatzpunkt, lässt das Vorschlagsmodell (Qwen3.5-122B-A10B) drei begrenzte Optionssegmente erzeugen und schätzt deren Wert über je drei Fortsetzungen durch die aktuelle Policy. Nur Optionen mit positivem Schätzer gehen, nach ihrer Erfolgsquote gewichtet, ins Trainingsziel."
+    },
+    {
+      "t": "p",
+      "x": "Getestet mit zwei Policy-Familien (Qwen3-8B-CS und Qwen3.5-9B) auf Software-Engineering (SWE-bench Verified) und Deep Research (BrowseComp-Plus), jeweils 3.200 Trainingsaufgaben: SPLICE liegt in allen vier Einstellungen vorn, etwa 25,7 gegen 15,9 Prozent Resolve-Rate von GRPO auf SWE-bench mit der 8B-Policy und 50,7 gegen 46,2 Prozent auf BrowseComp-Plus mit der 9B-Policy. Es schlägt die aufwändigere SFT-plus-RL-Baseline um 1,3 bis 2,6 Punkte und ReLIFT um 2,1 bis 6,0 Punkte. Auf anfänglich gescheiterten SWE-Trainingsaufgaben steigt die Graduierungsrate gegenüber GRPO von 8,1 auf 18,9 Prozent (ReLIFT: 15,9), obwohl die Trefferquote der Vorschläge mit 30,7 Prozent deutlich unter ReLIFTs 55,1 Prozent liegt; SPLICE verbraucht dabei 93.500 gegen 113.400 Vorschlagsmodell-Züge."
+    },
+    {
+      "t": "p",
+      "x": "Die Ablationen tragen das Bild: Eine weiche Gewichtung nach Fortsetzungserfolg schlägt das harte Best-of (25,7 gegen 24,3) und die Gleichverteilung (23,7). Fortsetzungen durch das Vorschlagsmodell statt der eigenen Policy wären minimal besser (26,2 Resolve), kosten aber das Vierfache an Vorschlagszügen (372.500 gegen 93.500); die Autoren deuten den Rückgang bei voller Suffix-Überwachung als mögliches Off-Policy-Problem, ausdrücklich als Deutung, nicht als Beleg. Grenzen: Die Werterhebung braucht zusätzliche Policy-Rollouts, und drei Fortsetzungen pro Option sind eine rauschende Schätzung, wie die Autoren selbst anmerken."
+    },
+    {
+      "t": "h2",
+      "x": "25 Jahre SMOTE: Die Bilanz eines Standardwerkzeugs"
+    },
+    {
+      "t": "callout",
+      "x": "Ein Review prüft 76 Korpus-Papiere und 300 zufällig gezogene Anwendungen: In den 29 Papieren mit paarweisen Werten (1.511 Vergleiche, 1.395 mit Sieger) schlagen neue Varianten SMOTE in 79,0 Prozent der entschiedenen Vergleiche, doch unabhängige Studien sehen die Gewinne bei starken Lernern und abgestimmten Schwellen schwinden, und keine der 71 geprüften Studien misst die Kalibrierung."
+    },
+    {
+      "t": "p",
+      "x": "SMOTE, die Interpolation synthetischer Minderheitsbeispiele von 2002, wird laut OpenAlex (Stand 10. November 2026) von 34.416 Arbeiten zitiert, die Hälfte außerhalb der Informatik, aus 159 Ländern. Vier Statistiker der Khon Kaen University zerlegen die Verfahrensfamilie in sechs Entscheidungspunkte (Saatpunkt, Anzahl, Partner, Platzierung, Filter, Pipeline-Einbindung) und kodieren 37 Varianten: Jede der 36 Varianten entscheidet im Schnitt 2,8 dieser Punkte neu, und 24 laufen nur auf zwei Klassen, davon 23 auf künstlich auf zwei Klassen reduzierten Daten. In den 29 Papieren mit paarweise ablesbaren Werten (1.511 Vergleiche auf 524 Datensätzen, davon 1.395 mit Sieger) gewinnt die vorgeschlagene Methode 1.102 der 1.395 entschiedenen Vergleiche, also 79,0 Prozent (Bootstrap-Intervall 73,3 bis 84,5 über die Papiere)."
+    },
+    {
+      "t": "p",
+      "x": "Dem steht die unabhängige Evidenz gegenüber: Unabhängige klinische Studien finden keine systematischen Diskriminationsgewinne, aber durchweg schlechtere Kalibrierung (darunter zwei Preprints, einer mit mehr als 1,8 Millionen Patienten); in der eigens geführten Schadensrecherche (PubMed, 429 Records) berichten 9 von 14 Vergleichsstudien schlechtere Kalibrierung nach Oversampling, und alle 8 Leakage-Studien finden aufgeblähte Ergebnisse, wenn vor dem Split resampelt wird, was nach Schätzung der Autoren 37 Prozent der 110 im Volltext gelesenen Anwendungen tun (Intervall 25,6 bis 48,4). Ein Peer-Reviewed-Angriff (Ganev et al. 2026) rekonstruiert aus SMOTE-Datensätzen echte Minderheitsdatensätze mit perfekter Präzision und im Schnitt 0,85 Recall. Ein Ergebnisgewinn auf Ebene realer Entscheidungen ist laut Review bislang unbelegt; Fairness zwischen Gruppen bleibt offen."
+    },
+    {
+      "t": "p",
+      "x": "Im eigenen Nachlauf auf 38 Referenzaufgaben macht SMOTE das Tabellen-Foundation-Model TabPFN-3.5 auf allen drei Maßen schlechter (Median ROC-AUC minus 0,017, PR-AUC minus 0,032, Brier-Score plus 0,012); Klassengewichtung taucht in nur einer der 71 Studien als Vergleich auf. Die Position der Autoren, ausdrücklich auf tabellarische Klassifikation begrenzt: Eine neue SMOTE-Variante sollte für sich genommen kein Beitrag mehr sein; gefordert sind Vergleiche Entscheidung für Entscheidung gegen Klassengewichtung und Schwellentuning mit starkem Lerner, inklusive Kalibrierungsmaß. Grenzen des Reviews: kuratierter Korpus mit dünner Abdeckung ab 2016, KI-gestützte Extraktion mit Stichprobenkontrolle, Schadensrecherche nur in PubMed."
+    }
+  ],
+  "key_takeaways": [
+    "Generierte Hilfsbilder senkten in 106 von 130 getesteten Pipeline-Aufgaben-Kombinationen die Genauigkeit (Mittel minus 3,7 Prozentpunkte); nur hypothetische Raumfragen profitierten durchgehend, ein simpler Pixel-Crop schlug den generierten Edit um 20,93 Punkte.",
+    "SPLICE trainiert Agenten aus Total-Fehlschlag-Gruppen mit kurzen, erfolgsgewichteten Eingriffen: plus 2,8 bis 9,8 Prozentpunkte gegen GRPO in allen vier Einstellungen, Graduierung anfänglich gescheiterter SWE-Aufgaben von 8,1 auf 18,9 Prozent, bei weniger Vorschlagsmodell-Rechnung als ReLIFT.",
+    "Das SMOTE-Review findet 79,0 Prozent Siege neuer Varianten in den entschiedenen Vergleichen ihrer eigenen Papiere, aber schwindende Gewinne bei starken Lernern, null Kalibrierungsmessungen in 71 Studien und eine geschätzte 37-Prozent-Quote an Leakage in Anwendungen; die Autorenposition: neue Varianten sind für sich kein Beitrag mehr."
+  ],
+  "faq": [
+    {
+      "q": "Soll ich meinem Sehmodell generierte Zwischenbilder geben?",
+      "a": "Nach dieser Studie meist nicht: In den 13 getesteten Pipelines sank die Genauigkeit im Mittel um 3,7 Prozentpunkte, bei der visuellen Suche VSTAR um durchschnittlich 21,0; auch die zwei vereinheitlichten Modelle verloren auf je acht Aufgaben. Die Ausnahme sind hypothetische Raumfragen (RoboSpatial-Compatibility, plus bis 23,8 Punkte). Braucht der Hinweis einen Bildausschnitt, war auf 43 VSTAR-Fragen der Pixel-Crop aus dem Original mit 72,09 gegen 51,16 Prozent klar besser. Die Autoren testeten nur statische Frage-Antwort-Benchmarks; Video- und Weltmodell-Generatoren bleiben offen."
+    },
+    {
+      "q": "Was bringt SPLICE über normales RL mit Belohnung hinaus?",
+      "a": "Es holt Lernsignale aus Durchläufen, in denen jede Stichprobe scheitert und GRPO keinen Gradienten hat. Statt kompletter Lehrer-Trajektorien setzt es drei kurze Optionen an einem Einsatzpunkt und bewertet sie über je drei Fortsetzungen der eigenen Policy. Ergebnis in vier getesteten Einstellungen: plus 2,8 bis 9,8 Prozentpunkte gegen GRPO und 17,5 Prozent weniger Vorschlagsmodell-Züge als ReLIFT. Der Preis sind zusätzliche Policy-Rollouts, und die Optionswerte beruhen auf nur drei Fortsetzungen."
+    },
+    {
+      "q": "Heißt das, SMOTE war umsonst?",
+      "a": "Nein, aber die Messlatte hat sich verschoben. Das Review bestreitet nicht, dass Oversampling bei schwachen Lernern hilft; es zeigt, dass Varianten in eigenen Papieren 79,0 Prozent der entschiedenen Vergleiche gewinnen, während unabhängige Studien mit starken Lernern und abgestimmten Schwellen die Gewinne schwinden sehen und die Kalibrierung leidet. Die Autoren empfehlen für tabellarische Klassifikation: erst Klassengewichtung und Schwellentuning prüfen, Kalibrierung berichten und nie vor dem Split resampeln, was geschätzt 37 Prozent der im Volltext gelesenen Anwendungen tun."
+    }
+  ],
+  "related": [
+    "cognition-swe-2-1-rl-kimi-k3",
+    "satbench-benchmarks-verbraucht-unabhaengig"
+  ],
+  "sources": [
+    {
+      "title": "Can image generation help visual reasoning? An empirical study",
+      "publisher": "arXiv; Xueyang Yu, Yifan Jing, Taiming Lu, Linrong Cai, Gabriel Sarch, Zhuang Liu (Princeton University), Zhipeng Cai, Yunyang Xiong (Meta)",
+      "url": "https://arxiv.org/abs/2611.34935",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "When Every Rollout Fails: Splicing Learner-Conditioned Options into Long-Horizon Agent RL",
+      "publisher": "arXiv; Haowen Hou, Yicheng Liu, Zhen Huang, Jiaqi Wang (Shanghai Jiao Tong University, Shanghai Innovation Institute, JD.com)",
+      "url": "https://arxiv.org/abs/2611.34777",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "SMOTE 25 Years of Magic: What Has Been Done, What the Evidence Shows, and Whom It Reached",
+      "publisher": "arXiv; Thanapong Intharah, Pharamut Makjaroen, Kanvara Thawarorit, Supawit Chaingam (Khon Kaen University)",
+      "url": "https://arxiv.org/abs/2611.34511",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "published_at": "2026-11-27T16:02:00+01:00",
+  "updated_at": "2026-11-27T16:02:00+01:00"
+}
