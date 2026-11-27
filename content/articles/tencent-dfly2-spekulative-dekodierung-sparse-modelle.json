@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "DFly2: Spekulative Dekodierung ohne eigenen Zwischenspeicher",
   "dek": "Ein Tencent-Paper zeigt, wie ein Entwurfsmodell für spekulative Dekodierung auf den Cache und die Positionsauswahl des sparsamen Zielmodells zurückgreift, statt beides selbst vorzuhalten. Auf drei Modellen steigen Durchsatz und akzeptierte Tokens.",
-  "published": "2026-11-27T09:00:00+01:00",
-  "modified": "2026-11-27T09:00:00+01:00",
+  "published": "2026-11-27T09:02:09+01:00",
+  "modified": "2026-11-27T09:02:09+01:00",
   "author": "philipp-paulik",
   "tags": [
     "Tencent",

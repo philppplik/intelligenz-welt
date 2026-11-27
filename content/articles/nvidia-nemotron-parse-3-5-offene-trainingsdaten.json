@@ -5,8 +5,8 @@
   "type": "analysis",
   "title": "NVIDIA öffnet die Trainingsdaten hinter Nemotron Parse 3.5",
   "dek": "Statt nur Gewichte veröffentlicht NVIDIA drei synthetische Datensätze mit zusammen rund 18,9 Millionen Beispielen, ein Feintuning-Rezept und einen Spekulations-Beschleuniger für sein Dokumentenmodell Parse 3.5. Ein Blick auf Nutzen und Grenzen der Offenlegung.",
-  "published": "2026-11-27T09:00:00+01:00",
-  "modified": "2026-11-27T09:00:00+01:00",
+  "published": "2026-11-27T09:02:09+01:00",
+  "modified": "2026-11-27T09:02:09+01:00",
   "author": "philipp-paulik",
   "tags": [
     "NVIDIA",

@@ -5,8 +5,8 @@
   "type": "news",
   "title": "Mellum2.1 Instruct: JetBrains Coding-Modell antwortet ohne Denkphase",
   "dek": "JetBrains ergänzt sein offenes Coding-Modell Mellum2.1 um eine Instruct-Variante, die direkt antwortet statt erst zu reasonieren. Auf SWE-bench Verified verdoppelt sie den Wert des Vorgängers auf 40,4 Prozent, bleibt aber hinter Qwen3.5 9B.",
-  "published": "2026-11-27T09:00:00+01:00",
-  "modified": "2026-11-27T09:00:00+01:00",
+  "published": "2026-11-27T09:02:09+01:00",
+  "modified": "2026-11-27T09:02:09+01:00",
   "author": "philipp-paulik",
   "tags": [
     "JetBrains",

@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Laminar: Asynchrones RL-Post-Training als Open Source",
   "dek": "Das zum EuroSys-'26-Paper gehörende Framework Laminar entkoppelt Rollout und Training vollständig und lässt Trajektorien unter einer einzigen Modellversion zu Ende laufen. Im SWE-Rezept sinken Trainingskosten deutlich, mit Hardware-Vorbehalt.",
-  "published": "2026-11-27T09:00:00+01:00",
-  "modified": "2026-11-27T09:00:00+01:00",
+  "published": "2026-11-27T09:02:09+01:00",
+  "modified": "2026-11-27T09:02:09+01:00",
   "author": "philipp-paulik",
   "tags": [
     "verl",
