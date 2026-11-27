@@ -1,7 +1,1 @@
-https://intelligenz-welt.de/artikel/jetbrains-mellum-2-1-instruct-coding-agenten/
-https://intelligenz-welt.de/artikel/laminar-asynchrones-rl-post-training-open-source/
-https://intelligenz-welt.de/artikel/meta-your-algorithm-feed-steuerung-eigene-woerter/
-https://intelligenz-welt.de/artikel/news-ueberblick-morgen-2026-11-27/
-https://intelligenz-welt.de/artikel/nvidia-nemotron-parse-3-5-offene-trainingsdaten/
-https://intelligenz-welt.de/artikel/sakana-namazu-small-30b-nemotron-3-nano/
-https://intelligenz-welt.de/artikel/tencent-dfly2-spekulative-dekodierung-sparse-modelle/
+https://intelligenz-welt.de/artikel/news-ueberblick-mittag-2026-11-27/
