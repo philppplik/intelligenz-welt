@@ -1,5 +1,41 @@
 [
   {
+    "title": "c't 3003 baut Fernseher mit KI-Agent um: Tizen wird zu „Apple TV“",
+    "url": "https://www.heise.de/news/c-t-3003-baut-Fernseher-mit-KI-Agent-um-Tizen-wird-zu-Apple-TV-11541121.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795802520.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Schnell und einfach: Wir haben mit einem KI-Agenten die komplette Bedienoberfläche eines Samsung-TVs umgebaut – und Werbung und Tracker entfernt.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-27T23:30:12.938443+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Signal blockiert Screenshots: Widerstand gegen KI-Überwachung im Betriebssystem",
+    "url": "https://www.heise.de/news/KI-Agenten-im-Betriebssystem-Datenschuetzer-schlagen-Alarm-wegen-Ueberwachung-11541373.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795799040.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Autonome KI-Assistenten von Apple, Google und Microsoft können App-Schutzmechanismen umgehen. Signal blockiert deswegen bereits standardmäßig Screenshots.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-27T23:30:12.938518+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
+    "title": "Europas IT-Ausgaben: Server werden teurer, mehr Geld fließt in KI-Agenten",
+    "url": "https://www.heise.de/news/Prognose-Europas-IT-Ausgaben-knacken-Marke-von-1-5-Billionen-US-Dollar-11541182.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
+    "ts": 1795791720.0,
+    "src": "heise online",
+    "sum": "",
+    "teaser": "Laut jüngster Prognose von Gartner steigen Europas IT-Ausgaben 2027 um knapp zehn Prozent. Das Geschäft mit RZ-Equipment bleibt wachstumsstärkstes Segment.",
+    "license_key": "heise",
+    "feed_url": "https://www.heise.de/rss/heise-atom.xml",
+    "captured_at": "2026-11-27T23:30:12.938627+00:00",
+    "rights_checked": "2026-10-19"
+  },
+  {
     "title": "AI-Supply-Chain: Günstige Inferenzangebote greifen Secrets ab",
     "url": "https://www.heise.de/news/AI-Supply-Chain-Guenstige-Inferenzangebote-greifen-Secrets-ab-11540914.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag",
     "ts": 1795789140.0,
