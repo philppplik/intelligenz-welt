@@ -1,0 +1,135 @@
+{
+  "title": "MINE gegen Prompt-Injection, Zeitstempel-Abkürzungen, zweifelnde Weltmodelle",
+  "dek": "Ein Relevanzfilter drückt Prompt-Injection im Langkontext, Zeitreihen-Tests kommen ohne Zeitstempel aus, nur eines von zwei geprüften Weltmodellen registriert eigene Unsicherheit.",
+  "slug": "news-ueberblick-morgen-2026-11-27",
+  "section": "ueberblick",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-27T06:38:53+01:00",
+  "modified": "2026-11-27T06:38:53+01:00",
+  "tags": [
+    "Forschung",
+    "Sicherheit",
+    "Evaluation",
+    "Weltmodelle"
+  ],
+  "hero": {
+    "alt": "Drei schematische Bildkarten: ein Trichter, der farbige Textstreifen sortiert und einen abweichenden Streifen abweist, eine Uhr neben einer Kette mit einem gelösten Glied, und eine Landkarte mit hellen und dunklen Feldern über einem Raster. Themenhero ohne Zahlen und Messskala.",
+    "caption": "Drei Studien über Abwehr von Prompt-Injection, die Rolle von Zeitstempeln in Zeitreihen-Tests und Unsicherheitsschätzung in Weltmodellen. Alle Werte, Bedingungen und Grenzen stehen in den Textpanels und im Artikel.",
+    "credit": "Eigene Illustration",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Quellenprüfung: 27. November 2026, 06:39 Uhr MEZ. Drei am 25. November eingereichte Preprints (jeweils an den Abstract-Seiten geprüft) drehen sich um die Verlässlichkeit von KI-Systemen: ein neuer Schutz gegen indirekte Prompt-Injection, eine Diagnose, wie Sprachmodelle Zeitstempel in Zeitreihen-Aufgaben umgehen, und eine Untersuchung, welche Weltmodelle ihre eigene Unsicherheit überhaupt registrieren."
+    },
+    {
+      "t": "h2",
+      "x": "Prompt-Injection: Filtern nach Relevanz statt Angriffe erkennen"
+    },
+    {
+      "t": "callout",
+      "title": "Angriffserfolg höchstens 3,31 Prozent im Langkontext",
+      "x": "Auf dem neuen Langkontext-Benchmark LC-Inj-SQuAD (694 Kontexte, im Mittel 4.032 Wörter) hält der trainingsfreie Filter MINE die Angriffserfolgsrate in jeder der 15 Zellen aus drei Modellen und fünf statischen Angriffstypen bei höchstens 3,31 Prozent, bei mindestens 79,11 Prozent Antwortgenauigkeit. Ein adaptiver Angreifer mit vollem Methodenwissen treibt MINEs Rate auf 23,20 Prozent; alle anderen getesteten Verfahren werden in dieser Lage unbrauchbar."
+    },
+    {
+      "t": "p",
+      "x": "Bisherige Gegenmaßnahmen gegen indirekte Prompt-Injection sind laut den Autoren Truong Phan, Ngoc-Quan Pham und Dat Quoc Nguyen (Qualcomm AI Research) reaktiv: Meta-Anweisungen im Prompt konkurrieren mit der Injektion um die Aufmerksamkeit des Modells, heuristische Detektoren reagieren brüchig auf Umformulierungen, und trainierte Filter wie indirect-pia brauchen markierte Angriffsdaten und verlieren auf neuen Angriffsstilen. MINE dreht die Aufgabe um: Statt Angriffe zu erkennen, wählt das Verfahren vor dem Sprachmodell die Textspannen aus, die zur Nutzerfrage passen. Es maximiert dafür die mutual information zwischen Frage-Einbettung und Spannen-Auswahl und bestraft zugleich die Streuung der ausgewählten Spannen im Einbettungsraum; injizierte Spannen fallen bei beiden Kriterien als Nebeneffekt durch. Das kombinatorische Auswahlproblem wird über Gewichte auf dem Wahrscheinlichkeits-Simplex mit projiziertem Gradientenaufstieg gelöst (20 Schritte, Straffaktor alpha 0,4, Einbettungen von bge-large-en-v1.5), ohne Training, ohne Angriffsdaten und ohne zusätzlichen LLM-Aufruf."
+    },
+    {
+      "t": "p",
+      "x": "Für die Langkontext-Prüfung bauten die Autoren LC-Inj-SQuAD: Aus 694 der 900 Inj-SQuAD-Beispiele wurden per GPT-5.4-mini thematisch passende Passagen vor und hinter die Antwortspanne erweitert, ohne die Antwort zu verraten; die Kontexte sind 3.376 bis 4.734 Wörter lang (Median 4.039). Getestet wurden Llama-3.2-3B-Instruct, Llama-3.1-70B-Instruct und Qwen3-30B-A3B-Instruct-2507 gegen fünf statische Angriffstypen von naiv bis zur getarnten Gesprächswendung conv_attack. Im Kurzkontext erreicht MINE im Mittel 84,32 bis 91,93 Prozent Genauigkeit bei 0,46 bis 0,55 Prozent Angriffserfolg. Das trainierte indirect-pia drückt den Angriffserfolg zwar auf null, bricht aber bei conv_attack auf 4,03 bis 18,01 Prozent Genauigkeit ein, wo MINE 83,57 bis 92,22 Prozent hält; die stärkste Prompt-Abwehr Sandwich erreicht bis zu 84,01 Prozent Genauigkeit, bleibt aber nie unter 12,82 Prozent Angriffserfolg."
+    },
+    {
+      "t": "p",
+      "x": "Gegen den adaptiven Zwei-Positionen-Angriff, der Algorithmus und Hyperparameter kennt, bleibt MINE laut Tabelle 4 des Papers das einzige brauchbare Verfahren: 85,45 Prozent Genauigkeit bei 4,76 Prozent Angriffserfolg im Kurzkontext, 65,13 bei 23,20 Prozent im Langkontext; Meta-Anweisungen lassen dort über 97 Prozent der Angriffe durch, indirect-pia und MELON halten den Angriff nur auf, indem sie den Kontext faktisch verwerfen (Genauigkeit 23,20 beziehungsweise 0,86 Prozent). Auf dem Agenten-Benchmark InjecAgent (Direct-Harm, 510 Fälle) kommt MINE auf 99,60 Prozent gültige Abläufe bei 0,12 Prozent Angriffserfolg mit Qwen3-30B-A3B beziehungsweise 90,20 bei 2,06 Prozent mit Llama-3.1-70B. Die Latenz bleibt unter conv_attack bei 0,47 bis 0,75 Sekunden pro Anfrage, während Sandwich und indirect-pia auf 3,66 beziehungsweise 3,95 Sekunden steigen; ohne Angriff kostet der Filter kaum Genauigkeit (92,22 statt 92,51 Prozent mit Llama-3.1-70B auf Inj-SQuAD). Grenze: Der Spannen-Splitter setzt wohlgeformte Prosa voraus; Code, Tabellen und Sprachen ohne Standardsatzzeichen können zu grobe Spannen erzeugen."
+    },
+    {
+      "t": "h2",
+      "x": "Zeitreihen-Tests: Hohe Trefferquoten ohne Blick auf die Uhr"
+    },
+    {
+      "t": "callout",
+      "title": "Nur 3 von 10 Prüfregeln kommen überhaupt zum Zug",
+      "x": "Das Diagnoseprotokoll TCDP eines Teams der TU Eindhoven prüft an zehn Regeln, ob ein Modell Zeitstempel wirklich nutzt. Die beiden untersuchten TSRBench-Aufgaben mit zusammen 310 Fragen erzwingen nur drei dieser Regeln; den Rest ersetzen Abkürzungen wie die vorgegebene Ereignisreihenfolge oder das Weltwissen des Modells."
+    },
+    {
+      "t": "p",
+      "x": "Übliche Zeitreihen-Benchmarks liefern Ereignisse bereits sortiert und der Zahlenreihe zugeordnet; ein Modell kann dann richtig antworten, ohne einen einzigen Zeitstempel zu lesen. Tingrui Huang, Yuanyuan Deng und Kollegen der TU Eindhoven fassen Zeitstempel als gemeinsamen Index auf die Welt auf, der drei Strukturen explizit macht: zeitliche Kausalstruktur, Zeitsemantik und die Zuordnung von Ereignis zu Messreihe. Ihr Protokoll TCDP koppelt Eingriffe in die Zeitstempel mit Regeln, die eine Antwortspur erfüllen muss, um als zeitlich fundiert zu gelten. Geprüft wurden zwei TSRBench-Aufgaben: NBA (150 Fragen, ein entferntes Spielereignis ist aus vier Kandidaten zu bestimmen) und GDELT (160 Fragen, die wahre Reihenfolge von Nachrichtenmeldungen ist aus vier Optionen zu wählen). Drei Eingriffe: Relative ersetzt absolute Zeiten durch Abstände, No-TS löscht sie, Shuffled lässt echte Zeiten an falschen Ereignissen."
+    },
+    {
+      "t": "p",
+      "x": "Auf NBA ändert das Entfernen der Uhrzeit bei den drei stärkeren Modellen wenig: GLM-5.3-Flash liegt voll bei 0,973 Trefferquote, mit relativen Zeiten bei 0,987, ohne Zeitstempel bei 0,947 und mit vertauschten bei 0,867; Sonnet-5 kommt auf 0,980, 0,967, 0,947 und 0,887. Nur Qwen3.5-9B bricht ohne Zeitstempel stärker ein (0,680 auf 0,513) als mit vertauschten (0,593). Die Spurenanalyse von GLM-5.3-Flash zeigt, warum: 61 bis 66 Prozent der Läufe lesen schlicht die Punkteänderung an der markierten Zeile ab, 21 bis 25 Prozent schließen Optionen über Basketballwissen aus, und unter Shuffled bemerkt nur 1 Prozent der Läufe den Widerspruch. Die Aufgabe selbst erledigt die zeitliche Zuordnung für das Modell."
+    },
+    {
+      "t": "p",
+      "x": "GDELT hält die Reihenfolge zurück und erzwingt die Zeitstempel: Ohne sie fällt GLM-5.3-Flash von 52 auf 12 Prozent, mit relativen Zeiten auf 40 Prozent, mit vertauschten auf 32 Prozent. Werden die Kalenderdaten entzogen, springt das Modell vom Abgleich erinnerter Daten auf Tonfall-Matching der Meldungen um (16 statt 46 Prozent Date-to-Slot, 57 statt 29 Prozent Value tone), und nur etwa ein Drittel der Läufe bemerkt falsche Zeitangaben. Sonnet-5 bleibt ganz ohne Zeitstempel bei 43 Prozent, über der Zufallslinie von 25 Prozent, vermutlich aus Erinnerung an die realen Ereignisse. Grenzen der Studie: nur zwei Aufgaben aus einem Benchmark, Spurenanalyse nur für GLM-5.3-Flash, LLM-gestützte Labels mit mäßiger Übereinstimmung (Kappa 0,61 für die NBA-Methode, 0,47 für das Bemerken falscher Zeiten auf GDELT), und GDELT-Werte speisen sich teils aus gelernten Kalenderdaten."
+    },
+    {
+      "t": "h2",
+      "x": "Weltmodelle: Zweifel hängt an Architektur und Trainingsziel"
+    },
+    {
+      "t": "callout",
+      "title": "Ein Einzelbild-Fehler kommt mit einem Fünftel an",
+      "x": "In einem kontrollierten Vergleich des Fraunhofer Heinrich-Hertz-Instituts über zehn simulierte Steuerungsumgebungen dämpft DreamerV3 (RSSM) eine Zustandsstörung auf etwa ein Fünftel, bevor sie die Unsicherheitsschätzung erreicht; das LeWM-Modell (JEPA) gibt sie nahezu vollständig weiter. Zwei Mechanismen erklären die Dämpfung: das rekurrente Update mittelt über den Kontext, und das Rekonstruktionsziel gewichtet jedes Objekt nach seiner Pixelzahl."
+    },
+    {
+      "t": "p",
+      "x": "Epistemische Unsicherheit markiert, wo die Erfahrung eines Weltmodells endet; Planer, die gegen das Modell optimieren, brauchen dieses Signal. Simon Baur, Wojciech Samek und Jackie Ma setzen beide Paradigmen demselben nachträglichen Schätzer aus (Laplace-Annäherung auf der letzten Schicht; ein Ensemble-Abgleich zeigte mit r von mindestens 0,98 keinen wesentlichen Unterschied) und verfolgen eine kontrollierte Zustandsstörung durch jede Modellstufe. Beide Encoder geben die Störung weiter; danach trennen sich die Wege. LeWM reicht sie mit rho von etwa 0,9 an das Prädiktor-Merkmal weiter und erreicht eine Unsicherheits-Sensitivität kappa von mindestens 0,94 in jeder Umgebung, in PointMaze, Reacher, Ball-in-cup und Finger zwischen 7 und 20. Dreamer dämpft sie am GRU-Update auf rho von etwa 0,2, und kappa bleibt in allen Umgebungen unter 1; erst wenn die Störung über acht Kontextbilder anhält, wächst die am GRU weitergegebene Störungsstärke um den Faktor 2,3 bis 4,6, und die Sensitivität folgt."
+    },
+    {
+      "t": "p",
+      "x": "Der zweite Mechanismus sitzt im Trainingsziel: Dreamers Rekonstruktionsterm summiert den Fehler über Pixel, ein kleines Objekt zieht entsprechend wenig Gradient; über die sieben Umgebungen mit Objekt folgt das Sensitivitätsverhältnis von Objekt zu Körper dem Gradientenanteil mit Spearman 0,93, während LeWM beides gleich empfindlich registriert (Spearman 0,21). In fünf Folgeaufgaben trägt das: Bei der Erkennung zurückgehaltener Zustände liegt LeWM in sechs von zehn Umgebungen bei mindestens 0,96 AUROC (Körper), Dreamer in 13 von 17 Zellen darunter; die Fehlerrangfolge korreliert bei LeWM in acht von zehn Umgebungen stärker mit dem eigenen Ein-Schritt-Fehler; Physikverletzungen in einem Einzelbild erkennt LeWM in den acht Ein-Objekt-Umgebungen mit mindestens 0,75 AUROC (Ausnahme: nicht sichtbare Durchdringung in Cube und Finger), Dreamer überschreitet 0,80 nur bei umgekehrter Bewegung in Reacher und Ball-in-cup. Beim unsicherheitsgestraften Planen gewinnt LeWM in TwoRoom, Cube, Ball-in-cup und Fetch push 17 bis 28 Prozentpunkte Erfolgsquote, Dreamer bleibt meist unter 10; PointMaze, Scene und Cube double gewinnen für keines der beiden Modelle."
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren ordnen die Befunde selbst ein: Geprüft wurde je ein Vertreter pro Paradigma, die RSSM-Aussagen betreffen also Dreamer-artige Modelle; nur Schätzer auf der letzten Schicht kamen zum Einsatz, und die Stufenanalyse braucht einen Simulator, vortrainierte Weltmodelle sind nicht abgedeckt. Konsistente Verteilungsverschiebungen (Farbe, Hintergrund, Physik-Parameter) registriert LeWM bei visuellen Verschiebungen in 17 von 23 Fällen mit mindestens 0,83 AUROC, bei Physik-Verschiebungen gibt es keinen durchgehenden Führenden. Als nächste Schritte nennen die Autoren kausale Tests der Mechanismen und eine Ausweitung auf große vortrainierte JEPAs wie V-JEPA 2. Die Studie deutet an, dass die Wahl des Trainingsziels entscheidet, ob ein Unsicherheitsschätzer überhaupt etwas zu schätzen bekommt."
+    }
+  ],
+  "key_takeaways": [
+    "MINE (Qualcomm AI Research) filtert abgerufene Kontexte vor dem Sprachmodell nach Relevanz zur Frage statt nach Angriffsmustern: Auf LC-Inj-SQuAD (694 Kontexte, im Mittel 4.032 Wörter, drei Modelle, fünf Angriffstypen) bleibt die Angriffserfolgsrate in jeder Zelle bei höchstens 3,31 Prozent; unter dem adaptiven Gegenangriff mit vollem Methodenwissen steigt sie auf 23,20 Prozent, während alle Vergleichsverfahren entweder durchlassen oder den Kontext verwerfen.",
+    "Zeitstempel werden in zwei geprüften TSRBench-Aufgaben (310 Fragen) kaum gebraucht: Auf NBA halten drei stärkere Modelle ihre Trefferquote auch mit relativen oder ganz ohne Zeiten, auf GDELT fällt GLM-5.3-Flash ohne Zeitstempel von 52 auf 12 Prozent, bemerkt aber nur in etwa einem Drittel der Läufe falsche Zeiten; nur 3 der 10 Regeln des Diagnoseprotokolls TCDP kommen überhaupt zum Zug.",
+    "Ob ein Weltmodell Unsicherheit registriert, hängt an Architektur und Ziel: In zehn simulierten Umgebungen dämpft DreamerV3 eine Zustandsstörung am rekurrenten Update auf etwa ein Fünftel und gewichtet Objekte nach Pixelzahl, während LeWM (JEPA) die Störung vollständig durchreicht und in Folgeaufgaben von Fremdzustand-Erkennung bis Planung das brauchbarere Signal liefert; je ein Vertreter pro Paradigma, nur Last-Layer-Schätzer."
+  ],
+  "faq": [
+    {
+      "q": "Ist MINE damit der beste Schutz gegen Prompt-Injection?",
+      "a": "Unter den trainingsfreien Verfahren zeigt das Paper den besten Kompromiss aus Genauigkeit und Angriffsabwehr auf vier Datensätzen, inklusive Agenten-Werkzeugaufrufen (InjecAgent: 99,60 Prozent gültige Abläufe bei 0,12 Prozent Angriffserfolg mit Qwen3-30B-A3B). Der trainierte Detektor indirect-pia drückt den Angriffserfolg statischer Angriffe auf null, bricht aber bei getarnten Gesprächswendungen auf 4,03 bis 18,01 Prozent Genauigkeit ein. Gegen den adaptiven Angreifer mit vollem Methodenwissen bleibt MINE als einziges Verfahren brauchbar, lässt aber im Langkontext noch 23,20 Prozent der Angriffe durch; und der Spannen-Splitter setzt wohlgeformte Prosa voraus."
+    },
+    {
+      "q": "Heißt das, Sprachmodelle können nicht mit Zeit umgehen?",
+      "a": "Die Studie zeigt etwas Engeres: Zwei verbreitete Aufgabenformate machen Zeitstempel entbehrlich, weil sie Ereignisse sortiert und zugeordnet liefern. Wo die Reihenfolge zurückgehalten wird (GDELT), bricht GLM-5.3-Flash ohne Zeitstempel von 52 auf 12 Prozent ein; mit Zeitstempeln nutzt das Modell die Daten tatsächlich, prüft sie aber selten auf Plausibilität. Die Autoren folgern, dass hohe Trefferquoten auf vorsortierten Eingaben keine zeitliche Fundierung belegen, nicht dass Modelle grundsätzlich zeitblind sind."
+    },
+    {
+      "q": "Sind RSSM-Weltmodelle wie Dreamer jetzt unsicher einsetzbar?",
+      "a": "Die Unsicherheitsschätzung, nicht das Modell selbst, ist der Engpass: DreamerV3s nachträglicher Schätzer übersieht kurze oder kleinteilige Abweichungen, weil das rekurrente Update Einzelbild-Störungen auf etwa ein Fünftel dämpft und das Rekonstruktionsziel Objekte nach Pixelzahl gewichtet. Hält eine Störung über acht Kontextbilder an, steigt die Sensitivität um den Faktor 2,3 bis 4,6. Die Autoren untersuchten je einen Vertreter pro Paradigma und nur Last-Layer-Schätzer; Planungsgewinne durch Unsicherheitsstrafe fielen bei LeWM mit 17 bis 28 Punkten in vier Umgebungen aus, bei Dreamer meist unter 10."
+    }
+  ],
+  "related": [
+    "agents-md-downloads-angriff",
+    "satbench-benchmarks-verbraucht-unabhaengig"
+  ],
+  "sources": [
+    {
+      "title": "MINE: A Training-Free Defense against Indirect Prompt Injection via Mutual Information and Embedding Variance",
+      "publisher": "arXiv; Truong Phan, Ngoc-Quan Pham, Dat Quoc Nguyen (Qualcomm AI Research)",
+      "url": "https://arxiv.org/abs/2611.34188",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Put the World Back: Timestamps Matter in Time Series Reasoning",
+      "publisher": "arXiv; Tingrui Huang, Yuanyuan Deng, Qingren Yao, Joaquin Vanschoren, Mykola Pechenizkiy, Songgaojun Deng (TU Eindhoven)",
+      "url": "https://arxiv.org/abs/2611.34848",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Not all world models can doubt: how training objective and architecture shape epistemic uncertainty in JEPA and RSSM world models",
+      "publisher": "arXiv; Simon Baur, Wojciech Samek, Jackie Ma (Fraunhofer Heinrich-Hertz-Institut)",
+      "url": "https://arxiv.org/abs/2611.34830",
+      "accessed": "2026-11-27"
+    }
+  ]
+}
