@@ -1,0 +1,137 @@
+{
+  "title": "Warmstart spart Loops, Destillations-Reparatur, Frühwarnung für Tabellenmodelle",
+  "dek": "Ein Warmstart spart Loop-Modellen Schichten, ein PBRF-Ansatz repariert Vertrauen nach Destillation, und CALD warnt vor schädlicher Drift bei Tabellenmodellen.",
+  "slug": "news-ueberblick-mittag-2026-11-27",
+  "section": "ueberblick",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-27T09:51:55+01:00",
+  "modified": "2026-11-27T09:51:55+01:00",
+  "tags": [
+    "Forschung",
+    "Inferenz",
+    "Destillation",
+    "Zuverlässigkeit"
+  ],
+  "hero": {
+    "alt": "Drei schematische Bildkarten: ein Staffellauf mit übergebenem Stab zwischen zwei Läufern, ein Reparaturschlüssel an einem kleinen Zahnrädchen neben einem großen, und ein Wachturm mit Suchschein über abweichenden Punkten in einem Raster. Themenhero ohne Zahlen und Messskala.",
+    "caption": "Drei Studien über Warmstarts für Loop-Sprachmodelle, die nachträgliche Reparatur destillierter Modelle und einen Schadens-Wächter für tabellarische Foundation Models. Alle Werte, Bedingungen und Grenzen stehen in den Textpanels und im Artikel.",
+    "credit": "Eigene Illustration",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Quellenprüfung: 27. November 2026, 09:49 Uhr MEZ. Drei am 25. November eingereichte Preprints (jeweils an den Abstract-Seiten geprüft) behandeln den Betrieb von KI-Modellen: einen gelernten Warmstart, der Loop-Sprachmodellen Rechenschritte spart, ein Verfahren, das Vertrauensverluste nach der Destillation nachträglich repariert, und einen Wächter, der schädliche Datenverschiebungen bei tabellarischen Foundation Models erkennt."
+    },
+    {
+      "t": "h2",
+      "x": "Loop-Modelle: Der Startpunkt ist der verbleibende Hebel"
+    },
+    {
+      "t": "callout",
+      "title": "14 bis 19 Prozent weniger Schichten bei gleicher Genauigkeit",
+      "x": "Auf dem Loop-Modell Huginn-0125 braucht FlyingStart am jeweils günstigsten Betriebspunkt 40,1 statt 46,8 Schichten pro Token (minus 14 Prozent gegenüber der stärksten trainingsfreien Abbruchregel); entlang der Genauigkeits-Kosten-Kurve liegt die Ersparnis bei gleicher Genauigkeit zwischen 16,6 und 18,9 Prozent. Der Durchsatz steigt in zwei Serving-Engines um 16 bis 18 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Rekurrente Sprachmodelle wie Huginn-0125 (3,5 Milliarden Parameter) iterieren denselben Schichtblock pro Token, bis sich der Zustand nicht mehr ändert; bei voller Tiefe von 32 Schleifen sind das 132 Schichten pro Token. Bisherige Beschleuniger entscheiden, wann die Iteration stoppt. Runguo Li (UIUC), Dezhen Lu (Tübingen) und Zixiang Ni (Xi'an Jiaotong) zeigen, dass der Startpunkt ein zweiter, unabhängiger Hebel ist: Nach einer gelernten linearen Koordinatentransformation sagt der Endzustand des vorherigen Tokens den Fixpunkt des nächsten weitgehend voraus. Das direkte Kopieren des Vorzustands scheitert dagegen (Fehler 1,09 gegenüber 1,17 bei Zufallsstart auf Huginn), erst die gelernte Abbildung senkt den Startfehler auf 0,65 bis 0,73. Die Abbildung wird per Ridge-Regression in geschlossener Form auf dem eingefrorenen Modell gefittet (640 Sequenzen à 512 Token, Minuten auf einer GPU) und kostet unter 5 Prozent einer Schleife."
+    },
+    {
+      "t": "p",
+      "x": "Weil Iteration und Abbruchregel unverändert bleiben, bescheinigt das Abbruchkriterium denselben Abstand zum Fixpunkt von jedem Start aus; eine ungenaue Vorhersage kostet Schleifen, nie Genauigkeit. Eine Kontraktionsformel sagt die Ersparnis aus zwei Messgrößen voraus (auf Huginn 1,8 Schleifen vorhergesagt, 1,7 gemessen) und traf bei einem vierten Modell (TinyLlama-1.1B) eine vor der Auswertung festgehaltene Prognose von 0,71 Schleifen (gemessen 0,56 bis 0,85). Bei gleichem Budget von etwa 35 Schichten liegt FlyingStart 3,3 Punkte über der Basisregel (59,70 gegenüber 56,37 Prozent, gepoolt über 5.078 Matheaufgaben); auf BBH und IFEval fallen 14 beziehungsweise 25 Prozent der Schichten weg, ohne messbaren Genauigkeitsverlust. Auf der selbstspekulativen Decodierung WaveFront kommen weitere 10 bis 14 Prozent Durchsatz hinzu."
+    },
+    {
+      "t": "p",
+      "x": "Die Grenzen benennt das Paper selbst: Der Gewinn gilt für die Decodierung, im parallelen Prefill wirkt nur der eingabeseitige Teil der Abbildung und hilft nur bei flachem Prefill; das Verfahren setzt Modelle voraus, deren Iteration gegen einen startunabhängigen Fixpunkt konvergiert (bei nicht konvergierenden Loop-Modellen wie Ouro gibt es nichts zu prognostizieren); die Kalibrierung ist pro Modell und braucht etwas domänennahe Daten, bei Zero-shot-Aufgaben hält die Ersparnis nur bei gleichem Schwellenwert, nicht bei gematchter Genauigkeit. Drei Versuche, stattdessen die Kontraktion selbst zu beschleunigen (Solver-Beschleunigung, Adapter, Destillation), scheiterten an Huginn; der Startpunkt blieb der einzige wirksame Hebel."
+    },
+    {
+      "t": "h2",
+      "x": "Destillierte Modelle: Vertrauen nachträglich reparieren"
+    },
+    {
+      "t": "callout",
+      "title": "Bis zu 8,55 Prozent bessere Log-Odds, Perplexität nahezu unverändert",
+      "x": "Ein Reparaturverfahren des Indian Institute of Science verbessert bei destillierten GPT-2- und Qwen-Studenten (120 Millionen bis 1,2 Milliarden Parameter) die Log-Odds der Commonsense-Ethik um 5,26 bis 8,55 Prozent relativ und die der TruthfulQA-Wahrhaftigkeit um 1,58 bis 6,10 Prozent; die Perplexität auf der Destillationsaufgabe verschlechtert sich im Post-Training-Fall um höchstens 1,56 Prozent, im Pre-Training-Fall um höchstens 0,35 Prozent."
+    },
+    {
+      "t": "p",
+      "x": "Destillation überträgt Fähigkeiten eines Lehrers auf ein kleineres Studentenmodell, aber nicht immer alle Verhaltenseigenschaften: Wahrhaftigkeit und Maschinenethik können zurückfallen, obwohl Perplexität und Aufgabengenauigkeit erhalten bleiben. Eine Neuauflage der Destillation scheitert oft daran, dass der ursprüngliche Transferkorpus nicht öffentlich ist; direkte Präferenzoptimierung riskiert dagegen, die geerbten Fähigkeiten zu verändern. Das Team um Kumar Shubham und Prathosh AP nutzt das PBRF-Framework (proximal Bregman response function), das Modellupdates relativ zu einem Referenzmodell in Funktions- und Parameterraum beschränkt, und ersetzt den fehlenden Destillationskorpus durch einen generischen Proxy-Datensatz, aus dem die nötige Krümmung per EK-FAC-Näherung geschätzt wird. Eine Odds-Ratio-Zielfunktion macht das Verfahren für Präferenzpaare aus erwünschten und unerwünschten Antworten tauglich."
+    },
+    {
+      "t": "p",
+      "x": "Geprüft wurden zwei Destillationswege: Post-Training mit GPT-2-Studenten (120M, 340M, 760M, destilliert von GPT-2 1.5B auf einer Instruktionsaufgabe, Proxys U-NI und S-NI) und Pre-Training mit Qwen-Studenten (200M, 500M, 1.2B, destilliert von Qwen 1.8B, Proxys FineWeb und OpenWebText). Die Wahl des Proxy-Korpus ändert wenig; der größte Ethik-Gewinn (plus 8,48 Prozent) fällt auf das größte Pre-Training-Modell Qwen 1.2B, die Verbesserungen schrumpfen mit der Modellgröße also nicht. Bei der Wahrhaftigkeit des GPT-2 760M verbessert die Reparatur die Perplexität sogar leicht."
+    },
+    {
+      "t": "p",
+      "x": "Die Einordnung der Autoren ist eng: Getestet wurden nur Modelle bis 760 Millionen (GPT-2) beziehungsweise 1,2 Milliarden Parametern (Qwen), zwei Vertrauensdimensionen (TruthfulQA und Commonsense Ethics) und eine einzelne lokale EK-FAC-Krümmungsschätzung; offene Generierung ist nicht abgedeckt. Größere Modelle, weitere Vertrauensdimensionen und freiere Generierung nennt das Paper als nächste Schritte. Für Praxisbetreiber relevanter Destillations-Checkpoints bleibt die Kernaussage: Ein Vertrauensrückgang nach der Destillation lässt sich ohne die Originaldaten und ohne große Einbußen bei der Perplexität teilweise zurückholen."
+    },
+    {
+      "t": "h2",
+      "x": "Tabellarische Foundation Models: Ein Wächter für schädliche Verschiebungen"
+    },
+    {
+      "t": "callout",
+      "title": "Alarm bei sechs von sieben schädlichen Verschiebungen mit TPR von mindestens 0,99",
+      "x": "Der Monitor CALD erkennt auf 14 Datensätzen und zwei PFN-Architekturen (TabPFN v2.5, TabICL v2) schädliche Verteilungsverschiebungen bei 5 Prozent Fehlalarm-Rate: Auf sechs der sieben schädlichen Fälle liegt die Trefferrate bei mindestens 0,99, nur UCI Heart bleibt bei 0,71. Bei harmlosen Verschiebungen schweigt der bessere der beiden CALD-Läufe auf vier von sieben Datensätzen mit einer Rate von mindestens 0,92, versagt aber auf Bank Marketing und Diabetes Readmission."
+    },
+    {
+      "t": "p",
+      "x": "Tabellarische Foundation Models wie TabPFN und TabICL klassifizieren neue Tabellen in einem einzigen Vorwärtsdurchlauf, erwarten aber, dass Einsatz- und Trainingsverteilung zusammenpassen; bei Drift fallen sie still. Viet Nguyen (University of Toronto), Herman Bergström (Chalmers), Stephan Rabanser (Princeton) und Rahul G. Krishnan bauen den Wächter als kurzes Feintuning des Decoders: Er soll auf einem markierten ID-Ankerset richtig bleiben und zugleich den eigenen Pseudolabels auf dem unmarkierten Prüfbatch widersprechen. In Verteilung bleibt der Ankerverlust hoch, weil der Widerspruchsdruck stört; bei Verschiebung entkoppeln die Gradienten, und der Ankerverlust fällt in den unteren Bereich der Kalibrierungsverteilung. Das Urteil kommt aus einem einseitigen Test ohne Labels auf dem Prüfbatch."
+    },
+    {
+      "t": "p",
+      "x": "Der Schaden-Nutzen-Schnitt der 14 Datensätze liegt bei einem Genauigkeitsabfall von etwa 4,8 Prozent (Hoeffding-Schranke). Dort zeigt sich der Unterschied zu 15 Vergleichsverfahren: Statistik-Detektoren wie D-MMD, H-Divergenz und KNN erreichen ihre hohen Trefferquoten auf der Schadensseite nur durch Dauer-Alarm (Stille höchstens 0,10 auf der Mehrheit der harmlosen Fälle), während RMD auf der Schadensseite auf 0,40 bis 0,67 einbricht. CALD ist der einzige Detektor im Vergleich, der auf der Mehrheit beider Seiten zugleich hoch liegt. TabICL dominiert bei Untergruppen-Verschiebungen (Camelyon 0,19 zu 1,00, Waterbirds 0,46 zu 0,99, CelebA 0,27 zu 0,97, Credit Default 0,00 zu 0,76), was die Autoren als wahrscheinliche Ursache auf den etwa zehnmal größeren Decoder zurückführen. In kontrollierten Sweeps steigt die AUROC mit dem verursachten Genauigkeitsabfall von 0,5 auf 1,0."
+    },
+    {
+      "t": "p",
+      "x": "Die Autoren sind ungewöhnlich offen über die Grenzen: Das Trenntheorem gilt nur im Fern-OOD-Regime, seine Zertifizierungsbedingung war auf keinem der zehn vermessenen Benchmarks erfüllt; die gemessene Beweisprämisse (das Gradienten-Kreuzglied) trägt den Mechanismus auf neun von zehn Datensätzen, und die zwei Ausnahmen (CIFAR-10, UCI Heart) sind genau die schwachen Zellen des Detektors. Die Fehlalarm-Garantie setzt Austauschbarkeit unter der Nullhypothese voraus; reine Label- oder Konzeptverschiebungen, offene Klassen und gezielte Angriffe liegen außerhalb. Auf der harmlosen Seite beweist ein eigenes Lemma, dass kein Merkmalsraum-Monitor perfekt schadenskalibriert sein kann; Bank und Diabetes Readmission feuern trotz Mini-Genauigkeitslücke."
+    }
+  ],
+  "key_takeaways": [
+    "FlyingStart setzt Loop-Modelle nicht beim Stoppen, sondern beim Start an: Eine in geschlossener Form gefittete lineare Abbildung des vorherigen Token-Zustands spart auf Huginn-0125 am Betriebspunkt 14 Prozent der Schichten pro Token (40,1 statt 46,8) bei gleicher Genauigkeit, entlang der Kurve 16,6 bis 18,9 Prozent, plus 16 bis 18 Prozent Durchsatz in zwei Engines; eine Kontraktionsformel prognostizierte die Ersparnis bei TinyLlama-1.1B vor der Auswertung (0,71 vorhergesagt, 0,56 bis 0,85 gemessen).",
+    "Vertrauensreparatur ohne Originaldaten: Das PBRF-basierte Verfahren des IISc hebt die Log-Odds von Maschinenethik (plus 5,26 bis 8,55 Prozent relativ) und Wahrhaftigkeit (plus 1,58 bis 6,10 Prozent) destillierter GPT-2- und Qwen-Studenten an, bei höchstens 1,56 Prozent schlechterer Perplexität; getestet nur bis 1,2 Milliarden Parameter und zwei Vertrauensdimensionen.",
+    "CALD überwacht tabellarische PFNs im Einsatz: Über 14 Datensätze und TabPFN v2.5 sowie TabICL v2 liegt die Trefferrate auf sechs von sieben schädlichen Verschiebungen bei mindestens 0,99 (bei 5 Prozent Fehlalarm-Rate), das Trenntheorem gilt aber nur im Fern-OOD-Regime, und auf Bank Marketing sowie Diabetes Readmission schlägt der Wächter trotz harmloser Verschiebung Alarm."
+  ],
+  "faq": [
+    {
+      "q": "Was bringt FlyingStart für den Betrieb von Loop-Modellen?",
+      "a": "Für Modelle wie Huginn-0125, deren Iteration gegen einen Fixpunkt konvergiert, ist die Abbildung in Minuten kalibriert (640 Sequenzen) und kostet unter 5 Prozent einer Schleife pro Token. Gemessen wurden 14 Prozent weniger Schichten am Betriebspunkt bei gleicher Genauigkeit, 16 bis 18 Prozent mehr Durchsatz in zwei Serving-Engines und 10 bis 14 Prozent zusätzlich auf WaveFront. Voraussetzung ist ein konvergierendes Loop-Modell; bei nicht konvergierenden Varianten und im parallelen Prefill greift der Ansatz nicht oder nur eingeschränkt."
+    },
+    {
+      "q": "Lässt sich jeder Destillations-Schaden so beheben?",
+      "a": "Nein, das Paper zeigt einen engen Rahmen: Zwei Vertrauensdimensionen (Wahrhaftigkeit auf TruthfulQA, Maschinenethik auf Commonsense Ethics), Studenten bis 1,2 Milliarden Parameter und kleine Präferenzdatensätze mit erwünschten und unerwünschten Antworten. In diesem Rahmen steigen die Log-Odds relativ um bis zu 8,55 Prozent, während die Perplexität sich höchstens um 1,56 Prozent verschlechtert. Ob das auf größere Modelle, weitere Dimensionen und offene Generierung überträgt, ist laut den Autoren offen."
+    },
+    {
+      "q": "Kann CALD einen Alarm im Kundenbetrieb ersetzen?",
+      "a": "CALD ist ein unüberwachter Warner, kein Beweis: Er braucht keine Labels auf dem Prüfbatch und kontrolliert die Fehlalarmrate unter Austauschbarkeit, erkennt aber nur Verschiebungen, die im Merkmalsraum sichtbar sind. Auf Bank Marketing und Diabetes Readmission feuert er trotz harmloser Drift, reine Label- oder Konzeptverschiebungen liegen außerhalb des Tests, und das Trenntheorem greift nur bei extremer Verschiebung. Die Autoren empfehlen ihn als Detektor vor Adaptionsverfahren, nicht als alleinige Sicherung."
+    }
+  ],
+  "related": [
+    "glm-5-4-loop-transformer-z-ai",
+    "openai-anti-distillation-reasoning-extraktion"
+  ],
+  "sources": [
+    {
+      "title": "FlyingStart: Learned Cross-Token Warm Starts for Fixed-Point Decoding in Recurrent-Depth Language Models",
+      "publisher": "arXiv; Runguo Li (University of Illinois Urbana-Champaign), Dezhen Lu (Universität Tübingen), Zixiang Ni (Xi'an Jiaotong University)",
+      "url": "https://arxiv.org/abs/2611.34492",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "Repairing the Trustworthiness of Distilled Language Models",
+      "publisher": "arXiv; Kumar Shubham, Devendra Vyas, Vidushi Agarwal, Jayin Khanna, Prathosh AP (Indian Institute of Science, Bengaluru)",
+      "url": "https://arxiv.org/abs/2611.34831",
+      "accessed": "2026-11-27"
+    },
+    {
+      "title": "When to Trust a PFN: Detecting Harmful Shift in Tabular Foundation Models",
+      "publisher": "arXiv; Viet Nguyen (University of Toronto), Herman Bergström (Chalmers), Stephan Rabanser (Princeton), Rahul G. Krishnan (University of Toronto)",
+      "url": "https://arxiv.org/abs/2611.34767",
+      "accessed": "2026-11-27"
+    }
+  ],
+  "published_at": "2026-11-27T09:52:00+01:00",
+  "updated_at": "2026-11-27T09:52:00+01:00"
+}
