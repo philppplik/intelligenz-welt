@@ -5,8 +5,8 @@
   "type": "news",
   "title": "Tencent Hy3D 3.6: Bis zu zwei Millionen Polygone und 8K-Texturen pro 3D-Asset",
   "dek": "Die neue Version von Tencents 3D-Modell Hy3D erzeugt nach Herstellerangaben wasserdichte Meshes mit bis zu zwei Millionen Polygonen, PBR-Texturen in bis zu 8K und zerlegt Modelle auf Wunsch in mehr als 50 Einzelteile.",
-  "published": "2026-11-28T09:08:00+01:00",
-  "modified": "2026-11-28T09:08:00+01:00",
+  "published": "2026-11-28T09:13:06+01:00",
+  "modified": "2026-11-28T09:13:06+01:00",
   "author": "philipp-paulik",
   "tags": [
     "tencent",
@@ -82,6 +82,6 @@
     }
   ],
   "related": [],
-  "published_at": "2026-11-28T09:08:00+01:00",
-  "updated_at": "2026-11-28T09:08:00+01:00"
+  "published_at": "2026-11-28T09:13:06+01:00",
+  "updated_at": "2026-11-28T09:13:06+01:00"
 }

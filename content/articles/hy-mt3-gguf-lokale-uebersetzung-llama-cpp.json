@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Hy-MT3 als GGUF: Tencents Übersetzungsmodell mit 102 Sprachen lokal nutzen",
   "dek": "Tencent hat seine dritte Übersetzungsmodell-Generation Hy-MT3 unter Apache-2.0 veröffentlicht, inklusive offizieller GGUF-Dateien für llama.cpp. Das 30B-MoE-Modell aktiviert nur drei Milliarden Parameter pro Token, das 1,8B-Modell läuft auch auf schwacher Hardware.",
-  "published": "2026-11-28T09:08:00+01:00",
-  "modified": "2026-11-28T09:08:00+01:00",
+  "published": "2026-11-28T09:13:05+01:00",
+  "modified": "2026-11-28T09:13:05+01:00",
   "author": "philipp-paulik",
   "tags": [
     "tencent",
@@ -95,6 +95,6 @@
   "related": [
     "edge0-145b-laptop-lokales-modell"
   ],
-  "published_at": "2026-11-28T09:08:00+01:00",
-  "updated_at": "2026-11-28T09:08:00+01:00"
+  "published_at": "2026-11-28T09:13:05+01:00",
+  "updated_at": "2026-11-28T09:13:05+01:00"
 }

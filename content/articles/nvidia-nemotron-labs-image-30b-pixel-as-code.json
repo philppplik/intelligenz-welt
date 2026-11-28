@@ -5,8 +5,8 @@
   "type": "explainer",
   "title": "Pixel as Code: NVIDIAs offenes Bildmodell verbindet Rasterbilder und Programme",
   "dek": "Nemotron-Labs-Image-30B-A3B ist der Bildgenerator eines Frameworks, das Bilder, Webseiten, Präsentationen und Diagramme über eine gemeinsame Generierungs- und Render-Schnittstelle erzeugt. Gewichte und Tokenizer stehen auf Hugging Face, die Lizenz erlaubt nur nicht-kommerzielle Nutzung.",
-  "published": "2026-11-28T09:08:00+01:00",
-  "modified": "2026-11-28T09:08:00+01:00",
+  "published": "2026-11-28T09:13:05+01:00",
+  "modified": "2026-11-28T09:13:05+01:00",
   "author": "philipp-paulik",
   "tags": [
     "nvidia",
@@ -96,6 +96,6 @@
   "related": [
     "gemini-4-carbon-fuer-entwickler-offen"
   ],
-  "published_at": "2026-11-28T09:08:00+01:00",
-  "updated_at": "2026-11-28T09:08:00+01:00"
+  "published_at": "2026-11-28T09:13:05+01:00",
+  "updated_at": "2026-11-28T09:13:05+01:00"
 }

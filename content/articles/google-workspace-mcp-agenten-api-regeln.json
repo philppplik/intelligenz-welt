@@ -5,8 +5,8 @@
   "type": "analysis",
   "title": "Google macht MCP für KI-Agenten in Workspace zur Pflicht: Was sich bis Februar 2027 ändert",
   "dek": "KI-Agenten müssen Gmail, Drive und andere Workspace-Dienste künftig über Googles MCP-Server oder die neue CLI ansteuern, direkte REST-API-Aufrufe durch Agenten sperrt Google ab dem 1. Februar 2027 technisch. Ein neues Zusatzdokument verbietet zugleich das Training auf Workspace-Daten.",
-  "published": "2026-11-28T09:08:00+01:00",
-  "modified": "2026-11-28T09:08:00+01:00",
+  "published": "2026-11-28T09:13:04+01:00",
+  "modified": "2026-11-28T09:13:04+01:00",
   "author": "philipp-paulik",
   "tags": [
     "google-workspace",
@@ -100,6 +100,6 @@
     }
   ],
   "related": [],
-  "published_at": "2026-11-28T09:08:00+01:00",
-  "updated_at": "2026-11-28T09:08:00+01:00"
+  "published_at": "2026-11-28T09:13:04+01:00",
+  "updated_at": "2026-11-28T09:13:04+01:00"
 }
