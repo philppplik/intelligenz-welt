@@ -1,0 +1,98 @@
+{
+  "slug": "shopping-agenten-haendler-blockaden-agentic-commerce",
+  "lang": "de",
+  "section": "trends",
+  "type": "news",
+  "title": "Shopping-Agenten treffen auf geschlossene Türen: Amazon, eBay und andere blockieren KI-Einkäufer",
+  "dek": "Während Walmart und Sephora ihre Shops für KI-Agenten öffnen, sperren Amazon, eBay, United Airlines und Kohl's sie ganz oder teilweise aus. Eine Visa-Studie bescheinigt den Agenten zudem eine Fehlerquote von rund 43 Prozent bei Einkaufsaufgaben.",
+  "published": "2026-11-28T09:08:00+01:00",
+  "modified": "2026-11-28T09:08:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "agentic-commerce",
+    "shopping-agenten",
+    "amazon",
+    "einzelhandel",
+    "visa-studie"
+  ],
+  "key_takeaways": [
+    "Amazon, eBay, United Airlines und Kohl's schränken KI-Shopping-Agenten ein oder blockieren sie vollständig, Walmart und Sephora öffnen sich dagegen.",
+    "Amazon verwehrte zuletzt Musks Grok Bot Bestellungen, blockierte Metas Muse im September und verklagte Perplexity wegen dessen Comet-Agenten.",
+    "In einer Visa-Studie mit 22 Modellen aus zwölf KI-Laboren scheiterten rund 43 Prozent der Einkaufsversuche, in über der Hälfte der Fehlschläge kaufte der Agent ein unpassendes Produkt.",
+    "McKinsey und ICSC prognostizieren bis zu einer Billion US-Dollar Umsatz durch agentischen Handel in den USA bis 2030.",
+    "Analystin Emily Pfeiffer von Forrester warnt: Kundinnen und Kunden sehen durch die Blockaden nicht das volle Angebot."
+  ],
+  "hero": {
+    "alt": "Stilisierte dunkle Ladenfront mit Markise bei Nacht, eine leuchtende Einkaufstaschenform steht vor einer durchscheinenden Sperrwand mit grünem Warnleuchten.",
+    "caption": "Händler entscheiden einzeln, ob KI-Agenten bei ihnen einkaufen dürfen, das Ergebnis ist ein Flickenteppich.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Der Einkauf per KI-Agent stößt im Einzelhandel auf wachsenden Widerstand. Wie CNBC berichtet, haben Walmart und Sephora ihre Seiten für Agenten geöffnet, während Amazon, eBay, United Airlines und Kohl's deren Aktionen einschränken oder sie ganz blockieren. Andere Händler hätten in ihren Nutzungsbedingungen festgelegt, dass sie nicht haften, wenn KI-gesteuerte Käufe schiefgehen."
+    },
+    {
+      "t": "p",
+      "x": "Ein Beispiel aus dem CNBC-Bericht: Eine Nutzerin ließ Metas Agenten Muse Scheibenwischer bei AutoZone bestellen. Rund 17 Stunden später meldete der Agent, der Händler habe die Bestellung wegen eines nicht näher genannten Fehlers storniert, und schlug vor, sie solle selbst bei Amazon bestellen."
+    },
+    {
+      "t": "h2",
+      "x": "Amazon geht am weitesten"
+    },
+    {
+      "t": "p",
+      "x": "Amazon hat seine Seite nach Darstellung von CNBC komplett abgeschottet: Zuletzt verhinderte das Unternehmen Bestellungen von Elon Musks Grok Bot, im September blockierte es Metas Muse mit der Begründung, nie einer Teilnahme zugestimmt zu haben, und im November des Vorjahres verklagte es Perplexity, weil der Comet-Agent seine Identität verschleiert haben soll. Amazon-Chef Andy Jassy sagte demnach, das Unternehmen erwarte, langfristig mit Dritt-Agenten zu kooperieren, aber nur mit dem richtigen Wertaustausch zwischen Agenten und Händlern."
+    },
+    {
+      "t": "p",
+      "x": "Selbst wo Agenten willkommen sind, läuft es holprig: Sie scheitern laut Bericht an Login-Anforderungen oder brauchen menschliche Hilfe bei Captchas. Coach und Gap erlauben das Stöbern, aber nicht den Checkout, und Target soll Agenten laut einer Prüfung des Agentensicherheits-Unternehmens Billions Network vom August mitunter versehentlich blockieren."
+    },
+    {
+      "t": "h2",
+      "x": "Fehlerquote von 43 Prozent"
+    },
+    {
+      "t": "p",
+      "x": "Eine im November veröffentlichte Visa-Studie, über die CNBC berichtet, ließ 22 Modelle aus zwölf KI-Laboren Einkaufsaufgaben ausführen, etwa einen Fernseher, einen Laptop oder ein Haargerät kaufen. Rund 43 Prozent der Testläufe scheiterten, und in mehr als der Hälfte der Fehlschläge kaufte der Agent ein Produkt, das nicht den Anforderungen der Kundin oder des Kunden entsprach. Dazu kommen gemeldete Zwischenfälle wie ein textbasierter Agent von Instinct, der laut CNBC ein Hotel buchte und einen Nutzer ohne dessen Zustimmung für ein Treueprogramm anmeldete."
+    },
+    {
+      "t": "callout",
+      "x": "Trotz der Probleme bleiben Analysten optimistisch: McKinsey und ICSC prognostizierten im April, dass agentischer Handel in den USA bis 2030 bis zu eine Billion US-Dollar Umsatz erreichen könnte. Shopify-Präsident Harley Finkelstein erwartet laut CNBC die erste Weihnachtssaison, in der KI-gestützter Einkauf massentauglich wird.",
+      "title": "Prognose trotz Blockaden"
+    },
+    {
+      "t": "p",
+      "x": "Forrester-Analystin Emily Pfeiffer nennt die Lage gegenüber CNBC einen Flickenteppich: Wer mit einem Agenten einkaufe, sehe nicht das volle Angebot, weil manche Webseiten schlicht nicht erreichbar seien. Instinct-CEO Noah Shinn sagte CNBC, KI-Unternehmen könnten sich sehr schnell bewegen, bestimmte Händler nicht, und fragte, wie man mit ihnen zusammenarbeiten könne. Startups wie Skyfire arbeiten parallel daran, Händlern Daten zu liefern, mit denen sie Bots identifizieren und prüfen können, ob ein Mensch den Kauf tatsächlich autorisiert hat."
+    }
+  ],
+  "sources": [
+    {
+      "title": "AI shopping agents are having a moment, but Amazon and a growing number of sites threaten to stunt their growth",
+      "publisher": "CNBC",
+      "url": "https://www.cnbc.com/2026/11/27/ai-shopping-agents-retailer-blocks.html",
+      "accessed": "2026-11-28"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welche Händler blockieren KI-Shopping-Agenten?",
+      "a": "Laut CNBC schränken Amazon, eBay, United Airlines und Kohl's Agenten ein oder blockieren sie. Coach und Gap erlauben das Stöbern, aber nicht den Checkout. Walmart und Sephora haben ihre Seiten dagegen geöffnet."
+    },
+    {
+      "q": "Wie zuverlässig kaufen KI-Agenten ein?",
+      "a": "In einer Visa-Studie mit 22 Modellen aus zwölf Laboren scheiterten laut CNBC rund 43 Prozent der Einkaufsversuche. In mehr als der Hälfte der Fehlschläge kaufte der Agent ein Produkt, das nicht den Kundenanforderungen entsprach."
+    },
+    {
+      "q": "Wie groß könnte der Markt werden?",
+      "a": "McKinsey und ICSC prognostizierten im April laut CNBC bis zu eine Billion US-Dollar Umsatz durch agentischen Handel in den USA bis 2030."
+    }
+  ],
+  "related": [
+    "walmart-agent-gateway-shopping-agenten-regeln",
+    "chatgpt-wallet-agenten-zahlen-biometrische-freigabe"
+  ],
+  "published_at": "2026-11-28T09:08:00+01:00",
+  "updated_at": "2026-11-28T09:08:00+01:00"
+}

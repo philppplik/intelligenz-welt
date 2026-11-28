@@ -1,0 +1,105 @@
+{
+  "slug": "google-workspace-mcp-agenten-api-regeln",
+  "lang": "de",
+  "section": "analyse",
+  "type": "analysis",
+  "title": "Google macht MCP für KI-Agenten in Workspace zur Pflicht: Was sich bis Februar 2027 ändert",
+  "dek": "KI-Agenten müssen Gmail, Drive und andere Workspace-Dienste künftig über Googles MCP-Server oder die neue CLI ansteuern, direkte REST-API-Aufrufe durch Agenten sperrt Google ab dem 1. Februar 2027 technisch. Ein neues Zusatzdokument verbietet zugleich das Training auf Workspace-Daten.",
+  "published": "2026-11-28T09:08:00+01:00",
+  "modified": "2026-11-28T09:08:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "google-workspace",
+    "mcp",
+    "agenten",
+    "api",
+    "regulierung"
+  ],
+  "key_takeaways": [
+    "Google hat die Workspace-MCP-Server und die Workspace-CLI am 24. November als allgemein verfügbar angekündigt; der Rollout läuft laut Google noch etwa zwei Wochen.",
+    "Ab dem 1. Februar 2027 müssen KI-Agenten und vergleichbare Werkzeuge diese Gateways nutzen, direkte REST-API-Aufrufe werden dann technisch unterbunden.",
+    "Ein neues AI Tools Addendum verbietet Training, Fine-Tuning und Distillation auf Nutzerdaten und untersagt, aus den APIs gewonnene technische Informationen länger als 30 Tage zu speichern.",
+    "Ein kostenpflichtiger Scaled-Tier für höhere Quotas startet mit Abrechnung ab dem 1. April 2027; über 99 Prozent der aktiven Entwicklerprojekte bleiben laut Google im kostenlosen Standard-Tier.",
+    "Admins erhalten zentrale Kontrollen: Agenten-Identifikation per OAuth, Bestätigungsregeln für sensible Aktionen, DLP-Anwendung und Audit-Logs."
+  ],
+  "hero": {
+    "alt": "Abstraktes dunkles Tor aus Stein und Glas, durch das leuchtende Briefumschlag- und Ordnerformen einen grünen Scanbogen passieren.",
+    "caption": "Google führt KI-Agenten in Workspace über eigene Gateways und knüpft daran neue Nutzungsregeln.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Google stellt den Zugang von KI-Agenten zu Workspace-Daten auf neue Gleise. Am 24. November hat das Unternehmen seine Workspace-MCP-Server und die Workspace-CLI allgemein verfügbar gemacht und gleichzeitig angekündigt, dass KI-Agenten und vergleichbare Zugriffswerkzeuge ab dem 1. Februar 2027 technisch gezwungen werden, diese Gateways zu nutzen, statt die klassischen REST-APIs direkt aufzurufen. Die Pflicht gilt für KI-Agenten und vergleichbare Zugriffswerkzeuge."
+    },
+    {
+      "t": "h2",
+      "x": "Was die neuen Gateways leisten"
+    },
+    {
+      "t": "p",
+      "x": "Die MCP-Server sind von Google gehostet und decken Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat und Tasks ab, Keep soll folgen. Die CLI bringt Workspace-Werkzeuge in lokale Umgebungen wie Terminals, virtuelle Maschinen und Container. Google begründet die Trennung damit, dass die REST-APIs für deterministische App-Aufrufe in menschlichem Tempo gebaut wurden, Agenten dagegen eigenständig und in Maschinengeschwindigkeit handeln. Die MCP-Werkzeuge lieferten zusammengefasste Ergebnisse statt Rohdaten, was Tokenkosten und Latenz senke, und brächten Nutzerbestätigungen, Audit-Logging und Admin-Kontrollen von Haus aus mit."
+    },
+    {
+      "t": "h2",
+      "x": "Das Addendum zieht die Grenzen"
+    },
+    {
+      "t": "p",
+      "x": "Parallel hat Google das Workspace AI Tools Addendum veröffentlicht, Stand 24. November. Es definiert KI-Agenten, AI Harnesses und GWS Access Tools und schreibt vor, dass KI-gesteuerte Zugriffswerkzeuge einen Google-MCP-Server nutzen müssen, ohne sich dieser Einstufung zu entziehen. Verboten sind demnach: Nutzerdaten oder Google Technical Information für Modelltraining, Fine-Tuning, den Aufbau von Evaluationsdatensätzen oder Distillation zu verwenden; Google Technical Information länger als 30 Tage zu speichern; Daten nach dem Trennen des Zugangs zu behalten; die Schnittstellen systematisch auszulesen; und damit ein Produkt zu bauen, das einem Workspace-Dienst ähnelt. Bei Verstößen darf Google den Zugang sofort einschränken oder sperren."
+    },
+    {
+      "t": "callout",
+      "x": "Google Technical Information meint aus dem API-Zugriff abgeleitete Informationen, etwa Vektor-Embeddings, Speicherindizes, Nutzerprofile und Organisationsgraphen, ausdrücklich keine Nutzerdaten. Die 30-Tage-Grenze gilt für diese Kategorie.",
+      "title": "Begriff der Woche"
+    },
+    {
+      "t": "h2",
+      "x": "Neues Abrechnungsmodell ab April 2027"
+    },
+    {
+      "t": "p",
+      "x": "Mit der GA startet Google zwei Nutzungsstufen für die Workspace-APIs, zunächst für Gmail, Drive und Calendar: Der Standard-Tier bleibt kostenlos mit veröffentlichten Quotas, der Scaled-Tier ist für Projekte mit höherem Bedarf. Ab dem 1. April 2027 wird im Scaled-Tier die Nutzung oberhalb der täglichen Freimengen abgerechnet; wer nichts unternimmt, dessen Projekte können auf die Standard-Quotas gedrosselt werden. Laut Google arbeiten über 99 Prozent der aktiven Entwicklerprojekte heute innerhalb des Standard-Tiers. Kunden mit Google Cloud Support bleiben bis mindestens Dezember 2027 von der variablen Supportgebühr für diese APIs ausgenommen, Änderungen kündigt Google mit mindestens 90 Tagen Vorlauf an."
+    },
+    {
+      "t": "h2",
+      "x": "Einordnung"
+    },
+    {
+      "t": "p",
+      "x": "Die Ankündigung folgt einem erkennbaren Muster: Plattformbetreiber lassen Agenten nicht mehr als stille Nutzer-Stellvertreter über die allgemeinen APIs laufen, sondern zwingen sie in eigene, überwachbare Zugänge mit eigenen Identitäten, Quotas und Regeln. Für Entwickler von Agenten-Produkten bedeutet das konkrete Arbeit: OAuth-Kennzeichnung, Umstellung auf MCP oder CLI bis Februar 2027 und die Prüfung, ob die eigene Datenhaltung und Modellpipeline den Addendum-Verboten widersprechen, etwa beim Caching von Embeddings über 30 Tage hinaus. Für Unternehmen als Kunden ändert sich wenig am Preis, sie gewinnen aber Kontrollinstrumente: Admins können Agenten in der Admin Console wie klassische Apps verwalten, Bestätigungsregeln für sensible Aktionen setzen und Agenten-Aktionen inklusive Nutzerbestätigungen in Audit-Logs nachvollziehen. Offen bleibt, wie konsequent Google die Agenten-Erkennung gegen Werkzeuge durchsetzt, die sich als normale Apps tarnen; das Addendum droht hier ausdrücklich mit sofortiger Sperrung."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Simplifying agent access while keeping organizations in control",
+      "publisher": "Google Workspace Updates",
+      "url": "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html",
+      "accessed": "2026-11-28"
+    },
+    {
+      "title": "Workspace AI Tools Addendum",
+      "publisher": "Google",
+      "url": "https://workspace.google.com/terms/ai-tools/",
+      "accessed": "2026-11-28"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ab wann müssen KI-Agenten Googles MCP-Server oder CLI nutzen?",
+      "a": "Die technische Durchsetzung beginnt laut Google am 1. Februar 2027. Ab dann müssen KI-Agenten und vergleichbare Zugriffswerkzeuge über die Workspace-MCP-Server oder die Workspace-CLI auf Workspace-Daten zugreifen, direkte REST-API-Aufrufe durch Agenten werden unterbunden."
+    },
+    {
+      "q": "Was kostet der Zugang für Agenten?",
+      "a": "Der Standard-Tier bleibt kostenlos mit veröffentlichten Quotas. Der Scaled-Tier für höhere Quotas wird ab dem 1. April 2027 oberhalb der täglichen Freimengen abgerechnet. Laut Google arbeiten über 99 Prozent der aktiven Entwicklerprojekte heute im Standard-Tier."
+    },
+    {
+      "q": "Was verbietet das neue AI Tools Addendum?",
+      "a": "Unter anderem das Training, Fine-Tuning oder die Distillation von Modellen auf Nutzerdaten oder Google Technical Information, das Speichern von Google Technical Information über 30 Tage hinaus, systematisches Auslesen der Schnittstellen und den Bau konkurrierender Produkte. Bei Verstößen darf Google den Zugang sofort sperren."
+    }
+  ],
+  "related": [],
+  "published_at": "2026-11-28T09:08:00+01:00",
+  "updated_at": "2026-11-28T09:08:00+01:00"
+}

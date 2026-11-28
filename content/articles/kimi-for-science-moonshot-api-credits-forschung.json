@@ -1,0 +1,89 @@
+{
+  "slug": "kimi-for-science-moonshot-api-credits-forschung",
+  "lang": "de",
+  "section": "news",
+  "type": "news",
+  "title": "Kimi for Science: Moonshot AI vergibt bis zu 20.000 US-Dollar API-Credits an Forschende",
+  "dek": "Das neue Programm von Moonshot AI richtet sich an Forschende in Natur- und Ingenieurwissenschaften. Ausgewählte Projekte erhalten bis zu 20.000 US-Dollar in Kimi-API-Credits. Bewerbungsschluss für die erste Kohorte ist der 8. Dezember.",
+  "published": "2026-11-28T09:08:00+01:00",
+  "modified": "2026-11-28T09:08:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "moonshot-ai",
+    "kimi",
+    "forschung",
+    "api-credits",
+    "foerderprogramm"
+  ],
+  "key_takeaways": [
+    "Moonshot AI startet mit Kimi for Science ein Förderprogramm für Forschende in Natur- und Ingenieurwissenschaften.",
+    "Ausgewählte Projekte erhalten bis zu 20.000 US-Dollar in Kimi-API-Credits, laut Moonshot etwa sieben Milliarden Tokens.",
+    "Die Credits sind ausschließlich für die Modellnutzung bestimmt, es handelt sich nicht um eine Barförderung.",
+    "Für die erste Kohorte laufen Bewerbungen bis zum 8. Dezember, weitere Kohorten sollen folgen.",
+    "Dazu kommen technischer Support, früher Zugang zu neuen Modellen und kuratierte Forschungsressourcen."
+  ],
+  "hero": {
+    "alt": "Abstrakte dunkle Laborszene mit schwebenden Glasgefäßen und kristallinen Strukturen, verbunden durch leuchtend grüne Datenströme.",
+    "caption": "Kimi for Science soll Forschenden Rechenzeit auf den Kimi-Modellen von Moonshot AI öffnen.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Moonshot AI hat das Programm Kimi for Science vorgestellt. Es richtet sich an Forschende und Forschungsteams in den Naturwissenschaften, im Ingenieurwesen und in verwandten interdisziplinären Feldern. Bewerbungen für die erste Kohorte sind nach Angaben auf der Programmseite bis zum 8. Dezember möglich, weitere Kohorten sollen folgen."
+    },
+    {
+      "t": "p",
+      "x": "Ausgewählte Bewerbungen erhalten bis zu 20.000 US-Dollar in Kimi-API-Credits, was nach Angabe von Moonshot etwa sieben Milliarden Tokens entspricht. Die genaue Höhe hängt demnach vom Forschungsbedarf und vom Prüfergebnis ab."
+    },
+    {
+      "t": "callout",
+      "x": "Die Credits sind ausschließlich für die Modellnutzung bestimmt. Moonshot weist ausdrücklich darauf hin, dass es sich nicht um eine Barförderung handelt.",
+      "title": "Credits statt Geld"
+    },
+    {
+      "t": "h2",
+      "x": "Was Moonshot zusätzlich anbietet"
+    },
+    {
+      "t": "p",
+      "x": "Neben den Credits nennt die Programmseite technischen Support durch das Kimi-Team, frühen Zugang zu neuen Modellen, kuratierte Forschungs- und Community-Ressourcen sowie die Möglichkeit langfristiger Zusammenarbeit. Als Ziel nennt Moonshot, Forschende bei aufwendiger Literaturrecherche, Datenanalyse und wiederholter Validierung zu unterstützen."
+    },
+    {
+      "t": "h2",
+      "x": "Was Bewerbende einreichen müssen"
+    },
+    {
+      "t": "p",
+      "x": "Moonshot bittet Bewerbende, ihren Forschungshintergrund, die konkrete Aufgabe, die Datenquellen und den aktuellen Arbeitsablauf zu beschreiben. Außerdem sollen sie erläutern, wie sie Kimi einsetzen und wie sie die Ergebnisse auswerten wollen. Angaben zum geschätzten Token-Verbrauch und zu Projektmeilensteinen sind optional. Das Prüfergebnis wird nach Angaben von Moonshot an die im Antrag hinterlegte E-Mail-Adresse geschickt; Auswahl und Förderdetails bleiben der abschließenden Prüfung vorbehalten."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Kimi for Science",
+      "publisher": "Moonshot AI",
+      "url": "https://www.kimi.ai/news/kimi-for-science-program",
+      "accessed": "2026-11-28"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wer kann sich bei Kimi for Science bewerben?",
+      "a": "Laut Programmseite Forschende und Forschungsteams in den Naturwissenschaften, im Ingenieurwesen und in verwandten interdisziplinären Feldern, unabhängig vom Projektstadium."
+    },
+    {
+      "q": "Wie hoch ist die Förderung?",
+      "a": "Bis zu 20.000 US-Dollar in Kimi-API-Credits, nach Moonshot-Angabe etwa sieben Milliarden Tokens. Die genaue Höhe richtet sich nach Forschungsbedarf und Prüfergebnis. Es handelt sich nicht um eine Barförderung."
+    },
+    {
+      "q": "Bis wann kann man sich bewerben?",
+      "a": "Für die erste Kohorte ist der 8. Dezember als Bewerbungsschluss angegeben. Weitere Kohorten sollen folgen."
+    }
+  ],
+  "related": [
+    "kimi-k3-1-pro-offene-gewichte"
+  ],
+  "published_at": "2026-11-28T09:08:00+01:00",
+  "updated_at": "2026-11-28T09:08:00+01:00"
+}

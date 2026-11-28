@@ -1,0 +1,87 @@
+{
+  "slug": "tencent-hy3d-3-6-3d-assets",
+  "lang": "de",
+  "section": "modelle",
+  "type": "news",
+  "title": "Tencent Hy3D 3.6: Bis zu zwei Millionen Polygone und 8K-Texturen pro 3D-Asset",
+  "dek": "Die neue Version von Tencents 3D-Modell Hy3D erzeugt nach Herstellerangaben wasserdichte Meshes mit bis zu zwei Millionen Polygonen, PBR-Texturen in bis zu 8K und zerlegt Modelle auf Wunsch in mehr als 50 Einzelteile.",
+  "published": "2026-11-28T09:08:00+01:00",
+  "modified": "2026-11-28T09:08:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "tencent",
+    "hy3d",
+    "3d-generierung",
+    "pbr",
+    "modell-release"
+  ],
+  "key_takeaways": [
+    "Tencent hat Hy3D 3.6 vorgestellt, sein Modell zur Erzeugung von 3D-Assets aus Text oder Bildern.",
+    "Die maximale Polygonzahl steigt von 1,5 auf zwei Millionen, per API sind 1.000 bis zwei Millionen Polygone einstellbar.",
+    "Texturen sind in 2K, 4K oder 8K wählbar, inklusive PBR-Karten für Metallizität, Rauheit und Normalen.",
+    "PartGen 2.0 zerlegt Modelle in über 50 Einzelteile, PolyGen 2.0 überarbeitet die Topologie überwiegend in Vierecke.",
+    "Exportiert wird in fünf Formaten: OBJ und GLB standardmäßig, dazu STL, USDZ und FBX."
+  ],
+  "hero": {
+    "alt": "Dunkle Szene mit einer detailreichen mechanischen Skulptur aus leuchtend grünem Drahtgitter, teils massiv, teils als Polygonnetz sichtbar.",
+    "caption": "Hy3D 3.6 soll produktionsreife 3D-Assets aus Text oder Referenzbildern erzeugen.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Tencent hat sein 3D-Generierungsmodell Hy3D in Version 3.6 vorgestellt. Laut der offiziellen Produktseite wandelt das Modell Textbeschreibungen oder Bilder in 3D-Assets um, die der Hersteller als produktionsreif einstuft."
+    },
+    {
+      "t": "h2",
+      "x": "Mehr Polygone, höhere Texturauflösung"
+    },
+    {
+      "t": "p",
+      "x": "Die maximale Polygonzahl steigt gegenüber der Vorgängerversion von 1,5 Millionen auf zwei Millionen. Über die API sind Werte zwischen 1.000 und zwei Millionen Polygonen einstellbar, die erzeugten Meshes sind nach Herstellerangabe wasserdicht und lassen sich als reine Geometrie separat ausgeben. Bei den Texturen sind 2K, 4K und 8K wählbar. Die AutoUV-Funktion entfaltet die Oberfläche nach Modellstruktur, ist editierbar und kann Texturen von Referenzbildern übertragen. Die PBR-Ausgabe umfasst Karten für Metallizität, Rauheit und Normalen; eine Entlichtung soll die Beleuchtung des Ausgangsbilds herausrechnen, und nahtlose Texturen sollen Übergänge an den Nähten vermeiden."
+    },
+    {
+      "t": "callout",
+      "x": "Texteingaben unterstützt Hy3D 3.6 laut Produktseite mit bis zu 1.024 chinesischen Zeichen. Wer auf Deutsch oder Englisch arbeitet, greift daher eher auf die Bildeingabe zurück: einzelne JPG-, PNG- oder WebP-Bilder oder Vier- beziehungsweise Achtfach-Ansichten. Auch vorhandene 3D-Modelle lassen sich als Eingabe nutzen.",
+      "title": "Texteingabe auf Chinesisch"
+    },
+    {
+      "t": "h2",
+      "x": "Zerlegung, Retopologie und Rigging"
+    },
+    {
+      "t": "p",
+      "x": "PartGen 2.0 kann Modelle in mehr als 50 Einzelteile zerlegen, etwa um Bauteile einzeln nachzuarbeiten. PolyGen 2.0 überarbeitet die Topologie und erzeugt überwiegend viereckige Flächen. Für Animationen lassen sich Skelette hinzufügen und Bewegungen per Textvorgabe oder über Vorlagen erzeugen."
+    },
+    {
+      "t": "p",
+      "x": "Exportiert wird in fünf Formaten: Standardmäßig werden OBJ und GLB gleichzeitig ausgegeben, STL ist für den 3D-Druck vorgesehen, USDZ für AR-Anwendungen und FBX für Animation und Engines. Als Einsatzfelder nennt Tencent unter anderem Spiele und Film, Figuren und 3D-Druck, E-Commerce, Denkmalpflege, Bildung, Mode, Fahrzeuge und Schmuck."
+    }
+  ],
+  "sources": [
+    {
+      "title": "腾讯混元 Hy3D 3.6 (Produktseite)",
+      "publisher": "Tencent Cloud",
+      "url": "https://cloud.tencent.com/act/pro/hy3d-3.6",
+      "accessed": "2026-11-28"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was ist neu in Hy3D 3.6?",
+      "a": "Laut Tencent steigt die maximale Polygonzahl von 1,5 auf zwei Millionen, Texturen sind bis 8K wählbar, und PartGen 2.0 zerlegt Modelle in über 50 Teile. Dazu kommen PBR-Materialkarten und eine Retopologie mit überwiegend viereckigen Flächen."
+    },
+    {
+      "q": "Welche Eingaben akzeptiert Hy3D 3.6?",
+      "a": "Textbeschreibungen mit bis zu 1.024 chinesischen Zeichen, einzelne Bilder in JPG, PNG oder WebP, Vier- oder Achtfach-Ansichten sowie vorhandene 3D-Modelle."
+    },
+    {
+      "q": "In welchen Formaten exportiert Hy3D 3.6?",
+      "a": "Standardmäßig OBJ und GLB, dazu STL für 3D-Druck, USDZ für AR und FBX für Animation und Engines, insgesamt fünf Formate."
+    }
+  ],
+  "related": [],
+  "published_at": "2026-11-28T09:08:00+01:00",
+  "updated_at": "2026-11-28T09:08:00+01:00"
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "nvidia-nemotron-labs-image-30b-pixel-as-code",
+  "lang": "de",
+  "section": "praxis",
+  "type": "explainer",
+  "title": "Pixel as Code: NVIDIAs offenes Bildmodell verbindet Rasterbilder und Programme",
+  "dek": "Nemotron-Labs-Image-30B-A3B ist der Bildgenerator eines Frameworks, das Bilder, Webseiten, Präsentationen und Diagramme über eine gemeinsame Generierungs- und Render-Schnittstelle erzeugt. Gewichte und Tokenizer stehen auf Hugging Face, die Lizenz erlaubt nur nicht-kommerzielle Nutzung.",
+  "published": "2026-11-28T09:08:00+01:00",
+  "modified": "2026-11-28T09:08:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "nvidia",
+    "nemotron",
+    "bildgenerierung",
+    "open-weights",
+    "agenten"
+  ],
+  "key_takeaways": [
+    "Nemotron-Labs-VisualCreation ist ein agentisches Framework von NVIDIA für Rasterbilder und editierbare Artefakte wie Webseiten, Präsentationen und Diagramme.",
+    "Der veröffentlichte Teil umfasst den Bildgenerator Nemotron-Labs-Image-30B-A3B mit 30 Milliarden Parametern, davon drei Milliarden aktiv, und den zugehörigen visuellen Tokenizer.",
+    "In NVIDIAs Vergleichstabelle gegen GPT Image 2 und Nano Banana Pro liegt das Framework in sieben von zehn Zeilen vorn, GPT Image 2 führt bei GenEval2 und Qwen-Image-Bench, Nano Banana Pro bei OneIG.",
+    "Der Tokenizer kodiert und dekodiert nach Herstellermessung 7,1- beziehungsweise 10,9-mal schneller als Emu3.5.",
+    "Die Lizenz erlaubt nur nicht-kommerzielle Nutzung, kommerzielle Produkte brauchen eine andere Grundlage."
+  ],
+  "hero": {
+    "alt": "Abstrakte Landschaft aus leuchtenden quadratischen Pixelkacheln, die rechts in ein geometrisches Gitter zerfallen, grüne und bernsteinfarbene Akzente.",
+    "caption": "Pixel as Code verbindet gelernte visuelle Tokens mit expliziten Programmen über Generierung, Rendering und visuelle Prüfung.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "NVIDIA hat mit Nemotron-Labs-VisualCreation ein Framework vorgestellt, das Rasterbilder und editierbare visuelle Artefakte über eine gemeinsame Schnittstelle erzeugt. Die Idee hinter dem Namen Pixel as Code: Gelernte visuelle Tokens liefern das Erscheinungsbild, explizite Programme wie SVG, HTML und CSS, Plotting-Code oder Dokument-Markup liefern editierbare Struktur. Beides wird über Generierung, Rendering und visuelle Prüfung verbunden. Auf Hugging Face stehen jetzt der Bildgenerator Nemotron-Labs-Image-30B-A3B und der gebündelte visuelle Tokenizer bereit. Das gesamte Framework (Harness) und die VisionCode-Modelle will NVIDIA laut Modellkarte erst nach rechtlicher Freigabe veröffentlichen."
+    },
+    {
+      "t": "h2",
+      "x": "Aus drei Komponenten aufgebaut"
+    },
+    {
+      "t": "p",
+      "x": "Das Framework besteht aus drei gelernten Bausteinen. Der Nemotron-Labs-Image-Tokenizer ist ein Encoder-Decoder mit rund 642 Millionen Parametern, 16-mal-16-Patches und einem festen Codebook aus 196.560 Leech-Gitter-Vektoren. Nemotron-Labs-Image-30B-A3B ist der autoregressive Rastergenerator, initialisiert von Nemotron 3 Nano, mit insgesamt 30 Milliarden Parametern und drei Milliarden aktiven Parametern. Für die strukturierte Code-Schnittstelle trainierte NVIDIA außerdem die Familie Nemotron-Labs-VisionCode in den Varianten 30B-A3B und 120B-A12B."
+    },
+    {
+      "t": "p",
+      "x": "Im Betrieb wählt ein Router die Artefakt-Familie, Repräsentation und Render-Backend. Ein Vision-Language-Modell wählt unter den Rasterkandidaten aus, bei browserbasierten Artefakten prüfen Renderer und visuelle Audits das Ergebnis. Reparaturen sind laut Modellkarte standardmäßig auf drei akzeptierte Korrekturen innerhalb von acht Versuchen begrenzt, wobei Checkpoints das beste Artefakt behalten."
+    },
+    {
+      "t": "h2",
+      "x": "Was die Benchmarks zeigen, und was nicht"
+    },
+    {
+      "t": "p",
+      "x": "In NVIDIAs eigener Ergebnistabelle erreicht das Framework 92,86 Punkte auf GenEval gegenüber 89,00 für GPT Image 2, 91,50 auf WISE Verified und 86,0 auf BizGenEval gegenüber 83,2 für GPT Image 2 und 76,7 für Nano Banana Pro. Die Tabelle zeigt aber auch die Gegenseite: GPT Image 2 führt bei GenEval2 mit 81,00 gegenüber 65,43 und bei Qwen-Image-Bench, Nano Banana Pro liegt beim OneIG-Vergleich vorn, und in der zweiten Tabelle mit SenseNova-U1.5, FLUX.2 Dev und Qwen-Image führt SenseNova-U1.5 bei LongTextBench und CVTG-2K. Alle Werte stammen aus NVIDIAs technischem Bericht, sind also Herstellerangaben mit eigener Testkonfiguration."
+    },
+    {
+      "t": "p",
+      "x": "Beim Tokenizer misst NVIDIA bei Batch-Größe eins auf einer A100 41,3 Millisekunden fürs Kodieren und 37,1 Millisekunden fürs Dekodieren, gegenüber 294,5 und 405,5 Millisekunden bei Emu3.5. Das entspricht laut Modellkarte einer 7,1- beziehungsweise 10,9-fachen Beschleunigung; die Gesamtdauer einer Bilderzeugung umfasst zusätzlich die Generierung der visuellen Tokens und den agentischen Ablauf."
+    },
+    {
+      "t": "callout",
+      "x": "Das Modell steht unter der NVIDIA OneWay Noncommercial License. Damit ist die Nutzung auf Forschung und nicht-kommerzielle Zwecke beschränkt. Für kommerzielle Produkte ist das Modell ohne separate Vereinbarung mit NVIDIA nicht einsetzbar.",
+      "title": "Nur nicht-kommerziell"
+    },
+    {
+      "t": "h2",
+      "x": "Ausprobieren"
+    },
+    {
+      "t": "p",
+      "x": "Das Repository lässt sich per Hugging-Face-CLI komplett herunterladen, inklusive des Tokenizer-Verzeichnisses. Das mitgelieferte Beispielskript erzeugt ein 1024-mal-1024-Bild über vLLM und Transformers und enthält die vom Modell geforderte Chat-Vorlage, das visuelle Token-Framing und das L24SQ-Dekodierprotokoll. Eine Galerie mit Beispielbildern und den zugehörigen Prompts ist über die Modellkarte verlinkt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "NVIDIA Nemotron-Labs-Image-30B-A3B (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B",
+      "accessed": "2026-11-28"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was bedeutet Pixel as Code?",
+      "a": "NVIDIAs Framework verbindet gelernte visuelle Tokens für das Erscheinungsbild mit expliziten Programmen wie SVG, HTML/CSS oder Plotting-Code für die editierbare Struktur. Generierung, Rendering und visuelle Prüfung greifen dabei ineinander."
+    },
+    {
+      "q": "Ist Nemotron-Labs-Image-30B-A3B kommerziell nutzbar?",
+      "a": "Nein. Das Modell steht unter der NVIDIA OneWay Noncommercial License und ist damit auf nicht-kommerzielle Nutzung beschränkt."
+    },
+    {
+      "q": "Wie gut ist das Modell im Vergleich?",
+      "a": "In NVIDIAs eigener Tabelle führt es bei GenEval, WISE Verified und BizGenEval, liegt aber bei GenEval2 und Qwen-Image-Bench hinter GPT Image 2 und bei OneIG hinter Nano Banana Pro. Die Werte sind Herstellerangaben aus NVIDIAs technischem Bericht."
+    }
+  ],
+  "related": [
+    "gemini-4-carbon-fuer-entwickler-offen"
+  ],
+  "published_at": "2026-11-28T09:08:00+01:00",
+  "updated_at": "2026-11-28T09:08:00+01:00"
+}

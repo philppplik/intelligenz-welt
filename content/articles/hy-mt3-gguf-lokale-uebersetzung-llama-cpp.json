@@ -1,0 +1,100 @@
+{
+  "slug": "hy-mt3-gguf-lokale-uebersetzung-llama-cpp",
+  "lang": "de",
+  "section": "tools",
+  "type": "explainer",
+  "title": "Hy-MT3 als GGUF: Tencents Übersetzungsmodell mit 102 Sprachen lokal nutzen",
+  "dek": "Tencent hat seine dritte Übersetzungsmodell-Generation Hy-MT3 unter Apache-2.0 veröffentlicht, inklusive offizieller GGUF-Dateien für llama.cpp. Das 30B-MoE-Modell aktiviert nur drei Milliarden Parameter pro Token, das 1,8B-Modell läuft auch auf schwacher Hardware.",
+  "published": "2026-11-28T09:08:00+01:00",
+  "modified": "2026-11-28T09:08:00+01:00",
+  "author": "philipp-paulik",
+  "tags": [
+    "tencent",
+    "hy-mt3",
+    "uebersetzung",
+    "gguf",
+    "llama-cpp",
+    "open-weights"
+  ],
+  "key_takeaways": [
+    "Hy-MT3 ist Tencents dritte Übersetzungsmodell-Generation mit den Größen 1,8B, 7B und 30B-A3B (MoE) und 102 unterstützten Sprachen.",
+    "Alle Varianten stehen unter Apache-2.0, offizielle GGUF-Quantisierungen für llama.cpp sind auf Hugging Face verfügbar.",
+    "Laut Tencent senkt Hy-MT3 gegenüber Hy-MT2 Fehlübersetzungen um 43 Prozent und Auslassungen oder Hinzufügungen um 74 Prozent.",
+    "Das 1,8B-Modell übertrifft nach Herstellermessung kommerzielle APIs wie Microsoft Translator und Qwen-MT-Flash bei allgemeiner Übersetzung.",
+    "Spezialfunktionen: Game-Lokalisierung mit eigener Werkzeugkette und bildbasierte Übersetzung mit OCR-Fehlertoleranz."
+  ],
+  "hero": {
+    "alt": "Zwei abstrakte leuchtende Sprechblasenformen, verbunden durch eine Brücke aus grünen Lichtpartikeln, darunter gestapelte durchscheinende Würfel.",
+    "caption": "Hy-MT3 deckt 102 Sprachen ab und lässt sich als GGUF lokal betreiben.",
+    "ai_generated": true,
+    "credit": "Intelligenz Welt (KI-generiert)"
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Tencent hat mit Hy-MT3 die dritte Generation seiner Übersetzungsmodelle veröffentlicht, laut Modellkarte am 24. November als Open Source und unter der Apache-2.0-Lizenz. Die Familie umfasst drei Größen: 1,8B, 7B und 30B-A3B, letzteres ein Mixture-of-Experts-Modell, das pro Token nur drei Milliarden Parameter aktiviert. Die Sprachabdeckung wuchs von 38 Sprachen in Hy-MT2 auf 102. Offizielle GGUF-Quantisierungen aller Größen stehen auf Hugging Face bereit, das 30B-GGUF-Repository weist dort laut Hugging-Face-Zähler bereits über 28.000 Downloads aus. Damit lässt sich das Modell über llama.cpp und kompatible Werkzeuge lokal betreiben, ohne Daten an eine API zu schicken."
+    },
+    {
+      "t": "h2",
+      "x": "Was Tencent an Qualität verspricht"
+    },
+    {
+      "t": "p",
+      "x": "Gegenüber Hy-MT2 sollen Fehlübersetzungen auf Praxisdaten um 43 Prozent sinken, Auslassungen und Hinzufügungen um 74 Prozent und Fehler bei der Befolgung von Formatvorgaben um 40 Prozent. Das 30B-A3B erreiche nach Tencents Messung im Non-Thinking-Modus die beste Gesamtleistung unter allen ausgewerteten Modellen, vor Qwen3.8-Max, Kimi-K3.1-Pro und DeepSeek-V4.1-Flash, und nähere sich geschlossenen Thinking-Modellen wie GPT-6.1-Sol und Gemini-4-Argon an, bei unter einem TFLOP Rechenaufwand pro Testsample. Auch das kleine 1,8B-Modell soll bei allgemeiner Übersetzung kommerzielle APIs wie iFlytek Translator, Microsoft Translator und Qwen-MT-Flash schlagen. Alle diese Werte sind Herstellerangaben aus Tencents eigenem Testaufbau."
+    },
+    {
+      "t": "callout",
+      "x": "Tencent misst die Übersetzungsqualität mit TransRubric, einer rubrikbasierten Bewertungssuite, die das Unternehmen gleich mitveröffentlicht hat. TransRubric selbst soll auf dem WMT26-Testset für Bewertungsmetriken andere Verfahren schlagen, stabiler sein als menschliche Bewertung und bei der paarweisen Genauigkeit die meisten professionellen Annotatoren übertreffen (laut Modellkarte 7 von 10). Die Benchmark-Aussagen zu Hy-MT3 beruhen also auf Tencents eigener Metrik.",
+      "title": "Eigene Metrik beachten"
+    },
+    {
+      "t": "h2",
+      "x": "Zwei Spezialgebiete"
+    },
+    {
+      "t": "p",
+      "x": "Für Game-Lokalisierung wurde das Modell mit Domänendaten und einem Bewertungssystem des Honor-of-Kings-Teams trainiert. Laut Tencent erreicht oder übertrifft Hy-MT3-30B-A3B dort Gemini 3.1 Pro auf allen Kernmetriken, darunter Off-Target-Quote, Platzhalter-, Rich-Text- und Terminologiefehler. Die passende Open-Source-Werkzeugkette TiMiHOKGameTranslator ist auf GitHub verfügbar. Für Bildübersetzung toleriert das Modell nach Herstellerangabe OCR-Fehler in OCR-gekoppelten Pipelines und erreicht auf VISTA-Bench das beste Ergebnis unter Modellen vergleichbarer Größe."
+    },
+    {
+      "t": "h2",
+      "x": "Praktisch einsetzen"
+    },
+    {
+      "t": "p",
+      "x": "Für den lokalen Betrieb lädt man eine der GGUF-Dateien aus den offiziellen tencent-Repositories und startet sie mit llama.cpp beziehungsweise einem darauf aufbauenden Frontend. Das 1,8B-Modell eignet sich für schwächere Hardware, das 30B-A3B-GGUF für Workstations mit entsprechendem Speicher. Wer nicht selbst hosten will, findet auf der Modellkarte zusätzlich Verweise auf Tencents Browser-Erweiterung und Apps für Android und iOS."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Tencent Hy-MT3-30B-A3B (Modellkarte)",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/tencent/Hy-MT3-30B-A3B",
+      "accessed": "2026-11-28"
+    },
+    {
+      "title": "Tencent Hy-MT3-30B-A3B-GGUF",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/tencent/Hy-MT3-30B-A3B-GGUF",
+      "accessed": "2026-11-28"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welche Größen gibt es und welche Lizenz gilt?",
+      "a": "Hy-MT3 gibt es als 1,8B, 7B und 30B-A3B (MoE mit drei Milliarden aktiven Parametern). Alle Varianten stehen unter Apache-2.0, also auch für kommerzielle Nutzung."
+    },
+    {
+      "q": "Kann ich Hy-MT3 lokal betreiben?",
+      "a": "Ja. Tencent stellt offizielle GGUF-Quantisierungen aller Größen auf Hugging Face bereit, die sich mit llama.cpp und kompatiblen Werkzeugen lokal ausführen lassen."
+    },
+    {
+      "q": "Wie gut übersetzt Hy-MT3?",
+      "a": "Nach Tencents eigener Messung mit der hauseigenen TransRubric-Metrik schlägt das 30B-Modell im Non-Thinking-Modus alle ausgewerteten Modelle, und das 1,8B-Modell übertrifft kommerzielle APIs wie Microsoft Translator. Unabhängige Vergleiche stehen noch aus."
+    }
+  ],
+  "related": [
+    "edge0-145b-laptop-lokales-modell"
+  ],
+  "published_at": "2026-11-28T09:08:00+01:00",
+  "updated_at": "2026-11-28T09:08:00+01:00"
+}
