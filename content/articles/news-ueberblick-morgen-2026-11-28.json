@@ -1,0 +1,134 @@
+{
+  "title": "Tokenisierung nicht approximierbar, Policies aus Weltmodell-Code, zertifizierte Gewichte",
+  "dek": "Ein Beweis grenzt Tokenizer-Optimierung aus, ein Coding-Agent ersetzt RL-Training durch Codelektüre, geschriebene Mini-Netze erhalten Exaktheitszertifikate.",
+  "slug": "news-ueberblick-morgen-2026-11-28",
+  "section": "ueberblick",
+  "type": "news",
+  "author": "philipp-paulik",
+  "lang": "de",
+  "published": "2026-11-28T06:38:00+01:00",
+  "modified": "2026-11-28T06:38:00+01:00",
+  "tags": [
+    "Forschung",
+    "Tokenisierung",
+    "Reinforcement Learning",
+    "Verifikation"
+  ],
+  "hero": {
+    "alt": "Drei schematische Bildkarten: ein Puzzle mit einem nicht passenden Teil, ein aufgeschlagenes Codebuch mit einem Kompass darüber, und ein Stempel über einem kleinen Netzdiagramm. Themenhero ohne Zahlen und Messskala.",
+    "caption": "Drei Studien über die bewiesene Härte optimaler Tokenisierung, Policies aus lesbaren Weltmodellen und zertifizierte Netze aus dem Sprachmodell. Alle Werte, Bedingungen und Grenzen stehen in den Textpanels und im Artikel.",
+    "credit": "Eigene Illustration",
+    "ai_generated": false
+  },
+  "body": [
+    {
+      "t": "p",
+      "x": "Quellenprüfung: 28. November 2026, 06:37 Uhr MEZ. Drei am 25. November eingereichte Preprints (jeweils an den Abstract-Seiten geprüft) drehen sich um das Verhältnis von Modellen und Regeln: Ein Beweis zeigt, dass optimale Tokenisierung nicht einmal näherungsweise berechenbar ist, ein Experiment ersetzt RL-Training durch das Lesen von Umgebungscode, und ein Verfahren zertifiziert kleine Netze, die ein Sprachmodell direkt aus Gewichten schreibt. Alle Zahlen stammen aus den voll gelesenen Volltexten."
+    },
+    {
+      "t": "h2",
+      "x": "Optimale Tokenisierung: nicht einmal näherungsweise berechenbar"
+    },
+    {
+      "t": "callout",
+      "x": "Vier ETH-Forscher beweisen: Kein Polynomzeit-Algorithmus findet einen Tokenizer, der garantiert um einen konstanten Faktor ans Optimum kommt, weder für direkte noch für Bottom-up-Tokenisierung, weder für Kompression noch für Unigram-Log-Likelihood. Tokenisierung liegt damit nicht in der Komplexitätsklasse APX, sofern P ungleich NP."
+    },
+    {
+      "t": "p",
+      "x": "BPE und UnigramLM sind Heuristiken ohne Gütegarantie; schon bekannt war, dass BPE beliebig schlecht komprimieren kann und dass das Optimierungsproblem NP-schwer ist. Die Arbeit von Kastreva, Whittington, Komm und Pimentel (ETH Zürich) verschärft das Bild: Schon über binären Alphabeten liegt keine konstante Approximation in Polynomzeit drin, für beide Tokenisierungsklassen und beide Zielfunktionen. Über unären Alphabeten, dem einfachsten Fall, ist direkte Tokenisierung immerhin noch APX-schwer, also ohne polynomielles Approximationsschema. Die Beweise führen direkte Tokenisierung auf ein Rangproblem endlicher Wörter und Bottom-up-Tokenisierung auf eine Lücke-Variante von Maximum Cut auf kubischen Graphen zurück."
+    },
+    {
+      "t": "p",
+      "x": "Einordnung der Autoren: Für Kompression nähern sich die ausgeschlossenen Garantien dem trivialen Zeichen-Tokenizer, der Faktor N erreicht. Gleichzeitig zeigen Messungen an natürlicher Sprache (Tempus et al. 2026), dass praktische Tokenizer auf ihren Daten bis auf etwa ein Prozent ans optimale Kompressionsergebnis kommen; die Schranke ist ein Worst-Case über alle Eingaben, kein Praxisurteil. Konsequenz der Autoren: Brauchbare Garantien müssen datensatzspezifisch sein, etwa Zertifikate, wie nah ein konkreter Tokenizer auf einem konkreten Korpus am Optimum liegt."
+    },
+    {
+      "t": "p",
+      "x": "Parallelarbeiten zeigen Teile des Ergebnisses unabhängig: Baliga et al. für Bottom-up, Ion et al. und Bastan et al. für direkte Tokenisierung, jeweils nur unter der Kompressionszielfunktion; die neue Arbeit deckt beide Klassen und beide Zielfunktionen ab. Grenzen: Die Resultate gelten für die zwei analysierten Zielfunktionen und worst-case-Datensätze; was natürliche Sprache so viel leichter tokenisierbar macht als die konstruierten Gegenbeispiele, ist ausdrücklich offen."
+    },
+    {
+      "t": "h2",
+      "x": "Steuerregeln aus Code gelesen statt aus Millionen Trainingsläufen"
+    },
+    {
+      "t": "callout",
+      "x": "Ein Coding-Agent (Codex mit gpt-6-astra) schreibt Kontrollpolicies direkt aus dem Quellcode der Umgebungen: besser als die modellfreien RL-Baselines in 15 von 16 Online-Szenarien, auf MiniGrid 100 Prozent Erfolg (auf DoorKey mit mehr als 200-mal weniger Umgebungsschritten als DreamerV3), und im Offline-Teil vorn auf Maze2D und Kitchen, auf AntMaze konkurrenzfähig."
+    },
+    {
+      "t": "p",
+      "x": "Das Verfahren PS-RWM (Shandong University, CAS-Institut für Automatisierung, Li Auto, Tsinghua) behandelt den Quellcode einer Umgebung als lesbares Weltmodell: Der Agent liest Dynamik und Belohnungslogik, schreibt ein ausführbares Programm als Policy und verfeinert es über Ausführungsfeedback, ohne aufgabenspezifisches RL-Training. Zur Ausführungszeit bekommt die Policy exakt dieselben Beobachtungen wie die RL-Baselines; der Informationsvorteil liegt nur in der Entwicklungsphase. Auf SMAC erreicht PS-RWM mindestens 99,3 Prozent Siegquote auf drei Karten, liegt aber auf 8m_vs_9m hinter QMIX und MBVD; auf Box2D bleibt DreamerV3 auf den schweren BipedalWalker-Aufgaben vorn. Beide Gegenstellen stehen so im Paper."
+    },
+    {
+      "t": "p",
+      "x": "Die Stichprobeneffizienz ist der eigentliche Befund: Auf DoorKey (MiniGrid) genügen PS-RWM 1.789 Umgebungsschritte bis zum Zielwert, DreamerV3 braucht 400.000; auf BipedalWalker ist der Abstand mit 529.773 gegen 633.333 Schritten (PPO) dagegen klein, das Paper nennt beide. Offline, nur aus festen Datensätzen, baut der Agent aus 1 Prozent des halfcheetah-Datensatzes (10 Trajektorien) einen Regler mit normalisiertem Score 41,03, etwa auf Höhe der Demonstrationsdaten (40,886). Auf BabyAI erreicht PS-RWM im Schnitt 99,28 Prozent Erfolg, auf allen sechs Aufgaben 100 Prozent sogar ganz ohne Demonstrationen."
+    },
+    {
+      "t": "p",
+      "x": "Gegenprobe der Autoren: Ohne Codezugang schneidet dieselbe Pipeline gegenüber der Version mit Code in 8 von 16 Szenarien schlechter ab, in 3 besser, 5 unentschieden, mit deutlich höherer Varianz. Unter Sparse Rewards brechen QMIX und DQN auf null Erfolg ein, PS-RWM bleibt nahezu unverändert, weil die Belohnungslogik im Code lesbar bleibt. Die Autoren selbst bremsen die Pointe: RL wird nicht universell überflüssig; präzise kontinuierliche Steuerung (MuJoCo, Adroit) bleibt schwach, und das Verfahren setzt voraus, dass ein korrektes, ausführbares Modell der Umgebung überhaupt zugänglich ist."
+    },
+    {
+      "t": "h2",
+      "x": "Spec2Weights: Geschriebene Netze mit mathematischem Prüfschein"
+    },
+    {
+      "t": "callout",
+      "x": "Ein Sprachmodell schreibt die Gewichte kleiner Netze direkt aus einer Spezifikation, ohne Daten und ohne Gradienten; ein Zertifizierer beweist für 12 von 15 Suite-Netzen und 25 von 30 frisch geschriebenen Exaktheit auf jeder Eingabe der angegebenen Domäne, und sagt zusätzlich, wo jedes Netz zu brechen beginnt."
+    },
+    {
+      "t": "p",
+      "x": "Weight-Space Programming heißt der Ansatz: Das Modell (frische Sitzungen von Claude Opus 5.5) schreibt ein kurzes Python-Programm, das jedes Gewicht eines festen MLP, CNN, RNN oder GNN setzt, etwa für eine Luhn-Prüfziffer, eine ALU oder eine Routingtabelle. Das Team von der Bangladesh University of Engineering and Technology und der University of Asia Pacific baut die Zertifikate aus fünf Werkzeugen: erschöpfende float32-Aufzählung, dynamische Programmierung, Template-Checks, ein SMT-Beweis und Breitensuche plus Induktion für gewichtsgeteilte Rekurrenzen. Eine Float-Sicherheitsregel macht die endliche Aufzählung zum Beweis für jede Summationsreihenfolge; jedes Zertifikat braucht höchstens etwa eine Minute CPU."
+    },
+    {
+      "t": "p",
+      "x": "Die Zertifikate markieren auch die Bruchstelle: Das Kürzeste-Wege-Netz ist exakt genau bis Distanz 4.096 und scheitert ab 4.097, obwohl es alle Tests bis 200 Knoten bestand; der Wochentagsrechner wurde erst nach Korrektur einer einzigen Konstante exakt. Von den 30 neuen Spezifikationen (Prüfziffern 10/10, Routing 10/10, Kalender 5/5) sind 25 Ersteinreichungen für jede Summationsreihenfolge zertifiziert exakt; die fünf Steuernetze bleiben an jedem ganzen Dollar in einem festen float32-Lauf innerhalb von 0,11 Dollar, erfüllen aber die Regel exakt auf den Cent nicht. Ein offenes 27B-Modell schafft in der Grundstellung 23 von 30, mit mehr Denkbudget und Codeausführung 25; die Übertragbarkeit ist also partiell."
+    },
+    {
+      "t": "p",
+      "x": "Zwei bewiesene Lern-Grenzen rahmen das Ergebnis: Eingabekoordinaten, die im Training nie aktiv sind, sind aus weiteren In-Range-Daten nicht lernbar, und Luhn-artige Prüfsummen haben über ihre Funktionsfamilie exponentiell kleine Gradientenvarianz; abgestimmtes Gradientenlernen auf denselben Architekturen bestätigt beides empirisch. Grenzen, die die Autoren selbst nennen: eine Modellfamilie liefert die Suite, die neuen Spezifikationen sind neue Instanzen bekannter Familien, ein Netz pro Aufgabe misst den Erstversuch statt der Varianz, kein Transformer ist zertifiziert, und das Vorhersage-Log ist selbst attestiert."
+    }
+  ],
+  "key_takeaways": [
+    "Tokenisierung ist nicht in APX: Kein Polynomzeit-Algorithmus garantiert einen konstanten Faktor ans Optimum, für direkte und Bottom-up-Verfahren, unter Kompression und Log-Likelihood (Vorbehalt P ungleich NP); praktische Tokenizer liegen auf natürlicher Sprache trotzdem etwa ein Prozent neben dem Optimum.",
+    "PS-RWM schreibt Policies aus Umgebungscode: besser als modellfreies RL in 15 von 16 Online-Szenarien, MiniGrid-DoorKey-Ziel nach 1.789 statt 400.000 Schritten, aber hinter DreamerV3 auf BipedalWalker und schwach bei präziser Dauersteuerung.",
+    "Spec2Weights zertifiziert 12 von 15 Suite-Netzen und 25 von 30 frischen Schreibungen exakt über ganze Eingabedomänen und lokalisiert Bruchstellen (Kürzeste-Wege-Netz exakt bis Distanz 4.096); Steuernetze bleiben binnen 0,11 Dollar, aber nicht centgenau."
+  ],
+  "faq": [
+    {
+      "q": "Was bedeutet die APX-Härte der Tokenisierung für die Praxis?",
+      "a": "Vorerst wenig, aber grundsätzlich: Es gibt keinen universellen Algorithmus, der zu jedem Datensatz einen annähernd optimalen Tokenizer in Polynomzeit findet, es sei denn P gleich NP. Die Autoren weisen selbst darauf hin, dass reale Tokenizer auf natürlicher Sprache bis auf etwa ein Prozent an die optimale Kompression herankommen. Die Konsequenz sind datensatzspezifische Gütezertifikate statt allgemeiner Garantien; ein erster Schritt dazu existiert bereits über lineare Programmierung."
+    },
+    {
+      "q": "Ersetzt das Lesen von Umgebungscode jetzt RL-Training?",
+      "a": "In den getesteten Simulationsumgebungen oft, aber nicht überall: PS-RWM schlug die modellfreien Baselines in 15 von 16 Szenarien und brauchte auf MiniGrid DoorKey mehr als 200-mal weniger Umgebungsschritte als DreamerV3. Auf BipedalWalker blieb DreamerV3 vorn, bei MuJoCo und Adroit war PS-RWM weniger konkurrenzfähig, und ohne Codezugang schneidet dieselbe Pipeline in 8 von 16 Szenarien schlechter ab als mit (3 besser, 5 gleich). Die Autoren sehen das Verfahren als Alternative und Ergänzung, nicht als Ersatz, etwa für synthetisierte Startpolicies, die RL dann verfeinert."
+    },
+    {
+      "q": "Wie verlässlich sind von Sprachmodellen geschriebene Netze?",
+      "a": "Erst, wenn sie zertifiziert sind: In der Studie erwiesen sich 25 von 30 Ersteinreichungen als beweisbar exakt auf ihrer gesamten Domäne, aber das Wochentagsnetz lag anfangs bei jeder Eingabe einen Tag daneben, und das Kürzeste-Wege-Netz bestand alle Tests bis 200 Knoten und scheitert ab Distanz 4.097. Genau das ist der Punkt der Arbeit: Tests finden solche Bruchstellen nicht, Zertifikate schon. Unzertifiziert geschriebene Netze sollten nicht als Ersatz für geprüften Code gelten."
+    }
+  ],
+  "related": [
+    "antithesis-tla-raft-verifikation-etcd-hashicorp",
+    "agenten-action-index-anchor"
+  ],
+  "sources": [
+    {
+      "title": "Tokenisation is not in APX",
+      "publisher": "arXiv; Violeta Kastreva, Philip Whittington, Dennis Komm, Tiago Pimentel (ETH Zürich)",
+      "url": "https://arxiv.org/abs/2611.34938",
+      "accessed": "2026-11-28"
+    },
+    {
+      "title": "Do We Still Need Reinforcement Learning When We Can Read the World Model?",
+      "publisher": "arXiv; Autoren der Shandong University, des Instituts für Automatisierung der Chinesischen Akademie der Wissenschaften, von Li Auto und der Tsinghua University",
+      "url": "https://arxiv.org/abs/2611.34656",
+      "accessed": "2026-11-28"
+    },
+    {
+      "title": "Spec2Weights: Certifying Networks that a Language Model Writes from a Specification",
+      "publisher": "arXiv; Autoren der Bangladesh University of Engineering and Technology und der University of Asia Pacific, Dhaka",
+      "url": "https://arxiv.org/abs/2611.34711",
+      "accessed": "2026-11-28"
+    }
+  ],
+  "published_at": "2026-11-28T06:38:00+01:00",
+  "updated_at": "2026-11-28T06:38:00+01:00"
+}
